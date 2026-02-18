@@ -83,10 +83,34 @@ export const Contact: React.FC = () => {
       className="py-24 relative bg-paper"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-2xl">
+        <div
+          className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-2xl"
+        >
 
-          {/* Côté gauche — sombre */}
-          <div className="bg-charcoal p-10 md:p-16 text-white space-y-8 relative overflow-hidden">
+          {/* Côté gauche — page coordonnées (texture renforcée) */}
+          <div
+            className="p-10 md:p-16 text-white space-y-8 relative overflow-hidden"
+            style={{
+              backgroundColor: '#0F172A',
+              backgroundImage: [
+                `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg1)' opacity='0.55'/%3E%3C/svg%3E")`,
+                `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg2)' opacity='0.28'/%3E%3C/svg%3E")`,
+              ].join(', '),
+              backgroundSize: '600px 600px, 200px 200px',
+              backgroundBlendMode: 'overlay, screen',
+              boxShadow: 'inset -24px 0 48px rgba(0,0,0,0.65)',
+            }}
+          >
+            {/* Ligne de reliure dorée sur le bord droit */}
+            <div className="absolute top-0 right-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent pointer-events-none z-20"></div>
+            {/* Bord gauche — courbure page posée */}
+            <div className="absolute top-0 left-0 bottom-0 w-16 pointer-events-none z-10"
+              style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 40%, transparent 100%)' }}
+            ></div>
+            {/* Coin bas-gauche — ombre courbure de page */}
+            <div className="absolute bottom-0 left-0 w-48 h-32 pointer-events-none z-10"
+              style={{ background: 'radial-gradient(ellipse at 0% 100%, rgba(0,0,0,0.55) 0%, transparent 65%)' }}
+            ></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
             <div className="relative z-10">
@@ -169,8 +193,36 @@ export const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Côté droit — formulaire */}
-          <div className="bg-paper p-10 md:p-16 flex flex-col justify-center">
+          {/* Côté droit — vieille page de livre (crème irrégulier) */}
+          <div
+            className="p-10 md:p-16 flex flex-col justify-center relative"
+            style={{
+              backgroundColor: '#FAF6EE',
+              backgroundImage: [
+                `url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='pg3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pg3)' opacity='0.38'/%3E%3C/svg%3E")`,
+                `radial-gradient(ellipse at 12% 18%, rgba(185,145,65,0.1) 0%, transparent 48%)`,
+                `radial-gradient(ellipse at 80% 72%, rgba(160,120,45,0.08) 0%, transparent 42%)`,
+                `radial-gradient(ellipse at 50% 90%, rgba(175,140,55,0.07) 0%, transparent 38%)`,
+                `radial-gradient(ellipse at 70% 8%, rgba(200,170,80,0.07) 0%, transparent 35%)`,
+                `radial-gradient(ellipse at 28% 55%, rgba(155,120,42,0.06) 0%, transparent 30%)`,
+              ].join(', '),
+              backgroundSize: '700px 700px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%',
+              backgroundBlendMode: 'multiply, normal, normal, normal, normal, normal',
+              boxShadow: 'inset 24px 0 50px rgba(0,0,0,0.16)',
+            }}
+          >
+            {/* Ombre reliure côté gauche — courbure prononcée */}
+            <div className="absolute top-0 left-0 bottom-0 w-16 pointer-events-none z-0"
+              style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.06) 50%, transparent 100%)' }}
+            ></div>
+            {/* Bord droit — légère courbure de page */}
+            <div className="absolute top-0 right-0 bottom-0 w-12 pointer-events-none z-10"
+              style={{ background: 'linear-gradient(to left, rgba(0,0,0,0.12) 0%, transparent 100%)' }}
+            ></div>
+            {/* Coin bas-droit — levée de page prête à tourner */}
+            <div className="absolute bottom-0 right-0 w-44 h-36 pointer-events-none z-10"
+              style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.08) 35%, transparent 60%)', borderRadius: '0 0 1.5rem 0' }}
+            ></div>
             <h3 className="font-serif text-2xl font-bold text-metallic-navy mb-8">Envoyer un message</h3>
 
             {status === 'success' ? (

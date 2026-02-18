@@ -125,10 +125,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => (
     tabIndex={0}
     onKeyDown={(e) => e.key === 'Enter' && onClick(service)}
   >
-    {/* Barre dorée au survol */}
-    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl"></div>
+    {/* Barre dorée métallique au survol */}
+    <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#B68D40]/60 via-[#F4E095] to-[#B68D40]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl" style={{ boxShadow: '0 0 8px rgba(212,175,55,0.4)' }}></div>
 
-    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-paper to-white shadow-inner flex items-center justify-center mb-6 text-charcoal group-hover:text-gold group-hover:scale-110 transition-all duration-300">
+    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-paper to-white group-hover:from-gold/20 group-hover:to-amber-50 shadow-inner flex items-center justify-center mb-6 text-charcoal group-hover:text-[#D4AF37] group-hover:scale-110 group-hover:[filter:drop-shadow(1px_1px_0px_#9C7C38)_drop-shadow(0_0_8px_rgba(212,175,55,0.5))] transition-all duration-300">
       {service.icon}
     </div>
 
