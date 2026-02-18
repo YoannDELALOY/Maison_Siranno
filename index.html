@@ -3,18 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Siranno Web | Agence Digitale & IA</title>
-    <meta name="description" content="Agence web à Châteauneuf-sur-Loire. Transformation digitale, sites web et IA pour PME et artisans." />
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Playfair Display & Inter (From Graphic Charter) -->
+
+    <!-- ===================== SEO PRIMAIRE ===================== -->
+    <title>Maison Siranno | Agence Web & IA à Châteauneuf-sur-Loire (45)</title>
+    <meta name="description" content="Maison Siranno, agence digitale à Châteauneuf-sur-Loire (Loiret). Création de sites web sur mesure, automatisation par IA et outils métiers pour PME et artisans du Val de Loire." />
+    <meta name="keywords" content="agence web Châteauneuf-sur-Loire, création site internet Loiret, agence digitale 45, automatisation IA PME, site web artisan Val de Loire, développeur web Orléans, transformation digitale Loiret" />
+    <meta name="author" content="Yoann Delaloy - Maison Siranno" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://maison-siranno.fr/" />
+
+    <!-- ===================== OPEN GRAPH ===================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://maison-siranno.fr/" />
+    <meta property="og:title" content="Maison Siranno | Agence Web & IA à Châteauneuf-sur-Loire" />
+    <meta property="og:description" content="Création de sites web, automatisation IA et outils métiers pour PME et artisans du Val de Loire. Basé à Châteauneuf-sur-Loire (45)." />
+    <meta property="og:image" content="/logos/Design sans titre (84).png" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Maison Siranno" />
+
+    <!-- ===================== TWITTER CARD ===================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Maison Siranno | Agence Web & IA" />
+    <meta name="twitter:description" content="Agence digitale à Châteauneuf-sur-Loire. Sites web, IA et automatisation pour artisans et PME." />
+    <meta name="twitter:image" content="/logos/Design sans titre (84).png" />
+
+    <!-- ===================== GEO SEO LOCAL ===================== -->
+    <meta name="geo.region" content="FR-45" />
+    <meta name="geo.placename" content="Châteauneuf-sur-Loire" />
+    <meta name="geo.position" content="47.8667;2.2167" />
+    <meta name="ICBM" content="47.8667, 2.2167" />
+
+    <!-- ===================== JSON-LD STRUCTURED DATA ===================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://maison-siranno.fr/#business",
+      "name": "Maison Siranno",
+      "alternateName": "Maison Siranno - L'art du web",
+      "description": "Agence digitale spécialisée en création de sites web, automatisation par IA et outils métiers pour PME et artisans du Val de Loire.",
+      "url": "https://maison-siranno.fr",
+      "telephone": "+33647344364",
+      "email": "contact@yoanndelaloy.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Yoann Delaloy",
+        "jobTitle": "Fondateur & Lead Architect",
+        "url": "https://yoanndelaloy.fr/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 rue Auguste Grivot",
+        "addressLocality": "Châteauneuf-sur-Loire",
+        "postalCode": "45110",
+        "addressRegion": "Loiret",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.8667,
+        "longitude": 2.2167
+      },
+      "areaServed": [
+        "Châteauneuf-sur-Loire",
+        "Loiret",
+        "Val de Loire",
+        "Orléans",
+        "Centre-Val de Loire"
+      ],
+      "serviceType": [
+        "Création de sites web",
+        "Automatisation par IA",
+        "Outils métiers sur mesure",
+        "Stratégie digitale",
+        "Sécurité informatique"
+      ],
+      "priceRange": "€€",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/yoann-delaloy/",
+        "https://github.com/YoannDELALOY",
+        "https://www.instagram.com/yoanndelaloy/",
+        "https://www.facebook.com/profile.php?id=100067966427089",
+        "https://yoanndelaloy.fr/"
+      ]
+    }
+    </script>
+
+    <!-- ===================== FONTS ===================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!-- Tailwind Config for Custom Colors from Charter -->
+    <!-- ===================== TAILWIND + CONFIG ===================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -27,7 +114,8 @@
               steel: '#9CA3AF',
               'safe-green': '#10B981',
               'risk-red': '#8B0000',
-              'paper': '#F8FAFC', // Light theme background foundation
+              'paper': '#F8F4EE',
+              'cream': '#F5F0E8',
             },
             fontFamily: {
               serif: ['"Playfair Display"', 'serif'],
@@ -40,18 +128,10 @@
             },
             keyframes: {
               blob: {
-                "0%": {
-                  transform: "translate(0px, 0px) scale(1)",
-                },
-                "33%": {
-                  transform: "translate(30px, -50px) scale(1.1)",
-                },
-                "66%": {
-                  transform: "translate(-20px, 20px) scale(0.9)",
-                },
-                "100%": {
-                  transform: "translate(0px, 0px) scale(1)",
-                },
+                "0%": { transform: "translate(0px, 0px) scale(1)" },
+                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                "100%": { transform: "translate(0px, 0px) scale(1)" },
               },
               fadeIn: {
                 '0%': { opacity: '0' },
@@ -68,51 +148,198 @@
     </script>
 
     <style>
-      /* Smooth Scrolling */
-      html {
-        scroll-behavior: smooth;
+      /* ===================== SMOOTH SCROLL ===================== */
+      html { scroll-behavior: smooth; }
+
+      /* ===================== FOND AQUARELLE PAPIER (CSS PUR) ===================== */
+      /*
+        Copié fidèlement de l'exemple maison-stratégie (2) :
+        1. Grain papier régulier (baseFrequency 0.65, opacity 0.5, multiply)
+        2. Lavis beige haut-droit (radial subtil)
+        3. Lavis ocre bas-gauche (radial subtil)
+        4. Vignettage léger (bords légèrement chauds)
+      */
+      body {
+        background-color: #F9F8F4;
+        background-image:
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperGrain)' opacity='0.5'/%3E%3C/svg%3E"),
+          radial-gradient(circle at 80% 20%, rgba(225, 215, 195, 0.3) 0%, transparent 60%),
+          radial-gradient(circle at 20% 80%, rgba(220, 210, 185, 0.3) 0%, transparent 60%),
+          radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0) 60%, rgba(210, 190, 160, 0.1) 100%);
+        background-blend-mode: multiply, normal, normal, normal;
+        background-size: 400px 400px, 100% 100%, 100% 100%, 100% 100%;
+        background-attachment: fixed;
+        color: #1A1918;
       }
-      
-      /* Liquid Glass Utilities */
+      @supports (-webkit-overflow-scrolling: touch) {
+        body { background-attachment: scroll; }
+      }
+
+      /* Sections claires semi-transparentes — le grain papier perce en dessous */
+      .bg-paper {
+        background-color: rgba(249, 248, 244, 0.55) !important;
+      }
+
+      /* ===================== TEXTURE OR "RICH 3D" — TITRES ===================== */
+      /*
+        Copié fidèlement de l'exemple maison-stratégie (2 & 3) :
+        - Gradient 5 stops : Or Profond → Or Standard → Or Vanille → Or Standard → Or Profond
+        - Grain SVG : baseFrequency 0.3 (grain large/lissé), opacity 0.8, soft-light
+        - 3 drop-shadow : simulent l'épaisseur (tranche métal) + ombre portée sur papier
+      */
+      .text-metallic-gold {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-color: #D4AF37;
+        background-image:
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E"),
+          linear-gradient(
+            135deg,
+            #B68D40 0%,
+            #D4AF37 25%,
+            #F4E095 50%,
+            #D4AF37 75%,
+            #B68D40 100%
+          );
+        background-blend-mode: soft-light, normal;
+        background-size: 200px 200px, 100% 100%;
+        filter:
+          drop-shadow(1px 1px 0px #9C7C38)
+          drop-shadow(2px 2px 0px #856625)
+          drop-shadow(4px 8px 6px rgba(26, 25, 24, 0.25));
+      }
+
+      /* ===================== TEXTURE MÉTALLIQUE BLEU NUIT (TEXTE) ===================== */
+      .text-metallic-navy {
+        background: linear-gradient(135deg,
+          #04111F 0%,
+          #0F172A 20%,
+          #1E3A5F 40%,
+          #2D5282 50%,
+          #1E3A5F 60%,
+          #0F172A 80%,
+          #04111F 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0 1px 2px rgba(14, 23, 42, 0.4));
+      }
+
+      /* ===================== BOUTON MÉTALLIQUE OR ===================== */
+      /*
+        Même grain et gradient que .text-metallic-gold mais sans background-clip:text
+        — le fond or remplit le bouton entier.
+      */
+      .btn-metallic-gold {
+        background-color: #D4AF37;
+        background-image:
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E"),
+          linear-gradient(135deg, #B68D40 0%, #D4AF37 25%, #F4E095 50%, #D4AF37 75%, #B68D40 100%);
+        background-blend-mode: soft-light, normal;
+        background-size: 200px 200px, 100% 100%;
+        box-shadow:
+          0 4px 15px rgba(197, 160, 89, 0.4),
+          inset 0 1px 0 rgba(255, 215, 0, 0.6),
+          inset 0 -1px 0 rgba(80, 50, 0, 0.4);
+        border: 1px solid rgba(212, 175, 55, 0.6);
+        color: #2D1A00 !important;
+        font-weight: 600;
+        text-shadow: 0 1px 1px rgba(255, 220, 100, 0.5);
+        transition: all 0.3s ease;
+      }
+      .btn-metallic-gold:hover {
+        box-shadow:
+          0 6px 20px rgba(197, 160, 89, 0.6),
+          inset 0 1px 0 rgba(255, 230, 100, 0.8),
+          inset 0 -1px 0 rgba(80, 50, 0, 0.3);
+        filter: brightness(1.08);
+        transform: translateY(-1px);
+      }
+
+      /* ===================== BOUTON MÉTALLIQUE CHARCOAL ===================== */
+      .btn-metallic-dark {
+        background: linear-gradient(135deg,
+          #020810 0%,
+          #0F172A 25%,
+          #1C2D4A 50%,
+          #0F172A 75%,
+          #020810 100%
+        );
+        box-shadow:
+          0 4px 15px rgba(15, 23, 42, 0.5),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        color: white !important;
+        transition: all 0.3s ease;
+      }
+      .btn-metallic-dark:hover {
+        background-color: #D4AF37;
+        background-image:
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E"),
+          linear-gradient(135deg, #B68D40 0%, #D4AF37 25%, #F4E095 50%, #D4AF37 75%, #B68D40 100%);
+        background-blend-mode: soft-light, normal;
+        background-size: 200px 200px, 100% 100%;
+        box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+        transform: translateY(-1px);
+        color: #2D1A00 !important;
+      }
+
+      /* ===================== LIQUID GLASS ===================== */
       .glass-panel {
-        background: rgba(255, 255, 255, 0.65);
+        background: rgba(255, 250, 240, 0.72);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.6);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
       }
-      
+
       .glass-card {
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 252, 245, 0.78);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.85);
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-
       .glass-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.1);
-        border-color: #C5A059;
+        box-shadow: 0 12px 40px 0 rgba(197, 160, 89, 0.15);
+        border-color: rgba(197, 160, 89, 0.4);
       }
 
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
+      /* ===================== SCROLLBAR ===================== */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #F8F4EE; }
+      ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #A08040; }
+
+      /* ===================== TEXTURE OR INLINE (textes non-titres) ===================== */
+      /*
+        Même gradient que .text-metallic-gold mais sans grain ni drop-shadow lourds.
+        Adapté aux badges, labels, CTA textuels, rôles, catégories.
+      */
+      .text-metallic-gold-inline {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(135deg, #B68D40 0%, #D4AF37 25%, #F4E095 50%, #D4AF37 75%, #B68D40 100%);
+        filter: drop-shadow(0 1px 1px rgba(156, 124, 56, 0.35));
       }
-      ::-webkit-scrollbar-track {
-        background: #F8FAFC;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #C5A059;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #A08040;
+
+      /* ===================== MOBILE RESPONSIVE ===================== */
+      @media (max-width: 767px) {
+        h1 { font-size: 3rem !important; line-height: 1.15 !important; }
+        h2 { font-size: 2rem !important; }
+        h3 { font-size: 1.4rem !important; }
+        p { font-size: 1rem !important; }
+        .mobile-px { padding-left: 1.25rem; padding-right: 1.25rem; }
       }
     </style>
-  <script type="importmap">
+
+    <script type="importmap">
 {
   "imports": {
     "react/": "https://esm.sh/react@^19.2.4/",
@@ -123,8 +350,9 @@
   }
 }
 </script>
-</head>
+  </head>
   <body class="bg-paper text-charcoal font-sans antialiased selection:bg-gold selection:text-white">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

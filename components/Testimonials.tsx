@@ -1,74 +1,184 @@
-import React from 'react';
-import { Star, Quote } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Star, Quote, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { SectionId } from '../types';
 
-const testimonials = [
+interface Testimonial {
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+  image: string;
+  projectId: string;
+}
+
+const testimonials: Testimonial[] = [
   {
-    name: "Sophie Dubois",
-    role: "Gérante, Fleuriste du Château",
-    content: "Yoann a su traduire l'âme de ma boutique dans un site web. Je ne voulais pas d'un truc froid et technique. Le résultat est magnifique et mes commandes en ligne ont doublé.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
+    name: "Julien Delaloy",
+    role: "Fondateur",
+    company: "JD Rénovation",
+    content: "Yoann a su créer notre présence numérique de A à Z. Site vitrine, identité visuelle, référencement local... en quelques semaines, notre entreprise de rénovation est devenue visible sur toute la région. Les demandes de devis ont explosé dès le premier mois.",
+    image: "https://randomuser.me/api/portraits/men/52.jpg",
+    projectId: "jd-renovation"
   },
   {
-    name: "Marc Alibert",
-    role: "Directeur, Alibert Construction",
-    content: "L'application métier développée par Siranno nous fait gagner 10h par semaine sur la gestion administrative. Une approche pro, carrée, mais toujours à l'écoute.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
-  },
-  {
-    name: "Julie & Thomas",
-    role: "Fondateurs, La Table de Loire",
-    content: "L'intégration de l'IA pour les réservations a été un game-changer. Plus d'appels manqués pendant le service. C'est du luxe accessible.",
-    image: "https://randomuser.me/api/portraits/women/68.jpg"
+    name: "Sylvie Bidoux",
+    role: "Gérante",
+    company: "SI Griveaux",
+    content: "Grâce à Yoann, nos assemblées générales sont désormais automatiquement retranscrites et résumées. Ce qui prenait plusieurs heures de travail manuel se fait en quelques minutes. Un gain de temps considérable et une fiabilité redoutable.",
+    image: "https://randomuser.me/api/portraits/women/60.jpg",
+    projectId: "si-griveaux"
   }
 ];
 
-export const Testimonials: React.FC = () => {
+interface TestimonialsProps {
+  onOpenProject?: (projectId: string) => void;
+}
+
+export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => {
+  const [current, setCurrent] = useState(0);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
+
+  const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
+  const next = () => setCurrent((c) => (c + 1) % testimonials.length);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.changedTouches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const delta = touchStartX.current - touchEndX.current;
+    if (Math.abs(delta) > 50) {
+      if (delta > 0) next();
+      else prev();
+    }
+  };
+
   return (
     <section id={SectionId.TESTIMONIALS} className="py-24 bg-paper relative overflow-hidden">
-        {/* Decorative Grid */}
-        <div className="absolute inset-0" 
-             style={{ backgroundImage: 'linear-gradient(#E5E7EB 1px, transparent 1px), linear-gradient(90deg, #E5E7EB 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.4 }}>
-        </div>
+      {/* Decorative Grid */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'linear-gradient(#E5E7EB 1px, transparent 1px), linear-gradient(90deg, #E5E7EB 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+          opacity: 0.35
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl font-bold text-charcoal mb-4">
-            Ils nous font <span className="text-gold underline decoration-gold/30 underline-offset-4">confiance</span>
+          <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-2 block">Témoignages</span>
+          <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-4">
+            Ils nous font{' '}
+            <span className="text-metallic-gold underline decoration-gold/30 underline-offset-4">confiance</span>
           </h2>
           <p className="text-steel">Des partenaires locaux qui ont franchi le cap du digital.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Desktop : grille 2 colonnes */}
+        <div className="hidden md:grid md:grid-cols-2 gap-8">
           {testimonials.map((t, i) => (
-            <div key={i} className="glass-card p-8 rounded-2xl flex flex-col relative group hover:border-gold/30 transition-colors">
-              <div className="absolute top-6 right-8 text-gold/10 group-hover:text-gold/20 transition-colors">
-                <Quote size={40} fill="currentColor" />
-              </div>
-
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, idx) => (
-                    <Star key={idx} size={16} className="text-gold fill-gold" />
-                ))}
-              </div>
-
-              <p className="text-charcoal/80 italic mb-8 flex-grow leading-relaxed relative z-10">
-                "{t.content}"
-              </p>
-
-              <div className="flex items-center gap-4 mt-auto border-t border-gray-100 pt-6">
-                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md">
-                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
-                </div>
-                <div>
-                    <div className="font-serif font-bold text-charcoal">{t.name}</div>
-                    <div className="text-xs text-steel uppercase tracking-wide">{t.role}</div>
-                </div>
-              </div>
-            </div>
+            <TestimonialCard
+              key={i}
+              t={t}
+              onOpenProject={onOpenProject}
+            />
           ))}
+        </div>
+
+        {/* Mobile : swipe unique */}
+        <div className="md:hidden">
+          <div
+            className="overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div
+              className="flex transition-transform duration-400 ease-in-out"
+              style={{ transform: `translateX(-${current * 100}%)` }}
+            >
+              {testimonials.map((t, i) => (
+                <div key={i} className="w-full shrink-0 px-1">
+                  <TestimonialCard t={t} onOpenProject={onOpenProject} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Controls mobile */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <button
+              onClick={prev}
+              className="hidden sm:flex p-3 rounded-full btn-metallic-dark text-white shadow-lg"
+              aria-label="Précédent"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            <div className="flex gap-2">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${i === current ? 'w-6 bg-gold' : 'w-2 bg-gray-300'}`}
+                  aria-label={`Témoignage ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={next}
+              className="hidden sm:flex p-3 rounded-full btn-metallic-dark text-white shadow-lg"
+              aria-label="Suivant"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+
+          {/* Indicateur swipe */}
+          <p className="text-center text-xs text-steel mt-3 italic">
+            Glissez pour naviguer
+          </p>
         </div>
       </div>
     </section>
   );
 };
+
+const TestimonialCard: React.FC<{ t: Testimonial; onOpenProject?: (id: string) => void }> = ({ t, onOpenProject }) => (
+  <div
+    className="glass-card p-8 rounded-2xl flex flex-col relative group hover:border-gold/30 transition-colors cursor-pointer"
+    onClick={() => onOpenProject?.(t.projectId)}
+    title={`Voir le projet ${t.company}`}
+  >
+    <div className="absolute top-6 right-8 text-gold/10 group-hover:text-gold/25 transition-colors">
+      <Quote size={40} fill="currentColor" />
+    </div>
+
+    {/* Indicateur cliquable */}
+    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+      <ExternalLink size={14} className="text-gold" />
+    </div>
+
+    <div className="flex gap-1 mb-6">
+      {[...Array(5)].map((_, idx) => (
+        <Star key={idx} size={16} className="text-gold fill-gold" />
+      ))}
+    </div>
+
+    <p className="text-charcoal/80 italic mb-8 flex-grow leading-relaxed relative z-10 text-base">
+      "{t.content}"
+    </p>
+
+    <div className="flex items-center gap-4 mt-auto border-t border-gray-100 pt-6">
+      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0">
+        <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+      </div>
+      <div>
+        <div className="font-serif font-bold text-charcoal">{t.name}</div>
+        <div className="text-xs text-metallic-gold-inline uppercase tracking-wide font-medium">{t.role}, {t.company}</div>
+      </div>
+    </div>
+  </div>
+);
