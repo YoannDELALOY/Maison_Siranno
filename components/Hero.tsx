@@ -37,11 +37,11 @@ export const Hero: React.FC = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             observer.disconnect();
-            // Attendre 1 s que la page soit bien chargée avant de lancer
+            // Attendre 2 s que la page soit bien chargée avant de lancer
             timer = setTimeout(() => {
               primaryCard?.classList.add('animated');
               secondaryCard?.classList.add('animated');
-            }, 1000);
+            }, 2000);
           }
         });
       },
