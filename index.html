@@ -413,22 +413,27 @@
       }
 
       /* ===================== HERO CARDS — ANIMATION SLIDE-IN LUXE ===================== */
+      /* État initial : caché via CSS (pas Tailwind) pour éviter le conflit avec fill-mode */
+      .hero-card-primary,
+      .hero-card-secondary {
+        opacity: 0;
+      }
       @keyframes slide-in-card-primary {
         0% { transform: translateX(140%) rotate(8deg); opacity: 0; }
         65% { transform: translateX(-8px) rotate(2deg); opacity: 1; }
         80% { transform: translateX(4px) rotate(3.5deg); }
-        100% { transform: translateX(0) rotate(3deg); }
+        100% { transform: translateX(0) rotate(3deg); opacity: 1; }
       }
       @keyframes slide-in-card-secondary {
         0% { transform: translateX(160%) rotate(-10deg); opacity: 0; }
         65% { transform: translateX(-6px) rotate(-7deg); opacity: 1; }
-        100% { transform: translateX(0) rotate(-6deg); }
+        100% { transform: translateX(0) rotate(-6deg); opacity: 1; }
       }
       .hero-card-primary.animated {
-        animation: slide-in-card-primary 1s cubic-bezier(0.34,1.4,0.64,1) forwards;
+        animation: slide-in-card-primary 1.8s cubic-bezier(0.34,1.2,0.64,1) forwards;
       }
       .hero-card-secondary.animated {
-        animation: slide-in-card-secondary 1.2s cubic-bezier(0.34,1.4,0.64,1) 0.15s forwards;
+        animation: slide-in-card-secondary 2.2s cubic-bezier(0.34,1.2,0.64,1) 0.25s forwards;
       }
 
       /* ===================== HOVER FOND METALLIC (réseaux sociaux) ===================== */

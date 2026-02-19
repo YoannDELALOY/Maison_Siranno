@@ -36,13 +36,12 @@ export const Hero: React.FC = () => {
           if (entry.isIntersecting) {
             primaryCard?.classList.add('animated');
             secondaryCard?.classList.add('animated');
-          } else {
-            primaryCard?.classList.remove('animated');
-            secondaryCard?.classList.remove('animated');
+            // Une fois animées, on n'observe plus (les cartes restent visibles)
+            observer.disconnect();
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     observer.observe(el);
@@ -114,7 +113,7 @@ export const Hero: React.FC = () => {
 
               {/* Carte principale (blanche) */}
               <div
-                className="hero-card-primary absolute top-0 right-0 w-64 h-80 rounded-2xl z-20 transform rotate-3 hover:rotate-0 transition-[box-shadow,border] duration-700 shadow-2xl p-6 flex flex-col gap-2 opacity-0"
+                className="hero-card-primary absolute top-0 right-0 w-64 h-80 rounded-2xl z-20 transform rotate-3 hover:rotate-0 transition-[box-shadow,border] duration-700 shadow-2xl p-6 flex flex-col gap-2"
                 style={{
                   background: 'rgba(255,250,240,0.92)',
                   backdropFilter: 'blur(16px)',
@@ -159,7 +158,7 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* Carte secondaire (sombre) */}
-              <div className="hero-card-secondary absolute bottom-4 left-[-20px] w-56 h-64 rounded-2xl z-10 transform -rotate-6 shadow-xl bg-charcoal text-white p-6 border border-white/10 opacity-0">
+              <div className="hero-card-secondary absolute bottom-4 left-[-20px] w-56 h-64 rounded-2xl z-10 transform -rotate-6 shadow-xl bg-charcoal text-white p-6 border border-white/10">
                 <div className="h-full flex flex-col justify-between opacity-90">
                   <img
                     src="/Media/Logos/Logos divers/hosting-3d-icon-png-download-8034777.webp"
