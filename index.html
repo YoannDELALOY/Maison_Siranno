@@ -419,21 +419,21 @@
         opacity: 0;
       }
       @keyframes slide-in-card-primary {
-        0% { transform: translateX(140%) rotate(8deg); opacity: 0; }
-        65% { transform: translateX(-8px) rotate(2deg); opacity: 1; }
-        80% { transform: translateX(4px) rotate(3.5deg); }
-        100% { transform: translateX(0) rotate(3deg); opacity: 1; }
+        0%   { transform: translateX(170%) rotate(24deg);  opacity: 0; }
+        60%  { transform: translateX(-14px) rotate(5deg);  opacity: 1; }
+        78%  { transform: translateX(7px)   rotate(8.5deg); }
+        100% { transform: translateX(0)     rotate(7deg);  opacity: 1; }
       }
       @keyframes slide-in-card-secondary {
-        0% { transform: translateX(160%) rotate(-10deg); opacity: 0; }
-        65% { transform: translateX(-6px) rotate(-7deg); opacity: 1; }
-        100% { transform: translateX(0) rotate(-6deg); opacity: 1; }
+        0%   { transform: translateX(190%) rotate(-26deg); opacity: 0; }
+        62%  { transform: translateX(-10px) rotate(-14deg); opacity: 1; }
+        100% { transform: translateX(0)    rotate(-13deg); opacity: 1; }
       }
       .hero-card-primary.animated {
-        animation: slide-in-card-primary 1.8s cubic-bezier(0.34,1.2,0.64,1) forwards;
+        animation: slide-in-card-primary 2.6s cubic-bezier(0.34,1.15,0.64,1) forwards;
       }
       .hero-card-secondary.animated {
-        animation: slide-in-card-secondary 2.2s cubic-bezier(0.34,1.2,0.64,1) 0.25s forwards;
+        animation: slide-in-card-secondary 3s cubic-bezier(0.34,1.15,0.64,1) 0.35s forwards;
       }
 
       /* ===================== HOVER FOND METALLIC (réseaux sociaux) ===================== */

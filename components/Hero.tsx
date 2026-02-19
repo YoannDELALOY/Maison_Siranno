@@ -30,14 +30,18 @@ export const Hero: React.FC = () => {
     const primaryCard = el.querySelector('.hero-card-primary') as HTMLElement | null;
     const secondaryCard = el.querySelector('.hero-card-secondary') as HTMLElement | null;
 
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            primaryCard?.classList.add('animated');
-            secondaryCard?.classList.add('animated');
-            // Une fois animées, on n'observe plus (les cartes restent visibles)
             observer.disconnect();
+            // Attendre 1 s que la page soit bien chargée avant de lancer
+            timer = setTimeout(() => {
+              primaryCard?.classList.add('animated');
+              secondaryCard?.classList.add('animated');
+            }, 1000);
           }
         });
       },
@@ -45,7 +49,10 @@ export const Hero: React.FC = () => {
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (timer) clearTimeout(timer);
+    };
   }, []);
 
   return (
