@@ -416,46 +416,34 @@
       /* État initial : caché via CSS (pas Tailwind) pour éviter le conflit avec fill-mode */
       .hero-card-primary,
       .hero-card-secondary {
-        opacity: 0;
+        /* opacity: 0; */
       }
       /*
-       * ANIMATION BILLARD :
-       * 0%→5%   : hors-écran droite, opacity 0→1 (vitesse constante dès le départ)
-       * 5%→52%  : approche à vitesse CONSTANTE — 1.5 tours (540°) antihoraire
-       *            → le dernier demi-tour arrive sur le côté droit du titre ("e" de Numérique)
-       * 52%→80% : rebond ease-out — repart à droite en décélérant progressivement
-       *            → légère surtension en rotation (overshoot) = effet "destabilisé"
-       * 80%→100%: amortissement doux — micro-correction de rotation vers position finale
-       *
-       * Astuce : animation-timing-function PAR keyframe pour mixer ease-in (approche)
-       * et ease-out (rebond) dans la même animation.
-       * Arc en Y : primaire vient d'en haut (-55px→0), secondaire d'en bas (+45px→0).
-       * Légère accélération sur l'approche (cubic-bezier ease-in subtil).
+       * ANIMATION BILLARD (V2 SIMPLIFIED) :
+       * Départ : Hors écran droite (90vw)
+       * Impact : 52%
+       * Vitesse CONSTANTE (linear) jusqu'à 52%.
        */
       @keyframes slide-in-card-primary {
-        0%   { transform: translateX(180%) translateY(-55px) rotate(732deg);             opacity: 0; animation-timing-function: cubic-bezier(0.4,0,0.9,1); }
-        5%   { transform: translateX(161%) translateY(-50px) rotate(680deg);             opacity: 1; animation-timing-function: cubic-bezier(0.4,0,0.9,1); }
-        28%  { transform: translateX(30%)  translateY(-22px) rotate(441deg);             opacity: 1; animation-timing-function: cubic-bezier(0.4,0,0.9,1); }
-        52%  { transform: translateX(calc(-20vw + 15px)) translateY(0px) rotate(192deg); opacity: 1; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); }
-        80%  { transform: translateX(30px)  translateY(0px) rotate(-8deg);               opacity: 1; animation-timing-function: ease-in-out; }
-        100% { transform: translateX(22px)  translateY(0px) rotate(12deg);               opacity: 1; }
+        0%   { transform: translateX(90vw) translateY(-400px) rotate(720deg);             opacity: 1; animation-timing-function: linear; }
+        52%  { transform: translateX(calc(-20vw + 15px)) translateY(0px) rotate(192deg);   opacity: 1; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); }
+        80%  { transform: translateX(30px)  translateY(0px) rotate(-8deg);                 opacity: 1; animation-timing-function: ease-in-out; }
+        100% { transform: translateX(22px)  translateY(0px) rotate(12deg);                 opacity: 1; }
       }
-      /* Carte secondaire : arc inverse — part d'en bas, courbe vers le haut */
+      /* Carte secondaire */
       @keyframes slide-in-card-secondary {
-        0%   { transform: translateX(200%) translateY(45px)  rotate(-740deg);             opacity: 0; animation-timing-function: cubic-bezier(0.4,0,0.9,1); }
-        5%   { transform: translateX(181%) translateY(40px)  rotate(-690deg);             opacity: 1; animation-timing-function: cubic-bezier(0.4,0,0.9,1); }
-        28%  { transform: translateX(45%)  translateY(18px)  rotate(-460deg);             opacity: 1; animation-timing-function: cubic-bezier(0.4,0,0.9,1); }
-        54%  { transform: translateX(calc(-18vw + 15px)) translateY(0px) rotate(-200deg); opacity: 1; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); }
-        82%  { transform: translateX(34px)  translateY(0px)  rotate(10deg);               opacity: 1; animation-timing-function: ease-in-out; }
-        100% { transform: translateX(26px)  translateY(0px)  rotate(-20deg);              opacity: 1; }
+        0%   { transform: translateX(90vw) translateY(-300px) rotate(740deg);             opacity: 1; animation-timing-function: linear; }
+        54%  { transform: translateX(calc(-18vw + 15px)) translateY(0px) rotate(160deg);   opacity: 1; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); }
+        82%  { transform: translateX(34px)  translateY(0px)  rotate(10deg);                opacity: 1; animation-timing-function: ease-in-out; }
+        100% { transform: translateX(26px)  translateY(0px)  rotate(-20deg);               opacity: 1; }
       }
       /* fill-mode: both — pendant le délai JS, les cartes sont déjà hors-écran (0% keyframe) */
-      /* Secondaire part en premier (0s), primaire avec 0.5s de décalage */
+      /* Secondaire part en premier (0s), primaire avec 0.3s de décalage */
       .hero-card-primary.animated {
-        animation: slide-in-card-primary 4s linear 0.5s both;
+        animation: slide-in-card-primary 4.8s linear 0.3s both;
       }
       .hero-card-secondary.animated {
-        animation: slide-in-card-secondary 4.5s linear both;
+        animation: slide-in-card-secondary 5.2s linear both;
       }
       /* État settled (après animationend) — hover interactif restauré */
       .hero-card-primary.hero-card-settled {

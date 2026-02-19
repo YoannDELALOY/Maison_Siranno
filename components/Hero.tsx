@@ -113,9 +113,9 @@ export const Hero: React.FC = () => {
             { transform: `translate(${dx * 0.2}px,${-8}px) rotate(${dr * 0.15}deg) scale(1.05)`,        opacity: 1, offset: 0.1 },
             { transform: `translate(${dx}px,${dy}px) rotate(${dr}deg) scale(0.7)`,                       opacity: 0          },
           ],
-          { duration: 1500, delay: d, easing: 'cubic-bezier(0.25,0.46,0.45,0.94)', fill: 'forwards' }
+          { duration: 2500, delay: d, easing: 'cubic-bezier(0.25,0.46,0.45,0.94)', fill: 'forwards' }
         );
-        setTimeout(() => { if (s.parentElement) s.remove(); }, 1650 + d);
+        setTimeout(() => { if (s.parentElement) s.remove(); }, 2650 + d);
       });
     };
     // ───────────────────────────────────────────────────────────────────────
@@ -124,12 +124,12 @@ export const Hero: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Délai 1.5 s, puis animation (fill-mode:both place déjà les cartes hors-écran pendant ce délai)
+            // Délai 1 s, puis animation (fill-mode:both place déjà les cartes hors-écran pendant ce délai)
             timer = setTimeout(() => {
               primaryCard?.classList.add('animated');
               secondaryCard?.classList.add('animated');
 
-              // Effet verre cassé : la carte secondaire (qui part en premier) tape à 54% de 4.5s = 2430ms
+              // Effet verre cassé : la carte secondaire (qui part en premier) tape à 54% de 5.2s = 2808ms
               glassTimer = setTimeout(() => {
                 if (!numeriqueEl) return;
                 const heroRect = el.getBoundingClientRect();
@@ -137,7 +137,7 @@ export const Hero: React.FC = () => {
                 const cx = numRect.right - heroRect.left;
                 const cy = numRect.top - heroRect.top + numRect.height * 0.65;
                 spawnGlassShards(cx, cy);
-              }, 2430);
+              }, 2808);
 
               // Une fois l'animation terminée, activer le hover interactif via la classe settled
               primaryCard?.addEventListener('animationend', () => {
@@ -146,7 +146,7 @@ export const Hero: React.FC = () => {
               secondaryCard?.addEventListener('animationend', () => {
                 secondaryCard.classList.add('hero-card-settled');
               }, { once: true });
-            }, 1500);
+            }, 1000);
           } else {
             // L'utilisateur est reparti : annuler les timers et réinitialiser pour replay
             if (timer) { clearTimeout(timer); timer = null; }
