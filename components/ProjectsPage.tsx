@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { ExternalLink, ArrowRight, Star, Quote } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Star, Quote, BookOpen } from 'lucide-react';
 import { projectsData, ProjectData } from './Projects';
 
 interface ProjectsPageProps {
   onOpenProject?: (project: ProjectData) => void;
+  onNavigateBlogArticle?: (projectId: string) => void;
   onGoToContact?: () => void;
 }
 
@@ -28,38 +29,29 @@ const testimonials = [
 
 interface ProjectCardPageProps {
   project: ProjectData;
-  onClick: (project: ProjectData) => void;
+  onNavigate: (projectId: string) => void;
 }
 
-const ProjectCardPage: React.FC<ProjectCardPageProps> = ({ project, onClick }) => {
-  const [style3d, setStyle3d] = useState<React.CSSProperties>({});
-
-  const handleMouseEnter = () => {
-    setStyle3d({
-      transform: 'perspective(800px) rotateY(2deg) rotateX(1deg) translateY(-6px)',
-      transition: 'transform 0.3s ease',
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setStyle3d({
-      transform: 'perspective(800px) rotateY(0deg) rotateX(0deg) translateY(0px)',
-      transition: 'transform 0.3s ease',
-    });
-  };
-
+const ProjectCardPage: React.FC<ProjectCardPageProps> = ({ project, onNavigate }) => {
   return (
     <div
-      className="group relative rounded-2xl overflow-hidden border border-[#1E3A5F]/50 hover:border-gold/40 cursor-pointer"
+      className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2"
       style={{
-        background: '#0D1B2A',
-        boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)',
-        ...style3d,
+        backgroundColor: '#0F172A',
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")`,
+        backgroundSize: '600px 600px',
+        backgroundBlendMode: 'overlay',
+        borderLeft: '3px solid #D4AF37',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 24px 0 48px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)',
       }}
-      onClick={() => onClick(project)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onClick={() => onNavigate(project.id)}
     >
+      {/* Effet reliure / courbure page */}
+      <div
+        className="absolute top-0 left-0 bottom-0 w-8 pointer-events-none z-10"
+        style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 40%, transparent 100%)' }}
+      ></div>
+
       <div className="h-52 overflow-hidden relative">
         <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors z-10"></div>
         <img
@@ -70,14 +62,15 @@ const ProjectCardPage: React.FC<ProjectCardPageProps> = ({ project, onClick }) =
       </div>
 
       <div className="p-6 relative">
+        {/* Bouton "Lire" au survol */}
         <div className="absolute top-0 right-6 -translate-y-1/2 btn-metallic-gold text-charcoal p-2.5 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:-translate-y-1/2 transition-all duration-300 shadow-lg z-20">
-          <ExternalLink size={16} />
+          <BookOpen size={16} />
         </div>
 
         <div className="text-xs font-medium text-metallic-gold-inline mb-1 uppercase tracking-wider">
           {project.category}
         </div>
-        <h3 className="font-serif text-lg font-bold mb-2 text-metallic-silver">
+        <h3 className="font-serif text-lg font-bold mb-2 text-metallic-silver group-hover:text-white transition-colors">
           {project.title}
         </h3>
         <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
@@ -101,7 +94,17 @@ const ProjectCardPage: React.FC<ProjectCardPageProps> = ({ project, onClick }) =
   );
 };
 
-export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onGoToContact }) => {
+export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNavigateBlogArticle, onGoToContact }) => {
+
+  const handleCardClick = (projectId: string) => {
+    if (onNavigateBlogArticle) {
+      onNavigateBlogArticle(projectId);
+    } else if (onOpenProject) {
+      const project = projectsData.find((p) => p.id === projectId);
+      if (project) onOpenProject(project);
+    }
+  };
+
   return (
     <div className="min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -121,13 +124,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onGoT
           </p>
         </div>
 
-        {/* Grille de projets */}
+        {/* Grille de projets — style page de livre */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {projectsData.map((project) => (
             <ProjectCardPage
               key={project.id}
               project={project}
-              onClick={(p) => onOpenProject?.(p)}
+              onNavigate={handleCardClick}
             />
           ))}
         </div>
@@ -157,7 +160,9 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onGoT
 
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, idx) => (
-                    <Star key={idx} size={16} className="text-gold fill-gold" />
+                    <span key={idx} className="icon-metallic-gold inline-flex">
+                      <Star size={16} fill="#D4AF37" color="#D4AF37" />
+                    </span>
                   ))}
                 </div>
 

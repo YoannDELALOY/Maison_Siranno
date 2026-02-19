@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ArrowRight, Sparkles, Phone } from 'lucide-react';
 import { SectionId } from '../types';
 
@@ -21,9 +21,38 @@ const TechLogo: React.FC<{ src: string; alt: string; fallback: string }> = ({ sr
 );
 
 export const Hero: React.FC = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+
+    const primaryCard = el.querySelector('.hero-card-primary') as HTMLElement | null;
+    const secondaryCard = el.querySelector('.hero-card-secondary') as HTMLElement | null;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            primaryCard?.classList.add('animated');
+            secondaryCard?.classList.add('animated');
+          } else {
+            primaryCard?.classList.remove('animated');
+            secondaryCard?.classList.remove('animated');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id={SectionId.HOME}
+      ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-8 md:pb-16"
     >
       {/* Background Blobs Animation */}
@@ -70,7 +99,7 @@ export const Hero: React.FC = () => {
 
             <a
               href="tel:+33647344364"
-              className="flex items-center gap-2 px-6 py-3 md:py-4 text-charcoal font-medium hover:text-gold transition-colors border border-charcoal/20 rounded-full hover:border-gold/50"
+              className="flex items-center gap-2 px-6 py-3 md:py-4 text-charcoal font-medium hover-metallic-gold transition-all duration-300 border border-charcoal/20 rounded-full hover:border-gold/50"
             >
               <Phone size={16} className="text-gold" />
               06 47 34 43 64
@@ -85,7 +114,7 @@ export const Hero: React.FC = () => {
 
               {/* Carte principale (blanche) */}
               <div
-                className="absolute top-0 right-0 w-64 h-80 rounded-2xl z-20 transform rotate-3 hover:rotate-0 transition-all duration-700 shadow-2xl p-6 flex flex-col justify-between"
+                className="hero-card-primary absolute top-0 right-0 w-64 h-80 rounded-2xl z-20 transform rotate-3 hover:rotate-0 transition-[box-shadow,border] duration-700 shadow-2xl p-6 flex flex-col gap-2 opacity-0"
                 style={{
                   background: 'rgba(255,250,240,0.92)',
                   backdropFilter: 'blur(16px)',
@@ -96,7 +125,7 @@ export const Hero: React.FC = () => {
                 }}
               >
                 {/* Label Maison Siranno en haut */}
-                <div className="flex justify-between items-start">
+                <div className="flex justify-between items-start shrink-0">
                   <div className="flex items-center gap-2">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-50 to-white flex items-center justify-center shadow-inner border border-gold/30">
                       <img
@@ -110,44 +139,33 @@ export const Hero: React.FC = () => {
                   <div className="px-2 py-1 bg-green-100 text-safe-green text-xs rounded-full font-medium">En ligne</div>
                 </div>
 
-                {/* Logos technos */}
-                <div className="space-y-3">
-                  <p className="text-xs text-steel/70 font-medium uppercase tracking-wider">Stack & Outils</p>
-                  <div className="flex gap-2 items-center flex-wrap">
-                    <TechLogo
-                      src="https://logo.clearbit.com/n8n.io"
-                      alt="N8N"
-                      fallback="N8N"
-                    />
-                    <TechLogo
-                      src="/Media/Logos/Logos divers/claude-ai.jpg"
-                      alt="Claude AI"
-                      fallback="AI"
-                    />
-                    <TechLogo
-                      src="/Media/Logos/Logos divers/Google_Gemini_icon_2025.svg.png"
-                      alt="Google Gemini"
-                      fallback="G"
-                    />
-                    <TechLogo
-                      src="/Media/Logos/Logos divers/icone-medias-sociaux-linkedin-3d_466778-2577.avif"
-                      alt="LinkedIn"
-                      fallback="in"
+                {/* Stack & Outils — s'étire pour remplir l'espace */}
+                <div className="flex flex-col flex-1 min-h-0">
+                  <p className="text-xs text-steel/70 font-medium uppercase tracking-wider shrink-0 mb-1">Stack & Outils</p>
+                  <div className="flex-1 min-h-0 relative">
+                    <img
+                      src="/Media/Logos/Logos divers/Design_sans_titre_2026-02-19T135224.213.png"
+                      alt="Stack & Outils"
+                      className="absolute inset-1 w-full h-full object-contain scale-[1.1] opacity-60"
                     />
                   </div>
                 </div>
 
-                <div className="font-serif font-bold text-charcoal">
-                  <span className="text-3xl text-metallic-gold">+145%</span>
+                <div className="font-serif font-bold text-charcoal shrink-0">
+                  <span className="text-3xl text-metallic-gold">+27%</span>
                   <br />
                   <span className="text-sm font-sans text-steel font-normal">Croissance Digitale</span>
                 </div>
               </div>
 
               {/* Carte secondaire (sombre) */}
-              <div className="absolute bottom-4 left-[-20px] w-56 h-64 rounded-2xl z-10 transform -rotate-6 shadow-xl bg-charcoal text-white p-6 border border-white/10">
+              <div className="hero-card-secondary absolute bottom-4 left-[-20px] w-56 h-64 rounded-2xl z-10 transform -rotate-6 shadow-xl bg-charcoal text-white p-6 border border-white/10 opacity-0">
                 <div className="h-full flex flex-col justify-between opacity-90">
-                  <Sparkles className="text-gold" />
+                  <img
+                    src="/Media/Logos/Logos divers/hosting-3d-icon-png-download-8034777.webp"
+                    alt="Hosting"
+                    className="w-10 h-10 object-contain"
+                  />
                   <p className="font-serif italic text-lg leading-snug">
                     "L'IA comme levier de précision absolue."
                   </p>

@@ -125,8 +125,8 @@ export const Contact: React.FC = () => {
               <div className="space-y-6">
                 {/* Adresse */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 text-gold shrink-0">
-                    <MapPin size={22} />
+                  <div className="p-3 bg-gold/10 rounded-lg border border-gold/25 shrink-0 shadow-[0_0_12px_rgba(197,160,89,0.15)]">
+                    <MapPin size={22} className="icon-metallic-gold" />
                   </div>
                   <div>
                     <h4 className="font-medium text-white mb-1">Nous rencontrer</h4>
@@ -140,8 +140,8 @@ export const Contact: React.FC = () => {
 
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 text-gold shrink-0">
-                    <Mail size={22} />
+                  <div className="p-3 bg-gold/10 rounded-lg border border-gold/25 shrink-0 shadow-[0_0_12px_rgba(197,160,89,0.15)]">
+                    <Mail size={22} className="icon-metallic-gold" />
                   </div>
                   <div>
                     <h4 className="font-medium text-white mb-1">Email</h4>
@@ -156,8 +156,8 @@ export const Contact: React.FC = () => {
 
                 {/* Téléphone — cliquable */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 text-gold shrink-0">
-                    <Phone size={22} />
+                  <div className="p-3 bg-gold/10 rounded-lg border border-gold/25 shrink-0 shadow-[0_0_12px_rgba(197,160,89,0.15)]">
+                    <Phone size={22} className="icon-metallic-gold" />
                   </div>
                   <div>
                     <h4 className="font-medium text-white mb-1">Téléphone</h4>
@@ -182,7 +182,7 @@ export const Contact: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       title={s.label}
-                      className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-gold hover:text-charcoal border border-white/10 rounded-lg text-gray-300 text-xs font-medium transition-all duration-200"
+                      className="flex items-center gap-2 px-3 py-2 bg-white/5 hover-bg-metallic border border-white/10 rounded-lg text-gray-300 text-xs font-medium transition-all duration-200"
                     >
                       {s.icon}
                       <span>{s.label}</span>
@@ -333,7 +333,7 @@ export const Contact: React.FC = () => {
 
                 <p className="text-xs text-steel text-center">
                   Ou appelez directement :{' '}
-                  <a href={PHONE_HREF} className="text-gold font-semibold hover:underline">
+                  <a href={PHONE_HREF} className="phone-link-hover-gold font-semibold">
                     {PHONE_NUMBER}
                   </a>
                 </p>

@@ -44,31 +44,43 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
           return (
             <div
               key={service.id}
-              className={`py-20 ${isEven ? '' : 'bg-white/40'}`}
+              className="py-20 group relative"
               style={
-                !isEven
+                isEven
                   ? {
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperGrain)' opacity='0.3'/%3E%3C/svg%3E")`,
-                      backgroundSize: '400px 400px',
-                      backgroundBlendMode: 'multiply',
+                      backgroundColor: 'rgba(30, 58, 95, 0.04)',
                     }
-                  : {}
+                  : {
+                      backgroundColor: '#0F172A',
+                      backgroundImage: [
+                        `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg1)' opacity='0.45'/%3E%3C/svg%3E")`,
+                        `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg2)' opacity='0.22'/%3E%3C/svg%3E")`,
+                      ].join(', '),
+                      backgroundSize: '600px 600px, 200px 200px',
+                      backgroundBlendMode: 'overlay, screen',
+                      boxShadow: 'inset 0 1px 0 rgba(212,175,55,0.12), inset 0 -1px 0 rgba(212,175,55,0.08)',
+                    }
               }
             >
+              {/* Barre gold — sweep de gauche à droite au hover */}
+              <div
+                className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#B68D40]/80 via-[#F4E095] to-[#B68D40]/80 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out"
+                style={{ boxShadow: '0 0 12px rgba(212,175,55,0.6), 0 2px 8px rgba(212,175,55,0.3)' }}
+              ></div>
               <div className="max-w-7xl mx-auto px-6">
                 <div className={`grid lg:grid-cols-2 gap-12 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
 
                   {/* Icône / Visuel */}
                   <div className={`flex items-center justify-center ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                     <div className="relative">
-                      <div className="w-48 h-48 rounded-3xl bg-gradient-to-br from-charcoal to-[#1E3A5F] flex items-center justify-center shadow-2xl">
+                      <div className={`w-48 h-48 rounded-3xl flex items-center justify-center shadow-2xl ${isEven ? 'bg-gradient-to-br from-charcoal to-[#1E3A5F]' : 'bg-gradient-to-br from-[#1E3A5F] to-charcoal border border-white/10'}`}>
                         <div className="text-gold scale-[3]">
                           {service.icon}
                         </div>
                       </div>
                       {/* Décoration */}
-                      <div className="absolute -top-4 -right-4 w-20 h-20 bg-gold/10 rounded-2xl -z-10 rotate-12"></div>
-                      <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-100/60 rounded-xl -z-10 -rotate-6"></div>
+                      <div className={`absolute -top-4 -right-4 w-20 h-20 rounded-2xl -z-10 rotate-12 ${isEven ? 'bg-gold/10' : 'bg-gold/20'}`}></div>
+                      <div className={`absolute -bottom-4 -left-4 w-16 h-16 rounded-xl -z-10 -rotate-6 ${isEven ? 'bg-blue-100/60' : 'bg-white/5'}`}></div>
                     </div>
                   </div>
 
@@ -78,11 +90,11 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                       Prestation #{index + 1}
                     </span>
 
-                    <h2 className="font-serif text-4xl font-bold text-metallic-navy leading-tight">
+                    <h2 className={`font-serif text-4xl font-bold leading-tight ${isEven ? 'text-metallic-navy' : 'text-white'}`}>
                       {service.title}
                     </h2>
 
-                    <p className="text-steel text-lg leading-relaxed">
+                    <p className={`text-lg leading-relaxed ${isEven ? 'text-steel' : 'text-gray-300'}`}>
                       {service.fullDescription || service.description}
                     </p>
 
@@ -90,7 +102,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                       {service.benefits.map((b, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <CheckCircle2 size={18} className="text-safe-green shrink-0 mt-0.5" />
-                          <span className="text-charcoal/80">{b}</span>
+                          <span className={isEven ? 'text-charcoal/80' : 'text-gray-300'}>{b}</span>
                         </li>
                       ))}
                     </ul>

@@ -163,7 +163,9 @@ const TestimonialCard: React.FC<{ t: Testimonial; onOpenProject?: (id: string) =
 
     <div className="flex gap-1 mb-6">
       {[...Array(5)].map((_, idx) => (
-        <Star key={idx} size={16} className="text-gold fill-gold" />
+        <span key={idx} className="star-metallic-gold inline-flex">
+          <Star size={16} fill="#D4AF37" color="#D4AF37" />
+        </span>
       ))}
     </div>
 

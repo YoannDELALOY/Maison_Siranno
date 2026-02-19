@@ -368,6 +368,79 @@
         border-radius: inherit;
       }
 
+      /* ===================== HOVER METALLIC GOLD (liens nav, boutons texte) ===================== */
+      .hover-metallic-gold {
+        transition: filter 0.2s ease;
+      }
+      .hover-metallic-gold:hover {
+        background: linear-gradient(135deg, #B68D40 0%, #D4AF37 30%, #F4E095 50%, #D4AF37 70%, #B68D40 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 1px 2px rgba(182,141,64,0.4));
+      }
+
+      /* ===================== ICÔNES GOLD CLINQUANT — PULSE ANIMÉ ===================== */
+      @keyframes gold-glow-pulse {
+        0%, 100% { filter: drop-shadow(0 0 3px rgba(212,175,55,0.6)); }
+        50% { filter: drop-shadow(0 0 6px rgba(212,175,55,1)) drop-shadow(0 0 10px rgba(244,224,149,0.4)); }
+      }
+      .icon-metallic-gold {
+        color: #D4AF37;
+        filter: drop-shadow(0 0 4px rgba(212,175,55,0.7));
+        animation: gold-glow-pulse 3s ease-in-out infinite;
+      }
+
+      /* ===================== ÉTOILES OR MÉTALLIQUE ===================== */
+      .star-metallic-gold {
+        filter: drop-shadow(0 0 3px rgba(212,175,55,0.9)) drop-shadow(0 1px 0px #9C7C38);
+      }
+      .star-metallic-gold svg { filter: brightness(1.1); }
+
+      /* ===================== LIEN TÉLÉPHONE HOVER GOLD ===================== */
+      .phone-link-hover-gold {
+        color: #0F172A;
+        transition: color 0.3s ease, filter 0.3s ease;
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+      .phone-link-hover-gold:hover {
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: linear-gradient(135deg, #B68D40 0%, #D4AF37 25%, #F4E095 50%, #D4AF37 75%, #B68D40 100%);
+        filter: drop-shadow(0 1px 1px rgba(156,124,56,0.35));
+      }
+
+      /* ===================== HERO CARDS — ANIMATION SLIDE-IN LUXE ===================== */
+      @keyframes slide-in-card-primary {
+        0% { transform: translateX(140%) rotate(8deg); opacity: 0; }
+        65% { transform: translateX(-8px) rotate(2deg); opacity: 1; }
+        80% { transform: translateX(4px) rotate(3.5deg); }
+        100% { transform: translateX(0) rotate(3deg); }
+      }
+      @keyframes slide-in-card-secondary {
+        0% { transform: translateX(160%) rotate(-10deg); opacity: 0; }
+        65% { transform: translateX(-6px) rotate(-7deg); opacity: 1; }
+        100% { transform: translateX(0) rotate(-6deg); }
+      }
+      .hero-card-primary.animated {
+        animation: slide-in-card-primary 1s cubic-bezier(0.34,1.4,0.64,1) forwards;
+      }
+      .hero-card-secondary.animated {
+        animation: slide-in-card-secondary 1.2s cubic-bezier(0.34,1.4,0.64,1) 0.15s forwards;
+      }
+
+      /* ===================== HOVER FOND METALLIC (réseaux sociaux) ===================== */
+      .hover-bg-metallic {
+        transition: all 0.2s ease;
+      }
+      .hover-bg-metallic:hover {
+        background: linear-gradient(135deg, #B68D40 0%, #D4AF37 40%, #F4E095 100%) !important;
+        color: #1C2D4A !important;
+        border-color: transparent !important;
+      }
+
       /* ===================== MOBILE RESPONSIVE ===================== */
       @media (max-width: 767px) {
         h1 { font-size: 3rem !important; line-height: 1.15 !important; }

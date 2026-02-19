@@ -15,16 +15,20 @@ import { ExpertisePage } from './components/ExpertisePage';
 import { ProjectsPage } from './components/ProjectsPage';
 import { AgencyPage } from './components/AgencyPage';
 import { ServiceDetailPage } from './components/ServiceDetailPage';
+import { BlogPage } from './components/BlogPage';
+import { BlogArticlePage } from './components/BlogArticlePage';
+import { CookieBanner } from './components/CookieBanner';
 import { projectsData } from './components/Projects';
 import { SectionId } from './types';
 
-type Page = 'home' | 'mentions' | 'privacy' | 'expertise' | 'realisations' | 'agence' | 'service-detail';
+type Page = 'home' | 'mentions' | 'privacy' | 'expertise' | 'realisations' | 'agence' | 'service-detail' | 'blog' | 'blog-article';
 
 function App() {
   const [page, setPage] = useState<Page>('home');
   const [activeService, setActiveService] = useState<ServiceData | null>(null);
   const [activeServicePage, setActiveServicePage] = useState<ServiceData | null>(null);
   const [activeProject, setActiveProject] = useState<ProjectData | null>(null);
+  const [activeBlogProject, setActiveBlogProject] = useState<ProjectData | null>(null);
 
   const showLegal = useCallback((p: 'mentions' | 'privacy') => {
     setPage(p);
@@ -68,6 +72,21 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
+  const navigateToBlogArticle = useCallback((projectId: string) => {
+    const found = projectsData.find((p) => p.id === projectId);
+    if (found) {
+      setActiveBlogProject(found);
+      setPage('blog-article');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, []);
+
+  const backFromBlogArticle = useCallback(() => {
+    setActiveBlogProject(null);
+    setPage('blog');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   // Pages légales : sans Navbar ni Footer
   if (page === 'mentions') {
     return <LegalMentions onBack={goHome} />;
@@ -86,10 +105,10 @@ function App() {
         {page === 'home' && (
           <>
             <Hero />
-            <Services onOpenService={setActiveService} />
+            <Services onOpenService={openServiceDetail} />
             <Projects onOpenProject={openProject} />
             <About />
-            <Testimonials onOpenProject={openProject} />
+            <Testimonials onOpenProject={navigateToBlogArticle} />
             <Contact />
           </>
         )}
@@ -105,6 +124,7 @@ function App() {
         {page === 'realisations' && (
           <ProjectsPage
             onOpenProject={openProject}
+            onNavigateBlogArticle={navigateToBlogArticle}
             onGoToContact={goToContact}
           />
         )}
@@ -122,13 +142,38 @@ function App() {
             onGoToContact={goToContact}
           />
         )}
+
+        {page === 'blog' && (
+          <BlogPage
+            onNavigateBlogArticle={navigateToBlogArticle}
+            onGoToContact={goToContact}
+          />
+        )}
+
+        {page === 'blog-article' && (
+          <BlogArticlePage
+            project={activeBlogProject}
+            onBack={backFromBlogArticle}
+            onGoToContact={goToContact}
+          />
+        )}
       </main>
 
-      <Footer onShowLegal={showLegal} />
+      <Footer
+        onShowLegal={showLegal}
+        onNavigateService={openServiceDetail}
+      />
 
       {/* Modales */}
       <ServiceModal service={activeService} onClose={() => setActiveService(null)} />
-      <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
+      <ProjectModal
+        project={activeProject}
+        onClose={() => setActiveProject(null)}
+        onNavigateBlog={navigateToBlogArticle}
+      />
+
+      {/* Cookie Banner */}
+      <CookieBanner onNavigatePrivacy={() => showLegal('privacy')} />
     </div>
   );
 }
