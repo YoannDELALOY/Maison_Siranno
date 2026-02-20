@@ -313,6 +313,23 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
         </div>
       </div>
 
+      {/* Section témoignages */}
+      {testimonials.length > 0 && (
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <div className="text-center mb-12">
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-2 block">
+              Témoignages
+            </span>
+            <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-4">
+              Ils témoignent de{' '}
+              <span className="text-metallic-gold underline decoration-gold/30 underline-offset-4">leurs résultats</span>
+            </h2>
+            <p className="text-steel">Des chiffres réels, des transformations concrètes.</p>
+          </div>
+          <TestimonialsSlider testimonials={testimonials} />
+        </div>
+      )}
+
       {/* Sections alternées par projet */}
       {projects.length > 0 ? (
         <div className="space-y-0">
@@ -328,23 +345,6 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
       ) : (
         <div className="text-center py-24 text-steel max-w-7xl mx-auto px-6">
           <p className="text-lg">Aucun projet dans cette catégorie pour le moment.</p>
-        </div>
-      )}
-
-      {/* Section témoignages */}
-      {testimonials.length > 0 && (
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="text-center mb-12">
-            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-2 block">
-              Témoignages
-            </span>
-            <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-4">
-              Ils témoignent de{' '}
-              <span className="text-metallic-gold underline decoration-gold/30 underline-offset-4">leurs résultats</span>
-            </h2>
-            <p className="text-steel">Des chiffres réels, des transformations concrètes.</p>
-          </div>
-          <TestimonialsSlider testimonials={testimonials} />
         </div>
       )}
 
