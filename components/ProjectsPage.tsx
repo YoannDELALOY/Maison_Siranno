@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowRight, Star, Quote, BookOpen } from 'lucide-react';
-import { projectsData, ProjectData } from './Projects';
+import { ArrowRight, Star, Quote, BookOpen, Globe, Cpu, Megaphone, Brain, GraduationCap, ExternalLink } from 'lucide-react';
+import { projectsData, ProjectData, ExpertiseCategory } from '../data/projects';
+import { projectsTestimonials } from '../data/testimonials';
 
 interface ProjectsPageProps {
   onOpenProject?: (project: ProjectData) => void;
@@ -8,23 +9,51 @@ interface ProjectsPageProps {
   onGoToContact?: () => void;
 }
 
-const testimonials = [
+// Configuration des 5 sections expertise
+interface ExpertiseSection {
+  id: ExpertiseCategory;
+  title: string;
+  subtitle: string;
+  icon: React.ReactNode;
+  accentColor: string;
+}
+
+const expertiseSections: ExpertiseSection[] = [
   {
-    name: "Julien Delaloy",
-    role: "Fondateur",
-    company: "JD Rénovation",
-    content: "Yoann a su créer notre présence numérique de A à Z. Site vitrine, identité visuelle, référencement local... en quelques semaines, notre entreprise de rénovation est devenue visible sur toute la région. Les demandes de devis ont explosé dès le premier mois.",
-    image: "https://randomuser.me/api/portraits/men/52.jpg",
-    projectId: "jd-renovation"
+    id: 'web-apps-saas',
+    title: 'Développement Web Apps & SaaS',
+    subtitle: 'Sites vitrine, applications métiers, marketplaces, portfolios',
+    icon: <Globe size={20} />,
+    accentColor: 'from-blue-500/20 to-blue-600/10',
   },
   {
-    name: "Sylvie Bidoux",
-    role: "Gérante",
-    company: "SI Griveaux",
-    content: "Grâce à Yoann, nos assemblées générales sont désormais automatiquement retranscrites et résumées. Ce qui prenait plusieurs heures de travail manuel se fait en quelques minutes. Un gain de temps considérable et une fiabilité redoutable.",
-    image: "https://randomuser.me/api/portraits/women/60.jpg",
-    projectId: "si-griveaux"
-  }
+    id: 'automatisation-n8n',
+    title: 'Automatisation & Orchestration n8n',
+    subtitle: 'Workflows, RDV automatiques, intégrations, réduction du travail manuel',
+    icon: <Cpu size={20} />,
+    accentColor: 'from-purple-500/20 to-purple-600/10',
+  },
+  {
+    id: 'contenu-marketing-ia',
+    title: 'Création de Contenu & Marketing IA',
+    subtitle: 'Portfolios créatifs, newsletters, billetterie, présence digitale',
+    icon: <Megaphone size={20} />,
+    accentColor: 'from-rose-500/20 to-rose-600/10',
+  },
+  {
+    id: 'ia-agents-rag',
+    title: 'Intelligence Artificielle & Agents RAG',
+    subtitle: 'Chatbots IA, transcription automatique, assistants intelligents',
+    icon: <Brain size={20} />,
+    accentColor: 'from-emerald-500/20 to-emerald-600/10',
+  },
+  {
+    id: 'conseil-formation-pilotage',
+    title: 'Conseil, Formation & Pilotage',
+    subtitle: 'Stratégie SEO, audit digital, accompagnement transformation',
+    icon: <GraduationCap size={20} />,
+    accentColor: 'from-amber-500/20 to-amber-600/10',
+  },
 ];
 
 interface ProjectCardPageProps {
@@ -46,7 +75,6 @@ const ProjectCardPage: React.FC<ProjectCardPageProps> = ({ project, onNavigate }
       }}
       onClick={() => onNavigate(project.id)}
     >
-      {/* Effet reliure / courbure page */}
       <div
         className="absolute top-0 left-0 bottom-0 w-8 pointer-events-none z-10"
         style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 40%, transparent 100%)' }}
@@ -58,11 +86,11 @@ const ProjectCardPage: React.FC<ProjectCardPageProps> = ({ project, onNavigate }
           src={project.image}
           alt={project.title}
           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+          loading="lazy"
         />
       </div>
 
       <div className="p-6 relative">
-        {/* Bouton "Lire" au survol */}
         <div className="absolute top-0 right-6 -translate-y-1/2 btn-metallic-gold text-charcoal p-2.5 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:-translate-y-1/2 transition-all duration-300 shadow-lg z-20">
           <BookOpen size={16} />
         </div>
@@ -119,21 +147,44 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
             <span className="text-metallic-gold">Réalisations</span>
           </h1>
           <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed">
-            Des projets concrets, des résultats mesurables. Chaque réalisation témoigne
-            d'une collaboration unique et d'une approche sur mesure.
+            Des projets concrets, des résultats mesurables. Classés par expertise pour vous aider à trouver le projet le plus proche de votre besoin.
           </p>
         </div>
 
-        {/* Grille de projets — style page de livre */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {projectsData.map((project) => (
-            <ProjectCardPage
-              key={project.id}
-              project={project}
-              onNavigate={handleCardClick}
-            />
-          ))}
-        </div>
+        {/* Sections par expertise */}
+        {expertiseSections.map((section) => {
+          const sectionProjects = projectsData.filter((p) => p.expertise === section.id);
+          if (sectionProjects.length === 0) return null;
+
+          return (
+            <div key={section.id} className="mb-24">
+              {/* En-tête section */}
+              <div className="flex items-center gap-4 mb-10">
+                <div className={`p-3 rounded-xl bg-gradient-to-br ${section.accentColor} border border-white/20 text-gold`}>
+                  {section.icon}
+                </div>
+                <div>
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-metallic-navy">
+                    {section.title}
+                  </h2>
+                  <p className="text-steel text-sm">{section.subtitle}</p>
+                </div>
+                <div className="flex-1 h-px bg-gradient-to-r from-gold/30 to-transparent ml-4"></div>
+              </div>
+
+              {/* Grille de projets */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {sectionProjects.map((project) => (
+                  <ProjectCardPage
+                    key={project.id}
+                    project={project}
+                    onNavigate={handleCardClick}
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        })}
 
         {/* Section Témoignages */}
         <div className="mb-20">
@@ -142,25 +193,32 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
               Témoignages
             </span>
             <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-4">
-              Ils nous font{' '}
-              <span className="text-metallic-gold underline decoration-gold/30 underline-offset-4">confiance</span>
+              Ils témoignent de{' '}
+              <span className="text-metallic-gold underline decoration-gold/30 underline-offset-4">leurs résultats</span>
             </h2>
-            <p className="text-steel">Des partenaires locaux qui ont franchi le cap du digital.</p>
+            <p className="text-steel">Des chiffres réels, des transformations concrètes.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((t, i) => (
+          <div className="grid md:grid-cols-3 gap-8">
+            {projectsTestimonials.map((t, i) => (
               <div
                 key={i}
-                className="glass-card p-8 rounded-2xl flex flex-col relative group"
+                className="glass-card p-8 rounded-2xl flex flex-col relative group cursor-pointer hover:border-gold/30 transition-colors"
+                onClick={() => handleCardClick(t.projectId)}
+                title={`Voir le projet ${t.company}`}
               >
                 <div className="absolute top-6 right-8 text-gold/10 group-hover:text-gold/25 transition-colors">
                   <Quote size={40} fill="currentColor" />
                 </div>
 
+                {/* Indicateur cliquable */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ExternalLink size={14} className="text-gold" />
+                </div>
+
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, idx) => (
-                    <span key={idx} className="icon-metallic-gold inline-flex">
+                    <span key={idx} className="star-metallic-gold inline-flex">
                       <Star size={16} fill="#D4AF37" color="#D4AF37" />
                     </span>
                   ))}

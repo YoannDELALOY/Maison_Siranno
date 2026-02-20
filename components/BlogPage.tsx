@@ -1,152 +1,109 @@
-import React from 'react';
-import { ArrowRight, Clock, BookOpen, Calendar, Tag } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Clock, BookOpen, Calendar, Tag, Filter } from 'lucide-react';
+import { blogArticles, categoryConfig, BlogCategory } from '../data/blog';
 
 interface BlogPageProps {
   onNavigateBlogArticle?: (projectId: string) => void;
   onGoToContact?: () => void;
 }
 
-interface BlogArticle {
-  id: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  date: string;
-  readTime: string;
-  image: string;
-  tags: string[];
-  available: boolean;
-}
-
-const blogArticles: BlogArticle[] = [
-  {
-    id: 'ia-artisans',
-    title: "L'IA au service des artisans : mythe ou réalité ?",
-    excerpt: "Automatiser ses devis, ses rappels clients, sa compta légère... Est-ce vraiment accessible à un artisan indépendant en 2025 ? Retour d'expérience terrain après 12 mois de déploiements.",
-    category: "Intelligence Artificielle",
-    date: "Janvier 2025",
-    readTime: "7 min",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
-    tags: ["IA", "Artisanat", "Automatisation"],
-    available: true,
-  },
-  {
-    id: 'seo-local-2025',
-    title: "SEO local en 2025 : ce qui fonctionne vraiment",
-    excerpt: "Google Maps, fiches établissement, avis, données structurées... Le référencement local a profondément évolué. Voici les leviers concrets qui font la différence pour les PME et commerces locaux.",
-    category: "SEO & Visibilité",
-    date: "Décembre 2024",
-    readTime: "9 min",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800",
-    tags: ["SEO", "Local", "Google", "PME"],
-    available: true,
-  },
-  {
-    id: 'automatisation-pme',
-    title: "Automatisation pour PME : par où commencer ?",
-    excerpt: "Trop de chefs d'entreprise pensent que l'automatisation c'est compliqué ou réservé aux grands groupes. Faux. Voici une méthode simple en 3 étapes pour identifier et automatiser vos tâches répétitives.",
-    category: "Automatisation",
-    date: "Novembre 2024",
-    readTime: "6 min",
-    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=800",
-    tags: ["Automatisation", "PME", "Workflow", "Productivité"],
-    available: true,
-  },
-  {
-    id: 'site-vitrine-2025',
-    title: "Pourquoi votre site vitrine vous coûte des clients",
-    excerpt: "Un site lent, non mobile, sans CTA clair, c'est une pompe à fuites. Découvrez les 5 erreurs les plus courantes sur les sites de PME et comment les corriger rapidement.",
-    category: "Stratégie Digitale",
-    date: "Bientôt",
-    readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800",
-    tags: ["Site Web", "Conversion", "UX", "PME"],
-    available: false,
-  },
-  {
-    id: 'chatbot-artisan',
-    title: "Chatbot IA pour artisan : retour d'expérience 6 mois",
-    excerpt: "Nous avons déployé un chatbot de qualification de leads pour 4 artisans locaux. Résultats, surprises, limites et bonnes pratiques : tout ce qu'on a appris sur le terrain.",
-    category: "Intelligence Artificielle",
-    date: "Bientôt",
-    readTime: "8 min",
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80&w=800",
-    tags: ["Chatbot", "IA", "Leads", "Artisanat"],
-    available: false,
-  },
+const ALL_CATEGORIES: BlogCategory[] = [
+  'Développement Web & SaaS',
+  'Automatisation & Workflows',
+  'Intelligence Artificielle',
+  'Marketing & Contenu',
+  'Stratégie & Conseil',
 ];
 
-const ArticleCard: React.FC<{ article: BlogArticle }> = ({ article }) => (
-  <div
-    className="glass-card rounded-2xl overflow-hidden flex flex-col relative group"
-    style={{ opacity: article.available ? 1 : 0.75 }}
-  >
-    {!article.available && (
-      <div className="absolute top-4 right-4 z-20">
-        <span className="px-2 py-1 bg-gold/10 text-gold text-xs rounded-full border border-gold/20 font-medium flex items-center gap-1">
-          <Clock size={10} />
-          Bientôt
-        </span>
-      </div>
-    )}
-
-    <div className="h-44 overflow-hidden relative">
-      <div className="absolute inset-0 bg-charcoal/25 group-hover:bg-charcoal/10 transition-colors z-10"></div>
-      <img
-        src={article.image}
-        alt={article.title}
-        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-      />
-    </div>
-
-    <div className="p-6 flex flex-col flex-1">
-      <div className="flex items-center gap-2 mb-3">
-        <span className="text-xs font-medium text-metallic-gold-inline uppercase tracking-wider">
-          {article.category}
-        </span>
-      </div>
-
-      <h3 className="font-serif text-lg font-bold mb-3 text-charcoal group-hover:text-charcoal/80 transition-colors leading-snug">
-        {article.title}
-      </h3>
-
-      <p className="text-steel text-sm leading-relaxed mb-4 flex-1">
-        {article.excerpt}
-      </p>
-
-      <div className="flex flex-wrap gap-2 mb-4">
-        {article.tags.slice(0, 3).map((tag) => (
-          <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-gold/8 text-charcoal/60 text-xs rounded-full border border-gold/15">
-            <Tag size={9} />
-            {tag}
+const ArticleCard: React.FC<{ article: typeof blogArticles[0]; onClick?: () => void }> = ({ article, onClick }) => {
+  const cfg = categoryConfig[article.category];
+  return (
+    <div
+      className={`glass-card rounded-2xl overflow-hidden flex flex-col relative group ${article.available ? 'cursor-pointer hover:-translate-y-1 transition-transform duration-300' : ''}`}
+      style={{ opacity: article.available ? 1 : 0.72 }}
+      onClick={article.available ? onClick : undefined}
+    >
+      {!article.available && (
+        <div className="absolute top-4 right-4 z-20">
+          <span className="px-2 py-1 bg-gold/10 text-gold text-xs rounded-full border border-gold/20 font-medium flex items-center gap-1">
+            <Clock size={10} />
+            Bientôt
           </span>
-        ))}
+        </div>
+      )}
+
+      <div className="h-44 overflow-hidden relative">
+        <div className="absolute inset-0 bg-charcoal/25 group-hover:bg-charcoal/10 transition-colors z-10"></div>
+        <img
+          src={article.image}
+          alt={article.title}
+          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+          loading="lazy"
+        />
       </div>
 
-      <div className="flex items-center justify-between text-xs text-steel border-t border-gray-100 pt-4 mt-auto">
-        <span className="flex items-center gap-1.5">
-          <Calendar size={11} />
-          {article.date}
-        </span>
-        <span className="flex items-center gap-1.5 text-gold group-hover:text-charcoal transition-colors font-medium">
-          <BookOpen size={11} />
-          {article.readTime} de lecture
-        </span>
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-center gap-2 mb-3">
+          <span className={`text-xs font-medium uppercase tracking-wider px-2 py-0.5 rounded-full border ${cfg.bgColor} ${cfg.color}`}>
+            {article.category}
+          </span>
+        </div>
+
+        <h3 className="font-serif text-lg font-bold mb-3 text-charcoal group-hover:text-charcoal/80 transition-colors leading-snug">
+          {article.title}
+        </h3>
+
+        <p className="text-steel text-sm leading-relaxed mb-4 flex-1">
+          {article.excerpt}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-4">
+          {article.tags.slice(0, 3).map((tag) => (
+            <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-gold/10 text-charcoal/60 text-xs rounded-full border border-gold/20">
+              <Tag size={9} />
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex items-center justify-between text-xs text-steel border-t border-gray-100 pt-4 mt-auto">
+          <span className="flex items-center gap-1.5">
+            <Calendar size={11} />
+            {article.date}
+          </span>
+          <span className={`flex items-center gap-1.5 font-medium ${article.available ? 'text-gold group-hover:text-charcoal transition-colors' : 'text-steel'}`}>
+            <BookOpen size={11} />
+            {article.readTime} de lecture
+          </span>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
-export const BlogPage: React.FC<BlogPageProps> = ({ onGoToContact }) => {
+export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoToContact }) => {
+  const [activeCategory, setActiveCategory] = useState<BlogCategory | 'Tous'>('Tous');
+
   const availableArticles = blogArticles.filter((a) => a.available);
   const comingSoonArticles = blogArticles.filter((a) => !a.available);
+
+  const filteredAvailable = activeCategory === 'Tous'
+    ? availableArticles
+    : availableArticles.filter((a) => a.category === activeCategory);
+
+  const filteredComing = activeCategory === 'Tous'
+    ? comingSoonArticles
+    : comingSoonArticles.filter((a) => a.category === activeCategory);
+
+  // Les 3 articles les plus récents pour la section "À lire maintenant" (filtre Tous)
+  const featuredArticles = availableArticles.slice(0, 3);
 
   return (
     <div className="min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* En-tête */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">
             Blog & Réflexions
           </span>
@@ -155,12 +112,47 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onGoToContact }) => {
             <span className="text-metallic-gold">Articles</span>
           </h1>
           <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed">
-            Retours d'expérience, conseils pratiques et réflexions sur le digital, l'IA et la transformation des entreprises locales.
+            Retours d'expérience, conseils pratiques et réflexions sur le digital, l'IA et l'automatisation pour les entreprises ambitieuses.
           </p>
         </div>
 
-        {/* Articles disponibles */}
-        {availableArticles.length > 0 && (
+        {/* Filtres catégories */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
+          <div className="flex items-center gap-2 text-sm text-steel mr-2">
+            <Filter size={14} />
+            <span>Filtrer :</span>
+          </div>
+          <button
+            onClick={() => setActiveCategory('Tous')}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all border ${
+              activeCategory === 'Tous'
+                ? 'btn-metallic-gold text-charcoal border-transparent'
+                : 'border-gray-200 text-steel hover:border-gold/50 hover:text-gold'
+            }`}
+          >
+            Tous ({availableArticles.length + comingSoonArticles.length})
+          </button>
+          {ALL_CATEGORIES.map((cat) => {
+            const count = blogArticles.filter((a) => a.category === cat).length;
+            const cfg = categoryConfig[cat];
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all border ${
+                  activeCategory === cat
+                    ? `${cfg.bgColor} ${cfg.color} border-current`
+                    : 'border-gray-200 text-steel hover:border-gold/50 hover:text-gold'
+                }`}
+              >
+                {cat} ({count})
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Section "À lire maintenant" — uniquement si filtre "Tous" */}
+        {activeCategory === 'Tous' && featuredArticles.length > 0 && (
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-10">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gold/30"></div>
@@ -170,15 +162,70 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onGoToContact }) => {
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/30"></div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {availableArticles.map((article) => (
-                <ArticleCard key={article.id} article={article} />
+              {featuredArticles.map((article) => (
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  onClick={() => onNavigateBlogArticle?.(article.id)}
+                />
               ))}
             </div>
           </div>
         )}
 
+        {/* Tous les articles disponibles quand filtre "Tous" (hors les 3 featured) */}
+        {activeCategory === 'Tous' && availableArticles.length > 3 && (
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-10">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gold/30"></div>
+              <h2 className="font-serif text-2xl font-bold text-metallic-navy whitespace-nowrap">
+                Tous nos articles
+              </h2>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/30"></div>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {availableArticles.slice(3).map((article) => (
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  onClick={() => onNavigateBlogArticle?.(article.id)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Articles filtrés disponibles (filtre catégorie actif) */}
+        {activeCategory !== 'Tous' && filteredAvailable.length > 0 && (
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-10">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gold/30"></div>
+              <h2 className="font-serif text-2xl font-bold text-metallic-navy whitespace-nowrap">
+                {activeCategory}
+              </h2>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/30"></div>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredAvailable.map((article) => (
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  onClick={() => onNavigateBlogArticle?.(article.id)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Message si aucun article disponible pour ce filtre */}
+        {activeCategory !== 'Tous' && filteredAvailable.length === 0 && filteredComing.length > 0 && (
+          <div className="text-center py-8 mb-12">
+            <p className="text-steel text-base">Aucun article disponible dans cette catégorie pour l'instant — consultez les prochaines publications ci-dessous.</p>
+          </div>
+        )}
+
         {/* Articles à venir */}
-        {comingSoonArticles.length > 0 && (
+        {filteredComing.length > 0 && (
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-10">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gold/30"></div>
@@ -187,8 +234,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onGoToContact }) => {
               </h2>
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/30"></div>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              {comingSoonArticles.map((article) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredComing.map((article) => (
                 <ArticleCard key={article.id} article={article} />
               ))}
             </div>

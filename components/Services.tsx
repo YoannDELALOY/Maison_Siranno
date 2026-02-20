@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Layout, Cpu, Database, BarChart3, Bot, Lock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Globe, Cpu, Megaphone, Brain, GraduationCap, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
+import { servicesData as rawServicesData } from '../data/services';
 
 export interface ServiceData {
   id: string;
@@ -13,104 +14,19 @@ export interface ServiceData {
   useCases: string[];
 }
 
-export const servicesData: ServiceData[] = [
-  {
-    id: 'sites-web',
-    icon: <Layout size={24} />,
-    title: "Sites Web Vivants",
-    description: "Plus qu'une vitrine, un espace d'accueil numérique. Nous créons des sites qui captent l'essence de votre activité locale avec élégance.",
-    delay: "0s",
-    fullDescription: "Un site web n'est pas qu'une carte de visite numérique. C'est votre premier commercial, disponible 24h/24 et 7j/7. Nous concevons des sites performants, élégants et optimisés pour convertir vos visiteurs en clients.",
-    benefits: [
-      "Design sur mesure reflétant votre identité",
-      "Optimisé pour le SEO local (Google Maps, search)",
-      "Mobile-first et ultra-rapide",
-      "Système de réservation ou de contact intégré",
-      "Tableau de bord pour gérer votre contenu"
-    ],
-    useCases: ["Artisans & commerçants", "Restaurants & hôtels", "Professions libérales", "PME locales"]
-  },
-  {
-    id: 'ia-compagnon',
-    icon: <Bot size={24} />,
-    title: "IA Compagnon",
-    description: "Un assistant virtuel formé pour comprendre vos clients. Il répond, guide et rassure 24/7, comme un membre de votre équipe.",
-    delay: "0.1s",
-    fullDescription: "L'intelligence artificielle n'est plus réservée aux grandes entreprises. Nous intégrons des assistants IA personnalisés à votre activité : chatbot pour votre site, assistant vocal pour votre accueil, ou outil de rédaction automatique.",
-    benefits: [
-      "Réponse aux questions clients 24/7 sans intervention",
-      "Qualification automatique des prospects",
-      "Traitement des demandes simples en autonomie",
-      "Apprentissage continu sur votre secteur",
-      "Intégration transparente sur votre site existant"
-    ],
-    useCases: ["Service client", "Prise de rendez-vous", "FAQ automatisée", "Support technique de premier niveau"]
-  },
-  {
-    id: 'automatisation',
-    icon: <Cpu size={24} />,
-    title: "Automatisation Sereine",
-    description: "Libérez-vous des tâches répétitives. De la facture au rappel client, laissez la technologie gérer l'intendance.",
-    delay: "0.2s",
-    fullDescription: "Chaque heure passée sur des tâches répétitives est une heure volée à votre cœur de métier. Nous automatisons vos processus administratifs, commerciaux et opérationnels pour vous redonner du temps.",
-    benefits: [
-      "Automatisation des relances et rappels clients",
-      "Génération automatique de devis et factures",
-      "Synchronisation entre vos outils existants",
-      "Transcription et résumé de réunions/AG",
-      "Alertes et rapports automatiques"
-    ],
-    useCases: ["Gestion administrative", "Processus RH", "Suivi de chantier", "Reporting automatique"]
-  },
-  {
-    id: 'outils-metiers',
-    icon: <Database size={24} />,
-    title: "Outils Métiers",
-    description: "BTP, Commerce, Artisanat : nous forgeons des logiciels sur-mesure qui s'adaptent à vos mains, pas l'inverse.",
-    delay: "0.3s",
-    fullDescription: "Les logiciels génériques ne sont pas faits pour votre métier spécifique. Nous développons des applications sur mesure qui correspondent exactement à vos processus, avec l'interface que vous méritez.",
-    benefits: [
-      "Application entièrement personnalisée à votre activité",
-      "Interface intuitive, sans formation nécessaire",
-      "Gestion des stocks, plannings, interventions",
-      "Accessible depuis n'importe quel appareil",
-      "Évolutif selon vos besoins futurs"
-    ],
-    useCases: ["Gestion de chantiers BTP", "Suivi de clientèle", "Planning artisanal", "Stock et commandes"]
-  },
-  {
-    id: 'strategie',
-    icon: <BarChart3 size={24} />,
-    title: "Clarté Stratégique",
-    description: "Audit de vos outils actuels. Nous transformons le jargon technique en plan d'action clair et rentable.",
-    delay: "0.4s",
-    fullDescription: "Avant d'investir, comprenez où vous en êtes. Notre audit digital analyse vos outils, votre présence en ligne et vos processus pour identifier les quick wins et les priorités d'investissement.",
-    benefits: [
-      "Audit complet de votre présence digitale",
-      "Analyse de vos concurrents locaux",
-      "Plan d'action priorisé et budgétisé",
-      "Recommandations actionnables sans jargon",
-      "Accompagnement dans la mise en œuvre"
-    ],
-    useCases: ["Audit de présence web", "Stratégie SEO locale", "Optimisation des outils", "Plan de transformation digitale"]
-  },
-  {
-    id: 'securite',
-    icon: <Lock size={24} />,
-    title: "Gardien de Données",
-    description: "Vos données sont votre patrimoine. Nous bâtissons des forteresses numériques conformes et sécurisées.",
-    delay: "0.5s",
-    fullDescription: "La cybersécurité n'est pas une option — c'est une nécessité légale et éthique. Nous mettons en place des architectures sécurisées, conformes au RGPD, et vous formons aux bonnes pratiques.",
-    benefits: [
-      "Mise en conformité RGPD complète",
-      "Sauvegarde automatisée de vos données",
-      "Protection contre les cyberattaques",
-      "Politique de mots de passe et d'accès",
-      "Audit de sécurité et rapport détaillé"
-    ],
-    useCases: ["Conformité RGPD", "Protection des données clients", "Sécurisation des mots de passe", "Backup et récupération"]
-  }
-];
+// Associer les icônes JSX aux données
+const serviceIcons: Record<string, React.ReactNode> = {
+  'web-apps-saas':              <Globe size={24} />,
+  'automatisation-n8n':        <Cpu size={24} />,
+  'contenu-marketing-ia':      <Megaphone size={24} />,
+  'ia-agents-rag':             <Brain size={24} />,
+  'conseil-formation-pilotage': <GraduationCap size={24} />,
+};
+
+export const servicesData: ServiceData[] = rawServicesData.map((s) => ({
+  ...s,
+  icon: serviceIcons[s.id] ?? <Globe size={24} />,
+}));
 
 interface ServiceCardProps {
   service: ServiceData;
@@ -181,7 +97,6 @@ export const Services: React.FC<ServicesProps> = ({ onOpenService }) => {
       className="py-24 relative overflow-hidden"
     >
       {/* Blobs identiques au Hero — continuité visuelle */}
-       {/* Background Blobs Animation */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <div className="absolute top-[+10%] left-[+85%] w-96 h-96 bg-gold/10 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
         <div className="absolute top-[+10%] right-[+85%] w-96 h-96 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob" style={{ animationDelay: '2s' }}></div>
@@ -190,24 +105,24 @@ export const Services: React.FC<ServicesProps> = ({ onOpenService }) => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block animate-fade-in">
-            Expertise & Humanité
+            5 Expertises · 1 Partenaire
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-metallic-navy mb-6 animate-slide-up">
-            La technologie au service de{' '}
+            L'IA et le web au service de{' '}
             <br className="hidden md:block" />
             <span className="italic relative inline-block text-metallic-gold">
-              l'humain
+              votre croissance
               <svg className="absolute w-full h-3 -bottom-1 left-0 text-gold/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="3" fill="none" />
               </svg>
             </span>
           </h2>
           <p className="text-steel text-lg animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Nous fusionnons la puissance de l'IA et la rigueur du développement web pour offrir aux entreprises du Val de Loire des outils qui ont du sens.
+            Nous fusionnons développement web premium, automatisation intelligente et IA de pointe pour transformer durablement votre entreprise.
           </p>
         </div>
 
-        {/* Desktop : grille 3 colonnes */}
+        {/* Desktop : grille */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((service) => (
             <ServiceCard key={service.id} service={service} onClick={handleClick} />

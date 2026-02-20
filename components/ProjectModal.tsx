@@ -34,8 +34,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-charcoal/80 backdrop-blur-md animate-fade-in"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <div className="bg-paper rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/40 animate-slide-up">
-
+      <div
+        className="cta-leather rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/40 animate-slide-up"
+        style={{
+          backgroundColor: '#FAF6EE',
+          backgroundImage: [
+            `url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='pg3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pg3)' opacity='0.30'/%3E%3C/svg%3E")`,
+            `radial-gradient(ellipse at 12% 18%, rgba(185,145,65,0.08) 0%, transparent 48%)`,
+            `radial-gradient(ellipse at 80% 72%, rgba(160,120,45,0.06) 0%, transparent 42%)`,
+          ].join(', '),
+          backgroundSize: '700px 700px, 100% 100%, 100% 100%',
+          backgroundBlendMode: 'multiply, normal, normal',
+        }}
+      >
         {/* Image Hero */}
         <div className="relative h-56 rounded-t-3xl overflow-hidden">
           <img
@@ -43,7 +54,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
             alt={project.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/60 to-charcoal/20"></div>
 
           <button
             onClick={onClose}
@@ -53,16 +64,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
             <X size={20} />
           </button>
 
-          <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-medium text-gold uppercase tracking-widest block mb-1">
+          <div className="absolute bottom-4 left-6 right-6">
+            <span className="text-xs font-medium text-metallic-gold-inline uppercase tracking-widest block mb-1">
               {project.category}
             </span>
-            <h2 className="font-serif text-3xl font-bold text-white">{project.title}</h2>
+            <h2 className="font-serif text-3xl font-bold text-metallic-silver">{project.title}</h2>
           </div>
         </div>
 
         {/* Meta infos */}
-        <div className="px-8 py-4 border-b border-gray-100 flex flex-wrap gap-4">
+        <div className="px-8 py-4 border-b border-gold/10 flex flex-wrap gap-4">
           <div className="flex items-center gap-2 text-sm text-steel">
             <User size={14} className="text-gold" />
             <span>{project.client}</span>
@@ -84,7 +95,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
         {/* Body */}
         <div className="p-8 space-y-8">
 
-          {/* Description */}
           <div>
             <p className="text-charcoal/80 leading-relaxed text-base">
               {project.fullDescription}
@@ -124,7 +134,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           </div>
 
           {/* CTA */}
-          <div className="pt-4 border-t border-gray-100">
+          <div className="pt-4 border-t border-gold/10">
             <p className="text-steel text-sm mb-4 text-center">
               Un projet similaire ? Discutons-en.
             </p>
@@ -151,7 +161,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               <a
                 href={`#${SectionId.CONTACT}`}
                 onClick={onClose}
-                className="w-full border border-charcoal/20 text-charcoal font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:border-gold/50 hover:text-gold transition-all"
+                className="w-full btn-metallic-dark text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg"
               >
                 Démarrer mon projet <ArrowRight size={18} />
               </a>

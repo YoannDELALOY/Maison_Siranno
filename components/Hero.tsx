@@ -35,12 +35,10 @@ export const Hero: React.FC = () => {
     let timer: ReturnType<typeof setTimeout> | null = null;
     let glassTimer: ReturnType<typeof setTimeout> | null = null;
 
-    // ── Effet verre cassé métallique or ────────────────────────────────────
     const spawnGlassShards = (cx: number, cy: number) => {
       if (!glassContainer) return;
       glassContainer.innerHTML = '';
 
-      // Flash d'impact doré
       const flash = document.createElement('div');
       flash.style.cssText = `position:absolute;left:${cx - 60}px;top:${cy - 60}px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,248,180,0.95) 0%,rgba(212,175,55,0.55) 40%,transparent 70%);pointer-events:none;box-shadow:0 0 24px rgba(212,175,55,0.5);`;
       glassContainer.appendChild(flash);
@@ -50,7 +48,6 @@ export const Hero: React.FC = () => {
       );
       setTimeout(() => { if (flash.parentElement) flash.remove(); }, 450);
 
-      // 4 variantes de dégradé or métallique
       const golds = [
         'linear-gradient(135deg,#9C7C38 0%,#D4AF37 28%,#F4E095 50%,#D4AF37 72%,#9C7C38 100%)',
         'linear-gradient(160deg,#F4E095 0%,#C5A059 38%,#B68D40 100%)',
@@ -58,15 +55,11 @@ export const Hero: React.FC = () => {
         'linear-gradient(90deg,#D4AF37 0%,#F4E095 50%,#9C7C38 100%)',
       ];
 
-      // 28 éclats — grands fragments + petits éclats + micro-étincelles
-      // dy élevés (280–500px) pour tomber jusqu'au niveau du n° de téléphone
       const shards = [
-        // Grands fragments
         { w: 28, h: 20, clip: 'polygon(0 0,100% 15%,85% 100%,5% 90%)',   dx: -45, dy: 280, dr: -120, d: 0   },
         { w: 24, h: 30, clip: 'polygon(10% 0,100% 0,90% 85%,0 100%)',    dx:  55, dy: 320, dr:   95, d: 30  },
         { w: 30, h: 18, clip: 'polygon(0 20%,100% 0,95% 100%,5% 80%)',   dx: -70, dy: 260, dr: -145, d: 60  },
         { w: 26, h: 22, clip: 'polygon(5% 0,100% 10%,90% 100%,0 85%)',   dx:  40, dy: 350, dr:  110, d: 20  },
-        // Fragments moyens
         { w: 18, h: 22, clip: 'polygon(0 0,100% 20%,80% 100%,10% 90%)',  dx: -55, dy: 360, dr: -130, d: 10  },
         { w: 12, h: 16, clip: 'polygon(20% 0,100% 0,100% 70%,0 100%)',   dx: -28, dy: 400, dr:  120, d: 50  },
         { w: 22, h: 14, clip: 'polygon(0 30%,100% 0,90% 100%,5% 80%)',   dx:  45, dy: 340, dr: -100, d: 80  },
@@ -80,14 +73,12 @@ export const Hero: React.FC = () => {
         { w: 19, h: 13, clip: 'polygon(5% 0,95% 10%,100% 90%,0 100%)',   dx:  65, dy: 445, dr:  130, d: 70  },
         { w: 13, h: 21, clip: 'polygon(0 5%,100% 0,95% 95%,10% 100%)',   dx: -35, dy: 390, dr:  -90, d: 35  },
         { w: 17, h: 11, clip: 'polygon(0 0,100% 5%,90% 100%,15% 95%)',   dx:  80, dy: 305, dr:  160, d: 85  },
-        // Petits éclats
         { w: 8,  h: 10, clip: 'polygon(50% 0,100% 50%,50% 100%,0 50%)', dx: -20, dy: 455, dr:  240, d: 5   },
         { w: 6,  h: 9,  clip: 'polygon(0 0,100% 20%,80% 100%)',         dx:  30, dy: 415, dr: -200, d: 45  },
         { w: 10, h: 7,  clip: 'polygon(20% 0,100% 0,80% 100%,0 80%)',   dx: -60, dy: 465, dr:  180, d: 75  },
         { w: 7,  h: 11, clip: 'polygon(50% 0,100% 100%,0 100%)',        dx:  50, dy: 485, dr: -160, d: 110 },
         { w: 5,  h: 8,  clip: 'polygon(0 0,100% 0,70% 100%)',           dx: -15, dy: 500, dr:  300, d: 55  },
         { w: 9,  h: 6,  clip: 'polygon(0 20%,100% 0,100% 80%,0 100%)', dx:  42, dy: 475, dr: -250, d: 95  },
-        // Micro-étincelles
         { w: 4,  h: 6,  clip: 'polygon(50% 0,100% 100%,0 100%)',        dx: -80, dy: 355, dr:  400, d: 10  },
         { w: 5,  h: 4,  clip: 'polygon(0 0,100% 0,100% 100%)',          dx:  72, dy: 335, dr: -350, d: 65  },
         { w: 3,  h: 5,  clip: 'polygon(50% 0,100% 60%,20% 100%,0 40%)', dx: -25, dy: 495, dr:  500, d: 30  },
@@ -118,18 +109,15 @@ export const Hero: React.FC = () => {
         setTimeout(() => { if (s.parentElement) s.remove(); }, 2650 + d);
       });
     };
-    // ───────────────────────────────────────────────────────────────────────
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Délai 1 s, puis animation (fill-mode:both place déjà les cartes hors-écran pendant ce délai)
             timer = setTimeout(() => {
               primaryCard?.classList.add('animated');
               secondaryCard?.classList.add('animated');
 
-              // Effet verre cassé : la carte secondaire (qui part en premier) tape à 54% de 5.2s = 2808ms
               glassTimer = setTimeout(() => {
                 if (!numeriqueEl) return;
                 const heroRect = el.getBoundingClientRect();
@@ -139,16 +127,14 @@ export const Hero: React.FC = () => {
                 spawnGlassShards(cx, cy);
               }, 2808);
 
-              // Une fois l'animation terminée, activer le hover interactif via la classe settled
               primaryCard?.addEventListener('animationend', () => {
                 primaryCard.classList.add('hero-card-settled');
               }, { once: true });
               secondaryCard?.addEventListener('animationend', () => {
                 secondaryCard.classList.add('hero-card-settled');
               }, { once: true });
-            }, 1000);
+            }, 0);
           } else {
-            // L'utilisateur est reparti : annuler les timers et réinitialiser pour replay
             if (timer) { clearTimeout(timer); timer = null; }
             if (glassTimer) { clearTimeout(glassTimer); glassTimer = null; }
             if (glassContainer) glassContainer.innerHTML = '';
@@ -176,39 +162,36 @@ export const Hero: React.FC = () => {
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-8 md:pb-16"
     >
-      {/* Background Blobs Animation */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <div className="absolute top-0 left-[-10%] w-96 h-96 bg-gold/10 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob" style={{ animationDelay: '2s' }}></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      {/* Container pour l'effet verre cassé */}
       <div className="hero-glass-container absolute inset-0 pointer-events-none z-30" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-8 md:gap-20 lg:gap-32 items-center">
 
-        {/* Left: Text Content */}
         <div className="space-y-6 md:space-y-8 text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel border border-gold/20 animate-fade-in">
             <Sparkles size={14} className="text-gold" />
             <span className="text-xs font-semibold tracking-wider uppercase text-charcoal/80">
-              Agence Web à Châteauneuf-sur-Loire
+              Agence IA & Web — Châteauneuf-sur-Loire
             </span>
           </div>
 
           <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-tight animate-slide-up">
-            <span className="text-metallic-navy">L'Artisanat</span>
+            <span className="text-metallic-navy">L'Intelligence</span>
             <br />
             <span className="hero-numerique text-metallic-gold">
-              Numérique
+              au Service du ROI
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-steel font-light leading-relaxed max-w-lg mx-auto md:mx-0 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Nous ne nous contentons pas de coder. Nous bâtissons des{' '}
-            <strong className="text-charcoal font-medium">architectures digitales souveraines</strong>{' '}
-            pour les artisans, PME et commerces locaux.
+            Web apps sur-mesure, automatisation n8n, agents IA RAG, marketing automatisé.{' '}
+            <strong className="text-charcoal font-medium">Des résultats mesurables dès 30 jours</strong>{' '}
+            pour les PME et entrepreneurs ambitieux.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
@@ -231,12 +214,10 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: Abstract Visual — masqué sur mobile */}
         <div className="relative h-[480px] w-full hidden md:block animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <div className="absolute inset-0 flex items-center justify-end">
             <div className="relative w-80 h-96 -mr-8 lg:-mr-16">
 
-              {/* Carte principale (blanche) */}
               <div
                 className="hero-card-primary absolute top-0 right-0 w-64 h-80 rounded-2xl z-20 transition-[box-shadow,border] duration-700 shadow-2xl p-6 flex flex-col gap-2"
                 style={{
@@ -248,7 +229,6 @@ export const Hero: React.FC = () => {
                   boxShadow: '0 8px 40px rgba(0,0,0,0.12)'
                 }}
               >
-                {/* Label Maison Siranno en haut */}
                 <div className="flex justify-between items-start shrink-0">
                   <div className="flex items-center gap-2">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-50 to-white flex items-center justify-center shadow-inner border border-gold/30">
@@ -263,7 +243,6 @@ export const Hero: React.FC = () => {
                   <div className="px-2 py-1 bg-green-100 text-safe-green text-xs rounded-full font-medium">En ligne</div>
                 </div>
 
-                {/* Stack & Outils — s'étire pour remplir l'espace */}
                 <div className="flex flex-col flex-1 min-h-0">
                   <p className="text-xs text-steel/70 font-medium uppercase tracking-wider shrink-0 mb-1">Stack & Outils</p>
                   <div className="flex-1 min-h-0 relative">
@@ -282,7 +261,6 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Carte secondaire (sombre) */}
               <div className="hero-card-secondary absolute bottom-4 left-[-20px] w-56 h-64 rounded-2xl z-10 shadow-xl bg-charcoal text-white p-6 border border-white/10">
                 <div className="h-full flex flex-col justify-between opacity-90">
                   <img

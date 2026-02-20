@@ -1,34 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { SectionId } from '../types';
+import { homeTestimonials, Testimonial } from '../data/testimonials';
 
-interface Testimonial {
-  name: string;
-  role: string;
-  company: string;
-  content: string;
-  image: string;
-  projectId: string;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    name: "Julien Delaloy",
-    role: "Fondateur",
-    company: "JD Rénovation",
-    content: "Yoann a su créer notre présence numérique de A à Z. Site vitrine, identité visuelle, référencement local... en quelques semaines, notre entreprise de rénovation est devenue visible sur toute la région. Les demandes de devis ont explosé dès le premier mois.",
-    image: "https://randomuser.me/api/portraits/men/52.jpg",
-    projectId: "jd-renovation"
-  },
-  {
-    name: "Sylvie Bidoux",
-    role: "Gérante",
-    company: "SI Griveaux",
-    content: "Grâce à Yoann, nos assemblées générales sont désormais automatiquement retranscrites et résumées. Ce qui prenait plusieurs heures de travail manuel se fait en quelques minutes. Un gain de temps considérable et une fiabilité redoutable.",
-    image: "https://randomuser.me/api/portraits/women/60.jpg",
-    projectId: "si-griveaux"
-  }
-];
+const testimonials = homeTestimonials;
 
 interface TestimonialsProps {
   onOpenProject?: (projectId: string) => void;

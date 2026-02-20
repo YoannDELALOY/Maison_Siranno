@@ -20,7 +20,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
           alt={project.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/65 to-charcoal/30"></div>
 
         {/* Bouton retour */}
         <div className="absolute top-6 left-6 z-10">
@@ -29,16 +29,16 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
             className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm hover:bg-white/20 transition-all border border-white/20"
           >
             <ArrowLeft size={16} />
-            Retour aux réalisations
+            ← Retour aux articles
           </button>
         </div>
 
-        {/* Infos en bas */}
-        <div className="absolute bottom-8 left-6 right-6 z-10">
+        {/* Infos centrées */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 pt-20 z-10">
           <span className="text-xs font-medium text-metallic-gold-inline uppercase tracking-widest block mb-2">
             {project.category}
           </span>
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-metallic-silver mb-4">
             {project.title}
           </h1>
           <div className="flex flex-wrap gap-4 text-sm text-white/70">
@@ -84,6 +84,22 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Stack technique */}
+        <div className="bg-white/40 backdrop-blur-sm border border-white/60 rounded-2xl p-8">
+          <h2 className="font-serif text-2xl font-bold text-metallic-navy mb-6 flex items-center gap-3">
+            <Tag size={22} className="text-gold" />
+            Stack & Technos utilisées
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {project.tags.map((tag) => (
+              <span key={tag} className="px-4 py-2 bg-gold/10 border border-gold/20 rounded-full text-sm text-gold font-medium flex items-center gap-1.5">
+                <Tag size={12} />
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Les résultats */}

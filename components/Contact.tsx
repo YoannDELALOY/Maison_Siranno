@@ -146,7 +146,7 @@ export const Contact: React.FC = () => {
                   <div>
                     <h4 className="font-medium text-white mb-1">Email</h4>
                     <a
-                      href={`mailto:${CONTACT_EMAIL}`}
+                      href={`mailto:${CONTACT_EMAIL}?subject=Demande%20de%20consultation%20%E2%80%94%20Maison%20Siranno`}
                       className="text-gray-400 hover:text-gold transition-colors"
                     >
                       {CONTACT_EMAIL}

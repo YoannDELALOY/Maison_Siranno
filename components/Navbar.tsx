@@ -33,8 +33,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
   const navLinks: { label: string; page: NavPage }[] = [
     { label: 'Expertise', page: 'expertise' },
     { label: 'Réalisations', page: 'realisations' },
-    { label: 'Blog', page: 'blog' },
     { label: "L'Agence", page: 'agence' },
+    { label: 'Blog', page: 'blog' },
   ];
 
   const handleNavClick = (page: NavPage) => {
@@ -78,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
     <nav
       className={`fixed z-50 transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]
         ${
-          isScrolled
+          isScrolled || currentPage === 'blog-article'
             ? 'top-4 left-1/2 -translate-x-1/2 w-[95%] md:w-auto md:min-w-[900px] rounded-full glass-panel px-6 py-3 shadow-2xl shadow-charcoal/5 border border-white/60'
             : 'top-0 left-0 right-0 w-full px-6 py-6 bg-transparent'
         }

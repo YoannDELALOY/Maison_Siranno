@@ -27,9 +27,12 @@ export const LegalMentions: React.FC<LegalMentionsProps> = ({ onBack }) => {
             <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">1. Éditeur du site</h2>
             <p>Le présent site web est édité par :</p>
             <ul className="space-y-1 mt-3 list-none">
-              <li><strong>Raison sociale :</strong> Yoann Delaloy — Maison Siranno</li>
-              <li><strong>Activité :</strong> Agence digitale — Création de sites web, automatisation et IA</li>
-              <li><strong>Adresse :</strong> 1 rue Auguste Grivot, 45110 Châteauneuf-sur-Loire, France</li>
+              <li><strong>Raison sociale :</strong> Yoann DELALOY — Maison Siranno</li>
+              <li><strong>Statut :</strong> Auto-entrepreneur (Micro-entreprise)</li>
+              <li><strong>Activité :</strong> Agence digitale — Développement web, IA et automatisation</li>
+              <li><strong>SIRET :</strong> [À compléter par le titulaire]</li>
+              <li><strong>Code APE/NAF :</strong> [À compléter par le titulaire]</li>
+              <li><strong>Adresse :</strong> 1 rue Auguste Grivot, 45110 Châteauneuf-sur-Loire, Loiret, France</li>
               <li><strong>Téléphone :</strong>{' '}
                 <a href="tel:+33647344364" className="text-gold hover:underline">06 47 34 43 64</a>
               </li>
@@ -41,44 +44,56 @@ export const LegalMentions: React.FC<LegalMentionsProps> = ({ onBack }) => {
 
           <section>
             <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">2. Directeur de la publication</h2>
-            <p>Yoann Delaloy, Fondateur & Lead Architect — Maison Siranno.</p>
+            <p>Yoann DELALOY, Fondateur & Lead Architect — Maison Siranno.</p>
           </section>
 
           <section>
             <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">3. Hébergement</h2>
-            <p>Ce site est hébergé par un prestataire d'hébergement web. Les coordonnées de l'hébergeur seront fournies sur demande à l'adresse <a href="mailto:contact@yoanndelaloy.com" className="text-gold hover:underline">contact@yoanndelaloy.com</a>.</p>
+            <p>Ce site est hébergé par :</p>
+            <ul className="space-y-1 mt-3 list-none">
+              <li><strong>Société :</strong> Hostinger International Ltd.</li>
+              <li><strong>Adresse :</strong> 61 Lordou Vironos Street, 6023 Larnaca, Chypre</li>
+              <li><strong>Site web :</strong>{' '}
+                <a href="https://www.hostinger.fr" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">www.hostinger.fr</a>
+              </li>
+            </ul>
           </section>
 
           <section>
             <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">4. Propriété intellectuelle</h2>
             <p>
-              L'ensemble du contenu de ce site (textes, images, graphismes, logos, icônes, sons, logiciels, etc.) est la propriété exclusive de Yoann Delaloy — Maison Siranno, sauf mention contraire. Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès par écrit de Maison Siranno.
+              L'ensemble du contenu de ce site (textes, images, graphismes, logos, icônes, sons, logiciels, etc.) est la propriété exclusive de Yoann DELALOY — Maison Siranno, sauf mention contraire. Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès par écrit de Maison Siranno.
+            </p>
+            <p className="mt-3">
+              Certaines images utilisées sur ce site proviennent de la bibliothèque Unsplash (unsplash.com) et sont soumises à leur licence respective.
             </p>
           </section>
 
           <section>
             <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">5. Données personnelles</h2>
             <p>
-              Les informations recueillies via le formulaire de contact sont destinées exclusivement à Maison Siranno et ne sont jamais cédées à des tiers. Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression des données vous concernant.
+              Les informations recueillies via le formulaire de contact sont destinées exclusivement à Maison Siranno et ne sont jamais cédées à des tiers. Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi Informatique et Libertés du 6 janvier 1978 modifiée, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression des données vous concernant.
             </p>
             <p className="mt-3">
               Pour exercer ces droits, contactez-nous à :{' '}
               <a href="mailto:contact@yoanndelaloy.com" className="text-gold hover:underline">contact@yoanndelaloy.com</a>
+            </p>
+            <p className="mt-3">
+              Pour en savoir plus, consultez notre <span className="text-gold font-medium">Politique de confidentialité</span> accessible depuis le bas de page.
             </p>
           </section>
 
           <section>
             <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">6. Cookies</h2>
             <p>
-              Ce site peut utiliser des cookies techniques nécessaires à son bon fonctionnement. Aucun cookie de traçage publicitaire n'est utilisé sans votre consentement explicite. Pour plus d'informations, consultez notre{' '}
-              <span className="text-gold font-medium">Politique de confidentialité</span>.
+              Ce site utilise des cookies techniques nécessaires à son bon fonctionnement (préférences d'affichage, session). Avec votre consentement explicite, des cookies analytiques peuvent être déposés (Google Analytics) afin de mesurer l'audience du site de manière anonymisée. Vous pouvez retirer votre consentement à tout moment.
             </p>
           </section>
 
           <section>
             <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">7. Limitation de responsabilité</h2>
             <p>
-              Maison Siranno s'efforce d'assurer au mieux l'exactitude et la mise à jour des informations diffusées sur ce site. Cependant, Maison Siranno ne garantit pas l'exactitude, la complétude et l'actualité des informations diffusées sur ce site. En conséquence, l'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive.
+              Maison Siranno s'efforce d'assurer au mieux l'exactitude et la mise à jour des informations diffusées sur ce site. Cependant, Maison Siranno ne garantit pas l'exactitude, la complétude et l'actualité des informations diffusées. En conséquence, l'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive.
             </p>
           </section>
 
@@ -90,9 +105,18 @@ export const LegalMentions: React.FC<LegalMentionsProps> = ({ onBack }) => {
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">9. Droit applicable</h2>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">9. Droit applicable et juridiction</h2>
             <p>
-              Le présent site et ses conditions d'utilisation sont régis par le droit français. En cas de litige, les tribunaux français seront compétents.
+              Le présent site et ses conditions d'utilisation sont régis par le droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux français compétents seront saisis.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">10. Contact</h2>
+            <p>
+              Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter :<br />
+              Email : <a href="mailto:contact@yoanndelaloy.com" className="text-gold hover:underline">contact@yoanndelaloy.com</a><br />
+              Téléphone : <a href="tel:+33647344364" className="text-gold hover:underline">06 47 34 43 64</a>
             </p>
           </section>
 

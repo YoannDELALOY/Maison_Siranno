@@ -59,7 +59,7 @@ export const About: React.FC = () => {
                 <img src="https://picsum.photos/200/200?grayscale" alt="Yoann Delaloy" className="w-full h-full object-cover" />
               </div>
               <div className="text-center md:text-left">
-                <div className="font-serif text-xl font-bold text-charcoal">Yoann Delaloy</div>
+                <div className="font-serif text-xl font-bold text-charcoal">Yoann DELALOY</div>
                 <div className="text-sm text-metallic-gold-inline font-medium uppercase tracking-wide">Fondateur & Lead Architect</div>
               </div>
             </div>
@@ -81,8 +81,8 @@ export const About: React.FC = () => {
           >
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="text-xl font-serif font-bold text-charcoal">Impact Client Moyen</h3>
-                <p className="text-sm text-steel">Évolution du CA après transformation</p>
+                <h3 className="text-xl font-serif font-bold text-charcoal">Performance Digitale</h3>
+                <p className="text-sm text-steel">Croissance moyenne des clients</p>
               </div>
               <div className="p-2 bg-gold/10 rounded-lg text-gold">
                 <Lightbulb size={20} />
@@ -95,9 +95,9 @@ export const About: React.FC = () => {
             </div>
 
             <div className="mt-6 flex justify-between items-center text-sm border-t border-gray-100 pt-4">
-              <div className="text-steel">Retour sur investissement</div>
+              <div className="text-steel">Satisfaction client</div>
               <div className="font-bold text-safe-green flex items-center gap-1">
-                +45% <span className="text-xs font-normal text-steel">(Dès 6 mois)</span>
+                98% satisfaits
               </div>
             </div>
           </div>
