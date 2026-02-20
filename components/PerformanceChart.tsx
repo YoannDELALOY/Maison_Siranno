@@ -11,9 +11,9 @@ import {
 const data = [
   { subject: 'Sites Web', value: 95 },
   { subject: 'IA & Chatbots', value: 85 },
-  { subject: 'Automatisation', value: 90 },
-  { subject: 'Outils Métier', value: 80 },
-  { subject: 'Stratégie', value: 75 },
+  { subject: 'Automatisation', value: 80 },
+  { subject: 'Outils Métier', value: 75 },
+  { subject: 'Stratégie', value: 95 },
   { subject: 'Données', value: 70 },
 ];
 

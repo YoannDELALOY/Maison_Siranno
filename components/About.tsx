@@ -81,8 +81,8 @@ export const About: React.FC = () => {
           >
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="text-xl font-serif font-bold text-charcoal">Performance Digitale</h3>
-                <p className="text-sm text-steel">Croissance moyenne des clients</p>
+                <h3 className="text-xl font-serif font-bold text-charcoal">Spécialités de l'agence</h3>
+                <p className="text-sm text-steel">L'innovation comme tradition.</p>
               </div>
               <div className="p-2 bg-gold/10 rounded-lg text-gold">
                 <Lightbulb size={20} />

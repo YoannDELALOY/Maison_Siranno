@@ -106,7 +106,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenService }) => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block animate-fade-in">
-            6 Expertises · 1 Partenaire
+            6 Expertises
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-metallic-navy mb-6 animate-slide-up">
             L'IA et le web au service de{' '}

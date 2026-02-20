@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { Star, Quote, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import starImg from '../Media/etoiletrnsparante.png';
 import { SectionId } from '../types';
 import { homeTestimonials, Testimonial } from '../data/testimonials';
 
@@ -51,8 +52,8 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => 
           <p className="text-steel">Des partenaires locaux qui ont franchi le cap du digital.</p>
         </div>
 
-        {/* Desktop : grille 2 colonnes */}
-        <div className="hidden md:grid md:grid-cols-2 gap-8">
+        {/* Desktop : grille 3 colonnes */}
+        <div className="hidden md:grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <TestimonialCard
               key={i}
@@ -136,11 +137,9 @@ const TestimonialCard: React.FC<{ t: Testimonial; onOpenProject?: (id: string) =
       <ExternalLink size={14} className="text-gold" />
     </div>
 
-    <div className="flex gap-1 mb-6">
+    <div className="flex gap-0.5 mb-6">
       {[...Array(5)].map((_, idx) => (
-        <span key={idx} className="star-metallic-gold inline-flex">
-          <Star size={16} fill="#D4AF37" color="#D4AF37" />
-        </span>
+        <img key={idx} src={starImg} alt="★" className="w-5 h-5 object-contain drop-shadow-sm" />
       ))}
     </div>
 
