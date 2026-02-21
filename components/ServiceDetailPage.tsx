@@ -199,32 +199,45 @@ function buildSnakePath(
   return d;
 }
 
-/* ─── Section "Notre approche" avec serpent ─── */
+/* ─── Constantes chaîne ─── */
+const LINK_SPACING = 11; // px entre centres de maillons
+const LINK_RX      = 8;  // demi-longueur du maillon (dans la direction du path)
+const LINK_RY      = 5;  // demi-largeur du maillon
+type LinkItem = { x: number; y: number; angle: number };
+
+/* ─── Section "Notre approche" avec collier en maillons ─── */
 interface ProcessStepsSectionProps {
   steps: { title: string; description: string }[];
 }
 
 const ProcessStepsSection: React.FC<ProcessStepsSectionProps> = ({ steps }) => {
-  const DURATION = 6400;
-  const CORNER_R = 28; // rayon des virages arrondis
+  const DURATION  = 6400;
+  const CORNER_R  = 28;
 
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const svgRef = useRef<SVGSVGElement>(null);
-  const pathRef = useRef<SVGPathElement>(null);
-  const pathHlRef = useRef<SVGPathElement>(null); // ligne de reflet central
-  const pathBgRef = useRef<SVGPathElement>(null);
-  const pathGhostRef = useRef<SVGPathElement>(null);
-  const rafRef = useRef<number>(0);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const wrapperRef   = useRef<HTMLDivElement>(null);
+  const gridRef      = useRef<HTMLDivElement>(null);
+  const svgRef       = useRef<SVGSVGElement>(null);
+  const measureRef   = useRef<SVGPathElement>(null);   // invisible, pour getPointAtLength
+  const pathGhostRef = useRef<SVGPathElement>(null);   // guide fantôme
+  const pathShadowRef= useRef<SVGPathElement>(null);   // ombre portée
+  const arrowRef     = useRef<SVGPolygonElement>(null);// pointe animée
+  const linkRefs     = useRef<(SVGGElement | null)[]>([]);
+  const rafRef       = useRef<number>(0);
+  const cardRefs     = useRef<(HTMLDivElement | null)[]>([]);
+
+  const [linkData, setLinkData]         = useState<LinkItem[]>([]);
   const [activatedCards, setActivatedCards] = useState<boolean[]>(Array(steps.length).fill(false));
-  const [showArrow, setShowArrow] = useState(false);
-  const hasAnimated = useRef(false);
 
-  /* Calcul + application du path */
+  const hasAnimated      = useRef(false);
+  const shouldAnimate    = useRef(false);
+  const pendingLinks     = useRef<LinkItem[]>([]);
+  const totalLengthRef   = useRef(0);
+  const animComplete     = useRef(false);
+
+  /* Calcul du path SVG + application sur les paths de référence */
   const applyPath = useCallback(() => {
     if (!gridRef.current || !svgRef.current) return;
-    const svgRect = svgRef.current.getBoundingClientRect();
+    const svgRect  = svgRef.current.getBoundingClientRect();
     const gridRect = gridRef.current.getBoundingClientRect();
 
     const centers = cardRefs.current.map((el) => {
@@ -232,10 +245,8 @@ const ProcessStepsSection: React.FC<ProcessStepsSectionProps> = ({ steps }) => {
       const r = el.getBoundingClientRect();
       return { x: r.left - svgRect.left + r.width / 2, y: r.top - svgRect.top + r.height / 2 };
     }).filter(Boolean) as { x: number; y: number }[];
-
     if (centers.length === 0) return;
 
-    // Grouper par rangées pour trouver la direction finale
     const rows: { x: number; y: number }[][] = [];
     let cur: { x: number; y: number }[] = [centers[0]];
     for (let i = 1; i < centers.length; i++) {
@@ -244,7 +255,6 @@ const ProcessStepsSection: React.FC<ProcessStepsSectionProps> = ({ steps }) => {
     }
     rows.push(cur);
 
-    // Terminer au bord de la dernière carte
     const lastRowGoesRight = (rows.length - 1) % 2 === 0;
     const lastEl = cardRefs.current[centers.length - 1];
     if (lastEl) {
@@ -253,94 +263,147 @@ const ProcessStepsSection: React.FC<ProcessStepsSectionProps> = ({ steps }) => {
       centers[centers.length - 1] = { ...centers[centers.length - 1], x: edgeX };
     }
 
-    const startX   = -(svgRect.left + 120); // hors-écran, seulement pour le départ
-    const gridLeftX  = gridRect.left  - svgRect.left - 4;
-    const gridRightX = gridRect.right - svgRect.left + 4;
+    const startX    = -(svgRect.left + 120);
+    const gridLeftX = gridRect.left  - svgRect.left - 4;
+    const gridRightX= gridRect.right - svgRect.left + 4;
     const d = buildSnakePath(centers, startX, gridLeftX, gridRightX, CORNER_R);
 
-    [pathGhostRef, pathRef, pathBgRef, pathHlRef].forEach((ref) => {
-      if (ref.current) ref.current.setAttribute('d', d);
-    });
+    if (measureRef.current)    measureRef.current.setAttribute('d', d);
+    if (pathGhostRef.current)  pathGhostRef.current.setAttribute('d', d);
+    if (pathShadowRef.current) pathShadowRef.current.setAttribute('d', d);
   }, []);
 
-  /* ResizeObserver */
-  useEffect(() => {
-    const ro = new ResizeObserver(applyPath);
-    if (gridRef.current) ro.observe(gridRef.current);
-    return () => ro.disconnect();
-  }, [applyPath]);
+  /* Echantillonner le path → tableau de maillons */
+  const computeLinks = useCallback((): LinkItem[] => {
+    const pathEl = measureRef.current;
+    if (!pathEl) return [];
+    const total = pathEl.getTotalLength();
+    totalLengthRef.current = total;
+    const links: LinkItem[] = [];
+    for (let l = 0; l <= total; l += LINK_SPACING) {
+      const pt  = pathEl.getPointAtLength(l);
+      const pt2 = pathEl.getPointAtLength(Math.min(l + 2, total));
+      const angle = Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * 180 / Math.PI;
+      links.push({ x: pt.x, y: pt.y, angle });
+    }
+    return links;
+  }, []);
 
-  /* Animation */
+  /* RAF principal — révèle les maillons progressivement */
+  const runAnimation = useCallback((links: LinkItem[]) => {
+    const pathEl = measureRef.current;
+    if (!pathEl || links.length === 0) return;
+    const total = totalLengthRef.current;
+
+    // Pré-calculer longueurs d'activation de chaque carte
+    const svgRect = svgRef.current?.getBoundingClientRect();
+    const activLengths: number[] = Array(steps.length).fill(total);
+    if (svgRect) {
+      const cc = cardRefs.current.map(el => {
+        if (!el) return null;
+        const r = el.getBoundingClientRect();
+        return { x: r.left - svgRect.left + r.width / 2, y: r.top - svgRect.top + r.height / 2 };
+      });
+      for (let s = 0; s <= 1000; s++) {
+        const len = (s / 1000) * total;
+        const pt  = pathEl.getPointAtLength(len);
+        cc.forEach((c, i) => {
+          if (!c) return;
+          if (Math.hypot(pt.x - c.x, pt.y - c.y) < 80 && len < activLengths[i]) activLengths[i] = len;
+        });
+      }
+    }
+
+    // Masquer tous les maillons + pointe
+    linkRefs.current.forEach(el => { if (el) el.style.opacity = '0'; });
+    if (arrowRef.current) arrowRef.current.style.opacity = '0';
+
+    let startTs: number | null = null;
+    function animate(ts: number) {
+      if (!startTs) startTs = ts;
+      const progress = Math.min((ts - startTs) / DURATION, 1);
+      const drawn    = total * progress;
+      const visIdx   = Math.min(Math.floor(drawn / LINK_SPACING), links.length - 1);
+
+      // Révéler les maillons jusqu'à visIdx
+      for (let i = 0; i <= visIdx; i++) {
+        const el = linkRefs.current[i];
+        if (el && el.style.opacity !== '1') el.style.opacity = '1';
+      }
+
+      // Déplacer la pointe (triangle doré à l'avant du dernier maillon visible)
+      if (arrowRef.current && links[visIdx]) {
+        const lk   = links[visIdx];
+        const rad  = lk.angle * Math.PI / 180;
+        const ax   = lk.x + Math.cos(rad) * (LINK_RX + 4);
+        const ay   = lk.y + Math.sin(rad) * (LINK_RX + 4);
+        arrowRef.current.setAttribute('transform', `translate(${ax},${ay}) rotate(${lk.angle})`);
+        arrowRef.current.style.opacity = '1';
+      }
+
+      // Activer les cartes au passage
+      activLengths.forEach((al, i) => {
+        if (drawn >= al) {
+          setActivatedCards(prev => {
+            if (prev[i]) return prev;
+            const next = [...prev]; next[i] = true; return next;
+          });
+        }
+      });
+
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(animate);
+      } else {
+        setActivatedCards(Array(steps.length).fill(true));
+        animComplete.current = true;
+        if (arrowRef.current) arrowRef.current.style.opacity = '0';
+      }
+    }
+    rafRef.current = requestAnimationFrame(animate);
+  }, [steps.length]);
+
+  /* Déclencher l'animation après que linkData est rendu dans le DOM */
+  useEffect(() => {
+    if (!shouldAnimate.current || linkData.length === 0) return;
+    shouldAnimate.current = false;
+    // 2 frames pour que les refs soient bien peuplées
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      runAnimation(pendingLinks.current);
+    }));
+  }, [linkData, runAnimation]);
+
+  /* Lancer la séquence complète */
   const startAnimation = useCallback(() => {
     applyPath();
     requestAnimationFrame(() => {
-      const pathEl = pathRef.current;
-      if (!pathEl) return;
-      const totalLength = pathEl.getTotalLength();
-      if (totalLength === 0) return;
-
-      const applyDash = (el: SVGPathElement | null) => {
-        if (!el) return;
-        el.style.strokeDasharray = `${totalLength}`;
-        el.style.strokeDashoffset = `${totalLength}`;
-      };
-      applyDash(pathEl);
-      applyDash(pathBgRef.current);
-      applyDash(pathHlRef.current);
-
-      // Pré-calculer les longueurs d'activation (point le plus proche sur le path)
-      const svgRect = svgRef.current?.getBoundingClientRect();
-      const activationLengths: number[] = Array(steps.length).fill(totalLength);
-      if (svgRect) {
-        const cardCenters = cardRefs.current.map((el) => {
-          if (!el) return null;
-          const r = el.getBoundingClientRect();
-          return { x: r.left - svgRect.left + r.width / 2, y: r.top - svgRect.top + r.height / 2 };
-        });
-        for (let s = 0; s <= 1000; s++) {
-          const len = (s / 1000) * totalLength;
-          const pt = pathEl.getPointAtLength(len);
-          cardCenters.forEach((cc, i) => {
-            if (!cc) return;
-            if (Math.hypot(pt.x - cc.x, pt.y - cc.y) < 80 && len < activationLengths[i]) {
-              activationLengths[i] = len;
-            }
-          });
-        }
-      }
-
-      setShowArrow(true);
-
-      let startTs: number | null = null;
-      function animate(ts: number) {
-        if (!startTs) startTs = ts;
-        const progress = Math.min((ts - startTs) / DURATION, 1);
-        const drawn = totalLength * progress;
-        const offset = String(totalLength - drawn);
-
-        pathEl!.style.strokeDashoffset = offset;
-        if (pathBgRef.current)  pathBgRef.current.style.strokeDashoffset  = offset;
-        if (pathHlRef.current)  pathHlRef.current.style.strokeDashoffset  = offset;
-
-        activationLengths.forEach((al, i) => {
-          if (drawn >= al) {
-            setActivatedCards((prev) => {
-              if (prev[i]) return prev;
-              const next = [...prev]; next[i] = true; return next;
-            });
-          }
-        });
-
-        if (progress < 1) {
-          rafRef.current = requestAnimationFrame(animate);
-        } else {
-          setActivatedCards(Array(steps.length).fill(true));
-          setShowArrow(false);
-        }
-      }
-      rafRef.current = requestAnimationFrame(animate);
+      const links = computeLinks();
+      if (links.length === 0) return;
+      pendingLinks.current  = links;
+      shouldAnimate.current = true;
+      setLinkData(links);
     });
-  }, [applyPath, steps.length]);
+  }, [applyPath, computeLinks]);
+
+  /* ResizeObserver — recalcul path + repositionnement des maillons si animation terminée */
+  useEffect(() => {
+    const ro = new ResizeObserver(() => {
+      applyPath();
+      if (!animComplete.current || !measureRef.current) return;
+      const pathEl = measureRef.current;
+      const total  = pathEl.getTotalLength();
+      linkRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const l   = i * LINK_SPACING;
+        if (l > total) return;
+        const pt  = pathEl.getPointAtLength(l);
+        const pt2 = pathEl.getPointAtLength(Math.min(l + 2, total));
+        const ang = Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * 180 / Math.PI;
+        el.setAttribute('transform', `translate(${pt.x},${pt.y}) rotate(${ang})`);
+      });
+    });
+    if (gridRef.current) ro.observe(gridRef.current);
+    return () => ro.disconnect();
+  }, [applyPath]);
 
   /* IntersectionObserver */
   useEffect(() => {
@@ -351,12 +414,12 @@ const ProcessStepsSection: React.FC<ProcessStepsSectionProps> = ({ steps }) => {
         setTimeout(startAnimation, 150);
       } else if (!entry.isIntersecting) {
         hasAnimated.current = false;
+        animComplete.current = false;
         cancelAnimationFrame(rafRef.current);
         setActivatedCards(Array(steps.length).fill(false));
-        setShowArrow(false);
-        [pathRef, pathBgRef, pathHlRef].forEach((ref) => {
-          if (ref.current) ref.current.style.strokeDashoffset = '99999';
-        });
+        setLinkData([]);
+        linkRefs.current = [];
+        if (arrowRef.current) arrowRef.current.style.opacity = '0';
       }
     }, { threshold: 0.15 });
     io.observe(wrapperRef.current);
@@ -374,75 +437,82 @@ const ProcessStepsSection: React.FC<ProcessStepsSectionProps> = ({ steps }) => {
         aria-hidden="true"
       >
         <defs>
-          {/*
-            Gradient vertical (haut→bas) = même couleur sur toute la longueur,
-            mais effet métal brossé : bord sombre / centre brillant / bord sombre.
-            gradientUnits="userSpaceOnUse" avec une plage de 10px (= épaisseur barre).
-            On centre sur y=0, so y1=-5 y2=5 → le SVG utilisera les coords réelles.
-            En pratique on utilise objectBoundingBox avec x constant.
-          */}
-          <linearGradient id="goldMetal" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"   stopColor="#5C3C00"/>
-            <stop offset="18%"  stopColor="#B68D40"/>
-            <stop offset="38%"  stopColor="#E8C46A"/>
-            <stop offset="50%"  stopColor="#FFF5C0"/>
-            <stop offset="62%"  stopColor="#E8C46A"/>
-            <stop offset="82%"  stopColor="#B68D40"/>
-            <stop offset="100%" stopColor="#5C3C00"/>
-          </linearGradient>
+          {/* Gradient radial 3D pour chaque maillon — bord sombre, centre brillant */}
+          <radialGradient id="linkGrad" cx="38%" cy="32%" r="68%">
+            <stop offset="0%"   stopColor="#FFFDE0"/>
+            <stop offset="22%"  stopColor="#F0C840"/>
+            <stop offset="55%"  stopColor="#B07820"/>
+            <stop offset="100%" stopColor="#3D2200"/>
+          </radialGradient>
 
-          {/* Flèche — double couche métal + reflet, même style que la barre */}
-          <marker id="arrowGold" markerWidth="32" markerHeight="20"
-            refX="30" refY="10" orient="auto" markerUnits="userSpaceOnUse">
-            {/* Corps métal */}
-            <path d="M0,0 L0,20 L32,10 z" fill="url(#arrowMetal)"/>
-            {/* Reflet central brillant */}
-            <path d="M3,6 L3,14 L20,10 z" fill="rgba(255,248,200,0.65)"/>
-          </marker>
-          <linearGradient id="arrowMetal" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"   stopColor="#5C3C00"/>
-            <stop offset="35%"  stopColor="#D4AF37"/>
-            <stop offset="50%"  stopColor="#FFF5C0"/>
-            <stop offset="65%"  stopColor="#D4AF37"/>
-            <stop offset="100%" stopColor="#5C3C00"/>
-          </linearGradient>
-          <marker id="arrowGoldGhost" markerWidth="32" markerHeight="20"
-            refX="30" refY="10" orient="auto" markerUnits="userSpaceOnUse">
-            <path d="M0,0 L0,20 L32,10 z" fill="rgba(182,141,64,0.22)"/>
-          </marker>
+          {/* Gradient pour la pointe flèche */}
+          <radialGradient id="arrowGrad" cx="38%" cy="32%" r="68%">
+            <stop offset="0%"   stopColor="#FFFDE0"/>
+            <stop offset="40%"  stopColor="#E8C050"/>
+            <stop offset="100%" stopColor="#3D2200"/>
+          </radialGradient>
 
-          {/* Halo doux autour de la barre */}
-          <filter id="snakeGlow" x="-10%" y="-300%" width="120%" height="700%">
-            <feGaussianBlur stdDeviation="5" result="blur"/>
+          {/* Ombre portée douce sous chaque maillon */}
+          <filter id="linkShadow" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="1.5" stdDeviation="1.5"
+              floodColor="#1A0E00" floodOpacity="0.45"/>
+          </filter>
+
+          {/* Lueur ambiante dorée (pour l'ombre globale) */}
+          <filter id="chainAmbient" x="-30%" y="-200%" width="160%" height="500%">
+            <feGaussianBlur stdDeviation="7" result="blur"/>
             <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
           </filter>
         </defs>
 
-        {/* Trace fantôme (guide, toujours visible) */}
+        {/* Ombre globale du collier (guide fantôme flou — montre le trajet) */}
+        <path ref={pathShadowRef} d="" fill="none"
+          stroke="rgba(120,80,10,0.13)" strokeWidth="18"
+          strokeLinecap="round" strokeLinejoin="round"
+          filter="url(#chainAmbient)"
+        />
+        {/* Guide transparent très discret */}
         <path ref={pathGhostRef} d="" fill="none"
-          stroke="rgba(182,141,64,0.15)" strokeWidth="8"
+          stroke="rgba(182,141,64,0.08)" strokeWidth="11"
           strokeLinecap="round" strokeLinejoin="round"
-          markerEnd="url(#arrowGoldGhost)"
         />
-        {/* Halo lumineux (animé) */}
-        <path ref={pathBgRef} d="" fill="none"
-          stroke="rgba(212,175,55,0.28)" strokeWidth="20"
-          strokeLinecap="round" strokeLinejoin="round"
-          filter="url(#snakeGlow)"
-          style={{ strokeDasharray: 99999, strokeDashoffset: 99999 }}
-        />
-        {/* Barre principale — gradient vertical = métal uniforme sur toute la longueur */}
-        <path ref={pathRef} d="" fill="none"
-          stroke="url(#goldMetal)" strokeWidth="8"
-          strokeLinecap="round" strokeLinejoin="round"
-          markerEnd={showArrow ? 'url(#arrowGold)' : undefined}
-          style={{ strokeDasharray: 99999, strokeDashoffset: 99999 }}
-        />
-        {/* Reflet central brillant (filet blanc-or au centre de la barre) */}
-        <path ref={pathHlRef} d="" fill="none"
-          stroke="rgba(255,248,190,0.55)" strokeWidth="2.5"
-          strokeLinecap="round" strokeLinejoin="round"
-          style={{ strokeDasharray: 99999, strokeDashoffset: 99999 }}
+        {/* Path invisible pour les mesures (getPointAtLength) */}
+        <path ref={measureRef} d="" fill="none" stroke="none" strokeWidth="0"/>
+
+        {/* ── Maillons du collier ── */}
+        {linkData.map((lk, i) => (
+          <g
+            key={i}
+            ref={el => { linkRefs.current[i] = el; }}
+            transform={`translate(${lk.x},${lk.y}) rotate(${lk.angle})`}
+            style={{ opacity: 0 }}
+            filter="url(#linkShadow)"
+          >
+            {/* Bord extérieur sombre (profondeur) */}
+            <ellipse rx={LINK_RX + 1.5} ry={LINK_RY + 1.5} fill="#2A1600"/>
+            {/* Corps principal du maillon */}
+            <ellipse rx={LINK_RX} ry={LINK_RY} fill="url(#linkGrad)"/>
+            {/* Reflet lumineux en haut à gauche */}
+            <ellipse
+              rx={LINK_RX * 0.55} ry={LINK_RY * 0.42}
+              fill="rgba(255,252,200,0.52)"
+              transform="translate(-2,-2)"
+            />
+            {/* Ligne de séparation entre maillons (gravure) */}
+            <line
+              x1={LINK_RX - 0.5} y1={-(LINK_RY)} x2={LINK_RX - 0.5} y2={LINK_RY}
+              stroke="rgba(30,15,0,0.5)" strokeWidth="1"
+            />
+          </g>
+        ))}
+
+        {/* Pointe animée (triangle doré à l'avant du collier) */}
+        <polygon
+          ref={arrowRef}
+          points="-6,-8 -6,8 14,0"
+          fill="url(#arrowGrad)"
+          filter="url(#linkShadow)"
+          style={{ opacity: 0 }}
         />
       </svg>
 
@@ -452,7 +522,7 @@ const ProcessStepsSection: React.FC<ProcessStepsSectionProps> = ({ steps }) => {
         {steps.map((step, i) => (
           <ProcessStepCard key={i} step={step} index={i}
             activated={activatedCards[i]}
-            cardRef={(el) => { cardRefs.current[i] = el; }}
+            cardRef={el => { cardRefs.current[i] = el; }}
           />
         ))}
       </div>
