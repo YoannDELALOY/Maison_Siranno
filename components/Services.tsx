@@ -12,6 +12,8 @@ export interface ServiceData {
   fullDescription: string;
   benefits: string[];
   useCases: string[];
+  technologies: string[];
+  processSteps: { title: string; description: string }[];
 }
 
 // Associer les icônes JSX aux données

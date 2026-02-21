@@ -52,12 +52,6 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                     }
                   : {
                       backgroundColor: '#0F172A',
-                      backgroundImage: [
-                        `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg1)' opacity='0.45'/%3E%3C/svg%3E")`,
-                        `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg2)' opacity='0.22'/%3E%3C/svg%3E")`,
-                      ].join(', '),
-                      backgroundSize: '600px 600px, 200px 200px',
-                      backgroundBlendMode: 'overlay, screen',
                       boxShadow: 'inset 0 1px 0 rgba(212,175,55,0.12), inset 0 -1px 0 rgba(212,175,55,0.08)',
                     }
               }
