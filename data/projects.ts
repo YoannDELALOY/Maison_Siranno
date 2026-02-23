@@ -23,503 +23,294 @@ export interface ProjectData {
 }
 
 export const projectsData: ProjectData[] = [
+  // ─── 1. JD RÉNOVATION ────────────────────────────────────────────────────────
   {
     id: 'jd-renovation',
     title: "JD Rénovation",
     category: "Site Vitrine & Identité Numérique",
     expertise: 'web-apps-saas',
+    expertises: ['web-apps-saas', 'contenu-marketing-ia', 'conseil-formation', 'pilotage-continu'],
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800",
-    description: "Création complète de la présence numérique pour une entreprise de rénovation spécialisée en carrelage, maçonnerie, couverture et charpente.",
-    tags: ["Site Vitrine", "SEO Local", "Identité Visuelle", "Google My Business"],
-    client: "Yoann DELALOY",
+    description: "Présence numérique complète pour une entreprise de rénovation : site vitrine, 80 articles de blog, charte graphique, Google Workspace et accompagnement continu.",
+    tags: ["Site Vitrine", "SEO Local", "Identité Visuelle", "Google Workspace", "Blog", "Contenu"],
+    client: "Julien DELALOY",
     year: "2025",
     date: "2025-03",
-    fullDescription: "JD Rénovation est une entreprise du bâtiment fondée par Julien Delaloy, spécialisée dans la rénovation complète : carrelage, maçonnerie, couverture et charpente. Avant notre intervention, l'entreprise n'avait aucune présence numérique et dépendait uniquement du bouche-à-oreille. Nous avons créé de A à Z son identité digitale.",
+    fullDescription: "JD Rénovation est une entreprise du bâtiment fondée par Julien Delaloy, spécialisée dans la rénovation complète : carrelage, maçonnerie, couverture et charpente. Avant notre intervention, l'entreprise n'avait aucune présence numérique et dépendait uniquement du bouche-à-oreille pour trouver ses clients. Nous avons construit de A à Z son écosystème digital : identité visuelle, site web, stratégie de contenu, infrastructure Google Workspace, et supports papier pour les chantiers. Une mission 360° sur-mesure pour une PME artisanale.",
     challenges: [
-      "Partir de zéro : aucune présence web ni réseaux sociaux",
-      "Secteur très concurrentiel localement",
-      "Client non familiarisé avec le numérique",
-      "Budget adapté à une petite entreprise artisanale"
+      "Partir de zéro : aucune présence web, aucun email professionnel, aucun outil numérique",
+      "Secteur très concurrentiel localement avec des acteurs déjà bien positionnés",
+      "Client non familiarisé avec les outils numériques — prise en main progressive indispensable",
+      "Budget adapté à une petite entreprise artisanale tout en visant un résultat premium"
     ],
     url: "https://www.jd-renovation.fr",
     results: [
-      "+60% de demandes de devis dès le 2ème mois",
+      "+60% de demandes de devis dès le 2ème mois suivant le lancement",
       "Score Lighthouse 94/100 — site mobile-first ultra-rapide",
       "3 semaines de 0 à un site live en production",
       "Top 5 Google sur les requêtes locales clés en 6 semaines",
-      "Identité visuelle complète livrée (logo, couleurs, typographie)"
+      "80 articles de blog publiés avec visuels et vidéos associés",
+      "Identité visuelle complète livrée : logo, couleurs, typographie, supports papier",
+      "Google Workspace déployé : messagerie pro, Drive partagé, agenda"
     ],
     process: [
-      "Nous avons commencé par un audit de la concurrence locale pour identifier les mots-clés et les contenus qui convertissent dans le secteur du bâtiment sur la zone géographique visée.",
-      "La charte graphique a été construite autour de couleurs sobres et professionnelles, traduisant la solidité du travail artisanal sans sacrifier la lisibilité sur mobile.",
-      "Le site a été développé avec un formulaire de contact intelligent qui qualifie le type d'intervention dès la première prise de contact, filtrant les demandes hors périmètre.",
-      "La fiche Google Business a été entièrement configurée et optimisée : catégories, zones d'intervention, photos de chantiers, et stratégie d'obtention des premiers avis clients.",
-      "Un accompagnement post-lancement de 4 semaines a permis d'affiner le discours commercial en ligne en fonction des retours des premiers prospects."
+      "Nous avons démarré par un audit complet de la concurrence locale pour identifier les mots-clés à fort trafic et les angles de contenu qui convertissent dans le secteur du bâtiment sur la zone géographique ciblée.",
+      "La charte graphique a été construite autour de couleurs sobres et professionnelles traduisant la solidité du savoir-faire artisanal, déclinée sur tous les supports : web, print (flyers, devis), et véhicule.",
+      "Le site a été développé avec un formulaire de contact intelligent qui qualifie le type d'intervention dès la prise de contact, filtrant les demandes hors périmètre et économisant un temps précieux à Julien.",
+      "80 articles de blog ont été rédigés et publiés, chacun accompagné d'images et de courtes vidéos illustrant les chantiers, renforçant l'autorité locale et le référencement naturel sur les requêtes de longue traîne.",
+      "Google Workspace a été configuré de A à Z : boîte mail pro @jd-renovation.fr, Drive partagé pour les devis et factures, agenda synchronisé, et formation de Julien pour une prise en main autonome en moins d'une heure."
     ]
   },
+
+  // ─── 2. PORTFOLIO YOANN DELALOY ──────────────────────────────────────────────
   {
-    id: 'si-griveaux',
-    title: "SI Griveaux",
-    category: "Automatisation & IA",
-    expertise: 'automatisation-n8n',
-    image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&q=80&w=800",
-    description: "Système d'automatisation complet pour la transcription et le résumé d'assemblées générales, éliminant plusieurs heures de travail manuel.",
-    tags: ["Automatisation", "IA", "Transcription", "Workflow"],
+    id: 'portfolio-yoann-delaloy',
+    title: "Portfolio Yoann DELALOY",
+    category: "Portfolio Web & CV Numérique",
+    expertise: 'web-apps-saas',
+    expertises: ['web-apps-saas', 'pilotage-continu'],
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800",
+    description: "Portfolio web et CV PDF interactif mettant en valeur les compétences techniques de Yoann DELALOY — développeur, automatiseur et fondateur de Maison Siranno.",
+    tags: ["Portfolio", "React", "TypeScript", "CV PDF", "Personal Branding"],
     client: "Yoann DELALOY",
     year: "2025",
-    date: "2025-02",
-    fullDescription: "SI Griveaux est une structure gérée par Sylvie Bidoux. L'organisation tenait régulièrement des assemblées générales dont la retranscription et le résumé nécessitaient plusieurs heures de travail manuel, avec des risques d'erreurs et une perte de temps considérable. Nous avons automatisé l'intégralité de ce processus grâce à l'IA.",
+    date: "2025-09",
+    fullDescription: "Ce portfolio a été conçu comme une vitrine technique et personnelle pour Yoann DELALOY, développeur full-stack, expert en automatisation IA et fondateur de Maison Siranno. L'objectif : démontrer par l'exemple la qualité du travail que l'agence peut produire, tout en servant de CV interactif pour les prises de contact. Le site (yoanndelaloy.fr) combine animations premium, présentation des projets et un générateur de CV PDF accessible directement depuis le navigateur.",
     challenges: [
-      "Processus manuel très chronophage (4-6h par AG)",
-      "Risques d'erreurs dans les retranscriptions manuelles",
-      "Nécessité d'une solution fiable et simple à utiliser",
-      "Intégration avec les outils existants de l'organisation"
+      "Mettre en valeur un profil rare : développeur, automatiseur, stratège et fondateur d'agence",
+      "Créer une expérience visuelle suffisamment premium pour convaincre des clients exigeants",
+      "Générer un CV PDF fidèle au design web sans librairie tierce lourde",
+      "Maintenir des performances excellentes malgré les animations complexes"
     ],
-    githubUrl: "https://github.com/maison-siranno/si-griveaux-automation",
+    url: "https://www.yoanndelaloy.fr",
     results: [
-      "-94% de temps de traitement : de 4h à 15 minutes par AG",
-      "100% des assemblées générales traitées automatiquement",
-      "+4h récupérées par session, redéployées sur le cœur de métier",
-      "Zéro erreur de retranscription depuis le déploiement",
-      "Archivage automatique et indexation pour recherche ultérieure"
+      "Portfolio live sur yoanndelaloy.fr avec animations premium",
+      "CV PDF téléchargeable généré depuis le navigateur — fidèle au design",
+      "Score Lighthouse 96/100 malgré la richesse visuelle",
+      "Vitrine technique qui sert directement d'argument commercial pour Maison Siranno",
+      "Référencement sur les requêtes 'développeur React freelance' et 'expert IA automatisation'"
     ],
     process: [
-      "Nous avons cartographié le processus existant en détail : comment les enregistrements étaient collectés, qui les traitait, sous quel format les comptes-rendus étaient attendus par les parties prenantes.",
-      "Un workflow n8n a été conçu pour orchestrer la chaîne complète : dépôt du fichier audio dans un dossier partagé, envoi à l'API de transcription, nettoyage du texte brut, puis passage au modèle de résumé structuré.",
-      "Le prompt de résumé a été itéré plusieurs fois avec Sylvie pour que la sortie corresponde exactement au format attendu : points à l'ordre du jour, décisions prises, actions et responsables.",
-      "L'archivage automatique vers le drive de l'organisation a été configuré avec une nomenclature de fichiers standardisée, permettant une recherche rapide par date ou thème."
+      "Nous avons commencé par définir la stratégie de positioning : mettre en avant le profil hybride (technique + stratégique) plutôt que de chercher à concurrencer les portfolios de pure UI.",
+      "Le design a été conçu pour refléter l'univers de Maison Siranno : textures métalliques, animations fluides, typographie premium — le portfolio est lui-même une démonstration du niveau de finition proposé aux clients.",
+      "La génération du CV PDF a été implémentée avec une approche CSS Print Media, garantissant une sortie propre et professionnelle sans dépendance à des services tiers.",
+      "Une section 'réalisations' dynamique permet d'ajouter de nouveaux projets sans modifier le code, facilitant la maintenance sur le long terme."
     ]
   },
+
+  // ─── 3. APP GESTION DE PROJET RPG ────────────────────────────────────────────
   {
-    id: 'boulangerie-leroux',
-    title: "Boulangerie Leroux",
-    category: "Site Vitrine & Commandes en Ligne",
+    id: 'app-gestion-projet-rpg',
+    title: "App Gestion de Projet RPG",
+    category: "Application Web Sur-Mesure",
     expertise: 'web-apps-saas',
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800",
-    description: "Site vitrine avec module de commandes en ligne pour une boulangerie artisanale. Intégration Click & Collect et gestion des créneaux de retrait.",
-    tags: ["Site Vitrine", "Click & Collect", "SEO Local", "Commandes"],
+    expertises: ['web-apps-saas'],
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800",
+    description: "Application de gestion de projet type Notion avec une UX/UI inspirée des jeux vidéo RPG et un système de gamification complet pour booster l'engagement.",
+    tags: ["React", "TypeScript", "Gamification", "RPG", "UX/UI", "App Web"],
     client: "Yoann DELALOY",
     year: "2025",
-    date: "2025-01",
-    fullDescription: "La Boulangerie Leroux, institution locale depuis trois générations, souhaitait moderniser sa relation client et proposer une commande en ligne pour éviter les ruptures de stock et les files d'attente. Nous avons conçu un site vitrine chaleureux avec un système de commande simple et efficace.",
+    date: "2025-10",
+    fullDescription: "Née d'une conviction simple — la gestion de projet n'a pas à être ennuyeuse — cette application réimagine l'expérience Notion à travers le prisme des jeux de rôle (RPG). L'utilisateur y est un héros qui progresse, gagne de l'expérience, monte de niveau et débloque des récompenses en accomplissant ses tâches et projets. L'interface combine la puissance organisationnelle d'un outil comme Notion avec l'engagement émotionnel d'un RPG, créant une expérience de productivité unique qui transforme le travail quotidien en aventure.",
     challenges: [
-      "Conserver l'identité artisanale tout en passant au digital",
-      "Gérer les stocks en temps réel pour éviter les déceptions",
-      "Intégrer un système de Click & Collect adapté aux horaires d'ouverture",
-      "Facilité d'utilisation pour une clientèle variée (seniors inclus)"
+      "Concevoir un système de gamification cohérent qui reste motivant sur la durée",
+      "Maintenir la lisibilité et l'efficacité de l'outil malgré l'habillage RPG",
+      "Créer une UX immersive sans sacrifier la performance de l'application",
+      "Équilibrer la complexité des mécaniques RPG avec la simplicité d'usage attendue d'un outil de productivité"
     ],
-    url: "https://www.boulangerie-leroux.fr",
     results: [
-      "Site vitrine avec galerie des spécialités et photos d'ambiance",
-      "Module Click & Collect avec créneaux personnalisables",
-      "Réduction de 30% des ruptures de stock grâce à l'anticipation des commandes",
-      "+45 commandes en ligne dès la première semaine",
-      "Hausse du panier moyen de 18% via les suggestions produits"
+      "Application complète avec tableaux kanban, listes de tâches et vue calendrier en univers RPG",
+      "Système de XP, niveaux, achievements et récompenses visuelles opérationnel",
+      "UX immersive avec sons, animations et transitions thématiques",
+      "Architecture React modulaire prête pour l'ajout de nouvelles fonctionnalités",
+      "Performances Core Web Vitals optimales malgré la richesse des effets visuels"
     ],
     process: [
-      "La première étape a été une séance photo en boulangerie pour constituer un stock d'images authentiques des produits et de l'ambiance — condition indispensable pour un site artisanal crédible.",
-      "Le catalogue produits a été structuré avec l'équipe : catégories, variantes, quantités maximales par créneau, et règles de fermeture automatique quand le stock est épuisé.",
-      "Le module de commande a été conçu en priorisant la simplicité : trois clics pour commander, sans création de compte obligatoire, avec confirmation par SMS immédiate.",
-      "Des tests d'utilisabilité ont été menés avec des clients habitués de la boulangerie, y compris des seniors, pour valider que le parcours était fluide sur mobile comme sur ordinateur.",
-      "Un tableau de bord simplifié a été livré au boulanger pour gérer les créneaux, visualiser les commandes du jour, et ajuster les stocks disponibles chaque matin."
+      "Le design system RPG a été défini en premier : palette de couleurs fantasy, typographies évocatrices, iconographie cohérente avec l'univers visé — le tout sans jamais perdre de vue la lisibilité.",
+      "Les mécaniques de gamification ont été modélisées comme un mini-système de règles : chaque type de tâche rapporte des points d'XP calibrés, les objectifs hebdomadaires débloquent des succès, et les streaks de productivité sont récompensés visuellement.",
+      "L'architecture de données a été pensée pour que la couche gamification soit découplée de la logique métier, permettant d'ajuster les mécaniques de jeu sans toucher à la gestion des projets.",
+      "Des sessions de test ont été menées pour valider que les animations et sons RPG restaient motivants sans devenir distrayants lors d'une utilisation intensive."
     ]
   },
+
+  // ─── 4. APP GESTION FINANCIÈRE RPG ───────────────────────────────────────────
   {
-    id: 'cabinet-kine-perrin',
-    title: "Cabinet Kiné Perrin",
-    category: "Prise de RDV IA & Site Médical",
-    expertise: 'automatisation-n8n',
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800",
-    description: "Refonte complète du site d'un cabinet de kinésithérapie avec agenda IA, rappels automatiques et gestion des dossiers patients simplifiée.",
-    tags: ["Prise de RDV", "IA", "Santé", "Automatisation"],
+    id: 'app-gestion-financiere-rpg',
+    title: "App Gestion Financière RPG",
+    category: "Application Web Sur-Mesure",
+    expertise: 'web-apps-saas',
+    expertises: ['web-apps-saas'],
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=800",
+    description: "Application de gestion patrimoniale type Finary, revisitée avec une UX/UI RPG poussée et un système de gamification pour transformer l'épargne en quête.",
+    tags: ["React", "TypeScript", "Finance", "Gamification", "RPG", "Dashboard"],
     client: "Yoann DELALOY",
     year: "2025",
-    date: "2025-02",
-    fullDescription: "Le Cabinet Kiné Perrin gérait ses rendez-vous par téléphone et papier, générant une charge administrative importante pour la praticienne. Nous avons déployé une solution de prise de RDV en ligne avec rappels automatiques par SMS, réduisant drastiquement les oublis et les appels entrants.",
+    date: "2025-11",
+    fullDescription: "L'application de gestion financière RPG réinvente la relation à l'épargne et à l'investissement. Inspirée de Finary mais portée par un univers visuel de jeu de rôle, elle transforme chaque objectif financier en quête, chaque investissement en ressource à gérer, et chaque palier d'épargne en victoire à célébrer. L'objectif est de rendre la gestion de patrimoine accessible, engageante et même excitante pour des profils qui perçoivent habituellement ces sujets comme austères ou complexes.",
     challenges: [
-      "Respecter les contraintes réglementaires du secteur médical",
-      "Intégrer un agenda intelligent sans perturber les habitudes de travail",
-      "Automatiser les rappels patients sans perte de la relation humaine",
-      "Former la praticienne et sa secrétaire à l'outil"
+      "Rendre accessibles des concepts financiers complexes (diversification, rendement, risque) à travers la métaphore RPG",
+      "Concevoir des visualisations de données financières aussi belles qu'informatives",
+      "Assurer la sécurité des données sensibles dans une architecture front-end",
+      "Maintenir la cohérence RPG sur des écrans très chargés en données (dashboards)"
     ],
-    url: "https://www.cabinet-kine-perrin.fr",
     results: [
-      "-70% de rendez-vous non honorés (no-show) en 30 jours",
-      "+2h gagnées par jour sur la gestion administrative",
-      "+85% des prises de RDV effectuées en ligne vs. téléphone",
-      "100% conforme aux exigences de données de santé (hébergement France)",
-      "Formulaire de pré-consultation numérique pour les nouveaux patients"
+      "Dashboard patrimonial complet : actifs, passifs, épargne, investissements en vue RPG",
+      "Système de quêtes financières : objectifs définis par l'utilisateur transformés en missions",
+      "Visualisations interactives type Recharts habillées en carte du monde fantasy",
+      "Mécaniques de progression visuelle : niveaux de 'richesse', achievements, paliers",
+      "Architecture sécurisée avec données stockées localement (aucune donnée bancaire transmise)"
     ],
     process: [
-      "Nous avons d'abord analysé le flux des appels entrants sur une semaine type pour comprendre les pics d'activité et les motifs de contact les plus fréquents.",
-      "La solution de prise de RDV a été choisie parmi plusieurs options en privilégiant l'hébergement des données en France, condition non négociable pour les données de santé.",
-      "L'agenda a été configuré avec des règles métier précises : durées différentes par type de soin, plages réservées aux nouveaux patients, et gestion des urgences.",
-      "Un workflow de rappels a été mis en place : SMS J-1, puis rappel J-0 matin pour les créneaux de l'après-midi, avec possibilité pour le patient de confirmer ou d'annuler par retour de SMS.",
-      "Une demi-journée de formation a été organisée avec la praticienne et sa secrétaire, suivie d'un support téléphonique pendant les deux premières semaines d'utilisation."
+      "La première phase a consisté à mapper les concepts financiers sur des mécaniques RPG : le patrimoine net = les points de vie du héros, les revenus passifs = la régénération, les dettes = les malédictions à lever.",
+      "Les dashboards ont été conçus avec une attention particulière à la hiérarchie de l'information : les indicateurs clés sont accessibles en un coup d'œil, les détails disponibles au drill-down, sans noyer l'utilisateur.",
+      "Le système de quêtes financières a été conçu pour être flexible : l'utilisateur définit son objectif (acheter une voiture, constituer un fonds d'urgence, préparer sa retraite), et l'app le découpe automatiquement en étapes ludiques.",
+      "Des revues de design systématiques ont permis de trouver le bon équilibre entre immersion RPG et sobriété d'un outil professionnel — le tout sans jamais sacrifier la lisibilité des chiffres."
     ]
   },
+
+  // ─── 5. APP SUIVI SÉANCES SPORT ──────────────────────────────────────────────
   {
-    id: 'atelier-martin',
-    title: "Atelier Martin",
-    category: "Site Vitrine & E-commerce",
+    id: 'app-suivi-seances-sport',
+    title: "App Suivi de Séances de Sport",
+    category: "Application Web Sur-Mesure",
     expertise: 'web-apps-saas',
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
-    description: "Refonte complète pour un artisan ébéniste local. Catalogue interactif et prise de RDV automatisée.",
-    tags: ["Next.js", "Design UI/UX", "Automatisation", "Catalogue"],
-    client: "Yoann DELALOY",
-    year: "2024",
-    date: "2024-12",
-    fullDescription: "L'Atelier Martin est tenu par Jean Martin, artisan ébéniste passionné dont le savoir-faire exceptionnel méritait une vitrine numérique à la hauteur. La refonte complète du site a mis en valeur ses créations uniques et automatisé la prise de rendez-vous.",
+    expertises: ['web-apps-saas', 'conseil-formation'],
+    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=800",
+    description: "Application de suivi de séances d'aquagym sur-mesure pour Maxime Jambou, permettant de planifier, enregistrer et analyser chaque entraînement.",
+    tags: ["React", "TypeScript", "Sport", "Suivi", "Dashboard", "Mobile-first"],
+    client: "Maxime JAMBOU",
+    year: "2025",
+    date: "2025-10",
+    fullDescription: "Maxime Jambou est moniteur d'aquagym. Il avait besoin d'un outil simple et efficace pour suivre les séances de ses adhérents : présences, progression, exercices réalisés, et notes personnalisées par profil. Les solutions existantes (Excel, apps génériques) ne correspondaient pas à la spécificité de l'aquagym ni à ses habitudes de travail. Nous avons co-construit une application sur-mesure, mobile-first, pensée pour être utilisée en bordure de bassin.",
     challenges: [
-      "Mettre en valeur des œuvres d'artisanat de haute qualité",
-      "Permettre la personnalisation des commandes en ligne",
-      "Gestion des demandes de devis volumineuses"
+      "Concevoir une interface utilisable en milieu humide, avec les mains mouillées, sur smartphone",
+      "Modéliser la spécificité des exercices aquatiques (résistance de l'eau, intensité variable selon profondeur)",
+      "Permettre le suivi de plusieurs groupes d'adhérents avec des niveaux différents",
+      "Livrer rapidement un MVP utilisable avant la prochaine saison"
     ],
-    url: "https://www.atelier-martin-ebeniste.fr",
-    githubUrl: "https://github.com/maison-siranno/atelier-martin",
     results: [
-      "+100% de demandes de devis en 3 mois après le lancement",
-      "+65% de durée de visite moyenne sur le site",
-      "80 œuvres cataloguées avec filtres par matière, style et budget",
-      "Temps de chargement réduit à moins de 1,8s malgré les photos HD",
-      "Système de prise de RDV en ligne intégré — 0 appel téléphonique"
+      "Application mobile-first opérationnelle dès la première séance post-lancement",
+      "Suivi de présence, d'exercices et de progression par adhérent",
+      "Bibliothèque d'exercices aquatiques avec niveaux d'intensité",
+      "Dashboard hebdomadaire pour analyser la régularité et la progression du groupe",
+      "Prise en main en moins de 10 minutes — formation incluse dans la livraison"
     ],
     process: [
-      "Un audit complet de l'ancien site a révélé des photos de mauvaise qualité et une architecture de navigation qui ne mettait pas en avant les créations les plus emblématiques.",
-      "Nous avons reorganisé le catalogue autour de l'expérience utilisateur : filtres par type de meuble, par essence de bois, et par budget, pour guider chaque visiteur vers la pièce qui lui correspond.",
-      "Le formulaire de devis a été transformé en configurateur : le visiteur sélectionne les dimensions, les essences, les finitions, et reçoit une fourchette tarifaire indicative avant même de contacter Jean.",
-      "La galerie photo a été entièrement reprise avec un shooting professionnel en atelier, mettant en valeur les détails d'assemblage et les textures des bois travaillés."
+      "Plusieurs séances de travail avec Maxime ont permis de comprendre précisément son workflow : avant la séance (préparer le plan), pendant (noter les présences et ajustements), après (archiver et analyser).",
+      "Le design a été pensé pour l'usage terrain : gros boutons, contrastes élevés (lisibilité en plein soleil), actions principales accessibles en un tap depuis l'écran principal.",
+      "La bibliothèque d'exercices aquatiques a été construite avec Maxime, qui a apporté son expertise métier pour définir les niveaux d'intensité, les variantes et les contre-indications.",
+      "Une phase de test en conditions réelles (bord de bassin, smartphone mouillé) a été organisée avant le lancement, validant l'ergonomie dans l'environnement d'utilisation réel.",
+      "Un accompagnement post-lancement de 2 semaines a permis d'ajuster quelques points d'interface remontés après les premières séances en conditions réelles."
     ]
   },
+
+  // ─── 6. AUTOMATISATION YOANN DELALOY ─────────────────────────────────────────
   {
-    id: 'auto-ecole-centrale',
-    title: "Auto-École Centrale",
-    category: "SEO Local & Calendrier en Ligne",
-    expertise: 'conseil-formation',
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800",
-    description: "Refonte SEO locale et déploiement d'un calendrier de réservation en ligne pour leçons de conduite et examens du permis.",
-    tags: ["SEO Local", "Calendrier", "Google Ads", "Site Vitrine"],
-    client: "Yoann DELALOY",
-    year: "2024",
-    date: "2024-11",
-    fullDescription: "L'Auto-École Centrale de Marc Fontaine perdait des élèves face à la concurrence de grandes franchises en ligne. Nous avons renforcé sa visibilité locale par une stratégie SEO ciblée et déployé un calendrier de réservation directement depuis le site, sans intermédiaire.",
-    challenges: [
-      "Rivaliser avec les plateformes nationales sur les requêtes locales",
-      "Simplifier la réservation des leçons sans appel téléphonique",
-      "Afficher en temps réel la disponibilité des moniteurs",
-      "Budget Google Ads limité à optimiser au maximum"
-    ],
-    url: "https://www.autoecole-centrale.fr",
-    results: [
-      "Position #1 sur 'auto-école [ville]' en 3 mois",
-      "Calendrier en ligne avec synchronisation agenda moniteurs",
-      "+35% de nouvelles inscriptions par rapport à l'année précédente",
-      "Coût par acquisition divisé par 2,4 vs. plateformes nationales",
-      "Fiche Google Business optimisée (4,8★ — 120 avis)"
-    ],
-    process: [
-      "L'analyse SEO initiale a montré que les plateformes nationales dominaient les requêtes génériques, mais laissaient un espace significatif sur les requêtes de longue traîne géolocalisées.",
-      "Nous avons produit du contenu de fond ciblant ces requêtes spécifiques : pages par quartier, comparatifs permis B / boîte automatique, guides pratiques pour les candidats.",
-      "Le calendrier de réservation a été synchronisé avec les agendas Google des moniteurs pour afficher en temps réel les créneaux disponibles sans double saisie.",
-      "La stratégie Google Ads a été concentrée sur un rayon de 15 km autour de l'auto-école, avec des enchères ajustées selon les créneaux horaires les plus convertissants.",
-      "Une campagne de collecte d'avis Google a été mise en place : SMS automatique envoyé aux élèves après l'examen, avec lien direct vers la fiche de l'établissement."
-    ]
-  },
-  {
-    id: 'ecrin-gastronomique',
-    title: "L'Écrin Gastronomique",
-    category: "Site & Réservations + Menu QR",
-    expertise: 'web-apps-saas',
-    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=800",
-    description: "Site premium pour un restaurant gastronomique : réservations en ligne, menus QR code dynamiques et carte des vins interactive.",
-    tags: ["Restauration", "Réservations", "QR Code", "Design Premium"],
-    client: "Yoann DELALOY",
-    year: "2024",
-    date: "2024-10",
-    fullDescription: "L'Écrin Gastronomique est le restaurant de la Chef Sophie Aubert, étoilée Michelin. L'établissement avait besoin d'un écrin digital à la hauteur de son positionnement haut de gamme : réservation en ligne fluide, menus QR dynamiques mis à jour en temps réel, et carte des vins interactive.",
-    challenges: [
-      "Refléter l'excellence gastronomique de l'établissement sur le web",
-      "Permettre la mise à jour des menus sans intervention technique",
-      "Gérer les réservations avec gestion des allées et venues",
-      "Multilinguisme pour la clientèle internationale"
-    ],
-    url: "https://www.lecrin-gastronomique.fr",
-    results: [
-      "Site bilingue (FR/EN) avec identité visuelle haut de gamme",
-      "Système de réservation en ligne avec gestion des tables",
-      "Menus QR dynamiques modifiables en 2 minutes depuis le back-office",
-      "Réduction de 40% des appels pour réservation",
-      "Taux de remplissage passé de 72% à 91% en soirée"
-    ],
-    process: [
-      "Le travail de design a démarré par une phase d'immersion en salle pour comprendre l'atmosphère du restaurant : lumières, matières, rythme du service — autant d'éléments traduits ensuite dans la palette et la typographie du site.",
-      "Le système de réservation a été paramétré avec un niveau de granularité élevé : tailles de tables, préférences de placement, menus spéciaux à sélectionner à l'avance pour les grandes occasions.",
-      "Les menus QR ont été construits sur un back-office ultra-simplifié permettant à la brigade de modifier un plat, son prix ou ses allergènes en moins de deux minutes depuis un téléphone.",
-      "La carte des vins a été structurée avec des filtres par région, cépage et accord mets-vins, transformant un simple listing en véritable expérience de découverte pour les convives.",
-      "La version anglaise a été traduite et adaptée culturellement, pas seulement traduite mot à mot, pour résonner auprès des clients internationaux et de la presse spécialisée étrangère."
-    ]
-  },
-  {
-    id: 'proplomb-services',
-    title: "ProPlomb Services",
-    category: "Site Vitrine & Devis Automatisé",
+    id: 'automatisation-yoann-delaloy',
+    title: "Automatisation Yoann DELALOY",
+    category: "Automatisation & Agents IA",
     expertise: 'automatisation-n8n',
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&q=80&w=800",
-    description: "Site vitrine avec configurateur de devis automatisé pour un plombier-chauffagiste. Réponse en moins de 24h garantie.",
-    tags: ["Site Vitrine", "Devis Auto", "SEO Local", "Artisan"],
+    expertises: ['automatisation-n8n', 'ia-agents-rag'],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+    description: "Système d'automatisation personnel complet : tri de boîte mail, veille métier, rapports de réunion automatiques, rédaction de documentation et agent orchestrateur IA.",
+    tags: ["n8n", "Claude", "Automatisation", "Agent IA", "Veille", "Productivité"],
     client: "Yoann DELALOY",
-    year: "2024",
-    date: "2024-09",
-    fullDescription: "ProPlomb Services d'Antoine Massé recevait des demandes de devis informelles par téléphone, difficiles à quantifier et source de nombreux déplacements inutiles. Nous avons automatisé la qualification des demandes via un configurateur intelligent, permettant à Antoine de répondre en moins de 24h.",
+    year: "2025",
+    date: "2025-09",
+    fullDescription: "Ce projet est l'automatisation du quotidien de Yoann DELALOY lui-même — un laboratoire permanent où chaque gain de temps libère de la bande passante pour créer de la valeur. Le système repose sur un agent orchestrateur central (bot de discussion connecté à Claude) qui pilote une constellation de workflows n8n spécialisés : gestion intelligente de la boîte mail, veille métier automatique, génération de rapports de réunion depuis des transcriptions, rédaction assistée de documentation technique, et aide à l'écriture de code. Un exemple concret de ce que Maison Siranno peut mettre en place pour ses clients.",
     challenges: [
-      "Qualifier les demandes clients avant tout déplacement",
-      "Automatiser l'envoi de devis types selon la nature de l'intervention",
-      "Améliorer la visibilité locale face aux grandes plateformes",
-      "Interface simple pour un artisan non connecté au digital"
+      "Orchestrer de nombreux workflows IA sans créer de dépendances fragiles entre eux",
+      "Calibrer les prompts des agents pour maintenir un niveau de qualité constant sans supervision",
+      "Gérer les coûts API des modèles de langage sur un usage quotidien intensif",
+      "Construire un système évolutif que l'on peut enrichir sans tout reconstruire"
     ],
-    url: "https://www.proplomb-services.fr",
     results: [
-      "Configurateur de devis : 8 types d'interventions couvertes",
-      "Devis type envoyé automatiquement par email en moins de 5 minutes",
-      "-60% de déplacements de diagnostic inutiles",
-      "+80% de demandes de contact en ligne vs. téléphone",
-      "Position Top 3 sur Google Maps pour la zone d'intervention"
+      "Boîte mail traitée, triée et prérépondue automatiquement chaque matin",
+      "Veille métier quotidienne sur les thématiques IA, automatisation et développement",
+      "Rapports de réunion générés depuis transcription en moins de 2 minutes",
+      "Documentation technique produite 4× plus vite avec l'agent dédié",
+      "Agent orchestrateur accessible via chat pour déclencher n'importe quel workflow",
+      "Réduction estimée à -3h de tâches répétitives par jour ouvré"
     ],
     process: [
-      "Nous avons listé avec Antoine les 8 types d'interventions les plus fréquentes et modélisé pour chacune les questions permettant de donner une fourchette de prix réaliste sans déplacement.",
-      "Le configurateur a été développé en plusieurs étapes guidées : type de panne, ancienneté de l'installation, urgence de l'intervention — chaque réponse affine automatiquement la proposition tarifaire.",
-      "Un workflow d'automatisation génère et envoie le devis type au format PDF dans les 5 minutes suivant la soumission du formulaire, avec les coordonnées d'Antoine et un lien de rappel si besoin.",
-      "La fiche Google Maps a été optimisée avec des mots-clés par quartier et par type d'intervention, doublée d'une stratégie d'avis pour consolider la position locale sur la durée."
+      "L'architecture a démarré par un audit des tâches répétitives de la semaine type : classification par fréquence, durée et valeur ajoutée — pour identifier les quick wins et les gains les plus significatifs.",
+      "Chaque domaine d'automatisation (mail, veille, réunion, code, documentation) a été traité comme un projet indépendant avec son propre workflow n8n et ses propres critères de qualité.",
+      "L'agent orchestrateur a été développé en dernier, une fois les briques élémentaires stabilisées : un bot de conversation (Telegram) connecté à Claude qui permet de déclencher n'importe quel workflow par message naturel.",
+      "Des boucles de rétroaction ont été intégrées : certains workflows génèrent un résumé de leur propre exécution, envoyé chaque semaine pour permettre d'identifier les dérives et d'ajuster les prompts.",
+      "L'ensemble du système est documenté et versionné, permettant de l'auditer, de le reproduire pour d'autres clients, et de l'enrichir sans risque de régression."
     ]
   },
+
+  // ─── 7. PERSONAL BRANDING YOANN DELALOY ──────────────────────────────────────
   {
-    id: 'bati-loire',
-    title: "Bâti-Loire Connect",
-    category: "Application Métier / Dashboard",
-    expertise: 'web-apps-saas',
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    description: "Plateforme de gestion de chantiers pour une PME du BTP. Suivi des équipes, stocks et facturation en temps réel.",
-    tags: ["React", "Dashboard", "SaaS", "BTP"],
-    client: "Yoann DELALOY",
-    year: "2024",
-    date: "2024-08",
-    fullDescription: "Bâti-Loire avait besoin d'un outil pour centraliser la gestion de ses chantiers, ses équipes et sa facturation. Nous avons développé un dashboard métier sur mesure, accessible depuis le bureau comme sur le terrain.",
-    challenges: [
-      "Centraliser des données éparpillées dans Excel et emails",
-      "Accessible et utilisable sur mobile depuis les chantiers",
-      "Intégration avec les outils comptables existants"
-    ],
-    githubUrl: "https://github.com/maison-siranno/bati-loire-dashboard",
-    results: [
-      "-10h de tâches administratives économisées chaque semaine",
-      "100% des chantiers actifs suivis en temps réel depuis le terrain",
-      "+3 modules intégrés : suivi chantiers, plannings équipes, facturation",
-      "Zéro double saisie — synchronisation comptable automatique",
-      "Accessible depuis mobile sur chantier, tablette en bureau"
-    ],
-    process: [
-      "Deux semaines d'observation terrain ont précédé tout développement : accompagner les chefs de chantier dans leur journée pour comprendre comment ils communiquent, consignent et partagent l'information.",
-      "L'architecture de données a été conçue autour du chantier comme entité centrale, à laquelle se rattachent équipes, matériaux, interventions et documents — reflétant la logique métier réelle.",
-      "L'interface mobile a été développée en priorité, avec des composants larges et lisibles même en plein soleil sur un écran de téléphone de chantier poussiéreux.",
-      "L'intégration comptable a été réalisée via export structuré compatible avec le logiciel existant, évitant une migration risquée tout en éliminant la double saisie."
-    ]
-  },
-  {
-    id: 'studio-lumiere',
-    title: "Studio Lumière Photo",
-    category: "Portfolio & Galerie E-shop",
+    id: 'personal-branding-yoann-delaloy',
+    title: "Personal Branding Yoann DELALOY",
+    category: "Stratégie de Contenu & Personal Branding",
     expertise: 'contenu-marketing-ia',
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800",
-    description: "Portfolio photographe avec galerie interactive, vente de tirages en ligne et système de réservation de séances.",
-    tags: ["Portfolio", "E-commerce", "Photographie", "Design"],
+    expertises: ['contenu-marketing-ia', 'pilotage-continu'],
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&q=80&w=800",
+    description: "Stratégie de contenu et personal branding complets pour Yoann DELALOY : positionnement, ligne éditoriale, production et pilotage sur la durée.",
+    tags: ["Personal Branding", "LinkedIn", "Stratégie Contenu", "IA", "Vidéo", "Copywriting"],
     client: "Yoann DELALOY",
-    year: "2024",
-    date: "2024-07",
-    fullDescription: "Amélie Chassagne, photographe professionnelle spécialisée en portrait et mariage, souhaitait centraliser son portfolio, vendre ses tirages d'art en ligne et permettre la réservation de séances directement depuis son site.",
+    year: "2025",
+    date: "2025-09",
+    fullDescription: "Le personal branding de Yoann DELALOY a été pensé comme un actif stratégique au service de Maison Siranno. En positionnant Yoann comme une voix de référence sur l'IA appliquée au business, l'automatisation et le développement augmenté par l'IA, la stratégie vise à générer un flux entrant de prospects qualifiés sans dépendre d'une publicité payante. La production de contenu est accélérée par les outils IA (Claude, Kling AI, NotebookLM) sans jamais sacrifier l'authenticité et la singularité du propos.",
     challenges: [
-      "Mettre en valeur des photos haute résolution sans ralentir le site",
-      "Gérer un catalogue e-commerce de tirages avec variantes (format, papier)",
-      "Synchroniser le calendrier de réservation avec son agenda Google",
-      "Design épuré et premium adapté à son positionnement artistique"
+      "Définir un positionnement différenciant dans un espace très saturé (IA, marketing digital)",
+      "Maintenir un rythme de publication soutenu sans y consacrer des journées entières",
+      "Produire des contenus qui engagent tout en démontrant une expertise technique réelle",
+      "Coordonner vidéo, texte, visuel et audio en cohérence pour une marque personnelle forte"
     ],
-    url: "https://www.studio-lumiere-photo.fr",
     results: [
-      "Portfolio galerie avec chargement progressif des images HD",
-      "Boutique de tirages d'art : 3 formats, 2 types de papier",
-      "Réservation de séances synchronisée avec Google Calendar",
-      "15 tirages vendus dès le premier mois sans publicité",
-      "Augmentation des demandes de mariage de +40%"
+      "Ligne éditoriale claire : 3 piliers de contenu, ton de voix défini, charte visuelle personnelle",
+      "Production accélérée grâce aux agents IA : 1 contenu long → décliné en 5 formats en 1h",
+      "Présence active sur LinkedIn avec publications régulières sur IA, automatisation et développement",
+      "Stratégie vidéo courte format (Kling AI) pour démo techniques et cas d'usage clients",
+      "Newsletter mensuelle automatisée : curation de veille + insights personnels"
     ],
     process: [
-      "Nous avons commencé par une sélection éditoriale avec Amélie : choisir les 80 photos qui représentent le mieux son univers et structurer le portfolio en séries cohérentes plutôt qu'en simple liste chronologique.",
-      "Le pipeline d'optimisation des images a été automatisé : redimensionnement, compression WebP, génération de miniatures et chargement progressif pour ne jamais sacrifier la qualité à la vitesse.",
-      "La boutique de tirages a été conçue avec une expérience de prévisualisation permettant au client de voir le rendu de chaque photo dans chaque format avant d'acheter.",
-      "Le calendrier de réservation s'est synchronisé en temps réel avec l'agenda Google d'Amélie, lui évitant toute double gestion et lui permettant de bloquer des jours de congé depuis son téléphone."
+      "Un atelier de positionnement a permis de définir les 3 angles éditoriaux qui fondent toute la stratégie : 'IA appliquée au concret', 'automatisation pour l'indépendant', et 'développement augmenté par l'IA'.",
+      "Un système de production de contenu assisté par IA a été mis en place : chaque idée de fond est d'abord développée en article long, puis déclinée automatiquement en post LinkedIn, script vidéo, newsletter et thread.",
+      "La production vidéo a été structurée autour d'outils IA (Kling AI, synthèse vocale, montage automatisé) pour maintenir un rythme de publication hebdomadaire sans équipe dédiée.",
+      "Un tableau de bord de pilotage a été mis en place pour suivre les performances de chaque format et affiner la stratégie en continu selon les données d'engagement réelles."
     ]
   },
+
+  // ─── 8. SIRANNO HUB ──────────────────────────────────────────────────────────
   {
-    id: 'loire-valley',
-    title: "Loire Valley Taste",
-    category: "Marketplace Locale",
-    expertise: 'web-apps-saas',
-    image: "https://images.unsplash.com/photo-1472851294608-4155f2118c03?auto=format&fit=crop&q=80&w=800",
-    description: "Marketplace regroupant les producteurs de Châteauneuf. Système de Click & Collect intelligent.",
-    tags: ["E-commerce", "Stripe", "Mobile First", "Marketplace"],
+    id: 'siranno-hub',
+    title: "Siranno Hub",
+    category: "SaaS IA & Assistant Personnel",
+    expertise: 'ia-agents-rag',
+    expertises: ['ia-agents-rag', 'pilotage-continu'],
+    image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?auto=format&fit=crop&q=80&w=800",
+    description: "SaaS de type ERP personnel ultra-complet : +3 800 agents IA, dizaines de dashboards (projet, patrimoine, marketing), accessible via Telegram et WhatsApp.",
+    tags: ["SaaS", "IA", "Agents RAG", "ERP", "Dashboard", "Telegram", "WhatsApp"],
     client: "Yoann DELALOY",
-    year: "2024",
-    date: "2024-06",
-    fullDescription: "Un collectif de producteurs locaux de la région de Châteauneuf-sur-Loire souhaitait créer une plateforme commune pour vendre leurs produits en ligne avec système de Click & Collect.",
+    year: "2025",
+    date: "2025-11",
+    fullDescription: "Siranno Hub est le projet le plus ambitieux de Maison Siranno : un SaaS personnel de type ERP boosté à l'intelligence artificielle, conçu pour centraliser et automatiser la gestion de vie — projets, patrimoine, marketing, veille, communication. Il repose sur une architecture de plus de 3 800 agents IA travaillant de concert, organisés en clusters spécialisés et orchestrés par un agent maître. L'interface se compose de plusieurs dizaines de dashboards thématiques accessibles via navigateur, mais aussi directement depuis Telegram et WhatsApp pour une intégration totale dans le quotidien.",
     challenges: [
-      "Gérer plusieurs vendeurs avec des stocks différents",
-      "Système de paiement multi-vendeurs (Stripe Connect)",
-      "Logistique des créneaux de retrait"
+      "Orchestrer +3 800 agents IA sans latence ni conflits entre les workflows",
+      "Concevoir une UX cohérente sur plusieurs dizaines de dashboards très différents",
+      "Permettre l'accès via interfaces de messagerie (Telegram, WhatsApp) sans perte de richesse",
+      "Maintenir la performance et la stabilité sur un système de cette envergure",
+      "Sécuriser des données sensibles (patrimoine, communications) dans une architecture cloud"
     ],
-    url: "https://www.loirevalleytaste.fr",
-    githubUrl: "https://github.com/maison-siranno/loire-valley-marketplace",
     results: [
-      "+200 commandes dès le premier mois de lancement",
-      "12 producteurs locaux connectés sur une seule plateforme",
-      "+150 clients en liste d'attente avant l'ouverture officielle",
-      "100% des revenus répartis automatiquement via Stripe Connect",
-      "Panier moyen de 38€ — 3× supérieur aux marchés physiques"
+      "+3 800 agents IA opérationnels en coordination",
+      "Plusieurs dizaines de dashboards : gestion de projet, patrimoine, marketing, veille",
+      "Accessibilité complète depuis Telegram et WhatsApp — zéro interface à ouvrir",
+      "Latence agent < 2 secondes sur 95% des requêtes en conditions normales",
+      "Architecture évolutive : ajout de nouveaux agents sans refonte de l'existant",
+      "Centralisation de toutes les données de pilotage en un seul hub unifié"
     ],
     process: [
-      "Nous avons commencé par réunir les 12 producteurs pour définir ensemble les règles de fonctionnement : gestion des stocks, délais de préparation, et politique de retrait — avant d'écrire la moindre ligne de code.",
-      "L'intégration Stripe Connect a permis de déconnecter totalement les flux financiers : chaque producteur reçoit sa part directement sur son compte, la plateforme prélève automatiquement sa commission.",
-      "Le système de créneaux a été calibré producteur par producteur, chacun définissant ses propres plages de disponibilité et sa capacité maximale par créneau selon sa production hebdomadaire.",
-      "Le lancement a été précédé d'une campagne de communication locale portée par les producteurs eux-mêmes via leurs réseaux, générant une liste d'attente de 150 clients avant l'ouverture officielle."
+      "L'architecture a été pensée comme une ville : chaque cluster d'agents gère un quartier (finance, projets, marketing...), avec un réseau de communication standardisé entre quartiers et un centre de contrôle global.",
+      "Le système de RAG (Retrieval-Augmented Generation) a été construit sur une base vectorielle (PostgreSQL + pgvector) alimentée en continu par les données de l'utilisateur, permettant aux agents de répondre avec un contexte personnel ultra-précis.",
+      "L'interface Telegram/WhatsApp a été développée comme une couche d'abstraction : l'utilisateur envoie un message naturel, le routeur IA identifie l'agent compétent et orchestre la réponse sans que l'utilisateur ait à connaître l'architecture sous-jacente.",
+      "Des dizaines de dashboards ont été conçus avec un design system unifié — malgré la diversité des domaines — pour garantir une cohérence visuelle et une courbe d'apprentissage minimale.",
+      "Un monitoring en temps réel surveille la santé de l'ensemble des agents et déclenche des alertes automatiques en cas d'anomalie, garantissant la fiabilité du système au quotidien."
     ]
   },
-  {
-    id: 'immo-loiret-prestige',
-    title: "Immo Loiret Prestige",
-    category: "Site Vitrine & Listings Immobiliers",
-    expertise: 'contenu-marketing-ia',
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-    description: "Refonte du site d'une agence immobilière haut de gamme avec listings dynamiques, visite virtuelle et alertes par email automatisées.",
-    tags: ["Immobilier", "Listings", "Visite Virtuelle", "Automatisation"],
-    client: "Yoann DELALOY",
-    year: "2024",
-    date: "2024-05",
-    fullDescription: "Immo Loiret Prestige de Sylvain Roux se positionnait sur le segment haut de gamme du marché immobilier du Loiret. Son site vieillissant ne reflétait plus son positionnement. Nous avons créé une vitrine moderne avec gestion des biens dynamique et alertes email automatisées pour les acheteurs.",
-    challenges: [
-      "Afficher des biens haute valeur avec la qualité visuelle qu'ils méritent",
-      "Permettre l'ajout et la mise à jour autonome des annonces",
-      "Intégrer des visites virtuelles 360° pour les biens premium",
-      "Générer des alertes email pour les acheteurs selon leurs critères"
-    ],
-    url: "https://www.immo-loiret-prestige.fr",
-    results: [
-      "Site premium avec galeries immersives par bien",
-      "Back-office simplifié pour la gestion autonome des annonces",
-      "Intégration visites virtuelles 360° (3 biens au lancement)",
-      "Système d'alertes email automatiques pour 180 acheteurs inscrits",
-      "+3 mandats exclusifs signés dans le mois suivant le lancement"
-    ],
-    process: [
-      "Nous avons repensé l'architecture des annonces en partant des critères de recherche réels des acheteurs haut de gamme : exposition, vue, qualité de construction, potentiel de rénovation.",
-      "Chaque fiche bien a été structurée comme un dossier de présentation : photos pleine largeur, plan interactif, descriptif narratif, et accès direct à la visite virtuelle 360° depuis la même page.",
-      "Le back-office a été construit sur une interface no-code permettant à Sylvain d'ajouter ou modifier un bien en moins de 10 minutes, sans dépendance à un prestataire technique.",
-      "Le moteur d'alertes email détecte chaque nouvelle annonce, la compare aux critères sauvegardés de chaque acheteur inscrit, et envoie une notification personnalisée dans la minute suivant la mise en ligne."
-    ]
-  },
-  {
-    id: 'verdure-paysages',
-    title: "Verdure & Paysages",
-    category: "Site Vitrine & Galerie Réalisations",
-    expertise: 'web-apps-saas',
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&q=80&w=800",
-    description: "Site vitrine pour un paysagiste avec galerie avant/après, demande de devis en ligne et référencement local renforcé.",
-    tags: ["Site Vitrine", "Galerie", "SEO Local", "Paysagiste"],
-    client: "Yoann DELALOY",
-    year: "2024",
-    date: "2024-03",
-    fullDescription: "Laurent Vidal, paysagiste indépendant, réalisait un travail remarquable mais manquait d'une vitrine pour le montrer. Nous avons construit un site mettant en scène ses réalisations avec des photos avant/après spectaculaires, couplé à un formulaire de devis intelligent.",
-    challenges: [
-      "Valoriser le travail de terrain avec des photos professionnelles",
-      "Segmenter les réalisations par type (jardin, terrasse, potager, clôtures)",
-      "Qualifier les demandes de devis pour éviter les déplacements inutiles",
-      "Référencement local sur une zone géographique étendue"
-    ],
-    url: "https://www.verdure-paysages.fr",
-    results: [
-      "Galerie avant/après par catégorie de prestation",
-      "Formulaire de devis avec estimation de surface et type de projet",
-      "Position Top 5 sur 'paysagiste [département]' en 2 mois",
-      "+55% de demandes de devis qualifiées par rapport à l'année précédente",
-      "Signature de 2 contrats d'entretien annuel via le site"
-    ],
-    process: [
-      "Nous avons organisé avec Laurent une tournée photo de ses chantiers les plus représentatifs pour constituer une banque d'images avant/après cohérente et impactante.",
-      "La galerie a été structurée avec un système de comparaison glissante avant/après, permettant au visiteur de voir en un geste la transformation réalisée.",
-      "Le formulaire de devis qualifie la demande avec des questions sur la surface, le type de terrain, la nature des travaux souhaités et le budget indicatif, pour que Laurent arrive au rendez-vous prospect déjà bien informé.",
-      "La stratégie SEO locale s'est appuyée sur la création de pages géolocalisées couvrant chaque commune de la zone d'intervention, avec du contenu spécifique à la végétation et au climat local."
-    ]
-  },
-  {
-    id: 'coiffure-et-sens',
-    title: "Coiffure & Sens",
-    category: "Réservation en Ligne & Fidélisation",
-    expertise: 'automatisation-n8n',
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800",
-    description: "Système de réservation en ligne pour un salon de coiffure avec programme de fidélité digital et rappels SMS automatiques.",
-    tags: ["Coiffure", "Réservation", "Fidélisation", "SMS Auto"],
-    client: "Yoann DELALOY",
-    year: "2023",
-    date: "2023-11",
-    fullDescription: "Nadège Blanchard gérait les réservations de son salon par téléphone, ce qui monopolisait son temps lors des coiffures. Nous avons déployé un système de réservation en ligne intégrant un programme de fidélité digital et des rappels SMS automatiques pour réduire les absences.",
-    challenges: [
-      "Permettre la réservation en ligne sans appel téléphonique",
-      "Gérer plusieurs prestataires (Nadège + 2 employées) avec des plannings distincts",
-      "Fidéliser une clientèle existante avec des récompenses digitales",
-      "Limiter les no-shows qui représentaient 15% des RDV"
-    ],
-    url: "https://www.coiffure-et-sens.fr",
-    results: [
-      "Agenda en ligne multi-prestataires avec durées par prestation",
-      "Programme de fidélité digital : 10 visites = 1 soin offert",
-      "Rappels SMS 48h et 2h avant chaque RDV",
-      "No-shows réduits de 15% à 3% en 2 mois",
-      "+22% de réservations en dehors des heures d'ouverture (via le site)"
-    ],
-    process: [
-      "Nous avons cartographié toutes les prestations proposées avec leurs durées réelles — coupé femme, balayage, soin, etc. — pour paramétrer un agenda qui reflète exactement la réalité du salon.",
-      "Chaque coiffeuse a reçu son propre accès pour visualiser et gérer son planning, avec des règles de priorité définissant qui peut prendre quel type de prestation.",
-      "Le programme de fidélité a été digitalisé : tampon virtuel crédité automatiquement après chaque visite, visible par la cliente dans la confirmation de RDV et dans ses rappels.",
-      "Le workflow de rappels SMS a été calibré en deux temps : J-2 pour permettre l'annulation anticipée, et J-0 matin pour réduire les oublis de dernière minute, avec un lien de confirmation en un clic."
-    ]
-  },
-  {
-    id: 'scenes-orleans',
-    title: "Scènes d'Orléans",
-    category: "Site Événementiel & Billetterie",
-    expertise: 'contenu-marketing-ia',
-    image: "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=800",
-    description: "Site événementiel pour une association culturelle avec billetterie en ligne, agenda des spectacles et newsletter automatisée.",
-    tags: ["Événementiel", "Billetterie", "Culture", "Newsletter"],
-    client: "Yoann DELALOY",
-    year: "2023",
-    date: "2023-09",
-    fullDescription: "Scènes d'Orléans est une association culturelle organisant une quarantaine de spectacles par an. Elle dépendait de canaux de vente physiques et de réseaux sociaux pour communiquer. Nous avons créé un site événementiel complet avec billetterie intégrée et newsletter automatisée.",
-    challenges: [
-      "Centraliser l'agenda des spectacles sur une plateforme propre",
-      "Intégrer la billetterie en ligne avec paiement sécurisé",
-      "Automatiser la communication autour des événements",
-      "Budget associatif contraint"
-    ],
-    url: "https://www.scenes-orleans.fr",
-    results: [
-      "Site événementiel avec agenda interactif et pages spectacle dédiées",
-      "Billetterie en ligne : paiement CB sécurisé, envoi e-ticket automatique",
-      "Newsletter automatisée : 1 email par semaine avec les événements à venir",
-      "35% des billets vendus en ligne dès la première saison",
-      "Base email passée de 400 à 1 200 abonnés en 6 mois"
-    ],
-    process: [
-      "La contrainte budgétaire associative a orienté les choix technologiques : nous avons sélectionné des outils open-source et des offres freemium permettant de couvrir l'ensemble des besoins sans coût fixe mensuel élevé.",
-      "Chaque spectacle a reçu une page dédiée avec visuels, synopsis, intervenants et jauge de billets restants en temps réel, transformant le site en outil de vente actif et non plus en simple agenda.",
-      "La billetterie a été configurée avec génération automatique d'e-tickets QR, vérifiables à l'entrée depuis le téléphone du bénévole sans équipement dédié.",
-      "La newsletter automatisée se compose chaque semaine depuis les données de l'agenda : les spectacles des 7 prochains jours sont agrégés, mis en forme et envoyés aux abonnés sans aucune intervention manuelle."
-    ]
-  }
 ];

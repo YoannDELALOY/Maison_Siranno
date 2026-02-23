@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { MapPin, CheckCircle2, Users, Heart, Gem, Target, TrendingUp, ArrowRight, BarChart2 } from 'lucide-react';
+import { MapPin, CheckCircle2, Users, Heart, Gem, Target, TrendingUp, ArrowRight, BarChart2, Mail, Phone } from 'lucide-react';
 
 interface AgencyPageProps {
   onGoToContact?: () => void;
@@ -55,30 +55,30 @@ const values = [
 
 const timeline = [
   {
-    period: '2010–2015',
+    period: '2012–Présent',
     sector: 'Finance de Marché & Trading',
-    description: 'Trader en finance de marché — une école de rigueur, de gestion du risque et de lecture des données. Cette expérience forge une approche radicalement data-driven et ROI-obsessée, unique dans le monde de l\'agence digitale.',
+    description: 'Trader en finance de marché — une école de rigueur absolue, de gestion du risque et de lecture des données en temps réel. Cette expérience forge une approche radicalement data-driven et ROI-obsessée qui irrigue encore aujourd\'hui chaque décision de l\'agence.',
     color: 'border-emerald-500',
     bgColor: 'bg-emerald-500/10',
   },
   {
-    period: '2015–2022',
+    period: '2010–2024',
     sector: 'BTP, Logistique & Terrain',
-    description: 'Immersion dans le bâtiment et la supply chain. Compréhension profonde des enjeux terrain, délais de chantier, gestion d\'équipes. Cette réalité de l\'économie locale façonne encore aujourd\'hui chaque solution livrée.',
+    description: 'Immersion dans le bâtiment et la supply chain. Compréhension profonde des enjeux terrain — délais de chantier, gestion d\'équipes, réalité opérationnelle. Cette expérience façonne une façon unique de comprendre les besoins des PME.',
     color: 'border-amber-600',
     bgColor: 'bg-amber-600/10',
   },
   {
-    period: '2022–2024',
+    period: '2018–2025',
     sector: 'Transition Digitale & IA',
-    description: 'Formation intensive au développement web, à l\'IA et à l\'automatisation. Découverte du potentiel de la tech pour transformer les acteurs traditionnels. Premiers projets clients, premières réussites mesurables.',
+    description: 'Formation intensive au développement web, à l\'IA et à l\'automatisation. Découverte du potentiel des nouvelles technologies pour transformer les acteurs traditionnels. Premiers projets clients, premières réussites mesurables, fondation du savoir-faire de l\'agence.',
     color: 'border-blue-500',
     bgColor: 'bg-blue-500/10',
   },
   {
-    period: '2024–Aujourd\'hui',
+    period: 'Sept. 2025–Présent',
     sector: 'Maison Siranno',
-    description: 'Création de l\'agence avec une conviction : les PME et entrepreneurs qui font tourner l\'économie méritent les mêmes outils que les grandes entreprises — avec l\'agilité et la proximité en plus.',
+    description: 'Création de l\'agence avec une conviction fondatrice : les PME, artisans et entrepreneurs qui font tourner l\'économie réelle méritent les mêmes outils que les grands groupes — avec l\'agilité, la proximité et l\'artisanat en plus.',
     color: 'border-gold',
     bgColor: 'bg-gold/10',
   },
@@ -98,7 +98,7 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
             L'<span className="text-metallic-gold">Agence</span>
           </h1>
           <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed">
-            Finance de marché. BTP. Digital. IA. Un parcours atypique au service d'une approche unique — data-driven, ROI-obsessée, et profondément humaine.
+            Un parcours rare entre finance de marché, BTP et excellence digitale. Maison Siranno, c'est l'exigence des marchés financiers, la réalité du terrain, et la précision de l'artisan — au service de votre croissance.
           </p>
         </div>
 
@@ -241,6 +241,40 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
           </div>
         </div>
 
+        {/* Réseau Partenaires */}
+        <div className="mb-24">
+          <div className="text-center mb-12">
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">
+              Réseau
+            </span>
+            <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-4">
+              Un Réseau de Partenaires Experts
+            </h2>
+            <p className="text-steel text-lg max-w-2xl mx-auto leading-relaxed">
+              Maison Siranno ne travaille pas seule. Pour chaque projet, nous activons le bon partenaire au bon moment — garantissant une expertise pointue à chaque étape, sans jamais compromis sur la qualité.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { emoji: '🎨', label: 'Graphiste & Artiste', description: 'Identité visuelle, illustrations, direction artistique sur-mesure' },
+              { emoji: '📸', label: 'Photographe', description: 'Shooting produits, portraits, reportages corporate et événements' },
+              { emoji: '🎬', label: 'Vidéaste & Monteur', description: 'Production vidéo, motion design, réels et formats courts' },
+              { emoji: '🔍', label: 'Expert SEO & SEA', description: 'Référencement naturel, Google Ads, stratégie de visibilité payante' },
+              { emoji: '🖨️', label: 'Imprimerie', description: 'Cartes de visite, flyers, affiches, kakémonos et supports papier' },
+              { emoji: '✍️', label: 'Copywriter', description: 'Rédaction web, storytelling de marque, landing pages qui convertissent' },
+              { emoji: '📊', label: 'Expert Analytics', description: 'Data viz, tableaux de bord, tracking et attribution multi-canal' },
+              { emoji: '⚖️', label: 'Conseil Juridique', description: 'RGPD, CGV, mentions légales, protection des créations numériques' },
+            ].map((partner, i) => (
+              <div key={i} className="glass-card p-5 rounded-2xl group hover:border-gold/30 transition-colors">
+                <div className="text-3xl mb-3">{partner.emoji}</div>
+                <h4 className="font-serif text-base font-bold text-charcoal mb-2">{partner.label}</h4>
+                <p className="text-steel text-sm leading-relaxed">{partner.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* La Vision */}
         <div className="text-center mb-20">
           <div className="max-w-3xl mx-auto">
@@ -260,25 +294,41 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
         </div>
 
         {/* CTA */}
-        <div className="cta-leather bg-charcoal text-white rounded-3xl p-12 relative overflow-hidden text-center">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
-          <div className="relative z-10">
+        <div className="cta-leather bg-charcoal text-white rounded-3xl overflow-hidden relative text-center">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
+            <div className="absolute top-0 left-1/3 w-80 h-80 bg-gold/6 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-blue-400/5 rounded-full blur-3xl"></div>
+          </div>
+          <div className="relative z-10 px-8 md:px-16 py-14">
             <div className="inline-flex items-center gap-2 text-metallic-gold-inline font-medium uppercase tracking-widest text-sm mb-4">
               <Users size={16} />
-              <span>Collaboration</span>
+              <span>Passez à l'étape suivante</span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
               Prêt à bâtir ensemble ?
             </h2>
-            <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
-              Contactez-nous pour une consultation gratuite. On analysera votre situation et vous proposerons un plan d'action concret avec un ROI projeté.
+            <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
             </p>
-            <button
-              onClick={onGoToContact}
-              className="inline-flex items-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl"
-            >
-              Prendre contact <ArrowRight size={18} />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
+              <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl text-base">
+                <Mail size={18} />
+                Envoyer un message
+              </button>
+              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
+                <Phone size={18} />
+                Appeler directement
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
+              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+                <span key={g} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0"></span>
+                  {g}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
