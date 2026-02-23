@@ -19,6 +19,7 @@ import { BlogPage } from './components/BlogPage';
 import { BlogArticlePage } from './components/BlogArticlePage';
 import { ExpertiseProjectsPage } from './components/ExpertiseProjectsPage';
 import { CookieBanner } from './components/CookieBanner';
+import { CustomCursor } from './components/CustomCursor';
 import { projectsData } from './components/Projects';
 import { ExpertiseCategory } from './data/projects';
 import { SectionId } from './types';
@@ -108,6 +109,7 @@ function App() {
   // Toutes les autres pages : avec Navbar + Footer
   return (
     <div className="min-h-screen bg-paper relative overflow-x-hidden">
+      <CustomCursor />
       <Navbar onNavigate={navigate} currentPage={page} />
 
       <main>
@@ -159,6 +161,7 @@ function App() {
             service={activeServicePage}
             onBack={backFromServiceDetail}
             onGoToContact={goToContact}
+            onViewProject={openProject}
           />
         )}
 

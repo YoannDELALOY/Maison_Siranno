@@ -50,7 +50,7 @@ export const servicesData: ServiceDataRaw[] = [
       "Autonomie client : back-office pour gérer votre contenu"
     ],
     useCases: ["SaaS & plateformes B2B", "Applications métiers sur-mesure", "MVP startups", "Refonte sites existants"],
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Claude Code", "Google AI Studio", "Vercel"],
+    technologies: ["Claude Code", "React", "Next.js", "TypeScript", "CMS", "WordPress", "Google AI Studio", "Full-stack apps"],
     processSteps: [
       {
         title: "Découverte & brief",
@@ -401,7 +401,7 @@ export const servicesData: ServiceDataRaw[] = [
       "Reporting ROI content mensuel"
     ],
     useCases: ["Marketing automation B2B/B2C", "Personal branding dirigeants", "Lancement produit", "Stratégie contenu SEO"],
-    technologies: ["Midjourney", "DALL-E", "Flux", "Claude AI", "Mailchimp", "Buffer", "Brevo"],
+    technologies: ["NanoBana Pro", "NotebookLM", "Google AI Studio", "Claude Code", "Kling AI"],
     processSteps: [
       {
         title: "Audit de marque",
@@ -576,7 +576,7 @@ export const servicesData: ServiceDataRaw[] = [
       "Conformité RGPD : données hébergées en Europe"
     ],
     useCases: ["Support client IA niveau 1 & 2", "Assistant commercial intelligent", "FAQ dynamique sur vos produits", "Analyse de documents automatique"],
-    technologies: ["OpenAI", "Claude", "LangChain", "Pinecone", "ChromaDB", "Supabase", "RAG"],
+    technologies: ["ChatGPT", "Claude", "Gemini", "Supabase", "Pinecone", "RAG", "PostgreSQL"],
     processSteps: [
       {
         title: "Audit des données",
@@ -751,7 +751,7 @@ export const servicesData: ServiceDataRaw[] = [
       "Documentation et support post-formation"
     ],
     useCases: ["Audit transformation digitale", "Formation IA pour PME", "CDO as a Service", "Ateliers équipes dirigeantes"],
-    technologies: ["Notion", "Miro", "Loom", "Google Workspace", "ChatGPT", "Typeform"],
+    technologies: ["IA", "Google Workspace", "Cloud", "Automatisation", "Graphisme", "Marque"],
     processSteps: [
       {
         title: "Diagnostic initial",
@@ -926,7 +926,7 @@ export const servicesData: ServiceDataRaw[] = [
       "Réunion de suivi mensuelle avec compte-rendu actionnable"
     ],
     useCases: ["Retainer mensuel digital", "Optimisation ROI continu", "Performance marketing", "Supervision opérationnelle IA"],
-    technologies: ["Looker Studio", "Google Analytics", "Metabase", "Notion", "n8n", "Datadog"],
+    technologies: ["Maintenance", "Mises à jour", "Datalog", "Analytique", "Monitoring"],
     processSteps: [
       {
         title: "Définition des KPIs",

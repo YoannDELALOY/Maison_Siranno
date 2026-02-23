@@ -8,6 +8,7 @@ interface ServiceDetailPageProps {
   service: ServiceData;
   onBack: () => void;
   onGoToContact: () => void;
+  onViewProject?: (projectId: string) => void;
 }
 
 /* ─── Styles de texture ─── */
@@ -359,9 +360,10 @@ const FaqItem: React.FC<{ q: string; a: string; defaultOpen?: boolean }> = ({ q,
 /* ─── Slider témoignages liés à l'expertise ─── */
 interface TestimonialSliderProps {
   serviceId: string;
+  onViewProject?: (projectId: string) => void;
 }
 
-const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId }) => {
+const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onViewProject }) => {
   // Récupérer les IDs de projets liés à cette expertise
   const linkedProjectIds = projectsData
     .filter(p => p.expertise === serviceId || (p.expertises ?? []).includes(serviceId as any))
@@ -420,17 +422,34 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId }) => {
           "{t.content}"
         </blockquote>
 
-        <div className="flex items-center gap-3">
-          <img
-            src={t.image}
-            alt={t.name}
-            className="w-10 h-10 rounded-full object-cover border-2 shrink-0"
-            style={{ borderColor: 'rgba(212,175,55,0.4)' }}
-          />
-          <div>
-            <p className="font-semibold text-white text-sm">{t.name}</p>
-            <p className="text-gray-400 text-xs">{t.role} · {t.company}</p>
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-3">
+            <img
+              src={t.image}
+              alt={t.name}
+              className="w-10 h-10 rounded-full object-cover border-2 shrink-0"
+              style={{ borderColor: 'rgba(212,175,55,0.4)' }}
+            />
+            <div>
+              <p className="font-semibold text-white text-sm">{t.name}</p>
+              <p className="text-gray-400 text-xs">{t.role} · {t.company}</p>
+            </div>
           </div>
+          {onViewProject && t.projectId && (
+            <button
+              data-cursor-hover
+              onClick={() => onViewProject(t.projectId)}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:brightness-110 hover:scale-105 shrink-0"
+              style={{
+                background: 'linear-gradient(135deg, #C8A84B 0%, #F5D78E 35%, #D4AF37 55%, #B8860B 80%, #C8A84B 100%)',
+                color: '#3D2800',
+                boxShadow: '0 2px 10px rgba(184,134,11,0.4), inset 0 1px 0 rgba(255,255,255,0.3)',
+              }}
+            >
+              <ArrowRight size={13} />
+              Voir la réalisation
+            </button>
+          )}
         </div>
       </div>
 
@@ -490,7 +509,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId }) => {
 };
 
 /* ─── Page principale ─── */
-export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, onGoToContact }) => {
+export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, onGoToContact, onViewProject }) => {
   return (
     <div className="min-h-screen pt-24 pb-24">
 
@@ -527,6 +546,20 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
           )}
         </div>
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+          {/* Icône d'expertise visible */}
+          {service.detailIcon && (
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(212,175,55,0.06) 100%)',
+                  border: '1px solid rgba(212,175,55,0.3)',
+                  boxShadow: '0 0 32px rgba(212,175,55,0.2), inset 0 1px 0 rgba(255,255,255,0.1)',
+                }}
+              >
+                <img src={service.detailIcon} alt={service.title} className="w-12 h-12 object-contain" style={{ filter: 'drop-shadow(0 0 8px rgba(212,175,55,0.5))' }} />
+              </div>
+            </div>
+          )}
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-6 block">Expertise détaillée</span>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-metallic-silver leading-tight max-w-lg md:max-w-xl mx-auto mb-8">
             {service.title}
@@ -534,7 +567,25 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
           {service.technologies.length > 0 && (
             <div className="flex flex-wrap justify-center gap-2">
               {service.technologies.map(tech => (
-                <span key={tech} className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/8 border border-white/15 text-gray-300 hover:border-gold/40 hover:text-gold transition-colors">
+                <span key={tech} className="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/8 border border-white/15 text-gray-300 transition-all duration-300 cursor-default"
+                  style={{ }}
+                  onMouseEnter={e => {
+                    const el = e.currentTarget;
+                    el.style.background = 'linear-gradient(135deg, rgba(212,175,55,0.18) 0%, rgba(245,215,126,0.10) 100%)';
+                    el.style.borderColor = 'rgba(212,175,55,0.65)';
+                    el.style.color = '#F5D78E';
+                    el.style.boxShadow = '0 0 10px rgba(212,175,55,0.25), inset 0 1px 0 rgba(255,255,255,0.15)';
+                    el.style.textShadow = '0 0 8px rgba(212,175,55,0.5)';
+                  }}
+                  onMouseLeave={e => {
+                    const el = e.currentTarget;
+                    el.style.background = '';
+                    el.style.borderColor = '';
+                    el.style.color = '';
+                    el.style.boxShadow = '';
+                    el.style.textShadow = '';
+                  }}
+                >
                   {tech}
                 </span>
               ))}
@@ -587,7 +638,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
                 <div className="p-2.5 rounded-lg border" style={{ background: 'rgba(212,175,55,0.12)', borderColor: 'rgba(212,175,55,0.3)' }}>
                   <CheckCircle2 size={18} className="text-gold" />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-white" style={{ textShadow: '0 1px 8px rgba(100,160,255,0.3)' }}>Bénéfices concrets</h3>
+                <h3 className="font-serif text-lg font-bold text-metallic-silver" style={{ textShadow: '0 1px 8px rgba(100,160,255,0.3)' }}>Bénéfices concrets</h3>
               </div>
               <ul className="space-y-4">
                 {service.benefits.map((benefit, i) => (
@@ -690,7 +741,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
 
             {/* Colonne droite — slider */}
             <div>
-              <TestimonialSlider serviceId={service.id} />
+              <TestimonialSlider serviceId={service.id} onViewProject={onViewProject} />
             </div>
 
           </div>
@@ -721,7 +772,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
           <div className="relative z-10 px-8 md:px-16 py-14 md:py-16">
             <div className="text-center mb-10">
               <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Parlons de votre projet</h2>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-metallic-silver">Parlons de votre projet</h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                 Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
               </p>
