@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Phone, Mail } from 'lucide-react';
 import { servicesData, ServiceData } from './Services';
 
 interface ExpertisePageProps {
@@ -44,7 +44,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
           return (
             <div
               key={service.id}
-              className="py-20 group relative"
+              className="py-20 group relative overflow-hidden"
               style={
                 isEven
                   ? {
@@ -61,21 +61,32 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                 className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#B68D40]/80 via-[#F4E095] to-[#B68D40]/80 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out"
                 style={{ boxShadow: '0 0 12px rgba(212,175,55,0.6), 0 2px 8px rgba(212,175,55,0.3)' }}
               ></div>
-              <div className="max-w-7xl mx-auto px-6">
-                <div className={`grid lg:grid-cols-2 gap-12 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
 
-                  {/* Icône / Visuel */}
-                  <div className={`flex items-center justify-center ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                    <div className="relative">
-                      <div className={`w-48 h-48 rounded-3xl flex items-center justify-center shadow-2xl ${isEven ? 'bg-gradient-to-br from-charcoal to-[#1E3A5F]' : 'bg-gradient-to-br from-[#1E3A5F] to-charcoal border border-white/10'}`}>
-                        <div className="text-gold scale-[3]">
-                          {service.icon}
-                        </div>
-                      </div>
-                      {/* Décoration */}
-                      <div className={`absolute -top-4 -right-4 w-20 h-20 rounded-2xl -z-10 rotate-12 ${isEven ? 'bg-gold/10' : 'bg-gold/20'}`}></div>
-                      <div className={`absolute -bottom-4 -left-4 w-16 h-16 rounded-xl -z-10 -rotate-6 ${isEven ? 'bg-blue-100/60' : 'bg-white/5'}`}></div>
-                    </div>
+              {/* Image pleine hauteur de section — côté alterné */}
+              {service.detailIcon && (
+                <div
+                  className={`absolute top-0 bottom-0 w-1/2 hidden lg:flex items-center justify-center pointer-events-none ${isEven ? 'right-0' : 'left-0'}`}
+                >
+                  <img
+                    src={service.detailIcon}
+                    alt={service.title}
+                    className="w-3/4 h-3/4 object-contain drop-shadow-2xl opacity-20"
+                  />
+                </div>
+              )}
+
+              <div className="max-w-7xl mx-auto px-6">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+                  {/* Colonne vide côté image (desktop) — mobile : image compacte */}
+                  <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'} lg:invisible flex items-center justify-center`}>
+                    {service.detailIcon && (
+                      <img
+                        src={service.detailIcon}
+                        alt={service.title}
+                        className="w-full h-auto object-contain drop-shadow-2xl lg:hidden"
+                      />
+                    )}
                   </div>
 
                   {/* Contenu texte */}
@@ -118,21 +129,38 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
 
       {/* CTA section */}
       <div className="max-w-7xl mx-auto px-6 mt-20">
-        <div className="cta-leather text-center bg-charcoal text-white rounded-3xl p-12 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
-          <div className="relative z-10">
+        <div className="cta-leather text-center bg-charcoal text-white rounded-3xl overflow-hidden relative">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
+            <div className="absolute top-0 left-1/3 w-80 h-80 bg-gold/6 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-blue-400/5 rounded-full blur-3xl"></div>
+          </div>
+          <div className="relative z-10 px-8 md:px-16 py-14">
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
               Un projet en tête ?
             </h2>
-            <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
-              Parlons de vos besoins concrets. La première consultation est gratuite.
+            <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
             </p>
-            <button
-              onClick={onGoToContact}
-              className="inline-flex items-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl"
-            >
-              Lancer votre projet <ArrowRight size={18} />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
+              <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl text-base">
+                <Mail size={18} />
+                Envoyer un message
+              </button>
+              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
+                <Phone size={18} />
+                Appeler directement
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
+              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+                <span key={g} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0"></span>
+                  {g}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

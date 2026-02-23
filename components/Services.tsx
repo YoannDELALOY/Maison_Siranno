@@ -3,9 +3,27 @@ import { Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, ArrowRight, Che
 import { SectionId } from '../types';
 import { servicesData as rawServicesData } from '../data/services';
 
+// Images grandes (ExpertisePage — sections alternées)
+import imgWebApps        from '../Media/Logos/Logo_expertise/Développement Web Apps & SaaS.png';
+import imgAutomatisation from '../Media/Logos/Logo_expertise/Automatisation_&_Orchestration_n8n.png';
+import imgContenu        from '../Media/Logos/Logo_expertise/Création_de_Contenu_&_Marketing_IA.png';
+import imgIA             from '../Media/Logos/Logo_expertise/Intelligence_Artificielle_&_Agents_RAG.png';
+import imgConseil        from '../Media/Logos/Logo_expertise/Conseil_&_Formation.png';
+import imgPilotage       from '../Media/Logos/Logo_expertise/Pilotage_Continu.png';
+
+// Icônes (ServiceDetailPage — hero & ServiceCard)
+import iconWebApps        from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
+import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
+import iconContenu        from '../Media/Logos/Logo_expertise/Icone_Création_de_Contenu_&_Marketing_IA.png';
+import iconIA             from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
+import iconConseil        from '../Media/Logos/Logo_expertise/Icone_Conseil_&_Formation.png';
+import iconPilotage       from '../Media/Logos/Logo_expertise/Icone_Pilotage_Continu.png';
+
 export interface ServiceData {
   id: string;
   icon: React.ReactNode;
+  expertiseImage: string;
+  detailIcon: string;
   title: string;
   description: string;
   delay: string;
@@ -14,6 +32,8 @@ export interface ServiceData {
   useCases: string[];
   technologies: string[];
   processSteps: { title: string; description: string }[];
+  stats: { value: string; label: string }[];
+  faq: { q: string; a: string }[];
 }
 
 // Associer les icônes JSX aux données
@@ -26,9 +46,29 @@ const serviceIcons: Record<string, React.ReactNode> = {
   'pilotage-continu':     <BarChart3 size={24} />,
 };
 
+const serviceExpertiseImages: Record<string, string> = {
+  'web-apps-saas':         imgWebApps,
+  'automatisation-n8n':   imgAutomatisation,
+  'contenu-marketing-ia': imgContenu,
+  'ia-agents-rag':        imgIA,
+  'conseil-formation':    imgConseil,
+  'pilotage-continu':     imgPilotage,
+};
+
+const serviceDetailIcons: Record<string, string> = {
+  'web-apps-saas':         iconWebApps,
+  'automatisation-n8n':   iconAutomatisation,
+  'contenu-marketing-ia': iconContenu,
+  'ia-agents-rag':        iconIA,
+  'conseil-formation':    iconConseil,
+  'pilotage-continu':     iconPilotage,
+};
+
 export const servicesData: ServiceData[] = rawServicesData.map((s) => ({
   ...s,
   icon: serviceIcons[s.id] ?? <Globe size={24} />,
+  expertiseImage: serviceExpertiseImages[s.id] ?? '',
+  detailIcon: serviceDetailIcons[s.id] ?? '',
 }));
 
 interface ServiceCardProps {
