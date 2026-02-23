@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Quote, BookOpen, Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, ExternalLink } from 'lucide-react';
+import { ArrowRight, Quote, BookOpen, Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, ExternalLink, Mail, Phone } from 'lucide-react';
 import starImg from '../Media/etoiletrnsparante.png';
 import { projectsData, ProjectData, ExpertiseCategory } from '../data/projects';
 import { projectsTestimonials } from '../data/testimonials';
@@ -73,6 +73,7 @@ export interface ProjectCardPageProps {
 export const ProjectCardPage: React.FC<ProjectCardPageProps> = ({ project, onNavigate }) => {
   return (
     <div
+      data-cursor-hover
       className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2"
       style={{
         backgroundColor: '#0F172A',
@@ -140,6 +141,7 @@ interface ExpertiseCTACardProps {
 const ExpertiseCTACard: React.FC<ExpertiseCTACardProps> = ({ section, onNavigate }) => {
   return (
     <div
+      data-cursor-hover
       className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center text-center p-8 min-h-[320px]"
       style={{
         background: 'linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(212,175,55,0.04) 100%)',
@@ -245,6 +247,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
             {projectsTestimonials.map((t, i) => (
               <div
                 key={i}
+                data-cursor-hover
                 className="glass-card p-8 rounded-2xl flex flex-col relative group cursor-pointer hover:border-gold/30 transition-colors"
                 onClick={() => handleCardClick(t.projectId)}
                 title={`Voir le projet ${t.company}`}
@@ -285,20 +288,33 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
         </div>
 
         {/* CTA */}
-        <div className="cta-leather glass-panel rounded-3xl p-12 border border-gold/20 relative text-center">
-          <div className="relative z-10">
+        <div className="cta-leather glass-panel rounded-3xl border border-gold/20 overflow-hidden relative text-center">
+          <div className="relative z-10 px-8 md:px-16 py-14">
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy mb-4">
               Votre projet, notre prochaine réalisation
             </h2>
-            <p className="text-steel text-lg mb-8 max-w-xl mx-auto">
-              Rejoignez les entreprises qui ont fait confiance à Maison Siranno pour leur transformation digitale.
+            <p className="text-steel text-lg mb-8 max-w-2xl mx-auto">
+              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
             </p>
-            <button
-              onClick={onGoToContact}
-              className="inline-flex items-center gap-2 px-8 py-4 btn-metallic-dark rounded-full font-semibold shadow-xl text-white"
-            >
-              Lancer mon projet <ArrowRight size={18} />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
+              <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-dark rounded-full font-semibold shadow-xl text-white text-base">
+                <Mail size={18} />
+                Envoyer un message
+              </button>
+              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-charcoal/25 text-charcoal/70 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
+                <Phone size={18} />
+                Appeler directement
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-steel/60">
+              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+                <span key={g} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0"></span>
+                  {g}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 # PRD — Maison Siranno · Refonte Globale
 **Dernière mise à jour :** 2026-02-23
-**Statut global :** 🟡 En cours — 6 / 34 tâches complétées
+**Statut global :** 🟡 En cours — 12 / 34 tâches complétées
 
 ---
 
@@ -71,17 +71,17 @@ SaaS de type ERP personnel ultra-complet :
 ### GROUPE A — Curseur (CustomCursor.tsx)
 | # | Statut | Tâche |
 |---|--------|-------|
-| A1 | ⬜ | **Curseur : détection élargie des éléments cliquables** — Ajouter `[data-cursor-hover]` et les divs avec `onClick` dans le sélecteur du CustomCursor |
-| A2 | ⬜ | **Curseur : animation pulsation cœur sur hover cliquable** — Ajouter keyframe CSS `heartbeat` (scale 1.0 → 1.4, cycle 0.5s) sur le point gold-rouge |
-| A3 | ⬜ | **Curseur : graphique PerformanceChart non-cliquable** — Ajouter `data-cursor-default` ou `pointer-events-none` sur le graphique ADN page d'accueil |
+| A1 | ✅ | **Curseur : détection élargie** — `[data-cursor-hover]` ajouté au sélecteur, `[data-cursor-ignore]` pour forcer gold par défaut |
+| A2 | ✅ | **Curseur : animation heartbeat** — keyframe `cursor-heartbeat` (scale 1.0→1.4, cycle 0.5s) injectée et appliquée sur hover |
+| A3 | ✅ | **Curseur : graphique PerformanceChart** — `data-cursor-ignore` ajouté sur le wrapper dans About.tsx |
 
 ### GROUPE B — Page d'accueil (Hero, Projects, Testimonials, About)
 | # | Statut | Tâche |
 |---|--------|-------|
 | B1 | ⬜ | **Accueil - Section Réalisations : inverser boutons CenterPeek** — "Démarrer mon projet" prend le style de "Voir le site" et vice versa |
-| B2 | ⬜ | **Accueil - Section Réalisations : curseur gold-rouge sur cartes** — Ajouter `data-cursor-hover` sur les cartes cliquables |
-| B3 | ⬜ | **Accueil - Section Témoignages : curseur gold-rouge sur cartes** — Les cartes de témoignage sont cliquables → ajouter `data-cursor-hover` |
-| B4 | ⬜ | **Accueil - ADN Agence : curseur gold sur graphique** — Retirer le hover cursor gold-rouge du graphique PerformanceChart (non cliquable) |
+| B2 | ✅ | **Accueil - Réalisations : curseur gold-rouge** — `data-cursor-hover` sur ProjectCard (Projects.tsx) |
+| B3 | ✅ | **Accueil - Témoignages : curseur gold-rouge** — `data-cursor-hover` sur TestimonialCard (Testimonials.tsx) |
+| B4 | ✅ | **Accueil - ADN Agence : curseur gold sur graphique** — Résolu via A3 (`data-cursor-ignore`) |
 
 ### GROUPE C — Contenu services.ts (données textuelles)
 | # | Statut | Tâche |
@@ -107,7 +107,7 @@ SaaS de type ERP personnel ultra-complet :
 |---|--------|-------|
 | E1 | ⬜ | **Carte "Bénéfices concrets" : titre argent métallique** — Appliquer `.text-metallic-silver` ou équivalent sur le titre H3 de cette carte |
 | E2 | ⬜ | **Section CTA expertise : titre argent métallique** — Appliquer style argent métallique sur le titre du bloc CTA en bas de page |
-| E3 | ⬜ | **Section Méthode : curseur gold-rouge sur cartes d'étape** — Les cartes sont cliquables → curseur doit passer gold-rouge |
+| E3 | ✅ | **Section Méthode : curseur gold-rouge sur cartes d'étape** — `data-cursor-hover` sur ProcessStepCard (ServiceDetailPage.tsx) |
 | E4 | ⬜ | **Témoignages expertise : bouton vers la réalisation liée** — Ajouter bouton gold métallique "Voir la réalisation" sur chaque témoignage |
 | E5 | ⬜ | **Pages expertise : icône hero = icône d'expertise dédiée** — Remplacer l'icône Lucide par l'image PNG d'expertise correspondante |
 
@@ -121,8 +121,8 @@ SaaS de type ERP personnel ultra-complet :
 |---|--------|-------|
 | G1 | ⬜ | **ProjectsPage : icônes de section = icônes d'expertise** — Remplacer les icônes Lucide par les PNG d'expertise pour chaque section |
 | G2 | ⬜ | **ProjectsPage : icônes des cartes = icônes d'expertise** — Même remplacement sur les cartes de réalisation |
-| G3 | ⬜ | **ProjectsPage : curseur gold-rouge sur cartes** — Cartes cliquables → `data-cursor-hover` |
-| G4 | ⬜ | **ProjectsPage : curseur gold-rouge sur témoignages** — Témoignages cliquables → `data-cursor-hover` |
+| G3 | ✅ | **ProjectsPage : curseur gold-rouge sur cartes** — `data-cursor-hover` sur ProjectCardPage et ExpertiseCTACard |
+| G4 | ✅ | **ProjectsPage : curseur gold-rouge sur témoignages** — `data-cursor-hover` sur cartes témoignages ProjectsPage |
 
 ### GROUPE H — Pages dédiées aux réalisations (ExpertiseProjectsPage.tsx)
 | # | Statut | Tâche |
@@ -146,7 +146,7 @@ SaaS de type ERP personnel ultra-complet :
 |---|--------|-------|
 | K1 | ⬜ | **Blog : restructurer catégories** — Ajouter "À venir" (3 articles masqués) au-dessus de "À lire maintenant" (3 derniers publiés), puis 6 catégories par expertise en slider |
 | K2 | ⬜ | **Blog : cartes identiques aux cartes de réalisation** — Unifier le design des cartes d'articles avec celui des cartes de réalisation |
-| K3 | ⬜ | **Blog : curseur gold-rouge sur cartes** — `data-cursor-hover` sur cartes d'articles |
+| K3 | ✅ | **Blog : curseur gold-rouge sur cartes** — `data-cursor-hover` conditionnel sur ArticleCard disponible (BlogPage.tsx) |
 | K4 | ⬜ | **Blog : générer 30 articles (5 par expertise)** — Contenu très complet, titres + corps complets dans data/blog.ts |
 
 ---

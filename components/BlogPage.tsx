@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Clock, BookOpen, Calendar, Tag, Filter } from 'lucide-react';
+import { ArrowRight, Clock, BookOpen, Calendar, Tag, Filter, Mail, Phone } from 'lucide-react';
 import { blogArticles, categoryConfig, BlogCategory } from '../data/blog';
 
 interface BlogPageProps {
@@ -19,6 +19,7 @@ const ArticleCard: React.FC<{ article: typeof blogArticles[0]; onClick?: () => v
   const cfg = categoryConfig[article.category];
   return (
     <div
+      data-cursor-hover={article.available ? '' : undefined}
       className={`glass-card rounded-2xl overflow-hidden flex flex-col relative group ${article.available ? 'cursor-pointer hover:-translate-y-1 transition-transform duration-300' : ''}`}
       style={{ opacity: article.available ? 1 : 0.72 }}
       onClick={article.available ? onClick : undefined}
@@ -243,20 +244,36 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
         )}
 
         {/* CTA */}
-        <div className="cta-leather glass-panel rounded-3xl p-12 border border-gold/20 relative text-center">
-          <div className="relative z-10">
+        <div className="cta-leather glass-panel rounded-3xl border border-gold/20 overflow-hidden relative text-center">
+          <div className="relative z-10 px-8 md:px-16 py-14">
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy mb-4">
               Votre projet mérite d'être raconté
             </h2>
-            <p className="text-steel text-lg mb-8 max-w-xl mx-auto">
-              Rejoignez les entreprises qui ont transformé leur présence digitale avec Maison Siranno.
+            <p className="text-steel text-lg mb-8 max-w-2xl mx-auto">
+              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
             </p>
-            <button
-              onClick={onGoToContact}
-              className="inline-flex items-center gap-2 px-8 py-4 btn-metallic-dark rounded-full font-semibold shadow-xl text-white"
-            >
-              Démarrer mon projet <ArrowRight size={18} />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
+              <button
+                onClick={onGoToContact}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-dark rounded-full font-semibold shadow-xl text-white text-base"
+              >
+                <Mail size={18} />
+                Envoyer un message
+              </button>
+              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-charcoal/25 text-charcoal/60 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
+                <Phone size={18} />
+                Appeler directement
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-steel/60">
+              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+                <span key={g} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0"></span>
+                  {g}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 

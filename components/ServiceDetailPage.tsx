@@ -239,6 +239,7 @@ const ProcessStepCard: React.FC<ProcessStepCardProps> = ({ step, index, activate
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
+      data-cursor-hover
       className="rounded-2xl overflow-hidden relative shadow-lg cursor-pointer group"
       style={{
         ...lightTextureStyle,

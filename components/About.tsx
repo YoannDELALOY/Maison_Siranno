@@ -90,7 +90,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Graphique dans son propre contexte, pas de z-index conflictuel */}
-            <div style={{ position: 'relative', zIndex: 1, overflow: 'visible' }}>
+            <div data-cursor-ignore style={{ position: 'relative', zIndex: 1, overflow: 'visible' }}>
               <PerformanceChart />
             </div>
 

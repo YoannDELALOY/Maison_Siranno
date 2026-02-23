@@ -124,6 +124,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => 
 
 const TestimonialCard: React.FC<{ t: Testimonial; onOpenProject?: (id: string) => void }> = ({ t, onOpenProject }) => (
   <div
+    data-cursor-hover
     className="glass-card p-8 rounded-2xl flex flex-col relative group hover:border-gold/30 transition-colors cursor-pointer"
     onClick={() => onOpenProject?.(t.projectId)}
     title={`Voir le projet ${t.company}`}

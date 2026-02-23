@@ -13,6 +13,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => (
   <div
+    data-cursor-hover
     className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold/40 transition-all duration-500 hover:-translate-y-2 shadow-xl cursor-pointer flex-shrink-0 snap-start"
     style={{
       width: 'min(85vw, 300px)',
