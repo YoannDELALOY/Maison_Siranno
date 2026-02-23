@@ -1,6 +1,12 @@
 import React from 'react';
-import { ArrowLeft, ArrowRight, BookOpen, Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, Quote } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookOpen, Quote, Mail, Phone } from 'lucide-react';
 import starImg from '../Media/etoiletrnsparante.png';
+import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
+import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
+import iconContenu from '../Media/Logos/Logo_expertise/Icone_Création_de_Contenu_&_Marketing_IA.png';
+import iconIA from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
+import iconConseil from '../Media/Logos/Logo_expertise/Icone_Conseil_&_Formation.png';
+import iconPilotage from '../Media/Logos/Logo_expertise/Icone_Pilotage_Continu.png';
 import { projectsData, ProjectData, ExpertiseCategory } from '../data/projects';
 import { allTestimonials, Testimonial } from '../data/testimonials';
 
@@ -22,37 +28,37 @@ const expertiseMeta: Record<ExpertiseCategory, ExpertiseMeta> = {
   'web-apps-saas': {
     title: 'Développement Web Apps & SaaS',
     subtitle: 'Sites vitrine, applications métiers, marketplaces, portfolios',
-    icon: <Globe size={24} />,
+    icon: <img src={iconWebApps} alt="Développement Web Apps & SaaS" className="w-7 h-7 object-contain" />,
     accentColor: 'from-blue-500/20 to-blue-600/10',
   },
   'automatisation-n8n': {
     title: 'Automatisation & Orchestration n8n',
     subtitle: 'Workflows, RDV automatiques, intégrations, réduction du travail manuel',
-    icon: <Cpu size={24} />,
+    icon: <img src={iconAutomatisation} alt="Automatisation & Orchestration n8n" className="w-7 h-7 object-contain" />,
     accentColor: 'from-purple-500/20 to-purple-600/10',
   },
   'contenu-marketing-ia': {
     title: 'Création de Contenu & Marketing IA',
     subtitle: 'Portfolios créatifs, newsletters, billetterie, présence digitale',
-    icon: <Megaphone size={24} />,
+    icon: <img src={iconContenu} alt="Création de Contenu & Marketing IA" className="w-7 h-7 object-contain" />,
     accentColor: 'from-rose-500/20 to-rose-600/10',
   },
   'ia-agents-rag': {
     title: 'Intelligence Artificielle & Agents RAG',
     subtitle: 'Chatbots IA, transcription automatique, assistants intelligents',
-    icon: <Brain size={24} />,
+    icon: <img src={iconIA} alt="Intelligence Artificielle & Agents RAG" className="w-7 h-7 object-contain" />,
     accentColor: 'from-emerald-500/20 to-emerald-600/10',
   },
   'conseil-formation': {
     title: 'Conseil & Formation',
     subtitle: 'Stratégie SEO, audit digital, accompagnement transformation, formation équipes',
-    icon: <GraduationCap size={24} />,
+    icon: <img src={iconConseil} alt="Conseil & Formation" className="w-7 h-7 object-contain" />,
     accentColor: 'from-amber-500/20 to-amber-600/10',
   },
   'pilotage-continu': {
     title: 'Pilotage Continu',
     subtitle: 'Suivi mensuel KPIs, optimisation permanente, retainer digital',
-    icon: <BarChart3 size={24} />,
+    icon: <img src={iconPilotage} alt="Pilotage Continu" className="w-7 h-7 object-contain" />,
     accentColor: 'from-teal-500/20 to-teal-600/10',
   },
 };
@@ -314,20 +320,36 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
 
       {/* CTA contact */}
       <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="cta-leather glass-panel rounded-3xl p-12 border border-gold/20 relative text-center">
-          <div className="relative z-10">
+        <div className="cta-leather glass-panel rounded-3xl border border-gold/20 overflow-hidden relative text-center">
+          <div className="relative z-10 px-8 md:px-16 py-14">
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy mb-4">
               Votre projet, notre prochaine réalisation
             </h2>
-            <p className="text-steel text-lg mb-8 max-w-xl mx-auto">
-              Rejoignez les entreprises qui ont fait confiance à Maison Siranno pour leur transformation digitale.
+            <p className="text-steel text-lg mb-8 max-w-2xl mx-auto">
+              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
             </p>
-            <button
-              onClick={onGoToContact}
-              className="inline-flex items-center gap-2 px-8 py-4 btn-metallic-dark rounded-full font-semibold shadow-xl text-white"
-            >
-              Lancer mon projet <ArrowRight size={18} />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
+              <button
+                onClick={onGoToContact}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-dark rounded-full font-semibold shadow-xl text-white text-base"
+              >
+                <Mail size={18} />
+                Envoyer un message
+              </button>
+              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-charcoal/25 text-charcoal/60 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
+                <Phone size={18} />
+                Appeler directement
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-steel/60">
+              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+                <span key={g} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0"></span>
+                  {g}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

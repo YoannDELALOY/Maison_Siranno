@@ -1,6 +1,12 @@
 import React from 'react';
-import { ArrowRight, Quote, BookOpen, Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, ExternalLink, Mail, Phone } from 'lucide-react';
+import { ArrowRight, Quote, BookOpen, ExternalLink, Mail, Phone } from 'lucide-react';
 import starImg from '../Media/etoiletrnsparante.png';
+import iconWebApps        from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
+import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
+import iconContenu        from '../Media/Logos/Logo_expertise/Icone_Création_de_Contenu_&_Marketing_IA.png';
+import iconIA             from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
+import iconConseil        from '../Media/Logos/Logo_expertise/Icone_Conseil_&_Formation.png';
+import iconPilotage       from '../Media/Logos/Logo_expertise/Icone_Pilotage_Continu.png';
 import { projectsData, ProjectData, ExpertiseCategory } from '../data/projects';
 import { projectsTestimonials } from '../data/testimonials';
 
@@ -25,42 +31,42 @@ const expertiseSections: ExpertiseSection[] = [
     id: 'web-apps-saas',
     title: 'Développement Web Apps & SaaS',
     subtitle: 'Sites vitrine, applications métiers, marketplaces, portfolios',
-    icon: <Globe size={20} />,
+    icon: <img src={iconWebApps} alt="Développement Web" className="w-5 h-5 object-contain" />,
     accentColor: 'from-blue-500/20 to-blue-600/10',
   },
   {
     id: 'automatisation-n8n',
     title: 'Automatisation & Orchestration n8n',
     subtitle: 'Workflows, RDV automatiques, intégrations, réduction du travail manuel',
-    icon: <Cpu size={20} />,
+    icon: <img src={iconAutomatisation} alt="Automatisation" className="w-5 h-5 object-contain" />,
     accentColor: 'from-purple-500/20 to-purple-600/10',
   },
   {
     id: 'contenu-marketing-ia',
     title: 'Création de Contenu & Marketing IA',
     subtitle: 'Portfolios créatifs, newsletters, billetterie, présence digitale',
-    icon: <Megaphone size={20} />,
+    icon: <img src={iconContenu} alt="Contenu & Marketing" className="w-5 h-5 object-contain" />,
     accentColor: 'from-rose-500/20 to-rose-600/10',
   },
   {
     id: 'ia-agents-rag',
     title: 'Intelligence Artificielle & Agents RAG',
     subtitle: 'Chatbots IA, transcription automatique, assistants intelligents',
-    icon: <Brain size={20} />,
+    icon: <img src={iconIA} alt="Intelligence Artificielle" className="w-5 h-5 object-contain" />,
     accentColor: 'from-emerald-500/20 to-emerald-600/10',
   },
   {
     id: 'conseil-formation',
     title: 'Conseil & Formation',
     subtitle: 'Stratégie SEO, audit digital, accompagnement transformation, formation équipes',
-    icon: <GraduationCap size={20} />,
+    icon: <img src={iconConseil} alt="Conseil & Formation" className="w-5 h-5 object-contain" />,
     accentColor: 'from-amber-500/20 to-amber-600/10',
   },
   {
     id: 'pilotage-continu',
     title: 'Pilotage Continu',
     subtitle: 'Suivi mensuel KPIs, optimisation permanente, retainer digital',
-    icon: <BarChart3 size={20} />,
+    icon: <img src={iconPilotage} alt="Pilotage Continu" className="w-5 h-5 object-contain" />,
     accentColor: 'from-teal-500/20 to-teal-600/10',
   },
 ];

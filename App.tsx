@@ -33,6 +33,8 @@ function App() {
   const [activeProject, setActiveProject] = useState<ProjectData | null>(null);
   const [activeBlogProject, setActiveBlogProject] = useState<ProjectData | null>(null);
   const [activeExpertiseCategory, setActiveExpertiseCategory] = useState<ExpertiseCategory | null>(null);
+  const [blogArticleFromPage, setBlogArticleFromPage] = useState<Page>('blog');
+  const [expertiseProjectsFromPage, setExpertiseProjectsFromPage] = useState<Page>('realisations');
 
   const showLegal = useCallback((p: 'mentions' | 'privacy') => {
     setPage(p);
@@ -76,26 +78,28 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const navigateToBlogArticle = useCallback((projectId: string) => {
+  const navigateToBlogArticle = useCallback((projectId: string, fromPage?: Page) => {
     const found = projectsData.find((p) => p.id === projectId);
     if (found) {
       setActiveBlogProject(found);
+      setBlogArticleFromPage(fromPage ?? page);
       setPage('blog-article');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }, []);
+  }, [page]);
 
   const backFromBlogArticle = useCallback(() => {
     setActiveBlogProject(null);
-    setPage('blog');
+    setPage(blogArticleFromPage);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
+  }, [blogArticleFromPage]);
 
-  const navigateToExpertiseProjects = useCallback((expertiseId: ExpertiseCategory) => {
+  const navigateToExpertiseProjects = useCallback((expertiseId: ExpertiseCategory, fromPage?: Page) => {
     setActiveExpertiseCategory(expertiseId);
+    setExpertiseProjectsFromPage(fromPage ?? page);
     setPage('expertise-projects');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
+  }, [page]);
 
   // Pages légales : sans Navbar ni Footer
   if (page === 'mentions') {
@@ -144,7 +148,7 @@ function App() {
         {page === 'expertise-projects' && activeExpertiseCategory && (
           <ExpertiseProjectsPage
             expertiseId={activeExpertiseCategory}
-            onBack={() => { setPage('realisations'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            onBack={() => { setPage(expertiseProjectsFromPage); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             onNavigateBlogArticle={navigateToBlogArticle}
             onGoToContact={goToContact}
           />
