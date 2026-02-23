@@ -166,7 +166,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full btn-metallic-gold font-semibold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg"
+                  className="w-full btn-metallic-dark text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg"
                 >
                   Voir le site <ExternalLink size={16} />
                 </a>
@@ -183,7 +183,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               <a
                 href={`#${SectionId.CONTACT}`}
                 onClick={onClose}
-                className="w-full btn-metallic-dark text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg"
+                className="w-full btn-metallic-gold font-semibold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg"
               >
                 Démarrer mon projet <ArrowRight size={18} />
               </a>
