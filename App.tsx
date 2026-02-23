@@ -17,6 +17,8 @@ import { AgencyPage } from './components/AgencyPage';
 import { ServiceDetailPage } from './components/ServiceDetailPage';
 import { BlogPage } from './components/BlogPage';
 import { BlogArticlePage } from './components/BlogArticlePage';
+import { BlogArticleDetailPage } from './components/BlogArticleDetailPage';
+import { blogArticles, BlogArticle } from './data/blog';
 import { ExpertiseProjectsPage } from './components/ExpertiseProjectsPage';
 import { CookieBanner } from './components/CookieBanner';
 import { CustomCursor } from './components/CustomCursor';
@@ -24,7 +26,7 @@ import { projectsData } from './components/Projects';
 import { ExpertiseCategory } from './data/projects';
 import { SectionId } from './types';
 
-type Page = 'home' | 'mentions' | 'privacy' | 'expertise' | 'realisations' | 'agence' | 'service-detail' | 'blog' | 'blog-article' | 'expertise-projects';
+type Page = 'home' | 'mentions' | 'privacy' | 'expertise' | 'realisations' | 'agence' | 'service-detail' | 'blog' | 'blog-article' | 'blog-article-detail' | 'expertise-projects';
 
 function App() {
   const [page, setPage] = useState<Page>('home');
@@ -32,6 +34,7 @@ function App() {
   const [activeServicePage, setActiveServicePage] = useState<ServiceData | null>(null);
   const [activeProject, setActiveProject] = useState<ProjectData | null>(null);
   const [activeBlogProject, setActiveBlogProject] = useState<ProjectData | null>(null);
+  const [activeBlogArticle, setActiveBlogArticle] = useState<BlogArticle | null>(null);
   const [activeExpertiseCategory, setActiveExpertiseCategory] = useState<ExpertiseCategory | null>(null);
   const [blogArticleFromPage, setBlogArticleFromPage] = useState<Page>('blog');
   const [expertiseProjectsFromPage, setExpertiseProjectsFromPage] = useState<Page>('realisations');
@@ -78,8 +81,18 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const navigateToBlogArticle = useCallback((projectId: string, fromPage?: Page) => {
-    const found = projectsData.find((p) => p.id === projectId);
+  const navigateToBlogArticle = useCallback((id: string, fromPage?: Page) => {
+    // D'abord chercher dans les articles blog standalone
+    const blogArticle = blogArticles.find((a) => a.id === id && a.available);
+    if (blogArticle) {
+      setActiveBlogArticle(blogArticle);
+      setBlogArticleFromPage(fromPage ?? page);
+      setPage('blog-article-detail');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    // Sinon chercher dans les réalisations
+    const found = projectsData.find((p) => p.id === id);
     if (found) {
       setActiveBlogProject(found);
       setBlogArticleFromPage(fromPage ?? page);
@@ -90,6 +103,7 @@ function App() {
 
   const backFromBlogArticle = useCallback(() => {
     setActiveBlogProject(null);
+    setActiveBlogArticle(null);
     setPage(blogArticleFromPage);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [blogArticleFromPage]);
@@ -179,6 +193,14 @@ function App() {
         {page === 'blog-article' && (
           <BlogArticlePage
             project={activeBlogProject}
+            onBack={backFromBlogArticle}
+            onGoToContact={goToContact}
+          />
+        )}
+
+        {page === 'blog-article-detail' && activeBlogArticle && (
+          <BlogArticleDetailPage
+            article={activeBlogArticle}
             onBack={backFromBlogArticle}
             onGoToContact={goToContact}
           />
