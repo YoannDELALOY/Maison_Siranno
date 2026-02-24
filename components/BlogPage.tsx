@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { ArrowRight, Clock, BookOpen, Calendar, ChevronLeft, ChevronRight, Mail, Phone, Tag } from 'lucide-react';
 import { blogArticles, BlogCategory } from '../data/blog';
+import { useSeo } from '../hooks/useSeo';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
 import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
 import iconIA from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
@@ -303,6 +304,11 @@ const ArticleCardComing: React.FC<{ article: typeof blogArticles[0] }> = ({ arti
 // ─── Page principale ─────────────────────────────────────────────────────────
 
 export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoToContact }) => {
+  useSeo(
+    'Blog IA & Web — Conseils, guides et études de cas | Maison Siranno',
+    'Découvrez nos articles sur le développement web, l\'automatisation n8n, l\'IA RAG, le marketing automation et le pilotage continu. Conseils pratiques pour dirigeants de PME.',
+    'https://maisonsiranno.fr/blog'
+  );
   const availableArticles = blogArticles.filter((a) => a.available);
   const comingSoonArticles = blogArticles.filter((a) => !a.available);
 

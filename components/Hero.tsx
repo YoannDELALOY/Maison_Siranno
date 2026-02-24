@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { ArrowRight, Sparkles, Phone } from 'lucide-react';
 import { SectionId } from '../types';
+import { useTranslation } from '../hooks/useTranslation';
 
 const TechLogo: React.FC<{ src: string; alt: string; fallback: string }> = ({ src, alt, fallback }) => (
   <div className="w-8 h-8 rounded-lg bg-white shadow-sm border border-gray-100 flex items-center justify-center overflow-hidden" title={alt}>
@@ -21,6 +22,7 @@ const TechLogo: React.FC<{ src: string; alt: string; fallback: string }> = ({ sr
 );
 
 export const Hero: React.FC = () => {
+  const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -176,7 +178,7 @@ export const Hero: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel border border-gold/20 animate-fade-in">
             <Sparkles size={14} className="text-gold" />
             <span className="text-xs font-semibold tracking-wider uppercase text-charcoal/80">
-              Agence IA & Web — Châteauneuf-sur-Loire
+              {t('hero.badge')}
             </span>
           </div>
 
@@ -196,7 +198,7 @@ export const Hero: React.FC = () => {
               className="group relative px-8 py-4 btn-metallic-dark text-white rounded-full overflow-hidden shadow-xl"
             >
               <span className="relative flex items-center gap-2 font-semibold">
-                Parler de votre projet <ArrowRight size={18} />
+                {t('hero.cta_primary')} <ArrowRight size={18} />
               </span>
             </a>
 

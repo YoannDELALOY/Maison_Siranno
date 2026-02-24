@@ -14,6 +14,9 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => (
   <div
     data-cursor-hover
+    role="button"
+    tabIndex={0}
+    aria-label={`Voir le projet ${project.title}`}
     className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold/40 transition-all duration-500 hover:-translate-y-2 shadow-xl cursor-pointer flex-shrink-0 snap-start"
     style={{
       width: 'min(85vw, 300px)',
@@ -22,6 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => (
       boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)',
     }}
     onClick={() => onClick(project)}
+    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onClick(project); }}
   >
     <div className="h-48 overflow-hidden relative">
       <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors z-10"></div>

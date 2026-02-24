@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSeo } from '../hooks/useSeo';
 import { ArrowRight, Quote, BookOpen, ExternalLink, Mail, Phone } from 'lucide-react';
 import starImg from '../Media/etoiletrnsparante.png';
 import iconWebApps        from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
@@ -173,6 +174,11 @@ const ExpertiseCTACard: React.FC<ExpertiseCTACardProps> = ({ section, onNavigate
 };
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNavigateBlogArticle, onGoToContact, onNavigateExpertise }) => {
+  useSeo(
+    'Réalisations — Projets web, IA & automatisation | Maison Siranno',
+    'Explorez nos études de cas : applications web SaaS, workflows n8n, agents IA RAG, marketing automation. Des projets concrets avec des résultats mesurables pour nos clients PME.',
+    'https://maisonsiranno.fr/realisations'
+  );
 
   const handleCardClick = (projectId: string) => {
     if (onNavigateBlogArticle) {

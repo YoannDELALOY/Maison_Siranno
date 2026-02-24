@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Cookie } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const COOKIE_KEY = 'maison-siranno-cookies';
 
@@ -8,6 +9,7 @@ interface CookieBannerProps {
 }
 
 export const CookieBanner: React.FC<CookieBannerProps> = ({ onNavigatePrivacy }) => {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -60,13 +62,13 @@ export const CookieBanner: React.FC<CookieBannerProps> = ({ onNavigatePrivacy })
               onClick={refuse}
               className="px-5 py-2.5 text-sm font-medium text-charcoal border border-charcoal/20 rounded-full hover:border-gold/50 hover:text-gold transition-all"
             >
-              Refuser
+              {t('cookie_banner.refuse')}
             </button>
             <button
               onClick={accept}
               className="px-5 py-2.5 text-sm font-semibold btn-metallic-gold rounded-full"
             >
-              Tout accepter
+              {t('cookie_banner.accept')}
             </button>
           </div>
 
@@ -74,7 +76,7 @@ export const CookieBanner: React.FC<CookieBannerProps> = ({ onNavigatePrivacy })
           <button
             onClick={refuse}
             className="absolute top-3 right-3 p-1.5 text-steel hover:text-charcoal transition-colors rounded-full hover:bg-black/5"
-            aria-label="Fermer"
+            aria-label={t('cookie_banner.aria_close')}
           >
             <X size={16} />
           </button>

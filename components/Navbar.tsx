@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { SectionId } from '../types';
+import { LanguageButton } from './LanguageButton';
+import { useTranslation } from '../hooks/useTranslation';
 
 type NavPage = 'expertise' | 'realisations' | 'blog' | 'agence' | 'home';
 
@@ -10,6 +12,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home' }) => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -31,10 +34,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
   }, [isMobileMenuOpen]);
 
   const navLinks: { label: string; page: NavPage }[] = [
-    { label: 'Expertise', page: 'expertise' },
-    { label: 'Réalisations', page: 'realisations' },
-    { label: "L'Agence", page: 'agence' },
-    { label: 'Blog', page: 'blog' },
+    { label: t('navbar.links.expertise'),    page: 'expertise' },
+    { label: t('navbar.links.realisations'), page: 'realisations' },
+    { label: t('navbar.links.agence'),       page: 'agence' },
+    { label: t('navbar.links.blog'),         page: 'blog' },
   ];
 
   const handleNavClick = (page: NavPage) => {
@@ -118,8 +121,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
             `}
           >
             <Phone size={16} />
-            <span>Discuter</span>
+            <span>{t('navbar.cta_desktop')}</span>
           </a>
+          <LanguageButton isScrolled={false} />
         </div>
 
         {/* Mobile Toggle */}
@@ -132,6 +136,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
+      {/* Bouton langue flottant bas-droite (mobile + scroll) */}
+      {isScrolled && <LanguageButton isScrolled={true} />}
 
       {/* Menu mobile — dropdown compact */}
       {isMobileMenuOpen && (
@@ -157,7 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
                 className="flex items-center justify-center gap-2 px-6 py-3 btn-metallic-gold rounded-xl text-sm font-semibold shadow-md w-full"
               >
                 <Phone size={16} />
-                Démarrer un projet
+                {t('navbar.cta_mobile')}
               </a>
             </div>
           </div>

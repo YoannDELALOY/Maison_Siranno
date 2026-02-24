@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSeo } from '../hooks/useSeo';
 import { ArrowLeft, ArrowRight, BookOpen, Quote, Mail, Phone } from 'lucide-react';
 import starImg from '../Media/etoiletrnsparante.png';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
@@ -247,6 +248,11 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
   onGoToContact,
 }) => {
   const meta = expertiseMeta[expertiseId];
+  useSeo(
+    `Réalisations ${meta?.title ?? expertiseId} — Maison Siranno`,
+    `Découvrez nos projets en ${meta?.title ?? expertiseId} : études de cas détaillées, technologies utilisées et résultats obtenus. Maison Siranno, agence IA & Web.`,
+    `https://maisonsiranno.fr/realisations/${expertiseId}`
+  );
 
   const projects = projectsData
     .filter((p) => p.expertise === expertiseId || p.expertises?.includes(expertiseId))

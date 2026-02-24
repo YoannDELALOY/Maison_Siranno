@@ -1,0 +1,273 @@
+{
+  "navbar": {
+    "logo_alt": "Maison Siranno - El arte de la web",
+    "links": {
+      "expertise": "Expertise",
+      "realisations": "Proyectos",
+      "agence": "La Agencia",
+      "blog": "Blog"
+    },
+    "cta_desktop": "Hablemos",
+    "cta_mobile": "Iniciar un proyecto",
+    "aria": {
+      "open_menu": "Abrir menú",
+      "close_menu": "Cerrar menú"
+    }
+  },
+  "hero": {
+    "badge": "Agencia IA & Web — Valle del Loira, Francia",
+    "title_line1": "El Arte de Realzar",
+    "title_line2": "su Saber Hacer",
+    "subtitle": "Porque su negocio es único, su estrategia digital también debe serlo. Diseñamos su ecosistema web a medida para",
+    "subtitle_strong": "transformar su visión en resultados concretos",
+    "cta_primary": "Hablar de su proyecto",
+    "card_status": "En línea",
+    "card_stack_label": "Stack & Herramientas",
+    "card_growth_value": "+27%",
+    "card_growth_label": "Crecimiento Digital",
+    "card_quote": "La IA como palanca de precisión absoluta."
+  },
+  "services": {
+    "eyebrow": "6 Áreas de Expertise",
+    "title": "La IA y la web al servicio de su crecimiento",
+    "subtitle": "Combinamos desarrollo web premium, automatización inteligente e IA de vanguardia para transformar su empresa de forma duradera.",
+    "card_cta": "Saber más",
+    "aria": {
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "dot": "Expertise {n}"
+    },
+    "swipe_hint": "Desliza para navegar"
+  },
+  "about": {
+    "eyebrow": "ADN de la Agencia",
+    "title": "Maison Siranno: El Arquitecto de su Éxito Digital",
+    "description_1": "Fundada en Châteauneuf-sur-Loire, Maison Siranno es más que una agencia de desarrollo. Somos el socio estratégico de las PYMEs y artesanos que se niegan a aceptar el statu quo.",
+    "description_2": "Nuestra visión: llevar la excelencia técnica de las grandes corporaciones a los actores de la economía local. Construimos ecosistemas digitales diseñados para durar, rendir y liberar su tiempo.",
+    "why_title": "¿Por qué elegirnos?",
+    "why_items": [
+      "Una arquitectura técnica de 'Estándar Oro'",
+      "Una relación de proximidad real (región de Loiret y alrededores)",
+      "La innovación en IA al servicio de su rentabilidad"
+    ],
+    "founder_role": "Fundador & Arquitecto Principal",
+    "chart_title": "Especialidades de la agencia",
+    "chart_subtitle": "La innovación como tradición.",
+    "chart_satisfaction_label": "Satisfacción del cliente",
+    "chart_satisfaction_value": "98% satisfechos",
+    "badge_value": "100%",
+    "badge_label": "A medida"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonios",
+    "title": "Confían en nosotros",
+    "subtitle": "Socios locales que han dado el salto al mundo digital.",
+    "aria": {
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "dot": "Testimonio {n}",
+      "view_project": "Ver proyecto {company}"
+    },
+    "swipe_hint": "Desliza para navegar"
+  },
+  "contact": {
+    "title": "Hablemos de su",
+    "title_accent": "Futuro",
+    "subtitle": "¿Tiene un proyecto? ¿Un reto de automatización? Dediquemos 30 minutos a auditar sus necesidades. Sin tecnicismos, solo soluciones concretas.",
+    "address_label": "Visitarnos",
+    "email_label": "Email",
+    "phone_label": "Teléfono",
+    "social_label": "Encuéntrenos en",
+    "form_title": "Enviar un mensaje",
+    "field_name": "Nombre completo",
+    "field_name_placeholder": "Su nombre",
+    "field_email": "Email",
+    "field_email_placeholder": "su@email.com",
+    "field_phone": "Teléfono",
+    "field_phone_optional": "(opcional)",
+    "field_phone_placeholder": "+34 XXX XXX XXX",
+    "field_message": "Su proyecto",
+    "field_message_placeholder": "Describa su proyecto o necesidad...",
+    "submit": "Enviar mensaje",
+    "submitting": "Enviando...",
+    "success_title": "¡Mensaje enviado!",
+    "success_body": "Le responderé a la mayor brevedad posible.",
+    "success_again": "Enviar otro mensaje",
+    "error_body": "Ha ocurrido un error. Por favor, escríbame directamente a",
+    "call_instead": "O llame directamente:"
+  },
+  "footer": {
+    "tagline": "Agencia digital en el Valle del Loira, Francia.\nCreación de sitios web, IA y automatización\npara PYMEs y artesanos.",
+    "col_expertise": "Expertise",
+    "col_contact": "Contacto",
+    "copyright": "© {year} Yoann Delaloy — Maison Siranno. Todos los derechos reservados.",
+    "legal": "Aviso legal",
+    "privacy": "Política de privacidad",
+    "portfolio": "Portfolio"
+  },
+  "expertise_page": {
+    "eyebrow": "Saber hacer & Tecnologías",
+    "title": "Nuestra Expertise",
+    "subtitle": "Seis áreas de expertise complementarias — web, automatización, IA, marketing, consultoría & formación, seguimiento continuo — al servicio de las empresas ambiciosas del Valle del Loira y más allá. Cada servicio está diseñado a medida, sin concesiones.",
+    "service_label": "Servicio #{n}",
+    "discover_cta": "Explorar en detalle",
+    "cta": {
+      "eyebrow": "Dé el siguiente paso",
+      "title": "¿Tiene un proyecto en mente?",
+      "subtitle": "Primera consulta gratuita. En 30 minutos, analizamos su situación y definimos juntos el mejor enfoque para alcanzar sus objetivos.",
+      "btn_message": "Enviar un mensaje",
+      "btn_call": "Llamar directamente",
+      "guarantees": ["Respuesta en 24h", "Sin compromiso", "Consulta gratuita", "Presupuesto en 48h"]
+    }
+  },
+  "projects_page": {
+    "eyebrow": "Portfolio & Referencias",
+    "title": "Nuestros Proyectos",
+    "subtitle": "Proyectos concretos, resultados medibles. Clasificados por expertise para ayudarle a encontrar el proyecto más cercano a su necesidad.",
+    "cta_card_title": "Ver todos nuestros proyectos",
+    "cta_card_btn": "Explorar",
+    "testimonials_eyebrow": "Testimonios",
+    "testimonials_title": "Comparten sus resultados",
+    "testimonials_subtitle": "Cifras reales, transformaciones tangibles.",
+    "cta": {
+      "eyebrow": "Dé el siguiente paso",
+      "title": "Su proyecto, nuestro próximo caso de éxito",
+      "subtitle": "Primera consulta gratuita. En 30 minutos, analizamos su situación y definimos juntos el mejor enfoque para alcanzar sus objetivos.",
+      "btn_message": "Enviar un mensaje",
+      "btn_call": "Llamar directamente",
+      "guarantees": ["Respuesta en 24h", "Sin compromiso", "Consulta gratuita", "Presupuesto en 48h"]
+    }
+  },
+  "blog_page": {
+    "eyebrow": "Blog & Reflexiones",
+    "title": "Nuestros Artículos",
+    "subtitle": "Retornos de experiencia, consejos prácticos y reflexiones sobre lo digital, la IA y la automatización para empresas ambiciosas.",
+    "coming_soon_title": "Próximamente",
+    "featured_title": "Leer ahora",
+    "by_expertise_label": "Por expertise",
+    "badge_soon": "Próximamente",
+    "read_time": "{time} de lectura",
+    "article_count": "({n} artículos)",
+    "cta": {
+      "eyebrow": "Dé el siguiente paso",
+      "title": "Su proyecto merece ser contado",
+      "subtitle": "Primera consulta gratuita. En 30 minutos, analizamos su situación y definimos juntos el mejor enfoque para alcanzar sus objetivos.",
+      "btn_message": "Iniciar mi proyecto",
+      "btn_call": "Llamar directamente",
+      "guarantees": ["Respuesta en 24h", "Sin compromiso", "Consulta gratuita", "Presupuesto en 48h"]
+    }
+  },
+  "agency_page": {
+    "eyebrow": "Nuestra historia & Nuestra visión",
+    "title": "La Agencia",
+    "subtitle": "Un recorrido singular entre los mercados financieros, la construcción y la excelencia digital. Maison Siranno encarna el rigor de los mercados financieros, la realidad del terreno y la precisión del artesano — al servicio de su crecimiento.",
+    "stats": {
+      "visibility": "Visibilidad media",
+      "satisfaction": "Satisfacción del cliente",
+      "custom": "A medida"
+    },
+    "timeline_eyebrow": "Trayectoria",
+    "timeline_title": "Finanzas → Construcción → Digital → IA",
+    "values_eyebrow": "Filosofía",
+    "values_title": "Nuestros Valores",
+    "values": {
+      "data_driven": {
+        "title": "Basado en datos",
+        "description": "Cada decisión se apoya en datos concretos. Herencia de los mercados financieros: nada se deja al azar."
+      },
+      "custom": {
+        "title": "A medida",
+        "description": "Cada solución está diseñada específicamente para usted. Sin plantillas, sin copiar y pegar."
+      },
+      "human": {
+        "title": "Humano",
+        "description": "Un único interlocutor, disponible y reactivo. La tecnología al servicio de la relación humana."
+      },
+      "roi": {
+        "title": "Obsesionado con el ROI",
+        "description": "El retorno de la inversión es la métrica central de cada proyecto. Lo bello no es suficiente por sí solo."
+      }
+    },
+    "expertise_eyebrow": "Lo que nos diferencia",
+    "expertise_title": "La Expertise Sectorial, una Ventaja Concreta",
+    "expertise_body_1": "Antiguo trader en mercados financieros, luego profesional de la construcción y la logística, antes de fundar Maison Siranno — este recorrido atípico no es casualidad. Forja un enfoque único: basado en datos, obsesionado con el ROI y profundamente arraigado en las realidades operativas.",
+    "expertise_body_2": "Sé lo que es tomar decisiones bajo presión, leer cifras que importan de verdad, gestionar plazos y equipos. Cuando me habla de sus retos, los entiendo antes de que termine de hablar. Es esta inteligencia situacional la que marca la diferencia.",
+    "expertise_checkpoints": [
+      "Enfoque basado en datos, heredado de los mercados financieros",
+      "Comprensión inmediata de los retos empresariales del terreno",
+      "Soluciones pensadas para el ROI, no solo para la estética",
+      "Un único interlocutor, disponible y obsesionado con el ROI"
+    ],
+    "expertise_quote": "El rigor de las finanzas, la realidad del terreno, la precisión de lo digital.",
+    "founder_role": "Fundador & Arquitecto Principal",
+    "founder_bio": "Antiguo trader, profesional de la construcción y la logística, reconvertido en desarrollador web y especialista en IA. Un recorrido atípico que forja un enfoque único: basado en datos, obsesionado con el ROI y profundamente humano. Cada artesano, comerciante y PYME merece herramientas a la altura de su ambición.",
+    "network_eyebrow": "Red",
+    "network_title": "Una Red de Socios Expertos",
+    "network_subtitle": "Maison Siranno no trabaja sola. Para cada proyecto, activamos al socio adecuado en el momento oportuno — garantizando una expertise precisa en cada etapa, sin nunca comprometer la calidad.",
+    "partners": [
+      { "label": "Diseñador Gráfico & Artista", "description": "Identidad visual, ilustraciones, dirección artística a medida" },
+      { "label": "Fotógrafo", "description": "Fotografía de producto, retratos, reportajes corporativos y eventos" },
+      { "label": "Videógrafo & Editor", "description": "Producción de vídeo, motion design, reels y formatos cortos" },
+      { "label": "Experto SEO & SEA", "description": "Posicionamiento orgánico, Google Ads, estrategia de visibilidad de pago" },
+      { "label": "Imprenta", "description": "Tarjetas de visita, flyers, carteles, roll-ups y soportes impresos" },
+      { "label": "Copywriter", "description": "Redacción web, storytelling de marca, landing pages que convierten" },
+      { "label": "Experto en Analytics", "description": "Visualización de datos, dashboards, tracking y atribución multicanal" },
+      { "label": "Asesoría Jurídica", "description": "RGPD, condiciones generales, aviso legal, protección de creaciones digitales" }
+    ],
+    "vision_eyebrow": "Visión",
+    "vision_title": "¿Por qué Maison Siranno?",
+    "vision_body_1": "Porque los empresarios que hacen funcionar la economía local merecen herramientas concebidas con el mismo rigor que las de las grandes instituciones financieras. Sin el precio de Wall Street, con todo el cuidado artesanal.",
+    "vision_body_2": "Maison Siranno es la alianza del rigor financiero, la inteligencia operativa y la excelencia técnica. Cada proyecto es una inversión — nos aseguramos de que sea rentable.",
+    "cta": {
+      "eyebrow": "Dé el siguiente paso",
+      "title": "¿Listo para construir juntos?",
+      "subtitle": "Primera consulta gratuita. En 30 minutos, analizamos su situación y definimos juntos el mejor enfoque para alcanzar sus objetivos.",
+      "btn_message": "Enviar un mensaje",
+      "btn_call": "Llamar directamente",
+      "guarantees": ["Respuesta en 24h", "Sin compromiso", "Consulta gratuita", "Presupuesto en 48h"]
+    }
+  },
+  "legal_mentions": {
+    "back": "Volver al sitio",
+    "title": "Aviso Legal",
+    "last_updated": "Última actualización:",
+    "sections": {
+      "1_title": "1. Editor del sitio",
+      "2_title": "2. Director de publicación",
+      "3_title": "3. Alojamiento",
+      "4_title": "4. Propiedad intelectual",
+      "5_title": "5. Datos personales",
+      "6_title": "6. Cookies",
+      "7_title": "7. Limitación de responsabilidad",
+      "8_title": "8. Hipervínculos",
+      "9_title": "9. Ley aplicable y jurisdicción",
+      "10_title": "10. Contacto"
+    }
+  },
+  "privacy_policy": {
+    "back": "Volver al sitio",
+    "title": "Política de Privacidad",
+    "last_updated": "Última actualización:",
+    "sections": {
+      "1_title": "1. Responsable del tratamiento",
+      "2_title": "2. Datos recopilados",
+      "3_title": "3. Finalidades del tratamiento",
+      "4_title": "4. Base legal del tratamiento",
+      "5_title": "5. Destinatarios y subencargados",
+      "6_title": "6. Período de conservación",
+      "7_title": "7. Sus derechos (RGPD)",
+      "8_title": "8. Política de cookies",
+      "9_title": "9. Seguridad de los datos",
+      "10_title": "10. Transferencias fuera de la UE",
+      "11_title": "11. Modificación de la política"
+    }
+  },
+  "cookie_banner": {
+    "title": "Sus datos, nuestro compromiso",
+    "body": "Utilizamos Formspree para tratar sus datos de contacto (nombre, email, teléfono, mensaje). Prevemos integrar herramientas de análisis en el futuro.",
+    "learn_more": "Saber más",
+    "accept": "Aceptar todo",
+    "refuse": "Rechazar",
+    "aria_close": "Cerrar"
+  }
+}

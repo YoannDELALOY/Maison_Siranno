@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 import { Linkedin, Github, Instagram, Facebook, ExternalLink, Mail, Phone, MapPin } from 'lucide-react';
 import { SectionId } from '../types';
 import { servicesData, ServiceData } from './Services';
@@ -32,6 +33,7 @@ const socialLinks = [
 ];
 
 export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }) => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-charcoal text-white border-t border-white/5">
 
@@ -62,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
                 target="_blank"
                 rel="noopener noreferrer"
                 title={s.label}
-                className="p-2 bg-white/5 rounded-full hover-bg-metallic transition-all border border-white/10"
+                className="p-2 bg-white/5 rounded-full hover:bg-gold/10 transition-all border border-white/10"
                 aria-label={s.label}
               >
                 {s.icon}
@@ -74,7 +76,7 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
               target="_blank"
               rel="noopener noreferrer"
               title="Malt"
-              className="p-2 bg-white/5 rounded-full hover-bg-metallic transition-all border border-white/10"
+              className="p-2 bg-white/5 rounded-full hover:bg-gold/10 transition-all border border-white/10"
               aria-label="Malt"
             >
               <ExternalLink size={18} />
@@ -84,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
 
         {/* Colonne 2 — Expertises (cliquables) */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-widest text-gold mb-5">Expertises</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-widest text-gold mb-5">{t('footer.col_expertise')}</h4>
           <ul className="space-y-3">
             {servicesData.map((service) => (
               <li key={service.id}>
@@ -101,7 +103,7 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
 
         {/* Colonne 3 — Contact */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-widest text-gold mb-5">Contact</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-widest text-gold mb-5">{t('footer.col_contact')}</h4>
           <ul className="space-y-4">
             <li className="flex items-start gap-3 text-gray-400 text-sm">
               <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
@@ -133,20 +135,20 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
       {/* Barre de bas de page */}
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-between text-xs text-gray-500 text-center sm:text-left">
-          <p>© {new Date().getFullYear()} Yoann Delaloy — Maison Siranno. Tous droits réservés.</p>
+          <p>{t('footer.copyright').replace('{year}', String(new Date().getFullYear()))}</p>
 
           <div className="flex gap-4 flex-wrap justify-center sm:justify-end">
             <button
               onClick={() => onShowLegal?.('mentions')}
               className="hover:text-gold transition-colors"
             >
-              Mentions légales
+              {t('footer.legal')}
             </button>
             <button
               onClick={() => onShowLegal?.('privacy')}
               className="hover:text-gold transition-colors"
             >
-              Politique de confidentialité
+              {t('footer.privacy')}
             </button>
             <a
               href="https://yoanndelaloy.fr/"

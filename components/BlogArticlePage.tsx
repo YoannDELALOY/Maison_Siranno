@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSeo } from '../hooks/useSeo';
 import { ArrowLeft, CheckCircle2, ExternalLink, BookOpen, Github, Globe, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users, Mail, Phone } from 'lucide-react';
 import { ProjectData } from './Projects';
 import { ExpertiseCategory } from '../data/projects';
@@ -288,6 +289,11 @@ const AnimatedCounter: React.FC<{ target: number; trigger: boolean; delay?: numb
 };
 
 export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBack, onGoToContact }) => {
+  useSeo(
+    `${project?.title ?? ''} — Étude de cas | Maison Siranno`,
+    project?.description ?? 'Étude de cas détaillée — Maison Siranno, agence IA & Web à Châteauneuf-sur-Loire.',
+    `https://maisonsiranno.fr/realisations/${project?.id ?? ''}`
+  );
   if (!project) return null;
 
   const linkedTestimonial = allTestimonials.find(t => t.projectId === project.id);

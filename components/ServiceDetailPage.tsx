@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { ArrowLeft, ArrowRight, CheckCircle2, Lightbulb, Quote, Phone, Mail, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, Star, X, ClipboardList } from 'lucide-react';
+import { useSeo } from '../hooks/useSeo';
+import { ArrowLeft, ArrowRight, CheckCircle2, Lightbulb, Quote, Phone, Mail, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, X, ClipboardList } from 'lucide-react';
 import { ServiceData } from './Services';
 import { allTestimonials } from '../data/testimonials';
 import { projectsData } from '../data/projects';
@@ -510,6 +511,11 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
 
 /* ─── Page principale ─── */
 export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, onGoToContact, onViewProject }) => {
+  useSeo(
+    `${service.title} — Maison Siranno`,
+    service.description || `Découvrez notre offre ${service.title} : accompagnement personnalisé, résultats mesurables. Maison Siranno, agence IA & Web à Châteauneuf-sur-Loire.`,
+    `https://maisonsiranno.fr/expertise/${service.id || ''}`
+  );
   return (
     <div className="min-h-screen pt-24 pb-24">
 

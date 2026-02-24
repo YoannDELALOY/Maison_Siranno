@@ -1,12 +1,28 @@
 import React from 'react';
-import { ArrowLeft, Clock, Calendar, Tag, Mail, Phone, ArrowRight, BookOpen } from 'lucide-react';
-import { BlogArticle, categoryConfig } from '../data/blog';
+import { useSeo } from '../hooks/useSeo';
+import { ArrowLeft, Clock, Calendar, Tag, Mail, Phone, BookOpen } from 'lucide-react';
+import { BlogArticle, BlogCategory } from '../data/blog';
+import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
+import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
+import iconContenu from '../Media/Logos/Logo_expertise/Icone_Création_de_Contenu_&_Marketing_IA.png';
+import iconIA from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
+import iconConseil from '../Media/Logos/Logo_expertise/Icone_Conseil_&_Formation.png';
+import iconPilotage from '../Media/Logos/Logo_expertise/Icone_Pilotage_Continu.png';
 
 interface BlogArticleDetailPageProps {
   article: BlogArticle;
   onBack: () => void;
   onGoToContact: () => void;
 }
+
+const categoryIconMap: Record<BlogCategory, string> = {
+  'Développement Web & SaaS': iconWebApps,
+  'Automatisation & n8n': iconAutomatisation,
+  'Intelligence Artificielle & RAG': iconIA,
+  'Contenu & Marketing IA': iconContenu,
+  'Conseil & Formation': iconConseil,
+  'Pilotage Continu': iconPilotage,
+};
 
 const darkTextureStyle: React.CSSProperties = {
   backgroundColor: '#0F172A',
@@ -29,11 +45,69 @@ const lightTextureStyle: React.CSSProperties = {
   backgroundBlendMode: 'multiply, normal, normal',
 };
 
+/* ── Convertit **gras** et *italique* en éléments React ── */
+const renderText = (text: string): React.ReactNode => {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          return <strong key={i} className="font-semibold text-charcoal">{part.slice(2, -2)}</strong>;
+        }
+        if (part.startsWith('*') && part.endsWith('*')) {
+          return <em key={i}>{part.slice(1, -1)}</em>;
+        }
+        return part;
+      })}
+    </>
+  );
+};
+
 export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ article, onBack, onGoToContact }) => {
-  const cfg = categoryConfig[article.category];
+  useSeo(
+    `${article.title} | Maison Siranno`,
+    article.excerpt,
+    `https://maisonsiranno.fr/blog/${article.slug}`
+  );
+  const expertiseIcon = categoryIconMap[article.category];
+
+  /* ── JSON-LD Article + FAQ schema ── */
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.excerpt,
+    datePublished: article.date,
+    author: { '@type': 'Person', name: 'Yoann DELALOY' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Maison Siranno',
+      logo: { '@type': 'ImageObject', url: 'https://maisonsiranno.fr/logos/Design%20sans%20titre%20(84).png' },
+    },
+    image: article.image,
+    keywords: article.tags.join(', '),
+  };
+
+  const faqSchema = article.body?.keyTakeaways && article.body.keyTakeaways.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: article.body.keyTakeaways.map((point) => ({
+          '@type': 'Question',
+          name: point.replace(/\*\*/g, '').replace(/\*/g, ''),
+          acceptedAnswer: { '@type': 'Answer', text: point.replace(/\*\*/g, '').replace(/\*/g, '') },
+        })),
+      }
+    : null;
 
   return (
-    <div className="min-h-screen pt-24 pb-24">
+    <article className="min-h-screen pt-24 pb-24">
+
+      {/* JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
 
       {/* Bouton retour */}
       <div className="max-w-4xl mx-auto px-6 mb-8">
@@ -44,17 +118,50 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
       </div>
 
       {/* Hero */}
-      <div className="relative overflow-hidden py-16 mb-12"
+      <header
+        className="relative overflow-hidden py-16 mb-12"
         style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #0F172A 100%)' }}
       >
+        {/* Blobs décoratifs */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-80 h-80 bg-gold/8 rounded-full blur-3xl animate-blob" />
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl animate-blob" style={{ animationDelay: '3s' }} />
         </div>
+
+        {/* Icônes d'expertise décoratives — gauche et droite */}
+        {expertiseIcon && (
+          <>
+            <img
+              src={expertiseIcon}
+              alt=""
+              aria-hidden="true"
+              className="hidden md:block absolute left-[6%] top-1/2 -translate-y-1/2 w-36 h-36 lg:w-52 lg:h-52 object-contain pointer-events-none"
+              style={{ opacity: 0.15, filter: 'drop-shadow(0 0 16px rgba(212,175,55,0.3))' }}
+            />
+            <img
+              src={expertiseIcon}
+              alt=""
+              aria-hidden="true"
+              className="hidden md:block absolute right-[6%] top-1/2 -translate-y-1/2 w-36 h-36 lg:w-52 lg:h-52 object-contain pointer-events-none"
+              style={{ opacity: 0.15, filter: 'drop-shadow(0 0 16px rgba(212,175,55,0.3))' }}
+            />
+          </>
+        )}
+
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          {/* Catégorie */}
+          {/* Badge expertise — gold métallique */}
           <div className="mb-4">
-            <span className={`inline-block text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full border ${cfg.bgColor} ${cfg.color}`}>
+            <span
+              className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
+              style={{
+                background: 'linear-gradient(135deg, rgba(180,130,20,0.25) 0%, rgba(212,175,55,0.35) 50%, rgba(180,130,20,0.25) 100%)',
+                borderColor: 'rgba(212,175,55,0.5)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                color: '#E8C96A',
+                textShadow: '0 0 8px rgba(212,175,55,0.4)',
+              }}
+            >
               {article.category}
             </span>
           </div>
@@ -77,17 +184,41 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
               <Clock size={13} />
               {article.readTime} de lecture
             </span>
-            <div className="flex flex-wrap gap-2">
-              {article.tags.map(tag => (
-                <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-white/8 border border-white/10 rounded-full text-xs text-gray-300">
-                  <Tag size={9} />
-                  {tag}
-                </span>
-              ))}
-            </div>
+          </div>
+
+          {/* Tags — style gold hover */}
+          <div className="flex flex-wrap gap-2 mt-4">
+            {article.tags.map((tag, i) => (
+              <span
+                key={tag}
+                className="flex items-center gap-1 text-xs font-semibold rounded-full px-3 py-1.5 border cursor-default"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(180,130,20,0.15) 0%, rgba(212,175,55,0.22) 50%, rgba(180,130,20,0.15) 100%)',
+                  borderColor: 'rgba(212,175,55,0.35)',
+                  color: '#E8C96A',
+                  animation: `tagAppear 0.5s ease forwards`,
+                  animationDelay: `${0.3 + i * 0.06}s`,
+                  opacity: 0,
+                  backdropFilter: 'blur(4px)',
+                  textShadow: '0 0 8px rgba(212,175,55,0.4)',
+                  transition: 'box-shadow 0.3s, transform 0.3s',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = '0 0 16px rgba(212,175,55,0.35)';
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px) scale(1.04)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0) scale(1)';
+                }}
+              >
+                <Tag size={9} />
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Image */}
       {article.image && (
@@ -107,18 +238,18 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
         <div className="max-w-4xl mx-auto px-6">
 
           {/* Introduction */}
-          <div className="mb-10">
-            <p className="text-steel text-lg leading-relaxed">{article.body.intro}</p>
-          </div>
+          <section className="mb-10">
+            <p className="text-steel text-lg leading-relaxed">{renderText(article.body.intro)}</p>
+          </section>
 
           {/* Sections */}
           {article.body.sections.map((section, si) => (
-            <div key={si} className="mb-12">
+            <section key={si} className="mb-12">
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-metallic-navy mb-5">
                 {section.title}
               </h2>
               {section.paragraphs.map((p, pi) => (
-                <p key={pi} className="text-steel leading-relaxed mb-4">{p}</p>
+                <p key={pi} className="text-steel leading-relaxed mb-4">{renderText(p)}</p>
               ))}
               {section.bullets && section.bullets.length > 0 && (
                 <div className="mt-4 rounded-2xl p-6" style={lightTextureStyle}>
@@ -126,18 +257,18 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
                     {section.bullets.map((b, bi) => (
                       <li key={bi} className="flex items-start gap-3">
                         <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-                        <span className="text-charcoal/80 leading-relaxed">{b}</span>
+                        <span className="text-charcoal/80 leading-relaxed">{renderText(b)}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
-            </div>
+            </section>
           ))}
 
           {/* Points clés */}
           {article.body.keyTakeaways && article.body.keyTakeaways.length > 0 && (
-            <div className="mb-12 rounded-2xl overflow-hidden" style={darkTextureStyle}>
+            <aside className="mb-12 rounded-2xl overflow-hidden" style={darkTextureStyle}>
               <div className="relative z-10 p-8">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="p-2 rounded-lg border" style={{ background: 'rgba(212,175,55,0.12)', borderColor: 'rgba(212,175,55,0.3)' }}>
@@ -149,19 +280,19 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
                   {article.body.keyTakeaways.map((point, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-                      <span className="text-gray-300 leading-relaxed">{point}</span>
+                      <span className="text-gray-300 leading-relaxed">{renderText(point)}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
+            </aside>
           )}
 
           {/* Conclusion */}
-          <div className="mb-16">
+          <section className="mb-16">
             <h2 className="font-serif text-2xl font-bold text-metallic-navy mb-4">Conclusion</h2>
-            <p className="text-steel text-lg leading-relaxed">{article.body.conclusion}</p>
-          </div>
+            <p className="text-steel text-lg leading-relaxed">{renderText(article.body.conclusion)}</p>
+          </section>
 
         </div>
       ) : (
@@ -203,6 +334,14 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
         </div>
       </div>
 
-    </div>
+      {/* Animation CSS tags */}
+      <style>{`
+        @keyframes tagAppear {
+          from { opacity: 0; transform: translateY(8px) scale(0.9); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+      `}</style>
+
+    </article>
   );
 };

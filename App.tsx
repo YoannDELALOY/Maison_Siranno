@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { LanguageProvider } from './contexts/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Services, ServiceData } from './components/Services';
@@ -226,4 +227,10 @@ function App() {
   );
 }
 
-export default App;
+const WrappedApp: React.FC = () => (
+  <LanguageProvider>
+    <App />
+  </LanguageProvider>
+);
+
+export default WrappedApp;

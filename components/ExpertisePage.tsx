@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSeo } from '../hooks/useSeo';
 import { ArrowRight, CheckCircle2, Phone, Mail } from 'lucide-react';
 import { servicesData, ServiceData } from './Services';
 
@@ -9,6 +10,11 @@ interface ExpertisePageProps {
 }
 
 export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onNavigateService, onGoToContact }) => {
+  useSeo(
+    'Nos Expertises — Développement Web, IA, Automatisation | Maison Siranno',
+    'Maison Siranno accompagne les PME avec 6 expertises complémentaires : développement web & SaaS, automatisation n8n, agents IA RAG, marketing IA, conseil & formation, pilotage continu.',
+    'https://maisonsiranno.fr/expertise'
+  );
   const handleServiceClick = (service: ServiceData) => {
     if (onNavigateService) {
       onNavigateService(service);

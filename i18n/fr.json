@@ -1,0 +1,273 @@
+{
+  "navbar": {
+    "logo_alt": "Maison Siranno - L'art du web",
+    "links": {
+      "expertise": "Expertise",
+      "realisations": "Réalisations",
+      "agence": "L'Agence",
+      "blog": "Blog"
+    },
+    "cta_desktop": "Discuter",
+    "cta_mobile": "Démarrer un projet",
+    "aria": {
+      "open_menu": "Ouvrir le menu",
+      "close_menu": "Fermer le menu"
+    }
+  },
+  "hero": {
+    "badge": "Agence IA & Web — Châteauneuf-sur-Loire",
+    "title_line1": "L'Art de Sublimer",
+    "title_line2": "votre Savoir-Faire",
+    "subtitle": "Parce que votre métier est unique, votre stratégie digitale doit l'être aussi. Nous concevons votre écosystème web sur-mesure pour",
+    "subtitle_strong": "transformer votre vision en résultats concrets",
+    "cta_primary": "Parler de votre projet",
+    "card_status": "En ligne",
+    "card_stack_label": "Stack & Outils",
+    "card_growth_value": "+27%",
+    "card_growth_label": "Croissance Digitale",
+    "card_quote": "L'IA comme levier de précision absolue."
+  },
+  "services": {
+    "eyebrow": "6 Expertises",
+    "title": "L'IA et le web au service de votre croissance",
+    "subtitle": "Nous fusionnons développement web premium, automatisation intelligente et IA de pointe pour transformer durablement votre entreprise.",
+    "card_cta": "En savoir plus",
+    "aria": {
+      "prev": "Précédent",
+      "next": "Suivant",
+      "dot": "Expertise {n}"
+    },
+    "swipe_hint": "Glissez pour naviguer"
+  },
+  "about": {
+    "eyebrow": "L'ADN de l'Agence",
+    "title": "Maison Siranno : L'Architecte de votre Réussite Digitale",
+    "description_1": "Fondée à Châteauneuf-sur-Loire, Maison Siranno n'est pas une simple agence de développement. Nous sommes le partenaire stratégique des PME et artisans qui refusent le statu quo.",
+    "description_2": "Notre vision : apporter l'excellence technique des grands groupes aux acteurs de l'économie locale. Nous construisons des écosystèmes digitaux conçus pour durer, performer et vous libérer du temps.",
+    "why_title": "Pourquoi nous choisir ?",
+    "why_items": [
+      "Une architecture technique 'Gold Standard'",
+      "Une relation de proximité réelle (Loiret & alentours)",
+      "L'innovation IA au service de votre rentabilité"
+    ],
+    "founder_role": "Fondateur & Lead Architect",
+    "chart_title": "Spécialités de l'agence",
+    "chart_subtitle": "L'innovation comme tradition.",
+    "chart_satisfaction_label": "Satisfaction client",
+    "chart_satisfaction_value": "98% satisfaits",
+    "badge_value": "100%",
+    "badge_label": "Sur Mesure"
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "Ils nous font confiance",
+    "subtitle": "Des partenaires locaux qui ont franchi le cap du digital.",
+    "aria": {
+      "prev": "Précédent",
+      "next": "Suivant",
+      "dot": "Témoignage {n}",
+      "view_project": "Voir le projet {company}"
+    },
+    "swipe_hint": "Glissez pour naviguer"
+  },
+  "contact": {
+    "title": "Parlons de votre",
+    "title_accent": "Futur",
+    "subtitle": "Vous avez un projet ? Une problématique d'automatisation ? Prenons 30 minutes pour auditer vos besoins. Pas de jargon, juste des solutions concrètes.",
+    "address_label": "Nous rencontrer",
+    "email_label": "Email",
+    "phone_label": "Téléphone",
+    "social_label": "Me retrouver sur",
+    "form_title": "Envoyer un message",
+    "field_name": "Nom complet",
+    "field_name_placeholder": "Votre nom",
+    "field_email": "Email",
+    "field_email_placeholder": "votre@email.com",
+    "field_phone": "Téléphone",
+    "field_phone_optional": "(optionnel)",
+    "field_phone_placeholder": "06 XX XX XX XX",
+    "field_message": "Votre projet",
+    "field_message_placeholder": "Décrivez votre projet ou votre besoin...",
+    "submit": "Envoyer le message",
+    "submitting": "Envoi en cours...",
+    "success_title": "Message envoyé !",
+    "success_body": "Je vous répondrai dans les plus brefs délais.",
+    "success_again": "Envoyer un autre message",
+    "error_body": "Une erreur est survenue. Veuillez m'écrire directement à",
+    "call_instead": "Ou appelez directement :"
+  },
+  "footer": {
+    "tagline": "Agence digitale à Châteauneuf-sur-Loire.\nCréation de sites web, IA et automatisation\npour PME et artisans du Val de Loire.",
+    "col_expertise": "Expertises",
+    "col_contact": "Contact",
+    "copyright": "© {year} Yoann Delaloy — Maison Siranno. Tous droits réservés.",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "portfolio": "Portfolio"
+  },
+  "expertise_page": {
+    "eyebrow": "Savoir-faire & Technologies",
+    "title": "Notre Expertise",
+    "subtitle": "Six expertises complémentaires — web, automatisation, IA, marketing, conseil & formation, pilotage continu — au service des entreprises ambitieuses du Val de Loire et au-delà. Chaque prestation est conçue sur mesure, sans compromis.",
+    "service_label": "Prestation #{n}",
+    "discover_cta": "Découvrir en détail",
+    "cta": {
+      "eyebrow": "Passez à l'étape suivante",
+      "title": "Un projet en tête ?",
+      "subtitle": "Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.",
+      "btn_message": "Envoyer un message",
+      "btn_call": "Appeler directement",
+      "guarantees": ["Réponse sous 24h", "Sans engagement", "Consultation offerte", "Devis sous 48h"]
+    }
+  },
+  "projects_page": {
+    "eyebrow": "Portfolio & Références",
+    "title": "Nos Réalisations",
+    "subtitle": "Des projets concrets, des résultats mesurables. Classés par expertise pour vous aider à trouver le projet le plus proche de votre besoin.",
+    "cta_card_title": "Voir toutes nos réalisations",
+    "cta_card_btn": "Découvrir",
+    "testimonials_eyebrow": "Témoignages",
+    "testimonials_title": "Ils témoignent de leurs résultats",
+    "testimonials_subtitle": "Des chiffres réels, des transformations concrètes.",
+    "cta": {
+      "eyebrow": "Passez à l'étape suivante",
+      "title": "Votre projet, notre prochaine réalisation",
+      "subtitle": "Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.",
+      "btn_message": "Envoyer un message",
+      "btn_call": "Appeler directement",
+      "guarantees": ["Réponse sous 24h", "Sans engagement", "Consultation offerte", "Devis sous 48h"]
+    }
+  },
+  "blog_page": {
+    "eyebrow": "Blog & Réflexions",
+    "title": "Nos Articles",
+    "subtitle": "Retours d'expérience, conseils pratiques et réflexions sur le digital, l'IA et l'automatisation pour les entreprises ambitieuses.",
+    "coming_soon_title": "Prochainement",
+    "featured_title": "À lire maintenant",
+    "by_expertise_label": "Par expertise",
+    "badge_soon": "Bientôt",
+    "read_time": "{time} de lecture",
+    "article_count": "({n} articles)",
+    "cta": {
+      "eyebrow": "Passez à l'étape suivante",
+      "title": "Votre projet mérite d'être raconté",
+      "subtitle": "Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.",
+      "btn_message": "Démarrer mon projet",
+      "btn_call": "Appeler directement",
+      "guarantees": ["Réponse sous 24h", "Sans engagement", "Consultation offerte", "Devis sous 48h"]
+    }
+  },
+  "agency_page": {
+    "eyebrow": "Notre histoire & Notre vision",
+    "title": "L'Agence",
+    "subtitle": "Un parcours rare entre finance de marché, BTP et excellence digitale. Maison Siranno, c'est l'exigence des marchés financiers, la réalité du terrain, et la précision de l'artisan — au service de votre croissance.",
+    "stats": {
+      "visibility": "Visibilité moyenne",
+      "satisfaction": "Satisfaction client",
+      "custom": "Sur-mesure"
+    },
+    "timeline_eyebrow": "Parcours",
+    "timeline_title": "Finance → BTP → Digital → IA",
+    "values_eyebrow": "Philosophie",
+    "values_title": "Mes Valeurs",
+    "values": {
+      "data_driven": {
+        "title": "Data-driven",
+        "description": "Chaque décision s'appuie sur des données concrètes. Héritage de la finance de marché : rien n'est laissé au hasard."
+      },
+      "custom": {
+        "title": "Sur-mesure",
+        "description": "Chaque solution est conçue pour vous spécifiquement. Pas de template, pas de copier-coller."
+      },
+      "human": {
+        "title": "Humain",
+        "description": "Un interlocuteur unique, disponible et réactif. La technologie au service de la relation humaine."
+      },
+      "roi": {
+        "title": "ROI-Obsédé",
+        "description": "Le retour sur investissement est la métrique centrale de chaque projet. Pas de beau pour le beau."
+      }
+    },
+    "expertise_eyebrow": "Différence",
+    "expertise_title": "L'Expertise Métier, un Avantage Concret",
+    "expertise_body_1": "Ancien trader en finance de marché, puis professionnel du BTP et de la logistique, avant de créer Maison Siranno — ce parcours atypique n'est pas un hasard. Il forge une approche unique : data-driven, ROI-obsessée, et profondément ancrée dans les réalités terrain.",
+    "expertise_body_2": "Je sais ce que c'est de prendre des décisions sous pression, de lire des chiffres qui comptent vraiment, de gérer des délais et des équipes. Quand vous me parlez de vos enjeux, je comprends avant même que vous ayez fini votre phrase. C'est cette intelligence de situation qui fait la différence.",
+    "expertise_checkpoints": [
+      "Approche data-driven héritée de la finance de marché",
+      "Compréhension immédiate des enjeux métier terrain",
+      "Solutions pensées pour le ROI, pas pour l'esthétique seule",
+      "Un interlocuteur unique, disponible et ROI-obsédé"
+    ],
+    "expertise_quote": "La rigueur de la finance, la réalité du terrain, la précision du digital.",
+    "founder_role": "Fondateur & Lead Architect",
+    "founder_bio": "Ancien trader, professionnel du BTP et de la logistique, reconverti dans le développement web et l'IA. Un parcours atypique qui forge une approche unique : data-driven, ROI-obsessée, et profondément humaine. Chaque artisan, commerçant et PME mérite des outils à la hauteur de leur ambition.",
+    "network_eyebrow": "Réseau",
+    "network_title": "Un Réseau de Partenaires Experts",
+    "network_subtitle": "Maison Siranno ne travaille pas seule. Pour chaque projet, nous activons le bon partenaire au bon moment — garantissant une expertise pointue à chaque étape, sans jamais compromis sur la qualité.",
+    "partners": [
+      { "label": "Graphiste & Artiste", "description": "Identité visuelle, illustrations, direction artistique sur-mesure" },
+      { "label": "Photographe", "description": "Shooting produits, portraits, reportages corporate et événements" },
+      { "label": "Vidéaste & Monteur", "description": "Production vidéo, motion design, réels et formats courts" },
+      { "label": "Expert SEO & SEA", "description": "Référencement naturel, Google Ads, stratégie de visibilité payante" },
+      { "label": "Imprimerie", "description": "Cartes de visite, flyers, affiches, kakémonos et supports papier" },
+      { "label": "Copywriter", "description": "Rédaction web, storytelling de marque, landing pages qui convertissent" },
+      { "label": "Expert Analytics", "description": "Data viz, tableaux de bord, tracking et attribution multi-canal" },
+      { "label": "Conseil Juridique", "description": "RGPD, CGV, mentions légales, protection des créations numériques" }
+    ],
+    "vision_eyebrow": "Vision",
+    "vision_title": "Pourquoi Maison Siranno ?",
+    "vision_body_1": "Parce que les dirigeants qui font tourner l'économie locale méritent des outils conçus avec la même rigueur que ceux des grandes institutions financières. Sans le prix de Wall Street, avec tout le soin artisanal.",
+    "vision_body_2": "Maison Siranno, c'est l'alliance de la rigueur financière, de l'intelligence terrain et de l'excellence technique. Chaque projet est un investissement — nous nous assurons qu'il en soit un rentable.",
+    "cta": {
+      "eyebrow": "Passez à l'étape suivante",
+      "title": "Prêt à bâtir ensemble ?",
+      "subtitle": "Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.",
+      "btn_message": "Envoyer un message",
+      "btn_call": "Appeler directement",
+      "guarantees": ["Réponse sous 24h", "Sans engagement", "Consultation offerte", "Devis sous 48h"]
+    }
+  },
+  "legal_mentions": {
+    "back": "Retour au site",
+    "title": "Mentions Légales",
+    "last_updated": "Dernière mise à jour :",
+    "sections": {
+      "1_title": "1. Éditeur du site",
+      "2_title": "2. Directeur de la publication",
+      "3_title": "3. Hébergement",
+      "4_title": "4. Propriété intellectuelle",
+      "5_title": "5. Données personnelles",
+      "6_title": "6. Cookies",
+      "7_title": "7. Limitation de responsabilité",
+      "8_title": "8. Liens hypertextes",
+      "9_title": "9. Droit applicable et juridiction",
+      "10_title": "10. Contact"
+    }
+  },
+  "privacy_policy": {
+    "back": "Retour au site",
+    "title": "Politique de Confidentialité",
+    "last_updated": "Dernière mise à jour :",
+    "sections": {
+      "1_title": "1. Responsable du traitement",
+      "2_title": "2. Données collectées",
+      "3_title": "3. Finalités du traitement",
+      "4_title": "4. Base légale du traitement",
+      "5_title": "5. Destinataires et sous-traitants",
+      "6_title": "6. Durée de conservation",
+      "7_title": "7. Vos droits (RGPD)",
+      "8_title": "8. Politique Cookies",
+      "9_title": "9. Sécurité des données",
+      "10_title": "10. Transferts hors UE",
+      "11_title": "11. Modification de la politique"
+    }
+  },
+  "cookie_banner": {
+    "title": "Vos données, notre engagement",
+    "body": "Nous utilisons Formspree pour traiter vos données de contact (nom, email, téléphone, message). Nous prévoyons d'intégrer des outils d'analyse à l'avenir.",
+    "learn_more": "En savoir plus",
+    "accept": "Tout accepter",
+    "refuse": "Refuser",
+    "aria_close": "Fermer"
+  }
+}

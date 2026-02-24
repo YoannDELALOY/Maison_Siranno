@@ -125,8 +125,12 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => 
 const TestimonialCard: React.FC<{ t: Testimonial; onOpenProject?: (id: string) => void }> = ({ t, onOpenProject }) => (
   <div
     data-cursor-hover
+    role="button"
+    tabIndex={0}
+    aria-label={`Voir le projet ${t.company}`}
     className="glass-card p-8 rounded-2xl flex flex-col relative group hover:border-gold/30 transition-colors cursor-pointer"
     onClick={() => onOpenProject?.(t.projectId)}
+    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onOpenProject?.(t.projectId); }}
     title={`Voir le projet ${t.company}`}
   >
     <div className="absolute top-6 right-8 text-gold/10 group-hover:text-gold/25 transition-colors">

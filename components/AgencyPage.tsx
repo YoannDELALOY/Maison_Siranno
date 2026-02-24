@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useSeo } from '../hooks/useSeo';
 import { MapPin, CheckCircle2, Users, Heart, Gem, Target, TrendingUp, ArrowRight, BarChart2, Mail, Phone } from 'lucide-react';
 
 interface AgencyPageProps {
@@ -85,6 +86,11 @@ const timeline = [
 ];
 
 export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
+  useSeo(
+    'L\'Agence — Maison Siranno | Yoann DELALOY, expert IA & Web à Châteauneuf-sur-Loire',
+    'Découvrez Maison Siranno, agence IA & Web fondée par Yoann DELALOY à Châteauneuf-sur-Loire (45). Notre mission : des résultats mesurables pour les PME grâce à l\'IA et l\'automatisation.',
+    'https://maisonsiranno.fr/agence'
+  );
   return (
     <div className="min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">

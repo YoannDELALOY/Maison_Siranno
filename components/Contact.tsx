@@ -182,7 +182,7 @@ export const Contact: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       title={s.label}
-                      className="flex items-center gap-2 px-3 py-2 bg-white/5 hover-bg-metallic border border-white/10 rounded-lg text-gray-300 text-xs font-medium transition-all duration-200"
+                      className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-gold/10 border border-white/10 rounded-lg text-gray-300 text-xs font-medium transition-all duration-200"
                     >
                       {s.icon}
                       <span>{s.label}</span>

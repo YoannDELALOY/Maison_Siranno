@@ -1,0 +1,273 @@
+{
+  "navbar": {
+    "logo_alt": "Maison Siranno - The art of web",
+    "links": {
+      "expertise": "Expertise",
+      "realisations": "Case Studies",
+      "agence": "The Agency",
+      "blog": "Blog"
+    },
+    "cta_desktop": "Let's Talk",
+    "cta_mobile": "Start a Project",
+    "aria": {
+      "open_menu": "Open menu",
+      "close_menu": "Close menu"
+    }
+  },
+  "hero": {
+    "badge": "AI & Web Agency — Loire Valley, France",
+    "title_line1": "The Art of Elevating",
+    "title_line2": "your Expertise",
+    "subtitle": "Because your business is unique, your digital strategy should be too. We craft your bespoke web ecosystem to",
+    "subtitle_strong": "turn your vision into measurable results",
+    "cta_primary": "Discuss your project",
+    "card_status": "Live",
+    "card_stack_label": "Stack & Tools",
+    "card_growth_value": "+27%",
+    "card_growth_label": "Digital Growth",
+    "card_quote": "AI as a lever for absolute precision."
+  },
+  "services": {
+    "eyebrow": "6 Areas of Expertise",
+    "title": "AI and web powering your growth",
+    "subtitle": "We combine premium web development, intelligent automation and cutting-edge AI to durably transform your business.",
+    "card_cta": "Learn more",
+    "aria": {
+      "prev": "Previous",
+      "next": "Next",
+      "dot": "Expertise {n}"
+    },
+    "swipe_hint": "Swipe to navigate"
+  },
+  "about": {
+    "eyebrow": "Agency DNA",
+    "title": "Maison Siranno: The Architect of your Digital Success",
+    "description_1": "Founded in Châteauneuf-sur-Loire, Maison Siranno is more than a development agency. We are the strategic partner for SMEs and craftspeople who refuse to settle for the status quo.",
+    "description_2": "Our vision: bringing the technical excellence of large corporations to local business owners. We build digital ecosystems designed to last, perform, and free up your time.",
+    "why_title": "Why choose us?",
+    "why_items": [
+      "A 'Gold Standard' technical architecture",
+      "Genuine local proximity (Loiret region & beyond)",
+      "AI innovation in service of your profitability"
+    ],
+    "founder_role": "Founder & Lead Architect",
+    "chart_title": "Agency specialities",
+    "chart_subtitle": "Innovation as a tradition.",
+    "chart_satisfaction_label": "Client satisfaction",
+    "chart_satisfaction_value": "98% satisfied",
+    "badge_value": "100%",
+    "badge_label": "Bespoke"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "They trust us",
+    "subtitle": "Local partners who have taken the leap into digital.",
+    "aria": {
+      "prev": "Previous",
+      "next": "Next",
+      "dot": "Testimonial {n}",
+      "view_project": "View project {company}"
+    },
+    "swipe_hint": "Swipe to navigate"
+  },
+  "contact": {
+    "title": "Let's talk about your",
+    "title_accent": "Future",
+    "subtitle": "Got a project? An automation challenge? Let's take 30 minutes to audit your needs. No jargon, just concrete solutions.",
+    "address_label": "Visit us",
+    "email_label": "Email",
+    "phone_label": "Phone",
+    "social_label": "Find us on",
+    "form_title": "Send a message",
+    "field_name": "Full name",
+    "field_name_placeholder": "Your name",
+    "field_email": "Email",
+    "field_email_placeholder": "your@email.com",
+    "field_phone": "Phone",
+    "field_phone_optional": "(optional)",
+    "field_phone_placeholder": "+44 XX XXXX XXXX",
+    "field_message": "Your project",
+    "field_message_placeholder": "Describe your project or requirements...",
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "success_title": "Message sent!",
+    "success_body": "I will get back to you as soon as possible.",
+    "success_again": "Send another message",
+    "error_body": "Something went wrong. Please write to me directly at",
+    "call_instead": "Or call directly:"
+  },
+  "footer": {
+    "tagline": "Digital agency based in Loire Valley, France.\nWeb design, AI and automation\nfor SMEs and artisans.",
+    "col_expertise": "Expertise",
+    "col_contact": "Contact",
+    "copyright": "© {year} Yoann Delaloy — Maison Siranno. All rights reserved.",
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "portfolio": "Portfolio"
+  },
+  "expertise_page": {
+    "eyebrow": "Know-how & Technologies",
+    "title": "Our Expertise",
+    "subtitle": "Six complementary areas of expertise — web, automation, AI, marketing, consulting & training, continuous monitoring — serving ambitious businesses in Loire Valley and beyond. Every service is tailored, with no compromise.",
+    "service_label": "Service #{n}",
+    "discover_cta": "Explore in detail",
+    "cta": {
+      "eyebrow": "Take the next step",
+      "title": "Got a project in mind?",
+      "subtitle": "Free first consultation. In 30 minutes, we analyse your situation and define together the best approach to achieve your goals.",
+      "btn_message": "Send a message",
+      "btn_call": "Call directly",
+      "guarantees": ["Response within 24h", "No commitment", "Free consultation", "Quote within 48h"]
+    }
+  },
+  "projects_page": {
+    "eyebrow": "Portfolio & References",
+    "title": "Our Work",
+    "subtitle": "Concrete projects, measurable results. Organised by expertise to help you find the project closest to your needs.",
+    "cta_card_title": "View all our case studies",
+    "cta_card_btn": "Explore",
+    "testimonials_eyebrow": "Testimonials",
+    "testimonials_title": "They share their results",
+    "testimonials_subtitle": "Real figures, tangible transformations.",
+    "cta": {
+      "eyebrow": "Take the next step",
+      "title": "Your project, our next case study",
+      "subtitle": "Free first consultation. In 30 minutes, we analyse your situation and define together the best approach to achieve your goals.",
+      "btn_message": "Send a message",
+      "btn_call": "Call directly",
+      "guarantees": ["Response within 24h", "No commitment", "Free consultation", "Quote within 48h"]
+    }
+  },
+  "blog_page": {
+    "eyebrow": "Blog & Insights",
+    "title": "Our Articles",
+    "subtitle": "Experience reports, practical advice and reflections on digital, AI and automation for ambitious businesses.",
+    "coming_soon_title": "Coming Soon",
+    "featured_title": "Read Now",
+    "by_expertise_label": "By expertise",
+    "badge_soon": "Soon",
+    "read_time": "{time} read",
+    "article_count": "({n} articles)",
+    "cta": {
+      "eyebrow": "Take the next step",
+      "title": "Your project deserves to be told",
+      "subtitle": "Free first consultation. In 30 minutes, we analyse your situation and define together the best approach to achieve your goals.",
+      "btn_message": "Start my project",
+      "btn_call": "Call directly",
+      "guarantees": ["Response within 24h", "No commitment", "Free consultation", "Quote within 48h"]
+    }
+  },
+  "agency_page": {
+    "eyebrow": "Our story & Our vision",
+    "title": "The Agency",
+    "subtitle": "A rare background spanning financial markets, construction, and digital excellence. Maison Siranno embodies the rigour of financial markets, the reality of hands-on experience, and the craftsman's precision — all in service of your growth.",
+    "stats": {
+      "visibility": "Average visibility gain",
+      "satisfaction": "Client satisfaction",
+      "custom": "Bespoke"
+    },
+    "timeline_eyebrow": "Background",
+    "timeline_title": "Finance → Construction → Digital → AI",
+    "values_eyebrow": "Philosophy",
+    "values_title": "Our Values",
+    "values": {
+      "data_driven": {
+        "title": "Data-driven",
+        "description": "Every decision is backed by concrete data. A legacy of financial markets: nothing is left to chance."
+      },
+      "custom": {
+        "title": "Bespoke",
+        "description": "Every solution is designed specifically for you. No templates, no copy-paste."
+      },
+      "human": {
+        "title": "Human",
+        "description": "A single point of contact, available and responsive. Technology in service of human relationships."
+      },
+      "roi": {
+        "title": "ROI-Obsessed",
+        "description": "Return on investment is the central metric of every project. Beauty for beauty's sake is never enough."
+      }
+    },
+    "expertise_eyebrow": "What sets us apart",
+    "expertise_title": "Industry Expertise as a Concrete Advantage",
+    "expertise_body_1": "Former financial markets trader, then construction and logistics professional, before founding Maison Siranno — this unusual background is no coincidence. It forges a unique approach: data-driven, ROI-obsessed, and deeply grounded in operational realities.",
+    "expertise_body_2": "I know what it means to make decisions under pressure, to read figures that truly matter, to manage deadlines and teams. When you tell me about your challenges, I understand before you've even finished your sentence. This situational intelligence makes all the difference.",
+    "expertise_checkpoints": [
+      "Data-driven approach inherited from financial markets",
+      "Immediate understanding of operational business challenges",
+      "Solutions designed for ROI, not aesthetics alone",
+      "A single point of contact, available and ROI-obsessed"
+    ],
+    "expertise_quote": "The rigour of finance, the reality of the field, the precision of digital.",
+    "founder_role": "Founder & Lead Architect",
+    "founder_bio": "Former trader, construction and logistics professional, turned web developer and AI specialist. An unusual background that forges a unique approach: data-driven, ROI-obsessed, and deeply human. Every artisan, retailer and SME deserves tools equal to their ambition.",
+    "network_eyebrow": "Network",
+    "network_title": "A Network of Expert Partners",
+    "network_subtitle": "Maison Siranno doesn't work alone. For every project, we engage the right partner at the right time — guaranteeing sharp expertise at every stage, never compromising on quality.",
+    "partners": [
+      { "label": "Graphic Designer & Artist", "description": "Visual identity, illustrations, bespoke art direction" },
+      { "label": "Photographer", "description": "Product shoots, portraits, corporate and event reportage" },
+      { "label": "Videographer & Editor", "description": "Video production, motion design, reels and short formats" },
+      { "label": "SEO & SEA Expert", "description": "Organic search, Google Ads, paid visibility strategy" },
+      { "label": "Print Shop", "description": "Business cards, flyers, posters, roll-ups and print materials" },
+      { "label": "Copywriter", "description": "Web copy, brand storytelling, converting landing pages" },
+      { "label": "Analytics Expert", "description": "Data viz, dashboards, tracking and multi-channel attribution" },
+      { "label": "Legal Advisor", "description": "GDPR, T&Cs, legal notices, protection of digital creations" }
+    ],
+    "vision_eyebrow": "Vision",
+    "vision_title": "Why Maison Siranno?",
+    "vision_body_1": "Because business owners driving local economies deserve tools built with the same rigour as those used by major financial institutions — without the Wall Street price tag, and with all the artisanal care.",
+    "vision_body_2": "Maison Siranno is the alliance of financial rigour, operational intelligence and technical excellence. Every project is an investment — we make sure it is a profitable one.",
+    "cta": {
+      "eyebrow": "Take the next step",
+      "title": "Ready to build together?",
+      "subtitle": "Free first consultation. In 30 minutes, we analyse your situation and define together the best approach to achieve your goals.",
+      "btn_message": "Send a message",
+      "btn_call": "Call directly",
+      "guarantees": ["Response within 24h", "No commitment", "Free consultation", "Quote within 48h"]
+    }
+  },
+  "legal_mentions": {
+    "back": "Back to site",
+    "title": "Legal Notice",
+    "last_updated": "Last updated:",
+    "sections": {
+      "1_title": "1. Site Publisher",
+      "2_title": "2. Publication Director",
+      "3_title": "3. Hosting",
+      "4_title": "4. Intellectual Property",
+      "5_title": "5. Personal Data",
+      "6_title": "6. Cookies",
+      "7_title": "7. Limitation of Liability",
+      "8_title": "8. Hyperlinks",
+      "9_title": "9. Applicable Law and Jurisdiction",
+      "10_title": "10. Contact"
+    }
+  },
+  "privacy_policy": {
+    "back": "Back to site",
+    "title": "Privacy Policy",
+    "last_updated": "Last updated:",
+    "sections": {
+      "1_title": "1. Data Controller",
+      "2_title": "2. Data Collected",
+      "3_title": "3. Purposes of Processing",
+      "4_title": "4. Legal Basis for Processing",
+      "5_title": "5. Recipients and Sub-processors",
+      "6_title": "6. Retention Period",
+      "7_title": "7. Your Rights (GDPR)",
+      "8_title": "8. Cookie Policy",
+      "9_title": "9. Data Security",
+      "10_title": "10. Transfers Outside the EU",
+      "11_title": "11. Policy Updates"
+    }
+  },
+  "cookie_banner": {
+    "title": "Your data, our commitment",
+    "body": "We use Formspree to process your contact data (name, email, phone, message). We plan to integrate analytics tools in the future.",
+    "learn_more": "Learn more",
+    "accept": "Accept all",
+    "refuse": "Decline",
+    "aria_close": "Close"
+  }
+}
