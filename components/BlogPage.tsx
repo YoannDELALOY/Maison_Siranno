@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { ArrowRight, Clock, BookOpen, Calendar, ChevronLeft, ChevronRight, Mail, Phone, Tag } from 'lucide-react';
-import { blogArticles, categoryConfig, BlogCategory } from '../data/blog';
+import { blogArticles, BlogCategory } from '../data/blog';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
 import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
 import iconIA from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
@@ -25,7 +25,7 @@ const EXPERTISE_SLIDERS: { category: BlogCategory; label: string; icon: string }
 // ─── Carte dark (style réalisation) ─────────────────────────────────────────
 
 const ArticleCardDark: React.FC<{ article: typeof blogArticles[0]; onClick?: () => void }> = ({ article, onClick }) => {
-  const cfg = categoryConfig[article.category];
+
   return (
     <div
       data-cursor-hover={article.available ? '' : undefined}
@@ -78,7 +78,7 @@ const ArticleCardDark: React.FC<{ article: typeof blogArticles[0]; onClick?: () 
           </div>
         )}
 
-        <span className={`inline-block text-xs font-medium uppercase tracking-wider px-2 py-0.5 rounded-full border mb-2 ${cfg.bgColor} ${cfg.color}`}>
+        <span className="inline-block text-xs font-medium uppercase tracking-wider px-2 py-0.5 rounded-full border mb-2 bg-gold/10 border-gold/30 text-metallic-gold-inline">
           {article.category}
         </span>
 
@@ -149,7 +149,7 @@ const CategorySlider: React.FC<{
       {/* En-tête section */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl border border-gold/30 flex items-center justify-center bg-charcoal/30 p-1.5">
+          <div className="w-9 h-9 rounded-xl border border-gold/30 flex items-center justify-center bg-transparent p-1.5">
             <img src={icon} alt={label} className="w-full h-full object-contain" />
           </div>
           <h2 className="font-serif text-xl font-bold text-metallic-navy">{label}</h2>
@@ -195,7 +195,7 @@ const CategorySlider: React.FC<{
 // ─── Carte "À lire maintenant" (grande, pleine largeur en grille) ────────────
 
 const ArticleCardFeatured: React.FC<{ article: typeof blogArticles[0]; onClick?: () => void }> = ({ article, onClick }) => {
-  const cfg = categoryConfig[article.category];
+
   return (
     <div
       data-cursor-hover
@@ -230,7 +230,7 @@ const ArticleCardFeatured: React.FC<{ article: typeof blogArticles[0]; onClick?:
           <BookOpen size={16} />
         </div>
 
-        <span className={`inline-block text-xs font-medium uppercase tracking-wider px-2 py-0.5 rounded-full border mb-3 ${cfg.bgColor} ${cfg.color}`}>
+        <span className="inline-block text-xs font-medium uppercase tracking-wider px-2 py-0.5 rounded-full border mb-3 bg-gold/10 border-gold/30 text-metallic-gold-inline">
           {article.category}
         </span>
 
@@ -266,7 +266,7 @@ const ArticleCardFeatured: React.FC<{ article: typeof blogArticles[0]; onClick?:
 // ─── Carte "À venir" (compact, semi-opaque) ──────────────────────────────────
 
 const ArticleCardComing: React.FC<{ article: typeof blogArticles[0] }> = ({ article }) => {
-  const cfg = categoryConfig[article.category];
+
   return (
     <div
       className="rounded-2xl overflow-hidden flex gap-4 items-center p-4"
@@ -285,7 +285,7 @@ const ArticleCardComing: React.FC<{ article: typeof blogArticles[0] }> = ({ arti
       </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
-          <span className={`text-xs font-medium uppercase tracking-wider px-1.5 py-0.5 rounded-full border ${cfg.bgColor} ${cfg.color}`}>
+          <span className="text-xs font-medium uppercase tracking-wider px-1.5 py-0.5 rounded-full border bg-gold/10 border-gold/30 text-metallic-gold-inline">
             {article.category}
           </span>
           <span className="px-1.5 py-0.5 bg-gold/10 text-gold text-xs rounded-full border border-gold/20 font-medium flex items-center gap-1">
@@ -312,7 +312,20 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
   const nextComing = comingSoonArticles.slice(0, 3);
 
   return (
-    <div className="min-h-screen pt-32 pb-24">
+    <div
+      className="min-h-screen pt-32 pb-24 relative"
+      style={{
+        backgroundColor: '#FAF6EE',
+        backgroundImage: [
+          `url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='pg'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.30' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pg)' opacity='0.22'/%3E%3C/svg%3E")`,
+          `radial-gradient(ellipse at 10% 20%, rgba(212,175,55,0.08) 0%, transparent 50%)`,
+          `radial-gradient(ellipse at 85% 70%, rgba(212,175,55,0.06) 0%, transparent 45%)`,
+          `radial-gradient(ellipse at 50% 50%, rgba(245,235,200,0.18) 0%, transparent 70%)`,
+        ].join(', '),
+        backgroundSize: '700px 700px, 100% 100%, 100% 100%, 100% 100%',
+        backgroundBlendMode: 'multiply, normal, normal, normal',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6">
 
         {/* En-tête */}

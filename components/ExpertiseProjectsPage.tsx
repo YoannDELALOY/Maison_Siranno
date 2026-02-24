@@ -273,7 +273,7 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
         </button>
 
         <div className="flex items-start gap-6">
-          <div className={`p-4 rounded-2xl bg-gradient-to-br ${meta.accentColor} border border-white/20 text-gold shrink-0`}>
+          <div className="p-4 rounded-2xl bg-transparent border border-gold/20 text-gold shrink-0">
             {meta.icon}
           </div>
           <div className="flex-1">

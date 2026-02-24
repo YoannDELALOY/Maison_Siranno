@@ -156,7 +156,7 @@ const ExpertiseCTACard: React.FC<ExpertiseCTACardProps> = ({ section, onNavigate
       }}
       onClick={() => onNavigate?.(section.id)}
     >
-      <div className={`p-4 rounded-2xl bg-gradient-to-br ${section.accentColor} border border-white/20 text-gold mb-5 transition-transform duration-300 group-hover:scale-110`}>
+      <div className="p-4 rounded-2xl bg-transparent border border-gold/20 text-gold mb-5 transition-transform duration-300 group-hover:scale-110">
         {section.icon}
       </div>
       <h3 className="font-serif text-lg font-bold text-metallic-gold mb-3 leading-tight">
@@ -213,7 +213,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
             <div key={section.id} className="mb-24">
               {/* En-tête section */}
               <div className="flex items-center gap-4 mb-10">
-                <div className={`p-3 rounded-xl bg-gradient-to-br ${section.accentColor} border border-white/20 text-gold`}>
+                <div className="p-3 rounded-xl bg-transparent border border-gold/20 text-gold">
                   {section.icon}
                 </div>
                 <div>
