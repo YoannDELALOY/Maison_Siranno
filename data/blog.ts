@@ -49,13 +49,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["SEO", "Local", "Google", "PME"],
     available: true,
     body: {
-      intro: "En 2025, 46 % des recherches Google ont une intention locale. Pourtant, la majorité des PME françaises continuent d'appliquer des recettes SEO conçues pour le national — et se demandent pourquoi leurs concurrents les écrasent sur Google Maps. Le référencement local obéit à des règles différentes, et comprendre ces règles peut transformer radicalement votre visibilité en quelques semaines. Cet article résume ce que nous avons appris en aidant des artisans, des cabinets et des commerces à se positionner en tête des résultats locaux.",
+      intro: "En 2025, **46 %** des recherches **Google** ont une intention locale. Pourtant, la majorité des **PME françaises** continuent d'appliquer des recettes *SEO* conçues pour le national — et se demandent pourquoi leurs concurrents les écrasent sur **Google Maps**. Le **référencement local** obéit à des règles différentes, et comprendre ces règles peut transformer radicalement votre visibilité en quelques semaines. Cet article résume ce que nous avons appris en aidant des artisans, des cabinets et des commerces à se positionner en tête des résultats locaux.",
       sections: [
         {
           title: "La fiche Google Business Profile : votre priorité absolue",
           paragraphs: [
-            "Google Business Profile (ex-Google My Business) est le socle du SEO local. Une fiche complète, à jour et régulièrement animée surpasse presque toujours un site web parfait qui néglige cet outil. Google évalue trois critères pour le classement local : la pertinence (votre activité correspond-elle à la recherche ?), la distance (où êtes-vous par rapport à l'utilisateur ?) et la notoriété (êtes-vous connu et recommandé ?).",
-            "Pour optimiser votre fiche, commencez par choisir la bonne catégorie principale — c'est le levier le plus sous-estimé. Un plombier qui se déclare en 'Services à domicile' plutôt qu'en 'Plombier' perd immédiatement des positions. Ajoutez des catégories secondaires pertinentes, des photos récentes (l'algorithme favorise les fiches actives), vos horaires exacts et une description qui intègre naturellement vos mots-clés locaux.",
+            "**Google Business Profile** (ex-Google My Business) est le socle du **SEO local**. Une fiche complète, à jour et régulièrement animée surpasse presque toujours un site web parfait qui néglige cet outil. **Google** évalue trois critères pour le classement local : la *pertinence* (votre activité correspond-elle à la recherche ?), la *distance* (où êtes-vous par rapport à l'utilisateur ?) et la *notoriété* (êtes-vous connu et recommandé ?).",
+            "Pour optimiser votre fiche, commencez par choisir la **bonne catégorie principale** — c'est le levier le plus sous-estimé. Un plombier qui se déclare en 'Services à domicile' plutôt qu'en 'Plombier' perd immédiatement des positions. Ajoutez des catégories secondaires pertinentes, des **photos récentes** (l'algorithme favorise les fiches actives), vos horaires exacts et une description qui intègre naturellement vos *mots-clés locaux*.",
           ],
           bullets: [
             "Complétez 100 % des champs de votre fiche — chaque champ manquant est un signal négatif",
@@ -68,8 +68,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Les avis clients : le carburant du classement local",
           paragraphs: [
-            "Google utilise la quantité et la qualité des avis comme signal de confiance. Un commerce avec 200 avis à 4,3 étoiles battra presque toujours un concurrent avec 15 avis à 5 étoiles. La régularité compte aussi : un flux constant d'avis récents est plus valorisé qu'un stock d'avis anciens.",
-            "La meilleure façon d'obtenir des avis est de les demander systématiquement, juste après la prestation — c'est là que la satisfaction est à son pic. Un simple message WhatsApp avec le lien direct vers votre fiche Google suffit. Pour JD Rénovation, nous avons mis en place ce processus et obtenu 47 avis en 3 mois, ce qui a propulsé la fiche en tête des résultats locaux sur Arras.",
+            "**Google** utilise la quantité et la qualité des **avis clients** comme signal de confiance. Un commerce avec **200 avis** à 4,3 étoiles battra presque toujours un concurrent avec 15 avis à 5 étoiles. La régularité compte aussi : un flux constant d'avis récents est plus valorisé qu'un stock d'avis anciens.",
+            "La meilleure façon d'obtenir des avis est de les demander **systématiquement**, juste après la prestation — c'est là que la satisfaction est à son pic. Un simple message *WhatsApp* avec le lien direct vers votre fiche Google suffit. Pour JD Rénovation, nous avons mis en place ce processus et obtenu **47 avis en 3 mois**, ce qui a propulsé la fiche en tête des résultats locaux sur Arras.",
           ],
           bullets: [
             "Créez un lien court vers votre page d'avis Google et enregistrez-le en raccourci",
@@ -81,8 +81,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Le contenu local sur votre site : l'arme secrète",
           paragraphs: [
-            "Votre site web doit parler à Google en langage local. Cela signifie créer des pages dédiées par zone géographique si vous intervenez sur plusieurs villes, intégrer le nom de votre ville dans les balises titre et méta, et surtout publier du contenu qui répond aux questions locales spécifiques.",
-            "Un blog d'artisan qui publie des articles comme 'Rénovation de salle de bain à Lille : coûts, délais et erreurs à éviter' capte un trafic ultra-qualifié que ses concurrents ignorent. Ces pages de longue traîne locale convertissent 3 à 5 fois mieux que les pages génériques car elles correspondent exactement à l'intention de recherche de l'utilisateur.",
+            "Votre site web doit parler à **Google** en langage local. Cela signifie créer des **pages dédiées par zone géographique** si vous intervenez sur plusieurs villes, intégrer le nom de votre ville dans les *balises titre et méta*, et surtout publier du contenu qui répond aux questions locales spécifiques.",
+            "Un blog d'artisan qui publie des articles comme 'Rénovation de salle de bain à Lille : coûts, délais et erreurs à éviter' capte un **trafic ultra-qualifié** que ses concurrents ignorent. Ces pages de *longue traîne locale* convertissent **3 à 5 fois mieux** que les pages génériques car elles correspondent exactement à l'intention de recherche de l'utilisateur.",
           ],
           bullets: [
             "Créez une page dédiée par ville cible (ex : '/plombier-lille', '/plombier-roubaix')",
@@ -92,7 +92,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "Le SEO local n'est pas une science obscure réservée aux experts. C'est un ensemble de bonnes pratiques cohérentes, appliquées régulièrement, qui finissent par composer comme des intérêts. Une fiche Google soignée, un flux constant d'avis clients et du contenu web ancré dans votre territoire : voilà les trois piliers qui feront de vous le premier résultat local dans votre secteur. Si vous voulez un audit de votre présence locale actuelle et un plan d'action concret, contactez-nous — la première consultation est offerte.",
+      conclusion: "Le **SEO local** n'est pas une science obscure réservée aux experts. C'est un ensemble de bonnes pratiques cohérentes, appliquées régulièrement, qui finissent par composer comme des intérêts. Une **fiche Google** soignée, un flux constant d'**avis clients** et du contenu web ancré dans votre territoire : voilà les trois piliers qui feront de vous le **premier résultat local** dans votre secteur. Si vous voulez un audit de votre présence locale actuelle et un plan d'action concret, contactez-nous — la première consultation est offerte.",
       keyTakeaways: [
         "Google Business Profile complet et actif est plus important que votre site web pour le SEO local",
         "Les avis récents et réguliers comptent plus que leur score moyen",
@@ -114,20 +114,20 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Site Web", "Conversion", "UX", "PME"],
     available: true,
     body: {
-      intro: "Votre site reçoit des visiteurs mais ne génère pas de contacts. Ou pire, vous n'avez aucune idée du nombre de personnes qui le visitent. Ce scénario est la norme pour 70 % des PME françaises. Pas parce qu'elles manquent de compétences, mais parce que personne ne leur a dit que certaines erreurs de conception peuvent annihiler tout le trafic que vous générez. Voici les cinq plus destructrices — et les corrections concrètes pour chacune.",
+      intro: "Votre site reçoit des visiteurs mais ne génère pas de contacts. Ou pire, vous n'avez aucune idée du nombre de personnes qui le visitent. Ce scénario est la norme pour **70 % des PME françaises**. Pas parce qu'elles manquent de compétences, mais parce que personne ne leur a dit que certaines **erreurs de conception** peuvent annihiler tout le trafic que vous générez. Voici les cinq plus destructrices — et les *corrections concrètes* pour chacune.",
       sections: [
         {
           title: "Erreur n°1 : Un site qui charge en plus de 3 secondes",
           paragraphs: [
-            "Google a rendu officiel ce que les UX designers savent depuis des années : 53 % des visiteurs mobiles quittent un site qui prend plus de 3 secondes à charger. Pour votre SEO, chaque seconde de délai supplémentaire réduit votre classement. Un site lent est donc une double peine : moins de visiteurs, et moins de conversions parmi ceux qui restent.",
-            "Les coupables habituels : images non compressées (une photo de 4 Mo sur la page d'accueil peut tout tuer à elle seule), un hébergement entrée de gamme partagé avec des centaines d'autres sites, ou un thème WordPress chargé de dizaines de plugins inutilisés. La solution : auditez votre site sur PageSpeed Insights et traitez les problèmes dans l'ordre de priorité indiqué.",
+            "**Google** a rendu officiel ce que les *UX designers* savent depuis des années : **53 % des visiteurs mobiles** quittent un site qui prend plus de **3 secondes** à charger. Pour votre **SEO**, chaque seconde de délai supplémentaire réduit votre classement. Un site lent est donc une double peine : moins de visiteurs, et moins de conversions parmi ceux qui restent.",
+            "Les coupables habituels : images non compressées (une photo de **4 Mo** sur la page d'accueil peut tout tuer à elle seule), un hébergement entrée de gamme partagé avec des centaines d'autres sites, ou un thème *WordPress* chargé de dizaines de plugins inutilisés. La solution : auditez votre site sur **PageSpeed Insights** et traitez les problèmes dans l'ordre de priorité indiqué.",
           ],
         },
         {
           title: "Erreur n°2 : Aucun appel à l'action visible",
           paragraphs: [
-            "Un visiteur qui arrive sur votre site ne sait pas forcément quoi faire ensuite. Si votre site ne lui dit pas explicitement quelle action réaliser — appeler, envoyer un message, prendre un RDV — il repartira sans agir. C'est aussi simple que ça. Pourtant, 60 % des sites PME n'ont pas de CTA visible sans scroll sur leur page d'accueil.",
-            "La correction est immédiate : ajoutez un bouton d'action principal dans la zone visible dès l'arrivée (au-dessus de la ligne de flottaison), répétez-le après chaque section importante, et faites en sorte qu'il soit d'une couleur contrastante. Pour un artisan, un simple 'Demander un devis gratuit' avec un numéro de téléphone cliquable peut doubler le taux de contact.",
+            "Un visiteur qui arrive sur votre site ne sait pas forcément quoi faire ensuite. Si votre site ne lui dit pas explicitement quelle action réaliser — appeler, envoyer un message, prendre un RDV — il repartira sans agir. C'est aussi simple que ça. Pourtant, **60 % des sites PME** n'ont pas de *CTA* visible sans scroll sur leur page d'accueil.",
+            "La correction est immédiate : ajoutez un **bouton d'action principal** dans la zone visible dès l'arrivée (au-dessus de la *ligne de flottaison*), répétez-le après chaque section importante, et faites en sorte qu'il soit d'une couleur contrastante. Pour un artisan, un simple 'Demander un devis gratuit' avec un numéro de téléphone cliquable peut **doubler le taux de contact**.",
           ],
           bullets: [
             "Votre CTA principal doit être visible sans scroll sur mobile et desktop",
@@ -139,8 +139,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Les 3 autres erreurs critiques",
           paragraphs: [
-            "L'absence de version mobile correcte : en 2025, plus de 65 % des recherches locales se font sur smartphone. Un site non optimisé mobile perd immédiatement la moitié de son audience potentielle. Vérifiez votre site sur différents appareils — pas seulement le vôtre.",
-            "Pas de preuve sociale visible : les avis, témoignages et références doivent être affichés en évidence. Un visiteur qui ne voit pas de preuves que d'autres vous ont fait confiance hésitera à vous contacter. Intégrez directement vos avis Google sur votre site via widget ou captures d'écran. Enfin, un formulaire de contact trop complexe tue les conversions : nom, email, message — c'est suffisant pour un premier contact.",
+            "L'absence de version **mobile correcte** : en 2025, plus de **65 % des recherches locales** se font sur smartphone. Un site non optimisé mobile perd immédiatement la moitié de son audience potentielle. Vérifiez votre site sur différents appareils — pas seulement le vôtre.",
+            "Pas de **preuve sociale visible** : les avis, témoignages et références doivent être affichés en évidence. Un visiteur qui ne voit pas de preuves que d'autres vous ont fait confiance hésitera à vous contacter. Intégrez directement vos **avis Google** sur votre site via *widget* ou captures d'écran. Enfin, un formulaire de contact trop complexe tue les conversions : nom, email, message — c'est suffisant pour un premier contact.",
           ],
           bullets: [
             "Testez votre site sur mobile avec l'outil de test Google (search.google.com/test/mobile-friendly)",
@@ -150,7 +150,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "Un site vitrine efficace n'est pas forcément le plus beau ou le plus sophistiqué — c'est celui qui convertit ses visiteurs en contacts qualifiés. Ces cinq corrections peuvent être appliquées en une journée de travail pour la plupart. Si vous voulez un audit complet de votre site avec des recommandations priorisées et chiffrées, notre équipe le fait gratuitement lors d'une première consultation.",
+      conclusion: "Un **site vitrine efficace** n'est pas forcément le plus beau ou le plus sophistiqué — c'est celui qui **convertit ses visiteurs en contacts qualifiés**. Ces cinq corrections peuvent être appliquées en une journée de travail pour la plupart. Si vous voulez un audit complet de votre site avec des *recommandations priorisées* et chiffrées, notre équipe le fait gratuitement lors d'une première consultation.",
       keyTakeaways: [
         "Un site qui charge en plus de 3s perd 53% de ses visiteurs mobiles",
         "L'absence de CTA visible est la cause n°1 des sites qui ne génèrent pas de contacts",
@@ -171,13 +171,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Claude Code", "Développement", "IA", "Sur-mesure"],
     available: true,
     body: {
-      intro: "Depuis septembre 2025, nous utilisons Claude Code comme outil principal de développement chez Maison Siranno. Non pas pour remplacer l'expertise humaine — mais pour l'amplifier. Ce que nous avons découvert en six mois d'usage intensif change notre façon de travailler, et surtout ce que nous pouvons offrir à nos clients. Voici un retour d'expérience honnête : ce que Claude Code fait vraiment bien, ses limites réelles, et pourquoi nous pensons que c'est le futur du développement sur-mesure.",
+      intro: "Depuis septembre 2025, nous utilisons **Claude Code** comme outil principal de développement chez **Maison Siranno**. Non pas pour remplacer l'expertise humaine — mais pour l'amplifier. Ce que nous avons découvert en **six mois d'usage intensif** change notre façon de travailler, et surtout ce que nous pouvons offrir à nos clients. Voici un retour d'expérience honnête : ce que **Claude Code** fait vraiment bien, ses limites réelles, et pourquoi nous pensons que c'est le futur du *développement sur-mesure*.",
       sections: [
         {
           title: "Ce que Claude Code change concrètement",
           paragraphs: [
-            "La principale transformation n'est pas la vitesse (même si elle est réelle) — c'est la réduction du coût cognitif des tâches répétitives. Générer des composants UI standards, écrire des tests unitaires, documenter du code existant, reformater des données : autant de tâches que Claude Code gère en quelques secondes, libérant l'attention du développeur pour les problèmes qui demandent vraiment de la réflexion architecturale.",
-            "Concrètement, sur le projet JD Rénovation, nous avons livré un site complet avec 80 articles de blog, système de formulaire intelligent et intégration Google Workspace en 3 semaines — là où le même périmètre aurait pris 6 à 8 semaines avec une approche traditionnelle. Ce gain ne vient pas de la magie mais d'une élimination systématique du temps perdu sur le code boilerplate.",
+            "La principale transformation n'est pas la vitesse (même si elle est réelle) — c'est la **réduction du coût cognitif** des tâches répétitives. Générer des composants *UI* standards, écrire des tests unitaires, documenter du code existant, reformater des données : autant de tâches que **Claude Code** gère en quelques secondes, libérant l'attention du développeur pour les problèmes qui demandent vraiment de la réflexion architecturale.",
+            "Concrètement, sur le projet **JD Rénovation**, nous avons livré un site complet avec **80 articles de blog**, système de formulaire intelligent et intégration *Google Workspace* en **3 semaines** — là où le même périmètre aurait pris 6 à 8 semaines avec une approche traditionnelle. Ce gain ne vient pas de la magie mais d'une élimination systématique du temps perdu sur le code *boilerplate*.",
           ],
           bullets: [
             "Génération de composants React typés en quelques secondes",
@@ -190,19 +190,19 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "La différence avec les outils concurrents",
           paragraphs: [
-            "Ce qui distingue Claude Code des autres assistants de code, c'est sa capacité à maintenir un contexte sur de longs fichiers et à raisonner sur l'architecture d'ensemble — pas seulement sur la ligne de code en cours. Il comprend les patterns du projet, respecte les conventions établies et peut proposer des refactoring qui améliorent la cohérence globale sans rien casser.",
-            "Nous avons testé plusieurs approches avant de standardiser sur Claude Code. Ce qui nous a convaincus : sa fiabilité sur des tâches complexes, sa tendance à expliquer ses choix plutôt qu'à imposer une solution, et sa capacité à adapter son niveau de détail au contexte — bref technique pour les discussions d'architecture, simple et direct pour documenter une fonctionnalité à montrer au client.",
+            "Ce qui distingue **Claude Code** des autres assistants de code, c'est sa capacité à maintenir un **contexte sur de longs fichiers** et à raisonner sur l'architecture d'ensemble — pas seulement sur la ligne de code en cours. Il comprend les *patterns* du projet, respecte les conventions établies et peut proposer des *refactoring* qui améliorent la cohérence globale sans rien casser.",
+            "Nous avons testé plusieurs approches avant de standardiser sur **Claude Code**. Ce qui nous a convaincus : sa fiabilité sur des tâches complexes, sa tendance à **expliquer ses choix** plutôt qu'à imposer une solution, et sa capacité à adapter son niveau de détail au contexte — bref technique pour les discussions d'architecture, simple et direct pour documenter une fonctionnalité à montrer au client.",
           ],
         },
         {
           title: "Ce que ça change pour nos clients",
           paragraphs: [
-            "Le bénéfice pour nos clients est direct : des projets livrés plus vite, avec moins d'erreurs de typage et de logique, et une documentation incluse. Mais surtout, la réduction du temps passé sur les tâches mécaniques nous permet de consacrer plus d'attention à ce qui compte vraiment : comprendre le métier du client, challenger les spécifications, et proposer des solutions adaptées à son contexte réel plutôt qu'à un template générique.",
-            "La relation de proximité reste le cœur de notre proposition de valeur. Claude Code ne la remplace pas — elle la renforce, en nous donnant la bande passante nécessaire pour être vraiment présents sur les points qui importent : la stratégie, l'UX, et l'accompagnement post-livraison.",
+            "Le bénéfice pour nos clients est direct : des **projets livrés plus vite**, avec moins d'erreurs de typage et de logique, et une documentation incluse. Mais surtout, la réduction du temps passé sur les tâches mécaniques nous permet de consacrer plus d'attention à ce qui compte vraiment : comprendre le **métier du client**, *challenger* les spécifications, et proposer des solutions adaptées à son contexte réel plutôt qu'à un *template* générique.",
+            "La **relation de proximité** reste le cœur de notre proposition de valeur. **Claude Code** ne la remplace pas — elle la renforce, en nous donnant la bande passante nécessaire pour être vraiment présents sur les points qui importent : la stratégie, l'*UX*, et l'accompagnement post-livraison.",
           ],
         },
       ],
-      conclusion: "Claude Code est un outil puissant, mais ce n'est qu'un outil. La différence entre un bon projet web et un excellent projet web ne tient pas à l'assistant IA utilisé — elle tient à la qualité de la réflexion amont, à la compréhension du métier du client, et à la rigueur de l'exécution. Ce que Claude Code nous apporte, c'est plus de temps pour ces éléments qui font la vraie différence.",
+      conclusion: "**Claude Code** est un outil puissant, mais ce n'est qu'un outil. La différence entre un bon projet web et un excellent projet web ne tient pas à l'assistant **IA** utilisé — elle tient à la qualité de la réflexion amont, à la compréhension du **métier du client**, et à la rigueur de l'exécution. Ce que **Claude Code** nous apporte, c'est plus de temps pour ces éléments qui font la vraie différence.",
       keyTakeaways: [
         "Claude Code réduit le temps sur les tâches répétitives, pas sur la réflexion architecturale",
         "Le gain réel est la bande passante libérée pour se concentrer sur la valeur métier",
@@ -223,13 +223,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["MVP", "SaaS", "Startup", "React"],
     available: true,
     body: {
-      intro: "Six semaines. C'est le temps qu'il faut à une équipe bien organisée pour passer d'une idée SaaS à un produit en production capable d'encaisser ses premiers paiements. Pas une maquette Figma, pas un prototype bricolé — un vrai produit avec authentification, base de données, billing Stripe et déploiement continu. Nous avons appliqué cette méthode sur 11 projets entre 2023 et 2024, avec un taux de mise en production à 6 semaines de 82 %. Voici exactement comment nous procédons.",
+      intro: "**Six semaines.** C'est le temps qu'il faut à une équipe bien organisée pour passer d'une idée *SaaS* à un produit en production capable d'encaisser ses premiers paiements. Pas une maquette *Figma*, pas un prototype bricolé — un vrai produit avec authentification, base de données, **billing Stripe** et déploiement continu. Nous avons appliqué cette méthode sur **11 projets** entre 2023 et 2024, avec un taux de mise en production à 6 semaines de **82 %**. Voici exactement comment nous procédons.",
       sections: [
         {
           title: "Semaines 1-2 : Décision de stack et architecture zéro-dette",
           paragraphs: [
-            "Le choix de stack est la décision la plus structurante — et la plus souvent mal prise. Trop de fondateurs choisissent une technologie parce qu'ils la connaissent, pas parce qu'elle est adaptée au problème. Pour un SaaS B2B standard (tableau de bord, gestion utilisateurs, abonnements), notre stack de référence est immuable depuis 18 mois : React + TypeScript en front, Supabase comme backend-as-a-service (PostgreSQL + authentification + storage), Stripe pour le billing, Vercel pour le déploiement. Ce quadruplet permet à un développeur solo de livrer en 6 semaines ce qui prenait 6 mois avec une stack classique il y a 5 ans.",
-            "La semaine 1 est entièrement consacrée à la définition du périmètre minimal viable. Pas de feature creep, pas de 'on va peut-être avoir besoin de'. Nous utilisons une méthode brutale : pour chaque fonctionnalité envisagée, la question est 'peut-on valider notre hypothèse business sans ça ?'. Si la réponse est oui, la feature sort du scope. Le résultat est toujours un scope réduit de 40 à 60 % par rapport aux ambitions initiales — et c'est exactement ce qui rend la livraison à 6 semaines possible.",
+            "Le choix de **stack** est la décision la plus structurante — et la plus souvent mal prise. Trop de fondateurs choisissent une technologie parce qu'ils la connaissent, pas parce qu'elle est adaptée au problème. Pour un *SaaS B2B* standard (tableau de bord, gestion utilisateurs, abonnements), notre stack de référence est immuable depuis 18 mois : **React + TypeScript** en front, **Supabase** comme *backend-as-a-service* (PostgreSQL + authentification + storage), **Stripe** pour le billing, **Vercel** pour le déploiement. Ce quadruplet permet à un développeur solo de livrer en **6 semaines** ce qui prenait 6 mois avec une stack classique il y a 5 ans.",
+            "La semaine 1 est entièrement consacrée à la définition du **périmètre minimal viable**. Pas de *feature creep*, pas de 'on va peut-être avoir besoin de'. Nous utilisons une méthode brutale : pour chaque fonctionnalité envisagée, la question est 'peut-on valider notre hypothèse business sans ça ?'. Si la réponse est oui, la *feature* sort du scope. Le résultat est toujours un scope réduit de **40 à 60 %** par rapport aux ambitions initiales — et c'est exactement ce qui rend la livraison à 6 semaines possible.",
           ],
           bullets: [
             "Stack recommandée : React + TypeScript / Supabase / Stripe / Vercel",
@@ -242,8 +242,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Semaines 3-4 : Le cœur du produit — authentification, données, logique métier",
           paragraphs: [
-            "Ces deux semaines constituent le sprint le plus intense. L'authentification Supabase est opérationnelle en moins d'une journée (email/password + magic link + OAuth Google). La structure de base de données est modélisée avec soin — c'est le seul endroit où nous ne coupons pas les coins ronds, car une architecture DB mal pensée coûte cher à corriger plus tard. Nous utilisons systématiquement Row Level Security (RLS) de Supabase pour isoler les données multi-tenant dès le départ.",
-            "La logique métier — le cœur du produit, la valeur différenciante — est développée en semaine 4. C'est là que la clarté du scope de semaine 1 porte ses fruits : l'équipe peut se concentrer sur ce qui compte vraiment sans être distraite par des fonctionnalités secondaires. Un tableau de bord minimaliste mais fonctionnel, les opérations CRUD essentielles, les notifications de base. Chaque jour se termine par un déploiement sur l'URL de preview Vercel que le client peut consulter.",
+            "Ces deux semaines constituent le sprint le plus intense. L'authentification **Supabase** est opérationnelle en **moins d'une journée** (email/password + *magic link* + OAuth Google). La structure de base de données est modélisée avec soin — c'est le seul endroit où nous ne coupons pas les coins ronds, car une architecture *DB* mal pensée coûte cher à corriger plus tard. Nous utilisons systématiquement **Row Level Security** (RLS) de Supabase pour isoler les données *multi-tenant* dès le départ.",
+            "La **logique métier** — le cœur du produit, la valeur différenciante — est développée en semaine 4. C'est là que la clarté du scope de semaine 1 porte ses fruits : l'équipe peut se concentrer sur ce qui compte vraiment sans être distraite par des fonctionnalités secondaires. Un tableau de bord minimaliste mais fonctionnel, les opérations *CRUD* essentielles, les notifications de base. Chaque jour se termine par un déploiement sur l'URL de *preview* **Vercel** que le client peut consulter.",
           ],
           bullets: [
             "Authentification Supabase opérationnelle en < 4h (email + Google OAuth)",
@@ -256,8 +256,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Semaines 5-6 : Billing Stripe, onboarding et mise en production",
           paragraphs: [
-            "L'intégration Stripe en semaine 5 suit toujours le même pattern : Stripe Checkout pour la souscription (évite de gérer les formulaires de carte), webhooks pour synchroniser l'état de l'abonnement dans Supabase, et Stripe Customer Portal pour la gestion en libre-service (changement de plan, annulation). Ce triptyque couvre 95 % des besoins SaaS et est opérationnel en 2 à 3 jours de développement.",
-            "La semaine 6 est consacrée à l'onboarding et au polish. Un SaaS sans onboarding clair perd 70 % de ses utilisateurs dans les 7 premiers jours. Nous construisons un flow d'activation minimal : email de bienvenue, checklist de configuration in-app, et un premier succès garanti dans les 5 minutes après inscription. La mise en production finale inclut la configuration du domaine custom, les variables d'environnement de production, et un test de bout en bout du parcours paiement.",
+            "L'intégration **Stripe** en semaine 5 suit toujours le même *pattern* : **Stripe Checkout** pour la souscription (évite de gérer les formulaires de carte), *webhooks* pour synchroniser l'état de l'abonnement dans **Supabase**, et **Stripe Customer Portal** pour la gestion en libre-service (changement de plan, annulation). Ce triptyque couvre **95 % des besoins SaaS** et est opérationnel en 2 à 3 jours de développement.",
+            "La semaine 6 est consacrée à l'*onboarding* et au *polish*. Un *SaaS* sans onboarding clair perd **70 % de ses utilisateurs** dans les 7 premiers jours. Nous construisons un *flow* d'activation minimal : email de bienvenue, checklist de configuration *in-app*, et un premier succès garanti dans les **5 minutes** après inscription. La mise en production finale inclut la configuration du domaine custom, les variables d'environnement de production, et un test de bout en bout du parcours paiement.",
           ],
           bullets: [
             "Stripe Checkout gère les paiements sans stocker de données bancaires en local",
@@ -268,7 +268,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "Six semaines, c'est court — mais c'est suffisant pour valider une hypothèse business avec un produit qui ressemble à un vrai produit. La clé est la discipline du périmètre minimal : vous construisez pour apprendre, pas pour impressionner. Si vous avez une idée SaaS et voulez être en production avant la fin du trimestre, contactez-nous pour discuter de votre projet.",
+      conclusion: "**Six semaines**, c'est court — mais c'est suffisant pour valider une hypothèse business avec un produit qui ressemble à un vrai produit. La clé est la discipline du **périmètre minimal** : vous construisez pour apprendre, pas pour impressionner. Si vous avez une idée *SaaS* et voulez être en production avant la fin du trimestre, contactez-nous pour discuter de votre projet.",
       keyTakeaways: [
         "La stack React + Supabase + Stripe + Vercel réduit le temps de développement de 60% vs stack classique",
         "Réduire le scope de 40 à 60% en semaine 1 est la condition principale du respect des délais",
@@ -304,13 +304,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Automatisation", "PME", "n8n", "Productivité"],
     available: true,
     body: {
-      intro: "En moyenne, un dirigeant de PME passe 2 à 3 heures par jour sur des tâches qu'une machine pourrait faire à sa place : relances par email, saisie de données entre outils, reports hebdomadaires, notifications internes... C'est 30 à 40 % d'une journée de travail. L'automatisation n'est pas un projet IT complexe réservé aux DSI des grands groupes — c'est une série de petites décisions concrètes que n'importe quelle PME peut mettre en œuvre avec les bons outils. Voici par où commencer.",
+      intro: "En moyenne, un dirigeant de **PME** passe **2 à 3 heures par jour** sur des tâches qu'une machine pourrait faire à sa place : relances par email, saisie de données entre outils, reports hebdomadaires, notifications internes... C'est **30 à 40 %** d'une journée de travail. L'**automatisation** n'est pas un projet *IT* complexe réservé aux *DSI* des grands groupes — c'est une série de petites décisions concrètes que n'importe quelle PME peut mettre en œuvre avec les bons outils. Voici par où commencer.",
       sections: [
         {
           title: "Étape 1 : Cartographier vos tâches répétitives",
           paragraphs: [
-            "Avant d'automatiser quoi que ce soit, passez une semaine à noter chaque tâche que vous ou votre équipe répétez plus de 3 fois dans la semaine. Soyez précis : 'envoyer le rapport hebdomadaire par email' est une tâche automatable, 'gérer les clients difficiles' ne l'est pas. L'objectif est de constituer une liste brute de 10 à 20 candidats à l'automatisation.",
-            "Classez ensuite ces tâches selon deux critères : la fréquence (combien de fois par semaine ?) et le temps unitaire (combien de minutes par occurrence ?). Le produit des deux vous donne le temps hebdomadaire perdu. Triez par ordre décroissant — ce sont vos quick wins prioritaires.",
+            "Avant d'automatiser quoi que ce soit, passez une semaine à noter chaque tâche que vous ou votre équipe répétez plus de **3 fois dans la semaine**. Soyez précis : 'envoyer le rapport hebdomadaire par email' est une tâche automatable, 'gérer les clients difficiles' ne l'est pas. L'objectif est de constituer une liste brute de **10 à 20 candidats** à l'automatisation.",
+            "Classez ensuite ces tâches selon deux critères : la **fréquence** (combien de fois par semaine ?) et le **temps unitaire** (combien de minutes par occurrence ?). Le produit des deux vous donne le temps hebdomadaire perdu. Triez par ordre décroissant — ce sont vos *quick wins* prioritaires.",
           ],
           bullets: [
             "Relances email clients (devis non répondus, factures impayées)",
@@ -323,8 +323,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Étape 2 : Choisir les bons outils",
           paragraphs: [
-            "Pour une PME qui débute en automatisation, n8n est notre recommandation principale. Open-source, puissant, hébergeable chez vous ou en cloud, il connecte plus de 400 services sans code. Sa logique visuelle (nœuds connectés entre eux) est accessible à des profils non-techniques après une formation d'une demi-journée.",
-            "Pour les cas simples (connecter deux applications sans logique complexe), Make (ex-Integromat) ou même Zapier suffisent et permettent de démarrer en 30 minutes. L'important n'est pas l'outil — c'est de commencer avec quelque chose de concret plutôt que de chercher la solution parfaite.",
+            "Pour une PME qui débute en automatisation, **n8n** est notre recommandation principale. *Open-source*, puissant, hébergeable chez vous ou en cloud, il connecte plus de **400 services** sans code. Sa logique visuelle (nœuds connectés entre eux) est accessible à des profils non-techniques après une formation d'une demi-journée.",
+            "Pour les cas simples (connecter deux applications sans logique complexe), **Make** (ex-*Integromat*) ou même **Zapier** suffisent et permettent de démarrer en **30 minutes**. L'important n'est pas l'outil — c'est de commencer avec quelque chose de concret plutôt que de chercher la solution parfaite.",
           ],
           bullets: [
             "n8n : meilleur rapport fonctionnalités/coût, idéal si vous voulez de la flexibilité",
@@ -336,12 +336,12 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Étape 3 : Commencer par un workflow simple et le mesurer",
           paragraphs: [
-            "Ne cherchez pas à tout automatiser d'un coup. Choisissez la tâche en tête de votre liste (temps perdu le plus élevé, logique la plus simple) et construisez un premier workflow. Testez-le pendant deux semaines, corrigez les cas limites, puis documentez-le pour que quelqu'un d'autre puisse le maintenir.",
-            "Mesurez l'impact réel : temps économisé, erreurs évitées, satisfaction de l'équipe. Ces chiffres concrets vous permettront de convaincre vos associés ou votre équipe d'investir dans les automatisations suivantes. C'est une boucle vertueuse : chaque victoire finance la suivante.",
+            "Ne cherchez pas à tout automatiser d'un coup. Choisissez la tâche en tête de votre liste (temps perdu le plus élevé, logique la plus simple) et construisez un **premier workflow**. Testez-le pendant deux semaines, corrigez les cas limites, puis **documentez-le** pour que quelqu'un d'autre puisse le maintenir.",
+            "Mesurez l'**impact réel** : temps économisé, erreurs évitées, satisfaction de l'équipe. Ces chiffres concrets vous permettront de convaincre vos associés ou votre équipe d'investir dans les automatisations suivantes. C'est une *boucle vertueuse* : chaque victoire finance la suivante.",
           ],
         },
       ],
-      conclusion: "L'automatisation pour PME n'est pas un projet ambitieux à planifier sur 6 mois — c'est une discipline qui s'installe progressivement, workflow par workflow. Commencez par la tâche qui vous énerve le plus. Automatisez-la. Mesurez le gain. Répétez. Si vous voulez être accompagné pour identifier vos meilleures opportunités d'automatisation et construire les premiers workflows, contactez-nous — nous faisons ça depuis le premier jour.",
+      conclusion: "L'**automatisation pour PME** n'est pas un projet ambitieux à planifier sur 6 mois — c'est une discipline qui s'installe progressivement, *workflow* par *workflow*. Commencez par la tâche qui vous énerve le plus. Automatisez-la. Mesurez le gain. Répétez. Si vous voulez être accompagné pour identifier vos meilleures **opportunités d'automatisation** et construire les premiers workflows, contactez-nous — nous faisons ça depuis le premier jour.",
       keyTakeaways: [
         "Cartographiez vos tâches répétitives avant de choisir un outil",
         "Priorisez par fréquence × temps unitaire pour trouver les quick wins",
@@ -363,13 +363,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["n8n", "Make", "Comparatif", "Automatisation"],
     available: true,
     body: {
-      intro: "n8n ou Make ? C'est la question que nous posent le plus souvent les PME et indépendants qui veulent se lancer dans l'automatisation de leurs processus. Les deux outils sont excellents, mais ils répondent à des besoins différents. Après avoir construit des centaines de workflows sur les deux plateformes, voici notre analyse sans langue de bois — avec des cas concrets pour vous aider à trancher.",
+      intro: "**n8n** ou **Make** ? C'est la question que nous posent le plus souvent les **PME** et indépendants qui veulent se lancer dans l'automatisation de leurs processus. Les deux outils sont excellents, mais ils répondent à des besoins différents. Après avoir construit des **centaines de workflows** sur les deux plateformes, voici notre analyse sans langue de bois — avec des cas concrets pour vous aider à trancher.",
       sections: [
         {
           title: "Make : la puissance avec une belle interface",
           paragraphs: [
-            "Make (anciennement Integromat) est la référence pour ceux qui veulent une interface visuelle intuitive et une prise en main rapide. Ses scénarios s'affichent sous forme de bulles connectées, la logique conditionnelle est simple à configurer, et la bibliothèque d'intégrations natives dépasse les 1 500 applications. Pour un profil non-technique qui veut automatiser ses outils sans écrire une ligne de code, Make est souvent le meilleur point d'entrée.",
-            "Le principal frein de Make est son modèle de tarification à l'opération. Chaque 'opération' (chaque action exécutée dans un scénario) est comptabilisée. Sur de faibles volumes, c'est négligeable. Mais dès que vous automatisez des processus qui tournent des milliers de fois par mois — envoi de newsletters, synchronisation CRM — la facture peut rapidement dépasser 100-200 €/mois.",
+            "**Make** (anciennement *Integromat*) est la référence pour ceux qui veulent une **interface visuelle intuitive** et une prise en main rapide. Ses scénarios s'affichent sous forme de bulles connectées, la logique conditionnelle est simple à configurer, et la bibliothèque d'intégrations natives dépasse les **1 500 applications**. Pour un profil non-technique qui veut automatiser ses outils sans écrire une ligne de code, Make est souvent le meilleur point d'entrée.",
+            "Le principal frein de **Make** est son modèle de tarification à l'opération. Chaque *opération* (chaque action exécutée dans un scénario) est comptabilisée. Sur de faibles volumes, c'est négligeable. Mais dès que vous automatisez des processus qui tournent des milliers de fois par mois — envoi de newsletters, synchronisation *CRM* — la facture peut rapidement dépasser **100-200 €/mois**.",
           ],
           bullets: [
             "Interface visuelle très accessible pour les non-développeurs",
@@ -381,8 +381,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "n8n : la liberté sans compromis",
           paragraphs: [
-            "n8n est open-source et auto-hébergeable — c'est sa différence fondamentale. Vous pouvez l'installer sur votre propre serveur (un VPS à 5 €/mois suffit) et ne payer aucune opération, quel que soit le volume. Pour des workflows intensifs ou des données sensibles que vous ne voulez pas stocker chez un tiers, c'est décisif.",
-            "n8n est plus technique que Make : la prise en main prend quelques heures de plus, et certains cas d'usage demandent d'écrire de petits bouts de JavaScript. Mais en échange, vous avez accès à une flexibilité totale : logique complexe, transformations de données avancées, intégration avec n'importe quelle API même non listée. Pour les profils tech ou les agences qui automatisent pour leurs clients, n8n est notre choix de référence.",
+            "**n8n** est *open-source* et auto-hébergeable — c'est sa différence fondamentale. Vous pouvez l'installer sur votre propre serveur (un *VPS* à **5 €/mois** suffit) et ne payer aucune opération, quel que soit le volume. Pour des workflows intensifs ou des données sensibles que vous ne voulez pas stocker chez un tiers, c'est décisif.",
+            "**n8n** est plus technique que Make : la prise en main prend quelques heures de plus, et certains cas d'usage demandent d'écrire de petits bouts de *JavaScript*. Mais en échange, vous avez accès à une **flexibilité totale** : logique complexe, transformations de données avancées, intégration avec n'importe quelle *API* même non listée. Pour les profils tech ou les agences qui automatisent pour leurs clients, **n8n** est notre choix de référence.",
           ],
           bullets: [
             "Open-source et auto-hébergeable : aucun coût variable à l'échelle",
@@ -395,12 +395,12 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Notre recommandation selon votre profil",
           paragraphs: [
-            "Si vous êtes un dirigeant ou un profil commercial non-technique qui veut automatiser rapidement quelques processus simples (synchronisation CRM, notifications, génération de documents), démarrez avec Make. La prise en main rapide vous permettra d'avoir des résultats concrets en quelques jours.",
-            "Si vous êtes une agence, un développeur, ou une entreprise avec des besoins de volume élevé ou des données sensibles, n8n est l'investissement qui paie. Le temps d'apprentissage initial est largement compensé par la liberté et les économies à long terme. Chez Maison Siranno, nous avons migré l'ensemble de nos workflows de Zapier vers n8n en 2024 et économisé 87 % sur notre coût mensuel d'automatisation.",
+            "Si vous êtes un dirigeant ou un profil commercial non-technique qui veut automatiser rapidement quelques processus simples (synchronisation *CRM*, notifications, génération de documents), démarrez avec **Make**. La prise en main rapide vous permettra d'avoir des résultats concrets en quelques jours.",
+            "Si vous êtes une agence, un développeur, ou une entreprise avec des besoins de volume élevé ou des données sensibles, **n8n** est l'investissement qui paie. Le temps d'apprentissage initial est largement compensé par la liberté et les économies à long terme. Chez **Maison Siranno**, nous avons migré l'ensemble de nos workflows de *Zapier* vers **n8n** en 2024 et économisé **87 %** sur notre coût mensuel d'automatisation.",
           ],
         },
       ],
-      conclusion: "n8n et Make sont deux excellents outils — le mauvais choix serait de ne choisir ni l'un ni l'autre par indécision. Commencez par celui qui correspond à votre niveau technique actuel, et n'ayez pas peur de migrer ensuite si vos besoins évoluent. Si vous voulez un accompagnement pour choisir et déployer la solution la plus adaptée à votre situation, nous en parlons avec plaisir.",
+      conclusion: "**n8n** et **Make** sont deux excellents outils — le mauvais choix serait de ne choisir ni l'un ni l'autre par indécision. Commencez par celui qui correspond à votre niveau technique actuel, et n'ayez pas peur de migrer ensuite si vos besoins évoluent. Si vous voulez un accompagnement pour choisir et déployer la **solution la plus adaptée** à votre situation, nous en parlons avec plaisir.",
       keyTakeaways: [
         "Make : idéal pour les non-techniques, prise en main rapide, mais coût variable à l'échelle",
         "n8n : pour les profils techniques, open-source, aucun coût à l'usage, plus flexible",
@@ -421,20 +421,20 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Email", "Automatisation", "n8n", "Productivité"],
     available: true,
     body: {
-      intro: "La boîte mail est le plus grand destructeur de temps dans une PME. En France, un dirigeant reçoit en moyenne 121 emails par jour et passe 28 % de son temps de travail à les gérer. Ce chiffre masque une réalité encore plus cruelle : la majorité de ces emails ne nécessitent aucune décision humaine. Ils peuvent être triés, répondus ou transférés automatiquement. Voici comment reprendre le contrôle de votre boîte mail grâce à l'automatisation — sans risquer de rater ce qui compte vraiment.",
+      intro: "La **boîte mail** est le plus grand destructeur de temps dans une PME. En France, un dirigeant reçoit en moyenne **121 emails par jour** et passe **28 %** de son temps de travail à les gérer. Ce chiffre masque une réalité encore plus cruelle : la majorité de ces emails ne nécessitent aucune décision humaine. Ils peuvent être triés, répondus ou transférés **automatiquement**. Voici comment reprendre le contrôle de votre boîte mail grâce à l'**automatisation** — sans risquer de rater ce qui compte vraiment.",
       sections: [
         {
           title: "Cartographier les flux entrants avant d'automatiser",
           paragraphs: [
-            "Avant de créer le moindre workflow, passez une semaine à catégoriser mentalement chaque email reçu selon sa nature : demande client, relance fournisseur, notification automatique, newsletter, demande de devis, facture... Vous découvrirez que 40 à 60 % de vos emails appartiennent à seulement 3 à 5 catégories récurrentes.",
-            "Ces catégories récurrentes sont vos cibles d'automatisation. Pour chacune, posez-vous : est-ce que la réponse ou l'action suivante est toujours la même ? Si oui, c'est automatisable. Si la réponse varie selon le contexte mais suit une logique prévisible, c'est partiellement automatisable avec une IA de classification.",
+            "Avant de créer le moindre *workflow*, passez une semaine à catégoriser mentalement chaque email reçu selon sa nature : demande client, relance fournisseur, notification automatique, newsletter, demande de devis, facture... Vous découvrirez que **40 à 60 %** de vos emails appartiennent à seulement **3 à 5 catégories récurrentes**.",
+            "Ces catégories récurrentes sont vos **cibles d'automatisation**. Pour chacune, posez-vous : est-ce que la réponse ou l'action suivante est toujours la même ? Si oui, c'est automatisable. Si la réponse varie selon le contexte mais suit une logique prévisible, c'est partiellement automatisable avec une **IA** de classification.",
           ],
         },
         {
           title: "Les 4 automatisations mail à déployer en priorité",
           paragraphs: [
-            "L'accusé de réception intelligent est le premier workflow à construire. Dès qu'un email arrive sur votre adresse contact@, un accusé est envoyé automatiquement avec le délai de réponse garanti et un lien de prise de RDV si approprié. Cela réduit les relances inutiles de 60 % et professionnalise immédiatement l'image de l'entreprise.",
-            "Le tri et l'étiquetage automatiques viennent ensuite : les newsletters sont archivées sans passer par la boîte principale, les factures fournisseurs sont transférées vers la comptabilité, les notifications d'outils (GitHub, Jira, Slack) sont regroupées dans un dossier dédié. Gmail et n8n rendent tout ça faisable en une heure de configuration.",
+            "L'**accusé de réception intelligent** est le premier *workflow* à construire. Dès qu'un email arrive sur votre adresse contact@, un accusé est envoyé automatiquement avec le délai de réponse garanti et un lien de prise de RDV si approprié. Cela réduit les relances inutiles de **60 %** et professionnalise immédiatement l'image de l'entreprise.",
+            "Le **tri et l'étiquetage automatiques** viennent ensuite : les newsletters sont archivées sans passer par la boîte principale, les factures fournisseurs sont transférées vers la comptabilité, les notifications d'outils (*GitHub*, *Jira*, *Slack*) sont regroupées dans un dossier dédié. **Gmail** et **n8n** rendent tout ça faisable en **une heure** de configuration.",
           ],
           bullets: [
             "Accusé de réception automatique pour toute demande entrante",
@@ -446,12 +446,12 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Intégrer l'IA pour la classification contextuelle",
           paragraphs: [
-            "Pour aller plus loin, il est possible d'intégrer un LLM (Claude, GPT-4) dans votre workflow de tri pour analyser le contenu de l'email et décider de l'action appropriée. Un email de prospects qualifiés peut déclencher automatiquement la création d'une fiche dans votre CRM. Une réclamation client peut générer un ticket support. Une demande de devis peut pré-remplir un formulaire dans votre outil de facturation.",
-            "Nous avons déployé ce système pour notre propre activité : notre boîte mail est traitée, triée et prérépondue automatiquement chaque matin avant même notre réveil. Résultat : nous traitons les emails en 20 minutes par jour au lieu de 2 heures, et nous n'avons jamais raté un email important.",
+            "Pour aller plus loin, il est possible d'intégrer un **LLM** (*Claude*, *GPT-4*) dans votre *workflow* de tri pour analyser le contenu de l'email et décider de l'action appropriée. Un email de prospects qualifiés peut déclencher automatiquement la création d'une fiche dans votre **CRM**. Une réclamation client peut générer un ticket *support*. Une demande de devis peut pré-remplir un formulaire dans votre outil de facturation.",
+            "Nous avons déployé ce système pour notre propre activité : notre boîte mail est traitée, triée et **prérépondue automatiquement** chaque matin avant même notre réveil. Résultat : nous traitons les emails en **20 minutes par jour** au lieu de 2 heures, et nous n'avons jamais raté un email important.",
           ],
         },
       ],
-      conclusion: "Automatiser sa boîte mail n'est pas complexe — c'est méthodique. Commencez par les automatisations les plus simples (accusé de réception, tri basique) pour mesurer le gain immédiat, puis montez en sophistication progressivement. L'objectif n'est pas de supprimer l'email mais de s'assurer que vous ne passez votre temps que sur les emails qui requièrent vraiment votre attention.",
+      conclusion: "**Automatiser sa boîte mail** n'est pas complexe — c'est méthodique. Commencez par les automatisations les plus simples (accusé de réception, tri basique) pour mesurer le gain immédiat, puis montez en sophistication progressivement. L'objectif n'est pas de supprimer l'email mais de s'assurer que vous ne passez votre temps que sur les **emails qui requièrent vraiment votre attention**.",
       keyTakeaways: [
         "60 % des emails entrants peuvent être traités ou triés automatiquement",
         "L'accusé de réception automatique réduit les relances inutiles de 60%",
@@ -472,13 +472,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["RDV", "Calendly", "Automatisation", "CRM"],
     available: true,
     body: {
-      intro: "Combien d'allers-retours email faut-il pour fixer un rendez-vous client ? En moyenne, 3 à 5 échanges — soit 10 à 15 minutes perdues, par les deux parties, pour chaque rendez-vous. Pour une PME qui organise 20 RDV par semaine, c'est 5 heures de travail administratif pur. Un système automatisé réduit ce chiffre à zéro. Voici comment nous construisons des pipelines RDV complets avec n8n, du premier contact au suivi post-réunion.",
+      intro: "Combien d'allers-retours email faut-il pour fixer un rendez-vous client ? En moyenne, **3 à 5 échanges** — soit 10 à 15 minutes perdues, par les deux parties, pour chaque rendez-vous. Pour une **PME** qui organise 20 RDV par semaine, c'est **5 heures** de travail administratif pur. Un système automatisé réduit ce chiffre à zéro. Voici comment nous construisons des pipelines **RDV complets** avec **n8n**, du premier contact au suivi post-réunion.",
       sections: [
         {
           title: "Choisir le bon outil de prise de RDV : Calendly vs Cal.com",
           paragraphs: [
-            "Le point d'entrée d'un système RDV automatisé est toujours un outil de booking en ligne. Calendly est le plus connu : intuitif, fiable, avec une version gratuite généreuse. Il s'intègre nativement à Google Calendar, Outlook, Zoom et des dizaines d'autres outils. Pour 90 % des cas PME, Calendly suffit amplement. Cal.com est son alternative open-source, auto-hébergeable et entièrement personnalisable — préférable si vous voulez supprimer les mentions de l'outil de votre page de booking ou avoir un contrôle total sur vos données.",
-            "La configuration de l'outil de booking est plus stratégique qu'il n'y paraît. Les questions de qualification intégrées au formulaire de RDV permettent de filtrer les prospects non qualifiés avant même le premier appel. Pour un consultant qui ne travaille qu'avec des PME de 10 salariés minimum, une question sur la taille de l'entreprise dans le formulaire élimine les demandes hors cible. Nous recommandons de limiter à 3-4 questions maximum — au-delà, le taux de complétion chute.",
+            "Le point d'entrée d'un système RDV automatisé est toujours un **outil de booking en ligne**. **Calendly** est le plus connu : intuitif, fiable, avec une version gratuite généreuse. Il s'intègre nativement à *Google Calendar*, *Outlook*, *Zoom* et des dizaines d'autres outils. Pour **90 % des cas PME**, Calendly suffit amplement. **Cal.com** est son alternative *open-source*, auto-hébergeable et entièrement personnalisable — préférable si vous voulez supprimer les mentions de l'outil de votre page de booking ou avoir un contrôle total sur vos données.",
+            "La configuration de l'outil de booking est plus stratégique qu'il n'y paraît. Les **questions de qualification** intégrées au formulaire de RDV permettent de filtrer les prospects non qualifiés avant même le premier appel. Pour un consultant qui ne travaille qu'avec des PME de 10 salariés minimum, une question sur la taille de l'entreprise dans le formulaire élimine les demandes hors cible. Nous recommandons de limiter à **3-4 questions maximum** — au-delà, le taux de complétion chute.",
           ],
           bullets: [
             "Calendly Free : 1 type d'événement, suffisant pour démarrer",
@@ -491,8 +491,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Le workflow n8n : de la réservation au CRM en temps réel",
           paragraphs: [
-            "Une fois l'outil de booking en place, n8n prend le relais pour orchestrer toutes les actions autour du RDV. Le workflow démarre sur un webhook déclenché par chaque nouvelle réservation Calendly. En quelques secondes, n8n crée ou met à jour la fiche contact dans le CRM (HubSpot, Pipedrive, Notion — au choix selon votre stack), envoie un email de confirmation personnalisé avec les détails de connexion Zoom générés à la volée, et notifie le commercial concerné sur Slack.",
-            "Le rappel automatique à J-1 et J-1h est la fonctionnalité qui réduit le plus les no-shows. Nous observons une réduction de 35 à 60 % des absences en ajoutant simplement un SMS de rappel 24h avant le RDV. n8n peut envoyer ce SMS via Twilio ou Brevo pour un coût de quelques centimes par message. Le workflow gère aussi les annulations : si un RDV est annulé dans Calendly, n8n met automatiquement à jour le statut dans le CRM et libère le créneau dans l'agenda.",
+            "Une fois l'outil de booking en place, **n8n** prend le relais pour orchestrer toutes les actions autour du RDV. Le *workflow* démarre sur un *webhook* déclenché par chaque nouvelle réservation **Calendly**. En quelques secondes, **n8n** crée ou met à jour la fiche contact dans le **CRM** (*HubSpot*, *Pipedrive*, *Notion* — au choix selon votre stack), envoie un email de confirmation personnalisé avec les détails de connexion *Zoom* générés à la volée, et notifie le commercial concerné sur *Slack*.",
+            "Le **rappel automatique à J-1 et J-1h** est la fonctionnalité qui réduit le plus les *no-shows*. Nous observons une réduction de **35 à 60 %** des absences en ajoutant simplement un SMS de rappel 24h avant le RDV. **n8n** peut envoyer ce SMS via *Twilio* ou *Brevo* pour un coût de quelques centimes par message. Le *workflow* gère aussi les annulations : si un RDV est annulé dans **Calendly**, n8n met automatiquement à jour le statut dans le **CRM** et libère le créneau dans l'agenda.",
           ],
           bullets: [
             "Webhook Calendly → n8n déclenche toutes les actions en cascade",
@@ -505,8 +505,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Le suivi post-RDV : automatiser sans déshumaniser",
           paragraphs: [
-            "Le workflow ne s'arrête pas à la fin du rendez-vous. 15 minutes après l'heure de fin prévue, n8n peut envoyer un email de remerciement automatique avec les ressources mentionnées pendant l'appel (packagées dans un template), relancer la complétion d'un questionnaire de satisfaction, ou créer une tâche de suivi dans l'outil de gestion de projet.",
-            "L'écueil à éviter est l'over-automation du post-RDV. Un email de remerciement générique envoyé 15 minutes après un appel de découverte peut nuire à la relation si le prospect a l'impression de parler à un robot. Nous recommandons de bloquer les automatisations post-RDV pour les rendez-vous stratégiques (closing, relation client sensible) et de les activer uniquement pour les appels de découverte à fort volume.",
+            "Le *workflow* ne s'arrête pas à la fin du rendez-vous. **15 minutes** après l'heure de fin prévue, **n8n** peut envoyer un email de remerciement automatique avec les ressources mentionnées pendant l'appel (packagées dans un *template*), relancer la complétion d'un questionnaire de satisfaction, ou créer une tâche de suivi dans l'outil de gestion de projet.",
+            "L'écueil à éviter est l'*over-automation* du post-RDV. Un email de remerciement générique envoyé 15 minutes après un appel de découverte peut nuire à la relation si le prospect a l'impression de parler à un robot. Nous recommandons de **bloquer les automatisations post-RDV** pour les rendez-vous stratégiques (*closing*, relation client sensible) et de les activer uniquement pour les appels de découverte à fort volume.",
           ],
           bullets: [
             "Email de suivi automatique 15 min après la fin du RDV avec ressources personnalisées",
@@ -516,7 +516,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "Un système RDV automatisé n'est pas un luxe — c'est une nécessité pour toute PME qui veut professionnaliser son processus commercial sans embaucher un assistant. La mise en place prend une journée, l'impact est immédiat, et le workflow tourne ensuite sans maintenance. Si vous voulez qu'on vous accompagne dans la construction de ce système pour votre activité, prenez rendez-vous — automatiquement, bien sûr.",
+      conclusion: "Un **système RDV automatisé** n'est pas un luxe — c'est une nécessité pour toute PME qui veut professionnaliser son processus commercial sans embaucher un assistant. La mise en place prend une journée, l'impact est immédiat, et le *workflow* tourne ensuite sans maintenance. Si vous voulez qu'on vous accompagne dans la construction de ce système pour votre activité, prenez rendez-vous — automatiquement, bien sûr.",
       keyTakeaways: [
         "Calendly (gratuit) suffit pour démarrer — Cal.com si vous voulez l'auto-hébergement RGPD-friendly",
         "Les questions de qualification dans le formulaire filtrent les prospects non pertinents avant le premier appel",
@@ -552,13 +552,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["IA", "Artisanat", "Automatisation", "PME"],
     available: true,
     body: {
-      intro: "Quand on parle d'intelligence artificielle aux artisans, la réaction habituelle est un mélange de méfiance et de curiosité : 'C'est pour les grandes boîtes, non ?' Après 12 mois d'accompagnement de plombiers, maçons, électriciens et coiffeurs dans leur transformation digitale, notre réponse est claire : non, ce n'est pas réservé aux grandes boîtes. Et oui, ça peut changer concrètement le quotidien d'un indépendant. Voici ce que nous avons appris sur le terrain.",
+      intro: "Quand on parle d'**intelligence artificielle** aux artisans, la réaction habituelle est un mélange de méfiance et de curiosité : 'C'est pour les grandes boîtes, non ?' Après **12 mois** d'accompagnement de plombiers, maçons, électriciens et coiffeurs dans leur *transformation digitale*, notre réponse est claire : non, ce n'est pas réservé aux grandes boîtes. Et oui, ça peut changer concrètement le quotidien d'un indépendant. Voici ce que nous avons appris sur le terrain.",
       sections: [
         {
           title: "Les usages qui fonctionnent vraiment pour les artisans",
           paragraphs: [
-            "Après avoir testé une dizaine d'applications de l'IA auprès d'artisans, trois cas d'usage se démarquent nettement par leur impact et leur facilité d'adoption. Le premier est la génération assistée de devis : en décrivant oralement (par message vocal) les travaux à réaliser, l'IA structure un devis complet en quelques secondes, que l'artisan n'a plus qu'à relire et ajuster. Julien de JD Rénovation a réduit son temps de création de devis de 45 minutes à 8 minutes.",
-            "Le deuxième usage est la gestion des rappels et relances clients. Un système simple connecté au calendrier envoie automatiquement des rappels de RDV, des demandes de retour après intervention et des relances pour les devis sans réponse. Maxime Jambou, moniteur d'aquagym, a constaté une réduction de 40 % de ses annulations de dernière minute depuis la mise en place des rappels automatiques.",
+            "Après avoir testé une dizaine d'applications de l'**IA** auprès d'artisans, trois cas d'usage se démarquent nettement par leur impact et leur facilité d'adoption. Le premier est la **génération assistée de devis** : en décrivant oralement (par message vocal) les travaux à réaliser, l'IA structure un devis complet en quelques secondes, que l'artisan n'a plus qu'à relire et ajuster. Julien de **JD Rénovation** a réduit son temps de création de devis de **45 minutes à 8 minutes**.",
+            "Le deuxième usage est la **gestion des rappels et relances clients**. Un système simple connecté au calendrier envoie automatiquement des rappels de RDV, des demandes de retour après intervention et des relances pour les devis sans réponse. Maxime Jambou, moniteur d'aquagym, a constaté une **réduction de 40 %** de ses annulations de dernière minute depuis la mise en place des rappels automatiques.",
           ],
           bullets: [
             "Génération de devis par dictée vocale : de 45 min à moins de 10 min",
@@ -570,19 +570,19 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Ce qui ne fonctionne pas (encore)",
           paragraphs: [
-            "Il faut être honnête : certains usages promis par les vendeurs d'IA ne tiennent pas leurs promesses en conditions réelles d'artisanat. Les chatbots de qualification de leads fonctionnent bien sur des sites avec un volume de visites suffisant (200+ visiteurs/mois minimum), mais sont inutiles pour un artisan qui obtient 90 % de ses leads par bouche-à-oreille.",
-            "De même, les outils de comptabilité IA nécessitent une rigueur dans la numérisation des justificatifs que beaucoup d'artisans peinent à maintenir. L'IA ne corrige pas les mauvaises habitudes — elle les amplifie. Le meilleur déploiement IA pour un artisan commence toujours par une organisation de base : dossiers classés, numéros de téléphone sauvegardés, devis numérisés.",
+            "Il faut être honnête : certains usages promis par les vendeurs d'**IA** ne tiennent pas leurs promesses en conditions réelles d'artisanat. Les *chatbots* de qualification de leads fonctionnent bien sur des sites avec un volume de visites suffisant (**200+ visiteurs/mois** minimum), mais sont inutiles pour un artisan qui obtient **90 % de ses leads** par bouche-à-oreille.",
+            "De même, les outils de **comptabilité IA** nécessitent une rigueur dans la numérisation des justificatifs que beaucoup d'artisans peinent à maintenir. L'IA ne corrige pas les mauvaises habitudes — elle les *amplifie*. Le meilleur déploiement IA pour un artisan commence toujours par une organisation de base : dossiers classés, numéros de téléphone sauvegardés, devis numérisés.",
           ],
         },
         {
           title: "Par où commencer concrètement",
           paragraphs: [
-            "Notre recommandation pour un artisan qui veut démarrer avec l'IA sans se noyer : commencez par un outil que vous pouvez tester gratuitement pendant 30 jours sur une seule tâche précise. Si vous passez du temps sur la rédaction d'emails ou de devis, testez ChatGPT ou Claude pour cette seule tâche pendant un mois. Si vos rappels clients vous coûtent du temps, explorez Calendly ou un outil SMS automatisé.",
-            "La question n'est pas 'comment adopter l'IA ?' mais 'quelle tâche précise m'énerve assez pour que je prenne 2 heures à l'automatiser ?' C'est toujours le meilleur point de départ.",
+            "Notre recommandation pour un artisan qui veut démarrer avec l'**IA** sans se noyer : commencez par un outil que vous pouvez tester **gratuitement pendant 30 jours** sur une seule tâche précise. Si vous passez du temps sur la rédaction d'emails ou de devis, testez *ChatGPT* ou **Claude** pour cette seule tâche pendant un mois. Si vos rappels clients vous coûtent du temps, explorez **Calendly** ou un outil SMS automatisé.",
+            "La question n'est pas 'comment adopter l'IA ?' mais '**quelle tâche précise m'énerve assez** pour que je prenne 2 heures à l'automatiser ?' C'est toujours le meilleur point de départ.",
           ],
         },
       ],
-      conclusion: "L'IA pour les artisans n'est ni une révolution immédiate ni une promesse vide. C'est un ensemble d'outils concrets qui peuvent libérer 30 minutes à 2 heures par jour sur les tâches administratives — à condition de partir du bon problème et d'adopter les bons outils dans le bon ordre. Si vous voulez identifier vos meilleures opportunités, nous proposons un audit de 30 minutes offert pour les artisans.",
+      conclusion: "L'**IA pour les artisans** n'est ni une révolution immédiate ni une promesse vide. C'est un ensemble d'outils concrets qui peuvent libérer **30 minutes à 2 heures par jour** sur les tâches administratives — à condition de partir du bon problème et d'adopter les bons outils dans le bon ordre. Si vous voulez identifier vos meilleures opportunités, nous proposons un **audit de 30 minutes offert** pour les artisans.",
       keyTakeaways: [
         "Les devis assistés par IA réduisent le temps de rédaction de 60 à 80%",
         "Les rappels automatiques réduisent les annulations de 30 à 40%",
@@ -603,13 +603,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["RAG", "IA", "LLM", "Documentation"],
     available: true,
     body: {
-      intro: "Imaginez pouvoir poser une question à votre documentation interne comme si vous parliez à un expert omniscient de votre entreprise. 'Quelle est notre politique de remboursement pour les clients pro ?' — et obtenir une réponse précise avec la source exacte, en 3 secondes. C'est ce que permet le RAG (Retrieval-Augmented Generation). Ni de la science-fiction, ni réservé aux GAFAM : c'est déployable en quelques semaines pour une PME qui a de la documentation à valoriser.",
+      intro: "Imaginez pouvoir poser une question à votre documentation interne comme si vous parliez à un expert omniscient de votre entreprise. 'Quelle est notre politique de remboursement pour les clients pro ?' — et obtenir une réponse précise avec la source exacte, en **3 secondes**. C'est ce que permet le **RAG** (*Retrieval-Augmented Generation*). Ni de la science-fiction, ni réservé aux *GAFAM* : c'est déployable en quelques semaines pour une **PME** qui a de la documentation à valoriser.",
       sections: [
         {
           title: "Comment fonctionne le RAG (en langage humain)",
           paragraphs: [
-            "Un système RAG fonctionne en deux temps. D'abord, il indexe vos documents : contrats, FAQ, procédures, fiches produits, emails types... Chaque document est découpé en fragments, chaque fragment est transformé en vecteur numérique (une représentation mathématique du sens du texte) et stocké dans une base vectorielle.",
-            "Quand un utilisateur pose une question, le système identifie les fragments de vos documents les plus proches sémantiquement de cette question, les injecte dans le contexte d'un LLM (Claude, GPT-4) qui génère une réponse cohérente et sourcée. Résultat : l'IA répond avec vos données, dans votre contexte, sans halluciner des informations inventées.",
+            "Un système **RAG** fonctionne en deux temps. D'abord, il indexe vos documents : contrats, FAQ, procédures, fiches produits, emails types... Chaque document est découpé en fragments, chaque fragment est transformé en **vecteur numérique** (une représentation mathématique du sens du texte) et stocké dans une *base vectorielle*.",
+            "Quand un utilisateur pose une question, le système identifie les fragments de vos documents les plus proches *sémantiquement* de cette question, les injecte dans le contexte d'un **LLM** (*Claude*, *GPT-4*) qui génère une réponse cohérente et sourcée. Résultat : l'**IA** répond avec vos données, dans votre contexte, **sans halluciner** des informations inventées.",
           ],
           bullets: [
             "Indexation des documents en vecteurs (une fois, ou mise à jour automatique)",
@@ -621,19 +621,19 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Pour qui le RAG est-il pertinent ?",
           paragraphs: [
-            "Le RAG est particulièrement efficace pour les entreprises qui ont beaucoup de documentation interne mais peu de temps pour la consulter. Un cabinet de conseil avec 500 pages de méthodologies, une entreprise industrielle avec des manuels techniques volumineux, un service client avec une base de connaissances de 2 000 articles — tous tirent un bénéfice immédiat d'un système RAG.",
-            "Le seuil de pertinence ? En général, si votre équipe passe plus de 30 minutes par jour à chercher des informations dans vos documents internes, le ROI d'un système RAG est positif dès les premiers mois. Pour Siranno Hub, nous avons construit un RAG sur notre propre base de connaissance — chaque agent IA a accès à l'historique complet de nos projets et procédures, ce qui réduit drastiquement les questions répétitives.",
+            "Le **RAG** est particulièrement efficace pour les entreprises qui ont beaucoup de documentation interne mais peu de temps pour la consulter. Un cabinet de conseil avec **500 pages de méthodologies**, une entreprise industrielle avec des manuels techniques volumineux, un service client avec une base de connaissances de **2 000 articles** — tous tirent un bénéfice immédiat d'un système RAG.",
+            "Le seuil de pertinence ? En général, si votre équipe passe plus de **30 minutes par jour** à chercher des informations dans vos documents internes, le **ROI** d'un système RAG est positif dès les premiers mois. Pour **Siranno Hub**, nous avons construit un *RAG* sur notre propre base de connaissance — chaque agent IA a accès à l'historique complet de nos projets et procédures, ce qui réduit drastiquement les questions répétitives.",
           ],
         },
         {
           title: "Le coût réel d'un déploiement RAG",
           paragraphs: [
-            "Un système RAG minimal (chatbot sur vos documents, 10 à 50 utilisateurs, mise à jour manuelle) peut être déployé pour 2 000 à 5 000 € de développement et 100 à 300 €/mois en coûts d'infrastructure et d'API. Pour les PME, c'est généralement amorti en 2 à 4 mois si le cas d'usage est bien choisi.",
-            "Les technologies de base : Supabase avec l'extension pgvector pour la base vectorielle (gratuit jusqu'à 500 MB), l'API Claude ou OpenAI pour la génération (coût variable selon usage), et n8n pour orchestrer les mises à jour automatiques de l'index. Une stack que nous maîtrisons de bout en bout.",
+            "Un système **RAG** minimal (*chatbot* sur vos documents, 10 à 50 utilisateurs, mise à jour manuelle) peut être déployé pour **2 000 à 5 000 €** de développement et **100 à 300 €/mois** en coûts d'infrastructure et d'API. Pour les PME, c'est généralement amorti en **2 à 4 mois** si le cas d'usage est bien choisi.",
+            "Les technologies de base : **Supabase** avec l'extension *pgvector* pour la base vectorielle (gratuit jusqu'à 500 MB), l'**API Claude** ou *OpenAI* pour la génération (coût variable selon usage), et **n8n** pour orchestrer les mises à jour automatiques de l'index. Une stack que nous maîtrisons de bout en bout.",
           ],
         },
       ],
-      conclusion: "Le RAG est l'une des applications de l'IA les plus concrètes et les plus rapides à rentabiliser pour une entreprise avec de la documentation existante. La barrière d'entrée technique a considérablement baissé en 2024-2025, et les coûts d'infrastructure sont devenus accessibles aux PME. Si vous avez de la documentation qui dort et des équipes qui perdent du temps à chercher des informations, parlons-en.",
+      conclusion: "Le **RAG** est l'une des applications de l'**IA** les plus concrètes et les plus rapides à rentabiliser pour une entreprise avec de la documentation existante. La barrière d'entrée technique a considérablement baissé en 2024-2025, et les **coûts d'infrastructure** sont devenus accessibles aux PME. Si vous avez de la documentation qui dort et des équipes qui perdent du temps à chercher des informations, parlons-en.",
       keyTakeaways: [
         "Le RAG connecte un LLM à VOS données — pas d'hallucination inventée",
         "Pertinent dès que vos équipes passent 30min+/jour à chercher dans des docs internes",
@@ -654,13 +654,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Chatbot", "IA", "Leads", "Conversion"],
     available: true,
     body: {
-      intro: "Il y a 12 mois, nous avons démarré le déploiement de chatbots IA sur les sites de plusieurs clients PME — un cabinet de conseil RH, deux artisans du bâtiment, et une boutique e-commerce. Six mois plus tard, voici ce que nous avons vraiment appris : ce qui a fonctionné mieux que prévu, ce qui a décevou, et les règles que nous appliquons désormais systématiquement avant chaque déploiement.",
+      intro: "Il y a **12 mois**, nous avons démarré le déploiement de **chatbots IA** sur les sites de plusieurs clients PME — un cabinet de conseil RH, deux artisans du bâtiment, et une boutique *e-commerce*. Six mois plus tard, voici ce que nous avons vraiment appris : ce qui a fonctionné mieux que prévu, ce qui a déçu, et les règles que nous appliquons désormais systématiquement avant chaque déploiement.",
       sections: [
         {
           title: "Les résultats qui ont dépassé nos attentes",
           paragraphs: [
-            "Le chatbot de qualification de leads sur le site d'un artisan en rénovation a augmenté de 34 % le taux de transformation des visites en demandes de devis. Pas parce qu'il est 'intelligent' — mais parce qu'il est disponible 24h/24 et pose les bonnes questions au bon moment. Avant, un visiteur du site à 22h repartait sans contact. Maintenant, il reçoit une réponse immédiate à ses questions de base et peut remplir un formulaire de qualification guidé.",
-            "Second résultat inattendu : la qualité des leads entrants s'est améliorée. En posant des questions de qualification (zone géographique, type de travaux, budget approximatif), le chatbot filtre les demandes hors périmètre avant même que le client n'ait à intervenir. L'artisan ne reçoit plus que des demandes de devis qualifiées — et passe moins de temps au téléphone sur des projets qu'il ne peut ou ne veut pas accepter.",
+            "Le **chatbot de qualification de leads** sur le site d'un artisan en rénovation a augmenté de **34 %** le taux de transformation des visites en demandes de devis. Pas parce qu'il est 'intelligent' — mais parce qu'il est **disponible 24h/24** et pose les bonnes questions au bon moment. Avant, un visiteur du site à 22h repartait sans contact. Maintenant, il reçoit une réponse immédiate à ses questions de base et peut remplir un formulaire de qualification guidé.",
+            "Second résultat inattendu : la **qualité des leads entrants** s'est améliorée. En posant des questions de qualification (zone géographique, type de travaux, budget approximatif), le *chatbot* filtre les demandes hors périmètre avant même que le client n'ait à intervenir. L'artisan ne reçoit plus que des **demandes de devis qualifiées** — et passe moins de temps au téléphone sur des projets qu'il ne peut ou ne veut pas accepter.",
           ],
           bullets: [
             "+34% de taux de transformation visite → demande de devis",
@@ -672,14 +672,14 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Ce qui a moins bien fonctionné",
           paragraphs: [
-            "Le principal problème rencontré : les chatbots qui en font trop. Sur un site avec peu de trafic (moins de 100 visiteurs/mois), un chatbot proactif qui surgit après 5 secondes frustre les visiteurs qui venaient simplement consulter. Le pop-up intempestif a augmenté le taux de rebond sur deux sites avant que nous ne reconfigurons le déclenchement.",
-            "Autre déception : les chatbots trop conversationnels. Quand nous avons laissé trop de liberté au LLM, il s'est mis à répondre à des questions hors sujet (prix de la concurrence, conseils juridiques...) avec une assurance qui n'était pas justifiée. La règle qu'on applique maintenant : le chatbot doit avoir un périmètre clair et refuser élégamment ce qui est hors périmètre.",
+            "Le principal problème rencontré : les *chatbots* qui en font trop. Sur un site avec peu de trafic (**moins de 100 visiteurs/mois**), un *chatbot* proactif qui surgit après 5 secondes frustre les visiteurs qui venaient simplement consulter. Le *pop-up* intempestif a augmenté le **taux de rebond** sur deux sites avant que nous ne reconfigurons le déclenchement.",
+            "Autre déception : les chatbots trop conversationnels. Quand nous avons laissé trop de liberté au **LLM**, il s'est mis à répondre à des questions hors sujet (prix de la concurrence, conseils juridiques...) avec une assurance qui n'était pas justifiée. La règle qu'on applique maintenant : le **chatbot doit avoir un périmètre clair** et refuser élégamment ce qui est hors périmètre.",
           ],
         },
         {
           title: "Les 5 règles que nous appliquons maintenant",
           paragraphs: [
-            "Après ces 6 mois d'expérience, nous avons formalisé cinq règles que nous appliquons systématiquement avant chaque déploiement de chatbot. La première : pas de chatbot proactif si le trafic est inférieur à 200 visiteurs/mois. La deuxième : le chatbot doit avoir un script précis pour les 5 à 10 cas d'usage les plus fréquents, et décliner poliment pour le reste.",
+            "Après ces **6 mois d'expérience**, nous avons formalisé cinq règles que nous appliquons systématiquement avant chaque déploiement de *chatbot*. La première : pas de chatbot proactif si le trafic est inférieur à **200 visiteurs/mois**. La deuxième : le chatbot doit avoir un **script précis** pour les 5 à 10 cas d'usage les plus fréquents, et décliner poliment pour le reste.",
           ],
           bullets: [
             "Déclenchement passif (bouton flottant) si trafic < 200 visiteurs/mois",
@@ -690,7 +690,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "Un chatbot IA bien conçu est un levier puissant — mais il doit être conçu avec précision, pas déployé à la va-vite. Le succès ne dépend pas de la sophistication de l'IA mais de la clarté du périmètre, de la qualité du script et de l'adéquation entre le chatbot et la maturité digitale du site. Si vous voulez évaluer si un chatbot est pertinent pour votre situation, une consultation de 30 minutes suffit généralement à répondre à la question.",
+      conclusion: "Un **chatbot IA** bien conçu est un levier puissant — mais il doit être conçu avec précision, pas déployé à la va-vite. Le succès ne dépend pas de la sophistication de l'**IA** mais de la clarté du périmètre, de la **qualité du script** et de l'adéquation entre le *chatbot* et la maturité digitale du site. Si vous voulez évaluer si un chatbot est pertinent pour votre situation, une **consultation de 30 minutes** suffit généralement à répondre à la question.",
       keyTakeaways: [
         "Un chatbot bien configuré augmente les conversions de 20 à 40% sur un site actif",
         "La disponibilité 24h/24 est souvent plus précieuse que la sophistication de l'IA",
@@ -711,13 +711,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["IA Générative", "PME", "ROI", "Claude"],
     available: true,
     body: {
-      intro: "En 2024, 67 % des dirigeants de PME interrogés par BPI France déclarent avoir 'entendu parler' de l'IA générative. Mais seulement 18 % l'utilisent dans leurs processus de façon régulière. L'écart entre la conscience et l'adoption cache une réalité simple : la plupart des PME ne savent pas par quel bout commencer. Voici 7 cas d'usage concrets — pas des hypothèses, des déploiements réels — avec les économies ou gains mesurés pour chacun.",
+      intro: "En 2024, **67 %** des dirigeants de PME interrogés par *BPI France* déclarent avoir 'entendu parler' de l'**IA générative**. Mais seulement **18 %** l'utilisent dans leurs processus de façon régulière. L'écart entre la conscience et l'adoption cache une réalité simple : la plupart des PME ne savent pas par quel bout commencer. Voici **7 cas d'usage concrets** — pas des hypothèses, des déploiements réels — avec les économies ou gains mesurés pour chacun.",
       sections: [
         {
           title: "Cas 1 à 3 : Automatiser la production écrite et documentaire",
           paragraphs: [
-            "La rédaction de devis et propositions commerciales est systématiquement citée en premier par les dirigeants que nous accompagnons. Un consultant qui rédige 8 propositions par semaine y passe en moyenne 45 minutes chacune. Avec un assistant IA entraîné sur ses propositions types et connecté à son CRM, ce temps tombe à 12 minutes — soit 4,5 heures récupérées par semaine. Le même principe s'applique aux réponses aux appels d'offres, aux rapports d'intervention et aux comptes-rendus de réunion (transcription automatique via Whisper + résumé structuré par Claude).",
-            "La génération de contenu marketing (fiches produits, posts LinkedIn, newsletters) est le cas d'usage le plus visible mais pas forcément le plus rentable. L'enjeu n'est pas de produire du contenu en masse — c'est de produire du contenu de qualité constante sans dépendre d'un rédacteur externe à 0,10 €/mot. Un système bien configuré avec Claude ou GPT-4, alimenté par un brief structuré, produit des premiers jets que 80 % de nos clients publient avec moins de 20 % de modifications.",
+            "La **rédaction de devis et propositions commerciales** est systématiquement citée en premier par les dirigeants que nous accompagnons. Un consultant qui rédige 8 propositions par semaine y passe en moyenne **45 minutes** chacune. Avec un **assistant IA** entraîné sur ses propositions types et connecté à son *CRM*, ce temps tombe à **12 minutes** — soit **4,5 heures récupérées par semaine**. Le même principe s'applique aux réponses aux appels d'offres, aux rapports d'intervention et aux comptes-rendus de réunion (transcription automatique via *Whisper* + résumé structuré par **Claude**).",
+            "La **génération de contenu marketing** (fiches produits, posts *LinkedIn*, newsletters) est le cas d'usage le plus visible mais pas forcément le plus rentable. L'enjeu n'est pas de produire du contenu en masse — c'est de produire du contenu de **qualité constante** sans dépendre d'un rédacteur externe à 0,10 €/mot. Un système bien configuré avec **Claude** ou *GPT-4*, alimenté par un brief structuré, produit des premiers jets que **80 % de nos clients** publient avec moins de 20 % de modifications.",
           ],
           bullets: [
             "Devis et propositions : -62% de temps rédactionnel (45 min → 12 min par document)",
@@ -729,8 +729,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Cas 4 à 6 : Analyse de données et support client",
           paragraphs: [
-            "L'analyse de données non structurées est un cas d'usage sous-estimé. Les PME accumulent des années d'emails, de PDF de contrats, de retours clients, de rapports d'audit — toutes des données qui dorment dans des dossiers parce que personne n'a le temps de les analyser. Un pipeline RAG (Retrieval-Augmented Generation) permet d'interroger ce corpus en langage naturel : 'quels clients ont mentionné un problème de délai dans les 6 derniers mois ?' répond en secondes à une question qui prendrait des heures manuellement.",
-            "Le support client de premier niveau est le cas d'usage le plus mesurable en termes de ROI. Un chatbot RAG entraîné sur la documentation produit, les FAQ et les tickets passés répond correctement à 60-75 % des demandes sans intervention humaine. Pour une boutique e-commerce avec 300 tickets/mois, ça représente 180 à 225 tickets traités automatiquement — soit 15 à 20 heures de travail support récupérées par mois. Le ticket humain se concentre alors sur les cas complexes qui méritent vraiment l'attention.",
+            "L'**analyse de données non structurées** est un cas d'usage sous-estimé. Les PME accumulent des années d'emails, de PDF de contrats, de retours clients, de rapports d'audit — toutes des données qui dorment dans des dossiers parce que personne n'a le temps de les analyser. Un pipeline **RAG** (*Retrieval-Augmented Generation*) permet d'interroger ce corpus en langage naturel : 'quels clients ont mentionné un problème de délai dans les 6 derniers mois ?' répond en secondes à une question qui prendrait des heures manuellement.",
+            "Le **support client de premier niveau** est le cas d'usage le plus mesurable en termes de **ROI**. Un *chatbot* RAG entraîné sur la documentation produit, les FAQ et les tickets passés répond correctement à **60-75 %** des demandes sans intervention humaine. Pour une boutique *e-commerce* avec **300 tickets/mois**, ça représente **180 à 225 tickets traités automatiquement** — soit 15 à 20 heures de travail support récupérées par mois. Le ticket humain se concentre alors sur les cas complexes qui méritent vraiment l'attention.",
           ],
           bullets: [
             "Chatbot RAG sur documentation interne : 60 à 75% des questions répondues sans humain",
@@ -742,8 +742,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Cas 7 : L'assistant IA interne connecté à vos outils",
           paragraphs: [
-            "Le cas d'usage le plus transformateur — et le plus complexe à mettre en place — est l'assistant IA interne qui a accès à vos données en temps réel. Connecté à votre CRM, votre outil de comptabilité, votre calendrier et votre base documentaire, il peut répondre à des questions comme 'quel est le CA du client Dupont depuis janvier ?' ou 'quels sont les projets en retard cette semaine ?'. Ce n'est plus un chatbot généraliste — c'est un collaborateur virtuel qui connaît votre entreprise.",
-            "Nous avons déployé ce type de système pour 4 clients PME en 2024. La stack utilisée est invariablement la même : n8n pour l'orchestration, Claude (via API Anthropic) pour le raisonnement, Supabase ou Pinecone pour la base vectorielle, et une interface simple en React. Le coût de fonctionnement est de 50 à 200 €/mois selon le volume de requêtes. L'économie en temps de recherche d'information et en réunions de synchronisation est systématiquement supérieure à 10× ce coût dès le deuxième mois.",
+            "Le cas d'usage le plus transformateur — et le plus complexe à mettre en place — est l'**assistant IA interne** qui a accès à vos données en temps réel. Connecté à votre **CRM**, votre outil de comptabilité, votre calendrier et votre base documentaire, il peut répondre à des questions comme 'quel est le CA du client Dupont depuis janvier ?' ou 'quels sont les projets en retard cette semaine ?'. Ce n'est plus un *chatbot* généraliste — c'est un *collaborateur virtuel* qui connaît votre entreprise.",
+            "Nous avons déployé ce type de système pour **4 clients PME** en 2024. La stack utilisée est invariablement la même : **n8n** pour l'orchestration, **Claude** (via API Anthropic) pour le raisonnement, **Supabase** ou *Pinecone* pour la base vectorielle, et une interface simple en *React*. Le coût de fonctionnement est de **50 à 200 €/mois** selon le volume de requêtes. L'économie en temps de recherche d'information et en réunions de synchronisation est systématiquement supérieure à **10× ce coût** dès le deuxième mois.",
           ],
           bullets: [
             "Assistant connecté au CRM : requêtes en langage naturel sur vos données clients",
@@ -754,7 +754,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "L'IA générative pour PME n'est pas un projet de 2 ans — c'est une série de décisions concrètes que vous pouvez commencer à prendre cette semaine. Identifiez votre tâche la plus chronophage et demandez-vous si un modèle de langage pourrait en automatiser 50 %. La réponse est probablement oui. Si vous voulez qu'on analyse ensemble vos opportunités IA les plus rentables, contactez-nous pour un audit.",
+      conclusion: "L'**IA générative pour PME** n'est pas un projet de 2 ans — c'est une série de décisions concrètes que vous pouvez commencer à prendre cette semaine. Identifiez votre tâche la plus chronophage et demandez-vous si un **modèle de langage** pourrait en automatiser **50 %**. La réponse est probablement oui. Si vous voulez qu'on analyse ensemble vos **opportunités IA les plus rentables**, contactez-nous pour un audit.",
       keyTakeaways: [
         "67% des dirigeants PME connaissent l'IA générative, seulement 18% l'utilisent vraiment",
         "La rédaction de propositions commerciales offre le ROI le plus immédiat (-62% de temps)",
@@ -790,13 +790,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Newsletter", "Email Marketing", "Automatisation", "Growth"],
     available: true,
     body: {
-      intro: "En 2025, alors que la portée organique des réseaux sociaux s'effondre (2 à 5 % sur LinkedIn, moins de 1 % sur Instagram), la newsletter reste le seul canal de communication où vous êtes propriétaire de votre audience. Un abonné newsletter vaut statistiquement 5 à 10 fois plus qu'un abonné social media en termes de conversion. Voici comment nous avons construit un système de newsletter entièrement automatisé pour plusieurs clients — et comment répliquer cette approche pour votre activité.",
+      intro: "En 2025, alors que la portée organique des réseaux sociaux s'effondre (**2 à 5 %** sur *LinkedIn*, moins de **1 %** sur *Instagram*), la **newsletter** reste le seul canal de communication où vous êtes propriétaire de votre audience. Un abonné newsletter vaut statistiquement **5 à 10 fois plus** qu'un abonné *social media* en termes de conversion. Voici comment nous avons construit un système de **newsletter entièrement automatisé** pour plusieurs clients — et comment répliquer cette approche pour votre activité.",
       sections: [
         {
           title: "Les fondations : choisir le bon outil et la bonne offre d'entrée",
           paragraphs: [
-            "Le choix de l'outil de newsletter dépend de votre stade. Pour démarrer, Brevo (ex-Sendinblue) est notre recommandation pour les PME françaises : interface en français, conforme RGPD, plan gratuit jusqu'à 300 emails/jour. Pour des besoins plus avancés (segmentation fine, automatisations complexes), MailerLite ou ActiveCampaign offrent un meilleur rapport fonctionnalités/prix que Mailchimp.",
-            "La question cruciale avant de lancer : quelle est votre offre d'entrée ? Pourquoi quelqu'un devrait-il vous donner son email aujourd'hui ? Le 'inscrivez-vous à notre newsletter' ne fonctionne plus. Il vous faut un lead magnet concret : guide PDF téléchargeable, checklist actionnable, mini-formation gratuite, analyse offerte... L'offre d'entrée est responsable de 70 % du taux de conversion de votre formulaire d'inscription.",
+            "Le choix de l'outil de newsletter dépend de votre stade. Pour démarrer, **Brevo** (ex-*Sendinblue*) est notre recommandation pour les **PME françaises** : interface en français, conforme *RGPD*, plan gratuit jusqu'à **300 emails/jour**. Pour des besoins plus avancés (segmentation fine, automatisations complexes), **MailerLite** ou *ActiveCampaign* offrent un meilleur rapport fonctionnalités/prix que *Mailchimp*.",
+            "La question cruciale avant de lancer : quelle est votre **offre d'entrée** ? Pourquoi quelqu'un devrait-il vous donner son email aujourd'hui ? Le 'inscrivez-vous à notre newsletter' ne fonctionne plus. Il vous faut un **lead magnet concret** : guide PDF téléchargeable, *checklist* actionnable, mini-formation gratuite, analyse offerte... L'offre d'entrée est responsable de **70 %** du taux de conversion de votre formulaire d'inscription.",
           ],
           bullets: [
             "Brevo : RGPD natif, interface FR, gratuit jusqu'à 300 mails/jour",
@@ -808,8 +808,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "La séquence d'automation : transformer un abonné en client",
           paragraphs: [
-            "Une fois l'abonné inscrit, la séquence de bienvenue automatisée fait la différence. Les 7 premiers jours sont critiques : si vous n'envoyez rien, l'abonné oublie qui vous êtes et votre prochaine newsletter atterrira en spam. Construisez une séquence de 4 emails sur 7 jours : email de bienvenue immédiat avec le lead magnet promis, email J+2 avec votre meilleur contenu existant, email J+4 avec un cas client ou témoignage, email J+7 avec une invitation à l'action (consultation, offre).",
-            "Pour générer le contenu de ces emails avec l'IA, nous utilisons Claude : on lui fournit le contexte (secteur, audience, ton de voix) et les grandes lignes du message, et il produit un premier jet en quelques secondes. Un bon humain relit, ajuste, personnalise. Le temps de création passe de 2 heures à 25 minutes par email.",
+            "Une fois l'abonné inscrit, la **séquence de bienvenue automatisée** fait la différence. Les **7 premiers jours** sont critiques : si vous n'envoyez rien, l'abonné oublie qui vous êtes et votre prochaine newsletter atterrira en spam. Construisez une séquence de **4 emails sur 7 jours** : email de bienvenue immédiat avec le *lead magnet* promis, email J+2 avec votre meilleur contenu existant, email J+4 avec un cas client ou témoignage, email J+7 avec une invitation à l'action (consultation, offre).",
+            "Pour générer le contenu de ces emails avec l'**IA**, nous utilisons **Claude** : on lui fournit le contexte (secteur, audience, ton de voix) et les grandes lignes du message, et il produit un premier jet en quelques secondes. Un bon humain relit, ajuste, personnalise. Le temps de création passe de **2 heures à 25 minutes** par email.",
           ],
           bullets: [
             "Email J+0 : bienvenue + livraison du lead magnet promis",
@@ -821,12 +821,12 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Les leviers de croissance des 90 premiers jours",
           paragraphs: [
-            "Pour passer de 0 à 1 000 abonnés en 90 jours, il faut combiner plusieurs sources d'acquisition. La plus rapide : importer votre réseau LinkedIn existant (avec leur accord, via un formulaire ou un post dédié). La plus scalable : créer du contenu SEO qui redirige vers un formulaire d'inscription (un article qui se positionne sur Google peut générer des inscriptions pendant des années). La plus efficace à court terme : une collaboration ou échange de visibilité avec un autre créateur de contenu dans votre domaine.",
-            "Pour nos propres clients, la combinaison qui a le mieux fonctionné : un lead magnet fort, un post LinkedIn annonçant son lancement (ciblant les connexions existantes), et deux articles SEO créés en parallèle. En 90 jours, les clients qui ont suivi ce plan ont atteint entre 400 et 1 200 abonnés.",
+            "Pour passer de **0 à 1 000 abonnés en 90 jours**, il faut combiner plusieurs sources d'acquisition. La plus rapide : importer votre réseau *LinkedIn* existant (avec leur accord, via un formulaire ou un post dédié). La plus *scalable* : créer du **contenu SEO** qui redirige vers un formulaire d'inscription (un article qui se positionne sur Google peut générer des inscriptions pendant des années). La plus efficace à court terme : une collaboration ou échange de visibilité avec un autre créateur de contenu dans votre domaine.",
+            "Pour nos propres clients, la combinaison qui a le mieux fonctionné : un *lead magnet* fort, un **post LinkedIn** annonçant son lancement (ciblant les connexions existantes), et deux **articles SEO** créés en parallèle. En 90 jours, les clients qui ont suivi ce plan ont atteint entre **400 et 1 200 abonnés**.",
           ],
         },
       ],
-      conclusion: "La newsletter automatisée est un investissement de 2 à 3 semaines de mise en place pour un actif marketing qui travaille en continu pendant des années. L'automatisation ne remplace pas la qualité du contenu — elle garantit la régularité et libère votre temps pour produire ce qui compte. Si vous voulez un accompagnement pour lancer ou relancer votre newsletter, nous créons le système complet de A à Z.",
+      conclusion: "La **newsletter automatisée** est un investissement de 2 à 3 semaines de mise en place pour un *actif marketing* qui travaille en continu pendant des années. L'automatisation ne remplace pas la qualité du contenu — elle garantit la **régularité** et libère votre temps pour produire ce qui compte. Si vous voulez un accompagnement pour lancer ou relancer votre newsletter, nous créons le système complet de A à Z.",
       keyTakeaways: [
         "Un abonné newsletter vaut 5 à 10x plus qu'un abonné social media en conversion",
         "Le lead magnet est responsable de 70% du taux de conversion formulaire",
@@ -848,13 +848,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["LinkedIn", "IA", "Contenu", "Personal Branding"],
     available: true,
     body: {
-      intro: "LinkedIn est le réseau professionnel le plus efficace pour générer des leads B2B en France — devant tous les autres réseaux combinés pour les PME et indépendants. Pourtant, la majorité des dirigeants n'y publient pas régulièrement, pas faute de choses à dire, mais faute de temps et de système. Voici le système que nous avons mis en place pour Yoann Delaloy (et que nous répliquons pour nos clients) : 30 posts par mois en moins de 2 heures de travail réel.",
+      intro: "**LinkedIn** est le réseau professionnel le plus efficace pour générer des **leads B2B** en France — devant tous les autres réseaux combinés pour les PME et indépendants. Pourtant, la majorité des dirigeants n'y publient pas régulièrement, pas faute de choses à dire, mais faute de temps et de système. Voici le système que nous avons mis en place pour **Yoann Delaloy** (et que nous répliquons pour nos clients) : **30 posts par mois** en moins de **2 heures** de travail réel.",
       sections: [
         {
           title: "La stratégie : les 3 piliers de contenu qui convertissent",
           paragraphs: [
-            "Avant de parler d'IA ou d'outils, la stratégie de contenu est le fondement. Sans direction claire, l'IA produira du contenu générique qui n'engage pas. Définissez 3 piliers de contenu qui correspondent à votre expertise et à ce que votre cible veut consommer. Pour Maison Siranno, nos 3 piliers sont : 'IA appliquée au concret' (démos, cas d'usage terrain), 'automatisation pour l'indépendant' (tips pratiques, workflows), et 'entrepreneuriat digital' (réflexions, parcours, leçons apprises).",
-            "Chaque pilier doit répondre à une question simple : pourquoi quelqu'un qui me connaît pas devrait me suivre pour ce sujet ? Si vous ne pouvez pas répondre clairement, le pilier n'est pas assez précis. Affinez jusqu'à pouvoir dire : 'Je suis la meilleure source sur [sujet précis] pour [audience précise] en France'.",
+            "Avant de parler d'**IA** ou d'outils, la **stratégie de contenu** est le fondement. Sans direction claire, l'IA produira du contenu générique qui n'engage pas. Définissez **3 piliers de contenu** qui correspondent à votre expertise et à ce que votre cible veut consommer. Pour **Maison Siranno**, nos 3 piliers sont : '*IA* appliquée au concret' (démos, cas d'usage terrain), 'automatisation pour l'indépendant' (tips pratiques, *workflows*), et 'entrepreneuriat digital' (réflexions, parcours, leçons apprises).",
+            "Chaque pilier doit répondre à une question simple : pourquoi quelqu'un qui ne me connaît pas devrait me suivre pour ce sujet ? Si vous ne pouvez pas répondre clairement, le pilier n'est pas assez précis. Affinez jusqu'à pouvoir dire : '**Je suis la meilleure source** sur [sujet précis] pour [audience précise] en France'.",
           ],
           bullets: [
             "Pilier 1 : votre expertise principale (cas concrets, résultats chiffrés)",
@@ -866,8 +866,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Le système de production : une séance de 2 heures par mois",
           paragraphs: [
-            "La clé du système est la production en batch. Réservez 2 heures une fois par mois (ou 30 minutes par semaine si vous préférez) pour générer tout votre contenu d'un coup. En dehors de cette plage, vous ne réfléchissez pas à LinkedIn — vous publiez et vous interagissez, mais pas de création.",
-            "Lors de votre séance de production, commencez par lister 30 idées brutes en 20 minutes (une par post). Ne filtrez pas à ce stade — quantité avant qualité. Ensuite, prenez les 10 meilleures idées et demandez à Claude de développer chacune en post LinkedIn de 150-250 mots selon votre ton de voix. Relisez, ajustez, personnalisez. Planifiez avec un outil comme Buffer ou la planification native LinkedIn. En 2 heures, tout le mois est géré.",
+            "La clé du système est la **production en batch**. Réservez **2 heures** une fois par mois (ou 30 minutes par semaine si vous préférez) pour générer tout votre contenu d'un coup. En dehors de cette plage, vous ne réfléchissez pas à *LinkedIn* — vous publiez et vous interagissez, mais pas de création.",
+            "Lors de votre séance de production, commencez par lister **30 idées brutes** en 20 minutes (une par post). Ne filtrez pas à ce stade — quantité avant qualité. Ensuite, prenez les 10 meilleures idées et demandez à **Claude** de développer chacune en post *LinkedIn* de 150-250 mots selon votre ton de voix. Relisez, ajustez, personnalisez. Planifiez avec un outil comme **Buffer** ou la planification native *LinkedIn*. En 2 heures, **tout le mois est géré**.",
           ],
           bullets: [
             "20 min : brainstorming de 30 idées brutes sans filtre",
@@ -879,12 +879,12 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Les formats qui performent le mieux en 2025",
           paragraphs: [
-            "L'algorithme LinkedIn en 2025 favorise trois types de contenu : les posts avec storytelling personnel (les 'voilà ce que j'ai appris'), les contenus actionables avec listes numérotées ou à puces, et les posts qui posent une question et invitent au débat. Les carrousels (documents PDF) restent très performants mais demandent plus de temps de production.",
-            "Ce qui a le moins marché pour nos clients en 2024 : les posts purement promotionnels ('nous venons de lancer...') et les articles trop longs sans accroche forte. Sur LinkedIn, l'accroche (les 2 premières lignes avant le 'voir plus') est responsable de 80 % de la décision de lire ou non.",
+            "L'algorithme **LinkedIn** en 2025 favorise trois types de contenu : les posts avec *storytelling* personnel (les 'voilà ce que j'ai appris'), les contenus actionnables avec listes numérotées ou à puces, et les posts qui posent une question et invitent au débat. Les *carrousels* (documents PDF) restent très performants mais demandent plus de temps de production.",
+            "Ce qui a le moins marché pour nos clients en 2024 : les posts purement promotionnels ('nous venons de lancer...') et les articles trop longs sans accroche forte. Sur **LinkedIn**, l'accroche (les **2 premières lignes** avant le 'voir plus') est responsable de **80 %** de la décision de lire ou non.",
           ],
         },
       ],
-      conclusion: "30 posts LinkedIn par mois avec l'IA ne signifie pas 30 posts génériques sans âme. L'IA accélère la rédaction, mais c'est votre perspective, vos expériences réelles et votre ton de voix qui donnent de la valeur au contenu. Le système marche parce qu'il élimine la friction de la page blanche — pas parce qu'il supprime l'humain de l'équation.",
+      conclusion: "**30 posts LinkedIn par mois** avec l'IA ne signifie pas 30 posts génériques sans âme. L'**IA** accélère la rédaction, mais c'est votre perspective, vos expériences réelles et votre **ton de voix** qui donnent de la valeur au contenu. Le système marche parce qu'il élimine la friction de la *page blanche* — pas parce qu'il supprime l'humain de l'équation.",
       keyTakeaways: [
         "3 piliers de contenu bien définis > 30 sujets dispersés",
         "La production en batch (2h/mois) est plus efficace que 10 min par jour",
@@ -906,13 +906,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Personal Branding", "LinkedIn", "Autorité", "Dirigeant"],
     available: true,
     body: {
-      intro: "Selon une étude LinkedIn de 2024, les contenus publiés par les dirigeants d'entreprise génèrent en moyenne 3 fois plus d'engagement que les mêmes contenus publiés par la page entreprise. Et les prospects qui suivent un dirigeant avant de devenir clients ont un taux de conversion 2 fois supérieur. Le personal branding n'est pas une mode réservée aux influenceurs — c'est un levier commercial direct, mesurable et durable. Voici comment l'approcher méthodiquement sur 6 mois.",
+      intro: "Selon une étude *LinkedIn* de 2024, les contenus publiés par les dirigeants d'entreprise génèrent en moyenne **3 fois plus d'engagement** que les mêmes contenus publiés par la page entreprise. Et les prospects qui suivent un dirigeant avant de devenir clients ont un **taux de conversion 2 fois supérieur**. Le **personal branding** n'est pas une mode réservée aux influenceurs — c'est un levier commercial direct, mesurable et durable. Voici comment l'approcher méthodiquement sur **6 mois**.",
       sections: [
         {
           title: "Les 4 semaines de fondation : positionnement et identité",
           paragraphs: [
-            "Avant de publier un seul post, il faut définir ce pour quoi vous voulez être connu. Pas ce que vous faites — ce que vous apportez de différent. 'Je suis consultant en transformation digitale' est un titre. 'Je suis le consultant qui dit non aux projets qui ne servent pas les équipes opérationnelles' est un positionnement. La différence entre les deux détermine si quelqu'un vous suit ou vous ignore.",
-            "Pour Yoann Delaloy, le positionnement retenu est : l'expert qui montre concrètement comment l'IA et l'automatisation transforment le quotidien des indépendants et des PME — avec des exemples réels, des chiffres vrais, et sans bullshit marketing. Ce positionnement précis attire exactement le bon public et repousse les mauvais fits — ce qui est aussi précieux.",
+            "Avant de publier un seul post, il faut définir ce pour quoi vous voulez être connu. Pas ce que vous faites — ce que vous apportez de différent. 'Je suis consultant en transformation digitale' est un titre. '**Je suis le consultant qui dit non aux projets** qui ne servent pas les équipes opérationnelles' est un positionnement. La différence entre les deux détermine si quelqu'un vous suit ou vous ignore.",
+            "Pour **Yoann Delaloy**, le positionnement retenu est : l'expert qui montre concrètement comment l'**IA** et l'**automatisation** transforment le quotidien des indépendants et des PME — avec des exemples réels, des chiffres vrais, et sans *bullshit marketing*. Ce **positionnement précis** attire exactement le bon public et repousse les mauvais *fits* — ce qui est aussi précieux.",
           ],
           bullets: [
             "Définir votre angle différenciant en une phrase (pas votre métier — votre perspective unique)",
@@ -924,19 +924,19 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Mois 2 et 3 : construction de l'audience et premiers contenus",
           paragraphs: [
-            "Les deux premiers mois servent à tester les formats et à trouver votre voix. Publiez 3 fois par semaine minimum, mesurez les impressions et l'engagement, et notez ce qui résonne le mieux avec votre audience. Ne vous attachez pas trop tôt à un format — ce qui fonctionne pour un consultant IT ne fonctionnera pas forcément pour un expert RH.",
-            "Pour accélérer la croissance de l'audience, deux leviers complémentaires : l'engagement sortant (commenter 10-15 posts de personnes influentes dans votre domaine chaque jour) et les collaborations (interviews croisées, co-publications, partages mutuels avec des créateurs de contenu complémentaires).",
+            "Les deux premiers mois servent à tester les formats et à **trouver votre voix**. Publiez **3 fois par semaine minimum**, mesurez les impressions et l'engagement, et notez ce qui résonne le mieux avec votre audience. Ne vous attachez pas trop tôt à un format — ce qui fonctionne pour un consultant *IT* ne fonctionnera pas forcément pour un expert *RH*.",
+            "Pour accélérer la croissance de l'audience, deux leviers complémentaires : l'**engagement sortant** (commenter 10-15 posts de personnes influentes dans votre domaine chaque jour) et les **collaborations** (interviews croisées, co-publications, partages mutuels avec des créateurs de contenu complémentaires).",
           ],
         },
         {
           title: "Mois 4-6 : monétisation et pilotage",
           paragraphs: [
-            "À partir du 4ème mois, si la régularité est là, les premiers résultats business commencent à apparaître. Demandes entrantes d'interviews, propositions de partenariats, leads entrants qui mentionnent avoir 'vu vos posts'... C'est le moment d'introduire un CTA clair dans votre contenu — pas sur chaque post, mais régulièrement.",
-            "Mettez en place un tableau de bord simple pour piloter : abonnés par semaine, impressions par post, taux d'engagement moyen, et surtout leads entrants attribuables à LinkedIn. Ces données vous permettent de doubler ce qui fonctionne et d'abandonner ce qui ne convertit pas.",
+            "À partir du **4ème mois**, si la régularité est là, les premiers résultats business commencent à apparaître. Demandes entrantes d'interviews, propositions de partenariats, **leads entrants** qui mentionnent avoir 'vu vos posts'... C'est le moment d'introduire un **CTA clair** dans votre contenu — pas sur chaque post, mais régulièrement.",
+            "Mettez en place un **tableau de bord simple** pour piloter : abonnés par semaine, impressions par post, taux d'engagement moyen, et surtout **leads entrants attribuables à LinkedIn**. Ces données vous permettent de doubler ce qui fonctionne et d'abandonner ce qui ne convertit pas.",
           ],
         },
       ],
-      conclusion: "Le personal branding est un marathon, pas un sprint. En 6 mois de travail régulier et méthodique, il est réaliste de construire une audience de 1 000 à 3 000 abonnés qualifiés et de générer ses premiers leads attribuables. Le ROI n'est pas immédiat — il est exponentiel : chaque post que vous publiez aujourd'hui continue de travailler pour vous pendant des mois.",
+      conclusion: "Le **personal branding** est un marathon, pas un sprint. En **6 mois** de travail régulier et méthodique, il est réaliste de construire une audience de **1 000 à 3 000 abonnés qualifiés** et de générer ses premiers leads attribuables. Le **ROI** n'est pas immédiat — il est *exponentiel* : chaque post que vous publiez aujourd'hui continue de travailler pour vous pendant des mois.",
       keyTakeaways: [
         "Le positionnement différenciant prime sur la régularité seule",
         "Engagement sortant (commentaires) accélère la croissance x2 à x3",
@@ -957,13 +957,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Tunnel de Vente", "Email", "Conversion", "Automation"],
     available: true,
     body: {
-      intro: "Un tunnel de vente automatisé n'est pas un emailing de masse envoyé à toute votre liste. C'est un système qui identifie où en est chaque prospect dans sa réflexion, lui envoie le bon message au bon moment, et l'accompagne naturellement vers la décision d'achat — sans intervention humaine à chaque étape. En 2025, les outils disponibles permettent de construire ce système avec un niveau de personnalisation et d'intelligence qui était réservé aux grandes marques il y a 3 ans. Voici la méthode complète.",
+      intro: "Un **tunnel de vente automatisé** n'est pas un *emailing* de masse envoyé à toute votre liste. C'est un système qui identifie où en est chaque prospect dans sa réflexion, lui envoie le bon message au bon moment, et l'accompagne naturellement vers la **décision d'achat** — sans intervention humaine à chaque étape. En 2025, les outils disponibles permettent de construire ce système avec un niveau de **personnalisation et d'intelligence** qui était réservé aux grandes marques il y a 3 ans. Voici la méthode complète.",
       sections: [
         {
           title: "L'architecture en 4 phases : attirer, capturer, nourrir, convertir",
           paragraphs: [
-            "Tout tunnel de vente performant suit la même logique en 4 phases. La phase d'attraction génère du trafic qualifié vers votre contenu (SEO, LinkedIn, publicité ciblée). La phase de capture transforme ce trafic en leads identifiés via un lead magnet — un contenu à forte valeur (guide, template, checklist, mini-formation) échangé contre une adresse email. La phase de nurturing entretient la relation via une séquence d'emails qui éduquent et qualifient le prospect. La phase de conversion propose l'offre commerciale au moment optimal.",
-            "L'erreur la plus courante est de sauter directement de la capture à la conversion. Un prospect qui vient de télécharger votre guide n'est pas prêt à acheter — il vous découvre. Une séquence de nurturing bien construite a pour objectif de lui donner suffisamment de valeur gratuitement pour qu'il associe votre expertise à son problème. Statistiquement, les prospects nourris pendant 7 à 10 touchpoints convertissent à un taux 3 à 4 fois supérieur à ceux approchés immédiatement.",
+            "Tout tunnel de vente performant suit la même logique en **4 phases**. La phase d'*attraction* génère du trafic qualifié vers votre contenu (**SEO**, *LinkedIn*, publicité ciblée). La phase de *capture* transforme ce trafic en leads identifiés via un **lead magnet** — un contenu à forte valeur (guide, *template*, *checklist*, mini-formation) échangé contre une adresse email. La phase de *nurturing* entretient la relation via une séquence d'emails qui éduquent et qualifient le prospect. La phase de **conversion** propose l'offre commerciale au moment optimal.",
+            "L'erreur la plus courante est de sauter directement de la capture à la conversion. Un prospect qui vient de télécharger votre guide n'est pas prêt à acheter — il vous découvre. Une **séquence de nurturing** bien construite a pour objectif de lui donner suffisamment de valeur gratuitement pour qu'il associe votre expertise à son problème. Statistiquement, les prospects nourris pendant **7 à 10 touchpoints** convertissent à un taux **3 à 4 fois supérieur** à ceux approchés immédiatement.",
           ],
           bullets: [
             "Lead magnet : 1 problème précis, 1 solution concrète, livraison immédiate",
@@ -975,8 +975,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Personnaliser avec l'IA : du mass mailing à la conversation individuelle",
           paragraphs: [
-            "Le changement majeur apporté par l'IA au tunnel de vente est la personnalisation à l'échelle. Avec un outil comme Brevo ou ActiveCampaign couplé à une API de LLM, chaque email peut être adapté au secteur d'activité du prospect, à sa taille d'entreprise, aux pages qu'il a consultées sur votre site et aux réponses qu'il a données dans votre formulaire de capture. Deux prospects qui téléchargent le même guide reçoivent des séquences différentes selon leur profil.",
-            "Nous avons testé cette approche sur une campagne de 1 200 prospects pour un client cabinet de conseil en 2024. La personnalisation par secteur (3 variantes : industrie, retail, services) a augmenté le taux d'ouverture moyen de 22 % à 41 %, et le taux de clics de 3,8 % à 11,2 %. La conversion finale (demande de RDV) est passée de 1,4 % à 4,7 % — soit 3,3 fois plus de prospects qualifiés pour le même volume de trafic.",
+            "Le changement majeur apporté par l'**IA** au tunnel de vente est la **personnalisation à l'échelle**. Avec un outil comme **Brevo** ou *ActiveCampaign* couplé à une API de **LLM**, chaque email peut être adapté au secteur d'activité du prospect, à sa taille d'entreprise, aux pages qu'il a consultées sur votre site et aux réponses qu'il a données dans votre formulaire de capture. Deux prospects qui téléchargent le même guide reçoivent des séquences différentes selon leur profil.",
+            "Nous avons testé cette approche sur une campagne de **1 200 prospects** pour un client cabinet de conseil en 2024. La personnalisation par secteur (3 variantes : industrie, retail, services) a augmenté le **taux d'ouverture de 22 % à 41 %**, et le taux de clics de **3,8 % à 11,2 %**. La conversion finale (demande de RDV) est passée de 1,4 % à **4,7 %** — soit **3,3 fois** plus de prospects qualifiés pour le même volume de trafic.",
           ],
           bullets: [
             "Personnalisation par secteur : taux d'ouverture +87% vs email générique",
@@ -989,8 +989,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Les outils et la stack pour un tunnel automatisé en 2025",
           paragraphs: [
-            "Pour une PME française, notre stack de référence est : Brevo (ex-Sendinblue) pour l'emailing et l'automatisation (tarification en euros, RGPD natif, interface en français, plan gratuit jusqu'à 300 emails/jour), Typeform ou Tally pour les formulaires de capture, et n8n pour l'orchestration des logiques complexes (scoring, synchronisation CRM, déclenchements conditionnels). L'ensemble peut être opérationnel en 2 à 3 jours de configuration.",
-            "Le point critique est la configuration du scoring et des déclencheurs. Un tunnel qui envoie le mail de vente trop tôt génère des désabonnements. Trop tard, il perd des prospects prêts à acheter. Notre paramétrage de référence : email de conversion déclenché après 3 ouvertures consécutives OU 1 visite de la page tarifs/services ET un délai minimum de 5 jours depuis le lead magnet. Ce paramètre seul peut doubler le taux de conversion par rapport à une simple séquence chronologique.",
+            "Pour une **PME française**, notre stack de référence est : **Brevo** (ex-*Sendinblue*) pour l'*emailing* et l'automatisation (tarification en euros, *RGPD* natif, interface en français, plan gratuit jusqu'à **300 emails/jour**), *Typeform* ou **Tally** pour les formulaires de capture, et **n8n** pour l'orchestration des logiques complexes (*scoring*, synchronisation *CRM*, déclenchements conditionnels). L'ensemble peut être opérationnel en **2 à 3 jours** de configuration.",
+            "Le point critique est la configuration du **scoring** et des déclencheurs. Un tunnel qui envoie le mail de vente trop tôt génère des désabonnements. Trop tard, il perd des prospects prêts à acheter. Notre paramétrage de référence : email de conversion déclenché après **3 ouvertures consécutives** OU 1 visite de la page tarifs/services ET un délai minimum de **5 jours** depuis le *lead magnet*. Ce paramètre seul peut **doubler le taux de conversion** par rapport à une simple séquence chronologique.",
           ],
           bullets: [
             "Brevo : emailing RGPD, automation visuelle, plan gratuit généreux, 100% français",
@@ -1001,7 +1001,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "Un tunnel de vente automatisé construit correctement tourne sans maintenance et génère des leads qualifiés 24h/24. Mais 'construit correctement' est le point clé — un tunnel mal segmenté ou sans personnalisation peut faire plus de mal que de bien à votre réputation d'expéditeur. Prenez le temps de la configuration initiale, mesurez rigoureusement les taux à chaque étape, et itérez. Si vous voulez qu'on construise ce système pour vous, parlons-en.",
+      conclusion: "Un **tunnel de vente automatisé** construit correctement tourne sans maintenance et génère des **leads qualifiés 24h/24**. Mais 'construit correctement' est le point clé — un tunnel mal segmenté ou sans personnalisation peut faire plus de mal que de bien à votre réputation d'expéditeur. Prenez le temps de la configuration initiale, mesurez rigoureusement les taux à chaque étape, et *itérez*. Si vous voulez qu'on construise ce système pour vous, parlons-en.",
       keyTakeaways: [
         "Les prospects nourris sur 7-10 touchpoints convertissent 3 à 4x mieux que ceux approchés directement",
         "La personnalisation par secteur multiplie le taux de conversion par 3,3 selon nos tests",
@@ -1037,13 +1037,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Audit", "Stratégie", "PME", "Digital"],
     available: true,
     body: {
-      intro: "Beaucoup de dirigeants de PME savent qu'ils devraient 'faire quelque chose' pour leur présence digitale mais ne savent pas par où commencer ni où concentrer leur énergie. Un audit digital structuré permet de répondre à ces questions en une journée — sans consultant externe, sans budget, juste avec les bons outils et la bonne méthode. Voici comment nous conduisons un audit digital rapide pour nos clients et comment vous pouvez le faire vous-même.",
+      intro: "Beaucoup de dirigeants de PME savent qu'ils devraient 'faire quelque chose' pour leur **présence digitale** mais ne savent pas par où commencer ni où concentrer leur énergie. Un **audit digital structuré** permet de répondre à ces questions en une journée — sans consultant externe, sans budget, juste avec les bons outils et la bonne méthode. Voici comment nous conduisons un *audit digital* rapide pour nos clients et comment vous pouvez le faire vous-même.",
       sections: [
         {
           title: "Bloc 1 (matin) : site web et référencement",
           paragraphs: [
-            "Commencez par votre site web. Quatre outils gratuits suffisent pour un premier audit complet : Google PageSpeed Insights (performance et Core Web Vitals), Google Search Console (si déjà configuré, sinon installez-le aujourd'hui), SEMrush version gratuite (mots-clés sur lesquels vous êtes positionné) et l'outil de test mobile de Google.",
-            "Pour chaque outil, notez les 3 problèmes les plus critiques — pas la liste exhaustive. L'objectif d'un audit n'est pas de recenser tous les problèmes mais d'identifier les 5 à 10 actions qui auront le plus d'impact. Un site qui charge en 8 secondes doit d'abord résoudre ce problème avant de s'occuper de sa balise alt manquante.",
+            "Commencez par votre site web. Quatre outils gratuits suffisent pour un premier audit complet : **Google PageSpeed Insights** (performance et *Core Web Vitals*), **Google Search Console** (si déjà configuré, sinon installez-le aujourd'hui), *SEMrush* version gratuite (mots-clés sur lesquels vous êtes positionné) et l'outil de test mobile de Google.",
+            "Pour chaque outil, notez les **3 problèmes les plus critiques** — pas la liste exhaustive. L'objectif d'un audit n'est pas de recenser tous les problèmes mais d'identifier les **5 à 10 actions qui auront le plus d'impact**. Un site qui charge en 8 secondes doit d'abord résoudre ce problème avant de s'occuper de sa *balise alt* manquante.",
           ],
           bullets: [
             "PageSpeed Insights : score < 50 en mobile = urgence",
@@ -1055,8 +1055,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Bloc 2 (après-midi) : présence locale et réseaux sociaux",
           paragraphs: [
-            "Votre fiche Google Business Profile est-elle complète, à jour et régulièrement animée ? Vérifiez les horaires, les photos (au moins 10, dont une ajoutée dans les 3 derniers mois), les avis (répondez à tous ceux sans réponse) et la catégorie principale. Une fiche Google bien optimisée peut générer plus de contacts qu'un site web pour un commerce local.",
-            "Pour les réseaux sociaux, posez-vous une question simple : est-ce que le dernier post sur vos pages professionnelles date de moins de 30 jours ? Si votre dernière publication remonte à plus de 3 mois, un prospect qui tombe sur votre page va se demander si vous êtes encore en activité. Mieux vaut supprimer un profil inactif que de le laisser visible avec du contenu périmé.",
+            "Votre fiche **Google Business Profile** est-elle complète, à jour et régulièrement animée ? Vérifiez les horaires, les photos (au moins **10 photos**, dont une ajoutée dans les 3 derniers mois), les avis (répondez à tous ceux sans réponse) et la catégorie principale. Une **fiche Google bien optimisée** peut générer plus de contacts qu'un site web pour un commerce local.",
+            "Pour les réseaux sociaux, posez-vous une question simple : est-ce que le dernier post sur vos pages professionnelles date de **moins de 30 jours** ? Si votre dernière publication remonte à plus de 3 mois, un prospect qui tombe sur votre page va se demander si vous êtes encore en activité. Mieux vaut supprimer un **profil inactif** que de le laisser visible avec du contenu périmé.",
           ],
           bullets: [
             "Google Business Profile : photos récentes, horaires exacts, réponses aux avis",
@@ -1068,12 +1068,12 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Bloc 3 : outils internes et organisation",
           paragraphs: [
-            "Un audit digital n'est pas complet sans un regard sur vos outils internes : avez-vous un CRM (même basique) pour gérer vos contacts clients ? Vos fichiers sont-ils organisés et accessibles par votre équipe ? Avez-vous une solution de sauvegarde pour vos données critiques ?",
-            "Pour finir l'audit, construisez un tableau simple en 3 colonnes : Problème identifié / Impact estimé (1-3) / Effort estimé (1-3). Triez par ratio impact/effort décroissant — ce sont vos actions prioritaires pour les 90 prochains jours.",
+            "Un audit digital n'est pas complet sans un regard sur vos outils internes : avez-vous un **CRM** (même basique) pour gérer vos contacts clients ? Vos fichiers sont-ils organisés et accessibles par votre équipe ? Avez-vous une solution de **sauvegarde** pour vos données critiques ?",
+            "Pour finir l'audit, construisez un tableau simple en 3 colonnes : Problème identifié / **Impact estimé** (1-3) / **Effort estimé** (1-3). Triez par *ratio impact/effort* décroissant — ce sont vos **actions prioritaires pour les 90 prochains jours**.",
           ],
         },
       ],
-      conclusion: "Un audit digital ne vaut que s'il débouche sur un plan d'action concret. À la fin de votre journée, vous devriez avoir une liste de 5 à 10 actions priorisées avec un responsable et une date pour chacune. Si le résultat de cet audit vous dépasse ou si vous voulez un regard externe pour prioriser, c'est exactement le type d'accompagnement que nous proposons.",
+      conclusion: "Un **audit digital** ne vaut que s'il débouche sur un **plan d'action concret**. À la fin de votre journée, vous devriez avoir une liste de **5 à 10 actions priorisées** avec un responsable et une date pour chacune. Si le résultat de cet audit vous dépasse ou si vous voulez un regard externe pour prioriser, c'est exactement le type d'accompagnement que nous proposons.",
       keyTakeaways: [
         "Google PageSpeed, Search Console et un test mobile suffisent pour un audit site web basique",
         "Une fiche Google Business Profile bien tenue peut générer plus de contacts qu'un site web",
@@ -1094,13 +1094,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["ROI", "Transformation Digitale", "KPI", "Stratégie"],
     available: true,
     body: {
-      intro: "Combien ça rapporte, concrètement ? C'est la question que tout dirigeant a le droit de poser avant d'investir dans un projet digital — et c'est une question à laquelle beaucoup d'agences et de consultants peinent à répondre avec précision. Le ROI de la transformation digitale est calculable, mesurable et souvent sous-estimé par les entreprises qui n'ont pas les bons indicateurs. Voici notre méthode pour le calculer honnêtement.",
+      intro: "Combien ça rapporte, concrètement ? C'est la question que tout dirigeant a le droit de poser avant d'investir dans un projet digital — et c'est une question à laquelle beaucoup d'agences et de consultants peinent à répondre avec précision. Le **ROI de la transformation digitale** est calculable, mesurable et souvent **sous-estimé** par les entreprises qui n'ont pas les bons indicateurs. Voici notre méthode pour le calculer honnêtement.",
       sections: [
         {
           title: "Les 4 types de valeur d'un projet digital",
           paragraphs: [
-            "La valeur d'un projet digital ne se mesure pas seulement en chiffre d'affaires supplémentaire. Elle se décompose en quatre catégories : le temps économisé (valeur = heures × coût horaire de la personne concernée), les revenus générés (nouveaux clients, commandes, leads convertis directement attribuables), les coûts évités (erreurs humaines, pertes de données, pénalités, coûts d'outils remplacés) et la valeur qualitative (satisfaction client, réputation, attractivité pour les recrutements).",
-            "La plupart des calculs de ROI digital ne comptabilisent que la première catégorie. En intégrant les quatre, le retour sur investissement réel est souvent 2 à 3 fois supérieur à l'estimation initiale. JD Rénovation, par exemple, a gagné 2 heures par jour sur la gestion administrative (temps économisé) et généré +60 % de demandes de devis en 2 mois (revenus générés) — soit un ROI positif dès le 4ème mois.",
+            "La valeur d'un projet digital ne se mesure pas seulement en chiffre d'affaires supplémentaire. Elle se décompose en **quatre catégories** : le *temps économisé* (valeur = heures × coût horaire de la personne concernée), les *revenus générés* (nouveaux clients, commandes, leads convertis directement attribuables), les **coûts évités** (erreurs humaines, pertes de données, pénalités, coûts d'outils remplacés) et la *valeur qualitative* (satisfaction client, réputation, attractivité pour les recrutements).",
+            "La plupart des calculs de **ROI digital** ne comptabilisent que la première catégorie. En intégrant les quatre, le retour sur investissement réel est souvent **2 à 3 fois supérieur** à l'estimation initiale. **JD Rénovation**, par exemple, a gagné **2 heures par jour** sur la gestion administrative (temps économisé) et généré **+60 % de demandes de devis** en 2 mois (revenus générés) — soit un ROI positif dès le 4ème mois.",
           ],
           bullets: [
             "Temps économisé = heures/semaine × semaines/an × coût horaire réel",
@@ -1112,14 +1112,14 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "La méthode concrète : avant/après mesurable",
           paragraphs: [
-            "Avant de démarrer tout projet digital, définissez vos indicateurs de base actuels. Combien de leads entrants par semaine ? Quel temps passé sur la tâche cible ? Quel taux d'erreur ? Quel score de satisfaction client ? Ces chiffres de départ sont votre référence — sans eux, vous ne pourrez pas prouver le ROI ultérieurement.",
-            "Après le déploiement, mesurez les mêmes indicateurs à 1 mois, 3 mois et 6 mois. Les projets digitaux ont souvent une courbe en J : une légère dégradation au démarrage (période d'adaptation) puis une amélioration progressive qui dépasse le niveau initial. Ne concluez pas trop tôt.",
+            "Avant de démarrer tout projet digital, définissez vos **indicateurs de base actuels**. Combien de leads entrants par semaine ? Quel temps passé sur la tâche cible ? Quel taux d'erreur ? Quel score de satisfaction client ? Ces *chiffres de départ* sont votre référence — sans eux, vous ne pourrez pas **prouver le ROI** ultérieurement.",
+            "Après le déploiement, mesurez les mêmes indicateurs à **1 mois, 3 mois et 6 mois**. Les projets digitaux ont souvent une *courbe en J* : une légère dégradation au démarrage (période d'adaptation) puis une amélioration progressive qui dépasse le niveau initial. Ne concluez pas trop tôt.",
           ],
         },
         {
           title: "Les projets avec le meilleur ROI en PME",
           paragraphs: [
-            "Sans surprise, les projets d'automatisation ont souvent le meilleur ROI à court terme car ils touchent directement le temps des équipes. Viennent ensuite les projets de génération de leads digitaux (site + SEO + newsletter) qui ont un ROI différé mais durable. Les outils de collaboration interne (Google Workspace, Notion, CRM) ont un ROI plus difficile à mesurer mais réel en termes de fluidité opérationnelle.",
+            "Sans surprise, les projets d'**automatisation** ont souvent le **meilleur ROI à court terme** car ils touchent directement le temps des équipes. Viennent ensuite les projets de génération de leads digitaux (**site + SEO + newsletter**) qui ont un ROI différé mais durable. Les outils de collaboration interne (*Google Workspace*, *Notion*, **CRM**) ont un ROI plus difficile à mesurer mais réel en termes de fluidité opérationnelle.",
           ],
           bullets: [
             "Automatisation des tâches répétitives : ROI positif en 1-3 mois",
@@ -1129,7 +1129,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "Le ROI de la transformation digitale n'est pas une promesse abstraite — c'est un calcul qu'on peut faire avec rigueur avant, pendant et après un projet. Les dirigeants qui demandent des indicateurs précis dès le départ font de meilleures décisions d'investissement et obtiennent de meilleurs résultats. C'est pourquoi nous définissons toujours les KPIs cibles avant de démarrer une mission.",
+      conclusion: "Le **ROI de la transformation digitale** n'est pas une promesse abstraite — c'est un calcul qu'on peut faire avec rigueur avant, pendant et après un projet. Les dirigeants qui demandent des **indicateurs précis dès le départ** font de meilleures décisions d'investissement et obtiennent de meilleurs résultats. C'est pourquoi nous définissons toujours les ***KPIs* cibles** avant de démarrer une mission.",
       keyTakeaways: [
         "Le ROI digital se calcule sur 4 dimensions : temps, revenus, coûts évités, qualité",
         "Sans mesures de départ, vous ne pourrez pas prouver le ROI ensuite",
@@ -1150,20 +1150,20 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Formation", "IA", "Équipes", "Change Management"],
     available: true,
     body: {
-      intro: "L'enquête France Num 2024 révèle que 67 % des salariés de PME ont entendu parler de l'IA au travail mais seulement 12 % l'utilisent régulièrement dans leurs tâches quotidiennes. Ce fossé n'est pas dû à un manque d'intérêt — il est dû à un manque d'accompagnement. Former ses équipes à l'IA n'est pas seulement une question d'outil : c'est un changement de posture, de méthode de travail et de rapport au temps. Voici ce que nous avons appris en conduisant des formations IA pour des PME de 5 à 80 salariés.",
+      intro: "L'enquête *France Num* 2024 révèle que **67 %** des salariés de PME ont entendu parler de l'**IA** au travail mais seulement **12 %** l'utilisent régulièrement dans leurs tâches quotidiennes. Ce fossé n'est pas dû à un manque d'intérêt — il est dû à un manque d'accompagnement. **Former ses équipes à l'IA** n'est pas seulement une question d'outil : c'est un changement de posture, de méthode de travail et de rapport au temps. Voici ce que nous avons appris en conduisant des **formations IA** pour des PME de 5 à 80 salariés.",
       sections: [
         {
           title: "Pourquoi les formations IA classiques échouent",
           paragraphs: [
-            "Les formations IA qui échouent ont toutes le même problème : elles sont trop génériques. Expliquer comment fonctionne un LLM à une assistante de direction ou à un commercial terrain est inefficace. Ce qu'ils veulent savoir, c'est : comment cet outil va changer MA journée de travail, sur MES tâches spécifiques ?",
-            "La deuxième erreur fréquente est de former sans contexte d'application immédiate. Une formation de 2 jours en salle, sans suivi, produit des collaborateurs qui ont 'entendu parler de l'IA' mais ne l'intègrent pas dans leur pratique. La formation doit être courte, pratique, et immédiatement applicable sur des cas concrets issus du quotidien de l'entreprise.",
+            "Les **formations IA** qui échouent ont toutes le même problème : elles sont trop génériques. Expliquer comment fonctionne un **LLM** à une assistante de direction ou à un commercial terrain est inefficace. Ce qu'ils veulent savoir, c'est : comment cet outil va changer **MA journée de travail**, sur **MES tâches spécifiques** ?",
+            "La deuxième erreur fréquente est de former sans contexte d'application immédiate. Une formation de **2 jours en salle**, sans suivi, produit des collaborateurs qui ont 'entendu parler de l'IA' mais ne l'intègrent pas dans leur pratique. La formation doit être **courte, pratique**, et immédiatement applicable sur des cas concrets issus du quotidien de l'entreprise.",
           ],
         },
         {
           title: "Notre programme en 3 phases",
           paragraphs: [
-            "Phase 1 (demi-journée) : Démystifier et rassurer. Avant tout, il faut adresser les peurs — la peur de perdre son emploi, la peur de paraître incompétent, la peur de 'mal utiliser' l'IA. Cette phase utilise des exemples concrets du secteur de l'entreprise pour montrer ce que l'IA fait bien, ce qu'elle fait mal, et ce que les humains font mieux.",
-            "Phase 2 (1 journée) : Applications pratiques sur les cas de l'entreprise. Chaque participant amène 3 tâches répétitives de son quotidien. On construit ensemble, en live, les prompts et workflows pour les automatiser ou les accélérer. C'est la phase qui crée le plus d'engagement — les gens voient leur propre travail transformé en temps réel.",
+            "**Phase 1** (demi-journée) : Démystifier et rassurer. Avant tout, il faut adresser les peurs — la peur de perdre son emploi, la peur de paraître incompétent, la peur de 'mal utiliser' l'**IA**. Cette phase utilise des exemples concrets du secteur de l'entreprise pour montrer ce que l'IA fait bien, ce qu'elle fait mal, et ce que les humains font mieux.",
+            "**Phase 2** (1 journée) : Applications pratiques sur les cas de l'entreprise. Chaque participant amène **3 tâches répétitives** de son quotidien. On construit ensemble, en live, les *prompts* et *workflows* pour les automatiser ou les accélérer. C'est la phase qui crée le **plus d'engagement** — les gens voient leur propre travail transformé en temps réel.",
           ],
           bullets: [
             "Phase 1 : Démystifier l'IA, adresser les peurs, contexte secteur",
@@ -1174,12 +1174,12 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Les résultats observés après 3 mois",
           paragraphs: [
-            "Sur les 4 formations IA que nous avons conduites en 2024-2025, les résultats à 3 mois sont cohérents : entre 60 et 80 % des participants utilisent l'IA de façon régulière dans leur travail, avec un gain de temps moyen de 45 minutes à 1h30 par jour. Deux équipes ont spontanément créé un 'wiki IA interne' pour partager leurs meilleures pratiques.",
-            "Le facteur de succès le plus important ? L'implication d'au moins un manager de proximité dans la formation. Quand le manager utilise lui-même les outils et encourage leur usage, le taux d'adoption est de 75 %. Quand la formation est uniquement bottom-up (les équipes sans les managers), il tombe à 35 %.",
+            "Sur les **4 formations IA** que nous avons conduites en 2024-2025, les résultats à 3 mois sont cohérents : entre **60 et 80 %** des participants utilisent l'IA de façon régulière dans leur travail, avec un **gain de temps moyen de 45 minutes à 1h30 par jour**. Deux équipes ont spontanément créé un '*wiki IA interne*' pour partager leurs meilleures pratiques.",
+            "Le facteur de succès le plus important ? L'implication d'**au moins un manager de proximité** dans la formation. Quand le manager utilise lui-même les outils et encourage leur usage, le **taux d'adoption est de 75 %**. Quand la formation est uniquement *bottom-up* (les équipes sans les managers), il tombe à **35 %**.",
           ],
         },
       ],
-      conclusion: "Former ses équipes à l'IA est un investissement à ROI mesurable : entre 45 minutes et 1h30 de productivité gagnée par collaborateur et par jour, soit 150 à 300 heures annuelles par employé. Sur une équipe de 10 personnes, c'est l'équivalent d'1 à 2 ETP récupérés sans embauche. Si vous voulez discuter d'un programme adapté à votre secteur et à la taille de votre équipe, contactez-nous.",
+      conclusion: "**Former ses équipes à l'IA** est un investissement à **ROI mesurable** : entre **45 minutes et 1h30** de productivité gagnée par collaborateur et par jour, soit **150 à 300 heures annuelles** par employé. Sur une équipe de 10 personnes, c'est l'équivalent d'**1 à 2 ETP** récupérés sans embauche. Si vous voulez discuter d'un programme adapté à votre secteur et à la taille de votre équipe, contactez-nous.",
       keyTakeaways: [
         "Les formations IA génériques échouent — il faut partir des cas concrets de l'entreprise",
         "L'implication des managers divise par 2 le risque d'échec de l'adoption",
@@ -1200,13 +1200,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["CDO", "CDAO", "Conseil", "Stratégie", "PME"],
     available: true,
     body: {
-      intro: "Le rôle de Chief Data & AI Officer (CDAO) est en train de devenir indispensable dans toutes les organisations — y compris les PME. Mais un CDAO à plein temps coûte entre 80 000 et 130 000 € par an charges comprises. Pour une PME de 15 à 80 salariés, c'est souvent inaccessible. Pourtant, ne pas nommer quelqu'un responsable de la donnée et de l'IA, c'est s'assurer que ni l'une ni l'autre ne seront jamais traitées sérieusement. Voici comment structurer cette fonction de façon pragmatique, sans recruter.",
+      intro: "Le rôle de **Chief Data & AI Officer** (*CDAO*) est en train de devenir indispensable dans toutes les organisations — y compris les PME. Mais un *CDAO* à plein temps coûte entre **80 000 et 130 000 €** par an charges comprises. Pour une PME de 15 à 80 salariés, c'est souvent inaccessible. Pourtant, ne pas nommer quelqu'un responsable de la **donnée et de l'IA**, c'est s'assurer que ni l'une ni l'autre ne seront jamais traitées sérieusement. Voici comment structurer cette fonction de façon pragmatique, sans recruter.",
       sections: [
         {
           title: "Comprendre ce que fait vraiment un CDAO en PME",
           paragraphs: [
-            "Dans une grande entreprise, le CDAO supervise des équipes de data scientists et des budgets de millions d'euros. En PME, le rôle est fondamentalement différent : il s'agit moins de technique que de gouvernance et de priorisation. Le CDAO PME répond à quatre questions fondamentales : Quelles données collectons-nous et où vivent-elles ? Comment les exploitons-nous pour prendre de meilleures décisions ? Quels outils IA pouvons-nous déployer avec notre budget et nos ressources ? Comment restons-nous conformes RGPD dans tout ça ?",
-            "La bonne nouvelle est que ces quatre questions ne nécessitent pas un expert technique à plein temps. Elles nécessitent quelqu'un de curieux, organisé, avec une compréhension des enjeux business — et une capacité à s'appuyer sur des prestataires ou des consultants pour les parties techniques. Dans 70 % des PME que nous accompagnons, ce rôle peut être tenu par un profil déjà en poste : le directeur marketing, le DAF, ou un office manager ambitieux — avec 20 à 30% de leur temps dédié.",
+            "Dans une grande entreprise, le *CDAO* supervise des équipes de *data scientists* et des budgets de millions d'euros. En PME, le rôle est fondamentalement différent : il s'agit moins de technique que de **gouvernance et de priorisation**. Le **CDAO PME** répond à quatre questions fondamentales : Quelles données collectons-nous et où vivent-elles ? Comment les exploitons-nous pour prendre de meilleures décisions ? Quels **outils IA** pouvons-nous déployer avec notre budget et nos ressources ? Comment restons-nous conformes *RGPD* dans tout ça ?",
+            "La bonne nouvelle est que ces quatre questions ne nécessitent pas un expert technique à plein temps. Elles nécessitent quelqu'un de curieux, organisé, avec une compréhension des enjeux business — et une capacité à s'appuyer sur des prestataires ou des consultants pour les parties techniques. Dans **70 % des PME** que nous accompagnons, ce rôle peut être tenu par un profil déjà en poste : le directeur marketing, le *DAF*, ou un *office manager* ambitieux — avec **20 à 30%** de leur temps dédié.",
           ],
           bullets: [
             "Le CDAO PME est un rôle de gouvernance, pas d'exécution technique",
@@ -1218,8 +1218,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Les 3 chantiers prioritaires à lancer dans les 90 premiers jours",
           paragraphs: [
-            "Le premier chantier est l'inventaire des données. La majorité des PME ne savent pas exactement quelles données elles possèdent, où elles vivent, et qui y a accès. Cet inventaire — réalisable en 2 à 3 jours de travail — révèle systématiquement des doublons (3 versions du fichier clients dans 3 outils différents), des données dormantes à forte valeur (historique de tickets support, catalogue de devis passés), et des risques RGPD non identifiés (données personnelles dans des Google Sheets partagés).",
-            "Le deuxième chantier est la mise en place d'un dashboard de pilotage unifié. Trop souvent, les données opérationnelles (CA, pipeline commercial, satisfaction client, performance site) vivent dans des silos : le DAF regarde son ERP, le commercial son CRM, le marketing ses analytics. Consolider ces données dans un dashboard partagé (Google Looker Studio est gratuit et suffisant pour commencer) transforme la réunion de direction mensuelle en décision basée sur des faits — pas des intuitions.",
+            "Le premier chantier est **l'inventaire des données**. La majorité des PME ne savent pas exactement quelles données elles possèdent, où elles vivent, et qui y a accès. Cet inventaire — réalisable en **2 à 3 jours** de travail — révèle systématiquement des doublons (3 versions du fichier clients dans 3 outils différents), des **données dormantes à forte valeur** (historique de tickets support, catalogue de devis passés), et des risques *RGPD* non identifiés (données personnelles dans des *Google Sheets* partagés).",
+            "Le deuxième chantier est la mise en place d'un **dashboard de pilotage unifié**. Trop souvent, les données opérationnelles (CA, pipeline commercial, satisfaction client, performance site) vivent dans des silos : le *DAF* regarde son *ERP*, le commercial son **CRM**, le marketing ses *analytics*. Consolider ces données dans un dashboard partagé (**Google Looker Studio** est gratuit et suffisant pour commencer) transforme la réunion de direction mensuelle en **décision basée sur des faits** — pas des intuitions.",
           ],
           bullets: [
             "Inventaire données (2-3 jours) : localisation, accès, qualité, risques RGPD",
@@ -1232,8 +1232,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Le modèle CDAO as a Service : expertise externe à temps partagé",
           paragraphs: [
-            "Si aucun profil interne ne peut assumer ce rôle, l'alternative est le CDAO as a Service — un consultant senior dédié à votre entreprise 2 à 4 jours par mois. Ce modèle existe depuis plusieurs années dans le conseil mais s'est professionnalisé avec la montée en puissance de l'IA. Pour 1 500 à 3 500 €/mois selon le niveau d'implication, vous accédez à une expertise qui serait impossible à justifier en embauche.",
-            "Le CDAO as a Service est particulièrement pertinent pour les PME en phase de structuration digitale (entre 15 et 60 salariés). Il aide à choisir les bons outils, à éviter les pièges des contrats SaaS contraignants, à former les équipes, et à piloter les projets IA en garantissant un ROI mesurable. Chez Maison Siranno, nous proposons cette mission sous forme de retainer mensuel — une façon d'avoir un interlocuteur stratégique dédié sans les frais d'une embauche.",
+            "Si aucun profil interne ne peut assumer ce rôle, l'alternative est le **CDAO as a Service** — un consultant senior dédié à votre entreprise 2 à 4 jours par mois. Ce modèle existe depuis plusieurs années dans le conseil mais s'est professionnalisé avec la montée en puissance de l'**IA**. Pour **1 500 à 3 500 €/mois** selon le niveau d'implication, vous accédez à une expertise qui serait impossible à justifier en embauche.",
+            "Le ***CDAO* as a Service** est particulièrement pertinent pour les PME en phase de *structuration digitale* (entre **15 et 60 salariés**). Il aide à choisir les bons outils, à éviter les pièges des contrats *SaaS* contraignants, à former les équipes, et à piloter les **projets IA** en garantissant un **ROI mesurable**. Chez **Maison Siranno**, nous proposons cette mission sous forme de *retainer mensuel* — une façon d'avoir un interlocuteur stratégique dédié sans les frais d'une embauche.",
           ],
           bullets: [
             "CDAO as a Service : 2 à 4 jours/mois, 1 500 à 3 500€/mois selon périmètre",
@@ -1243,7 +1243,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "Ne pas avoir de CDAO n'est pas une option neutre — c'est décider que personne ne sera responsable de vos données et de votre trajectoire IA. La bonne nouvelle : en PME, ce rôle est accessible, soit en valorisant un profil interne, soit via un modèle as a Service. Si vous voulez structurer cette fonction dans votre entreprise, nous pouvons vous accompagner dans l'audit et la mise en place.",
+      conclusion: "Ne pas avoir de ***CDAO*** n'est pas une option neutre — c'est décider que personne ne sera responsable de vos **données** et de votre **trajectoire IA**. La bonne nouvelle : en PME, ce rôle est accessible, soit en valorisant un profil interne, soit via un modèle *as a Service*. Si vous voulez structurer cette fonction dans votre entreprise, nous pouvons vous accompagner dans l'audit et la mise en place.",
       keyTakeaways: [
         "Le CDAO PME est un rôle de gouvernance (20-30% d'un ETP), pas un poste technique à plein temps",
         "L'inventaire des données en 2-3 jours révèle systématiquement des doublons et des risques RGPD cachés",
@@ -1279,13 +1279,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Monitoring", "Alertes", "Sécurité", "Maintenance"],
     available: true,
     body: {
-      intro: "En janvier 2024, un artisan client a perdu 3 semaines de trafic Google sans le savoir : son hébergeur avait migré ses serveurs, cassant son certificat SSL. Google avait commencé à déclasser son site dès le premier jour. Résultat : 3 semaines de leads perdus, 6 semaines de récupération SEO. Cette histoire aurait pu être évitée avec une alerte SSL basique configurée en 5 minutes. Voici les alertes essentielles que tout site professionnel doit avoir — gratuitement ou presque.",
+      intro: "En janvier 2024, un artisan client a perdu **3 semaines de trafic Google** sans le savoir : son hébergeur avait migré ses serveurs, cassant son **certificat SSL**. Google avait commencé à déclasser son site dès le premier jour. Résultat : 3 semaines de leads perdus, **6 semaines de récupération SEO**. Cette histoire aurait pu être évitée avec une alerte *SSL* basique configurée en **5 minutes**. Voici les alertes essentielles que tout site professionnel doit avoir — gratuitement ou presque.",
       sections: [
         {
           title: "Les 5 alertes minimum pour tout site professionnel",
           paragraphs: [
-            "La première alerte à configurer est le monitoring de disponibilité (uptime). Des outils comme UptimeRobot (gratuit jusqu'à 50 monitors) vérifient votre site toutes les 5 minutes et vous envoient un SMS ou email dès qu'il devient inaccessible. Pour un site e-commerce ou de prise de contact, chaque minute de downtime coûte des leads. La configuration prend 3 minutes.",
-            "La deuxième alerte critique est l'expiration du certificat SSL. Votre certificat SSL expire tous les 90 jours (Let's Encrypt) ou 1 an (certificats payants). Si vous oubliez de le renouveler, les navigateurs bloquent l'accès à votre site avec un message d'alerte rouge effrayant — et Google le déclasse immédiatement. Configurez une alerte 30 jours avant expiration via votre registrar ou un outil comme SSL Labs.",
+            "La première alerte à configurer est le **monitoring de disponibilité** (*uptime*). Des outils comme **UptimeRobot** (gratuit jusqu'à **50 monitors**) vérifient votre site toutes les **5 minutes** et vous envoient un SMS ou email dès qu'il devient inaccessible. Pour un site *e-commerce* ou de prise de contact, chaque minute de *downtime* coûte des leads. La configuration prend **3 minutes**.",
+            "La deuxième alerte critique est l'**expiration du certificat SSL**. Votre certificat *SSL* expire tous les **90 jours** (*Let's Encrypt*) ou 1 an (certificats payants). Si vous oubliez de le renouveler, les navigateurs bloquent l'accès à votre site avec un message d'alerte rouge effrayant — et **Google** le déclasse immédiatement. Configurez une alerte **30 jours avant expiration** via votre registrar ou un outil comme *SSL Labs*.",
           ],
           bullets: [
             "Uptime monitoring (UptimeRobot, gratuit) : alerte SMS si site hors ligne",
@@ -1298,19 +1298,19 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "La surveillance de la performance et du SEO",
           paragraphs: [
-            "Les alertes de disponibilité ne couvrent pas les dégradations silencieuses : votre site est accessible mais charge en 8 secondes, ou votre position Google sur vos mots-clés principaux a chuté de 5 places. Ces dégradations peuvent coûter 20 à 40 % de votre trafic organique sans qu'aucune alarme sonne.",
-            "Google Search Console envoie des alertes email automatiques pour les problèmes d'indexation, les erreurs 404 massives et les pénalités manuelles. C'est entièrement gratuit et indispensable. Pour la performance, PageSpeed Insights peut être utilisé manuellement chaque mois, ou automatisé via l'API pour des rapports hebdomadaires.",
+            "Les alertes de disponibilité ne couvrent pas les **dégradations silencieuses** : votre site est accessible mais charge en 8 secondes, ou votre position **Google** sur vos mots-clés principaux a chuté de 5 places. Ces dégradations peuvent coûter **20 à 40 %** de votre trafic organique sans qu'aucune alarme sonne.",
+            "**Google Search Console** envoie des alertes email automatiques pour les problèmes d'indexation, les erreurs *404* massives et les **pénalités manuelles**. C'est entièrement gratuit et indispensable. Pour la performance, **PageSpeed Insights** peut être utilisé manuellement chaque mois, ou automatisé via l'*API* pour des rapports hebdomadaires.",
           ],
         },
         {
           title: "La sécurité : les alertes que 90 % des PME ignorent",
           paragraphs: [
-            "Les sites WordPress non maintenus sont hackés en moyenne toutes les 72 heures à l'échelle mondiale. Les signes d'une compromission silencieuse : des liens vers des sites douteux injectés dans vos pages, des emails envoyés depuis votre domaine sans votre consentement (qui atterrissent dans les spams de vos clients), ou une chute soudaine de trafic Google (signe que Google a détecté du contenu malveillant).",
-            "La solution minimale : activer Wordfence (plugin WordPress gratuit) avec alertes email, configurer une alerte de monitoring de réputation de domaine via Google Postmaster Tools, et mettre à jour WordPress, les thèmes et plugins au moins une fois par mois.",
+            "Les sites **WordPress** non maintenus sont hackés en moyenne toutes les **72 heures** à l'échelle mondiale. Les signes d'une compromission silencieuse : des liens vers des sites douteux injectés dans vos pages, des emails envoyés depuis votre domaine sans votre consentement (qui atterrissent dans les spams de vos clients), ou une **chute soudaine de trafic Google** (signe que Google a détecté du contenu malveillant).",
+            "La solution minimale : activer **Wordfence** (plugin *WordPress* gratuit) avec alertes email, configurer une alerte de monitoring de réputation de domaine via *Google Postmaster Tools*, et **mettre à jour WordPress**, les thèmes et plugins au moins une fois par mois.",
           ],
         },
       ],
-      conclusion: "Un site non monitoré est un site qui tombera un jour sans que vous le sachiez. Les outils gratuits couvrent 80 % des besoins de base — il n'y a aucune raison de ne pas les configurer. Si vous voulez externaliser entièrement cette vigilance et recevoir des rapports mensuels complets sur la santé de votre site, c'est exactement ce que nous faisons dans le cadre de nos missions de pilotage continu.",
+      conclusion: "Un site **non monitoré** est un site qui tombera un jour sans que vous le sachiez. Les outils gratuits couvrent **80 % des besoins de base** — il n'y a aucune raison de ne pas les configurer. Si vous voulez externaliser entièrement cette vigilance et recevoir des **rapports mensuels complets** sur la santé de votre site, c'est exactement ce que nous faisons dans le cadre de nos missions de pilotage continu.",
       keyTakeaways: [
         "UptimeRobot gratuit surveille votre site toutes les 5 minutes et alerte en cas de panne",
         "Un certificat SSL expiré déclenche des alertes effrayantes pour vos visiteurs ET pénalise votre SEO",
@@ -1331,13 +1331,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Analytics", "KPI", "PME", "Données"],
     available: true,
     body: {
-      intro: "La majorité des dirigeants de PME qui ont Google Analytics installé sur leur site n'y ont jamais accès. Soit parce que l'interface est trop complexe, soit parce qu'ils ne savent pas quoi y chercher, soit parce qu'ils ont délégué ça à une agence qui envoie un rapport PDF mensuel de 40 pages que personne ne lit. Le pilotage web efficace ne nécessite ni expertise en data science ni tableaux de bord complexes. Il nécessite 10 indicateurs, consultés chaque semaine, en 15 minutes.",
+      intro: "La majorité des dirigeants de PME qui ont **Google Analytics** installé sur leur site n'y ont jamais accès. Soit parce que l'interface est trop complexe, soit parce qu'ils ne savent pas quoi y chercher, soit parce qu'ils ont délégué ça à une agence qui envoie un rapport PDF mensuel de **40 pages** que personne ne lit. Le **pilotage web efficace** ne nécessite ni expertise en *data science* ni tableaux de bord complexes. Il nécessite **10 indicateurs**, consultés chaque semaine, en **15 minutes**.",
       sections: [
         {
           title: "Les 5 indicateurs de trafic et d'audience",
           paragraphs: [
-            "Commencez par les bases : visiteurs uniques par semaine (tendance sur 4 semaines), source du trafic (quelle proportion vient de Google, de votre newsletter, des réseaux sociaux, de recommandations ?), pages les plus visitées (quels contenus attirent le plus de monde ?), taux de rebond par source (les visiteurs venant de Google restent-ils plus longtemps que ceux venant des réseaux sociaux ?) et appareil utilisé (quelle proportion sur mobile ?).",
-            "Ces cinq indicateurs, lus en 5 minutes, vous donnent une vue complète de la santé de votre trafic. Une chute du trafic organique (Google) sans explication visible est souvent le signe d'un problème technique ou d'une mise à jour d'algorithme. Une montée du trafic réseaux sociaux sans conversion est le signe que votre contenu engage mais que votre site ne convertit pas.",
+            "Commencez par les bases : **visiteurs uniques par semaine** (tendance sur 4 semaines), source du trafic (quelle proportion vient de **Google**, de votre newsletter, des réseaux sociaux, de recommandations ?), pages les plus visitées (quels contenus attirent le plus de monde ?), **taux de rebond** par source (les visiteurs venant de Google restent-ils plus longtemps que ceux venant des réseaux sociaux ?) et appareil utilisé (quelle proportion sur mobile ?).",
+            "Ces cinq indicateurs, lus en **5 minutes**, vous donnent une vue complète de la santé de votre trafic. Une chute du **trafic organique** (Google) sans explication visible est souvent le signe d'un problème technique ou d'une *mise à jour d'algorithme*. Une montée du trafic réseaux sociaux sans conversion est le signe que votre contenu engage mais que votre site **ne convertit pas**.",
           ],
           bullets: [
             "Visiteurs uniques/semaine : tendance sur 4 semaines (hausse ou baisse ?)",
@@ -1350,8 +1350,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Les 5 indicateurs de conversion et de valeur",
           paragraphs: [
-            "Les indicateurs de trafic vous disent si les gens viennent — les indicateurs de conversion vous disent si vous convertissez cette audience en valeur. Les 5 essentiels : nombre de conversions par semaine (formulaires soumis, appels, achats selon votre activité), taux de conversion (conversions / visites × 100), pages à l'origine des conversions (quelles pages génèrent des contacts ?), temps passé sur le site (les visiteurs qui restent plus de 2 minutes sont vos prospects chauds), et mots-clés qui apportent du trafic (depuis Search Console).",
-            "Une PME avec 1 000 visiteurs/mois et un taux de conversion de 2 % génère 20 demandes. En passant ce taux à 3 % (grâce à un meilleur CTA ou une page de contact améliorée), elle en génère 30 sans changer son volume de trafic. L'optimisation de la conversion est souvent plus rapide et moins coûteuse que l'acquisition de trafic supplémentaire.",
+            "Les indicateurs de trafic vous disent si les gens viennent — les **indicateurs de conversion** vous disent si vous convertissez cette audience en valeur. Les 5 essentiels : nombre de **conversions par semaine** (formulaires soumis, appels, achats selon votre activité), **taux de conversion** (conversions / visites × 100), pages à l'origine des conversions (quelles pages génèrent des contacts ?), temps passé sur le site (les visiteurs qui restent plus de **2 minutes** sont vos prospects chauds), et mots-clés qui apportent du trafic (depuis *Search Console*).",
+            "Une PME avec **1 000 visiteurs/mois** et un **taux de conversion de 2 %** génère 20 demandes. En passant ce taux à **3 %** (grâce à un meilleur *CTA* ou une page de contact améliorée), elle en génère 30 sans changer son volume de trafic. L'**optimisation de la conversion** est souvent plus rapide et moins coûteuse que l'acquisition de trafic supplémentaire.",
           ],
           bullets: [
             "Taux de conversion global : cible réaliste entre 1 et 3% pour un site PME",
@@ -1362,7 +1362,7 @@ export const blogArticles: BlogArticle[] = [
           ],
         },
       ],
-      conclusion: "15 minutes par semaine sur ces 10 indicateurs remplacent avantageusement n'importe quel rapport mensuel de 40 pages. L'objectif n'est pas de comprendre parfaitement les données — c'est de repérer les anomalies et les tendances. Une baisse de 30 % du trafic cette semaine mérite une investigation. Une hausse de 50 % des conversions mérite qu'on comprenne pourquoi pour reproduire ce qui fonctionne.",
+      conclusion: "**15 minutes par semaine** sur ces 10 indicateurs remplacent avantageusement n'importe quel rapport mensuel de 40 pages. L'objectif n'est pas de comprendre parfaitement les données — c'est de **repérer les anomalies et les tendances**. Une baisse de **30 %** du trafic cette semaine mérite une investigation. Une hausse de **50 %** des conversions mérite qu'on comprenne pourquoi pour reproduire ce qui fonctionne.",
       keyTakeaways: [
         "10 indicateurs en 15 min/semaine valent mieux qu'un rapport mensuel non lu",
         "Les sources de trafic révèlent quels canaux méritent votre investissement",
@@ -1383,13 +1383,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Maintenance", "Checklist", "CMS", "WordPress"],
     available: true,
     body: {
-      intro: "Un site web n'est pas une affiche collée sur un mur — c'est un système vivant qui nécessite une maintenance régulière pour rester performant, sécurisé et bien référencé. Pourtant, 80 % des PME ne font aucune maintenance proactive de leur site : elles interviennent en urgence quand quelque chose casse. La maintenance mensuelle prend 1 à 2 heures maximum et évite 90 % des crises. Voici la checklist complète que nous utilisons pour nos clients.",
+      intro: "Un site web n'est pas une affiche collée sur un mur — c'est un **système vivant** qui nécessite une maintenance régulière pour rester performant, sécurisé et bien référencé. Pourtant, **80 % des PME** ne font aucune maintenance proactive de leur site : elles interviennent en urgence quand quelque chose casse. La **maintenance mensuelle** prend **1 à 2 heures maximum** et évite 90 % des crises. Voici la *checklist* complète que nous utilisons pour nos clients.",
       sections: [
         {
           title: "Sécurité et mises à jour (30 min)",
           paragraphs: [
-            "La première partie de la checklist couvre la sécurité. Pour les sites WordPress, qui représentent 43 % du web mondial, les mises à jour sont critiques. Une version WordPress non mise à jour est une porte ouverte pour les bots qui scannent en permanence les vulnérabilités connues.",
-            "Procédure : faites d'abord une sauvegarde complète (base de données + fichiers), puis mettez à jour le core WordPress, puis les plugins un par un (pas tous d'un coup — si un plugin casse le site, vous devez pouvoir identifier lequel), puis le thème. Vérifiez que le site fonctionne après chaque mise à jour critique. Pour les sites non-WordPress, vérifiez les dépendances npm ou composer selon votre stack.",
+            "La première partie de la *checklist* couvre la sécurité. Pour les sites **WordPress**, qui représentent **43 % du web mondial**, les mises à jour sont critiques. Une version *WordPress* non mise à jour est une porte ouverte pour les *bots* qui scannent en permanence les vulnérabilités connues.",
+            "Procédure : faites d'abord une **sauvegarde complète** (base de données + fichiers), puis mettez à jour le *core WordPress*, puis les **plugins un par un** (pas tous d'un coup — si un plugin casse le site, vous devez pouvoir identifier lequel), puis le thème. Vérifiez que le site fonctionne après chaque mise à jour critique. Pour les sites non-*WordPress*, vérifiez les dépendances *npm* ou *composer* selon votre stack.",
           ],
           bullets: [
             "Sauvegarde complète avant toute mise à jour (base de données + fichiers)",
@@ -1402,8 +1402,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Performance et contenu (30 min)",
           paragraphs: [
-            "Après la sécurité, vérifiez la performance. Lancez un test PageSpeed Insights et comparez avec le mois précédent — une dégradation est souvent signe d'une image non optimisée ajoutée récemment ou d'un plugin mal configuré. Vérifiez également qu'il n'y a pas de liens brisés (404) sur vos pages principales avec un outil comme Broken Link Checker.",
-            "Pour le contenu : vos horaires sont-ils à jour ? Vos prix ? Vos informations de contact ? Ces vérifications basiques sont souvent négligées et génèrent une mauvaise expérience client. Un numéro de téléphone incorrect ou des horaires d'été non mis à jour après l'été peuvent vous coûter des clients sans que vous le sachiez.",
+            "Après la sécurité, vérifiez la performance. Lancez un test **PageSpeed Insights** et comparez avec le mois précédent — une dégradation est souvent signe d'une image non optimisée ajoutée récemment ou d'un plugin mal configuré. Vérifiez également qu'il n'y a pas de **liens brisés** (*404*) sur vos pages principales avec un outil comme *Broken Link Checker*.",
+            "Pour le contenu : vos horaires sont-ils à jour ? Vos prix ? Vos informations de contact ? Ces vérifications basiques sont souvent négligées et génèrent une **mauvaise expérience client**. Un numéro de téléphone incorrect ou des horaires d'été non mis à jour après l'été peuvent vous **coûter des clients** sans que vous le sachiez.",
           ],
           bullets: [
             "Test PageSpeed Insights + comparaison avec le mois précédent",
@@ -1416,11 +1416,11 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Analytics et reporting (15 min)",
           paragraphs: [
-            "Terminez la session de maintenance par un tour rapide des analytics. Comparez le trafic du mois écoulé avec le mois précédent et avec le même mois de l'année passée. Identifiez les 3 pages les plus consultées et les 3 pages avec le taux de rebond le plus élevé. Notez tout dans un document de suivi mensuel — c'est en regardant les tendances sur 6 à 12 mois qu'on voit les vrais patterns.",
+            "Terminez la session de maintenance par un tour rapide des **analytics**. Comparez le trafic du mois écoulé avec le mois précédent et avec le même mois de l'année passée. Identifiez les **3 pages les plus consultées** et les **3 pages avec le taux de rebond le plus élevé**. Notez tout dans un *document de suivi mensuel* — c'est en regardant les tendances sur **6 à 12 mois** qu'on voit les vrais *patterns*.",
           ],
         },
       ],
-      conclusion: "Une heure et demie par mois pour protéger des mois ou des années de travail sur votre présence web — c'est le meilleur investissement en temps qu'un dirigeant puisse faire. Si vous n'avez pas le temps ou les compétences pour gérer cette maintenance en interne, notre offre de pilotage continu couvre exactement ces tâches, avec en plus la surveillance 24h/24 et les rapports mensuels.",
+      conclusion: "**Une heure et demie par mois** pour protéger des mois ou des années de travail sur votre présence web — c'est le meilleur investissement en temps qu'un dirigeant puisse faire. Si vous n'avez pas le temps ou les compétences pour gérer cette **maintenance en interne**, notre offre de **pilotage continu** couvre exactement ces tâches, avec en plus la surveillance 24h/24 et les rapports mensuels.",
       keyTakeaways: [
         "Toujours sauvegarder avant de mettre à jour — une restauration rapide vaut de l'or",
         "Les plugins WordPress non mis à jour sont la première cause de hacking",
@@ -1441,13 +1441,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Pilotage", "Agence", "Suivi", "Performance"],
     available: true,
     body: {
-      intro: "La plupart des agences web livrent un site et passent au projet suivant. Le client, lui, se retrouve seul face à un produit qu'il ne sait pas toujours faire évoluer, mesurer, ni maintenir. Six mois après la livraison, le site est déjà en train de perdre en performance, en sécurité et en visibilité. Chez Maison Siranno, nous avons fait le choix inverse : notre modèle de valeur est structuré autour du pilotage continu post-livraison. Voici pourquoi.",
+      intro: "La plupart des agences web livrent un site et passent au projet suivant. Le client, lui, se retrouve seul face à un produit qu'il ne sait pas toujours faire évoluer, mesurer, ni maintenir. **Six mois après la livraison**, le site est déjà en train de perdre en performance, en sécurité et en visibilité. Chez **Maison Siranno**, nous avons fait le choix inverse : notre modèle de valeur est structuré autour du **pilotage continu post-livraison**. Voici pourquoi.",
       sections: [
         {
           title: "Ce qui se passe réellement sur un site 6 mois après sa livraison",
           paragraphs: [
-            "Un site web livré sans suivi continu se dégrade selon un schéma prévisible. La performance technique (Core Web Vitals) se dégrade d'abord imperceptiblement puis brutalement quand les dépendances npm ou WordPress prennent du retard. La sécurité se fragilise avec chaque vulnérabilité non patchée — un site WordPress non maintenu est compromis en moyenne 6 mois après sa dernière mise à jour. Le SEO évolue sans que personne n'adapte la stratégie : Google met à jour son algorithme plusieurs centaines de fois par an.",
-            "Les données analytics s'accumulent sans être lues. Les opportunités de conversion identifiées dans les premiers mois ne sont jamais implémentées faute de temps ou de compétences. Le contenu vieillit. Les redirections cassent lors de changements de structure. Ce n'est pas de la négligence — c'est simplement le résultat naturel d'un produit livré sans pilote. Un site est un actif vivant, pas un livrable.",
+            "Un site web livré sans suivi continu se dégrade selon un schéma prévisible. La performance technique (*Core Web Vitals*) se dégrade d'abord imperceptiblement puis brutalement quand les dépendances *npm* ou **WordPress** prennent du retard. La sécurité se fragilise avec chaque vulnérabilité non *patchée* — un site **WordPress** non maintenu est compromis en moyenne **6 mois** après sa dernière mise à jour. Le **SEO** évolue sans que personne n'adapte la stratégie : Google met à jour son algorithme **plusieurs centaines de fois par an**.",
+            "Les données *analytics* s'accumulent sans être lues. Les **opportunités de conversion** identifiées dans les premiers mois ne sont jamais implémentées faute de temps ou de compétences. Le contenu vieillit. Les redirections cassent lors de changements de structure. Ce n'est pas de la négligence — c'est simplement le résultat naturel d'un produit livré **sans pilote**. Un site est un *actif vivant*, pas un livrable.",
           ],
           bullets: [
             "Performance : dégradation des Core Web Vitals dès le 3ème mois sans optimisation active",
@@ -1459,8 +1459,8 @@ export const blogArticles: BlogArticle[] = [
         {
           title: "Le modèle de pilotage continu : ce que ça implique concrètement",
           paragraphs: [
-            "Notre modèle de pilotage continu repose sur trois piliers mensuels. Le premier est le rapport de performance : chaque mois, un document synthétique de 2 pages qui résume l'évolution du trafic, des conversions, des Core Web Vitals et des positions SEO clés — avec une interprétation et une recommandation d'action, pas juste des chiffres bruts. Le deuxième pilier est la maintenance technique proactive : mises à jour de sécurité, vérification des backups, monitoring des temps de réponse, et corrections des erreurs 404 avant qu'elles nuisent au SEO.",
-            "Le troisième pilier est l'optimisation continue : chaque mois, 2 à 4 heures de développement allouées à des améliorations priorisées par impact/effort. Pas de grands projets — des ajustements ciblés sur les pages à fort potentiel, les formulaires qui perdent des leads, les pages qui ralentissent le tunnel de conversion. Sur 12 mois, c'est 24 à 48 heures d'optimisation cumulées qui transforment un site statique en machine à conversions.",
+            "Notre modèle de **pilotage continu** repose sur trois piliers mensuels. Le premier est le **rapport de performance** : chaque mois, un document synthétique de **2 pages** qui résume l'évolution du trafic, des conversions, des *Core Web Vitals* et des positions **SEO** clés — avec une interprétation et une recommandation d'action, pas juste des chiffres bruts. Le deuxième pilier est la **maintenance technique proactive** : mises à jour de sécurité, vérification des *backups*, monitoring des temps de réponse, et corrections des erreurs *404* avant qu'elles nuisent au SEO.",
+            "Le troisième pilier est l'**optimisation continue** : chaque mois, **2 à 4 heures de développement** allouées à des améliorations priorisées par impact/effort. Pas de grands projets — des ajustements ciblés sur les pages à fort potentiel, les formulaires qui perdent des leads, les pages qui ralentissent le *tunnel de conversion*. Sur **12 mois**, c'est **24 à 48 heures d'optimisation cumulées** qui transforment un site statique en machine à conversions.",
           ],
           bullets: [
             "Rapport mensuel : 2 pages, trafic + conversions + SEO + recommandations actionnables",
@@ -1521,13 +1521,13 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Next.js", "React", "Architecture", "Performance"],
     available: true,
     body: {
-      intro: "Next.js est devenu le choix par défaut de la majorité des développeurs React — à tel point que choisir React 'classique' (une SPA pure sans framework) est parfois perçu comme un manque de modernité. C'est une erreur. Next.js est un outil extraordinaire pour certains types de projets, et une sur-ingénierie coûteuse pour d'autres. Après avoir livré des dizaines de projets sur les deux approches, voici notre grille de décision sans dogmatisme.",
+      intro: "**Next.js** est devenu le choix par défaut de la majorité des développeurs **React** — à tel point que choisir React 'classique' (une *SPA pure* sans framework) est parfois perçu comme un manque de modernité. C'est une erreur. **Next.js** est un outil extraordinaire pour certains types de projets, et une **sur-ingénierie coûteuse** pour d'autres. Après avoir livré des dizaines de projets sur les deux approches, voici notre grille de décision sans dogmatisme.",
       sections: [
         {
           title: "Ce que Next.js apporte vraiment (et ce que le marketing ne dit pas)",
           paragraphs: [
-            "Next.js 14 avec l'App Router introduit les Server Components — des composants React qui s'exécutent uniquement sur le serveur et envoient du HTML statique au navigateur. L'avantage est réel : moins de JavaScript côté client, meilleur LCP (Largest Contentful Paint), et possibilité de faire des requêtes base de données directement dans le composant sans passer par une API séparée. Pour un site content-heavy (blog, e-commerce, vitrine SEO), c'est un avantage significatif.",
-            "Ce que le marketing Next.js ne met pas en avant : la courbe d'apprentissage de l'App Router est abrupte, même pour des développeurs React expérimentés. Les règles sur quand utiliser 'use client' vs Server Component, la gestion du cache (qui a radicalement changé entre Next.js 13 et 14), et les subtilités des Suspense boundaries créent de la confusion et des bugs difficiles à déboguer. Pour une équipe junior ou un projet avec une deadline serrée, cette complexité peut s'avérer contra-productive.",
+            "**Next.js 14** avec l'**App Router** introduit les *Server Components* — des composants React qui s'exécutent uniquement sur le serveur et envoient du HTML statique au navigateur. L'avantage est réel : moins de JavaScript côté client, meilleur **LCP** (Largest Contentful Paint), et possibilité de faire des requêtes base de données directement dans le composant sans passer par une API séparée. Pour un site *content-heavy* (blog, e-commerce, vitrine SEO), c'est un avantage significatif.",
+            "Ce que le marketing Next.js ne met pas en avant : la **courbe d'apprentissage de l'App Router est abrupte**, même pour des développeurs React expérimentés. Les règles sur quand utiliser *'use client'* vs Server Component, la gestion du cache (qui a radicalement changé entre Next.js 13 et 14), et les subtilités des Suspense boundaries créent de la confusion et des bugs difficiles à déboguer. Pour une équipe junior ou un projet avec une **deadline serrée**, cette complexité peut s'avérer contra-productive.",
           ],
           bullets: [
             "Next.js excelle : sites SEO-critiques, e-commerce, blogs, landing pages à fort trafic",
@@ -1587,12 +1587,12 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Taux de Rebond", "Conversion", "UX", "Copywriting"],
     available: true,
     body: {
-      intro: "Le taux de rebond moyen d'un site vitrine B2B en France est de 67 %. Autrement dit, deux tiers de vos visiteurs partent sans interagir avec une seule page. Pour un site qui génère 1 000 visites par mois, 670 personnes potentiellement intéressées par vos services repartent les mains vides. Réduire ce chiffre de 70 % n'est pas un objectif utopique — c'est le résultat que nous obtenons systématiquement en appliquant les 12 optimisations que voici.",
+      intro: "Le **taux de rebond moyen** d'un site vitrine B2B en France est de **67 %**. Autrement dit, deux tiers de vos visiteurs partent sans interagir avec une seule page. Pour un site qui génère **1 000 visites par mois**, 670 personnes potentiellement intéressées par vos services repartent les mains vides. Réduire ce chiffre de **70 %** n'est pas un objectif utopique — c'est le résultat que nous obtenons systématiquement en appliquant les **12 optimisations** que voici.",
       sections: [
         {
           title: "Les 4 causes racines d'un taux de rebond élevé",
           paragraphs: [
-            "Avant d'optimiser, il faut diagnostiquer. Un taux de rebond élevé provient de 4 causes distinctes, et le traitement est différent selon la cause. La première est la lenteur : si votre page met plus de 3 secondes à charger sur mobile, 53 % des utilisateurs partent avant même de voir votre contenu (source : Google). La deuxième est le mismatch promesse/réalité : le visiteur a cliqué sur un lien ou une annonce qui promettait quelque chose que votre page ne livre pas. La troisième est une valeur perçue insuffisante : le message n'est pas assez clair dans les 5 premières secondes. La quatrième est l'absence d'invitation à agir.",
+            "Avant d'optimiser, il faut diagnostiquer. Un taux de rebond élevé provient de **4 causes distinctes**, et le traitement est différent selon la cause. La première est *la lenteur* : si votre page met plus de **3 secondes** à charger sur mobile, **53 %** des utilisateurs partent avant même de voir votre contenu (source : Google). La deuxième est le *mismatch promesse/réalité* : le visiteur a cliqué sur un lien ou une annonce qui promettait quelque chose que votre page ne livre pas. La troisième est une **valeur perçue insuffisante** : le message n'est pas assez clair dans les **5 premières secondes**. La quatrième est l'absence d'invitation à agir.",
             "Pour identifier laquelle de ces causes est responsable de votre rebond, utilisez Google Analytics 4 en regardant le 'taux d'engagement' (inverse du rebond) combiné aux données de vitesse de Google Search Console. Un rebond > 80 % sur mobile avec une durée de session < 10 secondes pointe vers la performance. Un rebond élevé avec une durée de session > 1 minute pointe vers l'absence de CTA ou un problème de confiance.",
           ],
           bullets: [
@@ -1657,7 +1657,7 @@ export const blogArticles: BlogArticle[] = [
     tags: ["CRM", "Comptabilité", "n8n", "Pipedrive", "Pennylane"],
     available: true,
     body: {
-      intro: "Votre commercial ferme un deal dans Pipedrive. Quelqu'un doit créer la facture dans Pennylane. Ce 'quelqu'un', c'est souvent vous, ou votre assistante, ou votre comptable — et ça prend 5 à 10 minutes par transaction, avec des risques d'erreur à chaque saisie manuelle. Pour une PME qui émet 30 factures par mois, c'est 2 à 5 heures de saisie pure par mois. Avec n8n, ce pont est automatique, instantané et sans erreur. Voici comment le construire.",
+      intro: "Votre commercial ferme un deal dans **Pipedrive**. Quelqu'un doit créer la facture dans **Pennylane**. Ce 'quelqu'un', c'est souvent vous, ou votre assistante, ou votre comptable — et ça prend **5 à 10 minutes par transaction**, avec des risques d'erreur à chaque saisie manuelle. Pour une PME qui émet **30 factures par mois**, c'est **2 à 5 heures de saisie pure** par mois. Avec **n8n**, ce pont est automatique, instantané et sans erreur. Voici comment le construire.",
       sections: [
         {
           title: "Cartographier les flux avant de construire",
@@ -1724,7 +1724,7 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Automatisation", "PME", "n8n", "Workflows", "Productivité"],
     available: true,
     body: {
-      intro: "Si vous deviez ne déployer que 10 automatisations dans votre PME cette année, lesquelles choisiriez-vous ? Après avoir construit des centaines de workflows pour des PME françaises de toutes tailles et tous secteurs, nous avons une réponse claire. Ces 10 automatisations couvrent les points de friction universels — ceux qui existent dans toutes les entreprises, indépendamment du secteur. Ensemble, elles économisent en moyenne 8 à 12 heures par semaine dans une PME de 10 à 30 salariés.",
+      intro: "Si vous deviez ne déployer que **10 automatisations** dans votre PME cette année, lesquelles choisiriez-vous ? Après avoir construit des centaines de *workflows* pour des **PME françaises** de toutes tailles et tous secteurs, nous avons une réponse claire. Ces **10 automatisations** couvrent les points de friction universels — ceux qui existent dans toutes les entreprises, indépendamment du secteur. Ensemble, elles économisent en moyenne **8 à 12 heures par semaine** dans une PME de 10 à 30 salariés.",
       sections: [
         {
           title: "Automatisations 1 à 4 : commercial et relation client",
@@ -1791,12 +1791,12 @@ export const blogArticles: BlogArticle[] = [
     tags: ["RAG", "Assistant IA", "LLM", "Supabase", "Données internes"],
     available: true,
     body: {
-      intro: "Imaginez pouvoir poser à votre base documentaire interne des questions en langage naturel et obtenir des réponses précises avec les sources citées. 'Quelles sont les conditions de garantie de notre produit X ?' ou 'Quelle clause du contrat Dupont s'applique en cas de retard ?'. C'est exactement ce que permet l'architecture RAG (Retrieval-Augmented Generation). Ce n'est plus de la science-fiction — nous déployons ce type de système pour des PME françaises depuis 2023. Voici comment ça fonctionne et comment le construire.",
+      intro: "Imaginez pouvoir poser à votre base documentaire interne des questions en *langage naturel* et obtenir des réponses précises avec les sources citées. 'Quelles sont les conditions de garantie de notre produit X ?' ou 'Quelle clause du contrat Dupont s'applique en cas de retard ?'. C'est exactement ce que permet l'architecture **RAG** (Retrieval-Augmented Generation). Ce n'est plus de la science-fiction — nous déployons ce type de système pour des **PME françaises depuis 2023**. Voici comment ça fonctionne et comment le construire.",
       sections: [
         {
           title: "Comprendre le RAG : la logique en 4 étapes",
           paragraphs: [
-            "Le RAG (Retrieval-Augmented Generation) est une architecture qui combine un moteur de recherche sémantique avec un LLM. Contrairement à un LLM seul (comme ChatGPT), le RAG ne 'sait' pas d'emblée ce qui est dans vos documents — il les cherche dynamiquement à chaque question. Voici les 4 étapes : (1) Ingestion : vos documents (PDF, Word, emails, pages web) sont découpés en chunks de 200 à 500 mots, et chaque chunk est transformé en vecteur numérique (embedding) qui représente son sens sémantique. Ces vecteurs sont stockés dans une base de données vectorielle.",
+            "Le **RAG** (Retrieval-Augmented Generation) est une architecture qui combine un *moteur de recherche sémantique* avec un **LLM**. Contrairement à un LLM seul (comme ChatGPT), le RAG ne 'sait' pas d'emblée ce qui est dans vos documents — il les cherche dynamiquement à chaque question. Voici les **4 étapes** : (1) *Ingestion* : vos documents (PDF, Word, emails, pages web) sont découpés en *chunks* de **200 à 500 mots**, et chaque chunk est transformé en **vecteur numérique** (embedding) qui représente son sens sémantique. Ces vecteurs sont stockés dans une **base de données vectorielle**.",
             "Lors d'une question utilisateur, (2) la question est aussi transformée en vecteur, (3) les chunks les plus proches sémantiquement sont récupérés (typiquement les 3 à 8 plus pertinents), et (4) ces chunks sont injectés dans le prompt du LLM avec la question : 'En te basant uniquement sur ces extraits, réponds à cette question'. Le LLM génère alors une réponse ancrée dans votre documentation réelle — et non une hallucination inventée de toutes pièces.",
           ],
           bullets: [
@@ -1858,7 +1858,7 @@ export const blogArticles: BlogArticle[] = [
     tags: ["LLM", "Open Source", "Mistral", "GPT-4", "Claude"],
     available: true,
     body: {
-      intro: "En janvier 2025, la frontière entre modèles IA propriétaires et open source n'a jamais été aussi floue. Llama 3.3 70B d'une Meta dépasse GPT-4 de fin 2023 sur plusieurs benchmarks. Mistral Large 2 rivalise avec Claude Sonnet sur les tâches de raisonnement en français. Pour une PME qui intègre des LLM dans ses processus, le choix n'est plus 'OpenAI ou rien' — c'est une décision qui dépend de vos contraintes de coût, de confidentialité et de performance.",
+      intro: "En *janvier 2025*, la frontière entre modèles IA **propriétaires** et **open source** n'a jamais été aussi floue. **Llama 3.3 70B** d'une Meta dépasse GPT-4 de fin 2023 sur plusieurs benchmarks. **Mistral Large 2** rivalise avec Claude Sonnet sur les tâches de raisonnement en français. Pour une PME qui intègre des **LLM** dans ses processus, le choix n'est plus 'OpenAI ou rien' — c'est une décision qui dépend de vos contraintes de *coût*, de *confidentialité* et de *performance*.",
       sections: [
         {
           title: "L'état des forces en présence en 2025",
@@ -1927,7 +1927,7 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Contenu", "IA", "Marketing", "Productivité", "LinkedIn"],
     available: true,
     body: {
-      intro: "30 contenus par mois : 1 article de blog, 12 posts LinkedIn, 8 newsletters, 8 stories ou réels, 1 étude de cas. Ce n'est pas un objectif pour une équipe de 5 content managers — c'est ce qu'une seule personne peut produire en 2 heures de travail par semaine avec un système éditorial IA bien huilé. Ce n'est pas de la magie et ce n'est pas du contenu de mauvaise qualité : c'est un processus reproductible que nous avons construit et documenté. Voici comment.",
+      intro: "**30 contenus par mois** : 1 article de blog, 12 posts LinkedIn, 8 newsletters, 8 stories ou réels, 1 étude de cas. Ce n'est pas un objectif pour une équipe de 5 content managers — c'est ce qu'**une seule personne** peut produire en **2 heures de travail par semaine** avec un *système éditorial IA* bien huilé. Ce n'est pas de la magie et ce n'est pas du contenu de mauvaise qualité : c'est un **processus reproductible** que nous avons construit et documenté. Voici comment.",
       sections: [
         {
           title: "La méthode du 'contenu racine' : produire 1 pour en avoir 10",
@@ -1992,7 +1992,7 @@ export const blogArticles: BlogArticle[] = [
     tags: ["LinkedIn", "Personal Branding", "Dirigeants", "Inbound", "Contenu"],
     available: true,
     body: {
-      intro: "LinkedIn compte 29 millions d'utilisateurs actifs en France. Parmi eux, moins de 1 % publient du contenu régulièrement. Ce 1 % capte 99 % de la visibilité. Pour un dirigeant de PME, être dans ce 1 % n'est pas un effort titanesque — c'est une décision stratégique et un système à tenir. Voici pourquoi et surtout comment.",
+      intro: "**LinkedIn** compte **29 millions d'utilisateurs actifs** en France. Parmi eux, **moins de 1 %** publient du contenu régulièrement. Ce **1 %** capte **99 % de la visibilité**. Pour un dirigeant de PME, être dans ce 1 % n'est pas un effort titanesque — c'est une **décision stratégique** et un *système* à tenir. Voici pourquoi et surtout comment.",
       sections: [
         {
           title: "Pourquoi le personal branding du dirigeant surpasse la page entreprise",
@@ -2060,7 +2060,7 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Formation", "Change Management", "IA", "Adoption", "Équipe"],
     available: true,
     body: {
-      intro: "Vous avez testé les outils IA, vous êtes convaincu du potentiel, vous voulez déployer. Et là, vous rencontrez le mur le plus difficile à franchir dans n'importe quelle transformation digitale : la résistance de votre propre équipe. 'C'est compliqué', 'on n'a pas le temps d'apprendre', 'ça va remplacer nos emplois'... Ces objections sont légitimes et elles méritent une réponse — pas un décret. Voici un plan d'action en 4 phases pour transformer des sceptiques en ambassadeurs en 30 jours.",
+      intro: "Vous avez testé les outils IA, vous êtes convaincu du potentiel, vous voulez déployer. Et là, vous rencontrez le mur le plus difficile à franchir dans n'importe quelle **transformation digitale** : la *résistance de votre propre équipe*. 'C'est compliqué', 'on n'a pas le temps d'apprendre', 'ça va remplacer nos emplois'... Ces objections sont légitimes et elles méritent une réponse — pas un décret. Voici un **plan d'action en 4 phases** pour transformer des sceptiques en ambassadeurs en **30 jours**.",
       sections: [
         {
           title: "Comprendre les vraies raisons de la résistance",
@@ -2126,7 +2126,7 @@ export const blogArticles: BlogArticle[] = [
     tags: ["Audit Digital", "PME", "Stratégie", "Diagnostic"],
     available: true,
     body: {
-      intro: "La majorité des PME qui viennent nous voir pour améliorer leur présence digitale ne savent pas précisément où elles en sont. Elles ont un site web, quelques réseaux sociaux, un CRM peut-être, et un sentiment vague que 'ça pourrait mieux marcher'. Un audit digital change ça : il donne une image précise, chiffrée, des forces et des lacunes — et permet de prioriser les investissements avec une logique d'impact plutôt que d'instinct. Voici les 12 points que nous examinons systématiquement.",
+      intro: "La majorité des **PME** qui viennent nous voir pour améliorer leur présence digitale ne savent pas précisément où elles en sont. Elles ont un site web, quelques réseaux sociaux, un CRM peut-être, et un sentiment vague que 'ça pourrait mieux marcher'. Un **audit digital** change ça : il donne une image **précise, chiffrée**, des forces et des lacunes — et permet de prioriser les investissements avec une *logique d'impact* plutôt que d'instinct. Voici les **12 points** que nous examinons systématiquement.",
       sections: [
         {
           title: "Points 1 à 4 : présence en ligne et acquisition",
@@ -2194,7 +2194,7 @@ export const blogArticles: BlogArticle[] = [
     tags: ["KPIs", "Dashboard", "Pilotage", "PME", "Data"],
     available: true,
     body: {
-      intro: "La plupart des tableaux de bord PME ont le même problème : trop d'indicateurs. 47 métriques réparties sur 6 onglets, actualisées manuellement le premier lundi de chaque mois. Résultat : personne ne les regarde vraiment, les décisions sont prises à l'instinct, et les anomalies sont détectées trop tard. Un bon tableau de bord PME tient sur un seul écran, se met à jour automatiquement, et contient exactement 5 indicateurs clés. Voici lesquels et pourquoi.",
+      intro: "La plupart des tableaux de bord PME ont le même problème : **trop d'indicateurs**. *47 métriques* réparties sur 6 onglets, actualisées manuellement le premier lundi de chaque mois. Résultat : personne ne les regarde vraiment, les décisions sont prises à l'instinct, et les anomalies sont détectées trop tard. Un bon **tableau de bord PME** tient sur un seul écran, se met à jour automatiquement, et contient exactement **5 indicateurs clés**. Voici lesquels et pourquoi.",
       sections: [
         {
           title: "Les 5 KPIs universels d'une PME de services",
@@ -2260,7 +2260,7 @@ export const blogArticles: BlogArticle[] = [
     tags: ["React", "Production", "Maintenance", "DevOps", "Non-technique"],
     available: true,
     body: {
-      intro: "Votre agence a livré un site React magnifique. Vous l'avez payé, vous en êtes fier, et maintenant vous réalisez que personne dans votre équipe ne sait comment le maintenir. Les mises à jour de sécurité s'accumulent dans les alertes GitHub que vous n'ouvrez pas. Un jour, un message 'site down' arrive à 9h du matin et vous appelez frénétiquement votre prestataire. Ça n'a pas à être ainsi. Voici les processus et outils qui permettent de maintenir un site React en production sans dépendre d'un développeur pour chaque intervention.",
+      intro: "Votre agence a livré un site **React** magnifique. Vous l'avez payé, vous en êtes fier, et maintenant vous réalisez que **personne dans votre équipe ne sait comment le maintenir**. Les mises à jour de sécurité s'accumulent dans les alertes GitHub que vous n'ouvrez pas. Un jour, un message *'site down'* arrive à 9h du matin et vous appelez frénétiquement votre prestataire. Ça n'a pas à être ainsi. Voici les processus et outils qui permettent de **maintenir un site React en production** sans dépendre d'un développeur pour chaque intervention.",
       sections: [
         {
           title: "Comprendre ce que 'maintenir' veut dire pour un site React",
