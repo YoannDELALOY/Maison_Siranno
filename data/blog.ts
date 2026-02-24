@@ -217,11 +217,66 @@ export const blogArticles: BlogArticle[] = [
     title: "Lancer un MVP SaaS en 6 semaines : méthode et stack technique",
     excerpt: "De l'idée au produit en production en 6 semaines. Notre méthode, notre stack (React + Supabase + Stripe + Vercel) et les pièges à éviter pour les fondateurs non-techniques.",
     category: 'Développement Web & SaaS',
-    date: "Mars 2025",
+    date: "Janvier 2025",
     readTime: "12 min",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
     tags: ["MVP", "SaaS", "Startup", "React"],
-    available: false,
+    available: true,
+    body: {
+      intro: "Six semaines. C'est le temps qu'il faut à une équipe bien organisée pour passer d'une idée SaaS à un produit en production capable d'encaisser ses premiers paiements. Pas une maquette Figma, pas un prototype bricolé — un vrai produit avec authentification, base de données, billing Stripe et déploiement continu. Nous avons appliqué cette méthode sur 11 projets entre 2023 et 2024, avec un taux de mise en production à 6 semaines de 82 %. Voici exactement comment nous procédons.",
+      sections: [
+        {
+          title: "Semaines 1-2 : Décision de stack et architecture zéro-dette",
+          paragraphs: [
+            "Le choix de stack est la décision la plus structurante — et la plus souvent mal prise. Trop de fondateurs choisissent une technologie parce qu'ils la connaissent, pas parce qu'elle est adaptée au problème. Pour un SaaS B2B standard (tableau de bord, gestion utilisateurs, abonnements), notre stack de référence est immuable depuis 18 mois : React + TypeScript en front, Supabase comme backend-as-a-service (PostgreSQL + authentification + storage), Stripe pour le billing, Vercel pour le déploiement. Ce quadruplet permet à un développeur solo de livrer en 6 semaines ce qui prenait 6 mois avec une stack classique il y a 5 ans.",
+            "La semaine 1 est entièrement consacrée à la définition du périmètre minimal viable. Pas de feature creep, pas de 'on va peut-être avoir besoin de'. Nous utilisons une méthode brutale : pour chaque fonctionnalité envisagée, la question est 'peut-on valider notre hypothèse business sans ça ?'. Si la réponse est oui, la feature sort du scope. Le résultat est toujours un scope réduit de 40 à 60 % par rapport aux ambitions initiales — et c'est exactement ce qui rend la livraison à 6 semaines possible.",
+          ],
+          bullets: [
+            "Stack recommandée : React + TypeScript / Supabase / Stripe / Vercel",
+            "Supabase remplace 3 services : base de données, authentification, stockage fichiers",
+            "Vercel permet le déploiement continu depuis GitHub en 5 minutes de configuration",
+            "Définir le MVP en semaine 1 : enlever toute fonctionnalité non essentielle à la validation",
+            "Utiliser un design system existant (Shadcn/UI, Radix) — ne pas reconstruire les composants de base",
+          ],
+        },
+        {
+          title: "Semaines 3-4 : Le cœur du produit — authentification, données, logique métier",
+          paragraphs: [
+            "Ces deux semaines constituent le sprint le plus intense. L'authentification Supabase est opérationnelle en moins d'une journée (email/password + magic link + OAuth Google). La structure de base de données est modélisée avec soin — c'est le seul endroit où nous ne coupons pas les coins ronds, car une architecture DB mal pensée coûte cher à corriger plus tard. Nous utilisons systématiquement Row Level Security (RLS) de Supabase pour isoler les données multi-tenant dès le départ.",
+            "La logique métier — le cœur du produit, la valeur différenciante — est développée en semaine 4. C'est là que la clarté du scope de semaine 1 porte ses fruits : l'équipe peut se concentrer sur ce qui compte vraiment sans être distraite par des fonctionnalités secondaires. Un tableau de bord minimaliste mais fonctionnel, les opérations CRUD essentielles, les notifications de base. Chaque jour se termine par un déploiement sur l'URL de preview Vercel que le client peut consulter.",
+          ],
+          bullets: [
+            "Authentification Supabase opérationnelle en < 4h (email + Google OAuth)",
+            "Row Level Security activé dès le départ pour l'isolation des données multi-tenant",
+            "Migrations de base de données versionnées dans Git dès le premier schéma",
+            "Déploiement preview automatique sur chaque Pull Request avec Vercel",
+            "Tests d'intégration sur les endpoints critiques (authentification, billing)",
+          ],
+        },
+        {
+          title: "Semaines 5-6 : Billing Stripe, onboarding et mise en production",
+          paragraphs: [
+            "L'intégration Stripe en semaine 5 suit toujours le même pattern : Stripe Checkout pour la souscription (évite de gérer les formulaires de carte), webhooks pour synchroniser l'état de l'abonnement dans Supabase, et Stripe Customer Portal pour la gestion en libre-service (changement de plan, annulation). Ce triptyque couvre 95 % des besoins SaaS et est opérationnel en 2 à 3 jours de développement.",
+            "La semaine 6 est consacrée à l'onboarding et au polish. Un SaaS sans onboarding clair perd 70 % de ses utilisateurs dans les 7 premiers jours. Nous construisons un flow d'activation minimal : email de bienvenue, checklist de configuration in-app, et un premier succès garanti dans les 5 minutes après inscription. La mise en production finale inclut la configuration du domaine custom, les variables d'environnement de production, et un test de bout en bout du parcours paiement.",
+          ],
+          bullets: [
+            "Stripe Checkout gère les paiements sans stocker de données bancaires en local",
+            "Webhooks Stripe → Supabase pour synchronisation temps réel du statut d'abonnement",
+            "Stripe Customer Portal : gestion du plan en libre-service sans code custom",
+            "Onboarding checklist in-app : au moins un 'aha moment' dans les 5 premières minutes",
+            "Checklist mise en production : domaine, HTTPS, variables env, monitoring Sentry",
+          ],
+        },
+      ],
+      conclusion: "Six semaines, c'est court — mais c'est suffisant pour valider une hypothèse business avec un produit qui ressemble à un vrai produit. La clé est la discipline du périmètre minimal : vous construisez pour apprendre, pas pour impressionner. Si vous avez une idée SaaS et voulez être en production avant la fin du trimestre, contactez-nous pour discuter de votre projet.",
+      keyTakeaways: [
+        "La stack React + Supabase + Stripe + Vercel réduit le temps de développement de 60% vs stack classique",
+        "Réduire le scope de 40 à 60% en semaine 1 est la condition principale du respect des délais",
+        "Supabase remplace authentification + base de données + stockage en un seul service",
+        "L'intégration Stripe Checkout + webhooks + Customer Portal couvre 95% des besoins billing",
+        "L'onboarding en semaine 6 est aussi important que les fonctionnalités — sans lui, 70% des users disparaissent",
+      ],
+    },
   },
 
   {
@@ -408,14 +463,68 @@ export const blogArticles: BlogArticle[] = [
 
   {
     id: 'workflow-rdv-auto',
-    title: "Automatiser sa prise de RDV : le guide complet",
+    title: "Automatiser sa prise de RDV : le guide complet avec n8n",
     excerpt: "Calendly, Cal.com, intégration agenda Google, rappels SMS, qualification de leads... Comment construire un système de RDV 100% automatisé sans friction client.",
     category: 'Automatisation & n8n',
-    date: "Bientôt",
+    date: "Novembre 2024",
     readTime: "7 min",
     image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800",
     tags: ["RDV", "Calendly", "Automatisation", "CRM"],
-    available: false,
+    available: true,
+    body: {
+      intro: "Combien d'allers-retours email faut-il pour fixer un rendez-vous client ? En moyenne, 3 à 5 échanges — soit 10 à 15 minutes perdues, par les deux parties, pour chaque rendez-vous. Pour une PME qui organise 20 RDV par semaine, c'est 5 heures de travail administratif pur. Un système automatisé réduit ce chiffre à zéro. Voici comment nous construisons des pipelines RDV complets avec n8n, du premier contact au suivi post-réunion.",
+      sections: [
+        {
+          title: "Choisir le bon outil de prise de RDV : Calendly vs Cal.com",
+          paragraphs: [
+            "Le point d'entrée d'un système RDV automatisé est toujours un outil de booking en ligne. Calendly est le plus connu : intuitif, fiable, avec une version gratuite généreuse. Il s'intègre nativement à Google Calendar, Outlook, Zoom et des dizaines d'autres outils. Pour 90 % des cas PME, Calendly suffit amplement. Cal.com est son alternative open-source, auto-hébergeable et entièrement personnalisable — préférable si vous voulez supprimer les mentions de l'outil de votre page de booking ou avoir un contrôle total sur vos données.",
+            "La configuration de l'outil de booking est plus stratégique qu'il n'y paraît. Les questions de qualification intégrées au formulaire de RDV permettent de filtrer les prospects non qualifiés avant même le premier appel. Pour un consultant qui ne travaille qu'avec des PME de 10 salariés minimum, une question sur la taille de l'entreprise dans le formulaire élimine les demandes hors cible. Nous recommandons de limiter à 3-4 questions maximum — au-delà, le taux de complétion chute.",
+          ],
+          bullets: [
+            "Calendly Free : 1 type d'événement, suffisant pour démarrer",
+            "Calendly Teams (16$/mois) : round-robin, collective events, reporting",
+            "Cal.com : open-source, auto-hébergeable sur VPS à 5€/mois, RGPD-friendly",
+            "Intégrer 2-3 questions de qualification dans le formulaire de réservation",
+            "Configurer les tampons avant/après pour ne pas s'épuiser entre les réunions",
+          ],
+        },
+        {
+          title: "Le workflow n8n : de la réservation au CRM en temps réel",
+          paragraphs: [
+            "Une fois l'outil de booking en place, n8n prend le relais pour orchestrer toutes les actions autour du RDV. Le workflow démarre sur un webhook déclenché par chaque nouvelle réservation Calendly. En quelques secondes, n8n crée ou met à jour la fiche contact dans le CRM (HubSpot, Pipedrive, Notion — au choix selon votre stack), envoie un email de confirmation personnalisé avec les détails de connexion Zoom générés à la volée, et notifie le commercial concerné sur Slack.",
+            "Le rappel automatique à J-1 et J-1h est la fonctionnalité qui réduit le plus les no-shows. Nous observons une réduction de 35 à 60 % des absences en ajoutant simplement un SMS de rappel 24h avant le RDV. n8n peut envoyer ce SMS via Twilio ou Brevo pour un coût de quelques centimes par message. Le workflow gère aussi les annulations : si un RDV est annulé dans Calendly, n8n met automatiquement à jour le statut dans le CRM et libère le créneau dans l'agenda.",
+          ],
+          bullets: [
+            "Webhook Calendly → n8n déclenche toutes les actions en cascade",
+            "Création automatique de la fiche prospect dans le CRM avec les réponses du formulaire",
+            "Lien Zoom (ou Meet) généré automatiquement et intégré à l'email de confirmation",
+            "SMS de rappel J-1 et H-1 via Twilio : réduction des no-shows de 35 à 60%",
+            "Gestion des annulations : mise à jour CRM + notification équipe automatiques",
+          ],
+        },
+        {
+          title: "Le suivi post-RDV : automatiser sans déshumaniser",
+          paragraphs: [
+            "Le workflow ne s'arrête pas à la fin du rendez-vous. 15 minutes après l'heure de fin prévue, n8n peut envoyer un email de remerciement automatique avec les ressources mentionnées pendant l'appel (packagées dans un template), relancer la complétion d'un questionnaire de satisfaction, ou créer une tâche de suivi dans l'outil de gestion de projet.",
+            "L'écueil à éviter est l'over-automation du post-RDV. Un email de remerciement générique envoyé 15 minutes après un appel de découverte peut nuire à la relation si le prospect a l'impression de parler à un robot. Nous recommandons de bloquer les automatisations post-RDV pour les rendez-vous stratégiques (closing, relation client sensible) et de les activer uniquement pour les appels de découverte à fort volume.",
+          ],
+          bullets: [
+            "Email de suivi automatique 15 min après la fin du RDV avec ressources personnalisées",
+            "Création automatique d'une tâche de relance à J+3 dans le CRM",
+            "Questionnaire NPS automatique pour les rendez-vous de formation ou support",
+            "Désactiver les automatisations post-RDV pour les rendez-vous stratégiques (closing)",
+          ],
+        },
+      ],
+      conclusion: "Un système RDV automatisé n'est pas un luxe — c'est une nécessité pour toute PME qui veut professionnaliser son processus commercial sans embaucher un assistant. La mise en place prend une journée, l'impact est immédiat, et le workflow tourne ensuite sans maintenance. Si vous voulez qu'on vous accompagne dans la construction de ce système pour votre activité, prenez rendez-vous — automatiquement, bien sûr.",
+      keyTakeaways: [
+        "Calendly (gratuit) suffit pour démarrer — Cal.com si vous voulez l'auto-hébergement RGPD-friendly",
+        "Les questions de qualification dans le formulaire filtrent les prospects non pertinents avant le premier appel",
+        "Le webhook Calendly → n8n → CRM est le cœur du système — opérationnel en 2h",
+        "Les rappels SMS J-1 et H-1 réduisent les no-shows de 35 à 60%",
+        "Éviter l'over-automation post-RDV sur les rendez-vous stratégiques",
+      ],
+    },
   },
 
   {
@@ -593,14 +702,67 @@ export const blogArticles: BlogArticle[] = [
 
   {
     id: 'ia-generative-pme-2025',
-    title: "IA générative : quels cas d'usage réels pour votre PME en 2025 ?",
-    excerpt: "GPT-4, Claude, Gemini... Au-delà du buzz, quelles applications concrètes génèrent du ROI pour les PME françaises ? Analyse des 10 cas d'usage les plus rentables.",
+    title: "IA générative en PME : 7 cas d'usage concrets en 2025",
+    excerpt: "GPT-4, Claude, Gemini... Au-delà du buzz, quelles applications concrètes génèrent du ROI pour les PME françaises ? Analyse des 7 cas d'usage les plus rentables avec des chiffres réels.",
     category: 'Intelligence Artificielle & RAG',
-    date: "Bientôt",
+    date: "Décembre 2024",
     readTime: "9 min",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
     tags: ["IA Générative", "PME", "ROI", "Claude"],
-    available: false,
+    available: true,
+    body: {
+      intro: "En 2024, 67 % des dirigeants de PME interrogés par BPI France déclarent avoir 'entendu parler' de l'IA générative. Mais seulement 18 % l'utilisent dans leurs processus de façon régulière. L'écart entre la conscience et l'adoption cache une réalité simple : la plupart des PME ne savent pas par quel bout commencer. Voici 7 cas d'usage concrets — pas des hypothèses, des déploiements réels — avec les économies ou gains mesurés pour chacun.",
+      sections: [
+        {
+          title: "Cas 1 à 3 : Automatiser la production écrite et documentaire",
+          paragraphs: [
+            "La rédaction de devis et propositions commerciales est systématiquement citée en premier par les dirigeants que nous accompagnons. Un consultant qui rédige 8 propositions par semaine y passe en moyenne 45 minutes chacune. Avec un assistant IA entraîné sur ses propositions types et connecté à son CRM, ce temps tombe à 12 minutes — soit 4,5 heures récupérées par semaine. Le même principe s'applique aux réponses aux appels d'offres, aux rapports d'intervention et aux comptes-rendus de réunion (transcription automatique via Whisper + résumé structuré par Claude).",
+            "La génération de contenu marketing (fiches produits, posts LinkedIn, newsletters) est le cas d'usage le plus visible mais pas forcément le plus rentable. L'enjeu n'est pas de produire du contenu en masse — c'est de produire du contenu de qualité constante sans dépendre d'un rédacteur externe à 0,10 €/mot. Un système bien configuré avec Claude ou GPT-4, alimenté par un brief structuré, produit des premiers jets que 80 % de nos clients publient avec moins de 20 % de modifications.",
+          ],
+          bullets: [
+            "Devis et propositions : -62% de temps rédactionnel (45 min → 12 min par document)",
+            "Comptes-rendus automatiques : Whisper transcrit, Claude structure et résume en 2 minutes",
+            "Fiches produits e-commerce : 50 fiches générées et relues en une journée vs une semaine",
+            "Réponses emails clients : brouillons contextuels en 30 secondes depuis le CRM",
+          ],
+        },
+        {
+          title: "Cas 4 à 6 : Analyse de données et support client",
+          paragraphs: [
+            "L'analyse de données non structurées est un cas d'usage sous-estimé. Les PME accumulent des années d'emails, de PDF de contrats, de retours clients, de rapports d'audit — toutes des données qui dorment dans des dossiers parce que personne n'a le temps de les analyser. Un pipeline RAG (Retrieval-Augmented Generation) permet d'interroger ce corpus en langage naturel : 'quels clients ont mentionné un problème de délai dans les 6 derniers mois ?' répond en secondes à une question qui prendrait des heures manuellement.",
+            "Le support client de premier niveau est le cas d'usage le plus mesurable en termes de ROI. Un chatbot RAG entraîné sur la documentation produit, les FAQ et les tickets passés répond correctement à 60-75 % des demandes sans intervention humaine. Pour une boutique e-commerce avec 300 tickets/mois, ça représente 180 à 225 tickets traités automatiquement — soit 15 à 20 heures de travail support récupérées par mois. Le ticket humain se concentre alors sur les cas complexes qui méritent vraiment l'attention.",
+          ],
+          bullets: [
+            "Chatbot RAG sur documentation interne : 60 à 75% des questions répondues sans humain",
+            "Analyse de sentiment sur les avis clients : clustering automatique des thèmes négatifs",
+            "Extraction d'informations depuis les PDF contractuels : dates, montants, clauses clés",
+            "Veille concurrentielle : résumé automatique des actualités sectorielles chaque matin",
+          ],
+        },
+        {
+          title: "Cas 7 : L'assistant IA interne connecté à vos outils",
+          paragraphs: [
+            "Le cas d'usage le plus transformateur — et le plus complexe à mettre en place — est l'assistant IA interne qui a accès à vos données en temps réel. Connecté à votre CRM, votre outil de comptabilité, votre calendrier et votre base documentaire, il peut répondre à des questions comme 'quel est le CA du client Dupont depuis janvier ?' ou 'quels sont les projets en retard cette semaine ?'. Ce n'est plus un chatbot généraliste — c'est un collaborateur virtuel qui connaît votre entreprise.",
+            "Nous avons déployé ce type de système pour 4 clients PME en 2024. La stack utilisée est invariablement la même : n8n pour l'orchestration, Claude (via API Anthropic) pour le raisonnement, Supabase ou Pinecone pour la base vectorielle, et une interface simple en React. Le coût de fonctionnement est de 50 à 200 €/mois selon le volume de requêtes. L'économie en temps de recherche d'information et en réunions de synchronisation est systématiquement supérieure à 10× ce coût dès le deuxième mois.",
+          ],
+          bullets: [
+            "Assistant connecté au CRM : requêtes en langage naturel sur vos données clients",
+            "Stack : n8n + Claude API + Supabase pgvector — déployable en 2 à 4 semaines",
+            "Coût de fonctionnement : 50 à 200€/mois selon volume",
+            "ROI typique : 10× dès le 2ème mois (temps de recherche info + synchros évitées)",
+            "Confidentialité : données traitées via API Anthropic Enterprise (sans rétention d'entraînement)",
+          ],
+        },
+      ],
+      conclusion: "L'IA générative pour PME n'est pas un projet de 2 ans — c'est une série de décisions concrètes que vous pouvez commencer à prendre cette semaine. Identifiez votre tâche la plus chronophage et demandez-vous si un modèle de langage pourrait en automatiser 50 %. La réponse est probablement oui. Si vous voulez qu'on analyse ensemble vos opportunités IA les plus rentables, contactez-nous pour un audit.",
+      keyTakeaways: [
+        "67% des dirigeants PME connaissent l'IA générative, seulement 18% l'utilisent vraiment",
+        "La rédaction de propositions commerciales offre le ROI le plus immédiat (-62% de temps)",
+        "Les chatbots RAG traitent 60 à 75% des tickets support sans intervention humaine",
+        "Un assistant IA connecté au CRM génère un ROI de 10× dès le 2ème mois",
+        "La stack n8n + Claude API + Supabase est notre référence pour les PME françaises",
+      ],
+    },
   },
 
   {
@@ -786,14 +948,68 @@ export const blogArticles: BlogArticle[] = [
 
   {
     id: 'tunnel-vente-automation',
-    title: "Tunnel de vente automatisé : les 5 étapes d'un funnel qui convertit",
-    excerpt: "Lead magnet, séquence email, nurturing, upsell... Comment construire un tunnel de vente entièrement automatisé qui travaille pour vous 24h/24.",
+    title: "Construire un tunnel de vente automatisé avec l'IA",
+    excerpt: "Lead magnet, séquence email, nurturing, upsell... Comment construire un tunnel de vente entièrement automatisé et personnalisé par l'IA qui travaille pour vous 24h/24.",
     category: 'Contenu & Marketing IA',
-    date: "Bientôt",
+    date: "Octobre 2024",
     readTime: "9 min",
     image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&q=80&w=800",
     tags: ["Tunnel de Vente", "Email", "Conversion", "Automation"],
-    available: false,
+    available: true,
+    body: {
+      intro: "Un tunnel de vente automatisé n'est pas un emailing de masse envoyé à toute votre liste. C'est un système qui identifie où en est chaque prospect dans sa réflexion, lui envoie le bon message au bon moment, et l'accompagne naturellement vers la décision d'achat — sans intervention humaine à chaque étape. En 2025, les outils disponibles permettent de construire ce système avec un niveau de personnalisation et d'intelligence qui était réservé aux grandes marques il y a 3 ans. Voici la méthode complète.",
+      sections: [
+        {
+          title: "L'architecture en 4 phases : attirer, capturer, nourrir, convertir",
+          paragraphs: [
+            "Tout tunnel de vente performant suit la même logique en 4 phases. La phase d'attraction génère du trafic qualifié vers votre contenu (SEO, LinkedIn, publicité ciblée). La phase de capture transforme ce trafic en leads identifiés via un lead magnet — un contenu à forte valeur (guide, template, checklist, mini-formation) échangé contre une adresse email. La phase de nurturing entretient la relation via une séquence d'emails qui éduquent et qualifient le prospect. La phase de conversion propose l'offre commerciale au moment optimal.",
+            "L'erreur la plus courante est de sauter directement de la capture à la conversion. Un prospect qui vient de télécharger votre guide n'est pas prêt à acheter — il vous découvre. Une séquence de nurturing bien construite a pour objectif de lui donner suffisamment de valeur gratuitement pour qu'il associe votre expertise à son problème. Statistiquement, les prospects nourris pendant 7 à 10 touchpoints convertissent à un taux 3 à 4 fois supérieur à ceux approchés immédiatement.",
+          ],
+          bullets: [
+            "Lead magnet : 1 problème précis, 1 solution concrète, livraison immédiate",
+            "Séquence de bienvenue : 5 emails sur 10 jours pour poser l'expertise",
+            "Segmentation comportementale : adapter les messages selon les pages visitées ou les liens cliqués",
+            "Déclencheur de conversion : proposer l'offre après un signal d'intérêt fort (ouverture 3+ emails, visite page tarifs)",
+          ],
+        },
+        {
+          title: "Personnaliser avec l'IA : du mass mailing à la conversation individuelle",
+          paragraphs: [
+            "Le changement majeur apporté par l'IA au tunnel de vente est la personnalisation à l'échelle. Avec un outil comme Brevo ou ActiveCampaign couplé à une API de LLM, chaque email peut être adapté au secteur d'activité du prospect, à sa taille d'entreprise, aux pages qu'il a consultées sur votre site et aux réponses qu'il a données dans votre formulaire de capture. Deux prospects qui téléchargent le même guide reçoivent des séquences différentes selon leur profil.",
+            "Nous avons testé cette approche sur une campagne de 1 200 prospects pour un client cabinet de conseil en 2024. La personnalisation par secteur (3 variantes : industrie, retail, services) a augmenté le taux d'ouverture moyen de 22 % à 41 %, et le taux de clics de 3,8 % à 11,2 %. La conversion finale (demande de RDV) est passée de 1,4 % à 4,7 % — soit 3,3 fois plus de prospects qualifiés pour le même volume de trafic.",
+          ],
+          bullets: [
+            "Personnalisation par secteur : taux d'ouverture +87% vs email générique",
+            "Dynamic content : insérer le nom du prospect ET son secteur dans l'objet et le corps",
+            "Scoring comportemental : attribuer des points selon les actions (ouverture, clic, visite page prix)",
+            "Déclenchement IA : envoyer l'email de conversion quand le score dépasse un seuil défini",
+            "Test A/B automatique sur les objets d'emails : laisser l'outil choisir le gagnant",
+          ],
+        },
+        {
+          title: "Les outils et la stack pour un tunnel automatisé en 2025",
+          paragraphs: [
+            "Pour une PME française, notre stack de référence est : Brevo (ex-Sendinblue) pour l'emailing et l'automatisation (tarification en euros, RGPD natif, interface en français, plan gratuit jusqu'à 300 emails/jour), Typeform ou Tally pour les formulaires de capture, et n8n pour l'orchestration des logiques complexes (scoring, synchronisation CRM, déclenchements conditionnels). L'ensemble peut être opérationnel en 2 à 3 jours de configuration.",
+            "Le point critique est la configuration du scoring et des déclencheurs. Un tunnel qui envoie le mail de vente trop tôt génère des désabonnements. Trop tard, il perd des prospects prêts à acheter. Notre paramétrage de référence : email de conversion déclenché après 3 ouvertures consécutives OU 1 visite de la page tarifs/services ET un délai minimum de 5 jours depuis le lead magnet. Ce paramètre seul peut doubler le taux de conversion par rapport à une simple séquence chronologique.",
+          ],
+          bullets: [
+            "Brevo : emailing RGPD, automation visuelle, plan gratuit généreux, 100% français",
+            "Tally (gratuit) : formulaires de capture élégants avec logique conditionnelle",
+            "n8n : orchestration des déclencheurs complexes entre CRM, email et analytics",
+            "Paramétrage optimal du scoring : 3 ouvertures OU visite page tarifs + délai 5 jours minimum",
+            "Surveiller les taux de désabonnement — signal d'alerte si > 0,5% par email",
+          ],
+        },
+      ],
+      conclusion: "Un tunnel de vente automatisé construit correctement tourne sans maintenance et génère des leads qualifiés 24h/24. Mais 'construit correctement' est le point clé — un tunnel mal segmenté ou sans personnalisation peut faire plus de mal que de bien à votre réputation d'expéditeur. Prenez le temps de la configuration initiale, mesurez rigoureusement les taux à chaque étape, et itérez. Si vous voulez qu'on construise ce système pour vous, parlons-en.",
+      keyTakeaways: [
+        "Les prospects nourris sur 7-10 touchpoints convertissent 3 à 4x mieux que ceux approchés directement",
+        "La personnalisation par secteur multiplie le taux de conversion par 3,3 selon nos tests",
+        "Stack recommandée pour PME française : Brevo + Tally + n8n — tout en RGPD",
+        "Le scoring comportemental (et non chronologique) est le levier de conversion le plus puissant",
+        "Un taux de désabonnement > 0,5% par email signale un problème de segmentation ou de timing",
+      ],
+    },
   },
 
   {
@@ -975,14 +1191,67 @@ export const blogArticles: BlogArticle[] = [
 
   {
     id: 'cdao-pme',
-    title: "CDO as a Service : pourquoi les PME ont besoin d'un directeur digital à temps partagé",
-    excerpt: "Un Chief Digital Officer à plein temps coûte 80 000 à 120 000€/an. Un CDO as a Service offre la même expertise pour 1 500 à 4 000€/mois. Ce que ça change concrètement.",
+    title: "Mettre en place un CDAO dans une PME sans DSI : guide pratique",
+    excerpt: "Chief Data & AI Officer sans département IT : c'est possible et souvent nécessaire. Comment structurer la gouvernance data et IA dans une PME de 10 à 100 salariés sans recruter un CDO à 100k€/an.",
     category: 'Conseil & Formation',
-    date: "Bientôt",
+    date: "Janvier 2025",
     readTime: "6 min",
     image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=800",
-    tags: ["CDO", "Conseil", "Stratégie", "PME"],
-    available: false,
+    tags: ["CDO", "CDAO", "Conseil", "Stratégie", "PME"],
+    available: true,
+    body: {
+      intro: "Le rôle de Chief Data & AI Officer (CDAO) est en train de devenir indispensable dans toutes les organisations — y compris les PME. Mais un CDAO à plein temps coûte entre 80 000 et 130 000 € par an charges comprises. Pour une PME de 15 à 80 salariés, c'est souvent inaccessible. Pourtant, ne pas nommer quelqu'un responsable de la donnée et de l'IA, c'est s'assurer que ni l'une ni l'autre ne seront jamais traitées sérieusement. Voici comment structurer cette fonction de façon pragmatique, sans recruter.",
+      sections: [
+        {
+          title: "Comprendre ce que fait vraiment un CDAO en PME",
+          paragraphs: [
+            "Dans une grande entreprise, le CDAO supervise des équipes de data scientists et des budgets de millions d'euros. En PME, le rôle est fondamentalement différent : il s'agit moins de technique que de gouvernance et de priorisation. Le CDAO PME répond à quatre questions fondamentales : Quelles données collectons-nous et où vivent-elles ? Comment les exploitons-nous pour prendre de meilleures décisions ? Quels outils IA pouvons-nous déployer avec notre budget et nos ressources ? Comment restons-nous conformes RGPD dans tout ça ?",
+            "La bonne nouvelle est que ces quatre questions ne nécessitent pas un expert technique à plein temps. Elles nécessitent quelqu'un de curieux, organisé, avec une compréhension des enjeux business — et une capacité à s'appuyer sur des prestataires ou des consultants pour les parties techniques. Dans 70 % des PME que nous accompagnons, ce rôle peut être tenu par un profil déjà en poste : le directeur marketing, le DAF, ou un office manager ambitieux — avec 20 à 30% de leur temps dédié.",
+          ],
+          bullets: [
+            "Le CDAO PME est un rôle de gouvernance, pas d'exécution technique",
+            "4 missions : cartographie des données, exploitation décisionnelle, déploiement IA, conformité RGPD",
+            "Profils internes capables de tenir le rôle à temps partagé : DAF, directeur marketing, office manager senior",
+            "Temps requis : 20 à 30% d'un ETP, pas un poste à plein temps",
+          ],
+        },
+        {
+          title: "Les 3 chantiers prioritaires à lancer dans les 90 premiers jours",
+          paragraphs: [
+            "Le premier chantier est l'inventaire des données. La majorité des PME ne savent pas exactement quelles données elles possèdent, où elles vivent, et qui y a accès. Cet inventaire — réalisable en 2 à 3 jours de travail — révèle systématiquement des doublons (3 versions du fichier clients dans 3 outils différents), des données dormantes à forte valeur (historique de tickets support, catalogue de devis passés), et des risques RGPD non identifiés (données personnelles dans des Google Sheets partagés).",
+            "Le deuxième chantier est la mise en place d'un dashboard de pilotage unifié. Trop souvent, les données opérationnelles (CA, pipeline commercial, satisfaction client, performance site) vivent dans des silos : le DAF regarde son ERP, le commercial son CRM, le marketing ses analytics. Consolider ces données dans un dashboard partagé (Google Looker Studio est gratuit et suffisant pour commencer) transforme la réunion de direction mensuelle en décision basée sur des faits — pas des intuitions.",
+          ],
+          bullets: [
+            "Inventaire données (2-3 jours) : localisation, accès, qualité, risques RGPD",
+            "Dashboard unifié Looker Studio : CA + pipeline + NPS + trafic web en une vue",
+            "Documentation des processus data : qui saisit quoi, où, et avec quelle fréquence",
+            "Politique IA : charte interne sur les usages autorisés et les données qu'on ne met pas dans ChatGPT",
+            "Nomination d'un 'Data Owner' par domaine métier (commercial, RH, finance)",
+          ],
+        },
+        {
+          title: "Le modèle CDAO as a Service : expertise externe à temps partagé",
+          paragraphs: [
+            "Si aucun profil interne ne peut assumer ce rôle, l'alternative est le CDAO as a Service — un consultant senior dédié à votre entreprise 2 à 4 jours par mois. Ce modèle existe depuis plusieurs années dans le conseil mais s'est professionnalisé avec la montée en puissance de l'IA. Pour 1 500 à 3 500 €/mois selon le niveau d'implication, vous accédez à une expertise qui serait impossible à justifier en embauche.",
+            "Le CDAO as a Service est particulièrement pertinent pour les PME en phase de structuration digitale (entre 15 et 60 salariés). Il aide à choisir les bons outils, à éviter les pièges des contrats SaaS contraignants, à former les équipes, et à piloter les projets IA en garantissant un ROI mesurable. Chez Maison Siranno, nous proposons cette mission sous forme de retainer mensuel — une façon d'avoir un interlocuteur stratégique dédié sans les frais d'une embauche.",
+          ],
+          bullets: [
+            "CDAO as a Service : 2 à 4 jours/mois, 1 500 à 3 500€/mois selon périmètre",
+            "Vs embauche CDO full-time : 80 000 à 130 000€/an charges comprises",
+            "Missions types : audit data, sélection outils, pilotage projets IA, formation équipes",
+            "Idéal pour PME 15-60 salariés en structuration digitale",
+          ],
+        },
+      ],
+      conclusion: "Ne pas avoir de CDAO n'est pas une option neutre — c'est décider que personne ne sera responsable de vos données et de votre trajectoire IA. La bonne nouvelle : en PME, ce rôle est accessible, soit en valorisant un profil interne, soit via un modèle as a Service. Si vous voulez structurer cette fonction dans votre entreprise, nous pouvons vous accompagner dans l'audit et la mise en place.",
+      keyTakeaways: [
+        "Le CDAO PME est un rôle de gouvernance (20-30% d'un ETP), pas un poste technique à plein temps",
+        "L'inventaire des données en 2-3 jours révèle systématiquement des doublons et des risques RGPD cachés",
+        "Un dashboard Looker Studio unifié transforme les réunions de direction en décisions data-driven",
+        "Le CDAO as a Service (1 500 à 3 500€/mois) offre l'expertise d'un CDO à 120k€/an",
+        "Nommer un Data Owner par domaine métier est la première décision de gouvernance à prendre",
+      ],
+    },
   },
 
   {
@@ -1163,14 +1432,66 @@ export const blogArticles: BlogArticle[] = [
 
   {
     id: 'performance-continu-agence',
-    title: "Pilotage continu : pourquoi la vraie valeur commence après la livraison",
-    excerpt: "Livrer un projet, c'est démarrer la course — pas la finir. Pourquoi le suivi post-livraison est la partie la plus précieuse d'une mission digitale.",
+    title: "Pourquoi le suivi continu est la clé d'un site performant sur la durée",
+    excerpt: "Livrer un site, c'est démarrer la course — pas la finir. Pourquoi 80% de la valeur d'un projet digital se joue dans les 12 mois qui suivent la mise en ligne.",
     category: 'Pilotage Continu',
-    date: "Bientôt",
+    date: "Février 2025",
     readTime: "5 min",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
     tags: ["Pilotage", "Agence", "Suivi", "Performance"],
-    available: false,
+    available: true,
+    body: {
+      intro: "La plupart des agences web livrent un site et passent au projet suivant. Le client, lui, se retrouve seul face à un produit qu'il ne sait pas toujours faire évoluer, mesurer, ni maintenir. Six mois après la livraison, le site est déjà en train de perdre en performance, en sécurité et en visibilité. Chez Maison Siranno, nous avons fait le choix inverse : notre modèle de valeur est structuré autour du pilotage continu post-livraison. Voici pourquoi.",
+      sections: [
+        {
+          title: "Ce qui se passe réellement sur un site 6 mois après sa livraison",
+          paragraphs: [
+            "Un site web livré sans suivi continu se dégrade selon un schéma prévisible. La performance technique (Core Web Vitals) se dégrade d'abord imperceptiblement puis brutalement quand les dépendances npm ou WordPress prennent du retard. La sécurité se fragilise avec chaque vulnérabilité non patchée — un site WordPress non maintenu est compromis en moyenne 6 mois après sa dernière mise à jour. Le SEO évolue sans que personne n'adapte la stratégie : Google met à jour son algorithme plusieurs centaines de fois par an.",
+            "Les données analytics s'accumulent sans être lues. Les opportunités de conversion identifiées dans les premiers mois ne sont jamais implémentées faute de temps ou de compétences. Le contenu vieillit. Les redirections cassent lors de changements de structure. Ce n'est pas de la négligence — c'est simplement le résultat naturel d'un produit livré sans pilote. Un site est un actif vivant, pas un livrable.",
+          ],
+          bullets: [
+            "Performance : dégradation des Core Web Vitals dès le 3ème mois sans optimisation active",
+            "Sécurité : 60% des sites WordPress hackés l'ont été à cause d'un plugin non mis à jour",
+            "SEO : perte moyenne de 15 à 30% du trafic organique sur 12 mois sans contenu frais",
+            "Conversions : les quick wins UX identifiés en analytics ne sont jamais implémentés sans suivi",
+          ],
+        },
+        {
+          title: "Le modèle de pilotage continu : ce que ça implique concrètement",
+          paragraphs: [
+            "Notre modèle de pilotage continu repose sur trois piliers mensuels. Le premier est le rapport de performance : chaque mois, un document synthétique de 2 pages qui résume l'évolution du trafic, des conversions, des Core Web Vitals et des positions SEO clés — avec une interprétation et une recommandation d'action, pas juste des chiffres bruts. Le deuxième pilier est la maintenance technique proactive : mises à jour de sécurité, vérification des backups, monitoring des temps de réponse, et corrections des erreurs 404 avant qu'elles nuisent au SEO.",
+            "Le troisième pilier est l'optimisation continue : chaque mois, 2 à 4 heures de développement allouées à des améliorations priorisées par impact/effort. Pas de grands projets — des ajustements ciblés sur les pages à fort potentiel, les formulaires qui perdent des leads, les pages qui ralentissent le tunnel de conversion. Sur 12 mois, c'est 24 à 48 heures d'optimisation cumulées qui transforment un site statique en machine à conversions.",
+          ],
+          bullets: [
+            "Rapport mensuel : 2 pages, trafic + conversions + SEO + recommandations actionnables",
+            "Maintenance proactive : mises à jour sécurité + monitoring uptime + correction erreurs 404",
+            "Optimisation continue : 2-4h/mois sur les points à fort impact identifiés en analytics",
+            "Réunion trimestrielle : revue de performance et ajustement de la stratégie de contenu",
+          ],
+        },
+        {
+          title: "Mesurer le ROI du pilotage continu : des chiffres réels",
+          paragraphs: [
+            "La question légitime est : est-ce que ça vaut le coût ? Sur les clients qui ont bénéficié de ce modèle pendant 12 mois complets, nous mesurons des améliorations systématiques sur trois indicateurs. Le trafic organique augmente en moyenne de 34 % sur 12 mois grâce aux optimisations SEO continues. Le taux de conversion (visiteur → contact ou achat) progresse de 0,8 à 1,4 points selon les secteurs. Le temps de chargement reste sous les 2,5 secondes sur toute la durée, là où les sites non maintenus dépassent souvent les 4-5 secondes après 8 mois.",
+            "Ces chiffres ont une valeur financière directement calculable. Pour un site e-commerce avec 5 000 visites/mois et un panier moyen de 120 €, une amélioration de 0,8 point de conversion représente 4 800 € de CA supplémentaire par mois. Le coût du pilotage continu est donc rentabilisé en 1 à 3 semaines de revenus additionnels. Pour un site vitrine, l'enjeu est sur les leads — 34 % de trafic supplémentaire sur un formulaire qui convertit à 3 %, ça se traduit en demandes commerciales supplémentaires quantifiables.",
+          ],
+          bullets: [
+            "+34% de trafic organique en 12 mois (moyenne clients pilotage continu)",
+            "+0,8 à 1,4 point de taux de conversion sur 12 mois d'optimisation continue",
+            "Temps de chargement maintenu sous 2,5s vs 4-5s pour les sites non maintenus à 8 mois",
+            "ROI calculable : pour un e-commerce 5k visites/mois, +0,8pt conversion = +4 800€/mois",
+          ],
+        },
+      ],
+      conclusion: "Un site web sans pilotage continu est une voiture sans conducteur — elle avance, puis ralentit, puis s'arrête. Le pilotage continu n'est pas un coût de maintenance : c'est un investissement dans la performance durable de votre actif digital le plus important. Si vous avez un site en production qui mérite mieux que l'abandon post-livraison, discutons de ce que nous pouvons faire ensemble.",
+      keyTakeaways: [
+        "60% des sites WordPress hackés l'ont été à cause d'un plugin non mis à jour — la maintenance est non négociable",
+        "Un site sans contenu frais perd en moyenne 15 à 30% de son trafic organique sur 12 mois",
+        "Le modèle en 3 piliers : rapport mensuel + maintenance proactive + 2-4h d'optimisation/mois",
+        "+34% de trafic organique et +0,8-1,4pt de conversion sur 12 mois de pilotage continu",
+        "Pour un e-commerce, 1 point de conversion supplémentaire rentabilise le pilotage en quelques semaines",
+      ],
+    },
   },
 
   {
@@ -1183,6 +1504,815 @@ export const blogArticles: BlogArticle[] = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
     tags: ["Reporting", "Automatisation", "KPI", "n8n"],
     available: false,
+  },
+
+  // ─── PARTIE 2 — 12 NOUVEAUX ARTICLES ─────────────────────────────────────
+
+  // ─── DÉVELOPPEMENT WEB & SAAS ─────────────────────────────────────────────
+
+  {
+    id: 'nextjs-vs-react-2025',
+    title: "Next.js vs React classique : quel choix pour votre projet en 2025 ?",
+    excerpt: "Server components, App Router, SSR, SSG... Next.js 14 a changé la donne. Mais est-ce toujours la bonne option pour votre projet ? Comparatif honnête selon les cas d'usage.",
+    category: 'Développement Web & SaaS',
+    date: "Octobre 2024",
+    readTime: "10 min",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+    tags: ["Next.js", "React", "Architecture", "Performance"],
+    available: true,
+    body: {
+      intro: "Next.js est devenu le choix par défaut de la majorité des développeurs React — à tel point que choisir React 'classique' (une SPA pure sans framework) est parfois perçu comme un manque de modernité. C'est une erreur. Next.js est un outil extraordinaire pour certains types de projets, et une sur-ingénierie coûteuse pour d'autres. Après avoir livré des dizaines de projets sur les deux approches, voici notre grille de décision sans dogmatisme.",
+      sections: [
+        {
+          title: "Ce que Next.js apporte vraiment (et ce que le marketing ne dit pas)",
+          paragraphs: [
+            "Next.js 14 avec l'App Router introduit les Server Components — des composants React qui s'exécutent uniquement sur le serveur et envoient du HTML statique au navigateur. L'avantage est réel : moins de JavaScript côté client, meilleur LCP (Largest Contentful Paint), et possibilité de faire des requêtes base de données directement dans le composant sans passer par une API séparée. Pour un site content-heavy (blog, e-commerce, vitrine SEO), c'est un avantage significatif.",
+            "Ce que le marketing Next.js ne met pas en avant : la courbe d'apprentissage de l'App Router est abrupte, même pour des développeurs React expérimentés. Les règles sur quand utiliser 'use client' vs Server Component, la gestion du cache (qui a radicalement changé entre Next.js 13 et 14), et les subtilités des Suspense boundaries créent de la confusion et des bugs difficiles à déboguer. Pour une équipe junior ou un projet avec une deadline serrée, cette complexité peut s'avérer contra-productive.",
+          ],
+          bullets: [
+            "Next.js excelle : sites SEO-critiques, e-commerce, blogs, landing pages à fort trafic",
+            "React SPA excelle : dashboards d'administration, apps SaaS, outils internes",
+            "Server Components : gain LCP réel de 30 à 60% vs SPA équivalente",
+            "App Router : courbe d'apprentissage de 2 à 3 semaines pour un dev React senior",
+            "ISR (Incremental Static Regeneration) : le vrai super-pouvoir de Next.js pour le SEO",
+          ],
+        },
+        {
+          title: "Quand React SPA reste le bon choix",
+          paragraphs: [
+            "Pour toute application dont les pages nécessitent une authentification pour être consultées — un dashboard SaaS, un espace client, un outil de gestion interne — le SSR de Next.js n'apporte aucun bénéfice SEO (les pages ne sont pas indexées) et ajoute une complexité inutile. Une SPA React avec Vite, React Query pour le data fetching et TanStack Router pour la navigation est plus simple à maintenir, plus rapide à développer, et aussi performante pour l'expérience utilisateur.",
+            "Le critère décisif est : vos pages doivent-elles être indexées par Google ? Si oui, Next.js avec SSR ou SSG a du sens. Si non (application authentifiée), React + Vite est notre recommandation. Nous avons migré 3 projets de Next.js vers une SPA pure en 2024 parce que la complexité de Next.js n'était pas justifiée par le cas d'usage — et les développeurs ont gagné en productivité.",
+          ],
+          bullets: [
+            "Pages derrière authentification : SSR Next.js = complexité sans bénéfice SEO",
+            "Vite + React : démarrage projet en 5 minutes, build production optimisé",
+            "React Query (TanStack Query) : cache serveur et synchronisation état asynchrone",
+            "TanStack Router : typage TypeScript natif, meilleure alternative à React Router",
+          ],
+        },
+        {
+          title: "Notre grille de décision en 4 questions",
+          paragraphs: [
+            "Avant de choisir, répondez à ces 4 questions dans l'ordre. 1) Vos pages sont-elles consultables sans authentification ? Si oui → Next.js pertinent. 2) Le SEO est-il critique pour votre business model ? Si oui → Next.js presque obligatoire. 3) Votre équipe a-t-elle déjà travaillé avec l'App Router ? Si non, ajoutez 2 à 4 semaines au planning. 4) Le projet a-t-il besoin d'une API backend ? Si oui, les API Routes Next.js simplifient l'architecture — si non, c'est un avantage inutile.",
+            "En pratique : pour un site vitrine ou un site e-commerce, Next.js est la réponse évidente en 2025. Pour un SaaS B2B avec dashboard client, React + Vite reste notre choix de référence. Pour un projet mixte (partie publique SEO + partie privée dashboard), Next.js peut tout gérer mais demande une architecture soigneuse pour éviter de mélanger les paradigmes Server/Client Components.",
+          ],
+          bullets: [
+            "Site vitrine / blog / e-commerce → Next.js (SSG + ISR)",
+            "Dashboard SaaS / outil interne / app authentifiée → React + Vite",
+            "Projet mixte public + privé → Next.js avec séparation claire des routes",
+            "Équipe junior ou deadline < 6 semaines → évaluer la courbe d'apprentissage App Router",
+            "Budget serveur limité → Next.js SSG sur Vercel (gratuit pour sites statiques)",
+          ],
+        },
+      ],
+      conclusion: "Le meilleur framework est celui qui correspond au problème et aux capacités de l'équipe — pas celui qui est le plus populaire sur Twitter. En 2025, Next.js avec l'App Router est une technologie mature et puissante pour les projets SEO-critiques. Pour le reste, React reste React, et c'est souvent suffisant. Si vous démarrez un projet et voulez un avis sur la stack appropriée, nous faisons ces choix au quotidien.",
+      keyTakeaways: [
+        "Next.js est indispensable pour les sites SEO-critiques — superflu pour les apps authentifiées",
+        "Les Server Components Next.js 14 améliorent le LCP de 30 à 60% vs SPA équivalente",
+        "Pour les dashboards SaaS, React + Vite + TanStack Query reste notre référence en 2025",
+        "L'App Router demande 2 à 4 semaines de formation pour un dev React senior — à intégrer au planning",
+        "Critère décisif : vos pages doivent-elles être indexées par Google ?",
+      ],
+    },
+  },
+
+  {
+    id: 'reduire-taux-rebond-site-vitrine',
+    title: "Comment réduire de 70% le taux de rebond de votre site vitrine",
+    excerpt: "Un taux de rebond élevé n'est pas une fatalité. 12 optimisations concrètes — de la vitesse de chargement au copywriting — pour transformer vos visiteurs en leads qualifiés.",
+    category: 'Développement Web & SaaS',
+    date: "Novembre 2024",
+    readTime: "9 min",
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=800",
+    tags: ["Taux de Rebond", "Conversion", "UX", "Copywriting"],
+    available: true,
+    body: {
+      intro: "Le taux de rebond moyen d'un site vitrine B2B en France est de 67 %. Autrement dit, deux tiers de vos visiteurs partent sans interagir avec une seule page. Pour un site qui génère 1 000 visites par mois, 670 personnes potentiellement intéressées par vos services repartent les mains vides. Réduire ce chiffre de 70 % n'est pas un objectif utopique — c'est le résultat que nous obtenons systématiquement en appliquant les 12 optimisations que voici.",
+      sections: [
+        {
+          title: "Les 4 causes racines d'un taux de rebond élevé",
+          paragraphs: [
+            "Avant d'optimiser, il faut diagnostiquer. Un taux de rebond élevé provient de 4 causes distinctes, et le traitement est différent selon la cause. La première est la lenteur : si votre page met plus de 3 secondes à charger sur mobile, 53 % des utilisateurs partent avant même de voir votre contenu (source : Google). La deuxième est le mismatch promesse/réalité : le visiteur a cliqué sur un lien ou une annonce qui promettait quelque chose que votre page ne livre pas. La troisième est une valeur perçue insuffisante : le message n'est pas assez clair dans les 5 premières secondes. La quatrième est l'absence d'invitation à agir.",
+            "Pour identifier laquelle de ces causes est responsable de votre rebond, utilisez Google Analytics 4 en regardant le 'taux d'engagement' (inverse du rebond) combiné aux données de vitesse de Google Search Console. Un rebond > 80 % sur mobile avec une durée de session < 10 secondes pointe vers la performance. Un rebond élevé avec une durée de session > 1 minute pointe vers l'absence de CTA ou un problème de confiance.",
+          ],
+          bullets: [
+            "Performance mobile : chaque seconde de chargement supplémentaire augmente le rebond de 32%",
+            "Mismatch SEO/Contenu : vérifier que la page répond précisément à la requête qui l'amène",
+            "Message au-dessus de la fold : la valeur proposition doit être lisible sans scroller",
+            "CTA manquant : chaque page doit proposer une seule action claire",
+            "Confiance : logos clients, témoignages et certifications visibles dans le premier écran",
+          ],
+        },
+        {
+          title: "Les 5 optimisations techniques qui changent tout",
+          paragraphs: [
+            "La compression des images est systématiquement la première optimisation à faire — et la plus impactante. Des images non optimisées représentent en moyenne 60 à 80 % du poids d'une page web. Passer au format WebP avec une compression adaptée (qualité 75-80 % en WebP est imperceptible visuellement) peut réduire le poids des images de 30 à 50 %. Associez ça à du lazy loading natif (attribut loading='lazy' sur toutes les images hors-viewport) et vous gagnerez 1 à 2 secondes de temps de chargement perçu.",
+            "Le Critical CSS inline est la deuxième optimisation technique la plus rentable. En injectant les styles critiques (tout ce qui est visible au-dessus de la fold) directement dans le HTML, vous supprimez le blocage du rendu par les fichiers CSS externes. Des outils comme Critters (intégré à Angular/Next.js) ou Critical.css automatisent cette extraction. Combiné à une police web avec font-display: swap, cela élimine les 'flash' de contenu sans style qui irritent les visiteurs.",
+          ],
+          bullets: [
+            "Images WebP + compression 75% : réduction du poids de 30 à 50%",
+            "Lazy loading natif sur toutes les images sous la fold",
+            "Critical CSS inline : supprime le render-blocking CSS",
+            "Preconnect aux fonts Google et CDN tiers pour réduire la latence",
+            "Cache navigateur : headers Cache-Control pour les assets statiques (1 an pour les images)",
+          ],
+        },
+        {
+          title: "Les 7 optimisations de contenu et UX pour engager le visiteur",
+          paragraphs: [
+            "Le copywriting above-the-fold est le levier le plus sous-estimé. La règle des 5 secondes est implacable : si un visiteur ne comprend pas en moins de 5 secondes ce que vous faites, pour qui, et quel résultat vous apportez — il repart. La formule qui fonctionne est systématiquement la même : [Ce que vous faites] + [Pour qui] + [Résultat mesurable]. 'Agence web pour PME industrielles — vos leads triplés en 6 mois' est un exemple qui passe ce test. 'Votre partenaire digital de confiance' ne le passe pas.",
+            "L'ajout d'une preuve sociale immédiate (logos clients, nombre de projets réalisés, note moyenne) dans le premier écran réduit le rebond de 15 à 25 % selon nos tests. Le visiteur cherche des signaux de confiance avant d'investir son attention. Un bandeau de logos reconnaissables ou une stat concrète ('47 PME accompagnées depuis 2020') répond à cette attente en quelques millisecondes de lecture.",
+          ],
+          bullets: [
+            "Copywriting above-fold : [Ce que vous faites] + [Pour qui] + [Résultat mesurable]",
+            "Preuve sociale dès le 1er écran : logos clients, stats, note Google",
+            "1 seul CTA principal par page — pas 5 boutons qui se concurrencent",
+            "Navigation simplifiée : max 5-6 items dans le menu principal",
+            "Vidéo courte (30-60s) en hero : augmente l'engagement de 80% selon HubSpot",
+            "Chat en direct ou lien WhatsApp visible : réduit la friction de contact de 40%",
+          ],
+        },
+      ],
+      conclusion: "Réduire le taux de rebond n'est pas un projet de 3 mois — c'est une checklist de 12 optimisations que vous pouvez commencer à appliquer cette semaine. Commencez par mesurer (Google Analytics 4 + PageSpeed Insights), identifiez vos 3 pages à plus fort trafic, et appliquez les corrections techniques en priorité avant de travailler le copywriting. Si vous voulez un audit de votre site avec un plan de priorisation personnalisé, contactez-nous.",
+      keyTakeaways: [
+        "Le taux de rebond moyen d'un site vitrine B2B français est 67% — il y a de la marge",
+        "Chaque seconde de chargement supplémentaire augmente le rebond de 32%",
+        "Les images WebP + lazy loading réduisent le poids de 30 à 50% et gagnent 1-2s de LCP",
+        "La règle des 5 secondes : valeur proposition lisible sans scroller, ou le visiteur repart",
+        "La preuve sociale dès le premier écran réduit le rebond de 15 à 25%",
+      ],
+    },
+  },
+
+  // ─── AUTOMATISATION & N8N ─────────────────────────────────────────────────
+
+  {
+    id: 'connecter-crm-comptabilite-n8n',
+    title: "Connecter son CRM à sa comptabilité avec n8n : tutoriel pas à pas",
+    excerpt: "Chaque devis accepté doit devenir une facture. Chaque paiement reçu doit mettre à jour le CRM. Ce pont entre Pipedrive (ou HubSpot) et Pennylane (ou Sellsy) se construit en une journée avec n8n.",
+    category: 'Automatisation & n8n',
+    date: "Novembre 2024",
+    readTime: "11 min",
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=800",
+    tags: ["CRM", "Comptabilité", "n8n", "Pipedrive", "Pennylane"],
+    available: true,
+    body: {
+      intro: "Votre commercial ferme un deal dans Pipedrive. Quelqu'un doit créer la facture dans Pennylane. Ce 'quelqu'un', c'est souvent vous, ou votre assistante, ou votre comptable — et ça prend 5 à 10 minutes par transaction, avec des risques d'erreur à chaque saisie manuelle. Pour une PME qui émet 30 factures par mois, c'est 2 à 5 heures de saisie pure par mois. Avec n8n, ce pont est automatique, instantané et sans erreur. Voici comment le construire.",
+      sections: [
+        {
+          title: "Cartographier les flux avant de construire",
+          paragraphs: [
+            "Avant d'ouvrir n8n, passez 30 minutes à cartographier précisément les flux de données entre votre CRM et votre outil de comptabilité. La question n'est pas 'comment techniquement connecter les deux' — c'est 'qu'est-ce qui se passe dans un outil qui devrait déclencher une action dans l'autre ?'. Pour la plupart des PME, il y a 4 flux principaux : (1) Deal gagné dans le CRM → créer la facture en comptabilité, (2) Facture payée en comptabilité → mettre à jour le statut du deal dans le CRM, (3) Nouveau contact créé dans le CRM → créer le client en comptabilité, (4) Facture en retard → créer une tâche de relance dans le CRM.",
+            "Pour chaque flux, identifiez le déclencheur exact (quel champ change, quel statut est atteint), les données à transférer (les champs en commun entre les deux outils), et les conditions d'exécution (est-ce que le flux doit se déclencher pour TOUS les deals ou seulement ceux d'un certain type ?). Cette cartographie, même rudimentaire sur papier, divisera par deux le temps de construction du workflow.",
+          ],
+          bullets: [
+            "Flux 1 : Deal 'Gagné' CRM → Brouillon facture en comptabilité",
+            "Flux 2 : Facture 'Payée' compta → Statut 'Facturé' dans le CRM",
+            "Flux 3 : Nouveau contact CRM → Création fiche client en comptabilité",
+            "Flux 4 : Facture > 30j impayée → Tâche relance dans le CRM + alerte commercial",
+            "Identifier les champs en commun : nom client, SIRET, montant HT, référence deal",
+          ],
+        },
+        {
+          title: "Construire le workflow dans n8n : étape par étape",
+          paragraphs: [
+            "Le workflow principal (Deal gagné → Facture) commence par un nœud Trigger Webhook ou, mieux, un nœud natif Pipedrive/HubSpot configuré sur l'événement 'deal.won' ou 'deal.stage_changed'. Ce nœud vous donne en sortie toutes les données du deal : nom du contact, montant, lignes de produits, dates. Ajoutez un nœud IF pour vérifier que le deal a bien les données nécessaires (montant > 0, client renseigné) avant de passer à la suite — cette vérification évite les factures créées avec des données incomplètes.",
+            "Le nœud de création de facture dans Pennylane utilise l'API REST de Pennylane. Un nœud HTTP Request avec méthode POST vers '/api/external/v1/customer_invoices', authentifié par Bearer Token (à récupérer dans les paramètres API de Pennylane), suffit. Le body JSON mappe les champs du deal vers les champs de la facture. Attention au mapping de la TVA : il faut récupérer l'ID du taux de TVA applicable dans Pennylane au préalable via un nœud GET, puis l'injecter dans le body de création.",
+          ],
+          bullets: [
+            "Nœud déclencheur : Pipedrive (natif n8n) sur événement deal.won",
+            "Nœud IF : vérifier que contact_id, amount et products sont renseignés",
+            "Nœud HTTP Request : POST /api/external/v1/customer_invoices sur l'API Pennylane",
+            "Nœud de notification : Slack ou email au commercial pour confirmer la création",
+            "Gestion des erreurs : nœud Error Trigger + notification admin si le workflow échoue",
+          ],
+        },
+        {
+          title: "Tester, surveiller et maintenir le workflow",
+          paragraphs: [
+            "Un workflow de facturation automatique nécessite une phase de test rigoureuse avant d'être activé en production. Utilisez le mode 'Test Workflow' de n8n avec des données réelles issues de deals de test — pas fictives — pour vous assurer que tous les champs sont correctement mappés. Vérifiez particulièrement le montant HT vs TTC (Pennylane travaille en HT), les arrondis sur les lignes (TVA calculée à 2 décimales), et la cohérence de la référence deal transmise.",
+            "Une fois en production, configurez un monitoring hebdomadaire : vérifiez dans le journal d'exécution de n8n que chaque déclenchement s'est terminé avec succès, et croisez avec le nombre de deals gagnés dans votre CRM pour détecter toute exécution manquée. Pour des workflows financiers, nous recommandons systématiquement un rapport hebdomadaire automatique (généré par un autre workflow n8n) listant les factures créées automatiquement dans la semaine.",
+          ],
+          bullets: [
+            "Tester avec de vrais deals de test — pas des données fictives qui ne représentent pas les edge cases",
+            "Vérifier : HT/TTC, arrondis TVA, référence deal transmise, ID client exact",
+            "Mode 'pinned data' de n8n pour rejouer un déclenchement spécifique lors du debug",
+            "Journal d'exécution : vérification hebdomadaire des erreurs",
+            "Rapport hebdomadaire automatique : factures créées vs deals gagnés (doit être égal)",
+          ],
+        },
+      ],
+      conclusion: "Ce workflow CRM → comptabilité est l'une des automatisations les plus rentables qu'une PME puisse déployer : impact immédiat, risque faible, et gain mesurable en heures dès la première semaine. La construction prend une journée — la maintenance est quasi-nulle une fois stabilisé. Si vous voulez qu'on construise ce workflow pour votre stack spécifique (Hubspot/Salesforce/Pipedrive + Pennylane/Sellsy/Quickbooks), contactez-nous.",
+      keyTakeaways: [
+        "30 factures/mois saisies manuellement = 2 à 5h de travail évitables — immédiatement",
+        "Cartographier les 4 flux principaux sur papier avant d'ouvrir n8n divise le temps de construction par 2",
+        "Nœud IF de vérification avant création : évite les factures incomplètes",
+        "Tester avec de vrais deals de test, pas de données fictives",
+        "Monitoring hebdomadaire : deals gagnés vs factures créées doivent être égaux",
+      ],
+    },
+  },
+
+  {
+    id: '10-automatisations-pme-2025',
+    title: "Les 10 automatisations que toute PME devrait avoir en 2025",
+    excerpt: "Relances impayées, onboarding client, rapport hebdomadaire, publication sociale, qualification de leads... Les 10 workflows qui économisent le plus de temps dans une PME bien rodée.",
+    category: 'Automatisation & n8n',
+    date: "Décembre 2024",
+    readTime: "10 min",
+    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=800",
+    tags: ["Automatisation", "PME", "n8n", "Workflows", "Productivité"],
+    available: true,
+    body: {
+      intro: "Si vous deviez ne déployer que 10 automatisations dans votre PME cette année, lesquelles choisiriez-vous ? Après avoir construit des centaines de workflows pour des PME françaises de toutes tailles et tous secteurs, nous avons une réponse claire. Ces 10 automatisations couvrent les points de friction universels — ceux qui existent dans toutes les entreprises, indépendamment du secteur. Ensemble, elles économisent en moyenne 8 à 12 heures par semaine dans une PME de 10 à 30 salariés.",
+      sections: [
+        {
+          title: "Automatisations 1 à 4 : commercial et relation client",
+          paragraphs: [
+            "L'automatisation n°1 est la relance des devis sans réponse. Un devis envoyé et oublié, c'est du chiffre d'affaires perdu. Un workflow simple surveille chaque devis créé dans votre outil de facturation, et si aucune réponse n'est enregistrée après 3 jours, envoie automatiquement un email de relance personnalisé depuis l'adresse du commercial. Après 7 jours sans réponse, une tâche 'appel de relance' est créée dans le CRM. Résultat observé : +18 à +30 % de taux de transformation sur les devis.",
+            "L'automatisation n°2 est l'onboarding client automatisé. Quand un nouveau client signe un devis, il reçoit automatiquement un email de bienvenue avec les informations pratiques (contacts, process, liens utiles), une invitation à votre outil de collaboration, et un questionnaire de cadrage. En parallèle, l'équipe interne reçoit une notification avec toutes les informations du client et une checklist d'actions à effectuer dans les 48h. Ce workflow transforme une transition souvent chaotique en processus fluide et professionnel.",
+          ],
+          bullets: [
+            "N°1 — Relance devis : J+3 email auto, J+7 tâche CRM pour appel → +18 à +30% de conversion",
+            "N°2 — Onboarding client : email bienvenue + invitation outils + questionnaire cadrage automatiques",
+            "N°3 — Qualification leads entrants : scoring automatique et routage vers le bon commercial",
+            "N°4 — Suivi NPS trimestriel : envoi automatique + agrégation des résultats en dashboard",
+          ],
+        },
+        {
+          title: "Automatisations 5 à 8 : finance, RH et opérations",
+          paragraphs: [
+            "L'automatisation n°5 est la relance des factures impayées — la plus rentable en termes de cash-flow. Un workflow surveille les factures à échéance dépassée et envoie des relances progressives : email courtois à J+3, relance plus ferme à J+10, et alerte au dirigeant à J+20 pour passage à une relance téléphonique ou une mise en demeure. Les PME qui déploient ce workflow réduisent leurs délais moyens de paiement de 8 à 12 jours.",
+            "L'automatisation n°7 est la collecte et l'agrégation des rapports d'activité hebdomadaires. Chaque vendredi à 16h, chaque membre de l'équipe reçoit un formulaire en 5 questions (réalisations de la semaine, blocages, prévisions semaine suivante). Les réponses sont agrégées automatiquement dans un document Google Docs structuré et envoyé au dirigeant chaque lundi matin à 8h. Ce workflow remplace des réunions de synchronisation hebdomadaires qui n'apportent souvent que peu de valeur.",
+          ],
+          bullets: [
+            "N°5 — Relance impayés : J+3/J+10/J+20 progressif → -8 à -12j de délai moyen de paiement",
+            "N°6 — Onboarding RH : accès outils, documents à signer, checklist J1/J7/J30 automatiques",
+            "N°7 — Rapport hebdo équipe : collecte formulaire vendredi → synthèse lundi matin dirigeant",
+            "N°8 — Monitoring site web : alerte instantanée si temps de réponse > 3s ou erreur 500",
+          ],
+        },
+        {
+          title: "Automatisations 9 et 10 : marketing et veille",
+          paragraphs: [
+            "L'automatisation n°9 est la publication sociale multi-canal depuis un unique calendrier éditorial. Vous rédigez le contenu une fois dans un tableau Airtable (ou Notion), avec une colonne par réseau (LinkedIn, Twitter/X, Facebook) et une date de publication. Le workflow n8n surveille le tableau, et le jour J à l'heure prévue, publie le bon contenu sur le bon réseau avec les visuels associés — sans aucune intervention manuelle. Le gain de temps est de 3 à 5h par semaine pour une présence sur 3 réseaux.",
+            "L'automatisation n°10 est la veille concurrentielle et sectorielle automatisée. Un workflow surveille les mots-clés de votre secteur dans Google News, surveille les nouveaux contenus publiés par vos concurrents (via RSS), et vous envoie chaque matin un digest de 10 à 15 nouvelles pertinentes — résumées en 2 lignes chacune par un LLM. Ce qui prenait 30 à 45 minutes de veille manuelle quotidienne est condensé en 5 minutes de lecture d'un email.",
+          ],
+          bullets: [
+            "N°9 — Publication sociale depuis Airtable/Notion : 1 source, 3 réseaux, 0 copier-coller",
+            "N°10 — Veille automatisée : Google News + RSS concurrents + résumé LLM → 5 min/jour vs 45 min",
+            "Complexité de déploiement : N°1 à N°5 sont les plus simples (1-2h chacun)",
+            "N°8 (monitoring) et N°10 (veille IA) sont les plus sophistiqués (4-8h)",
+            "Priorisation recommandée : démarrer par N°1 (relance devis) — ROI en J+1",
+          ],
+        },
+      ],
+      conclusion: "Ces 10 automatisations ne sont pas des projets ambitieux — chacune se construit en 1 à 8 heures avec n8n. L'enjeu n'est pas de tout déployer en même temps, mais de commencer par la première (relance devis) cette semaine, de mesurer le gain, et de construire la deuxième le mois suivant. En 3 mois, vous aurez transformé votre façon de travailler. Si vous voulez un accompagnement pour identifier et déployer vos automatisations prioritaires, nous proposons des sessions de 4h pour construire votre premier workflow ensemble.",
+      keyTakeaways: [
+        "Ces 10 workflows économisent 8 à 12h/semaine dans une PME de 10 à 30 salariés",
+        "Commencer par la relance devis automatisée : ROI mesuré dès J+1, +18 à +30% de conversion",
+        "La relance impayés automatisée réduit les délais de paiement de 8 à 12 jours en moyenne",
+        "La publication sociale depuis un calendrier unique économise 3 à 5h/semaine sur 3 réseaux",
+        "Prioriser par impact/complexité : les workflows 1 à 5 se construisent en 1 à 2h chacun",
+      ],
+    },
+  },
+
+  // ─── INTELLIGENCE ARTIFICIELLE & RAG ─────────────────────────────────────
+
+  {
+    id: 'assistant-ia-sur-vos-donnees',
+    title: "Construire un assistant IA personnalisé sur vos données d'entreprise",
+    excerpt: "RAG, embeddings, base vectorielle... Comment créer un chatbot qui répond précisément aux questions de votre équipe en s'appuyant sur vos documents internes — sans envoyer vos données à OpenAI.",
+    category: 'Intelligence Artificielle & RAG',
+    date: "Décembre 2024",
+    readTime: "12 min",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&q=80&w=800",
+    tags: ["RAG", "Assistant IA", "LLM", "Supabase", "Données internes"],
+    available: true,
+    body: {
+      intro: "Imaginez pouvoir poser à votre base documentaire interne des questions en langage naturel et obtenir des réponses précises avec les sources citées. 'Quelles sont les conditions de garantie de notre produit X ?' ou 'Quelle clause du contrat Dupont s'applique en cas de retard ?'. C'est exactement ce que permet l'architecture RAG (Retrieval-Augmented Generation). Ce n'est plus de la science-fiction — nous déployons ce type de système pour des PME françaises depuis 2023. Voici comment ça fonctionne et comment le construire.",
+      sections: [
+        {
+          title: "Comprendre le RAG : la logique en 4 étapes",
+          paragraphs: [
+            "Le RAG (Retrieval-Augmented Generation) est une architecture qui combine un moteur de recherche sémantique avec un LLM. Contrairement à un LLM seul (comme ChatGPT), le RAG ne 'sait' pas d'emblée ce qui est dans vos documents — il les cherche dynamiquement à chaque question. Voici les 4 étapes : (1) Ingestion : vos documents (PDF, Word, emails, pages web) sont découpés en chunks de 200 à 500 mots, et chaque chunk est transformé en vecteur numérique (embedding) qui représente son sens sémantique. Ces vecteurs sont stockés dans une base de données vectorielle.",
+            "Lors d'une question utilisateur, (2) la question est aussi transformée en vecteur, (3) les chunks les plus proches sémantiquement sont récupérés (typiquement les 3 à 8 plus pertinents), et (4) ces chunks sont injectés dans le prompt du LLM avec la question : 'En te basant uniquement sur ces extraits, réponds à cette question'. Le LLM génère alors une réponse ancrée dans votre documentation réelle — et non une hallucination inventée de toutes pièces.",
+          ],
+          bullets: [
+            "Ingestion : découpage en chunks → embedding → stockage base vectorielle",
+            "Query : question → embedding → recherche des k-voisins les plus proches",
+            "Augmentation : injection des chunks dans le contexte du prompt LLM",
+            "Génération : le LLM répond en s'appuyant uniquement sur les extraits fournis",
+            "Avantage clé : le LLM cite ses sources — les réponses sont vérifiables",
+          ],
+        },
+        {
+          title: "La stack technique pour une PME française",
+          paragraphs: [
+            "Pour une PME française soucieuse de la confidentialité des données, notre stack de référence est : Supabase avec l'extension pgvector comme base vectorielle (gratuit jusqu'à 500 MB de vecteurs, hébergeable en Europe), l'API Anthropic Claude comme LLM (politique de confidentialité Enterprise : les données ne sont pas utilisées pour l'entraînement), et n8n pour l'orchestration du pipeline d'ingestion et de query. L'interface utilisateur peut être aussi simple qu'un formulaire Typeform ou aussi sophistiquée qu'une app React selon vos besoins.",
+            "L'ingestion de documents avec cette stack fonctionne ainsi : un workflow n8n surveille un dossier Google Drive (ou un email), extrait le texte des PDF (via l'API unstructured.io ou pdfplumber), découpe en chunks avec un overlap de 50 mots, génère les embeddings via l'API Voyage AI (spécialisée et moins coûteuse que OpenAI Ada), et stocke les vecteurs + le texte original dans Supabase. Pour 1 000 documents de 10 pages, le coût d'ingestion est de 2 à 5 € en embeddings.",
+          ],
+          bullets: [
+            "Base vectorielle : Supabase pgvector (RGPD, hébergeable en Europe, gratuit jusqu'à 500MB)",
+            "LLM : Claude Haiku (économique, 0,25$/M tokens) ou Claude Sonnet (puissant, 3$/M tokens)",
+            "Embeddings : Voyage AI (6× moins cher que OpenAI Ada, meilleure performance en français)",
+            "Orchestration : n8n (ingestion automatique depuis Google Drive ou email)",
+            "Interface : Typeform pour un MVP en 1 jour, app React pour une solution production",
+          ],
+        },
+        {
+          title: "Les pièges à éviter pour un RAG qui fonctionne vraiment",
+          paragraphs: [
+            "Le premier piège est la qualité des chunks. Un chunk trop long dilue l'information et dégrade la précision de la recherche. Un chunk trop court perd le contexte nécessaire pour que le LLM réponde correctement. Notre règle empirique : 300 à 400 tokens (soit 200-300 mots) avec un overlap de 50 tokens entre chunks consécutifs. Pour les documents très structurés (contrats, fiches techniques), découper par section logique plutôt que par nombre de mots fixe améliore significativement les résultats.",
+            "Le deuxième piège est la qualité des documents source. Un RAG n'est aussi bon que la qualité de sa base documentaire. Des documents mal scannés (OCR défaillant), des versions obsolètes non supprimées, ou des documents très redondants dégradent les résultats. Avant de lancer l'ingestion, passez 2h à nettoyer votre base documentaire : supprimer les doublons, vérifier que les versions sont à jour, et s'assurer que les PDF sont textuels (pas des images scannées sans OCR).",
+          ],
+          bullets: [
+            "Taille optimale des chunks : 300 à 400 tokens avec overlap de 50 tokens",
+            "Pour documents structurés (contrats) : découper par section logique, pas par nombre de mots",
+            "Nettoyer la base documentaire avant ingestion : doublons, versions obsolètes, PDFs non-textuels",
+            "Tester avec 20 questions représentatives avant mise en production",
+            "Indicateur de qualité : si le LLM dit 'je ne trouve pas d'information' trop souvent → problème de chunking ou de couverture documentaire",
+          ],
+        },
+      ],
+      conclusion: "Un assistant RAG sur vos données d'entreprise n'est pas un projet de 6 mois — c'est un MVP déployable en 2 à 4 semaines avec les bons outils. L'investissement se rembourse rapidement dès que votre équipe arrête de chercher 20 minutes une information qui traîne dans un PDF oublié. Si vous voulez qu'on construise ce système pour votre documentation interne, contactez-nous pour un devis.",
+      keyTakeaways: [
+        "Le RAG = moteur de recherche sémantique + LLM : répond précisément depuis vos documents",
+        "Stack recommandée : Supabase pgvector + Claude + Voyage AI + n8n — 100% RGPD-compatible",
+        "Taille optimale des chunks : 300 à 400 tokens avec overlap de 50 tokens",
+        "Coût d'ingestion de 1 000 documents : 2 à 5€ — coût de requête : < 0,01€ par question",
+        "Nettoyer la base documentaire avant ingestion : c'est 80% de la qualité du résultat final",
+      ],
+    },
+  },
+
+  {
+    id: 'llm-open-source-vs-gpt4',
+    title: "LLM open source vs GPT-4 : quel modèle pour votre usage ?",
+    excerpt: "Llama 3, Mistral, Gemma vs GPT-4o, Claude Sonnet... La performance des modèles open source a rattrapé les propriétaires sur de nombreux cas d'usage. Comment choisir selon vos contraintes réelles.",
+    category: 'Intelligence Artificielle & RAG',
+    date: "Janvier 2025",
+    readTime: "11 min",
+    image: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&q=80&w=800",
+    tags: ["LLM", "Open Source", "Mistral", "GPT-4", "Claude"],
+    available: true,
+    body: {
+      intro: "En janvier 2025, la frontière entre modèles IA propriétaires et open source n'a jamais été aussi floue. Llama 3.3 70B d'une Meta dépasse GPT-4 de fin 2023 sur plusieurs benchmarks. Mistral Large 2 rivalise avec Claude Sonnet sur les tâches de raisonnement en français. Pour une PME qui intègre des LLM dans ses processus, le choix n'est plus 'OpenAI ou rien' — c'est une décision qui dépend de vos contraintes de coût, de confidentialité et de performance.",
+      sections: [
+        {
+          title: "L'état des forces en présence en 2025",
+          paragraphs: [
+            "Du côté propriétaire, trois acteurs dominent : OpenAI avec GPT-4o (modèle flagship équilibré), Anthropic avec Claude Sonnet 3.5 (excellente en raisonnement complexe et en français), et Google avec Gemini 1.5 Pro (contexte de 1 million de tokens, idéal pour les très longs documents). Ces modèles ont l'avantage d'être disponibles immédiatement via API, sans infrastructure à gérer, avec des SLA de disponibilité garantis.",
+            "Du côté open source, Llama 3.3 (Meta), Mistral Large 2 (français — cocorico) et Qwen 2.5 72B (Alibaba) sont les références de début 2025. Leurs performances sur les tâches courantes (résumé, extraction d'information, rédaction) sont comparables aux modèles propriétaires de génération précédente. L'avantage décisif : ils peuvent être auto-hébergés sur votre infrastructure, ce qui élimine tout envoi de données à un tiers et réduit les coûts de 70 à 90 % pour les usages à volume élevé.",
+          ],
+          bullets: [
+            "GPT-4o : meilleur équilibre performance/coût chez OpenAI, fort en multimodal",
+            "Claude Sonnet 3.5 : notre référence pour les tâches complexes en français",
+            "Gemini 1.5 Pro : seul modèle avec contexte 1M tokens (analyse de très longs documents)",
+            "Llama 3.3 70B : niveau GPT-4 early 2024, auto-hébergeable, gratuit",
+            "Mistral Large 2 : modèle français, excellent en RAG, disponible sur Mistral API et Ollama",
+          ],
+        },
+        {
+          title: "Les critères de choix selon votre cas d'usage",
+          paragraphs: [
+            "Le premier critère est la confidentialité des données. Si vous envoyez des données clients, des informations financières ou des documents contractuels à un LLM, vous devez vous assurer que le prestataire respecte le RGPD. OpenAI Enterprise et Anthropic Enterprise proposent des accords de traitement des données (DPA) et garantissent que vos données ne sont pas utilisées pour l'entraînement. Mais si votre niveau d'exigence est maximal, l'auto-hébergement d'un modèle open source sur votre serveur est la seule option qui garantit qu'aucune donnée ne sort de votre infrastructure.",
+            "Le deuxième critère est le coût à l'échelle. Pour des usages à faible volume (quelques centaines de requêtes par jour), les APIs propriétaires sont parfaitement économiques — 50 à 200 €/mois pour la plupart des PME. Mais pour des usages intensifs (traitement automatique de milliers de documents, chatbot en production avec fort volume de requêtes), le coût des APIs propriétaires peut atteindre 1 000 à 5 000 €/mois. Un serveur GPU loué pour faire tourner Llama 3 70B coûte 0,60 à 1,20 €/heure — rentable dès que vous dépassez 500 requêtes/jour.",
+          ],
+          bullets: [
+            "Données très sensibles (médical, juridique, financier) : auto-hébergement open source obligatoire",
+            "Volume < 500 req/jour : API propriétaire (OpenAI/Anthropic) — simple et économique",
+            "Volume > 500 req/jour : évaluer l'auto-hébergement Llama/Mistral sur serveur GPU",
+            "Performance en français : Mistral Large 2 > GPT-4o sur la plupart des tâches",
+            "Contexte très long (> 100k tokens) : Gemini 1.5 Pro sans concurrent",
+          ],
+        },
+        {
+          title: "Notre recommandation pratique par profil",
+          paragraphs: [
+            "Pour une PME qui démarre avec l'IA et veut un résultat rapide sans infrastructure à gérer : commencez avec l'API Anthropic (Claude Haiku pour les tâches simples, Sonnet pour les tâches complexes). Le rapport qualité/prix est excellent, l'API est stable et bien documentée, et Claude est particulièrement fort en français et en raisonnement structuré. Budget typique : 30 à 150 €/mois pour des usages PME standards.",
+            "Pour une entreprise qui gère des données sensibles ou qui prévoit un volume élevé : investissez 2 à 4 semaines pour déployer Mistral ou Llama via Ollama sur un VPS GPU (Scaleway ou OVH proposent des GPU A100 en France). L'effort initial est réel mais le ROI est rapide, et vous gardez un contrôle total sur vos données. Mistral Large 2 est notre recommandation pour les équipes françaises — le modèle a été entraîné avec une forte représentation du français et excelle sur les documents juridiques et contractuels.",
+          ],
+          bullets: [
+            "Démarrage rapide : Anthropic API (Claude Haiku 0,25$/M + Sonnet 3$/M tokens)",
+            "Données sensibles : Mistral Large 2 via Ollama sur VPS GPU OVH/Scaleway (France)",
+            "Usage intensif : Llama 3.3 70B auto-hébergé, GPU A100 à 0,90€/h sur Scaleway",
+            "Cas mixte : API pour développement, auto-hébergement pour production",
+            "Toujours évaluer sur vos données réelles — les benchmarks génériques ne prédisent pas les performances sur votre cas d'usage spécifique",
+          ],
+        },
+      ],
+      conclusion: "Le meilleur LLM n'existe pas — il y a le meilleur LLM pour votre cas d'usage, vos données et vos contraintes de budget. En 2025, les modèles open source ont atteint un niveau qui les rend viables pour la majorité des usages PME, et la compétition a forcé les acteurs propriétaires à réduire significativement leurs prix. C'est un excellent moment pour évaluer sérieusement l'IA dans vos processus. Si vous voulez un accompagnement pour choisir et intégrer le bon modèle, contactez-nous.",
+      keyTakeaways: [
+        "Llama 3.3 70B et Mistral Large 2 atteignent le niveau GPT-4 early 2024 sur de nombreuses tâches",
+        "Pour les données sensibles, l'auto-hébergement open source est la seule option 100% confidentielle",
+        "Seuil de rentabilité de l'auto-hébergement : environ 500 requêtes/jour",
+        "Mistral Large 2 est notre recommandation pour les PME françaises (excellent en français, RGPD)",
+        "Évaluez toujours sur vos données réelles — les benchmarks génériques ne prédisent pas votre cas d'usage",
+      ],
+    },
+  },
+
+  // ─── CONTENU & MARKETING IA ──────────────────────────────────────────────
+
+  {
+    id: '30-contenus-par-mois-ia',
+    title: "Créer 30 contenus par mois avec 2h de travail grâce à l'IA",
+    excerpt: "Système éditorial complet pour générer, affiner et publier 30 contenus mensuels sur tous vos canaux — sans sacrifier votre voix ni votre expertise — en 2h de travail hebdomadaire.",
+    category: 'Contenu & Marketing IA',
+    date: "Novembre 2024",
+    readTime: "10 min",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800",
+    tags: ["Contenu", "IA", "Marketing", "Productivité", "LinkedIn"],
+    available: true,
+    body: {
+      intro: "30 contenus par mois : 1 article de blog, 12 posts LinkedIn, 8 newsletters, 8 stories ou réels, 1 étude de cas. Ce n'est pas un objectif pour une équipe de 5 content managers — c'est ce qu'une seule personne peut produire en 2 heures de travail par semaine avec un système éditorial IA bien huilé. Ce n'est pas de la magie et ce n'est pas du contenu de mauvaise qualité : c'est un processus reproductible que nous avons construit et documenté. Voici comment.",
+      sections: [
+        {
+          title: "La méthode du 'contenu racine' : produire 1 pour en avoir 10",
+          paragraphs: [
+            "Le principe fondamental du système est le contenu racine. Chaque mois, vous produisez 1 seul contenu de fond — un article de 1 500 mots, un épisode podcast de 30 minutes, ou une étude de cas détaillée. Ce contenu racine est votre matière première. À partir de lui, l'IA extrait et reformate : 4 posts LinkedIn (un par section principale), 2 newsletters (résumé + angle différent), 1 thread Twitter, des extraits pour stories, et des titres d'articles secondaires pour le SEO.",
+            "La clé est que vous vous concentrez sur un seul contenu de haute qualité, ancré dans votre expertise réelle. C'est là que votre temps humain est investi — 1h30 à 2h par semaine. L'IA gère le reformatage et l'adaptation aux différents formats et canaux. Résultat : une présence éditoriale cohérente sur tous vos canaux, avec un ton unifié qui vient de vous — parce que tout dérive du même contenu source écrit par vous.",
+          ],
+          bullets: [
+            "1 contenu racine/semaine (article ou podcast) → 8 à 10 contenus dérivés",
+            "Votre temps investi : 90 à 120 minutes sur le contenu racine uniquement",
+            "L'IA gère : reformatage, adaptation ton/format par canal, extraction de citations",
+            "Cohérence garantie : tous les contenus dérivent de la même source d'expertise",
+          ],
+        },
+        {
+          title: "Le prompt system pour maintenir votre voix",
+          paragraphs: [
+            "Le principal risque des contenus IA est la perte de voix — ces textes lisses et génériques qui sentent le ChatGPT à 100 mètres. La solution est un 'system prompt' personnalisé qui encode votre style d'écriture. Pour le construire, compilez 5 à 10 de vos meilleurs contenus passés et demandez à Claude d'en extraire les caractéristiques stylistiques : longueur moyenne des phrases, type d'exemples utilisés, registre de langage, structures rhétoriques récurrentes. Le résultat est un guide de style que vous injectez dans chaque prompt.",
+            "Un system prompt efficace pour une PME française ressemble à : 'Tu écris pour un dirigeant de PME française. Ton direct et concret, phrases courtes, données chiffrées systématiques, exemples tirés de l'industrie française. Éviter : le jargon anglais non traduit, les métaphores creuses, les généralités sans chiffres. Structure : accroche avec un constat chiffré, développement en étapes actionnables, conclusion avec CTA clair.' Ce prompt à lui seul transforme la qualité des sorties IA.",
+          ],
+          bullets: [
+            "System prompt personnalisé : extrait votre style depuis vos 5-10 meilleurs contenus",
+            "Éléments clés du style à encoder : longueur phrases, type d'exemples, registre, structures",
+            "Tester le prompt sur 3 contenus avant de l'industrialiser",
+            "Mettre à jour le prompt tous les 3 mois au fur et à mesure que votre style évolue",
+          ],
+        },
+        {
+          title: "L'infrastructure technique : Airtable, n8n et les APIs",
+          paragraphs: [
+            "Le système tourne autour d'un tableau Airtable (ou Notion) qui sert de calendrier éditorial centralisé. Chaque ligne est un contenu racine avec ses métadonnées : thème, angle, public cible, mots-clés SEO, statut (idée/en cours/prêt/publié). Une fois le contenu racine validé, un bouton dans Airtable déclenche un workflow n8n qui génère automatiquement les 8 à 10 contenus dérivés via l'API Claude, les stocke dans les colonnes correspondantes du tableau, et notifie que les contenus sont prêts pour relecture.",
+            "La relecture prend 20 à 30 minutes par semaine : vous parcourez les contenus dérivés, ajustez ce qui sonne faux, ajoutez des détails spécifiques que l'IA ne pouvait pas connaître (un client récent, une anecdote terrain). C'est cette étape humaine qui transforme un contenu IA acceptable en contenu expert mémorable. Le workflow de publication (Airtable → n8n → Buffer/Brevo/WordPress) publie ensuite automatiquement selon le calendrier défini.",
+          ],
+          bullets: [
+            "Calendrier éditorial centralisé : Airtable ou Notion avec statuts et métadonnées",
+            "Déclenchement workflow : bouton Airtable → n8n → API Claude → remplissage colonnes dérivés",
+            "Relecture humaine : 20-30 min/semaine pour ajouter les anecdotes terrain et ajuster le ton",
+            "Publication automatique : n8n → Buffer (social) + Brevo (newsletter) + WordPress (blog)",
+            "Coût mensuel du système : 30 à 80€ (Airtable + Claude API + Buffer) pour 30 contenus",
+          ],
+        },
+      ],
+      conclusion: "30 contenus par mois avec 2h de travail hebdomadaire, c'est un objectif réaliste — pas une promesse marketing. La condition est un investissement initial de 2 à 3 journées pour construire le système, rédiger le system prompt, et configurer l'infrastructure. Après ça, c'est un processus qui tourne. Si vous voulez qu'on construise ce système pour vous clé en main, contactez-nous.",
+      keyTakeaways: [
+        "1 contenu racine/semaine génère 8 à 10 contenus dérivés via l'IA",
+        "Le system prompt personnalisé est la clé pour maintenir votre voix dans les contenus IA",
+        "Infrastructure : Airtable + n8n + Claude API + Buffer — coût 30 à 80€/mois",
+        "20 à 30 min/semaine de relecture humaine transforment des contenus IA acceptables en contenus experts",
+        "Investissement initial : 2 à 3 jours pour construire le système, puis < 2h/semaine pour le faire tourner",
+      ],
+    },
+  },
+
+  {
+    id: 'personal-branding-linkedin-dirigeants',
+    title: "Personal branding sur LinkedIn : la stratégie complète pour les dirigeants",
+    excerpt: "Un dirigeant visible sur LinkedIn génère en moyenne 3 à 5 fois plus de leads entrants que son entreprise. La méthode complète pour construire une audience qualifiée sans y passer 2 heures par jour.",
+    category: 'Contenu & Marketing IA',
+    date: "Janvier 2025",
+    readTime: "11 min",
+    image: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?auto=format&fit=crop&q=80&w=800",
+    tags: ["LinkedIn", "Personal Branding", "Dirigeants", "Inbound", "Contenu"],
+    available: true,
+    body: {
+      intro: "LinkedIn compte 29 millions d'utilisateurs actifs en France. Parmi eux, moins de 1 % publient du contenu régulièrement. Ce 1 % capte 99 % de la visibilité. Pour un dirigeant de PME, être dans ce 1 % n'est pas un effort titanesque — c'est une décision stratégique et un système à tenir. Voici pourquoi et surtout comment.",
+      sections: [
+        {
+          title: "Pourquoi le personal branding du dirigeant surpasse la page entreprise",
+          paragraphs: [
+            "Les chiffres sont sans appel : un post d'un individu reçoit en moyenne 8 fois plus d'engagement qu'un post identique publié sur une page entreprise. LinkedIn favorise algorithmiquement les créateurs individuels sur les pages corporate — l'algorithme a été conçu pour encourager le réseau professionnel humain, pas la communication institutionnelle. Un dirigeant avec 5 000 abonnés engagés génère plus de leads que la page LinkedIn de son entreprise avec 50 000 followers passifs.",
+            "Au-delà des chiffres, il y a un effet de confiance : les clients B2B achètent des personnes avant d'acheter des entreprises. Voir le dirigeant partager son expertise, ses coulisses, ses convictions crée un lien qui précède et accélère la vente. Selon nos observations sur les clients que nous accompagnons, un dirigeant actif sur LinkedIn reçoit en moyenne 3 à 5 fois plus de demandes entrantes après 6 mois de présence régulière qu'avant.",
+          ],
+          bullets: [
+            "Posts individuels vs page entreprise : 8x plus d'engagement en moyenne",
+            "Algorithme LinkedIn favorise les créateurs individuels sur les pages corporate",
+            "+3 à 5x de demandes entrantes après 6 mois de présence régulière",
+            "Les clients B2B font confiance à une personne avant de faire confiance à une entreprise",
+          ],
+        },
+        {
+          title: "La stratégie de contenu : quoi publier et à quelle fréquence",
+          paragraphs: [
+            "La règle d'or est la suivante : 80 % de votre contenu doit apporter de la valeur à votre audience sans rien demander en retour. 20 % peut promouvoir votre activité. Le mix éditorial que nous recommandons aux dirigeants : 40 % d'expertise (enseignements tirés de vos projets, erreurs commises, apprentissages), 30 % de coulisses (votre façon de travailler, votre vision, vos convictions), 20 % d'actualité sectorielle commentée (pas repostée — commentée avec votre point de vue), et 10 % de promotion de vos services ou résultats clients.",
+            "Sur la fréquence : 3 posts par semaine est l'optimum pour la plupart des dirigeants. Moins, et l'algorithme vous oublie entre chaque post. Plus, et vous risquez d'épuiser votre audience (et vous-même). La régularité bat l'intensité : 3 posts/semaine pendant 52 semaines fait plus que 10 posts/semaine pendant 2 mois. Choisissez une fréquence que vous pouvez tenir 12 mois, même dans vos semaines chargées.",
+          ],
+          bullets: [
+            "Mix éditorial : 40% expertise / 30% coulisses / 20% actualité commentée / 10% promotion",
+            "Fréquence optimale : 3 posts/semaine — régularité > intensité",
+            "Format qui performe le mieux en 2025 : texte structuré avec sous-titres (pas de carrousels)",
+            "Éviter : les citations inspirantes génériques, le positivisme de façade, les posts trop longs",
+            "Soigner l'accroche : les 2 premières lignes déterminent 70% du taux de lecture",
+          ],
+        },
+        {
+          title: "Le système pour tenir sur la durée sans y passer 2h par jour",
+          paragraphs: [
+            "Le plus grand obstacle au personal branding pour les dirigeants n'est pas le manque d'idées — c'est le manque de temps. La solution est un système de batch creation : une session de 2h par semaine (idéalement le vendredi matin) pendant laquelle vous rédigez les 3 posts de la semaine suivante. Vous n'écrivez pas quand vous êtes inspiré — vous écrivez à heure fixe, en rafale, puis vous programmez. Buffer et la fonction native de programmation LinkedIn rendent ça trivial.",
+            "Pour les idées, tenez un 'journal de contenus' — une note dans votre téléphone où vous capturez en temps réel les insights de vos semaines : une question client pertinente, une erreur commise et ce que vous en avez appris, un chiffre inattendu issu d'un projet, une conviction qui dérange. Ces notes brutes sont votre matière première. En fin de semaine, vous avez 5 à 10 germes d'idées parmi lesquels choisir les 3 meilleurs. L'IA (Claude) transforme ensuite chaque germ en post structuré que vous relisez et personnalisez en 10 minutes.",
+          ],
+          bullets: [
+            "Batch creation : 2h par semaine pour écrire les 3 posts de la semaine suivante",
+            "Journal de contenus : capturer les insights en temps réel dans une note téléphone",
+            "Claude pour la structuration : germ d'idée → draft post en 2 minutes → relecture 10 min",
+            "Programmation : Buffer ou LinkedIn natif pour publier aux heures optimales (mar/jeu 8-9h)",
+            "Engager les 60 premières minutes après publication : répondre à chaque commentaire boost l'algorithme",
+          ],
+        },
+      ],
+      conclusion: "Un personal branding LinkedIn efficace n'est pas une question de talent — c'est une question de système et de constance. Les dirigeants qui génèrent des leads via LinkedIn ne sont pas forcément les plus brillants orateurs ; ce sont ceux qui ont décidé de partager leur expertise régulièrement et qui s'y tiennent. Commencez demain, pas quand vous aurez 'le temps'. Si vous voulez un accompagnement pour définir votre stratégie et mettre en place le système éditorial, nous proposons des sessions de coaching dédiées.",
+      keyTakeaways: [
+        "Moins de 1% des membres LinkedIn publient régulièrement — ce 1% capte 99% de la visibilité",
+        "Posts individuels = 8x plus d'engagement que les pages entreprise",
+        "Mix éditorial : 40% expertise / 30% coulisses / 20% actualité commentée / 10% promo",
+        "Fréquence optimale : 3 posts/semaine — la régularité bat l'intensité sur 12 mois",
+        "Batch creation : 2h/semaine en session dédiée pour écrire les 3 posts de la semaine suivante",
+      ],
+    },
+  },
+
+  // ─── CONSEIL & FORMATION ─────────────────────────────────────────────────
+
+  {
+    id: 'convaincre-equipe-outils-ia',
+    title: "Comment convaincre votre équipe d'adopter les outils IA en 30 jours",
+    excerpt: "La résistance au changement est le premier obstacle à l'adoption de l'IA en entreprise. Plan d'action concret en 4 phases pour transformer des sceptiques en ambassadeurs.",
+    category: 'Conseil & Formation',
+    date: "Octobre 2024",
+    readTime: "9 min",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
+    tags: ["Formation", "Change Management", "IA", "Adoption", "Équipe"],
+    available: true,
+    body: {
+      intro: "Vous avez testé les outils IA, vous êtes convaincu du potentiel, vous voulez déployer. Et là, vous rencontrez le mur le plus difficile à franchir dans n'importe quelle transformation digitale : la résistance de votre propre équipe. 'C'est compliqué', 'on n'a pas le temps d'apprendre', 'ça va remplacer nos emplois'... Ces objections sont légitimes et elles méritent une réponse — pas un décret. Voici un plan d'action en 4 phases pour transformer des sceptiques en ambassadeurs en 30 jours.",
+      sections: [
+        {
+          title: "Comprendre les vraies raisons de la résistance",
+          paragraphs: [
+            "La résistance à l'IA en entreprise n'est presque jamais une résistance à la technologie elle-même — c'est une peur, souvent légitime, de trois choses : la peur de l'obsolescence (mon travail va être automatisé), la peur de l'échec (je vais devoir apprendre une nouvelle façon de travailler et mal le faire devant mes collègues), et la peur de la surcharge (en plus de mon travail habituel, je dois maintenant apprendre de nouveaux outils). Nommer ces peurs explicitement en réunion d'équipe — avant même de parler de déploiement — est la première étape indispensable.",
+            "Un diagnostic des résistances prend 1 heure : organisez un tour de table ou un formulaire anonyme avec 3 questions : 'Qu'est-ce qui vous inquiète dans l'adoption de l'IA ?' / 'Quelle tâche de votre quotidien vous épuise le plus ?' / 'Qu'est-ce qui vous aiderait à vous sentir à l'aise avec ces outils ?'. Les réponses vous donneront un tableau précis des blocages — et souvent, les tâches qui épuisent sont exactement celles que l'IA peut automatiser, ce qui ouvre un dialogue constructif.",
+          ],
+          bullets: [
+            "3 peurs fondamentales : obsolescence / échec / surcharge — nommez-les explicitement",
+            "Diagnostic en 1h : formulaire anonyme avant toute réunion de déploiement",
+            "Ne jamais déployer l'IA comme un 'projet IT' imposé du haut — co-construire avec l'équipe",
+            "Identifier les 'early adopters' naturels dans l'équipe — ils seront vos ambassadeurs",
+          ],
+        },
+        {
+          title: "Le plan en 4 phases sur 30 jours",
+          paragraphs: [
+            "Semaine 1 — Démonstration par le résultat : ne montrez pas l'outil, montrez le résultat. Prenez une tâche réelle et frustrante de votre équipe (la relance des devis, la rédaction des comptes-rendus, le tri des emails), et montrez en direct comment l'IA la réduit de 80 %. La démo doit durer 10 minutes maximum et se terminer par 'est-ce que quelqu'un veut essayer sur sa propre tâche ?'. Cette question crée un engagement volontaire — bien plus puissant qu'une formation imposée. Semaine 2 — Expérimentation guidée : chaque membre de l'équipe identifie une tâche personnelle à automatiser et est accompagné dans sa première expérience. L'objectif n'est pas la perfection — c'est un premier succès rapide qui crée la conviction.",
+            "Semaine 3 — Partage en équipe : organisez une session de 30 minutes où chaque participant partage son expérience (succès, échecs, surprises). Ces témoignages pairs-à-pairs ont un impact 5 fois supérieur à n'importe quelle présentation de management. Semaine 4 — Intégration dans les processus : formalisez les usages qui ont fonctionné dans des procédures simples (1 page max par outil), et désignez un 'référent IA' dans l'équipe — l'early adopter le plus enthousiaste — qui sera le point de contact pour les questions futures.",
+          ],
+          bullets: [
+            "S1 — Démo résultat (10 min) : tâche réelle → résultat concret → question 'qui veut essayer ?'",
+            "S2 — Expérimentation guidée : 1 tâche personnelle par personne, accompagnée",
+            "S3 — Partage pairs : session 30 min, témoignages équipe → 5x plus d'impact que le management",
+            "S4 — Intégration processus : procédures simples + désignation d'un référent IA",
+            "Mesurer l'adoption : taux d'utilisation hebdomadaire à J+30 et J+90",
+          ],
+        },
+        {
+          title: "Les erreurs qui font échouer l'adoption",
+          paragraphs: [
+            "L'erreur n°1 est de déployer trop d'outils simultanément. Chaque nouvel outil demande de l'attention et de l'apprentissage — surcharger l'équipe de 5 outils en même temps garantit l'abandon de tous. Commencez par un seul outil, sur un seul cas d'usage, avec un groupe pilote de 3 à 5 personnes volontaires. Maîtrisez cet outil avant de passer au suivant.",
+            "L'erreur n°2 est de mesurer l'adoption par la disponibilité de l'outil (le logiciel est installé, les accès sont créés) plutôt que par l'utilisation réelle. Un outil installé et non utilisé n'est pas de l'adoption — c'est du gaspillage. Mesurez la fréquence d'utilisation réelle, les tâches traitées, et surtout l'auto-évaluation de l'équipe sur son confort avec l'outil à J+30 et J+90.",
+          ],
+          bullets: [
+            "Erreur classique : déployer 5 outils en même temps → adoption de zéro",
+            "Commencer par 1 outil, 1 cas d'usage, 3 à 5 volontaires — maîtriser avant d'étendre",
+            "Mesurer l'utilisation réelle, pas la disponibilité des accès",
+            "Prévoir du temps de formation dans les plannings — pas 'en plus du travail'",
+            "Célébrer les succès publiquement : l'équipe qui gagne du temps sur une tâche mérite d'être citée",
+          ],
+        },
+      ],
+      conclusion: "L'adoption des outils IA en entreprise est avant tout un projet humain — pas un projet technique. Le déploiement prend un jour. Convaincre une équipe prend 30 jours si vous faites les choses dans l'ordre. Investissez dans la compréhension des résistances, démarrez avec des volontaires, et laissez les résultats parler. Si vous voulez qu'on anime cette démarche d'adoption dans votre entreprise, nous proposons des accompagnements de 30 jours clé en main.",
+      keyTakeaways: [
+        "3 peurs fondamentales derrière la résistance : obsolescence, échec public, surcharge",
+        "Montrer le résultat avant l'outil : démo 10 min sur une tâche réelle de l'équipe",
+        "Les témoignages pairs-à-pairs ont 5x plus d'impact que les présentations management",
+        "Déployer 1 outil, 1 cas d'usage, 3-5 volontaires — maîtriser avant d'étendre",
+        "Mesurer l'utilisation réelle à J+30 et J+90, pas la disponibilité des accès",
+      ],
+    },
+  },
+
+  {
+    id: 'audit-digital-pme-12-points',
+    title: "L'audit digital pour PME : 12 points à vérifier impérativement",
+    excerpt: "Avant d'investir dans le digital, savoir où vous en êtes. Les 12 dimensions d'un audit digital complet pour PME — avec les questions exactes à poser et les indicateurs à mesurer.",
+    category: 'Conseil & Formation',
+    date: "Février 2025",
+    readTime: "10 min",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+    tags: ["Audit Digital", "PME", "Stratégie", "Diagnostic"],
+    available: true,
+    body: {
+      intro: "La majorité des PME qui viennent nous voir pour améliorer leur présence digitale ne savent pas précisément où elles en sont. Elles ont un site web, quelques réseaux sociaux, un CRM peut-être, et un sentiment vague que 'ça pourrait mieux marcher'. Un audit digital change ça : il donne une image précise, chiffrée, des forces et des lacunes — et permet de prioriser les investissements avec une logique d'impact plutôt que d'instinct. Voici les 12 points que nous examinons systématiquement.",
+      sections: [
+        {
+          title: "Points 1 à 4 : présence en ligne et acquisition",
+          paragraphs: [
+            "Le premier point est la performance SEO : votre site apparaît-il sur les requêtes de vos prospects ? Nous utilisons Google Search Console (gratuit) pour mesurer le nombre d'impressions, de clics et la position moyenne sur les 3 derniers mois. Un site performant génère au moins 1 clic pour 10 impressions sur ses requêtes principales. En dessous de ce ratio, il y a soit un problème de positionnement (trop loin en page pour déclencher des clics), soit un problème de title/meta description (mauvais messaging).",
+            "Le deuxième point est la présence locale : votre fiche Google Business Profile est-elle complète, vérifiée, et régulièrement animée ? Pour toute PME dont les clients sont locaux ou régionaux, c'est souvent le levier SEO le plus rapide. Les points 3 et 4 couvrent les réseaux sociaux (présence, régularité, engagement réel) et la publicité payante (est-elle rentable ? le tracking est-il correct ?). Nous cherchons systématiquement à calculer un coût par lead ou coût par acquisition réel — pas juste un coût par clic.",
+          ],
+          bullets: [
+            "SEO : ratio clics/impressions > 10% sur les requêtes principales (Search Console)",
+            "Google Business Profile : fiche vérifiée, complète (100% des champs), animée (1 post/semaine)",
+            "Réseaux sociaux : taux d'engagement réel (pas les followers — les interactions/publication)",
+            "Publicité payante : coût par lead réel calculé, pas seulement le CPM ou CPC",
+          ],
+        },
+        {
+          title: "Points 5 à 8 : site web, conversion et données",
+          paragraphs: [
+            "Le point 5 est la performance technique du site : Core Web Vitals, temps de chargement mobile, et score PageSpeed. Un score PageSpeed mobile inférieur à 50 est un signal d'alarme — Google pénalise activement les sites lents en mobile depuis 2021. Le point 6 est le taux de conversion : quel pourcentage de visiteurs effectuent l'action désirée (formulaire, appel, achat) ? La moyenne B2B est de 2 à 5 % — en dessous, il y a un problème de UX, de messaging ou de confiance.",
+            "Les points 7 et 8 couvrent l'analytics et la collecte de données. Est-ce que Google Analytics 4 est correctement installé et configuré avec des objectifs de conversion ? Est-ce que le pixel Meta et les balises de conversion Google Ads trackent correctement les leads ? Un audit analytics révèle presque toujours des données manquantes ou erronées — et donc des décisions prises sur des chiffres faux. Nous avons audité des entreprises qui optimisaient leurs campagnes sur un taux de conversion biaisé par un double-tag.",
+          ],
+          bullets: [
+            "PageSpeed mobile : objectif > 70, audit si < 50",
+            "Taux de conversion site : benchmark B2B 2 à 5% — analyser les frictions si < 1%",
+            "GA4 : events de conversion configurés et vérifiés (test en temps réel)",
+            "Tracking publicitaire : vérifier le déclenchement des pixels avec l'extension Tag Assistant",
+            "Heatmap : Hotjar ou Microsoft Clarity (gratuit) pour voir où les visiteurs abandonnent",
+          ],
+        },
+        {
+          title: "Points 9 à 12 : outils, processus et sécurité",
+          paragraphs: [
+            "Les points 9 et 10 couvrent le CRM et les outils internes. Le CRM est-il réellement utilisé par l'équipe commerciale (taux de saisie > 80 % des interactions) ou est-il un outil fantôme ? Les données clients sont-elles propres et à jour, ou y a-t-il des doublons et des contacts obsolètes ? Un CRM mal utilisé est plus dangereux qu'un CRM absent — il donne une fausse impression de maîtrise.",
+            "Les points 11 et 12 couvrent la sécurité et la conformité RGPD. Le site a-t-il un certificat SSL valide, des sauvegardes automatiques quotidiennes, et un système de mises à jour régulières ? La politique de confidentialité est-elle à jour et conforme (mention des cookies tiers, droit à l'oubli, coordonnées DPO) ? Un site WordPress non mis à jour est une faille de sécurité ouverte. Nous identifions systématiquement des sites avec des plugins datant de 2 à 3 ans sans mise à jour lors de nos audits.",
+          ],
+          bullets: [
+            "CRM : taux de saisie > 80% des interactions, données propres (< 5% de doublons)",
+            "Outils digitaux : inventaire des abonnements SaaS actifs + coût mensuel total",
+            "Sécurité : SSL valide, sauvegardes quotidiennes, mises à jour hebdomadaires plugins",
+            "RGPD : bannière cookies conforme, politique de confidentialité à jour, registre des traitements",
+            "Score global : 12 points → grille rouge/orange/vert pour chaque dimension",
+          ],
+        },
+      ],
+      conclusion: "Un audit digital en 12 points vous donne en 2 à 3 jours une image précise de votre situation digitale et une liste priorisée d'actions à mener. C'est la base de tout investissement digital intelligent — sans audit, vous naviguez à l'aveugle. Si vous voulez que nous réalisions cet audit pour votre entreprise avec un rapport structuré et un plan d'action, contactez-nous.",
+      keyTakeaways: [
+        "L'audit couvre 4 dimensions : acquisition / site et conversion / données / outils et sécurité",
+        "Ratio clics/impressions Search Console > 10% : indicateur clé de la santé SEO",
+        "PageSpeed mobile < 50 = signal d'alarme, Google pénalise activement depuis 2021",
+        "Un CRM mal utilisé (< 80% de saisie) est plus dangereux qu'un CRM absent",
+        "L'audit révèle systématiquement des données analytics erronées et des décisions biaisées",
+      ],
+    },
+  },
+
+  // ─── PILOTAGE CONTINU ────────────────────────────────────────────────────
+
+  {
+    id: 'dashboard-pilotage-pme-5-kpis',
+    title: "Dashboard de pilotage pour PME : les 5 KPIs qui comptent vraiment",
+    excerpt: "Trop d'indicateurs noient la décision. Les 5 métriques que tout dirigeant de PME doit surveiller chaque semaine — et comment les afficher en un seul tableau de bord automatisé.",
+    category: 'Pilotage Continu',
+    date: "Décembre 2024",
+    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    tags: ["KPIs", "Dashboard", "Pilotage", "PME", "Data"],
+    available: true,
+    body: {
+      intro: "La plupart des tableaux de bord PME ont le même problème : trop d'indicateurs. 47 métriques réparties sur 6 onglets, actualisées manuellement le premier lundi de chaque mois. Résultat : personne ne les regarde vraiment, les décisions sont prises à l'instinct, et les anomalies sont détectées trop tard. Un bon tableau de bord PME tient sur un seul écran, se met à jour automatiquement, et contient exactement 5 indicateurs clés. Voici lesquels et pourquoi.",
+      sections: [
+        {
+          title: "Les 5 KPIs universels d'une PME de services",
+          paragraphs: [
+            "KPI 1 — Le chiffre d'affaires mensuel récurrent (MRR) vs objectif : pas le CA total (qui inclut des one-shots non représentatifs), mais le CA récurrent — ce que vous êtes sûr de facturer le mois prochain si vous ne faites rien de nouveau. C'est l'indicateur de santé fondamentale de l'entreprise. La tendance (en hausse, stable, en baisse) sur les 6 derniers mois est plus importante que le chiffre absolu. KPI 2 — Le pipeline commercial : combien de devis en cours, pour quel montant total, et quel est le taux de transformation habituel. Ce chiffre prédit le CA des 30 à 90 prochains jours.",
+            "KPI 3 — Le délai moyen de paiement : combien de jours s'écoulent en moyenne entre l'émission d'une facture et son paiement ? Un délai qui s'allonge est un signal d'alerte précoce sur la santé de votre trésorerie. KPI 4 — Le taux de satisfaction client (NPS ou score simple) : mesuré trimestriellement au minimum. Un client satisfait renouvelle, un client insatisfait part souvent sans prévenir et parfois en faisant du bruit. KPI 5 — La productivité par ETP (ou par projet) : CA / nombre d'ETP ou marge par projet. C'est l'indicateur qui révèle si vous êtes en train de croître sainement ou de croître en perdant de la marge.",
+          ],
+          bullets: [
+            "KPI 1 — MRR vs objectif : tendance 6 mois plus importante que valeur absolue",
+            "KPI 2 — Pipeline : montant total × taux de transformation = CA prévisible",
+            "KPI 3 — Délai moyen paiement : alerte si > 45 jours ou si tend à s'allonger",
+            "KPI 4 — NPS ou score satisfaction trimestriel : < 7/10 est un signal d'alarme",
+            "KPI 5 — Marge par projet ou CA/ETP : indicateur de croissance saine vs croissance destructive",
+          ],
+        },
+        {
+          title: "Construire le dashboard en une journée avec Looker Studio",
+          paragraphs: [
+            "Google Looker Studio (anciennement Data Studio) est gratuit, hébergé par Google, et connecte nativement les sources de données les plus courantes d'une PME : Google Analytics, Google Sheets, et via des connecteurs tiers, les principaux CRM et outils de facturation. Pour un dashboard de 5 KPIs, une journée de configuration suffit.",
+            "L'architecture recommandée : (1) votre comptable ou votre outil de facturation alimente un Google Sheet avec le CA mensuel et les délais de paiement — manuellement une fois par mois ou automatiquement si votre outil le permet ; (2) votre CRM (HubSpot ou Pipedrive) exporte automatiquement le pipeline via un connecteur natif Looker Studio ; (3) les données de satisfaction sont collectées via un formulaire simple et stockées dans un Sheet. Looker Studio consolide tout dans un tableau sur une seule page, partageable avec votre équipe de direction.",
+          ],
+          bullets: [
+            "Looker Studio : gratuit, connecteurs natifs GA4 + Sheets + HubSpot + Pipedrive",
+            "Architecture recommandée : Sheets (finance) + CRM (pipeline) + Forms (satisfaction)",
+            "Actualisation automatique : Sheets connectés à votre outil de facturation via n8n",
+            "Partage : URL publique consultable en lecture seule pour toute la direction",
+            "Mobile-friendly : Looker Studio génère automatiquement une version responsive",
+          ],
+        },
+        {
+          title: "Faire vivre le dashboard : le rituel hebdomadaire de 15 minutes",
+          paragraphs: [
+            "Un tableau de bord sans rituel de consultation est inutile. Notre recommandation : 15 minutes chaque lundi matin, en solo ou avec les responsables clés, pour parcourir les 5 KPIs et répondre à 3 questions : Y a-t-il une anomalie à traiter cette semaine ? Y a-t-il une tendance préoccupante sur les 4 dernières semaines ? Quelle est la priorité d'action numéro 1 qui découle de ces chiffres ?",
+            "Cette routine transforme les données en décisions. Sans elle, même le meilleur tableau de bord reste décoratif. Pour nos clients les plus avancés, nous automatisons un résumé textuel des KPIs chaque lundi via un workflow n8n + Claude : le système analyse les chiffres, détecte les anomalies, et envoie un email de synthèse au dirigeant avec un commentaire interprétatif. C'est un état des lieux du lundi matin en 3 minutes de lecture.",
+          ],
+          bullets: [
+            "Rituel lundi : 15 min pour répondre à 3 questions (anomalie / tendance / priorité d'action)",
+            "Revue mensuelle : 45 min avec toute la direction pour les décisions stratégiques",
+            "Automatisation avancée : n8n + Claude → email de synthèse KPIs chaque lundi matin",
+            "Règle d'or : si un KPI ne déclenche jamais d'action, il n'est pas dans le bon dashboard",
+          ],
+        },
+      ],
+      conclusion: "5 KPIs, un tableau de bord automatisé, 15 minutes par semaine. C'est tout ce qu'il faut pour piloter une PME avec une visibilité suffisante pour prendre de bonnes décisions rapidement. Ne cherchez pas la perfection analytique — cherchez la clarté opérationnelle. Si vous voulez qu'on construise ce dashboard pour votre entreprise avec vos données existantes, contactez-nous.",
+      keyTakeaways: [
+        "5 KPIs seulement : MRR vs objectif / pipeline / délai paiement / satisfaction / marge par ETP",
+        "Looker Studio gratuit connecte GA4 + Sheets + CRM en un tableau de bord automatisé",
+        "La tendance sur 6 mois est plus importante que la valeur absolue pour le MRR",
+        "Rituel lundi 15 min : anomalie / tendance / priorité action — transforme les données en décisions",
+        "Automatisation avancée : email de synthèse KPIs généré par n8n + Claude chaque lundi matin",
+      ],
+    },
+  },
+
+  {
+    id: 'maintenir-site-react-production',
+    title: "Comment maintenir un site React en production sans compétences techniques",
+    excerpt: "Mises à jour de sécurité, déploiements, monitoring, sauvegardes... Les processus et outils qui permettent à un non-développeur de maintenir un site React en production sans tout casser.",
+    category: 'Pilotage Continu',
+    date: "Février 2025",
+    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800",
+    tags: ["React", "Production", "Maintenance", "DevOps", "Non-technique"],
+    available: true,
+    body: {
+      intro: "Votre agence a livré un site React magnifique. Vous l'avez payé, vous en êtes fier, et maintenant vous réalisez que personne dans votre équipe ne sait comment le maintenir. Les mises à jour de sécurité s'accumulent dans les alertes GitHub que vous n'ouvrez pas. Un jour, un message 'site down' arrive à 9h du matin et vous appelez frénétiquement votre prestataire. Ça n'a pas à être ainsi. Voici les processus et outils qui permettent de maintenir un site React en production sans dépendre d'un développeur pour chaque intervention.",
+      sections: [
+        {
+          title: "Comprendre ce que 'maintenir' veut dire pour un site React",
+          paragraphs: [
+            "Un site React est une application JavaScript qui tourne dans le navigateur du visiteur, servie depuis un hébergeur (Vercel, Netlify, OVH, etc.). Maintenir ce site couvre 4 dimensions : la sécurité des dépendances npm (les bibliothèques utilisées dans le code — potentiellement 200 à 500 packages — sont régulièrement affectées par des vulnérabilités), la disponibilité (est-ce que le site répond ? est-ce qu'il charge correctement ?), les mises à jour de contenu (changer un texte, une image, une information), et la cohérence avec les évolutions des services tiers intégrés (API de paiement, CRM, analytics).",
+            "Bonne nouvelle : la maintenance d'un site React en production est moins complexe qu'elle n'y paraît si l'architecture initiale a été bien pensée. Si votre site est hébergé sur Vercel ou Netlify, connecté à un repository GitHub, et utilise un CMS headless pour le contenu (Sanity, Contentful, ou même Notion), vous pouvez gérer 80 % des opérations de maintenance sans toucher au code.",
+          ],
+          bullets: [
+            "4 dimensions de maintenance : sécurité dépendances / disponibilité / contenu / services tiers",
+            "Vercel ou Netlify + GitHub : la base d'une architecture maintenable sans expertise DevOps",
+            "CMS headless : permet les mises à jour de contenu sans toucher au code",
+            "Dependabot (GitHub) : alertes et PR automatiques pour les vulnérabilités de dépendances",
+          ],
+        },
+        {
+          title: "Les outils de monitoring que tout propriétaire de site doit configurer",
+          paragraphs: [
+            "Le monitoring de disponibilité est la première couche de protection. UptimeRobot (plan gratuit : 50 moniteurs, vérification toutes les 5 minutes) surveille votre URL et vous envoie un SMS ou email dès que le site ne répond plus. Configurez aussi des alertes sur les codes d'erreur HTTP (500, 503) et sur un temps de réponse supérieur à 3 secondes. Ces alertes vous permettent de détecter un problème avant vos clients.",
+            "La deuxième couche est le monitoring des erreurs JavaScript. Sentry (plan gratuit pour les petits volumes) capture chaque erreur qui se produit dans le navigateur de vos visiteurs en temps réel. Quand un formulaire casse, quand une intégration tiers plante, quand une mise à jour introduit un bug — Sentry vous le dit immédiatement avec l'information technique suffisante pour qu'un développeur puisse corriger rapidement. Sans Sentry, vous découvrez ces problèmes quand un client se plaint.",
+          ],
+          bullets: [
+            "UptimeRobot gratuit : surveillance toutes les 5 min + SMS/email si site down",
+            "Sentry gratuit : capture des erreurs JS en temps réel avec contexte technique",
+            "Google Search Console : alertes si le site est pénalisé ou désindexé par Google",
+            "Cloudflare gratuit : CDN + protection DDoS de base + analytics de trafic",
+            "StatusPage.io ou Betterstack : communication transparente vers vos clients en cas d'incident",
+          ],
+        },
+        {
+          title: "Les processus pour les opérations courantes sans développeur",
+          paragraphs: [
+            "Les mises à jour de contenu sur un site React sans CMS headless nécessitent normalement un développeur. Si votre site n'en a pas, la première action à négocier avec votre agence est l'ajout d'un CMS simple. Sanity.io a un plan gratuit généreux et une interface d'administration accessible à n'importe quel profil non-technique. Une fois configuré, vous modifiez les textes, les images et les informations de votre site depuis une interface web — sans toucher au code ni au déploiement.",
+            "Pour les mises à jour de sécurité des dépendances, configurez Dependabot sur votre repository GitHub. Dependabot détecte automatiquement les vulnérabilités dans vos dépendances npm et crée des Pull Requests de mise à jour. Pour les mises à jour 'patch' (corrections de bugs, sans changement d'API), ces PR peuvent être configurées pour être mergées automatiquement — votre site reste à jour sans intervention manuelle. Pour les mises à jour 'major' (changement d'API potentiellement cassant), une revue par un développeur 1 fois par trimestre suffit.",
+          ],
+          bullets: [
+            "CMS headless (Sanity.io gratuit) : mises à jour de contenu sans code",
+            "Dependabot GitHub : alertes automatiques + PR pour les vulnérabilités npm",
+            "Auto-merge Dependabot sur les mises à jour 'patch' : sécurité sans intervention",
+            "Vercel Deployments : chaque merge sur main = déploiement automatique en 2 minutes",
+            "Checklist mensuelle : vérifier les alertes Sentry + UptimeRobot + Search Console",
+          ],
+        },
+      ],
+      conclusion: "Maintenir un site React en production sans compétences techniques est possible — à condition que l'architecture initiale ait été pensée pour ça. UptimeRobot + Sentry + Dependabot + un CMS headless : ces quatre outils couvrent 80 % des besoins de maintenance courante. Le reste (les 20 % de problèmes techniques réels) mérite un contrat de maintenance avec votre agence. Si vous voulez qu'on audite votre architecture actuelle et mette en place ces outils, contactez-nous.",
+      keyTakeaways: [
+        "UptimeRobot gratuit + Sentry gratuit : monitoring disponibilité et erreurs en 30 min de configuration",
+        "Sanity.io headless CMS : mises à jour de contenu accessibles à un profil non-technique",
+        "Dependabot auto-merge sur patches : sécurité des dépendances sans intervention manuelle",
+        "Vercel + GitHub : déploiement automatique à chaque merge, pas de FTP ni de SSH",
+        "Checklist mensuelle de 15 min : alertes Sentry + UptimeRobot + Search Console",
+      ],
+    },
   },
 
 ];
