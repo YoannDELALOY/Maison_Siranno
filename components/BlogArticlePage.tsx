@@ -1,8 +1,24 @@
 import React from 'react';
-import { ArrowLeft, CheckCircle2, ExternalLink, BookOpen, Github, Globe, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, ExternalLink, BookOpen, Github, Globe, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users, Mail, Phone } from 'lucide-react';
 import { ProjectData } from './Projects';
+import { ExpertiseCategory } from '../data/projects';
 import { allTestimonials } from '../data/testimonials';
 import starImg from '../Media/etoiletrnsparante.png';
+import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
+import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
+import iconContenu from '../Media/Logos/Logo_expertise/Icone_Création_de_Contenu_&_Marketing_IA.png';
+import iconIA from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
+import iconConseil from '../Media/Logos/Logo_expertise/Icone_Conseil_&_Formation.png';
+import iconPilotage from '../Media/Logos/Logo_expertise/Icone_Pilotage_Continu.png';
+
+const expertiseIconMap: Record<ExpertiseCategory, string> = {
+  'web-apps-saas': iconWebApps,
+  'automatisation-n8n': iconAutomatisation,
+  'contenu-marketing-ia': iconContenu,
+  'ia-agents-rag': iconIA,
+  'conseil-formation': iconConseil,
+  'pilotage-continu': iconPilotage,
+};
 
 interface BlogArticlePageProps {
   project: ProjectData | null;
@@ -329,6 +345,26 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
             background: 'linear-gradient(to bottom, rgba(5,10,20,0.75) 0%, rgba(5,10,20,0.60) 40%, rgba(5,10,20,0.80) 100%)',
           }}
         />
+
+        {/* Icônes d'expertise décoratives — gauche et droite du titre */}
+        {project.expertise && expertiseIconMap[project.expertise] && (
+          <>
+            <img
+              src={expertiseIconMap[project.expertise]}
+              alt=""
+              aria-hidden="true"
+              className="hidden md:block absolute left-[6%] top-1/2 -translate-y-1/2 w-40 h-40 lg:w-56 lg:h-56 object-contain pointer-events-none"
+              style={{ opacity: 0.18, filter: 'drop-shadow(0 0 20px rgba(212,175,55,0.3))' }}
+            />
+            <img
+              src={expertiseIconMap[project.expertise]}
+              alt=""
+              aria-hidden="true"
+              className="hidden md:block absolute right-[6%] top-1/2 -translate-y-1/2 w-40 h-40 lg:w-56 lg:h-56 object-contain pointer-events-none"
+              style={{ opacity: 0.18, filter: 'drop-shadow(0 0 20px rgba(212,175,55,0.3))' }}
+            />
+          </>
+        )}
 
         {/* Bouton retour — fixe comme la navbar */}
         <div className="fixed top-5 left-5 z-50">
@@ -793,10 +829,13 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
 
             <div className="relative z-10">
               <BookOpen size={32} className="text-charcoal mx-auto mb-4" />
-              <h2 className="font-serif text-2xl font-bold mb-2 text-charcoal">Un projet similaire ?</h2>
-              <p className="text-charcoal/70 mb-6">Discutons de vos besoins. La première consultation est gratuite.</p>
+              <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-xs mb-3 block">Passez à l'étape suivante</span>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-charcoal">Un projet similaire ?</h2>
+              <p className="text-charcoal/70 mb-6 max-w-2xl mx-auto text-base leading-relaxed">
+                Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
+              </p>
 
-              {/* Lien GitHub — au-dessus des boutons */}
+              {/* Lien GitHub */}
               <div className="mb-6">
                 <a
                   href={project.githubUrl ?? 'https://github.com/YoannDELALOY'}
@@ -810,8 +849,8 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
                 </a>
               </div>
 
-              {/* Boutons d'action — btn-metallic-dark (bleu → gold hover) */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* Boutons d'action */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
                 {project.url && (() => {
                   const domain = new URL(project.url).hostname;
                   return (
@@ -836,9 +875,26 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
                   onClick={onGoToContact}
                   className="btn-metallic-dark inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full font-semibold text-white"
                 >
-                  Nous contacter
-                  <ArrowUpRight size={16} />
+                  <Mail size={16} />
+                  Envoyer un message
                 </button>
+                <a
+                  href="tel:+33XXXXXXXXX"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full font-semibold text-base border-2 border-charcoal/25 text-charcoal/60 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300"
+                >
+                  <Phone size={16} />
+                  Appeler directement
+                </a>
+              </div>
+
+              {/* Garanties */}
+              <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-charcoal/50">
+                {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+                  <span key={g} className="flex items-center gap-1.5">
+                    <span className="w-1 h-1 rounded-full bg-gold/60 shrink-0"></span>
+                    {g}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
