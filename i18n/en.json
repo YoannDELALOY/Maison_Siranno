@@ -262,6 +262,31 @@
       "11_title": "11. Policy Updates"
     }
   },
+  "blog_article_detail": {
+    "back_link": "Back to blog",
+    "key_takeaways": "Key takeaways",
+    "conclusion": "Conclusion",
+    "coming_soon_title": "Article coming soon",
+    "coming_soon_body": "This article is being written. Check back soon!",
+    "cta_eyebrow": "Let's take action",
+    "cta_title": "Got a project in mind?"
+  },
+  "project_article": {
+    "back_link": "Back to case studies",
+    "approach_eyebrow": "Our approach",
+    "approach_title": "How we did it",
+    "challenges_eyebrow": "Challenges",
+    "challenges_title": "Obstacles overcome",
+    "results_eyebrow": "The results",
+    "results_title": "What we achieved",
+    "cta_title": "A similar project?"
+  },
+  "service_detail": {
+    "back_link": "Back to expertise",
+    "step_label": "Step {n}",
+    "our_work_label": "What we will do",
+    "client_role_label": "Your role"
+  },
   "cookie_banner": {
     "title": "Your data, our commitment",
     "body": "We use Formspree to process your contact data (name, email, phone, message). We plan to integrate analytics tools in the future.",

@@ -262,6 +262,31 @@
       "11_title": "11. Modification de la politique"
     }
   },
+  "blog_article_detail": {
+    "back_link": "Retour au blog",
+    "key_takeaways": "Points clés à retenir",
+    "conclusion": "Conclusion",
+    "coming_soon_title": "Article bientôt disponible",
+    "coming_soon_body": "Cet article est en cours de rédaction. Revenez prochainement !",
+    "cta_eyebrow": "Passons à l'action",
+    "cta_title": "Un projet en tête ?"
+  },
+  "project_article": {
+    "back_link": "Retour aux réalisations",
+    "approach_eyebrow": "Notre approche",
+    "approach_title": "Comment nous l'avons réalisé",
+    "challenges_eyebrow": "Les défis",
+    "challenges_title": "Obstacles surmontés",
+    "results_eyebrow": "Les résultats",
+    "results_title": "Ce que nous avons accompli",
+    "cta_title": "Un projet similaire ?"
+  },
+  "service_detail": {
+    "back_link": "Retour aux expertises",
+    "step_label": "Étape {n}",
+    "our_work_label": "Ce que nous ferons",
+    "client_role_label": "Votre rôle"
+  },
   "cookie_banner": {
     "title": "Vos données, notre engagement",
     "body": "Nous utilisons Formspree pour traiter vos données de contact (nom, email, téléphone, message). Nous prévoyons d'intégrer des outils d'analyse à l'avenir.",
