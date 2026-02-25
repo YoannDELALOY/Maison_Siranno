@@ -4,7 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Services, ServiceData } from './components/Services';
 import { Projects } from './components/Projects';
-import { ProjectData, projectsData } from './data/projects';
+import { ProjectData } from './data/projects';
 import { About } from './components/About';
 import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
@@ -20,16 +20,18 @@ import { ServiceDetailPage } from './components/ServiceDetailPage';
 import { BlogPage } from './components/BlogPage';
 import { BlogArticlePage } from './components/BlogArticlePage';
 import { BlogArticleDetailPage } from './components/BlogArticleDetailPage';
-import { blogArticles, BlogArticle } from './data/blog';
+import { BlogArticle } from './data/blog';
 import { ExpertiseProjectsPage } from './components/ExpertiseProjectsPage';
 import { CookieBanner } from './components/CookieBanner';
 import { CustomCursor } from './components/CustomCursor';
 import { ExpertiseCategory } from './data/projects';
 import { SectionId } from './types';
+import { useLocalizedData } from './hooks/useLocalizedData';
 
 type Page = 'home' | 'mentions' | 'privacy' | 'expertise' | 'realisations' | 'agence' | 'service-detail' | 'blog' | 'blog-article' | 'blog-article-detail' | 'expertise-projects';
 
 function App() {
+  const { projects: projectsData, blog: blogArticles } = useLocalizedData();
   const [page, setPage] = useState<Page>('home');
   const [activeService, setActiveService] = useState<ServiceData | null>(null);
   const [activeServicePage, setActiveServicePage] = useState<ServiceData | null>(null);

@@ -1,7 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
-import { projectsData, ProjectData } from '../data/projects';
+import { ProjectData } from '../data/projects';
+import { useLocalizedData } from '../hooks/useLocalizedData';
 import { useSwipe } from '../hooks/useSwipe';
 
 interface ProjectCardProps {
@@ -82,6 +83,7 @@ interface ProjectsProps {
 }
 
 export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
+  const { projects: projectsData } = useLocalizedData();
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);

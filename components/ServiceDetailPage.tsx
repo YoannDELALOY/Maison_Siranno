@@ -5,8 +5,7 @@ import { darkTextureStyle, lightTextureStyle } from '../constants/textures';
 import { CONTACT_CONFIG } from '../constants/config';
 import { ArrowLeft, ArrowRight, CheckCircle2, Lightbulb, Quote, Phone, Mail, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, X, ClipboardList } from 'lucide-react';
 import { ServiceData } from './Services';
-import { allTestimonials } from '../data/testimonials';
-import { projectsData } from '../data/projects';
+import { useLocalizedData } from '../hooks/useLocalizedData';
 
 interface ServiceDetailPageProps {
   service: ServiceData;
@@ -338,8 +337,9 @@ interface TestimonialSliderProps {
 }
 
 const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onViewProject }) => {
+  const { projects, allTestimonials } = useLocalizedData();
   // Récupérer les IDs de projets liés à cette expertise
-  const linkedProjectIds = projectsData
+  const linkedProjectIds = projects
     .filter(p => p.expertise === serviceId || (p.expertises ?? []).includes(serviceId as any))
     .map(p => p.id);
 

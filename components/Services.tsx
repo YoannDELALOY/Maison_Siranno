@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
-import { servicesData as rawServicesData } from '../data/services';
+import { useLocalizedData } from '../hooks/useLocalizedData';
 import { useSwipe } from '../hooks/useSwipe';
 
 // Images grandes (ExpertisePage — sections alternées)
@@ -66,12 +66,14 @@ const serviceDetailIcons: Record<string, string> = {
   'pilotage-continu':     iconPilotage,
 };
 
-export const servicesData: ServiceData[] = rawServicesData.map((s) => ({
-  ...s,
-  icon: serviceIcons[s.id] ?? <Globe size={24} />,
-  expertiseImage: serviceExpertiseImages[s.id] ?? '',
-  detailIcon: serviceDetailIcons[s.id] ?? '',
-}));
+// Utility: enrich raw service data with JSX icons and image paths
+export const buildServicesData = (rawData: { id: string; [key: string]: unknown }[]): ServiceData[] =>
+  rawData.map((s) => ({
+    ...(s as Omit<ServiceData, 'icon' | 'expertiseImage' | 'detailIcon'>),
+    icon: serviceIcons[s.id] ?? <Globe size={24} />,
+    expertiseImage: serviceExpertiseImages[s.id] ?? '',
+    detailIcon: serviceDetailIcons[s.id] ?? '',
+  })) as ServiceData[];
 
 interface ServiceCardProps {
   service: ServiceData;
@@ -117,6 +119,8 @@ interface ServicesProps {
 
 export const Services: React.FC<ServicesProps> = ({ onOpenService }) => {
   const { t } = useTranslation();
+  const { services: rawServices } = useLocalizedData();
+  const servicesData = buildServicesData(rawServices as { id: string; [key: string]: unknown }[]);
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent((c) => (c - 1 + servicesData.length) % servicesData.length);

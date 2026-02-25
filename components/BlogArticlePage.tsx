@@ -4,7 +4,7 @@ import { useTranslation } from '../hooks/useTranslation';
 import { ArrowLeft, CheckCircle2, ExternalLink, BookOpen, Github, Globe, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users, Mail, Phone } from 'lucide-react';
 import { ProjectData } from './Projects';
 import { ExpertiseCategory } from '../data/projects';
-import { allTestimonials } from '../data/testimonials';
+import { useLocalizedData } from '../hooks/useLocalizedData';
 import starImg from '../Media/etoiletrnsparante.png';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
 import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
@@ -291,6 +291,7 @@ const AnimatedCounter: React.FC<{ target: number; trigger: boolean; delay?: numb
 
 export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBack, onGoToContact }) => {
   const { t } = useTranslation();
+  const { allTestimonials } = useLocalizedData();
   useSeo(
     `${project?.title ?? ''} — Étude de cas | Maison Siranno`,
     project?.description ?? 'Étude de cas détaillée — Maison Siranno, agence IA & Web à Châteauneuf-sur-Loire.',

@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { ArrowRight, Clock, BookOpen, Calendar, ChevronLeft, ChevronRight, Mail, Phone, Tag } from 'lucide-react';
-import { blogArticles, BlogCategory } from '../data/blog';
+import { BlogCategory, BlogArticle } from '../data/blog';
 import { useSeo } from '../hooks/useSeo';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLocalizedData } from '../hooks/useLocalizedData';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
 import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
 import iconIA from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
@@ -26,7 +27,7 @@ const EXPERTISE_SLIDERS: { category: BlogCategory; label: string; icon: string }
 
 // ─── Carte dark (style réalisation) ─────────────────────────────────────────
 
-const ArticleCardDark: React.FC<{ article: typeof blogArticles[0]; onClick?: () => void }> = ({ article, onClick }) => {
+const ArticleCardDark: React.FC<{ article: BlogArticle; onClick?: () => void }> = ({ article, onClick }) => {
 
   return (
     <div
@@ -122,13 +123,14 @@ const CategorySlider: React.FC<{
   category: BlogCategory;
   label: string;
   icon: string;
+  articles: BlogArticle[];
   onNavigateBlogArticle?: (id: string) => void;
-}> = ({ category, label, icon, onNavigateBlogArticle }) => {
+}> = ({ category, label, icon, articles: allArticles, onNavigateBlogArticle }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [canLeft, setCanLeft] = useState(false);
   const [canRight, setCanRight] = useState(true);
 
-  const articles = blogArticles.filter((a) => a.category === category);
+  const articles = allArticles.filter((a) => a.category === category);
 
   const checkScroll = () => {
     const el = trackRef.current;
@@ -196,7 +198,7 @@ const CategorySlider: React.FC<{
 
 // ─── Carte "À lire maintenant" (grande, pleine largeur en grille) ────────────
 
-const ArticleCardFeatured: React.FC<{ article: typeof blogArticles[0]; onClick?: () => void }> = ({ article, onClick }) => {
+const ArticleCardFeatured: React.FC<{ article: BlogArticle; onClick?: () => void }> = ({ article, onClick }) => {
 
   return (
     <div
@@ -267,7 +269,7 @@ const ArticleCardFeatured: React.FC<{ article: typeof blogArticles[0]; onClick?:
 
 // ─── Carte "À venir" (compact, semi-opaque) ──────────────────────────────────
 
-const ArticleCardComing: React.FC<{ article: typeof blogArticles[0] }> = ({ article }) => {
+const ArticleCardComing: React.FC<{ article: BlogArticle }> = ({ article }) => {
 
   return (
     <div
@@ -306,6 +308,7 @@ const ArticleCardComing: React.FC<{ article: typeof blogArticles[0] }> = ({ arti
 
 export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoToContact }) => {
   const { t } = useTranslation();
+  const { blog: blogArticles } = useLocalizedData();
   useSeo(
     'Blog IA & Web — Conseils, guides et études de cas | Maison Siranno',
     'Découvrez nos articles sur le développement web, l\'automatisation n8n, l\'IA RAG, le marketing automation et le pilotage continu. Conseils pratiques pour dirigeants de PME.',
@@ -412,6 +415,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
             category={slider.category}
             label={slider.label}
             icon={slider.icon}
+            articles={blogArticles}
             onNavigateBlogArticle={onNavigateBlogArticle}
           />
         ))}

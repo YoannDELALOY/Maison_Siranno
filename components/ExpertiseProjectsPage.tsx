@@ -8,8 +8,9 @@ import iconContenu from '../Media/Logos/Logo_expertise/Icone_Création_de_Conten
 import iconIA from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
 import iconConseil from '../Media/Logos/Logo_expertise/Icone_Conseil_&_Formation.png';
 import iconPilotage from '../Media/Logos/Logo_expertise/Icone_Pilotage_Continu.png';
-import { projectsData, ProjectData, ExpertiseCategory } from '../data/projects';
-import { allTestimonials, Testimonial } from '../data/testimonials';
+import { ProjectData, ExpertiseCategory } from '../data/projects';
+import { Testimonial } from '../data/testimonials';
+import { useLocalizedData } from '../hooks/useLocalizedData';
 
 interface ExpertiseProjectsPageProps {
   expertiseId: ExpertiseCategory;
@@ -254,6 +255,7 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
     `https://maisonsiranno.fr/realisations/${expertiseId}`
   );
 
+  const { projects: projectsData, allTestimonials } = useLocalizedData();
   const projects = projectsData
     .filter((p) => p.expertise === expertiseId || p.expertises?.includes(expertiseId))
     .sort((a, b) => b.date.localeCompare(a.date));

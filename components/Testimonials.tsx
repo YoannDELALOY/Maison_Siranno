@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { Quote, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import starImg from '../Media/etoiletrnsparante.png';
 import { SectionId } from '../types';
-import { homeTestimonials, Testimonial } from '../data/testimonials';
+import { Testimonial } from '../data/testimonials';
+import { useLocalizedData } from '../hooks/useLocalizedData';
 import { useSwipe } from '../hooks/useSwipe';
-
-const testimonials = homeTestimonials;
 
 interface TestimonialsProps {
   onOpenProject?: (projectId: string) => void;
 }
 
 export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => {
+  const { homeTestimonials } = useLocalizedData();
+  const testimonials = homeTestimonials;
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);

@@ -9,8 +9,8 @@ import iconContenu        from '../Media/Logos/Logo_expertise/Icone_Création_de
 import iconIA             from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
 import iconConseil        from '../Media/Logos/Logo_expertise/Icone_Conseil_&_Formation.png';
 import iconPilotage       from '../Media/Logos/Logo_expertise/Icone_Pilotage_Continu.png';
-import { projectsData, ProjectData, ExpertiseCategory } from '../data/projects';
-import { projectsTestimonials } from '../data/testimonials';
+import { ProjectData, ExpertiseCategory } from '../data/projects';
+import { useLocalizedData } from '../hooks/useLocalizedData';
 
 interface ProjectsPageProps {
   onOpenProject?: (project: ProjectData) => void;
@@ -177,6 +177,7 @@ const ExpertiseCTACard: React.FC<ExpertiseCTACardProps> = ({ section, onNavigate
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNavigateBlogArticle, onGoToContact, onNavigateExpertise }) => {
   const { t } = useTranslation();
+  const { projects: projectsData, projectsTestimonials } = useLocalizedData();
   useSeo(
     'Réalisations — Projets web, IA & automatisation | Maison Siranno',
     'Explorez nos études de cas : applications web SaaS, workflows n8n, agents IA RAG, marketing automation. Des projets concrets avec des résultats mesurables pour nos clients PME.',

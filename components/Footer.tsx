@@ -2,7 +2,8 @@ import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { Linkedin, Github, Instagram, Facebook, ExternalLink, Mail, Phone, MapPin } from 'lucide-react';
 import { SectionId } from '../types';
-import { servicesData, ServiceData } from './Services';
+import { buildServicesData, ServiceData } from './Services';
+import { useLocalizedData } from '../hooks/useLocalizedData';
 
 interface FooterProps {
   onShowLegal?: (page: 'mentions' | 'privacy') => void;
@@ -34,6 +35,8 @@ const socialLinks = [
 
 export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }) => {
   const { t } = useTranslation();
+  const { services: rawServices } = useLocalizedData();
+  const servicesData = buildServicesData(rawServices as { id: string; [key: string]: unknown }[]);
   return (
     <footer className="bg-charcoal text-white border-t border-white/5">
 
