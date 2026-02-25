@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 import { Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
 import { servicesData as rawServicesData } from '../data/services';
@@ -77,7 +78,9 @@ interface ServiceCardProps {
   onClick: (service: ServiceData) => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => (
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => {
+  const { t } = useTranslation();
+  return (
   <div
     className="group relative bg-white/40 backdrop-blur-md border border-white/60 p-8 rounded-2xl overflow-hidden hover:bg-white hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 ease-out hover:-translate-y-2 cursor-pointer"
     onClick={() => onClick(service)}
@@ -101,17 +104,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => (
     </p>
 
     <div className="flex items-center gap-1 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-      <span className="text-metallic-gold-inline">En savoir plus</span>
+      <span className="text-metallic-gold-inline">{t('services.card_cta')}</span>
       <ArrowRight size={14} className="text-gold" />
     </div>
   </div>
-);
+  );
+};
 
 interface ServicesProps {
   onOpenService?: (service: ServiceData) => void;
 }
 
 export const Services: React.FC<ServicesProps> = ({ onOpenService }) => {
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent((c) => (c - 1 + servicesData.length) % servicesData.length);
@@ -136,7 +141,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenService }) => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block animate-fade-in">
-            6 Expertises
+            {t('services.eyebrow')}
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-metallic-navy mb-6 animate-slide-up">
             L'IA et le web au service de{' '}
@@ -208,7 +213,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenService }) => {
               <ChevronRight size={20} />
             </button>
           </div>
-          <p className="text-center text-xs text-steel mt-3 italic">Glissez pour naviguer</p>
+          <p className="text-center text-xs text-steel mt-3 italic">{t('services.swipe_hint')}</p>
         </div>
       </div>
     </section>

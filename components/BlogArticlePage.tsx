@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSeo } from '../hooks/useSeo';
+import { useTranslation } from '../hooks/useTranslation';
 import { ArrowLeft, CheckCircle2, ExternalLink, BookOpen, Github, Globe, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users, Mail, Phone } from 'lucide-react';
 import { ProjectData } from './Projects';
 import { ExpertiseCategory } from '../data/projects';
@@ -289,6 +290,7 @@ const AnimatedCounter: React.FC<{ target: number; trigger: boolean; delay?: numb
 };
 
 export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBack, onGoToContact }) => {
+  const { t } = useTranslation();
   useSeo(
     `${project?.title ?? ''} — Étude de cas | Maison Siranno`,
     project?.description ?? 'Étude de cas détaillée — Maison Siranno, agence IA & Web à Châteauneuf-sur-Loire.',
@@ -392,7 +394,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               filter: 'drop-shadow(0 0 4px rgba(212,175,55,0.3))',
-            }}>Retour aux réalisations</span>
+            }}>{t('project_article.back_link')}</span>
           </button>
         </div>
 
@@ -606,9 +608,9 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
         <LightSection className="py-24 border-t border-gold/10">
           {/* En-tête */}
           <div className="text-center mb-16 px-6">
-            <p className="text-xs uppercase tracking-widest text-gold/60 mb-3">Notre approche</p>
+            <p className="text-xs uppercase tracking-widest text-gold/60 mb-3">{t('project_article.approach_eyebrow')}</p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy">
-              Comment nous l'avons réalisé
+              {t('project_article.approach_title')}
             </h2>
           </div>
 
@@ -661,9 +663,9 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
         <div ref={defisFade.ref} className="relative z-10 max-w-5xl mx-auto px-6">
           {/* En-tête */}
           <div className="text-center mb-14">
-            <p className="text-xs uppercase tracking-widest text-gold/60 mb-3">Les défis</p>
+            <p className="text-xs uppercase tracking-widest text-gold/60 mb-3">{t('project_article.challenges_eyebrow')}</p>
             <h2 className="text-metallic-silver font-serif text-3xl md:text-4xl font-bold">
-              Obstacles surmontés
+              {t('project_article.challenges_title')}
             </h2>
           </div>
 
@@ -735,9 +737,9 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
         <div ref={resultsFade.ref as React.RefObject<HTMLDivElement>} className="max-w-5xl mx-auto px-6">
           {/* En-tête */}
           <div className="text-center mb-14">
-            <p className="text-xs uppercase tracking-widest text-gold/60 mb-3">Les résultats</p>
+            <p className="text-xs uppercase tracking-widest text-gold/60 mb-3">{t('project_article.results_eyebrow')}</p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy">
-              Ce que nous avons accompli
+              {t('project_article.results_title')}
             </h2>
           </div>
 
@@ -835,8 +837,8 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
 
             <div className="relative z-10">
               <BookOpen size={32} className="text-charcoal mx-auto mb-4" />
-              <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-xs mb-3 block">Passez à l'étape suivante</span>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-charcoal">Un projet similaire ?</h2>
+              <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-xs mb-3 block">{t('projects_page.cta.eyebrow')}</span>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-charcoal">{t('project_article.cta_title')}</h2>
               <p className="text-charcoal/70 mb-6 max-w-2xl mx-auto text-base leading-relaxed">
                 Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
               </p>
@@ -882,14 +884,14 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
                   className="btn-metallic-dark inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full font-semibold text-white"
                 >
                   <Mail size={16} />
-                  Envoyer un message
+                  {t('expertise_page.cta.btn_message')}
                 </button>
                 <a
                   href="tel:+33XXXXXXXXX"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full font-semibold text-base border-2 border-charcoal/25 text-charcoal/60 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300"
                 >
                   <Phone size={16} />
-                  Appeler directement
+                  {t('expertise_page.cta.btn_call')}
                 </a>
               </div>
 

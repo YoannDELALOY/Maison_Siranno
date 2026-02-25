@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSeo } from '../hooks/useSeo';
+import { useTranslation } from '../hooks/useTranslation';
 import { ArrowRight, CheckCircle2, Phone, Mail } from 'lucide-react';
 import { servicesData, ServiceData } from './Services';
 import { CONTACT_CONFIG } from '../constants/config';
@@ -11,6 +12,7 @@ interface ExpertisePageProps {
 }
 
 export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onNavigateService, onGoToContact }) => {
+  const { t } = useTranslation();
   useSeo(
     'Nos Expertises — Développement Web, IA, Automatisation | Maison Siranno',
     'Maison Siranno accompagne les PME avec 6 expertises complémentaires : développement web & SaaS, automatisation n8n, agents IA RAG, marketing IA, conseil & formation, pilotage continu.',
@@ -31,15 +33,14 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">
-            Savoir-faire & Technologies
+            {t('expertise_page.eyebrow')}
           </span>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-metallic-navy">
-            Notre{' '}
-            <span className="text-metallic-gold">Expertise</span>
+            {t('expertise_page.title').split(' ')[0]}{' '}
+            <span className="text-metallic-gold">{t('expertise_page.title').split(' ').slice(1).join(' ')}</span>
           </h1>
           <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed">
-            Six expertises complémentaires — web, automatisation, IA, marketing, conseil & formation, pilotage continu — au service des entreprises ambitieuses du Val de Loire et au-delà.
-            Chaque prestation est conçue sur mesure, sans compromis.
+            {t('expertise_page.subtitle')}
           </p>
         </div>
       </div>
@@ -99,7 +100,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                   {/* Contenu texte */}
                   <div className={`space-y-6 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                     <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm">
-                      Prestation #{index + 1}
+                      {t('expertise_page.service_label').replace('{n}', String(index + 1))}
                     </span>
 
                     <h2 className={`font-serif text-4xl font-bold leading-tight ${isEven ? 'text-metallic-navy' : 'text-white'}`}>
@@ -123,7 +124,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                       onClick={() => handleServiceClick(service)}
                       className="inline-flex items-center gap-2 px-6 py-3 btn-metallic-dark text-white rounded-full font-medium shadow-lg hover:-translate-y-0.5 transition-transform"
                     >
-                      Découvrir en détail <ArrowRight size={16} />
+                      {t('expertise_page.discover_cta')} <ArrowRight size={16} />
                     </button>
                   </div>
 
@@ -143,21 +144,21 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
             <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-blue-400/5 rounded-full blur-3xl"></div>
           </div>
           <div className="relative z-10 px-8 md:px-16 py-14">
-            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">{t('expertise_page.cta.eyebrow')}</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
-              Un projet en tête ?
+              {t('expertise_page.cta.title')}
             </h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
+              {t('expertise_page.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
               <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl text-base">
                 <Mail size={18} />
-                Envoyer un message
+                {t('expertise_page.cta.btn_message')}
               </button>
               <a href={CONTACT_CONFIG.phoneHref} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
                 <Phone size={18} />
-                Appeler directement
+                {t('expertise_page.cta.btn_call')}
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">

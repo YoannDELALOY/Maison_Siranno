@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useSeo } from '../hooks/useSeo';
+import { useTranslation } from '../hooks/useTranslation';
 import { darkTextureStyle, lightTextureStyle } from '../constants/textures';
 import { CONTACT_CONFIG } from '../constants/config';
 import { ArrowLeft, ArrowRight, CheckCircle2, Lightbulb, Quote, Phone, Mail, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, X, ClipboardList } from 'lucide-react';
@@ -31,6 +32,7 @@ interface StepModalProps {
 }
 
 const StepModal: React.FC<StepModalProps> = ({ step, index, onClose }) => {
+  const { t } = useTranslation();
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', handleKey);
@@ -85,7 +87,7 @@ const StepModal: React.FC<StepModalProps> = ({ step, index, onClose }) => {
               {index + 1}
             </span>
             <div>
-              <p className="text-[11px] text-gold/60 uppercase tracking-widest font-medium mb-0.5">Étape {index + 1}</p>
+              <p className="text-[11px] text-gold/60 uppercase tracking-widest font-medium mb-0.5">{t('service_detail.step_label').replace('{n}', String(index + 1))}</p>
               <h3 className="font-serif text-xl md:text-2xl font-bold text-white leading-tight">{step.title}</h3>
             </div>
           </div>
@@ -124,7 +126,7 @@ const StepModal: React.FC<StepModalProps> = ({ step, index, onClose }) => {
                     style={{ background: 'rgba(100,160,255,0.15)', border: '1px solid rgba(100,160,255,0.25)' }}>
                     <CheckCircle2 size={13} className="text-blue-300" />
                   </div>
-                  <p className="font-semibold text-blue-200 text-xs tracking-widest uppercase">Ce que nous ferons</p>
+                  <p className="font-semibold text-blue-200 text-xs tracking-widest uppercase">{t('service_detail.our_work_label')}</p>
                 </div>
                 <ul className="space-y-3">
                   {step.agencyWork.map((item, i) => (
@@ -145,7 +147,7 @@ const StepModal: React.FC<StepModalProps> = ({ step, index, onClose }) => {
                     style={{ background: 'rgba(212,175,55,0.12)', border: '1px solid rgba(212,175,55,0.25)' }}>
                     <ClipboardList size={13} className="text-gold" />
                   </div>
-                  <p className="font-semibold text-gold text-xs tracking-widest uppercase">Votre rôle</p>
+                  <p className="font-semibold text-gold text-xs tracking-widest uppercase">{t('service_detail.client_role_label')}</p>
                 </div>
                 <ul className="space-y-3">
                   {step.clientRequirements.map((req, i) => (
@@ -482,6 +484,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
 
 /* ─── Page principale ─── */
 export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, onGoToContact, onViewProject }) => {
+  const { t } = useTranslation();
   useSeo(
     `${service.title} — Maison Siranno`,
     service.description || `Découvrez notre offre ${service.title} : accompagnement personnalisé, résultats mesurables. Maison Siranno, agence IA & Web à Châteauneuf-sur-Loire.`,
@@ -494,7 +497,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
       <div className="max-w-7xl mx-auto px-6 mb-8">
         <button onClick={onBack} className="inline-flex items-center gap-2 text-steel hover:text-gold transition-colors text-sm font-medium group">
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          Retour aux expertises
+          {t('service_detail.back_link')}
         </button>
       </div>
 
@@ -748,8 +751,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
           </div>
           <div className="relative z-10 px-8 md:px-16 py-14 md:py-16">
             <div className="text-center mb-10">
-              <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-metallic-silver">Parlons de votre projet</h2>
+              <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">{t('expertise_page.cta.eyebrow')}</span>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-metallic-silver">{t('expertise_page.cta.title')}</h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                 Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
               </p>
@@ -757,11 +760,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl text-base">
                 <Mail size={18} />
-                Envoyer un message
+                {t('expertise_page.cta.btn_message')}
               </button>
               <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
                 <Phone size={18} />
-                Appeler directement
+                {t('expertise_page.cta.btn_call')}
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">

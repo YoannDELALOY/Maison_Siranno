@@ -49,10 +49,8 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
               className="h-12 object-contain"
             />
           </div>
-          <p className="text-gray-400 text-sm leading-relaxed mt-2">
-            Agence digitale à Châteauneuf-sur-Loire.<br />
-            Création de sites web, IA et automatisation<br />
-            pour PME et artisans du Val de Loire.
+          <p className="text-gray-400 text-sm leading-relaxed mt-2" style={{ whiteSpace: 'pre-line' }}>
+            {t('footer.tagline')}
           </p>
 
           {/* Réseaux sociaux */}
