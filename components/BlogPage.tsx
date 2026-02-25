@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { ArrowRight, Clock, BookOpen, Calendar, ChevronLeft, ChevronRight, Mail, Phone, Tag } from 'lucide-react';
 import { blogArticles, BlogCategory } from '../data/blog';
 import { useSeo } from '../hooks/useSeo';
+import { useTranslation } from '../hooks/useTranslation';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
 import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
 import iconIA from '../Media/Logos/Logo_expertise/Icone_Intelligence_Artificielle_&_Agents_RAG.png';
@@ -150,7 +151,7 @@ const CategorySlider: React.FC<{
       {/* En-tête section */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl border border-gold/30 flex items-center justify-center bg-transparent p-1.5">
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-transparent p-1.5">
             <img src={icon} alt={label} className="w-full h-full object-contain" />
           </div>
           <h2 className="font-serif text-xl font-bold text-metallic-navy">{label}</h2>
@@ -304,6 +305,7 @@ const ArticleCardComing: React.FC<{ article: typeof blogArticles[0] }> = ({ arti
 // ─── Page principale ─────────────────────────────────────────────────────────
 
 export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoToContact }) => {
+  const { t } = useTranslation();
   useSeo(
     'Blog IA & Web — Conseils, guides et études de cas | Maison Siranno',
     'Découvrez nos articles sur le développement web, l\'automatisation n8n, l\'IA RAG, le marketing automation et le pilotage continu. Conseils pratiques pour dirigeants de PME.',
@@ -337,14 +339,14 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
         {/* En-tête */}
         <div className="text-center mb-16">
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">
-            Blog & Réflexions
+            {t('blog_page.eyebrow')}
           </span>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-metallic-navy">
-            Nos{' '}
-            <span className="text-metallic-gold">Articles</span>
+            {t('blog_page.title').split(' ')[0]}{' '}
+            <span className="text-metallic-gold">{t('blog_page.title').split(' ').slice(1).join(' ')}</span>
           </h1>
           <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed">
-            Retours d'expérience, conseils pratiques et réflexions sur le digital, l'IA et l'automatisation pour les entreprises ambitieuses.
+            {t('blog_page.subtitle')}
           </p>
         </div>
 
@@ -356,7 +358,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
               <div className="flex items-center gap-2">
                 <Clock size={16} className="text-gold/60" />
                 <h2 className="font-serif text-xl font-bold text-metallic-navy whitespace-nowrap">
-                  Prochainement
+                  {t('blog_page.coming_soon_title')}
                 </h2>
               </div>
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/20" />
@@ -377,7 +379,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
               <div className="flex items-center gap-2">
                 <BookOpen size={16} className="text-gold" />
                 <h2 className="font-serif text-2xl font-bold text-metallic-navy whitespace-nowrap">
-                  À lire maintenant
+                  {t('blog_page.featured_title')}
                 </h2>
               </div>
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/30" />
@@ -398,7 +400,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
         <div className="flex items-center gap-4 mb-16">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-xs px-4">
-            Par expertise
+            {t('blog_page.by_expertise_label')}
           </span>
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         </div>
@@ -417,12 +419,12 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
         {/* ─── CTA ──────────────────────────────────────────────────────── */}
         <div className="cta-leather glass-panel rounded-3xl border border-gold/20 overflow-hidden relative text-center mt-8">
           <div className="relative z-10 px-8 md:px-16 py-14">
-            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">{t('blog_page.cta.eyebrow')}</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy mb-4">
-              Votre projet mérite d'être raconté
+              {t('blog_page.cta.title')}
             </h2>
             <p className="text-steel text-lg mb-8 max-w-2xl mx-auto">
-              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
+              {t('blog_page.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
               <button
@@ -430,14 +432,14 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl text-charcoal text-base"
               >
                 <Mail size={18} />
-                Démarrer mon projet
+                {t('blog_page.cta.btn_message')}
               </button>
               <a
                 href="tel:+33XXXXXXXXX"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-charcoal/25 text-charcoal/60 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300"
               >
                 <Phone size={18} />
-                Appeler directement
+                {t('blog_page.cta.btn_call')}
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-steel/60">

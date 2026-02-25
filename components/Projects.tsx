@@ -63,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => (
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 btn-metallic-dark text-white rounded-xl text-sm font-medium transition-all hover:-translate-y-0.5"
+          className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 btn-metallic-gold text-charcoal rounded-xl text-sm font-medium transition-all hover:-translate-y-0.5"
         >
           Voir le site <ExternalLink size={14} />
         </a>

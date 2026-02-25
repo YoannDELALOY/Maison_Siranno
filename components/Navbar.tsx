@@ -123,7 +123,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
             <Phone size={16} />
             <span>{t('navbar.cta_desktop')}</span>
           </a>
-          <LanguageButton isScrolled={false} />
         </div>
 
         {/* Mobile Toggle */}
@@ -137,8 +136,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
         </button>
       </div>
 
-      {/* Bouton langue flottant bas-droite (mobile + scroll) */}
-      {isScrolled && <LanguageButton isScrolled={true} />}
+      {/* Bouton langue fixe à droite — toujours visible */}
+      <LanguageButton isScrolled={isScrolled} />
 
       {/* Menu mobile — dropdown compact */}
       {isMobileMenuOpen && (

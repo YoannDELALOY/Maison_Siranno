@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSeo } from '../hooks/useSeo';
+import { useTranslation } from '../hooks/useTranslation';
 import { ArrowRight, Quote, BookOpen, ExternalLink, Mail, Phone } from 'lucide-react';
 import starImg from '../Media/etoiletrnsparante.png';
 import iconWebApps        from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
@@ -32,42 +33,42 @@ const expertiseSections: ExpertiseSection[] = [
     id: 'web-apps-saas',
     title: 'Développement Web Apps & SaaS',
     subtitle: 'Sites vitrine, applications métiers, marketplaces, portfolios',
-    icon: <img src={iconWebApps} alt="Développement Web" className="w-5 h-5 object-contain" />,
+    icon: <img src={iconWebApps} alt="Développement Web" className="w-8 h-8 object-contain" />,
     accentColor: 'from-blue-500/20 to-blue-600/10',
   },
   {
     id: 'automatisation-n8n',
     title: 'Automatisation & Orchestration n8n',
     subtitle: 'Workflows, RDV automatiques, intégrations, réduction du travail manuel',
-    icon: <img src={iconAutomatisation} alt="Automatisation" className="w-5 h-5 object-contain" />,
+    icon: <img src={iconAutomatisation} alt="Automatisation" className="w-8 h-8 object-contain" />,
     accentColor: 'from-purple-500/20 to-purple-600/10',
   },
   {
     id: 'contenu-marketing-ia',
     title: 'Création de Contenu & Marketing IA',
     subtitle: 'Portfolios créatifs, newsletters, billetterie, présence digitale',
-    icon: <img src={iconContenu} alt="Contenu & Marketing" className="w-5 h-5 object-contain" />,
+    icon: <img src={iconContenu} alt="Contenu & Marketing" className="w-8 h-8 object-contain" />,
     accentColor: 'from-rose-500/20 to-rose-600/10',
   },
   {
     id: 'ia-agents-rag',
     title: 'Intelligence Artificielle & Agents RAG',
     subtitle: 'Chatbots IA, transcription automatique, assistants intelligents',
-    icon: <img src={iconIA} alt="Intelligence Artificielle" className="w-5 h-5 object-contain" />,
+    icon: <img src={iconIA} alt="Intelligence Artificielle" className="w-8 h-8 object-contain" />,
     accentColor: 'from-emerald-500/20 to-emerald-600/10',
   },
   {
     id: 'conseil-formation',
     title: 'Conseil & Formation',
     subtitle: 'Stratégie SEO, audit digital, accompagnement transformation, formation équipes',
-    icon: <img src={iconConseil} alt="Conseil & Formation" className="w-5 h-5 object-contain" />,
+    icon: <img src={iconConseil} alt="Conseil & Formation" className="w-8 h-8 object-contain" />,
     accentColor: 'from-amber-500/20 to-amber-600/10',
   },
   {
     id: 'pilotage-continu',
     title: 'Pilotage Continu',
     subtitle: 'Suivi mensuel KPIs, optimisation permanente, retainer digital',
-    icon: <img src={iconPilotage} alt="Pilotage Continu" className="w-5 h-5 object-contain" />,
+    icon: <img src={iconPilotage} alt="Pilotage Continu" className="w-8 h-8 object-contain" />,
     accentColor: 'from-teal-500/20 to-teal-600/10',
   },
 ];
@@ -146,6 +147,7 @@ interface ExpertiseCTACardProps {
 }
 
 const ExpertiseCTACard: React.FC<ExpertiseCTACardProps> = ({ section, onNavigate }) => {
+  const { t } = useTranslation();
   return (
     <div
       data-cursor-hover
@@ -161,19 +163,20 @@ const ExpertiseCTACard: React.FC<ExpertiseCTACardProps> = ({ section, onNavigate
         {section.icon}
       </div>
       <h3 className="font-serif text-lg font-bold text-metallic-gold mb-3 leading-tight">
-        Voir toutes nos réalisations
+        {t('projects_page.cta_card_title')}
       </h3>
       <p className="text-steel text-sm mb-6 leading-relaxed max-w-[200px]">
         {section.title}
       </p>
       <div className="inline-flex items-center gap-2 px-5 py-2.5 btn-metallic-gold text-charcoal rounded-full text-sm font-semibold shadow-lg transition-all group-hover:shadow-xl">
-        Découvrir <ArrowRight size={15} />
+        {t('projects_page.cta_card_btn')} <ArrowRight size={15} />
       </div>
     </div>
   );
 };
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNavigateBlogArticle, onGoToContact, onNavigateExpertise }) => {
+  const { t } = useTranslation();
   useSeo(
     'Réalisations — Projets web, IA & automatisation | Maison Siranno',
     'Explorez nos études de cas : applications web SaaS, workflows n8n, agents IA RAG, marketing automation. Des projets concrets avec des résultats mesurables pour nos clients PME.',
@@ -196,14 +199,14 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
         {/* En-tête */}
         <div className="text-center mb-20">
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">
-            Portfolio & Références
+            {t('projects_page.eyebrow')}
           </span>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-metallic-navy">
-            Nos{' '}
-            <span className="text-metallic-gold">Réalisations</span>
+            {t('projects_page.title').split(' ')[0]}{' '}
+            <span className="text-metallic-gold">{t('projects_page.title').split(' ').slice(1).join(' ')}</span>
           </h1>
           <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed">
-            Des projets concrets, des résultats mesurables. Classés par expertise pour vous aider à trouver le projet le plus proche de votre besoin.
+            {t('projects_page.subtitle')}
           </p>
         </div>
 
@@ -219,7 +222,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
             <div key={section.id} className="mb-24">
               {/* En-tête section */}
               <div className="flex items-center gap-4 mb-10">
-                <div className="p-3 rounded-xl bg-transparent border border-gold/20 text-gold">
+                <div className="p-5 rounded-xl bg-transparent border border-gold/20 text-gold">
                   {section.icon}
                 </div>
                 <div>
@@ -246,13 +249,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
         <div className="mb-20">
           <div className="text-center mb-12">
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-2 block">
-              Témoignages
+              {t('projects_page.testimonials_eyebrow')}
             </span>
             <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-4">
-              Ils témoignent de{' '}
-              <span className="text-metallic-gold underline decoration-gold/30 underline-offset-4">leurs résultats</span>
+              {t('projects_page.testimonials_title').split(' ').slice(0, -2).join(' ')}{' '}
+              <span className="text-metallic-gold underline decoration-gold/30 underline-offset-4">{t('projects_page.testimonials_title').split(' ').slice(-2).join(' ')}</span>
             </h2>
-            <p className="text-steel">Des chiffres réels, des transformations concrètes.</p>
+            <p className="text-steel">{t('projects_page.testimonials_subtitle')}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -300,29 +303,34 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
         </div>
 
         {/* CTA */}
-        <div className="cta-leather glass-panel rounded-3xl border border-gold/20 overflow-hidden relative text-center">
+        <div className="cta-leather bg-charcoal text-white rounded-3xl overflow-hidden relative text-center">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
+            <div className="absolute top-0 left-1/3 w-80 h-80 bg-gold/6 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-blue-400/5 rounded-full blur-3xl"></div>
+          </div>
           <div className="relative z-10 px-8 md:px-16 py-14">
-            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy mb-4">
-              Votre projet, notre prochaine réalisation
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">{t('projects_page.cta.eyebrow')}</span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
+              {t('projects_page.cta.title')}
             </h2>
-            <p className="text-steel text-lg mb-8 max-w-2xl mx-auto">
-              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
+            <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+              {t('projects_page.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
-              <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-dark rounded-full font-semibold shadow-xl text-white text-base">
+              <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl text-base">
                 <Mail size={18} />
-                Envoyer un message
+                {t('projects_page.cta.btn_message')}
               </button>
-              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-charcoal/25 text-charcoal/70 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
+              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
                 <Phone size={18} />
-                Appeler directement
+                {t('projects_page.cta.btn_call')}
               </a>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-steel/60">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
               {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
                 <span key={g} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0"></span>
                   {g}
                 </span>
               ))}

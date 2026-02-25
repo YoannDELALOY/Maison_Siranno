@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSeo } from '../hooks/useSeo';
+import { useTranslation } from '../hooks/useTranslation';
 import { ArrowLeft, Clock, Calendar, Tag, Mail, Phone, BookOpen } from 'lucide-react';
 import { BlogArticle, BlogCategory } from '../data/blog';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
@@ -64,6 +65,7 @@ const renderText = (text: string): React.ReactNode => {
 };
 
 export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ article, onBack, onGoToContact }) => {
+  const { t } = useTranslation();
   useSeo(
     `${article.title} | Maison Siranno`,
     article.excerpt,
@@ -113,7 +115,7 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
       <div className="max-w-4xl mx-auto px-6 mb-8">
         <button onClick={onBack} className="inline-flex items-center gap-2 text-steel hover:text-gold transition-colors text-sm font-medium group">
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          Retour au blog
+          {t('blog_article_detail.back_link')}
         </button>
       </div>
 
@@ -151,17 +153,7 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           {/* Badge expertise — gold métallique */}
           <div className="mb-4">
-            <span
-              className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
-              style={{
-                background: 'linear-gradient(135deg, rgba(180,130,20,0.25) 0%, rgba(212,175,55,0.35) 50%, rgba(180,130,20,0.25) 100%)',
-                borderColor: 'rgba(212,175,55,0.5)',
-                backdropFilter: 'blur(8px)',
-                WebkitBackdropFilter: 'blur(8px)',
-                color: '#E8C96A',
-                textShadow: '0 0 8px rgba(212,175,55,0.4)',
-              }}
-            >
+            <span className="btn-metallic-gold inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
               {article.category}
             </span>
           </div>
@@ -186,30 +178,16 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
             </span>
           </div>
 
-          {/* Tags — style gold hover */}
+          {/* Tags — style gold métallique */}
           <div className="flex flex-wrap gap-2 mt-4">
             {article.tags.map((tag, i) => (
               <span
                 key={tag}
-                className="flex items-center gap-1 text-xs font-semibold rounded-full px-3 py-1.5 border cursor-default"
+                className="btn-metallic-gold flex items-center gap-1 text-xs font-semibold rounded-full px-2.5 py-1 cursor-default"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(180,130,20,0.15) 0%, rgba(212,175,55,0.22) 50%, rgba(180,130,20,0.15) 100%)',
-                  borderColor: 'rgba(212,175,55,0.35)',
-                  color: '#E8C96A',
                   animation: `tagAppear 0.5s ease forwards`,
                   animationDelay: `${0.3 + i * 0.06}s`,
                   opacity: 0,
-                  backdropFilter: 'blur(4px)',
-                  textShadow: '0 0 8px rgba(212,175,55,0.4)',
-                  transition: 'box-shadow 0.3s, transform 0.3s',
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = '0 0 16px rgba(212,175,55,0.35)';
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px) scale(1.04)';
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0) scale(1)';
                 }}
               >
                 <Tag size={9} />
@@ -274,7 +252,7 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
                   <div className="p-2 rounded-lg border" style={{ background: 'rgba(212,175,55,0.12)', borderColor: 'rgba(212,175,55,0.3)' }}>
                     <BookOpen size={16} className="text-gold" />
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-metallic-silver">Points clés à retenir</h3>
+                  <h3 className="font-serif text-lg font-bold text-metallic-silver">{t('blog_article_detail.key_takeaways')}</h3>
                 </div>
                 <ul className="space-y-3">
                   {article.body.keyTakeaways.map((point, i) => (
@@ -290,7 +268,7 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
 
           {/* Conclusion */}
           <section className="mb-16">
-            <h2 className="font-serif text-2xl font-bold text-metallic-navy mb-4">Conclusion</h2>
+            <h2 className="font-serif text-2xl font-bold text-metallic-navy mb-4">{t('blog_article_detail.conclusion')}</h2>
             <p className="text-steel text-lg leading-relaxed">{renderText(article.body.conclusion)}</p>
           </section>
 
@@ -299,8 +277,8 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
         <div className="max-w-4xl mx-auto px-6 mb-16">
           <div className="text-center py-16 rounded-2xl border" style={{ borderColor: 'rgba(212,175,55,0.2)', background: 'rgba(212,175,55,0.04)' }}>
             <Clock size={32} className="text-gold/40 mx-auto mb-4" />
-            <p className="font-serif text-xl font-bold text-[#1E3A5F] mb-2">Article bientôt disponible</p>
-            <p className="text-steel">Cet article est en cours de rédaction. Revenez prochainement !</p>
+            <p className="font-serif text-xl font-bold text-[#1E3A5F] mb-2">{t('blog_article_detail.coming_soon_title')}</p>
+            <p className="text-steel">{t('blog_article_detail.coming_soon_body')}</p>
           </div>
         </div>
       )}
@@ -314,8 +292,8 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
           </div>
           <div className="relative z-10 px-8 md:px-14 py-12">
             <div className="text-center mb-8">
-              <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">Passons à l'action</span>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-metallic-silver">Un projet en tête ?</h2>
+              <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">{t('blog_article_detail.cta_eyebrow')}</span>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-metallic-silver">{t('blog_article_detail.cta_title')}</h2>
               <p className="text-gray-400 max-w-xl mx-auto">
                 Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche.
               </p>
@@ -323,11 +301,11 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 btn-metallic-gold rounded-full font-semibold shadow-xl text-sm">
                 <Mail size={16} />
-                Envoyer un message
+                {t('expertise_page.cta.btn_message')}
               </button>
               <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold transition-all duration-300">
                 <Phone size={16} />
-                Appeler directement
+                {t('expertise_page.cta.btn_call')}
               </a>
             </div>
           </div>
