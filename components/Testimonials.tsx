@@ -1,8 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Quote, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import starImg from '../Media/etoiletrnsparante.png';
 import { SectionId } from '../types';
 import { homeTestimonials, Testimonial } from '../data/testimonials';
+import { useSwipe } from '../hooks/useSwipe';
 
 const testimonials = homeTestimonials;
 
@@ -12,23 +13,10 @@ interface TestimonialsProps {
 
 export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => {
   const [current, setCurrent] = useState(0);
-  const touchStartX = useRef<number>(0);
-  const touchEndX = useRef<number>(0);
 
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.changedTouches[0].clientX;
-  };
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    touchEndX.current = e.changedTouches[0].clientX;
-    const delta = touchStartX.current - touchEndX.current;
-    if (Math.abs(delta) > 50) {
-      if (delta > 0) next();
-      else prev();
-    }
-  };
+  const { handleTouchStart, handleTouchEnd } = useSwipe(next, prev);
 
   return (
     <section id={SectionId.TESTIMONIALS} className="py-24 bg-paper relative overflow-hidden">

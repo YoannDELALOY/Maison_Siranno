@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { ArrowRight, Sparkles, Phone } from 'lucide-react';
 import { SectionId } from '../types';
 import { useTranslation } from '../hooks/useTranslation';
+import { CONTACT_CONFIG } from '../constants/config';
 
 const TechLogo: React.FC<{ src: string; alt: string; fallback: string }> = ({ src, alt, fallback }) => (
   <div className="w-8 h-8 rounded-lg bg-white shadow-sm border border-gray-100 flex items-center justify-center overflow-hidden" title={alt}>
@@ -203,11 +204,11 @@ export const Hero: React.FC = () => {
             </a>
 
             <a
-              href="tel:+33647344364"
+              href={CONTACT_CONFIG.phoneHref}
               className="flex items-center gap-2 px-6 py-3 md:py-4 text-charcoal font-medium hover-metallic-gold transition-all duration-300 border border-charcoal/20 rounded-full hover:border-gold/50"
             >
               <Phone size={16} className="text-gold" />
-              06 47 34 43 64
+              {CONTACT_CONFIG.phone}
             </a>
           </div>
         </div>

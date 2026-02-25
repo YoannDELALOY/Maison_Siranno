@@ -3,7 +3,8 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Services, ServiceData } from './components/Services';
-import { Projects, ProjectData } from './components/Projects';
+import { Projects } from './components/Projects';
+import { ProjectData, projectsData } from './data/projects';
 import { About } from './components/About';
 import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
@@ -23,7 +24,6 @@ import { blogArticles, BlogArticle } from './data/blog';
 import { ExpertiseProjectsPage } from './components/ExpertiseProjectsPage';
 import { CookieBanner } from './components/CookieBanner';
 import { CustomCursor } from './components/CustomCursor';
-import { projectsData } from './components/Projects';
 import { ExpertiseCategory } from './data/projects';
 import { SectionId } from './types';
 

@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Linkedin, Github, Instagram, Facebook, ExternalLink } from 'lucide-react';
 import { SectionId } from '../types';
+import { CONTACT_CONFIG } from '../constants/config';
 
-const CONTACT_EMAIL = 'contact@yoanndelaloy.com';
-const PHONE_NUMBER = '06 47 34 43 64';
-const PHONE_HREF = 'tel:+33647344364';
-
-/*
-  Pour activer l'envoi d'emails, créer un compte sur https://formspree.io
-  et remplacer FORMSPREE_ID par l'identifiant de votre formulaire.
-  Ex: 'xvoejwbl' pour https://formspree.io/f/xvoejwbl
-*/
-const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
-const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
+const { email: CONTACT_EMAIL, phone: PHONE_NUMBER, phoneHref: PHONE_HREF, formspreeUrl: FORMSPREE_URL } = CONTACT_CONFIG;
 
 const socialLinks = [
   {

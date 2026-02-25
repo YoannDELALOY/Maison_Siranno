@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useSeo } from '../hooks/useSeo';
+import { darkTextureStyle, lightTextureStyle } from '../constants/textures';
+import { CONTACT_CONFIG } from '../constants/config';
 import { ArrowLeft, ArrowRight, CheckCircle2, Lightbulb, Quote, Phone, Mail, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, X, ClipboardList } from 'lucide-react';
 import { ServiceData } from './Services';
 import { allTestimonials } from '../data/testimonials';
@@ -12,45 +14,14 @@ interface ServiceDetailPageProps {
   onViewProject?: (projectId: string) => void;
 }
 
-/* ─── Styles de texture ─── */
-const darkTextureStyle: React.CSSProperties = {
-  backgroundColor: '#0F172A',
-  backgroundImage: [
-    `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg1)' opacity='0.55'/%3E%3C/svg%3E")`,
-    `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg2)' opacity='0.28'/%3E%3C/svg%3E")`,
-  ].join(', '),
-  backgroundSize: '600px 600px, 200px 200px',
-  backgroundBlendMode: 'overlay, screen',
-};
-
-const lightTextureStyle: React.CSSProperties = {
-  backgroundColor: '#FAF6EE',
-  backgroundImage: [
-    `url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='pg3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pg3)' opacity='0.38'/%3E%3C/svg%3E")`,
-    `radial-gradient(ellipse at 12% 18%, rgba(185,145,65,0.1) 0%, transparent 48%)`,
-    `radial-gradient(ellipse at 80% 72%, rgba(160,120,45,0.08) 0%, transparent 42%)`,
-    `radial-gradient(ellipse at 50% 90%, rgba(175,140,55,0.07) 0%, transparent 38%)`,
-  ].join(', '),
-  backgroundSize: '700px 700px, 100% 100%, 100% 100%, 100% 100%',
-  backgroundBlendMode: 'multiply, normal, normal, normal',
-};
-
 /* ─── Wobble pré-calculé ─── */
 const CARD_WOBBLES = [
   { x: 2, y: -3 }, { x: -2, y: 4 }, { x: 3, y: 2 },
   { x: -3, y: -2 }, { x: 2, y: 3 }, { x: -1, y: -4 }, { x: 3, y: -1 },
 ];
 
-/* ─── Texture livre bleu (identique section contact) ─── */
-const bookBlueStyle: React.CSSProperties = {
-  backgroundColor: '#0F172A',
-  backgroundImage: [
-    `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='bm1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23bm1)' opacity='0.55'/%3E%3C/svg%3E")`,
-    `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='bm2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23bm2)' opacity='0.28'/%3E%3C/svg%3E")`,
-  ].join(', '),
-  backgroundSize: '600px 600px, 200px 200px',
-  backgroundBlendMode: 'overlay, screen',
-};
+/* ─── Texture livre bleu — alias de darkTextureStyle ─── */
+const bookBlueStyle = darkTextureStyle;
 
 /* ─── Modal détail étape ─── */
 interface StepModalProps {

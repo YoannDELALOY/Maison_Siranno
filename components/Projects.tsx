@@ -1,10 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
-// Ré-exports pour compatibilité avec App.tsx et les autres composants
-export type { ProjectData } from '../data/projects';
-export { projectsData } from '../data/projects';
 import { projectsData, ProjectData } from '../data/projects';
+import { useSwipe } from '../hooks/useSwipe';
 
 interface ProjectCardProps {
   project: ProjectData;
@@ -87,8 +85,6 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const touchStartX = useRef<number>(0);
-
   const updateScrollState = useCallback(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -116,17 +112,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
     el.scrollBy({ left: el.offsetWidth * 0.8, behavior: 'smooth' });
   }, []);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.changedTouches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const delta = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(delta) > 50) {
-      const el = scrollRef.current;
-      if (el) el.scrollBy({ left: delta > 0 ? 260 : -260, behavior: 'smooth' });
-    }
-  };
+  const { handleTouchStart, handleTouchEnd } = useSwipe(scrollRight, scrollLeft);
 
   return (
     <section id={SectionId.PROJECTS} className="py-24 bg-charcoal text-white relative overflow-hidden">

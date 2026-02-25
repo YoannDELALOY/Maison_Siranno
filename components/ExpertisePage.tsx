@@ -2,6 +2,7 @@ import React from 'react';
 import { useSeo } from '../hooks/useSeo';
 import { ArrowRight, CheckCircle2, Phone, Mail } from 'lucide-react';
 import { servicesData, ServiceData } from './Services';
+import { CONTACT_CONFIG } from '../constants/config';
 
 interface ExpertisePageProps {
   onOpenService?: (service: ServiceData) => void;
@@ -154,7 +155,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                 <Mail size={18} />
                 Envoyer un message
               </button>
-              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
+              <a href={CONTACT_CONFIG.phoneHref} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
                 <Phone size={18} />
                 Appeler directement
               </a>

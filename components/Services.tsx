@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
 import { servicesData as rawServicesData } from '../data/services';
+import { useSwipe } from '../hooks/useSwipe';
 
 // Images grandes (ExpertisePage — sections alternées)
 import imgWebApps        from '../Media/Logos/Logo_expertise/Développement Web Apps & SaaS.png';
@@ -112,23 +113,10 @@ interface ServicesProps {
 
 export const Services: React.FC<ServicesProps> = ({ onOpenService }) => {
   const [current, setCurrent] = useState(0);
-  const touchStartX = useRef<number>(0);
-  const touchEndX = useRef<number>(0);
 
   const prev = () => setCurrent((c) => (c - 1 + servicesData.length) % servicesData.length);
   const next = () => setCurrent((c) => (c + 1) % servicesData.length);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.changedTouches[0].clientX;
-  };
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    touchEndX.current = e.changedTouches[0].clientX;
-    const delta = touchStartX.current - touchEndX.current;
-    if (Math.abs(delta) > 50) {
-      if (delta > 0) next();
-      else prev();
-    }
-  };
+  const { handleTouchStart, handleTouchEnd } = useSwipe(next, prev);
 
   const handleClick = (service: ServiceData) => {
     onOpenService?.(service);
