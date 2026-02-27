@@ -149,6 +149,40 @@ SaaS de type ERP personnel ultra-complet :
 | K3 | ✅ | **Blog : curseur gold-rouge sur cartes** — `data-cursor-hover` conditionnel sur ArticleCard disponible (BlogPage.tsx) |
 | K4 | ⬜ | **Blog : générer 30 articles (5 par expertise)** — Contenu très complet, titres + corps complets dans data/blog.ts |
 
+### GROUPE L — Traductions manquantes (EN & ES)
+| # | Statut | Tâche |
+|---|--------|-------|
+| L1 | ✅ | **Étape 1 : Accueil Hero** — Traduire "en ligne" et "croissance digitale" (1x EN, 1x ES) |
+| L2 | ✅ | **Étape 2 : Réalisation dédié Hero** — Traduire "9 min de lecture" (1x EN, 1x ES) |
+| L3 | ✅ | **Étape 3 : Blog Article CTA** — Traduire "première consultation gratuite..." (1x EN, 1x ES) |
+| L4 | ✅ | **Étape 4 : Réalisations dédiées** — Traduire le bouton "Lire l'étude de cas" (1x EN, 1x ES) |
+| L5 | ✅ | **Étape 5 : Accueil Réalisation Center Peek** — Traduire "Réalisé par", "Les défis", "Les résultats", "un projet similaire", "en savoir plus", "Démarrer mon projet" (1x EN, 1x ES) |
+| L6 | ⬜ | **Étape 6 : Expertise CTA** — Traduire les 4 points ("reponse sous 24h", "Sans engagement", etc.) (1x EN, 1x ES) |
+| L7 | ⬜ | **Étape 7 : Blog CTA** — Traduire les 4 points ("reponse sous 24h", "Sans engagement", etc.) (1x EN, 1x ES) |
+| L8 | ⬜ | **Étape 8 : Blog CTA (FR)** — Traduire les 4 points ("reponse sous 24h", "Sans engagement", etc.) (1x EN, 1x ES) |
+| L9 | ⬜ | **Étape 9 : Accueil Réalisations Titre** — Traduire "l'excellence en action" et "nos réalisations" (1x EN, 1x ES) |
+| L10 | ⬜ | **Étape 10 : Accueil ADN** — Traduire toute la section ADN de l'agence (1x EN, 1x ES) |
+| L11 | ⬜ | **Étape 11 : Accueil Expertise Titre** — Traduire "L'IA et le web..." et la phrase d'accroche (1x EN, 1x ES) |
+| L12 | ⬜ | **Étape 12 : Accueil Contact** — Traduire toute la section ("Parlons de votre Futur") (1x EN, 1x ES) |
+| L13 | ⬜ | **Étape 13 : Accueil Témoignage** — Traduire "Ils nous font confiance" et la phrase d'accroche (1x EN, 1x ES) |
+| L14 | ✅ | **Étape 14 : Réalisation dédiée Témoignage** — Traduire "réalisé par", "année", "Github du projet" (1x EN, 1x ES) |
+| L15 | ⬜ | **Étape 15 : Expertise dédiée Ce que nous réalisons** — Traduire "ce que nous réalisons", "bénéfices concrets", "cas d'usage typiques", "un projet en tête ?", "première consultation...", "discutons-en" (1x EN, 1x ES) |
+| L16 | ⬜ | **Étape 16 : Expertise dédiée CTA** — Traduire "première consultation..." et les 4 points (1x EN, 1x ES) |
+| L17 | ⬜ | **Étape 17 : Expertise FAQ** — Traduire "Question fréquente" et "Tout ce que vous voulez savoir" (1x EN, 1x ES) |
+| L18 | ⬜ | **Étape 18 : Expertise dédiée Hero** — Traduire "Expertise Détaillée" (1x EN, 1x ES) |
+| L19 | ⬜ | **Étape 19 : Expertise dédiée Ils nous font confiance** — Traduire la section entière et le bouton témoignage (1x EN, 1x ES) |
+| L20 | ⬜ | **Étape 20 : Expertise dédiée Méthode** — Traduire "méthode" et "Notre approche en 7 étapes" (1x EN, 1x ES) |
+| L21 | ⬜ | **Étape 21 : Réalisation dédié expertise CTA** — Traduire toute la section (1x EN, 1x ES) |
+| L22 | ⬜ | **Étape 22 : Réalisation dédié expertise Hero** — Traduire "réalisation", le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L23 | ⬜ | **Étape 23 : Réalisation dédié CTA Accroche** — Traduire "première consultation..." et les 4 points (1x EN, 1x ES) |
+| L24 | ⬜ | **Étape 24 : Réalisation CTA** — Traduire les 4 points (1x EN, 1x ES) |
+| L25 | ⬜ | **Étape 25 : Réalisations Catégorie 1** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L26 | ⬜ | **Étape 26 : Réalisations Catégorie 2** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L27 | ⬜ | **Étape 27 : Réalisations Catégorie 3** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L28 | ⬜ | **Étape 28 : Réalisations Catégorie 4** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L29 | ⬜ | **Étape 29 : Accueil Hero** — Traduire le grand titre d'accroche et le sous-titre (1x EN, 1x ES) |
+| L30 | ⬜ | **Étape 30 : Refactoring & Review globale** — Vérifier la cohérence FR/EN/ES globale (1x EN, 1x ES) |
+
 ---
 
 ## Ordre d'exécution recommandé

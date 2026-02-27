@@ -16,14 +16,37 @@ interface BlogPageProps {
   onGoToContact?: () => void;
 }
 
-const EXPERTISE_SLIDERS: { category: BlogCategory; label: string; icon: string }[] = [
-  { category: 'Développement Web & SaaS',        label: 'Développement Web & SaaS',         icon: iconWebApps },
-  { category: 'Automatisation & n8n',             label: 'Automatisation & n8n',             icon: iconAutomatisation },
-  { category: 'Intelligence Artificielle & RAG',  label: 'Intelligence Artificielle & RAG',  icon: iconIA },
-  { category: 'Contenu & Marketing IA',           label: 'Contenu & Marketing IA',           icon: iconContenu },
-  { category: 'Conseil & Formation',              label: 'Conseil & Formation',              icon: iconConseil },
-  { category: 'Pilotage Continu',                 label: 'Pilotage Continu',                 icon: iconPilotage },
-];
+const getExpertiseSliders = (lang: string): { category: string; label: string; icon: string }[] => {
+  switch (lang) {
+    case 'en':
+      return [
+        { category: 'Web Development & SaaS',        label: 'Web Development & SaaS',         icon: iconWebApps },
+        { category: 'Automation & n8n',              label: 'Automation & n8n',               icon: iconAutomatisation },
+        { category: 'Artificial Intelligence & RAG', label: 'Artificial Intelligence & RAG',  icon: iconIA },
+        { category: 'Content & AI Marketing',        label: 'Content & AI Marketing',         icon: iconContenu },
+        { category: 'Consulting & Training',         label: 'Consulting & Training',          icon: iconConseil },
+        { category: 'Continuous Monitoring',         label: 'Continuous Monitoring',          icon: iconPilotage },
+      ];
+    case 'es':
+      return [
+        { category: 'Desarrollo Web & SaaS',         label: 'Desarrollo Web & SaaS',          icon: iconWebApps },
+        { category: 'Automatización & n8n',          label: 'Automatización & n8n',           icon: iconAutomatisation },
+        { category: 'Inteligencia Artificial & RAG', label: 'Inteligencia Artificial & RAG',  icon: iconIA },
+        { category: 'Contenido & Marketing IA',      label: 'Contenido & Marketing IA',       icon: iconContenu },
+        { category: 'Consultoría & Formación',       label: 'Consultoría & Formación',        icon: iconConseil },
+        { category: 'Seguimiento Continuo',          label: 'Seguimiento Continuo',           icon: iconPilotage },
+      ];
+    default:
+      return [
+        { category: 'Développement Web & SaaS',        label: 'Développement Web & SaaS',         icon: iconWebApps },
+        { category: 'Automatisation & n8n',             label: 'Automatisation & n8n',             icon: iconAutomatisation },
+        { category: 'Intelligence Artificielle & RAG',  label: 'Intelligence Artificielle & RAG',  icon: iconIA },
+        { category: 'Contenu & Marketing IA',           label: 'Contenu & Marketing IA',           icon: iconContenu },
+        { category: 'Conseil & Formation',              label: 'Conseil & Formation',              icon: iconConseil },
+        { category: 'Pilotage Continu',                 label: 'Pilotage Continu',                 icon: iconPilotage },
+      ];
+  }
+};
 
 // ─── Carte dark (style réalisation) ─────────────────────────────────────────
 
@@ -109,7 +132,7 @@ const ArticleCardDark: React.FC<{ article: BlogArticle; onClick?: () => void }> 
           </span>
           <span className={`flex items-center gap-1.5 font-medium ${article.available ? 'text-gold/70 group-hover:text-gold transition-colors' : 'text-gray-600'}`}>
             <BookOpen size={10} />
-            {article.readTime} de lecture
+            {t('blog_page.read_time', { time: article.readTime })}
           </span>
         </div>
       </div>
@@ -259,7 +282,7 @@ const ArticleCardFeatured: React.FC<{ article: BlogArticle; onClick?: () => void
           <span className="flex items-center gap-1.5"><Calendar size={11} />{article.date}</span>
           <span className="flex items-center gap-1.5 font-medium text-gold/70 group-hover:text-gold transition-colors">
             <BookOpen size={11} />
-            {article.readTime} de lecture
+            {t('blog_page.read_time', { time: article.readTime })}
           </span>
         </div>
       </div>
@@ -298,7 +321,7 @@ const ArticleCardComing: React.FC<{ article: BlogArticle }> = ({ article }) => {
           </span>
         </div>
         <h4 className="font-serif text-sm font-bold text-gray-300 leading-snug line-clamp-2">{article.title}</h4>
-        <p className="text-xs text-gray-500 mt-0.5">{article.readTime} de lecture</p>
+        <p className="text-xs text-gray-500 mt-0.5">{t('blog_page.read_time', { time: article.readTime })}</p>
       </div>
     </div>
   );
@@ -307,7 +330,7 @@ const ArticleCardComing: React.FC<{ article: BlogArticle }> = ({ article }) => {
 // ─── Page principale ─────────────────────────────────────────────────────────
 
 export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoToContact }) => {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const { blog: blogArticles } = useLocalizedData();
   useSeo(
     'Blog IA & Web — Conseils, guides et études de cas | Maison Siranno',
@@ -409,7 +432,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
         </div>
 
         {/* ─── 6 Sliders par expertise ──────────────────────────────────── */}
-        {EXPERTISE_SLIDERS.map((slider) => (
+        {getExpertiseSliders(lang).map((slider) => (
           <CategorySlider
             key={slider.category}
             category={slider.category}
@@ -447,7 +470,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-steel/60">
-              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map((g) => (
+              {t('blog_page.cta.guarantees', { returnObjects: true }).map((g: string) => (
                 <span key={g} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0" />
                   {g}

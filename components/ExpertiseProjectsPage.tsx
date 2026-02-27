@@ -11,6 +11,7 @@ import iconPilotage from '../Media/Logos/Logo_expertise/Icone_Pilotage_Continu.p
 import { ProjectData, ExpertiseCategory } from '../data/projects';
 import { Testimonial } from '../data/testimonials';
 import { useLocalizedData } from '../hooks/useLocalizedData';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface ExpertiseProjectsPageProps {
   expertiseId: ExpertiseCategory;
@@ -148,6 +149,7 @@ interface ProjectSectionProps {
 }
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({ project, index, onNavigate }) => {
+  const { t } = useTranslation();
   const isEven = index % 2 === 0;
 
   return (
@@ -231,7 +233,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ project, index, onNavig
               onClick={() => onNavigate(project.id)}
               className="inline-flex items-center gap-2 px-6 py-3 btn-metallic-dark text-white rounded-full font-medium shadow-lg hover:-translate-y-0.5 transition-transform"
             >
-              Lire l'étude de cas <BookOpen size={16} />
+              {t('project_article.view_case_study')} <BookOpen size={16} />
             </button>
           </div>
 
@@ -248,6 +250,7 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
   onNavigateBlogArticle,
   onGoToContact,
 }) => {
+  const { t } = useTranslation();
   const meta = expertiseMeta[expertiseId];
   useSeo(
     `Réalisations ${meta?.title ?? expertiseId} — Maison Siranno`,
@@ -277,7 +280,7 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
           className="inline-flex items-center gap-2 text-steel hover:text-gold transition-colors mb-10 group"
         >
           <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
-          Retour aux réalisations
+          {t('project_article.back_link')}
         </button>
 
         <div className="flex items-start gap-6">
@@ -286,7 +289,7 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
           </div>
           <div className="flex-1">
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-2 block">
-              Réalisations
+              {t('navbar.links.realisations')}
             </span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold leading-tight mb-3 text-metallic-navy">
               {meta.title}
@@ -330,12 +333,12 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="cta-leather glass-panel rounded-3xl border border-gold/20 overflow-hidden relative text-center">
           <div className="relative z-10 px-8 md:px-16 py-14">
-            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">Passez à l'étape suivante</span>
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">{t('projects_page.cta.eyebrow')}</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy mb-4">
-              Votre projet, notre prochaine réalisation
+              {t('projects_page.cta.title')}
             </h2>
             <p className="text-steel text-lg mb-8 max-w-2xl mx-auto">
-              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
+              {t('projects_page.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
               <button
@@ -343,15 +346,15 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-dark rounded-full font-semibold shadow-xl text-white text-base"
               >
                 <Mail size={18} />
-                Envoyer un message
+                {t('projects_page.cta.btn_message')}
               </button>
               <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-charcoal/25 text-charcoal/60 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
                 <Phone size={18} />
-                Appeler directement
+                {t('projects_page.cta.btn_call')}
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-steel/60">
-              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+              {t('projects_page.cta.guarantees', { returnObjects: true }).map((g: string) => (
                 <span key={g} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0"></span>
                   {g}

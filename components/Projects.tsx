@@ -4,85 +4,90 @@ import { SectionId } from '../types';
 import { ProjectData } from '../data/projects';
 import { useLocalizedData } from '../hooks/useLocalizedData';
 import { useSwipe } from '../hooks/useSwipe';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface ProjectCardProps {
   project: ProjectData;
   onClick: (project: ProjectData) => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => (
-  <div
-    data-cursor-hover
-    role="button"
-    tabIndex={0}
-    aria-label={`Voir le projet ${project.title}`}
-    className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold/40 transition-all duration-500 hover:-translate-y-2 shadow-xl cursor-pointer flex-shrink-0 snap-start"
-    style={{
-      width: 'min(85vw, 300px)',
-      minWidth: 'min(85vw, 300px)',
-      background: '#0D1B2A',
-      boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)',
-    }}
-    onClick={() => onClick(project)}
-    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onClick(project); }}
-  >
-    <div className="h-48 overflow-hidden relative">
-      <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors z-10"></div>
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-      />
-    </div>
-
-    <div className="p-6 relative">
-      <div className="absolute top-0 right-6 -translate-y-1/2 btn-metallic-gold text-charcoal p-2.5 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:-translate-y-1/2 transition-all duration-300 shadow-lg z-20">
-        <ExternalLink size={16} />
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
+  const { t } = useTranslation();
+  return (
+    <div
+      data-cursor-hover
+      role="button"
+      tabIndex={0}
+      aria-label={`${t('testimonials.aria.view_project').replace('{company}', project.title)}`}
+      className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold/40 transition-all duration-500 hover:-translate-y-2 shadow-xl cursor-pointer flex-shrink-0 snap-start"
+      style={{
+        width: 'min(85vw, 300px)',
+        minWidth: 'min(85vw, 300px)',
+        background: '#0D1B2A',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)',
+      }}
+      onClick={() => onClick(project)}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onClick(project); }}
+    >
+      <div className="h-48 overflow-hidden relative">
+        <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors z-10"></div>
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+        />
       </div>
 
-      <div className="text-xs font-medium text-metallic-gold-inline mb-1 uppercase tracking-wider">
-        {project.category}
-      </div>
-      <h3 className="font-serif text-lg font-bold mb-2 text-metallic-silver group-hover:text-white transition-colors">
-        {project.title}
-      </h3>
-      <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
-        {project.description}
-      </p>
-
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.tags.slice(0, 3).map((tag) => (
-          <span key={tag} className="px-2 py-1 bg-white/5 rounded-full text-xs text-gray-300 border border-white/5">
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      {project.url ? (
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 btn-metallic-gold text-charcoal rounded-xl text-sm font-medium transition-all hover:-translate-y-0.5"
-        >
-          Voir le site <ExternalLink size={14} />
-        </a>
-      ) : (
-        <div className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-white/5 text-gray-500 border border-white/5 cursor-not-allowed">
-          <ExternalLink size={14} />
-          Site privé
+      <div className="p-6 relative">
+        <div className="absolute top-0 right-6 -translate-y-1/2 btn-metallic-gold text-charcoal p-2.5 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:-translate-y-1/2 transition-all duration-300 shadow-lg z-20">
+          <ExternalLink size={16} />
         </div>
-      )}
+
+        <div className="text-xs font-medium text-metallic-gold-inline mb-1 uppercase tracking-wider">
+          {project.category}
+        </div>
+        <h3 className="font-serif text-lg font-bold mb-2 text-metallic-silver group-hover:text-white transition-colors">
+          {project.title}
+        </h3>
+        <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tags.slice(0, 3).map((tag) => (
+            <span key={tag} className="px-2 py-1 bg-white/5 rounded-full text-xs text-gray-300 border border-white/5">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {project.url ? (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 btn-metallic-gold text-charcoal rounded-xl text-sm font-medium transition-all hover:-translate-y-0.5"
+          >
+            {t('home_projects.card_view_site')} <ExternalLink size={14} />
+          </a>
+        ) : (
+          <div className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-white/5 text-gray-500 border border-white/5 cursor-not-allowed">
+            <ExternalLink size={14} />
+            {t('home_projects.card_private_site')}
+          </div>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 interface ProjectsProps {
   onOpenProject?: (project: ProjectData) => void;
 }
 
 export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
+  const { t } = useTranslation();
   const { projects: projectsData } = useLocalizedData();
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -125,11 +130,11 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
         {/* En-tête */}
         <div className="text-center md:text-left mb-12">
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-2 block">
-            Nos Réalisations
+            {t('home_projects.eyebrow')}
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-metallic-silver">
-            L'Excellence en{' '}
-            <span className="text-metallic-gold">Action</span>
+            {t('home_projects.title_line1')}{' '}
+            <span className="text-metallic-gold">{t('home_projects.title_line2')}</span>
           </h2>
         </div>
 
@@ -140,7 +145,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
             <button
               onClick={scrollLeft}
               className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all shadow-lg"
-              aria-label="Défiler à gauche"
+              aria-label={t('services.aria.prev')}
             >
               <ChevronLeft size={22} />
             </button>
@@ -151,7 +156,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
             <button
               onClick={scrollRight}
               className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all shadow-lg"
-              aria-label="Défiler à droite"
+              aria-label={t('services.aria.next')}
             >
               <ChevronRight size={22} />
             </button>
@@ -183,7 +188,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
         </div>
 
         <p className="text-center text-xs text-gray-500 mt-3 italic md:hidden">
-          Glissez pour voir tous les projets
+          {t('home_projects.swipe_hint')}
         </p>
       </div>
     </section>

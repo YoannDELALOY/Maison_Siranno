@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { X, CheckCircle2, AlertCircle, ArrowRight, Tag, User, Calendar, ExternalLink, BookOpen } from 'lucide-react';
 import { ProjectData } from './Projects';
 import { SectionId } from '../types';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface ProjectModalProps {
   project: ProjectData | null;
@@ -10,6 +11,8 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onNavigateBlog }) => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (project) {
       document.body.style.overflow = 'hidden';
@@ -41,7 +44,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           backgroundImage: [
             `url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='pg3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pg3)' opacity='0.30'/%3E%3C/svg%3E")`,
             `radial-gradient(ellipse at 12% 18%, rgba(185,145,65,0.08) 0%, transparent 48%)`,
-            `radial-gradient(ellipse at 80% 72%, rgba(160,120,45,0.06) 0%, transparent 42%)`,
+            `radial-gradient(ellipse at 85% 70%, rgba(160,120,45,0.06) 0%, transparent 42%)`,
           ].join(', '),
           backgroundSize: '700px 700px, 100% 100%, 100% 100%',
           backgroundBlendMode: 'multiply, normal, normal',
@@ -84,7 +87,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           <button
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white hover:text-charcoal transition-all text-white z-10"
-            aria-label="Fermer"
+            aria-label={t('cookie_banner.aria_close')}
           >
             <X size={20} />
           </button>
@@ -97,7 +100,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
         <div className="px-8 py-4 border-b border-gold/10 flex flex-wrap gap-4">
           <div className="flex items-center gap-2 text-sm text-steel">
             <User size={14} className="text-gold" />
-            <span className="text-gold/70 font-medium">Réalisé par</span>
+            <span className="text-gold/70 font-medium">{t('project_article.realized_by')}</span>
             <span>{project.client}</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-steel">
@@ -127,7 +130,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           <div>
             <h3 className="font-serif text-lg font-bold text-charcoal mb-4 flex items-center gap-2">
               <AlertCircle size={18} className="text-gold" />
-              Les défis
+              {t('project_article.challenges_eyebrow')}
             </h3>
             <ul className="space-y-2">
               {project.challenges.map((challenge, i) => (
@@ -143,7 +146,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           <div>
             <h3 className="font-serif text-lg font-bold text-charcoal mb-4 flex items-center gap-2">
               <CheckCircle2 size={18} className="text-safe-green" />
-              Les résultats
+              {t('project_article.results_eyebrow')}
             </h3>
             <ul className="space-y-3">
               {project.results.map((result, i) => (
@@ -158,7 +161,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           {/* CTA */}
           <div className="pt-4 border-t border-gold/10">
             <p className="text-metallic-gold text-sm mb-4 text-center font-semibold">
-              Un projet similaire ? Discutons-en.
+              {t('project_article.cta_title')}
             </p>
             <div className="flex flex-col gap-3">
               {project.url && (
@@ -178,14 +181,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                 }}
                 className="w-full btn-metallic-dark text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg"
               >
-                En savoir plus <BookOpen size={16} />
+                {t('project_article.learn_more')} <BookOpen size={16} />
               </button>
               <a
                 href={`#${SectionId.CONTACT}`}
                 onClick={onClose}
                 className="w-full btn-metallic-gold font-semibold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg"
               >
-                Démarrer mon projet <ArrowRight size={18} />
+                {t('project_article.start_project')} <ArrowRight size={18} />
               </a>
             </div>
           </div>

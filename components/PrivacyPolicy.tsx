@@ -1,11 +1,18 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface PrivacyPolicyProps {
   onBack: () => void;
 }
 
 export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
+  const { t } = useTranslation();
+  const { lang } = useLanguage();
+
+  const locale = lang === 'en' ? 'en-GB' : lang === 'es' ? 'es-ES' : 'fr-FR';
+
   return (
     <div className="min-h-screen bg-paper py-20 px-6">
       <div className="max-w-3xl mx-auto">
@@ -15,144 +22,133 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
           className="flex items-center gap-2 text-gold hover:underline mb-10 font-medium"
         >
           <ArrowLeft size={18} />
-          Retour au site
+          {t('privacy_policy.back')}
         </button>
 
-        <h1 className="font-serif text-4xl font-bold text-metallic-navy mb-2">Politique de Confidentialité</h1>
-        <p className="text-steel text-sm mb-10">Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}</p>
+        <h1 className="font-serif text-4xl font-bold text-metallic-navy mb-2">{t('privacy_policy.title')}</h1>
+        <p className="text-steel text-sm mb-10">{t('privacy_policy.last_updated')} {new Date().toLocaleDateString(locale)}</p>
 
         <div className="prose prose-lg text-charcoal/80 space-y-8">
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">1. Responsable du traitement</h2>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.1_title')}</h2>
             <p>
-              Le responsable du traitement de vos données personnelles est :<br />
-              <strong>Yoann DELALOY — Maison Siranno</strong><br />
-              Auto-entrepreneur, 1 rue Auguste Grivot, 45110 Châteauneuf-sur-Loire<br />
+              {t('privacy_policy.sections.1_body')}<br />
+              <strong>{t('privacy_policy.sections.1_company')}</strong><br />
+              {t('privacy_policy.sections.1_address')}<br />
               <a href="mailto:contact@yoanndelaloy.com" className="text-gold hover:underline">contact@yoanndelaloy.com</a><br />
               <a href="tel:+33647344364" className="text-gold hover:underline">06 47 34 43 64</a>
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">2. Données collectées</h2>
-            <p>Nous collectons uniquement les données que vous nous transmettez volontairement via le formulaire de contact :</p>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.2_title')}</h2>
+            <p>{t('privacy_policy.sections.2_intro')}</p>
             <ul className="mt-3 space-y-2">
-              <li><strong>Nom et prénom</strong> — pour personnaliser la réponse</li>
-              <li><strong>Adresse email</strong> — pour vous répondre</li>
-              <li><strong>Numéro de téléphone</strong> (optionnel) — pour un contact téléphonique si souhaité</li>
-              <li><strong>Message / Description du projet</strong> — pour comprendre votre demande</li>
+              <li><strong>{t('privacy_policy.sections.2_field_name')}</strong> — {t('privacy_policy.sections.2_field_name_desc')}</li>
+              <li><strong>{t('privacy_policy.sections.2_field_email')}</strong> — {t('privacy_policy.sections.2_field_email_desc')}</li>
+              <li><strong>{t('privacy_policy.sections.2_field_phone')}</strong> {t('privacy_policy.sections.2_field_phone_optional')} — {t('privacy_policy.sections.2_field_phone_desc')}</li>
+              <li><strong>{t('privacy_policy.sections.2_field_message')}</strong> — {t('privacy_policy.sections.2_field_message_desc')}</li>
             </ul>
+            <p className="mt-3">{t('privacy_policy.sections.2_no_sensitive')}</p>
             <p className="mt-3">
-              Nous ne collectons aucune donnée sensible au sens du RGPD (santé, origine ethnique, opinions politiques, croyances religieuses, etc.).
-            </p>
-            <p className="mt-3">
-              <strong>Données de navigation :</strong> avec votre consentement, Google Analytics peut collecter des données anonymisées sur votre navigation (pages visitées, durée, source de trafic). Ces données ne permettent pas de vous identifier personnellement.
+              <strong>{lang === 'fr' ? 'Données de navigation :' : lang === 'en' ? 'Navigation data:' : 'Datos de navegación:'}</strong> {t('privacy_policy.sections.2_analytics')}
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">3. Finalités du traitement</h2>
-            <p>Vos données sont utilisées exclusivement pour :</p>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.3_title')}</h2>
+            <p>{t('privacy_policy.sections.3_intro')}</p>
             <ul className="mt-3 space-y-2">
-              <li>Répondre à votre demande de contact ou de devis</li>
-              <li>Assurer le suivi de la relation commerciale</li>
-              <li>Améliorer la qualité de notre site (analytics anonymisés, avec consentement)</li>
-              <li>Vous envoyer des informations sur nos services si vous y avez explicitement consenti</li>
+              <li>{t('privacy_policy.sections.3_item1')}</li>
+              <li>{t('privacy_policy.sections.3_item2')}</li>
+              <li>{t('privacy_policy.sections.3_item3')}</li>
+              <li>{t('privacy_policy.sections.3_item4')}</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">4. Base légale du traitement</h2>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.4_title')}</h2>
             <p>
-              Le traitement de vos données repose sur :<br />
-              — Votre <strong>consentement explicite</strong> (art. 6.1.a RGPD) lors de la soumission du formulaire<br />
-              — Notre <strong>intérêt légitime</strong> (art. 6.1.f RGPD) à répondre à vos demandes commerciales
+              {t('privacy_policy.sections.4_body')}<br />
+              — <strong>{t('privacy_policy.sections.4_consent')}</strong> {t('privacy_policy.sections.4_consent_ref')}<br />
+              — <strong>{t('privacy_policy.sections.4_interest')}</strong> {t('privacy_policy.sections.4_interest_ref')}
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">5. Destinataires et sous-traitants</h2>
-            <p>
-              Vos données personnelles ne sont jamais vendues, louées ou cédées à des tiers à des fins commerciales. Elles peuvent être partagées avec les prestataires techniques suivants, dans le strict cadre de leurs services :
-            </p>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.5_title')}</h2>
+            <p>{t('privacy_policy.sections.5_intro')}</p>
             <ul className="mt-3 space-y-2">
-              <li><strong>Formspree</strong> (formspree.io) — traitement des formulaires de contact. Données hébergées aux États-Unis, protégées par des clauses contractuelles types.</li>
-              <li><strong>Hostinger International Ltd.</strong> — hébergement du site. Données hébergées dans l'UE.</li>
-              <li><strong>Google Analytics</strong> (Google Ireland Ltd.) — analyse d'audience anonymisée, uniquement avec votre consentement.</li>
+              <li><strong>Formspree (formspree.io)</strong> — {t('privacy_policy.sections.5_formspree')}</li>
+              <li><strong>Hostinger International Ltd.</strong> — {t('privacy_policy.sections.5_hostinger')}</li>
+              <li><strong>Google Analytics (Google Ireland Ltd.)</strong> — {t('privacy_policy.sections.5_ga')}</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">6. Durée de conservation</h2>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.6_title')}</h2>
             <p>
-              Vos données de contact sont conservées pendant <strong>3 ans</strong> à compter du dernier contact, puis supprimées ou anonymisées. Les données de navigation anonymisées (Google Analytics) sont conservées conformément aux paramètres par défaut de cet outil (14 mois).
+              {lang === 'fr'
+                ? <><span>Vos données de contact sont conservées pendant </span><strong>{t('privacy_policy.sections.6_years')}</strong><span> à compter du dernier contact, puis supprimées ou anonymisées. Les données de navigation anonymisées (Google Analytics) sont conservées conformément aux paramètres par défaut de cet outil (14 mois).</span></>
+                : lang === 'en'
+                ? <><span>Your contact data is retained for </span><strong>{t('privacy_policy.sections.6_years')}</strong><span> from the last contact, then deleted or anonymised. Anonymised browsing data (Google Analytics) is retained in accordance with the tool's default settings (14 months).</span></>
+                : <><span>Sus datos de contacto se conservan durante </span><strong>{t('privacy_policy.sections.6_years')}</strong><span> desde el último contacto, luego se eliminan o anonimizan. Los datos de navegación anonimizados (Google Analytics) se conservan de acuerdo con la configuración predeterminada de esa herramienta (14 meses).</span></>
+              }
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">7. Vos droits (RGPD)</h2>
-            <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants :</p>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.7_title')}</h2>
+            <p>{t('privacy_policy.sections.7_intro')}</p>
             <ul className="mt-3 space-y-2">
-              <li><strong>Droit d'accès</strong> (art. 15 RGPD) — consulter vos données personnelles</li>
-              <li><strong>Droit de rectification</strong> (art. 16 RGPD) — corriger vos données inexactes ou incomplètes</li>
-              <li><strong>Droit à l'effacement</strong> (art. 17 RGPD) — demander la suppression de vos données</li>
-              <li><strong>Droit à la portabilité</strong> (art. 20 RGPD) — recevoir vos données dans un format lisible et structuré</li>
-              <li><strong>Droit d'opposition</strong> (art. 21 RGPD) — vous opposer à certains traitements</li>
-              <li><strong>Droit à la limitation</strong> (art. 18 RGPD) — limiter le traitement de vos données</li>
-              <li><strong>Droit de retrait du consentement</strong> — à tout moment, sans effet rétroactif</li>
+              <li><strong>{t('privacy_policy.sections.7_access')}</strong> {t('privacy_policy.sections.7_access_ref')} — {t('privacy_policy.sections.7_access_desc')}</li>
+              <li><strong>{t('privacy_policy.sections.7_rectification')}</strong> {t('privacy_policy.sections.7_rectification_ref')} — {t('privacy_policy.sections.7_rectification_desc')}</li>
+              <li><strong>{t('privacy_policy.sections.7_erasure')}</strong> {t('privacy_policy.sections.7_erasure_ref')} — {t('privacy_policy.sections.7_erasure_desc')}</li>
+              <li><strong>{t('privacy_policy.sections.7_portability')}</strong> {t('privacy_policy.sections.7_portability_ref')} — {t('privacy_policy.sections.7_portability_desc')}</li>
+              <li><strong>{t('privacy_policy.sections.7_opposition')}</strong> {t('privacy_policy.sections.7_opposition_ref')} — {t('privacy_policy.sections.7_opposition_desc')}</li>
+              <li><strong>{t('privacy_policy.sections.7_limitation')}</strong> {t('privacy_policy.sections.7_limitation_ref')} — {t('privacy_policy.sections.7_limitation_desc')}</li>
+              <li><strong>{t('privacy_policy.sections.7_withdrawal')}</strong> — {t('privacy_policy.sections.7_withdrawal_desc')}</li>
             </ul>
             <p className="mt-4">
-              Pour exercer ces droits, contactez-nous par email :{' '}
+              {t('privacy_policy.sections.7_contact')}{' '}
               <a href="mailto:contact@yoanndelaloy.com" className="text-gold hover:underline">contact@yoanndelaloy.com</a>
             </p>
             <p className="mt-2">
-              En cas de réclamation non résolue, vous pouvez saisir la{' '}
-              <strong>CNIL</strong> :{' '}
+              {t('privacy_policy.sections.7_complaint')}{' '}
+              <strong>{t('privacy_policy.sections.7_cnil')}</strong>{' '}:{' '}
               <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">www.cnil.fr/fr/plaintes</a>
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">8. Politique Cookies</h2>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.8_title')}</h2>
 
-            <h3 className="font-semibold text-charcoal text-lg mb-2">Cookies strictement nécessaires</h3>
-            <p>
-              Ces cookies sont indispensables au fonctionnement du site (gestion des préférences de consentement). Ils ne nécessitent pas votre consentement.
-            </p>
+            <h3 className="font-semibold text-charcoal text-lg mb-2">{t('privacy_policy.sections.8_necessary_title')}</h3>
+            <p>{t('privacy_policy.sections.8_necessary_body')}</p>
 
-            <h3 className="font-semibold text-charcoal text-lg mb-2 mt-6">Cookies analytiques — Google Analytics</h3>
-            <p>
-              Avec votre consentement, Google Analytics dépose des cookies pour mesurer l'audience de notre site de manière anonymisée. Aucune donnée permettant de vous identifier personnellement n'est collectée.
-            </p>
+            <h3 className="font-semibold text-charcoal text-lg mb-2 mt-6">{t('privacy_policy.sections.8_analytics_title')}</h3>
+            <p>{t('privacy_policy.sections.8_analytics_body')}</p>
             <p className="mt-3">
-              <strong>Opt-out Google Analytics :</strong> vous pouvez désactiver le suivi Google Analytics en installant l'extension officielle :{' '}
+              <strong>{t('privacy_policy.sections.8_optout')}</strong>{' '}
               <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">tools.google.com/dlpage/gaoptout</a>
             </p>
-            <p className="mt-3">
-              Vous pouvez également retirer votre consentement à tout moment via la bannière cookies accessible en bas de page.
-            </p>
+            <p className="mt-3">{t('privacy_policy.sections.8_withdraw')}</p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">9. Sécurité des données</h2>
-            <p>
-              Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, modification, divulgation ou destruction : connexions chiffrées (HTTPS/TLS), accès restreint aux données, hébergement sécurisé.
-            </p>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.9_title')}</h2>
+            <p>{t('privacy_policy.sections.9_body')}</p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">10. Transferts hors UE</h2>
-            <p>
-              Certains de nos prestataires (Formspree, Google) peuvent traiter des données hors de l'Union Européenne. Ces transferts sont encadrés par des garanties appropriées (clauses contractuelles types approuvées par la Commission Européenne, Privacy Shield ou mécanismes équivalents).
-            </p>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.10_title')}</h2>
+            <p>{t('privacy_policy.sections.10_body')}</p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">11. Modification de la politique</h2>
-            <p>
-              Cette politique de confidentialité peut être mise à jour à tout moment pour refléter les évolutions légales ou nos pratiques. La date de dernière modification est indiquée en haut de page. En continuant à utiliser notre site après une mise à jour, vous acceptez la version révisée.
-            </p>
+            <h2 className="font-serif text-2xl font-bold text-charcoal mb-4">{t('privacy_policy.sections.11_title')}</h2>
+            <p>{t('privacy_policy.sections.11_body')}</p>
           </section>
 
         </div>
@@ -163,7 +159,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
             className="btn-metallic-dark text-white font-semibold px-8 py-3 rounded-full inline-flex items-center gap-2"
           >
             <ArrowLeft size={18} />
-            Retour au site
+            {t('privacy_policy.back')}
           </button>
         </div>
 

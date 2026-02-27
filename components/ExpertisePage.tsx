@@ -165,7 +165,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
-              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+              {t('expertise_page.cta.guarantees', { returnObjects: true }).map((g: string) => (
                 <span key={g} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0"></span>
                   {g}

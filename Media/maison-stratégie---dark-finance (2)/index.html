@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Stratégie</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#1A1918', // Noir encre doux
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F9F8F4;
+        color: #1A1918;
+      }
+
+      /* 
+         TEXTURE PAPIER (GRAIN RÉGULIER + LAVIS TRÈS DOUX)
+         1. Grain Régulier : Fréquence 0.65 pour un grain fin et homogène.
+         2. Lavis : Opacité réduite (0.3/0.2) pour que les taches soient à peine perceptibles.
+      */
+      .watercolor-bg {
+        background-color: #F9F8F4;
+        
+        background-image: 
+          /* COUCHE 1 : Grain Papier Régulier */
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperGrain)' opacity='0.5'/%3E%3C/svg%3E"),
+          
+          /* COUCHE 2 : Lavis Beige Haut Droit (Très subtil) */
+          radial-gradient(circle at 80% 20%, rgba(225, 215, 195, 0.3) 0%, transparent 60%),
+          
+          /* COUCHE 3 : Lavis Ocre Bas Gauche (Très subtil) */
+          radial-gradient(circle at 20% 80%, rgba(220, 210, 185, 0.3) 0%, transparent 60%),
+          
+          /* COUCHE 4 : Vignettage léger */
+          radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0) 60%, rgba(210, 190, 160, 0.1) 100%);
+        
+        background-blend-mode: multiply, normal, normal, normal;
+        background-size: 400px 400px, 100% 100%, 100% 100%, 100% 100%;
+        background-attachment: fixed;
+      }
+
+      /* 
+         TEXTURE OR "RICH 3D" (Or Riche & Volumétrique)
+         1. Gradient : Adouci et enrichi.
+            - Bords : #B68D40 (Or profond) au lieu de bronze sombre.
+            - Centre : #F4E095 (Or Vanille) au lieu de blanc pur.
+            - Résultat : Plus "Or massif", moins contrasté.
+         2. Filter Drop-shadow : Simule l'épaisseur (extrusion) et l'ombre portée.
+      */
+      .gold-texture {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-color: #D4AF37;
+        background-image: 
+          /* Bruit très léger pour la matière (Lissé) */
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E"),
+          /* Gradient Métallique Enrichi */
+          linear-gradient(
+            135deg,
+            #B68D40 0%,    /* Or Profond (Bord) */
+            #D4AF37 25%,   /* Or Standard */
+            #F4E095 50%,   /* Or Vanille (Lumière douce) */
+            #D4AF37 75%,   /* Or Standard */
+            #B68D40 100%   /* Or Profond (Bord) */
+          );
+        background-blend-mode: soft-light, normal;
+        background-size: 200px 200px, 100% 100%;
+        
+        /* 
+           CHAÎNE D'OMBRES POUR LE VOLUME 3D :
+           1. 1px & 2px : Simulent l'épaisseur (la tranche du métal) avec une couleur or foncé (#9C7C38).
+           2. 4px/8px : Simulent l'ombre portée sur le papier (noire et floue).
+        */
+        filter: 
+          drop-shadow(1px 1px 0px #9C7C38)
+          drop-shadow(2px 2px 0px #856625)
+          drop-shadow(4px 8px 6px rgba(26, 25, 24, 0.25));
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -174,7 +174,7 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
             </span>
             <span className="flex items-center gap-1.5">
               <Clock size={13} />
-              {article.readTime} de lecture
+              {t('blog_page.read_time', { time: article.readTime })}
             </span>
           </div>
 
@@ -295,7 +295,7 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
               <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">{t('blog_article_detail.cta_eyebrow')}</span>
               <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-metallic-silver">{t('blog_article_detail.cta_title')}</h2>
               <p className="text-gray-400 max-w-xl mx-auto">
-                Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche.
+                {t('blog_article_detail.cta_subtitle')}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

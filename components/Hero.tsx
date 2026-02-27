@@ -184,19 +184,19 @@ export const Hero: React.FC = () => {
           </div>
 
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-up">
-            <span className="block text-metallic-navy">L'Art de Sublimer</span>
-            <span className="block hero-numerique text-metallic-gold">votre Savoir-Faire</span>
+            <span className="block text-metallic-navy">{t('hero.title_line1')}</span>
+            <span className="block hero-numerique text-metallic-gold">{t('hero.title_line2')}</span>
           </h1>
 
           <p className="text-lg md:text-xl text-steel font-light leading-relaxed max-w-lg mx-auto md:mx-0 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Parce que votre métier est unique, votre stratégie digitale doit l'être aussi. Nous concevons votre écosystème web sur-mesure pour{' '}
-            <strong className="text-charcoal font-medium">transformer votre vision en résultats concrets</strong>.
+            {t('hero.subtitle')}{' '}
+            <strong className="text-charcoal font-medium">{t('hero.subtitle_strong')}</strong>.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
             <a
               href={`#${SectionId.CONTACT}`}
-              className="group relative px-8 py-4 btn-metallic-dark text-white rounded-full overflow-hidden shadow-xl"
+              className="group relative px-8 py-4 btn-metallic-gold text-charcoal rounded-full overflow-hidden shadow-xl"
             >
               <span className="relative flex items-center gap-2 font-semibold">
                 {t('hero.cta_primary')} <ArrowRight size={18} />
@@ -239,24 +239,24 @@ export const Hero: React.FC = () => {
                     </div>
                     <span className="font-serif text-xs text-metallic-gold-inline tracking-widest uppercase">Maison<br />Siranno</span>
                   </div>
-                  <div className="px-2 py-1 bg-green-100 text-safe-green text-xs rounded-full font-medium">En ligne</div>
+                  <div className="px-2 py-1 bg-green-100 text-safe-green text-xs rounded-full font-medium">{t('hero.card_status')}</div>
                 </div>
 
                 <div className="flex flex-col flex-1 min-h-0">
-                  <p className="text-xs text-steel/70 font-medium uppercase tracking-wider shrink-0 mb-1">Stack & Outils</p>
+                  <p className="text-xs text-steel/70 font-medium uppercase tracking-wider shrink-0 mb-1">{t('hero.card_stack_label')}</p>
                   <div className="flex-1 min-h-0 relative">
                     <img
                       src="/Media/Logos/Logos divers/Design_sans_titre_2026-02-19T135224.213.png"
-                      alt="Stack & Outils"
+                      alt={t('hero.card_stack_label')}
                       className="absolute inset-1 w-full h-full object-contain scale-[1.1] opacity-60"
                     />
                   </div>
                 </div>
 
                 <div className="font-serif font-bold text-charcoal shrink-0">
-                  <span className="text-3xl text-metallic-gold">+27%</span>
+                  <span className="text-3xl text-metallic-gold">{t('hero.card_growth_value')}</span>
                   <br />
-                  <span className="text-sm font-sans text-steel font-normal">Croissance Digitale</span>
+                  <span className="text-sm font-sans text-steel font-normal">{t('hero.card_growth_label')}</span>
                 </div>
               </div>
 
@@ -268,7 +268,7 @@ export const Hero: React.FC = () => {
                     className="w-10 h-10 object-contain"
                   />
                   <p className="font-serif italic text-lg leading-snug">
-                    "L'IA comme levier de précision absolue."
+                    "{t('hero.card_quote')}"
                   </p>
                   <div className="text-xs text-steel uppercase tracking-widest">Maison Siranno</div>
                 </div>

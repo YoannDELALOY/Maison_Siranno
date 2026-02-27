@@ -529,12 +529,12 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
           <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10" style={{ background: 'rgba(255,255,255,0.04)' }}>
               <User size={14} className="text-gold/60" />
-              <span className="text-white/60 text-xs uppercase tracking-widest">Réalisé par</span>
+              <span className="text-white/60 text-xs uppercase tracking-widest">{t('project_article.realized_by')}</span>
               <span className="text-white/90 text-sm font-semibold ml-1">{project.client}</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10" style={{ background: 'rgba(255,255,255,0.04)' }}>
               <Calendar size={14} className="text-gold/60" />
-              <span className="text-white/60 text-xs uppercase tracking-widest">Année</span>
+              <span className="text-white/60 text-xs uppercase tracking-widest">{t('project_article.year')}</span>
               <span className="text-white/90 text-sm font-semibold ml-1">{project.year}</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-gold/20" style={{ background: 'rgba(212,175,55,0.06)' }}>
@@ -562,7 +562,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
                     className="w-4 h-4 rounded-sm"
                     onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                   />
-                  <span className="btn-site-text">Voir le site</span>
+                  <span className="btn-site-text">{t('project_article.view_site')}</span>
                   <ArrowUpRight size={13} className="btn-site-icon" />
                 </a>
               );
@@ -578,7 +578,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
               onMouseLeave={e => (e.currentTarget.style.color = 'rgba(212,175,55,0.75)')}
             >
               <Github size={14} />
-              GitHub du projet
+              {t('project_article.github_link')}
               <ExternalLink size={11} />
             </a>
           </div>
@@ -841,7 +841,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
               <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-xs mb-3 block">{t('projects_page.cta.eyebrow')}</span>
               <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-charcoal">{t('project_article.cta_title')}</h2>
               <p className="text-charcoal/70 mb-6 max-w-2xl mx-auto text-base leading-relaxed">
-                Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
+                {t('projects_page.cta.subtitle')}
               </p>
 
               {/* Lien GitHub */}
@@ -853,7 +853,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-charcoal/55 hover:text-charcoal transition-colors underline underline-offset-2"
                 >
                   <Github size={14} />
-                  GitHub du projet
+                  {t('project_article.github_link')}
                   <ExternalLink size={11} />
                 </a>
               </div>
@@ -875,7 +875,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
                         className="w-4 h-4 rounded-sm"
                         onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                       />
-                      Voir le site
+                      {t('project_article.view_site')}
                       <ExternalLink size={14} />
                     </a>
                   );
@@ -898,7 +898,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
 
               {/* Garanties */}
               <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-charcoal/50">
-                {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+                {(t('projects_page.cta.guarantees', { returnObjects: true }) as string[]).map((g: string) => (
                   <span key={g} className="flex items-center gap-1.5">
                     <span className="w-1 h-1 rounded-full bg-gold/60 shrink-0"></span>
                     {g}

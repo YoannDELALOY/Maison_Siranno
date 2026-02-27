@@ -2,8 +2,11 @@ import React from 'react';
 import { MapPin, CheckCircle2, Users, Lightbulb } from 'lucide-react';
 import { SectionId } from '../types';
 import { PerformanceChart } from './PerformanceChart';
+import { useTranslation } from '../hooks/useTranslation';
 
 export const About: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section id={SectionId.ABOUT} className="py-24 bg-paper relative">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
@@ -12,39 +15,32 @@ export const About: React.FC = () => {
         <div className="space-y-8 text-left">
           <div className="inline-flex items-center gap-2 text-metallic-gold-inline font-medium uppercase tracking-widest text-sm">
             <Users size={16} />
-            <span>L'ADN de l'Agence</span>
+            <span>{t('about.eyebrow')}</span>
           </div>
 
           <h2 className="font-serif text-4xl lg:text-5xl font-bold leading-tight text-metallic-navy">
-            Maison Siranno : L'Architecte de votre{' '}
+            {t('about.title').split(':').shift()}:{' '}
             <br className="hidden lg:block" />
             <span className="relative inline-block">
-              <span className="relative z-10 text-metallic-gold">Réussite Digitale</span>
+              <span className="relative z-10 text-metallic-gold">{t('about.title').split(':').pop()?.trim()}</span>
               <span className="absolute bottom-2 left-0 w-full h-3 bg-gold/20 -z-0 rounded"></span>
             </span>.
           </h2>
 
           <div className="text-steel text-lg leading-relaxed">
             <p className="mb-3">
-              Fondée à Châteauneuf-sur-Loire,{' '}
-              <strong className="text-charcoal font-semibold">Maison Siranno</strong> n'est pas une simple
-              agence de développement. Nous sommes le partenaire stratégique des PME et artisans qui
-              refusent le statu quo.
+              {t('about.description_1').split('Maison Siranno').shift()}
+              <strong className="text-charcoal font-semibold">Maison Siranno</strong>
+              {t('about.description_1').split('Maison Siranno').pop()}
             </p>
             <p>
-              Notre vision : apporter l'excellence technique des grands groupes aux acteurs de
-              l'économie locale. Nous construisons des écosystèmes digitaux conçus pour durer,
-              performer et vous libérer du temps.
+              {t('about.description_2')}
             </p>
           </div>
 
           <div className="space-y-4 pt-4">
-            <h4 className="font-serif font-semibold text-charcoal text-lg">Pourquoi nous choisir ?</h4>
-            {[
-              "Une architecture technique 'Gold Standard'",
-              "Une relation de proximité réelle (Loiret & alentours)",
-              "L'innovation IA au service de votre rentabilité"
-            ].map((item, i) => (
+            <h4 className="font-serif font-semibold text-charcoal text-lg">{t('about.why_title')}</h4>
+            {(t('about.why_items', { returnObjects: true }) as string[]).map((item, i) => (
               <div key={i} className="flex items-center gap-3 justify-center md:justify-start">
                 <CheckCircle2 className="text-safe-green shrink-0" size={20} />
                 <span className="text-charcoal font-medium">{item}</span>
@@ -60,7 +56,7 @@ export const About: React.FC = () => {
               </div>
               <div className="text-center md:text-left">
                 <div className="font-serif text-xl font-bold text-charcoal">Yoann DELALOY</div>
-                <div className="text-sm text-metallic-gold-inline font-medium uppercase tracking-wide">Fondateur & Lead Architect</div>
+                <div className="text-sm text-metallic-gold-inline font-medium uppercase tracking-wide">{t('about.founder_role')}</div>
               </div>
             </div>
             <div className="flex items-start gap-2 text-charcoal font-semibold font-serif text-sm text-center md:text-left justify-center md:justify-start">
@@ -71,7 +67,6 @@ export const About: React.FC = () => {
         </div>
 
         {/* Right: Performance Viz */}
-        {/* Le conteneur parent est `relative` sans isolation, le badge doit avoir z-index > la card principale */}
         <div className="relative" style={{ isolation: 'isolate' }}>
 
           {/* Main Card — z-index 10 */}
@@ -81,11 +76,13 @@ export const About: React.FC = () => {
           >
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="text-xl font-serif font-bold text-charcoal">Spécialités de l'agence</h3>
-                <p className="text-sm text-steel">L'innovation comme tradition.</p>
+                <h3 className="text-xl font-serif font-bold text-charcoal">{t('about.chart_title')}</h3>
+                <p className="text-sm text-steel">{t('about.chart_subtitle')}</p>
               </div>
               <div className="p-2 bg-gold/10 rounded-lg text-gold">
-                <Lightbulb size={20} />
+                <div className="p-2 bg-gold/10 rounded-lg text-gold">
+                  <Lightbulb size={20} />
+                </div>
               </div>
             </div>
 
@@ -95,9 +92,9 @@ export const About: React.FC = () => {
             </div>
 
             <div className="mt-6 flex justify-between items-center text-sm border-t border-gray-100 pt-4">
-              <div className="text-steel">Satisfaction client</div>
+              <div className="text-steel">{t('about.chart_satisfaction_label')}</div>
               <div className="font-bold text-safe-green flex items-center gap-1">
-                98% satisfaits
+                {t('about.chart_satisfaction_value')}
               </div>
             </div>
           </div>
@@ -112,8 +109,8 @@ export const About: React.FC = () => {
             style={{ animationDelay: '0.5s', zIndex: 50 }}
           >
             <div className="text-center">
-              <div className="text-2xl font-bold font-serif text-metallic-gold">100%</div>
-              <div className="text-xs text-steel uppercase tracking-wider">Sur Mesure</div>
+              <div className="text-2xl font-bold font-serif text-metallic-gold">{t('about.badge_value')}</div>
+              <div className="text-xs text-steel uppercase tracking-wider">{t('about.badge_label')}</div>
             </div>
           </div>
 

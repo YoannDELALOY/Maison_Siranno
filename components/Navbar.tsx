@@ -99,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
         </button>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <button
               key={link.label}
@@ -113,6 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
               {link.label}
             </button>
           ))}
+          <LanguageButton />
           <a
             href={`#${SectionId.CONTACT}`}
             onClick={handleContactClick}
@@ -129,15 +130,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="md:hidden p-2 text-charcoal hover:text-gold transition-colors"
-          aria-label={isMobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-label={isMobileMenuOpen ? t('navbar.aria.close_menu') : t('navbar.aria.open_menu')}
           aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
-      {/* Bouton langue fixe à droite — toujours visible */}
-      <LanguageButton isScrolled={isScrolled} />
 
       {/* Menu mobile — dropdown compact */}
       {isMobileMenuOpen && (
@@ -156,7 +154,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
                 {link.label}
               </button>
             ))}
-            <div className="pt-2 pb-1">
+            <div className="pt-2 pb-1 space-y-2">
               <a
                 href={`#${SectionId.CONTACT}`}
                 onClick={handleContactClick}
@@ -165,6 +163,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
                 <Phone size={16} />
                 {t('navbar.cta_mobile')}
               </a>
+              <div className="flex justify-center pt-1">
+                <LanguageButton />
+              </div>
             </div>
           </div>
         </div>

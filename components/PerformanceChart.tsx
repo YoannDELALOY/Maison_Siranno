@@ -7,17 +7,20 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from 'recharts';
-
-const data = [
-  { subject: 'Sites Web', value: 95 },
-  { subject: 'IA & Chatbots', value: 85 },
-  { subject: 'Automatisation', value: 80 },
-  { subject: 'Outils Métier', value: 75 },
-  { subject: 'Stratégie', value: 95 },
-  { subject: 'Données', value: 70 },
-];
+import { useTranslation } from '../hooks/useTranslation';
 
 export const PerformanceChart: React.FC = () => {
+  const { t } = useTranslation();
+
+  const data = [
+    { subject: t('about.chart_data.websites'),   value: 95 },
+    { subject: t('about.chart_data.ai'),         value: 85 },
+    { subject: t('about.chart_data.automation'), value: 80 },
+    { subject: t('about.chart_data.tools'),      value: 75 },
+    { subject: t('about.chart_data.strategy'),   value: 95 },
+    { subject: t('about.chart_data.data'),       value: 70 },
+  ];
+
   return (
     <div className="w-full h-[300px] font-sans text-xs">
       <ResponsiveContainer width="100%" height="100%">
@@ -39,7 +42,7 @@ export const PerformanceChart: React.FC = () => {
             itemStyle={{ color: '#C5A059', fontWeight: 600 }}
           />
           <Radar
-            name="Expertise"
+            name={t('navbar.links.expertise')}
             dataKey="value"
             stroke="#C5A059"
             fill="rgba(197,160,89,0.15)"
