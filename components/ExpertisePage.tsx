@@ -106,7 +106,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                       {t('expertise_page.service_label').replace('{n}', String(index + 1))}
                     </span>
 
-                    <h2 className="font-serif text-4xl font-bold leading-tight text-metallic-silver">
+                    <h2 className={`font-serif text-4xl font-bold leading-tight ${isEven ? 'text-metallic-navy' : 'text-metallic-silver'}`}>
                       {service.title}
                     </h2>
 
