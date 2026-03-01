@@ -102,7 +102,7 @@ const StepModal: React.FC<StepModalProps> = ({ step, index, onClose }) => {
                 <p key={i} className={`text-gray-300 leading-relaxed text-[15px]${i < step.detailedDescription!.length - 1 ? ' mb-4' : ''}`}>
                   {para.split(/\*\*(.*?)\*\*/g).map((part, j) =>
                     j % 2 === 1
-                      ? <strong key={j} className="text-metallic-gold font-normal" style={{ textShadow: 'none' }}>{part}</strong>
+                      ? <strong key={j} className="text-metallic-gold-inline font-normal">{part}</strong>
                       : part
                   )}
                 </p>
