@@ -81,9 +81,10 @@ const ArticleCardDark: React.FC<ArticleCardDarkProps> = ({ article, onClick }) =
   return (
     <div
       data-cursor-hover={article.available ? '' : undefined}
-      className="group relative rounded-2xl overflow-hidden flex-shrink-0 w-72 md:w-80 transition-all duration-300 hover:-translate-y-2 border border-gold/15 hover:border-gold/35 hover:shadow-md"
+      className="group relative rounded-2xl overflow-hidden flex-shrink-0 w-72 md:w-80 transition-all duration-300 hover:-translate-y-2 border border-white/10 hover:border-gold/40 hover:shadow-md"
       style={{
-        backgroundColor: 'transparent',
+        background: '#0D1B2A',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)',
         borderLeft: '3px solid rgba(212,175,55,0.5)',
         opacity: article.available ? 1 : 0.65,
         cursor: article.available ? 'pointer' : 'default',
@@ -123,29 +124,29 @@ const ArticleCardDark: React.FC<ArticleCardDarkProps> = ({ article, onClick }) =
           {article.category}
         </span>
 
-        <h3 className="font-serif text-base font-bold mb-2 text-metallic-navy group-hover:text-charcoal transition-colors leading-snug line-clamp-2">
+        <h3 className="font-serif text-base font-bold mb-2 text-metallic-silver group-hover:text-white transition-colors leading-snug line-clamp-2">
           {article.title}
         </h3>
 
-        <p className="text-steel text-sm leading-relaxed mb-3 line-clamp-2">
+        <p className="text-gray-400 text-sm leading-relaxed mb-3 line-clamp-2">
           {article.excerpt}
         </p>
 
         <div className="flex flex-wrap gap-1.5 mb-3">
           {(article.tags || []).slice(0, 3).map((tag) => (
-            <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-gold/5 text-steel text-xs rounded-full border border-gold/10">
+            <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-white/5 text-gray-300 text-xs rounded-full border border-white/5">
               <Tag size={8} />
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center justify-between text-xs text-steel/60 border-t border-gold/10 pt-3">
+        <div className="flex items-center justify-between text-xs text-gray-500 border-t border-white/5 pt-3">
           <span className="flex items-center gap-1.5">
             <Calendar size={10} />
             {article.date}
           </span>
-          <span className={`flex items-center gap-1.5 font-medium ${article.available ? 'text-gold/70 group-hover:text-gold transition-colors' : 'text-steel/40'}`}>
+          <span className={`flex items-center gap-1.5 font-medium ${article.available ? 'text-gold/70 group-hover:text-gold transition-colors' : 'text-gray-600'}`}>
             <BookOpen size={10} />
             {t('blog_page.read_time', { time: article.readTime })}
           </span>
@@ -236,8 +237,8 @@ const ArticleCardFeatured: React.FC<ArticleCardFeaturedProps> = ({ article, onCl
   return (
     <div
       data-cursor-hover
-      className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 border border-gold/15 hover:border-gold/35 hover:shadow-md"
-      style={{ backgroundColor: 'transparent', borderLeft: '3px solid rgba(212,175,55,0.5)' }}
+      className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 border border-white/10 hover:border-gold/40 hover:shadow-md"
+      style={{ background: '#0D1B2A', boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)', borderLeft: '3px solid rgba(212,175,55,0.5)' }}
       onClick={onClick}
     >
       <div className="h-52 overflow-hidden relative">
@@ -259,24 +260,24 @@ const ArticleCardFeatured: React.FC<ArticleCardFeaturedProps> = ({ article, onCl
           {article.category}
         </span>
 
-        <h3 className="font-serif text-lg font-bold mb-2 text-metallic-navy group-hover:text-charcoal transition-colors leading-snug">
+        <h3 className="font-serif text-lg font-bold mb-2 text-metallic-silver group-hover:text-white transition-colors leading-snug">
           {article.title}
         </h3>
 
-        <p className="text-steel text-sm leading-relaxed mb-4 line-clamp-3">
+        <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
           {article.excerpt}
         </p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {(article.tags || []).slice(0, 3).map((tag) => (
-            <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-gold/5 text-steel text-xs rounded-full border border-gold/10">
+            <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-white/5 text-gray-300 text-xs rounded-full border border-white/5">
               <Tag size={9} />
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center justify-between text-xs text-steel/60 border-t border-gold/10 pt-4">
+        <div className="flex items-center justify-between text-xs text-gray-500 border-t border-white/5 pt-4">
           <span className="flex items-center gap-1.5"><Calendar size={11} />{article.date}</span>
           <span className="flex items-center gap-1.5 font-medium text-gold/70 group-hover:text-gold transition-colors">
             <BookOpen size={11} />
@@ -295,8 +296,8 @@ const ArticleCardComing: React.FC<ArticleCardComingProps> = ({ article }) => {
 
   return (
     <div
-      className="rounded-2xl overflow-hidden flex gap-4 items-center p-4 border border-gold/15"
-      style={{ backgroundColor: 'transparent', borderLeft: '3px solid rgba(212,175,55,0.3)', opacity: 0.75 }}
+      className="rounded-2xl overflow-hidden flex gap-4 items-center p-4 border border-white/10"
+      style={{ background: '#0D1B2A', borderLeft: '3px solid rgba(212,175,55,0.3)', opacity: 0.75 }}
     >
       <div className="w-20 h-16 rounded-xl overflow-hidden flex-shrink-0">
         <img src={article.image} alt={article.title} width="80" height="64" className="w-full h-full object-cover grayscale" loading="lazy" />
@@ -311,8 +312,8 @@ const ArticleCardComing: React.FC<ArticleCardComingProps> = ({ article }) => {
             {t('blog_page.badge_soon')}
           </span>
         </div>
-        <h4 className="font-serif text-sm font-bold text-charcoal/70 leading-snug line-clamp-2">{article.title}</h4>
-        <p className="text-xs text-steel/60 mt-0.5">{t('blog_page.read_time', { time: article.readTime })}</p>
+        <h4 className="font-serif text-sm font-bold text-gray-300 leading-snug line-clamp-2">{article.title}</h4>
+        <p className="text-xs text-gray-500 mt-0.5">{t('blog_page.read_time', { time: article.readTime })}</p>
       </div>
     </div>
   );
