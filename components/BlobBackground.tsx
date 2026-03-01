@@ -9,7 +9,7 @@ import React from 'react';
  * `pointer-events-none` garantit qu'il n'interfère pas avec les interactions.
  */
 export const BlobBackground: React.FC = () => (
-  <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+  <div className="fixed inset-0 w-full h-full pointer-events-none z-[-1] overflow-hidden">
     <div
       className="absolute top-0 left-[-10%] w-96 h-96 bg-gold/10 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"
     />
