@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSeo } from '../hooks/useSeo';
+import { useTranslation } from '../hooks/useTranslation';
 import { MapPin, CheckCircle2, Users, Heart, Gem, Target, TrendingUp, ArrowRight, BarChart2, Mail, Phone } from 'lucide-react';
+import { CONTACT_CONFIG } from '../constants/config';
 
 interface AgencyPageProps {
   onGoToContact?: () => void;
@@ -31,66 +33,38 @@ const AnimatedStat: React.FC<{ value: string; label: string; delay?: number }> =
   );
 };
 
-const values = [
-  {
-    icon: <BarChart2 size={24} />,
-    title: 'Data-driven',
-    description: 'Chaque décision s\'appuie sur des données concrètes. Héritage de la finance de marché : rien n\'est laissé au hasard.',
-  },
-  {
-    icon: <Target size={24} />,
-    title: 'Sur-mesure',
-    description: 'Chaque solution est conçue pour vous spécifiquement. Pas de template, pas de copier-coller.',
-  },
-  {
-    icon: <Heart size={24} />,
-    title: 'Humain',
-    description: 'Un interlocuteur unique, disponible et réactif. La technologie au service de la relation humaine.',
-  },
-  {
-    icon: <TrendingUp size={24} />,
-    title: 'ROI-Obsédé',
-    description: 'Le retour sur investissement est la métrique centrale de chaque projet. Pas de beau pour le beau.',
-  },
+const valueIcons = [
+  <BarChart2 size={24} />,
+  <Target size={24} />,
+  <Heart size={24} />,
+  <TrendingUp size={24} />,
 ];
 
-const timeline = [
-  {
-    period: '2012–Présent',
-    sector: 'Finance de Marché & Trading',
-    description: 'Trader en finance de marché — une école de rigueur absolue, de gestion du risque et de lecture des données en temps réel. Cette expérience forge une approche radicalement data-driven et ROI-obsessée qui irrigue encore aujourd\'hui chaque décision de l\'agence.',
-    color: 'border-emerald-500',
-    bgColor: 'bg-emerald-500/10',
-  },
-  {
-    period: '2010–2024',
-    sector: 'BTP, Logistique & Terrain',
-    description: 'Immersion dans le bâtiment et la supply chain. Compréhension profonde des enjeux terrain — délais de chantier, gestion d\'équipes, réalité opérationnelle. Cette expérience façonne une façon unique de comprendre les besoins des PME.',
-    color: 'border-amber-600',
-    bgColor: 'bg-amber-600/10',
-  },
-  {
-    period: '2018–2025',
-    sector: 'Transition Digitale & IA',
-    description: 'Formation intensive au développement web, à l\'IA et à l\'automatisation. Découverte du potentiel des nouvelles technologies pour transformer les acteurs traditionnels. Premiers projets clients, premières réussites mesurables, fondation du savoir-faire de l\'agence.',
-    color: 'border-blue-500',
-    bgColor: 'bg-blue-500/10',
-  },
-  {
-    period: 'Sept. 2025–Présent',
-    sector: 'Maison Siranno',
-    description: 'Création de l\'agence avec une conviction fondatrice : les PME, artisans et entrepreneurs qui font tourner l\'économie réelle méritent les mêmes outils que les grands groupes — avec l\'agilité, la proximité et l\'artisanat en plus.',
-    color: 'border-gold',
-    bgColor: 'bg-gold/10',
-  },
+const valueKeys = ['data_driven', 'custom', 'human', 'roi'] as const;
+
+const partnerEmojis = ['🎨', '📸', '🎬', '🔍', '🖨️', '✍️', '📊', '⚖️'];
+
+const timelineStyles = [
+  { color: 'border-emerald-500', bgColor: 'bg-emerald-500/10' },
+  { color: 'border-amber-600',   bgColor: 'bg-amber-600/10'   },
+  { color: 'border-blue-500',    bgColor: 'bg-blue-500/10'    },
+  { color: 'border-gold',        bgColor: 'bg-gold/10'        },
 ];
 
 export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
+  const { t } = useTranslation();
   useSeo(
     'L\'Agence — Maison Siranno | Yoann DELALOY, expert IA & Web à Châteauneuf-sur-Loire',
     'Découvrez Maison Siranno, agence IA & Web fondée par Yoann DELALOY à Châteauneuf-sur-Loire (45). Notre mission : des résultats mesurables pour les PME grâce à l\'IA et l\'automatisation.',
     'https://maisonsiranno.fr/agence'
   );
+
+  const partners: { label: string; description: string }[] = t('agency_page.partners', { returnObjects: true });
+  const checkpoints: string[] = t('agency_page.expertise_checkpoints', { returnObjects: true });
+  const guarantees: string[] = t('agency_page.cta.guarantees', { returnObjects: true });
+  const timelineTexts: { period: string; sector: string; description: string }[] = t('agency_page.timeline', { returnObjects: true });
+  const timeline = timelineTexts.map((item, i) => ({ ...item, ...timelineStyles[i] }));
+
   return (
     <div className="min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -98,31 +72,31 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
         {/* En-tête */}
         <div className="text-center mb-20">
           <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">
-            Notre histoire & Notre vision
+            {t('agency_page.eyebrow')}
           </span>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-metallic-navy">
-            L'<span className="text-metallic-gold">Agence</span>
+            {t('agency_page.title')}
           </h1>
           <p className="text-steel text-xl max-w-2xl mx-auto leading-relaxed">
-            Un parcours rare entre finance de marché, BTP et excellence digitale. Maison Siranno, c'est l'exigence des marchés financiers, la réalité du terrain, et la précision de l'artisan — au service de votre croissance.
+            {t('agency_page.subtitle')}
           </p>
         </div>
 
         {/* Stats animées */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-24">
-          <AnimatedStat value="+27%" label="Visibilité moyenne" delay={0} />
-          <AnimatedStat value="98%" label="Satisfaction client" delay={150} />
-          <AnimatedStat value="100%" label="Sur-mesure" delay={300} />
+          <AnimatedStat value="+27%" label={t('agency_page.stats.visibility')} delay={0} />
+          <AnimatedStat value="98%" label={t('agency_page.stats.satisfaction')} delay={150} />
+          <AnimatedStat value="100%" label={t('agency_page.stats.custom')} delay={300} />
         </div>
 
         {/* Mon Parcours — Timeline */}
         <div className="mb-24">
           <div className="text-center mb-12">
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">
-              Parcours
+              {t('agency_page.timeline_eyebrow')}
             </span>
             <h2 className="font-serif text-4xl font-bold text-metallic-navy">
-              Finance → BTP → Digital → IA
+              {t('agency_page.timeline_title')}
             </h2>
           </div>
 
@@ -153,21 +127,21 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
         <div className="mb-24">
           <div className="text-center mb-12">
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">
-              Philosophie
+              {t('agency_page.values_eyebrow')}
             </span>
             <h2 className="font-serif text-4xl font-bold text-metallic-navy">
-              Mes Valeurs
+              {t('agency_page.values_title')}
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, i) => (
-              <div key={i} className="glass-card p-6 rounded-2xl text-center group hover:border-gold/30 transition-colors">
+            {valueKeys.map((key, i) => (
+              <div key={key} className="glass-card p-6 rounded-2xl text-center group hover:border-gold/30 transition-colors">
                 <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-4 text-gold group-hover:scale-110 transition-transform">
-                  {value.icon}
+                  {valueIcons[i]}
                 </div>
-                <h4 className="font-serif text-lg font-bold text-charcoal mb-3">{value.title}</h4>
-                <p className="text-steel text-sm leading-relaxed">{value.description}</p>
+                <h4 className="font-serif text-lg font-bold text-charcoal mb-3">{t(`agency_page.values.${key}.title`)}</h4>
+                <p className="text-steel text-sm leading-relaxed">{t(`agency_page.values.${key}.description`)}</p>
               </div>
             ))}
           </div>
@@ -177,24 +151,19 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
           <div>
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">
-              Différence
+              {t('agency_page.expertise_eyebrow')}
             </span>
             <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-6">
-              L'Expertise Métier, un Avantage Concret
+              {t('agency_page.expertise_title')}
             </h2>
             <p className="text-steel text-lg leading-relaxed mb-6">
-              Ancien trader en finance de marché, puis professionnel du BTP et de la logistique, avant de créer Maison Siranno — ce parcours atypique n'est pas un hasard. Il forge une approche unique : data-driven, ROI-obsessée, et profondément ancrée dans les réalités terrain.
+              {t('agency_page.expertise_body_1')}
             </p>
             <p className="text-steel leading-relaxed mb-8">
-              Je sais ce que c'est de prendre des décisions sous pression, de lire des chiffres qui comptent vraiment, de gérer des délais et des équipes. Quand vous me parlez de vos enjeux, je comprends avant même que vous ayez fini votre phrase. C'est cette intelligence de situation qui fait la différence.
+              {t('agency_page.expertise_body_2')}
             </p>
             <div className="space-y-3">
-              {[
-                "Approche data-driven héritée de la finance de marché",
-                "Compréhension immédiate des enjeux métier terrain",
-                "Solutions pensées pour le ROI, pas pour l'esthétique seule",
-                "Un interlocuteur unique, disponible et ROI-obsédé"
-              ].map((item, i) => (
+              {checkpoints.map((item: string, i: number) => (
                 <div key={i} className="flex items-start gap-3">
                   <CheckCircle2 size={18} className="text-safe-green shrink-0 mt-0.5" />
                   <span className="text-charcoal/80">{item}</span>
@@ -217,7 +186,7 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-white font-serif italic text-lg leading-snug">
-                  "La rigueur de la finance, la réalité du terrain, la précision du digital."
+                  "{t('agency_page.expertise_quote')}"
                 </p>
                 <p className="text-gold text-sm mt-2 font-medium">— Yoann DELALOY</p>
               </div>
@@ -233,11 +202,9 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
             </div>
             <div className="text-center md:text-left">
               <div className="font-serif text-2xl font-bold text-charcoal mb-1">Yoann DELALOY</div>
-              <div className="text-metallic-gold-inline font-medium uppercase tracking-wide text-sm mb-4">Fondateur & Lead Architect</div>
+              <div className="text-metallic-gold-inline font-medium uppercase tracking-wide text-sm mb-4">{t('agency_page.founder_role')}</div>
               <p className="text-steel leading-relaxed max-w-2xl">
-                Ancien trader, professionnel du BTP et de la logistique, reconverti dans le développement web et l'IA.
-                Un parcours atypique qui forge une approche unique : data-driven, ROI-obsessée, et profondément humaine.
-                Chaque artisan, commerçant et PME mérite des outils à la hauteur de leur ambition.
+                {t('agency_page.founder_bio')}
               </p>
               <div className="flex items-start gap-2 text-charcoal font-semibold font-serif text-sm mt-4 justify-center md:justify-start">
                 <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
@@ -251,29 +218,20 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
         <div className="mb-24">
           <div className="text-center mb-12">
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">
-              Réseau
+              {t('agency_page.network_eyebrow')}
             </span>
             <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-4">
-              Un Réseau de Partenaires Experts
+              {t('agency_page.network_title')}
             </h2>
             <p className="text-steel text-lg max-w-2xl mx-auto leading-relaxed">
-              Maison Siranno ne travaille pas seule. Pour chaque projet, nous activons le bon partenaire au bon moment — garantissant une expertise pointue à chaque étape, sans jamais compromis sur la qualité.
+              {t('agency_page.network_subtitle')}
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { emoji: '🎨', label: 'Graphiste & Artiste', description: 'Identité visuelle, illustrations, direction artistique sur-mesure' },
-              { emoji: '📸', label: 'Photographe', description: 'Shooting produits, portraits, reportages corporate et événements' },
-              { emoji: '🎬', label: 'Vidéaste & Monteur', description: 'Production vidéo, motion design, réels et formats courts' },
-              { emoji: '🔍', label: 'Expert SEO & SEA', description: 'Référencement naturel, Google Ads, stratégie de visibilité payante' },
-              { emoji: '🖨️', label: 'Imprimerie', description: 'Cartes de visite, flyers, affiches, kakémonos et supports papier' },
-              { emoji: '✍️', label: 'Copywriter', description: 'Rédaction web, storytelling de marque, landing pages qui convertissent' },
-              { emoji: '📊', label: 'Expert Analytics', description: 'Data viz, tableaux de bord, tracking et attribution multi-canal' },
-              { emoji: '⚖️', label: 'Conseil Juridique', description: 'RGPD, CGV, mentions légales, protection des créations numériques' },
-            ].map((partner, i) => (
+            {(Array.isArray(partners) ? partners : []).map((partner, i) => (
               <div key={i} className="glass-card p-5 rounded-2xl group hover:border-gold/30 transition-colors">
-                <div className="text-3xl mb-3">{partner.emoji}</div>
+                <div className="text-3xl mb-3">{partnerEmojis[i]}</div>
                 <h4 className="font-serif text-base font-bold text-charcoal mb-2">{partner.label}</h4>
                 <p className="text-steel text-sm leading-relaxed">{partner.description}</p>
               </div>
@@ -285,16 +243,16 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
         <div className="text-center mb-20">
           <div className="max-w-3xl mx-auto">
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">
-              Vision
+              {t('agency_page.vision_eyebrow')}
             </span>
             <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-6">
-              Pourquoi Maison Siranno ?
+              {t('agency_page.vision_title')}
             </h2>
             <p className="text-steel text-xl leading-relaxed mb-6">
-              Parce que les dirigeants qui font tourner l'économie locale méritent des outils conçus avec la même rigueur que ceux des grandes institutions financières. Sans le prix de Wall Street, avec tout le soin artisanal.
+              {t('agency_page.vision_body_1')}
             </p>
             <p className="text-steel text-lg leading-relaxed">
-              Maison Siranno, c'est l'alliance de la rigueur financière, de l'intelligence terrain et de l'excellence technique. Chaque projet est une investissement — nous nous assurons qu'il en soit un rentable.
+              {t('agency_page.vision_body_2')}
             </p>
           </div>
         </div>
@@ -309,26 +267,26 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
           <div className="relative z-10 px-8 md:px-16 py-14">
             <div className="inline-flex items-center gap-2 text-metallic-gold-inline font-medium uppercase tracking-widest text-sm mb-4">
               <Users size={16} />
-              <span>Passez à l'étape suivante</span>
+              <span>{t('agency_page.cta.eyebrow')}</span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
-              Prêt à bâtir ensemble ?
+              {t('agency_page.cta.title')}
             </h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
+              {t('agency_page.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
               <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl text-base">
                 <Mail size={18} />
-                Envoyer un message
+                {t('agency_page.cta.btn_message')}
               </button>
-              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
+              <a href={CONTACT_CONFIG.phoneHref} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
                 <Phone size={18} />
-                Appeler directement
+                {t('agency_page.cta.btn_call')}
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
-              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+              {(Array.isArray(guarantees) ? guarantees : []).map((g: string) => (
                 <span key={g} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0"></span>
                   {g}

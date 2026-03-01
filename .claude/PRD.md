@@ -1,6 +1,6 @@
 # PRD — Maison Siranno · Refonte Globale
 **Dernière mise à jour :** 2026-02-23
-**Statut global :** 🟡 En cours — 12 / 34 tâches complétées
+**Statut global :** 🟡 En cours — 20 / 42 tâches complétées
 
 ---
 
@@ -95,26 +95,26 @@ SaaS de type ERP personnel ultra-complet :
 ### GROUPE D — Tags hero des pages d'expertise (ServiceDetailPage.tsx)
 | # | Statut | Tâche |
 |---|--------|-------|
-| D1 | ⬜ | **Tags hero Dev Web** — Remplacer par : Claude Code, React, Next.js, TypeScript, CMS, Wordpress, Google AI Studio, full-stack apps |
-| D2 | ⬜ | **Tags hero Contenu & Marketing** — Remplacer par : NanoBana Pro, NotebookLM, Google AI Studio, Claude Code, Kling AI |
-| D3 | ⬜ | **Tags hero IA & RAG** — Remplacer par : ChatGPT, Claude, Gemini, Supabase, Pinecone, RAG, PostgreSQL |
-| D4 | ⬜ | **Tags hero Conseil & Formation** — Remplacer par : IA, Google Workspace, Cloud, Automatisation, Graphisme, Marque |
-| D5 | ⬜ | **Tags hero Pilotage Continu** — Remplacer par : Maintenance, Mises à jour, Datalog, Analytique, Monitoring |
-| D6 | ⬜ | **Tags hero : effet gold métallique au survol** — Les tags deviennent gold métallique au hover (toutes pages expertise) |
+| D1 | ✅ | **Tags hero Dev Web** — Remplacer par : Claude Code, React, Next.js, TypeScript, CMS, Wordpress, Google AI Studio, full-stack apps |
+| D2 | ✅ | **Tags hero Contenu & Marketing** — Remplacer par : NanoBana Pro, NotebookLM, Google AI Studio, Claude Code, Kling AI |
+| D3 | ✅ | **Tags hero IA & RAG** — Remplacer par : ChatGPT, Claude, Gemini, Supabase, Pinecone, RAG, PostgreSQL |
+| D4 | ✅ | **Tags hero Conseil & Formation** — Remplacer par : IA, Google Workspace, Cloud, Automatisation, Graphisme, Marque |
+| D5 | ✅ | **Tags hero Pilotage Continu** — Remplacer par : Maintenance, Mises à jour, Datalog, Analytique, Monitoring |
+| D6 | ✅ | **Tags hero : effet gold métallique au survol** — Les tags deviennent gold métallique au hover (toutes pages expertise) |
 
 ### GROUPE E — UI des pages d'expertise (ServiceDetailPage.tsx)
 | # | Statut | Tâche |
 |---|--------|-------|
-| E1 | ⬜ | **Carte "Bénéfices concrets" : titre argent métallique** — Appliquer `.text-metallic-silver` ou équivalent sur le titre H3 de cette carte |
-| E2 | ⬜ | **Section CTA expertise : titre argent métallique** — Appliquer style argent métallique sur le titre du bloc CTA en bas de page |
+| E1 | ✅ | **Carte "Bénéfices concrets" : titre argent métallique** — Appliquer `.text-metallic-silver` ou équivalent sur le titre H3 de cette carte |
+| E2 | ✅ | **Section CTA expertise : titre argent métallique** — Appliquer style argent métallique sur le titre du bloc CTA en bas de page |
 | E3 | ✅ | **Section Méthode : curseur gold-rouge sur cartes d'étape** — `data-cursor-hover` sur ProcessStepCard (ServiceDetailPage.tsx) |
-| E4 | ⬜ | **Témoignages expertise : bouton vers la réalisation liée** — Ajouter bouton gold métallique "Voir la réalisation" sur chaque témoignage |
-| E5 | ⬜ | **Pages expertise : icône hero = icône d'expertise dédiée** — Remplacer l'icône Lucide par l'image PNG d'expertise correspondante |
+| E4 | ✅ | **Témoignages expertise : bouton vers la réalisation liée** — Ajouter bouton gold métallique "Voir la réalisation" sur chaque témoignage |
+| E5 | ✅ | **Pages expertise : icône hero = icône d'expertise dédiée** — Remplacer l'icône Lucide par l'image PNG d'expertise correspondante |
 
 ### GROUPE F — Page d'accueil / ExpertisePage — carte Dev Web
 | # | Statut | Tâche |
 |---|--------|-------|
-| F1 | ⬜ | **Carte expertise Dev Web (accueil + page expertise)** — Reformuler description pour valoriser proximité, savoir-faire, sans mention "vibe coding" ni outils concurrents |
+| F1 | ✅ | **Carte expertise Dev Web (accueil + page expertise)** — Reformuler description pour valoriser proximité, savoir-faire, sans mention "vibe coding" ni outils concurrents |
 
 ### GROUPE G — Page Réalisations (ProjectsPage.tsx)
 | # | Statut | Tâche |
@@ -157,32 +157,46 @@ SaaS de type ERP personnel ultra-complet :
 | L3 | ✅ | **Étape 3 : Blog Article CTA** — Traduire "première consultation gratuite..." (1x EN, 1x ES) |
 | L4 | ✅ | **Étape 4 : Réalisations dédiées** — Traduire le bouton "Lire l'étude de cas" (1x EN, 1x ES) |
 | L5 | ✅ | **Étape 5 : Accueil Réalisation Center Peek** — Traduire "Réalisé par", "Les défis", "Les résultats", "un projet similaire", "en savoir plus", "Démarrer mon projet" (1x EN, 1x ES) |
-| L6 | ⬜ | **Étape 6 : Expertise CTA** — Traduire les 4 points ("reponse sous 24h", "Sans engagement", etc.) (1x EN, 1x ES) |
-| L7 | ⬜ | **Étape 7 : Blog CTA** — Traduire les 4 points ("reponse sous 24h", "Sans engagement", etc.) (1x EN, 1x ES) |
-| L8 | ⬜ | **Étape 8 : Blog CTA (FR)** — Traduire les 4 points ("reponse sous 24h", "Sans engagement", etc.) (1x EN, 1x ES) |
-| L9 | ⬜ | **Étape 9 : Accueil Réalisations Titre** — Traduire "l'excellence en action" et "nos réalisations" (1x EN, 1x ES) |
-| L10 | ⬜ | **Étape 10 : Accueil ADN** — Traduire toute la section ADN de l'agence (1x EN, 1x ES) |
-| L11 | ⬜ | **Étape 11 : Accueil Expertise Titre** — Traduire "L'IA et le web..." et la phrase d'accroche (1x EN, 1x ES) |
-| L12 | ⬜ | **Étape 12 : Accueil Contact** — Traduire toute la section ("Parlons de votre Futur") (1x EN, 1x ES) |
-| L13 | ⬜ | **Étape 13 : Accueil Témoignage** — Traduire "Ils nous font confiance" et la phrase d'accroche (1x EN, 1x ES) |
+| L6 | ✅ | **Étape 6 : Expertise CTA** — Traduire les 4 points ("reponse sous 24h", "Sans engagement", etc.) (1x EN, 1x ES) |
+| L7 | ✅ | **Étape 7 : Blog CTA** — Traduire les 4 points ("reponse sous 24h", "Sans engagement", etc.) (1x EN, 1x ES) |
+| L8 | ✅ | **Étape 8 : Blog CTA (FR)** — Traduire les 4 points ("reponse sous 24h", "Sans engagement", etc.) (1x EN, 1x ES) |
+| L9 | ✅ | **Étape 9 : Accueil Réalisations Titre** — Traduire "l'excellence en action" et "nos réalisations" (1x EN, 1x ES) |
+| L10 | ✅ | **Étape 10 : Accueil ADN** — Traduire toute la section ADN de l'agence (1x EN, 1x ES) |
+| L11 | ✅ | **Étape 11 : Accueil Expertise Titre** — Traduire "L'IA et le web..." et la phrase d'accroche (1x EN, 1x ES) |
+| L12 | ✅ | **Étape 12 : Accueil Contact** — Traduire toute la section ("Parlons de votre Futur") (1x EN, 1x ES) |
+| L13 | ✅ | **Étape 13 : Accueil Témoignage** — Traduire "Ils nous font confiance" et la phrase d'accroche (1x EN, 1x ES) |
 | L14 | ✅ | **Étape 14 : Réalisation dédiée Témoignage** — Traduire "réalisé par", "année", "Github du projet" (1x EN, 1x ES) |
-| L15 | ⬜ | **Étape 15 : Expertise dédiée Ce que nous réalisons** — Traduire "ce que nous réalisons", "bénéfices concrets", "cas d'usage typiques", "un projet en tête ?", "première consultation...", "discutons-en" (1x EN, 1x ES) |
-| L16 | ⬜ | **Étape 16 : Expertise dédiée CTA** — Traduire "première consultation..." et les 4 points (1x EN, 1x ES) |
-| L17 | ⬜ | **Étape 17 : Expertise FAQ** — Traduire "Question fréquente" et "Tout ce que vous voulez savoir" (1x EN, 1x ES) |
-| L18 | ⬜ | **Étape 18 : Expertise dédiée Hero** — Traduire "Expertise Détaillée" (1x EN, 1x ES) |
-| L19 | ⬜ | **Étape 19 : Expertise dédiée Ils nous font confiance** — Traduire la section entière et le bouton témoignage (1x EN, 1x ES) |
-| L20 | ⬜ | **Étape 20 : Expertise dédiée Méthode** — Traduire "méthode" et "Notre approche en 7 étapes" (1x EN, 1x ES) |
-| L21 | ⬜ | **Étape 21 : Réalisation dédié expertise CTA** — Traduire toute la section (1x EN, 1x ES) |
-| L22 | ⬜ | **Étape 22 : Réalisation dédié expertise Hero** — Traduire "réalisation", le titre et la phrase d'accroche (1x EN, 1x ES) |
-| L23 | ⬜ | **Étape 23 : Réalisation dédié CTA Accroche** — Traduire "première consultation..." et les 4 points (1x EN, 1x ES) |
-| L24 | ⬜ | **Étape 24 : Réalisation CTA** — Traduire les 4 points (1x EN, 1x ES) |
-| L25 | ⬜ | **Étape 25 : Réalisations Catégorie 1** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
-| L26 | ⬜ | **Étape 26 : Réalisations Catégorie 2** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
-| L27 | ⬜ | **Étape 27 : Réalisations Catégorie 3** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
-| L28 | ⬜ | **Étape 28 : Réalisations Catégorie 4** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
-| L29 | ⬜ | **Étape 29 : Accueil Hero** — Traduire le grand titre d'accroche et le sous-titre (1x EN, 1x ES) |
-| L30 | ⬜ | **Étape 30 : Refactoring & Review globale** — Vérifier la cohérence FR/EN/ES globale (1x EN, 1x ES) |
+| L15 | ✅ | **Étape 15 : Expertise dédiée Ce que nous réalisons** — Traduire "ce que nous réalisons", "bénéfices concrets", "cas d'usage typiques", "un projet en tête ?", "première consultation...", "discutons-en" (1x EN, 1x ES) |
+| L16 | ✅ | **Étape 16 : Expertise dédiée CTA** — Traduire "première consultation..." et les 4 points (1x EN, 1x ES) |
+| L17 | ✅ | **Étape 17 : Expertise FAQ** — Traduire "Question fréquente" et "Tout ce que vous voulez savoir" (1x EN, 1x ES) |
+| L18 | ✅ | **Étape 18 : Expertise dédiée Hero** — Traduire "Expertise Détaillée" (1x EN, 1x ES) |
+| L19 | ✅ | **Étape 19 : Expertise dédiée Ils nous font confiance** — Traduire la section entière et le bouton témoignage (1x EN, 1x ES) |
+| L20 | ✅ | **Étape 20 : Expertise dédiée Méthode** — Traduire "méthode" et "Notre approche en 7 étapes" (1x EN, 1x ES) |
+| L21 | ✅ | **Étape 21 : Réalisation dédié expertise CTA** — Traduire toute la section (1x EN, 1x ES) |
+| L22 | ✅ | **Étape 22 : Réalisation dédié expertise Hero** — Traduire "réalisation", le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L23 | ✅ | **Étape 23 : Réalisation dédié CTA Accroche** — Traduire "première consultation..." et les 4 points (1x EN, 1x ES) |
+| L24 | ✅ | **Étape 24 : Réalisation CTA** — Traduire les 4 points (1x EN, 1x ES) |
+| L25 | ✅ | **Étape 25 : Réalisations Catégorie 1** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L26 | ✅ | **Étape 26 : Réalisations Catégorie 2** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L27 | ✅ | **Étape 27 : Réalisations Catégorie 3** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L28 | ✅ | **Étape 28 : Réalisations Catégorie 4** — Traduire le titre et la phrase d'accroche (1x EN, 1x ES) |
+| L29 | ✅ | **Étape 29 : Accueil Hero** — Traduire le grand titre d'accroche et le sous-titre (1x EN, 1x ES) |
+| L30 | ✅ | **Étape 30 : Refactoring & Review globale** — Vérifier la cohérence FR/EN/ES globale (1x EN, 1x ES) |
 
+### GROUPE M — Traductions manquantes — Lot 2 (EN & ES)
+> **Contexte** : Éléments identifiés sur captures d'écran comme encore non traduits après le groupe L.
+> **Règle** : Chaque étape = 2 tâches (1x EN + 1x ES). 4 étapes = 8 tâches.
+
+| # | Statut | Tâche |
+|---|--------|-------|
+| M1 | ✅ | **Étape 1 EN — Expertise "Cas d'usage typiques"** — Ajouter clé `service_detail.typical_use_title` dans `en.json` ("Typical use cases") et brancher `t()` dans `ServiceDetailPage.tsx:651` |
+| M2 | ✅ | **Étape 1 ES — Expertise "Cas d'usage typiques"** — Ajouter clé `service_detail.typical_use_title` dans `es.json` ("Casos de uso típicos") |
+| M3 | ✅ | **Étape 2 EN — Agence Parcours Timeline** — Déplacer les 4 cartes du tableau `timeline` (AgencyPage.tsx) vers `agency_page.timeline` dans `en.json` (period, sector, description traduits en anglais) et brancher `t(..., { returnObjects: true })` dans le composant |
+| M4 | ✅ | **Étape 2 ES — Agence Parcours Timeline** — Ajouter `agency_page.timeline` dans `es.json` avec les 4 cartes traduites en espagnol |
+| M5 | ✅ | **Étape 3 EN — Agence Parcours Timeline (fr.json)** — Ajouter `agency_page.timeline` dans `fr.json` pour uniformiser la source (même structure que EN/ES, textes déjà en FR) |
+| M6 | ✅ | **Étape 3 ES — Agence Parcours Timeline vérification** — Vérifier le rendu en ES sur la page Agence (section Parcours) et corriger si nécessaire |
+| M7 | ✅ | **Étape 4 EN — Revue globale des textes hardcodés** — "Bénéfices concrets", "Voir les détails", aria-labels (Fermer/Précédent/Suivant/Témoignage) migrés en `t()` dans `ServiceDetailPage.tsx` |
+| M8 | ✅ | **Étape 4 ES — Revue globale des textes hardcodés** — Clés ES ajoutées : "Beneficios concretos", "Ver detalles", "Cerrar", "Anterior", "Siguiente", "Testimonio {n}" |
 ---
 
 ## Ordre d'exécution recommandé

@@ -72,7 +72,7 @@ const StepModal: React.FC<StepModalProps> = ({ step, index, onClose }) => {
           onClick={onClose}
           className="absolute top-4 right-4 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-200 hover:border-gold/60 hover:text-gold hover:bg-gold/10 z-20"
           style={{ borderColor: 'rgba(212,175,55,0.3)', color: 'rgba(255,255,255,0.45)' }}
-          aria-label="Fermer"
+          aria-label={t('service_detail.close')}
         >
           <X size={14} />
         </button>
@@ -177,6 +177,7 @@ interface ProcessStepCardProps {
 }
 
 const ProcessStepCard: React.FC<ProcessStepCardProps> = ({ step, index, activated, cardRef, zIndex, onClick }) => {
+  const { t } = useTranslation();
   const [hovered, setHovered] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
@@ -258,7 +259,7 @@ const ProcessStepCard: React.FC<ProcessStepCardProps> = ({ step, index, activate
         <div className="flex items-center gap-1.5 mt-4 pl-11 transition-opacity duration-300"
           style={{ opacity: hovered ? 1 : 0.45 }}
         >
-          <span className="text-[11px] font-medium" style={{ color: '#B68D40' }}>Voir les détails</span>
+          <span className="text-[11px] font-medium" style={{ color: '#B68D40' }}>{t('service_detail.view_details')}</span>
           <ChevronRight size={11} style={{ color: '#B68D40' }} />
         </div>
       </div>
@@ -337,6 +338,7 @@ interface TestimonialSliderProps {
 }
 
 const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onViewProject }) => {
+  const { t } = useTranslation();
   const { projects, allTestimonials } = useLocalizedData();
   // Récupérer les IDs de projets liés à cette expertise
   const linkedProjectIds = projects
@@ -344,7 +346,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
     .map(p => p.id);
 
   // Filtrer les témoignages dont le projectId correspond
-  const testimonials = allTestimonials.filter(t => linkedProjectIds.includes(t.projectId));
+  const testimonials = allTestimonials.filter(tm => linkedProjectIds.includes(tm.projectId));
 
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -359,7 +361,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
 
   if (testimonials.length === 0) return null;
 
-  const t = testimonials[current];
+  const testimonial = testimonials[current];
 
   return (
     <div
@@ -393,26 +395,26 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
         <Quote size={28} className="text-gold/20 mb-3" />
 
         <blockquote className="font-serif text-base md:text-lg text-white/90 leading-relaxed mb-6">
-          "{t.content}"
+          "{testimonial.content}"
         </blockquote>
 
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div className="flex items-center gap-3">
             <img
-              src={t.image}
-              alt={t.name}
+              src={testimonial.image}
+              alt={testimonial.name}
               className="w-10 h-10 rounded-full object-cover border-2 shrink-0"
               style={{ borderColor: 'rgba(212,175,55,0.4)' }}
             />
             <div>
-              <p className="font-semibold text-white text-sm">{t.name}</p>
-              <p className="text-gray-400 text-xs">{t.role} · {t.company}</p>
+              <p className="font-semibold text-white text-sm">{testimonial.name}</p>
+              <p className="text-gray-400 text-xs">{testimonial.role} · {testimonial.company}</p>
             </div>
           </div>
-          {onViewProject && t.projectId && (
+          {onViewProject && testimonial.projectId && (
             <button
               data-cursor-hover
-              onClick={() => onViewProject(t.projectId)}
+              onClick={() => onViewProject(testimonial.projectId)}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:brightness-110 hover:scale-105 shrink-0"
               style={{
                 background: 'linear-gradient(135deg, #C8A84B 0%, #F5D78E 35%, #D4AF37 55%, #B8860B 80%, #C8A84B 100%)',
@@ -421,7 +423,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
               }}
             >
               <ArrowRight size={13} />
-              Voir la réalisation
+              {t('service_detail.view_project_btn')}
             </button>
           )}
         </div>
@@ -444,7 +446,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
                     : 'rgba(212,175,55,0.28)',
                   boxShadow: i === current ? '0 0 6px rgba(212,175,55,0.5)' : 'none',
                 }}
-                aria-label={`Témoignage ${i + 1}`}
+                aria-label={t('service_detail.testimonial_aria').replace('{n}', String(i + 1))}
               />
             ))}
           </div>
@@ -459,7 +461,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
                 color: '#3D2800',
                 boxShadow: '0 2px 8px rgba(184,134,11,0.45), inset 0 1px 0 rgba(255,255,255,0.3)',
               }}
-              aria-label="Précédent"
+              aria-label={t('service_detail.prev')}
             >
               <ChevronLeft size={17} strokeWidth={2.5} />
             </button>
@@ -471,7 +473,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
                 color: '#3D2800',
                 boxShadow: '0 2px 8px rgba(184,134,11,0.45), inset 0 1px 0 rgba(255,255,255,0.3)',
               }}
-              aria-label="Suivant"
+              aria-label={t('service_detail.next')}
             >
               <ChevronRight size={17} strokeWidth={2.5} />
             </button>
@@ -540,7 +542,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
               </div>
             </div>
           )}
-          <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-6 block">Expertise détaillée</span>
+          <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-6 block">{t('expertise_page.hero_eyebrow')}</span>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-metallic-silver leading-tight max-w-lg md:max-w-xl mx-auto mb-8">
             {service.title}
           </h1>
@@ -588,8 +590,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
 
         {/* Texte d'accroche */}
         <div className="mb-12 max-w-3xl">
-          <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">Ce que nous réalisons</span>
-          <h2 className="font-serif text-3xl font-bold text-metallic-navy mb-4">Une solution pensée pour vous</h2>
+          <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">{t('service_detail.realizations_eyebrow')}</span>
+          <h2 className="font-serif text-3xl font-bold text-metallic-navy mb-4">{t('service_detail.solution_title')}</h2>
           <p className="text-steel text-lg leading-relaxed">{service.description}</p>
         </div>
 
@@ -618,7 +620,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
                 <div className="p-2.5 rounded-lg border" style={{ background: 'rgba(212,175,55,0.12)', borderColor: 'rgba(212,175,55,0.3)' }}>
                   <CheckCircle2 size={18} className="text-gold" />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-metallic-silver" style={{ textShadow: '0 1px 8px rgba(100,160,255,0.3)' }}>Bénéfices concrets</h3>
+                <h3 className="font-serif text-lg font-bold text-metallic-silver" style={{ textShadow: '0 1px 8px rgba(100,160,255,0.3)' }}>{t('service_detail.concrete_benefits_title')}</h3>
               </div>
               <ul className="space-y-4">
                 {service.benefits.map((benefit, i) => (
@@ -647,7 +649,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
                 <div className="p-2.5 bg-[#1E3A5F]/10 rounded-lg border border-[#1E3A5F]/15">
                   <Lightbulb size={18} className="text-[#1E3A5F]" />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-[#1E3A5F]">Cas d'usage typiques</h3>
+                <h3 className="font-serif text-lg font-bold text-[#1E3A5F]">{t('service_detail.typical_use_title')}</h3>
               </div>
               <ul className="space-y-3">
                 {service.useCases.map((uc, i) => (
@@ -667,20 +669,20 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
           style={{ borderColor: 'rgba(212,175,55,0.2)', background: 'rgba(212,175,55,0.04)' }}
         >
           <div>
-            <p className="font-serif font-bold text-[#1E3A5F] text-lg mb-1">Un projet en tête ?</p>
-            <p className="text-steel text-sm">Première consultation gratuite — réponse sous 24h.</p>
+            <p className="font-serif font-bold text-[#1E3A5F] text-lg mb-1">{t('service_detail.mid_cta_title')}</p>
+            <p className="text-steel text-sm">{t('service_detail.mid_cta_subtitle')}</p>
           </div>
           <button onClick={onGoToContact} className="shrink-0 inline-flex items-center gap-2 px-6 py-3 btn-metallic-gold rounded-full font-semibold shadow-lg text-sm">
-            Discutons-en <ArrowRight size={16} />
+            {t('service_detail.mid_cta_btn')} <ArrowRight size={16} />
           </button>
         </div>
 
         {/* Notre approche */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">Méthode</span>
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">{t('service_detail.method_eyebrow')}</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy">
-              Notre approche en {service.processSteps.length} étapes
+              {t('service_detail.method_title', { n: String(service.processSteps.length) })}
             </h2>
           </div>
           <ProcessStepsSection steps={service.processSteps} />
@@ -693,24 +695,20 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
             {/* Colonne gauche — texte éditorial */}
             <div>
               <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">
-                Ils nous ont fait confiance
+                {t('service_detail.trust_eyebrow')}
               </span>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy mb-6">
-                Des résultats qui parlent d'eux-mêmes
+                {t('service_detail.trust_title')}
               </h2>
               <p className="text-steel text-lg leading-relaxed mb-6">
-                Derrière chaque mission, il y a une histoire. Celle d'un dirigeant ou d'un entrepreneur qui a osé franchir le pas — et qui en récolte aujourd'hui les fruits.
+                {t('service_detail.trust_body_1')}
               </p>
               <p className="text-steel leading-relaxed mb-8">
-                Nous ne promettons pas des résultats génériques. Chaque client repart avec une solution taillée sur mesure, une équipe formée et des indicateurs mesurables. Pas de discours, des faits.
+                {t('service_detail.trust_body_2')}
               </p>
               {/* Engagements */}
               <ul className="space-y-3">
-                {[
-                  'Suivi post-livraison inclus dans chaque mission',
-                  'Résultats mesurables définis avant le démarrage',
-                  'Un interlocuteur unique, du brief au lancement',
-                ].map((item, i) => (
+                {(t('service_detail.trust_points', { returnObjects: true }) as string[]).map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold shrink-0"></span>
                     <span className="text-steel text-sm leading-relaxed">{item}</span>
@@ -730,8 +728,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
         {/* FAQ */}
         <div className="mb-20">
           <div className="text-center mb-10">
-            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">Questions fréquentes</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy">Tout ce que vous voulez savoir</h2>
+            <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">{t('service_detail.faq_eyebrow')}</span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy">{t('service_detail.faq_title')}</h2>
           </div>
           <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden px-6 md:px-10 py-2 relative" style={lightTextureStyle}>
             <div className="absolute top-0 left-0 bottom-0 w-10 pointer-events-none"
@@ -754,7 +752,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
               <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">{t('expertise_page.cta.eyebrow')}</span>
               <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-metallic-silver">{t('expertise_page.cta.title')}</h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche pour atteindre vos objectifs.
+                {t('expertise_page.cta.subtitle')}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -768,7 +766,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
-              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+              {t('expertise_page.cta.guarantees', { returnObjects: true }).map((g: string) => (
                 <span key={g} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0"></span>
                   {g}

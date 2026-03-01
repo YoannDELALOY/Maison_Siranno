@@ -18,7 +18,7 @@
     "badge": "Agencia IA & Web — Valle del Loira, Francia",
     "title_line1": "El Arte de Realzar",
     "title_line2": "su Saber Hacer",
-    "subtitle": "Porque su negocio es único, su estrategia digital también debe serlo. Diseñamos su ecosistema web a medida para",
+    "subtitle": "Porque su negocio is único, su estrategia digital también debe serlo. Diseñamos su ecosistema web a medida para",
     "subtitle_strong": "transformar su visión en resultados concretos",
     "cta_primary": "Hablar de su proyecto",
     "card_status": "En línea",
@@ -29,7 +29,8 @@
   },
   "services": {
     "eyebrow": "6 Áreas de Expertise",
-    "title": "La IA y la web al servicio de su crecimiento",
+    "title_line1": "La IA y la web al",
+    "title_line2": "servicio de su crecimiento",
     "subtitle": "Combinamos desarrollo web premium, automatización inteligente e IA de vanguardia para transformar su empresa de forma duradera.",
     "card_cta": "Saber más",
     "aria": {
@@ -56,7 +57,15 @@
     "chart_satisfaction_label": "Satisfacción del cliente",
     "chart_satisfaction_value": "98% satisfechos",
     "badge_value": "100%",
-    "badge_label": "A medida"
+    "badge_label": "A medida",
+    "chart_data": {
+      "websites": "Sitios Web",
+      "ai": "IA & Chatbots",
+      "automation": "Automatización",
+      "tools": "Herramientas de Negocio",
+      "strategy": "Estrategia",
+      "data": "Datos"
+    }
   },
   "testimonials": {
     "eyebrow": "Testimonios",
@@ -92,12 +101,12 @@
     "submitting": "Enviando...",
     "success_title": "¡Mensaje enviado!",
     "success_body": "Le responderé a la mayor brevedad posible.",
-    "success_again": "Enviar otro mensaje",
+    "success_again": "Enviar otro message",
     "error_body": "Ha ocurrido un error. Por favor, escríbame directamente a",
     "call_instead": "O llame directamente:"
   },
   "footer": {
-    "tagline": "Agencia digital en el Valle del Loira, Francia.\nCreación de sitios web, IA y automatización\npara PYMEs y artesanos.",
+    "tagline": "Agencia digital en el Valle del Loira, Francia.\nCreación de sitios web, IA et automatización\npara PYMEs y artesanos.",
     "col_expertise": "Expertise",
     "col_contact": "Contacto",
     "copyright": "© {year} Yoann Delaloy — Maison Siranno. Todos los derechos reservados.",
@@ -107,6 +116,7 @@
   },
   "expertise_page": {
     "eyebrow": "Saber hacer & Tecnologías",
+    "hero_eyebrow": "Experiencia detallada",
     "title": "Nuestra Expertise",
     "subtitle": "Seis áreas de expertise complementarias — web, automatización, IA, marketing, consultoría & formación, seguimiento continuo — al servicio de las empresas ambiciosas del Valle del Loira y más allá. Cada servicio está diseñado a medida, sin concesiones.",
     "service_label": "Servicio #{n}",
@@ -138,16 +148,24 @@
       "guarantees": ["Respuesta en 24h", "Sin compromiso", "Consulta gratuita", "Presupuesto en 48h"]
     }
   },
+  "home_projects": {
+    "eyebrow": "Nuestros Proyectos",
+    "title_line1": "La Excelencia en",
+    "title_line2": "Acción",
+    "card_view_site": "Ver sitio",
+    "card_private_site": "Sitio privado",
+    "swipe_hint": "Deslice para ver todos los proyectos"
+  },
   "blog_page": {
     "eyebrow": "Blog & Reflexiones",
     "title": "Nuestros Artículos",
-    "subtitle": "Retornos de experiencia, consejos prácticos y reflexiones sobre lo digital, la IA y la automatización para empresas ambiciosas.",
+    "subtitle": "Retornos de experiencia, consejos prácticos y réflexiones sobre lo digital, la IA y la automatización para empresas ambiciosas.",
     "coming_soon_title": "Próximamente",
     "featured_title": "Leer ahora",
     "by_expertise_label": "Por expertise",
     "badge_soon": "Próximamente",
     "read_time": "{time} de lectura",
-    "article_count": "({n} artículos)",
+    "article_count": "({n} articles)",
     "cta": {
       "eyebrow": "Dé el siguiente paso",
       "title": "Su proyecto merece ser contado",
@@ -158,9 +176,9 @@
     }
   },
   "agency_page": {
-    "eyebrow": "Nuestra historia & Nuestra visión",
+    "eyebrow": "Nuestra historia & Nuestra vision",
     "title": "La Agencia",
-    "subtitle": "Un recorrido singular entre los mercados financieros, la construcción y la excelencia digital. Maison Siranno encarna el rigor de los mercados financieros, la realidad del terreno y la precisión del artesano — al servicio de su crecimiento.",
+    "subtitle": "Un recorrido singular entre los marchés financieros, la construcción y la excelencia digital. Maison Siranno encarna el rigor de los mercados financieros, la realidad del terreno et la précision du artesano — al servicio de su crecimiento.",
     "stats": {
       "visibility": "Visibilidad media",
       "satisfaction": "Satisfacción del cliente",
@@ -168,6 +186,28 @@
     },
     "timeline_eyebrow": "Trayectoria",
     "timeline_title": "Finanzas → Construcción → Digital → IA",
+    "timeline": [
+      {
+        "period": "2012–Presente",
+        "sector": "Mercados Financieros & Trading",
+        "description": "Trader en mercados financieros — una escuela de rigor absoluto, gestión del riesgo y lectura de datos en tiempo real. Esta experiencia forja un enfoque radicalmente data-driven y obsesionado con el ROI que sigue alimentando cada decisión de la agencia hoy en día."
+      },
+      {
+        "period": "2010–2024",
+        "sector": "Construcción, Logística & Terreno",
+        "description": "Inmersión total en la construcción y la cadena de suministro. Comprensión profunda de los retos sobre el terreno — plazos de obra, gestión de equipos, realidad operacional. Esta experiencia forja una forma única de entender las necesidades de las pymes."
+      },
+      {
+        "period": "2018–2025",
+        "sector": "Transición Digital & IA",
+        "description": "Formación intensiva en desarrollo web, IA y automatización. Descubrimiento del potencial de las nuevas tecnologías para transformar los actores tradicionales. Primeros proyectos con clientes, primeros éxitos medibles, fundación del saber hacer de la agencia."
+      },
+      {
+        "period": "Sept. 2025–Presente",
+        "sector": "Maison Siranno",
+        "description": "Creación de la agencia con una convicción fundadora: las pymes, artesanos y emprendedores que hacen funcionar la economía real merecen las mismas herramientas que los grandes grupos — con más agilidad, proximidad y artesanía."
+      }
+    ],
     "values_eyebrow": "Filosofía",
     "values_title": "Nuestros Valores",
     "values": {
@@ -190,20 +230,20 @@
     },
     "expertise_eyebrow": "Lo que nos diferencia",
     "expertise_title": "La Expertise Sectorial, una Ventaja Concreta",
-    "expertise_body_1": "Antiguo trader en mercados financieros, luego profesional de la construcción y la logística, antes de fundar Maison Siranno — este recorrido atípico no es casualidad. Forja un enfoque único: basado en datos, obsesionado con el ROI y profundamente arraigado en las realidades operativas.",
+    "expertise_body_1": "Antiguo trader en mercados financieros, luego profesional de la construcción et la logística, antes de fundar Maison Siranno — este recorrido atípico no es casualidad. Forja un enfoque único: basado en datos, obsesionado con el ROI y profundamente arraigado en las realidades operativas.",
     "expertise_body_2": "Sé lo que es tomar decisiones bajo presión, leer cifras que importan de verdad, gestionar plazos y equipos. Cuando me habla de sus retos, los entiendo antes de que termine de hablar. Es esta inteligencia situacional la que marca la diferencia.",
     "expertise_checkpoints": [
-      "Enfoque basado en datos, heredado de los mercados financieros",
+      "Enfoque basado en datos, heredado de los marchés financieros",
       "Comprensión inmediata de los retos empresariales del terreno",
       "Soluciones pensadas para el ROI, no solo para la estética",
       "Un único interlocutor, disponible y obsesionado con el ROI"
     ],
     "expertise_quote": "El rigor de las finanzas, la realidad del terreno, la precisión de lo digital.",
     "founder_role": "Fundador & Arquitecto Principal",
-    "founder_bio": "Antiguo trader, profesional de la construcción y la logística, reconvertido en desarrollador web y especialista en IA. Un recorrido atípico que forja un enfoque único: basado en datos, obsesionado con el ROI y profundamente humano. Cada artesano, comerciante y PYME merece herramientas a la altura de su ambición.",
+    "founder_bio": "Antiguo trader, profesional de la construcción et la logística, reconverti en développeur web et spécialiste en IA. Un recorrido atípico que forja un enfoque único: basado en datos, obsesionado con le ROI et profondément humano. Cada artesano, comerciante y PYME merece herramientas a la altura de su ambición.",
     "network_eyebrow": "Red",
     "network_title": "Una Red de Socios Expertos",
-    "network_subtitle": "Maison Siranno no trabaja sola. Para cada proyecto, activamos al socio adecuado en el momento oportuno — garantizando una expertise precisa en cada etapa, sin nunca comprometer la calidad.",
+    "network_subtitle": "Maison Siranno no trabaja sola. Para cada proyecto, activamos al socio adecuado en el momento oportuno — garantizando una expertise précise en cada etapa, sin nunca comprometer la qualité.",
     "partners": [
       { "label": "Diseñador Gráfico & Artista", "description": "Identidad visual, ilustraciones, dirección artística a medida" },
       { "label": "Fotógrafo", "description": "Fotografía de producto, retratos, reportajes corporativos y eventos" },
@@ -211,19 +251,19 @@
       { "label": "Experto SEO & SEA", "description": "Posicionamiento orgánico, Google Ads, estrategia de visibilidad de pago" },
       { "label": "Imprenta", "description": "Tarjetas de visita, flyers, carteles, roll-ups y soportes impresos" },
       { "label": "Copywriter", "description": "Redacción web, storytelling de marca, landing pages que convierten" },
-      { "label": "Experto en Analytics", "description": "Visualización de datos, dashboards, tracking y atribución multicanal" },
+      { "label": "Experto en Analytics", "description": "Visualización de datos, dashboards, tracking et atribución multicanal" },
       { "label": "Asesoría Jurídica", "description": "RGPD, condiciones generales, aviso legal, protección de creaciones digitales" }
     ],
     "vision_eyebrow": "Visión",
     "vision_title": "¿Por qué Maison Siranno?",
     "vision_body_1": "Porque los empresarios que hacen funcionar la economía local merecen herramientas concebidas con el mismo rigor que las de las grandes instituciones financieras. Sin el precio de Wall Street, con todo el cuidado artesanal.",
-    "vision_body_2": "Maison Siranno es la alianza del rigor financiero, la inteligencia operativa y la excelencia técnica. Cada proyecto es una inversión — nos aseguramos de que sea rentable.",
+    "vision_body_2": "Maison Siranno is the alliance del rigor financiero, la inteligencia operativa et la excelencia técnica. Cada proyecto es una inversión — nos aseguramos de que sea rentable.",
     "cta": {
       "eyebrow": "Dé el siguiente paso",
       "title": "¿Listo para construir juntos?",
       "subtitle": "Primera consulta gratuita. En 30 minutos, analizamos su situación y definimos juntos el mejor enfoque para alcanzar sus objetivos.",
       "btn_message": "Enviar un mensaje",
-      "btn_call": "Llamar directamente",
+      "btn_call": "Llamar directement",
       "guarantees": ["Respuesta en 24h", "Sin compromiso", "Consulta gratuita", "Presupuesto en 48h"]
     }
   },
@@ -257,26 +297,26 @@
       "3_address_val": "61 Lordou Vironos Street, 6023 Larnaca, Chipre",
       "3_website": "Sitio web:",
       "4_title": "4. Propiedad intelectual",
-      "4_body": "Todo el contenido de este sitio web (textos, imágenes, gráficos, logotipos, iconos, sonidos, software, etc.) es propiedad exclusiva de Yoann DELALOY — Maison Siranno, salvo indicación contraria. Queda estrictamente prohibida toda reproducción, distribución, modificación, adaptación, retransmisión o publicación, incluso parcial, de dichos elementos sin el acuerdo expreso por escrito de Maison Siranno.",
-      "4_images": "Algunas imágenes utilizadas en este sitio provienen de la biblioteca Unsplash (unsplash.com) y están sujetas a sus respectivas licencias.",
+      "4_body": "Todo el contenu de este sitio web (textos, imágenes, graphics, logotipos, iconos, sounds, software, etc.) is the exclusive property of Yoann DELALOY — Maison Siranno, salvo indicación contraria. Queda estrictamente prohibida toda reproducción, distribution, modification, adaptation, retransmission or publication, incluso parcial, de dichos éléments sin el acuerdo expreso por écrit de Maison Siranno.",
+      "4_images": "Algunas images utilisées sur ce site proviennent de la bibliothèque Unsplash (unsplash.com) et sont soumises à leur licence respective.",
       "5_title": "5. Datos personales",
-      "5_body": "La información recopilada a través del formulario de contacto está destinada exclusivamente a Maison Siranno y nunca se cede a terceros. De conformidad con el Reglamento General de Protección de Datos (RGPD — Reglamento UE 2016/679) y la ley francesa de protección de datos de 6 de enero de 1978 modificada, usted tiene derecho de acceso, rectificación, oposición y supresión de sus datos personales.",
-      "5_rights": "Para ejercer estos derechos, contáctenos en:",
-      "5_privacy_link": "Para más información, consulte nuestra",
+      "5_body": "Las informations recueillies via le formulaire de contact sont destinées exclusivement à Maison Siranno et ne sont jamais cédées à des tiers. Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi Informatique et Libertés du 6 janvier 1978 modifiée, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression des données vous concernant.",
+      "5_rights": "Para exercer ces droits, contactez-nous à :",
+      "5_privacy_link": "Pour en savoir plus, consultez notre",
       "5_privacy_label": "Política de privacidad",
-      "5_privacy_suffix": "accesible desde el pie de página.",
+      "5_privacy_suffix": "accessible depuis le bas de page.",
       "6_title": "6. Cookies",
-      "6_body": "Este sitio utiliza cookies técnicas necesarias para su correcto funcionamiento (preferencias de visualización, sesión). Con su consentimiento explícito, se pueden instalar cookies analíticas (Google Analytics) para medir el tráfico del sitio de forma anónima. Puede retirar su consentimiento en cualquier momento.",
-      "7_title": "7. Limitación de responsabilidad",
-      "7_body": "Maison Siranno se esfuerza por garantizar la exactitud y actualización de la información difundida en este sitio. Sin embargo, Maison Siranno no garantiza la exactitud, integridad ni vigencia de la información publicada. En consecuencia, el usuario reconoce utilizar esta información bajo su exclusiva responsabilidad.",
-      "8_title": "8. Hipervínculos",
-      "8_body": "Este sitio puede contener enlaces a sitios de terceros. Maison Siranno no es responsable del contenido de estos sitios externos y no puede ser considerada responsable de la información que contienen.",
-      "9_title": "9. Ley aplicable y jurisdicción",
-      "9_body": "Este sitio web y sus condiciones de uso se rigen por el derecho francés. En caso de litigio, y tras un intento de resolución amistosa, los tribunales franceses competentes serán los encargados de resolverlo.",
-      "10_title": "10. Contacto",
-      "10_body": "Para cualquier pregunta sobre este aviso legal, puede contactarnos:",
-      "10_email_label": "Email:",
-      "10_phone_label": "Teléfono:"
+      "6_body": "Este site utilise des cookies techniques nécessaires à son bon fonctionnement (préférences d'affichage, session). Avec votre consentement explicite, des cookies analytiques peuvent être déposés (Google Analytics) afin de mesurer l'audience du site de manière anonymisée. Vous pouvez retirer votre consentement à tout moment.",
+      "7_title": "7. Limitation de responsabilité",
+      "7_body": "Maison Siranno s'efforce d'assurer au mieux l'exactitude et la mise à jour des informations diffusées sur ce site. Cependant, Maison Siranno ne garantit pas l'exactitude, la complétude et l'actualité des informations diffusées. En conséquence, l'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive.",
+      "8_title": "8. Liens hypertextes",
+      "8_body": "Ce site peut contenir des liens vers des sites tiers. Maison Siranno n'est pas responsable du contenu de ces sites externes et ne peut en aucune façon être tenue responsable des informations qu'ils contiennent.",
+      "9_title": "9. Droit applicable et juridiction",
+      "9_body": "Le présent site et ses conditions d'utilisation sont régis par le droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux français compétents seront saisis.",
+      "10_title": "10. Contact",
+      "10_body": "Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter :",
+      "10_email_label": "Email :",
+      "10_phone_label": "Téléphone :"
     }
   },
   "privacy_policy": {
@@ -285,11 +325,11 @@
     "last_updated": "Última actualización:",
     "sections": {
       "1_title": "1. Responsable del tratamiento",
-      "1_body": "El responsable del tratamiento de sus datos personales es:",
+      "1_body": "El responsable del tratamiento de sus données personnelles is:",
       "1_company": "Yoann DELALOY — Maison Siranno",
       "1_address": "Autónomo, 1 rue Auguste Grivot, 45110 Châteauneuf-sur-Loire",
       "2_title": "2. Datos recopilados",
-      "2_intro": "Solo recopilamos los datos que usted nos proporciona voluntariamente a través del formulario de contacto:",
+      "2_intro": "Solo recopilamos los datos que usted nos proporciona voluntariamente a través del formulaire de contact:",
       "2_field_name": "Nombre y apellidos",
       "2_field_name_desc": "para personalizar nuestra respuesta",
       "2_field_email": "Dirección de email",
@@ -300,65 +340,65 @@
       "2_field_message": "Mensaje / Descripción del proyecto",
       "2_field_message_desc": "para entender su solicitud",
       "2_no_sensitive": "No recopilamos ningún dato sensible en el sentido del RGPD (salud, origen étnico, opiniones políticas, creencias religiosas, etc.).",
-      "2_analytics": "con su consentimiento, Google Analytics puede recopilar datos anonimizados sobre su navegación (páginas visitadas, duración, fuente de tráfico). Estos datos no permiten identificarle personalmente.",
-      "3_title": "3. Finalidades del tratamiento",
+      "2_analytics": "con su consentimiento, Google Analytics puede recopilar datos anonimizados sobre su navigation (páginas visitadas, duración, fuente de tráfico). Estos datos no permettent pas de vous identifier personnellement.",
+      "3_title": "3. Finalités du traitement",
       "3_intro": "Sus datos se utilizan exclusivamente para:",
       "3_item1": "Responder a su solicitud de contacto o presupuesto",
       "3_item2": "Gestionar la relación comercial",
       "3_item3": "Mejorar la calidad de nuestro sitio (analítica anonimizada, con consentimiento)",
       "3_item4": "Enviarle información sobre nuestros servicios si ha dado su consentimiento explícito",
-      "4_title": "4. Base jurídica del tratamiento",
-      "4_body": "El tratamiento de sus datos se basa en:",
-      "4_consent": "Su consentimiento explícito",
-      "4_consent_ref": "(art. 6.1.a RGPD) al enviar el formulario",
-      "4_interest": "Nuestro interés legítimo",
+      "4_title": "4. Base jurídica del traitement",
+      "4_body": "Le traitement de vos données repose sur :",
+      "4_consent": "Su consentement explícito",
+      "4_consent_ref": "(art. 6.1.a RGPD) lors de la soumission du formulaire",
+      "4_interest": "Notre intérêt légitime",
       "4_interest_ref": "(art. 6.1.f RGPD) para responder a sus solicitudes comerciales",
-      "5_title": "5. Destinatarios y subencargados",
-      "5_intro": "Sus datos personales nunca se venden, alquilan ni ceden a terceros con fines comerciales. Pueden compartirse con los siguientes proveedores técnicos, estrictamente en el marco de sus servicios:",
-      "5_formspree": "tratamiento de formularios de contacto. Datos alojados en Estados Unidos, protegidos por cláusulas contractuales tipo.",
+      "5_title": "5. Destinatarios et subencargados",
+      "5_intro": "Sus données personnelles nunca se venden, alquilan ni ceden a terceros con fines comerciales. Pueden compartirse con los siguientes proveedores técnicos, estrictamente en el marco de sus servicios:",
+      "5_formspree": "traitement des formulaires de contact. Données alojadas en Estados Unidos, protegidas por cláusulas contractuales tipo.",
       "5_hostinger": "alojamiento del sitio. Datos alojados en la UE.",
       "5_ga": "análisis de audiencia anonimizado, únicamente con su consentimiento.",
       "6_title": "6. Período de conservación",
-      "6_body": "Sus datos de contacto se conservan durante 3 años desde el último contacto, luego se eliminan o anonimizan. Los datos de navegación anonimizados (Google Analytics) se conservan de acuerdo con la configuración predeterminada de esa herramienta (14 meses).",
+      "6_body": "Sus datos de contacto se conservan durante 3 years desde el último contacto, luego se eliminan o anonimizan. Los datos de navegación anonimizados (Google Analytics) se conservan de acuerdo con la configuration predeterminada de esa herramienta (14 meses).",
       "6_years": "3 años",
       "7_title": "7. Sus derechos (RGPD)",
-      "7_intro": "De conformidad con el RGPD y la ley francesa de protección de datos, usted tiene los siguientes derechos:",
+      "7_intro": "De conformidad con el RGPD et la ley française de protection de données, usted tiene los siguientes derechos:",
       "7_access": "Derecho de acceso",
       "7_access_ref": "(art. 15 RGPD)",
-      "7_access_desc": "para consultar sus datos personales",
-      "7_rectification": "Derecho de rectificación",
+      "7_access_desc": "para consulter sus données personnelles",
+      "7_rectification": "Derecho de rectification",
       "7_rectification_ref": "(art. 16 RGPD)",
-      "7_rectification_desc": "para corregir datos inexactos o incompletos",
+      "7_rectification_desc": "para corregir datos inexactes ou incomplets",
       "7_erasure": "Derecho de supresión",
       "7_erasure_ref": "(art. 17 RGPD)",
       "7_erasure_desc": "para solicitar la eliminación de sus datos",
       "7_portability": "Derecho a la portabilidad",
       "7_portability_ref": "(art. 20 RGPD)",
-      "7_portability_desc": "para recibir sus datos en un formato legible y estructurado",
+      "7_portability_desc": "para recibir sus datos en un format legible et estructurado",
       "7_opposition": "Derecho de oposición",
       "7_opposition_ref": "(art. 21 RGPD)",
-      "7_opposition_desc": "para oponerse a ciertos tratamientos",
+      "7_opposition_desc": "para oponerse a ciertos traitements",
       "7_limitation": "Derecho a la limitación",
       "7_limitation_ref": "(art. 18 RGPD)",
-      "7_limitation_desc": "para limitar el tratamiento de sus datos",
-      "7_withdrawal": "Derecho a retirar el consentimiento",
+      "7_limitation_desc": "para limitar el traitement de sus données",
+      "7_withdrawal": "Derecho a retirar el consentement",
       "7_withdrawal_desc": "en cualquier momento, sin efecto retroactivo",
-      "7_contact": "Para ejercer estos derechos, contáctenos por email:",
-      "7_complaint": "En caso de reclamación no resuelta, puede dirigirse a la",
-      "7_cnil": "CNIL (autoridad francesa de protección de datos)",
+      "7_contact": "Pour exercer ces droits, contactez-nous par email :",
+      "7_complaint": "En cas de réclamation non résolue, vous pouvez vous adresser à la",
+      "7_cnil": "CNIL (autoridad francesa de protection de données)",
       "8_title": "8. Política de Cookies",
-      "8_necessary_title": "Cookies estrictamente necesarias",
-      "8_necessary_body": "Estas cookies son indispensables para el correcto funcionamiento del sitio (gestión de preferencias de consentimiento). No requieren su consentimiento.",
-      "8_analytics_title": "Cookies analíticas — Google Analytics",
-      "8_analytics_body": "Con su consentimiento, Google Analytics instala cookies para medir la audiencia de nuestro sitio de forma anonimizada. No se recopilan datos que permitan identificarle personalmente.",
-      "8_optout": "Exclusión de Google Analytics: puede desactivar el seguimiento de Google Analytics instalando la extensión oficial del navegador:",
-      "8_withdraw": "También puede retirar su consentimiento en cualquier momento a través del banner de cookies en la parte inferior de la página.",
-      "9_title": "9. Seguridad de los datos",
-      "9_body": "Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos contra el acceso no autorizado, modificación, divulgación o destrucción: conexiones cifradas (HTTPS/TLS), acceso restringido a los datos, alojamiento seguro.",
+      "8_necessary_title": "Cookies estrictamente nécessaires",
+      "8_necessary_body": "Ces cookies sont indispensables au bon fonctionnement du site (gestion des préférences de consentement). No requieren su consentement.",
+      "8_analytics_title": "Cookies analytiques — Google Analytics",
+      "8_analytics_body": "Con su consentimiento, Google Analytics instala cookies para medir l'audience de notre site de forma anonimizada. No se recopilan datos que permitan identificarle personalmente.",
+      "8_optout": "Exclusión de Google Analytics : puede desactivar el seguimiento de Google Analytics instalando la extension officielle du navigateur :",
+      "8_withdraw": "También puede retirar su consentement en cualquier momento a través del banner de cookies en la parte inferior de la página.",
+      "9_title": "9. Sécurité des données",
+      "9_body": "Implementamos medidas técnicas et organisativas apropiadas para protéger sus datos contra el acceso no autorizado, modificación, divulgación o destruction: conexiones cifradas (HTTPS/TLS), acceso restringido a los datos, alojamiento seguro.",
       "10_title": "10. Transferencias fuera de la UE",
-      "10_body": "Algunos de nuestros proveedores (Formspree, Google) pueden tratar datos fuera de la Unión Europea. Dichas transferencias están reguladas por garantías adecuadas (cláusulas contractuales tipo aprobadas por la Comisión Europea, Privacy Shield o mecanismos equivalentes).",
-      "11_title": "11. Modificación de la política",
-      "11_body": "Esta política de privacidad puede actualizarse en cualquier momento para reflejar cambios legales o en nuestras prácticas. La fecha de la última modificación se indica en la parte superior de la página. Al continuar utilizando nuestro sitio después de una actualización, acepta la versión revisada."
+      "10_body": "Algunos de nuestros proveedores (Formspree, Google) pueden tratar datos fuera de la Unión Europea. Dichas transferencias están reguladas por garantías adecuadas (cláusulas contractuales tipo approuvées par la Commission Européenne, Privacy Shield ou mécanismes équivalents).",
+      "11_title": "11. Modification de la politique",
+      "11_body": "Esta politique de confidentialité peut être mise à jour à tout moment pour refléter des changements légaux ou dans nos pratiques. La date de la dernière modification se indica en la parte superior de la página. Al continuar utilizando nuestro sitio después de una actualización, acepta la version révisée."
     }
   },
   "blog_article_detail": {
@@ -366,10 +406,11 @@
     "key_takeaways": "Puntos clave",
     "conclusion": "Conclusión",
     "coming_soon_title": "Artículo próximamente disponible",
-    "coming_soon_body": "Este artículo está en proceso de redacción. ¡Vuelva pronto!",
+    "coming_soon_body": "Este article está en proceso de redacción. ¡Vuelva pronto!",
     "cta_eyebrow": "Pasemos a la acción",
     "cta_title": "¿Tiene un proyecto en mente?",
-    "cta_subtitle": "Primera consulta gratuita. En 30 minutos, analizamos su situación y definimos juntos el mejor enfoque."
+    "cta_subtitle": "Primera consulta gratuita. En 30 minutos, analizamos su situación y definimos juntos el mejor enfoque.",
+    "guarantees": ["Respuesta en 24h", "Sin compromiso", "Consulta gratuita", "Presupuesto en 48h"]
   },
   "project_article": {
     "back_link": "Volver a los proyectos",
@@ -390,9 +431,66 @@
   },
   "service_detail": {
     "back_link": "Volver a las expertises",
+    "realizations_eyebrow": "Lo que realizamos",
+    "solution_title": "Una solución pensada para usted",
+    "mid_cta_title": "¿Tienes un proyecto en mente?",
+    "mid_cta_subtitle": "Primera consulta gratuita — respuesta en 24h.",
+    "mid_cta_btn": "Hablemos",
+    "method_eyebrow": "Método",
+    "method_title": "Nuestro enfoque en {n} etapas",
+    "trust_eyebrow": "Nos han dado su confianza",
+    "trust_title": "Resultados que hablan por sí mismos",
+    "trust_body_1": "Detrás de cada misión, hay una historia. La de un directivo o emprendedor que se atrevió a dar el paso — y que hoy cosecha los frutos.",
+    "trust_body_2": "No prometemos resultados genéricos. Cada cliente se va con una solución a medida, un equipo formado e indicadores medibles. No hay discursos, solo hechos.",
+    "view_project_btn": "Ver el proyecto",
+    "faq_eyebrow": "Preguntas frecuentes",
+    "faq_title": "Todo lo que quieres saber",
     "step_label": "Paso {n}",
     "our_work_label": "Lo que haremos",
-    "client_role_label": "Su papel"
+    "client_role_label": "Su papel",
+    "typical_use_title": "Casos de uso típicos",
+    "concrete_benefits_title": "Beneficios concretos",
+    "view_details": "Ver detalles",
+    "close": "Cerrar",
+    "testimonial_aria": "Testimonio {n}",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "trust_points": [
+      "Seguimiento post-entrega incluido en cada misión",
+      "Resultados medibles definidos antes del inicio",
+      "Un único interlocutor, desde el brief hasta el lanzamiento"
+    ]
+  },
+  "expertise_projects": {
+    "no_projects": "No hay proyectos en esta categoría por el momento.",
+    "count_singular": "caso de éxito",
+    "count_plural": "casos de éxito",
+    "meta": {
+      "web-apps-saas": {
+        "title": "Desarrollo Web Apps & SaaS",
+        "subtitle": "Sitios vitrina, aplicaciones de negocios, marketplaces, portafolios"
+      },
+      "automatisation-n8n": {
+        "title": "Automatización & Orquestación n8n",
+        "subtitle": "Workflows, citas automáticas, integraciones, reducción del trabajo manual"
+      },
+      "contenu-marketing-ia": {
+        "title": "Creación de Contenu & Marketing IA",
+        "subtitle": "Portafolios creativos, newsletters, boletería, presencia digital"
+      },
+      "ia-agents-rag": {
+        "title": "Inteligencia Artificial & Agentes RAG",
+        "subtitle": "Chatbots IA, transcripción automática, asistentes inteligentes"
+      },
+      "conseil-formation": {
+        "title": "Consejería & Formación",
+        "subtitle": "Estrategia SEO, auditoría digital, soporte de transformación, capacitación de equipos"
+      },
+      "pilotage-continu": {
+        "title": "Pilotaje Continuo",
+        "subtitle": "Monitoreo mensual de KPIs, optimización permanente, retainer digital"
+      }
+    }
   },
   "cookie_banner": {
     "title": "Sus datos, nuestro compromiso",

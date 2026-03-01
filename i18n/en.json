@@ -29,7 +29,8 @@
   },
   "services": {
     "eyebrow": "6 Areas of Expertise",
-    "title": "AI and web powering your growth",
+    "title_line1": "AI and web powering",
+    "title_line2": "your growth",
     "subtitle": "We combine premium web development, intelligent automation and cutting-edge AI to durably transform your business.",
     "card_cta": "Learn more",
     "aria": {
@@ -56,7 +57,15 @@
     "chart_satisfaction_label": "Client satisfaction",
     "chart_satisfaction_value": "98% satisfied",
     "badge_value": "100%",
-    "badge_label": "Bespoke"
+    "badge_label": "Bespoke",
+    "chart_data": {
+      "websites": "Websites",
+      "ai": "AI & Chatbots",
+      "automation": "Automation",
+      "tools": "Business Tools",
+      "strategy": "Strategy",
+      "data": "Data"
+    }
   },
   "testimonials": {
     "eyebrow": "Testimonials",
@@ -107,6 +116,7 @@
   },
   "expertise_page": {
     "eyebrow": "Know-how & Technologies",
+    "hero_eyebrow": "Detailed Expertise",
     "title": "Our Expertise",
     "subtitle": "Six complementary areas of expertise — web, automation, AI, marketing, consulting & training, continuous monitoring — serving ambitious businesses in Loire Valley and beyond. Every service is tailored, with no compromise.",
     "service_label": "Service #{n}",
@@ -138,6 +148,14 @@
       "guarantees": ["Response within 24h", "No commitment", "Free consultation", "Quote within 48h"]
     }
   },
+  "home_projects": {
+    "eyebrow": "Our Work",
+    "title_line1": "Excellence in",
+    "title_line2": "Action",
+    "card_view_site": "View site",
+    "card_private_site": "Private site",
+    "swipe_hint": "Swipe to see all projects"
+  },
   "blog_page": {
     "eyebrow": "Blog & Insights",
     "title": "Our Articles",
@@ -168,6 +186,28 @@
     },
     "timeline_eyebrow": "Background",
     "timeline_title": "Finance → Construction → Digital → AI",
+    "timeline": [
+      {
+        "period": "2012–Present",
+        "sector": "Financial Markets & Trading",
+        "description": "Trader in financial markets — a school of absolute rigour, risk management and real-time data reading. This experience forged a radically data-driven and ROI-obsessed approach that still shapes every agency decision today."
+      },
+      {
+        "period": "2010–2024",
+        "sector": "Construction, Logistics & Field Operations",
+        "description": "Full immersion in construction and supply chain. Deep understanding of on-the-ground challenges — project deadlines, team management, operational reality. This experience builds a unique ability to understand SME needs."
+      },
+      {
+        "period": "2018–2025",
+        "sector": "Digital Transition & AI",
+        "description": "Intensive training in web development, AI and automation. Discovering the potential of new technologies to transform traditional businesses. First client projects, first measurable successes, foundation of the agency's expertise."
+      },
+      {
+        "period": "Sept. 2025–Present",
+        "sector": "Maison Siranno",
+        "description": "Founded the agency on a core conviction: SMEs, artisans and entrepreneurs who drive the real economy deserve the same tools as large corporations — with added agility, proximity and craftsmanship."
+      }
+    ],
     "values_eyebrow": "Philosophy",
     "values_title": "Our Values",
     "values": {
@@ -369,7 +409,8 @@
     "coming_soon_body": "This article is being written. Check back soon!",
     "cta_eyebrow": "Let's take action",
     "cta_title": "Got a project in mind?",
-    "cta_subtitle": "Free first consultation. In 30 minutes, we analyse your situation and define together the best approach."
+    "cta_subtitle": "Free first consultation. In 30 minutes, we analyse your situation and define together the best approach.",
+    "guarantees": ["Response within 24h", "No commitment", "Free consultation", "Quote within 48h"]
   },
   "project_article": {
     "back_link": "Back to case studies",
@@ -390,9 +431,66 @@
   },
   "service_detail": {
     "back_link": "Back to expertise",
+    "realizations_eyebrow": "What we deliver",
+    "solution_title": "A solution designed for you",
+    "mid_cta_title": "Got a project in mind?",
+    "mid_cta_subtitle": "Free first consultation — response within 24h.",
+    "mid_cta_btn": "Let's talk",
+    "method_eyebrow": "Method",
+    "method_title": "Our {n}-step approach",
+    "trust_eyebrow": "They trusted us",
+    "trust_title": "Results that speak for themselves",
+    "trust_body_1": "Behind every mission, there is a story. That of an executive or entrepreneur who dared to take the leap — and who is reaping the rewards today.",
+    "trust_body_2": "We don't promise generic results. Every client leaves with a tailored solution, a trained team and measurable indicators. No empty talk, just facts.",
+    "view_project_btn": "View the project",
+    "faq_eyebrow": "Frequently asked questions",
+    "faq_title": "Everything you want to know",
     "step_label": "Step {n}",
     "our_work_label": "What we will do",
-    "client_role_label": "Your role"
+    "client_role_label": "Your role",
+    "typical_use_title": "Typical use cases",
+    "concrete_benefits_title": "Concrete benefits",
+    "view_details": "View details",
+    "close": "Close",
+    "testimonial_aria": "Testimonial {n}",
+    "prev": "Previous",
+    "next": "Next",
+    "trust_points": [
+      "Post-delivery follow-up included in every mission",
+      "Measurable results defined before start",
+      "A single point of contact, from brief to launch"
+    ]
+  },
+  "expertise_projects": {
+    "no_projects": "No projects in this category yet.",
+    "count_singular": "case study",
+    "count_plural": "case studies",
+    "meta": {
+      "web-apps-saas": {
+        "title": "Web App & SaaS Development",
+        "subtitle": "Showcase sites, business applications, marketplaces, portfolios"
+      },
+      "automatisation-n8n": {
+        "title": "Automation & n8n Orchestration",
+        "subtitle": "Workflows, automated appointments, integrations, manual work reduction"
+      },
+      "contenu-marketing-ia": {
+        "title": "AI Content Creation & Marketing",
+        "subtitle": "Creative portfolios, newsletters, ticketing, digital presence"
+      },
+      "ia-agents-rag": {
+        "title": "Artificial Intelligence & RAG Agents",
+        "subtitle": "AI Chatbots, automated transcription, intelligent assistants"
+      },
+      "conseil-formation": {
+        "title": "Consulting & Training",
+        "subtitle": "SEO strategy, digital audit, transformation support, team training"
+      },
+      "pilotage-continu": {
+        "title": "Continuous Management",
+        "subtitle": "Monthly KPI monitoring, permanent optimization, digital retainer"
+      }
+    }
   },
   "cookie_banner": {
     "title": "Your data, our commitment",

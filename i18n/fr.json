@@ -116,6 +116,7 @@
   },
   "expertise_page": {
     "eyebrow": "Savoir-faire & Technologies",
+    "hero_eyebrow": "Expertise détaillée",
     "title": "Notre Expertise",
     "subtitle": "Six expertises complémentaires — web, automatisation, IA, marketing, conseil & formation, pilotage continu — au service des entreprises ambitieuses du Val de Loire et au-delà. Chaque prestation est conçue sur mesure, sans compromis.",
     "service_label": "Prestation #{n}",
@@ -185,6 +186,28 @@
     },
     "timeline_eyebrow": "Parcours",
     "timeline_title": "Finance → BTP → Digital → IA",
+    "timeline": [
+      {
+        "period": "2012–Présent",
+        "sector": "Finance de Marché & Trading",
+        "description": "Trader en finance de marché — une école de rigueur absolue, de gestion du risque et de lecture des données en temps réel. Cette expérience forge une approche radicalement data-driven et ROI-obsessée qui irrigue encore aujourd'hui chaque décision de l'agence."
+      },
+      {
+        "period": "2010–2024",
+        "sector": "BTP, Logistique & Terrain",
+        "description": "Immersion dans le bâtiment et la supply chain. Compréhension profonde des enjeux terrain — délais de chantier, gestion d'équipes, réalité opérationnelle. Cette expérience façonne une façon unique de comprendre les besoins des PME."
+      },
+      {
+        "period": "2018–2025",
+        "sector": "Transition Digitale & IA",
+        "description": "Formation intensive au développement web, à l'IA et à l'automatisation. Découverte du potentiel des nouvelles technologies pour transformer les acteurs traditionnels. Premiers projets clients, premières réussites mesurables, fondation du savoir-faire de l'agence."
+      },
+      {
+        "period": "Sept. 2025–Présent",
+        "sector": "Maison Siranno",
+        "description": "Création de l'agence avec une conviction fondatrice : les PME, artisans et entrepreneurs qui font tourner l'économie réelle méritent les mêmes outils que les grands groupes — avec l'agilité, la proximité et l'artisanat en plus."
+      }
+    ],
     "values_eyebrow": "Philosophie",
     "values_title": "Mes Valeurs",
     "values": {
@@ -386,7 +409,8 @@
     "coming_soon_body": "Cet article est en cours de rédaction. Revenez prochainement !",
     "cta_eyebrow": "Passons à l'action",
     "cta_title": "Un projet en tête ?",
-    "cta_subtitle": "Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche."
+    "cta_subtitle": "Première consultation gratuite. En 30 minutes, nous analysons votre situation et définissons ensemble la meilleure approche.",
+    "guarantees": ["Réponse sous 24h", "Sans engagement", "Consultation offerte", "Devis sous 48h"]
   },
   "project_article": {
     "back_link": "Retour aux réalisations",
@@ -407,9 +431,66 @@
   },
   "service_detail": {
     "back_link": "Retour aux expertises",
+    "realizations_eyebrow": "Ce que nous réalisons",
+    "solution_title": "Une solution pensée pour vous",
+    "mid_cta_title": "Un projet en tête ?",
+    "mid_cta_subtitle": "Première consultation gratuite — réponse sous 24h.",
+    "mid_cta_btn": "Discutons-en",
+    "method_eyebrow": "Méthode",
+    "method_title": "Notre approche en {n} étapes",
+    "trust_eyebrow": "Ils nous ont fait confiance",
+    "trust_title": "Des résultats qui parlent d'eux-mêmes",
+    "trust_body_1": "Derrière chaque mission, il y a une histoire. Celle d'un dirigeant ou d'un entrepreneur qui a osé franchir le pas — et qui en récolte aujourd'hui les fruits.",
+    "trust_body_2": "Nous ne promettons pas des résultats génériques. Chaque client repart avec une solution taillée sur mesure, une équipe formée et des indicateurs mesurables. Pas de discours, des faits.",
+    "view_project_btn": "Voir la réalisation",
+    "faq_eyebrow": "Questions fréquentes",
+    "faq_title": "Tout ce que vous voulez savoir",
     "step_label": "Étape {n}",
     "our_work_label": "Ce que nous ferons",
-    "client_role_label": "Votre rôle"
+    "client_role_label": "Votre rôle",
+    "typical_use_title": "Cas d'usage typiques",
+    "concrete_benefits_title": "Bénéfices concrets",
+    "view_details": "Voir les détails",
+    "close": "Fermer",
+    "testimonial_aria": "Témoignage {n}",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "trust_points": [
+      "Suivi post-livraison inclus dans chaque mission",
+      "Résultats mesurables définis avant le démarrage",
+      "Un interlocuteur unique, du brief au lancement"
+    ]
+  },
+  "expertise_projects": {
+    "no_projects": "Aucun projet dans cette catégorie pour le moment.",
+    "count_singular": "réalisation",
+    "count_plural": "réalisations",
+    "meta": {
+      "web-apps-saas": {
+        "title": "Développement Web Apps & SaaS",
+        "subtitle": "Sites vitrine, applications métiers, marketplaces, portfolios"
+      },
+      "automatisation-n8n": {
+        "title": "Automatisation & Orchestration n8n",
+        "subtitle": "Workflows, RDV automatiques, intégrations, réduction du travail manuel"
+      },
+      "contenu-marketing-ia": {
+        "title": "Création de Contenu & Marketing IA",
+        "subtitle": "Portfolios créatifs, newsletters, billetterie, présence digitale"
+      },
+      "ia-agents-rag": {
+        "title": "Intelligence Artificielle & Agents RAG",
+        "subtitle": "Chatbots IA, transcription automatique, assistants intelligents"
+      },
+      "conseil-formation": {
+        "title": "Conseil & Formation",
+        "subtitle": "Stratégie SEO, audit digital, accompagnement transformation, formation équipes"
+      },
+      "pilotage-continu": {
+        "title": "Pilotage Continu",
+        "subtitle": "Suivi mensuel KPIs, optimisation permanente, retainer digital"
+      }
+    }
   },
   "cookie_banner": {
     "title": "Vos données, notre engagement",
