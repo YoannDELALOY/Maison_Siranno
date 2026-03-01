@@ -83,6 +83,7 @@ const ArticleCardDark: React.FC<ArticleCardDarkProps> = ({ article, onClick }) =
       data-cursor-hover={article.available ? '' : undefined}
       className="group relative rounded-2xl overflow-hidden flex-shrink-0 w-72 md:w-80 transition-all duration-300 hover:-translate-y-2 border border-white/10 hover:border-gold/40 hover:shadow-md"
       style={{
+        background: '#0D1B2A',
         boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)',
         borderLeft: '3px solid rgba(212,175,55,0.5)',
         opacity: article.available ? 1 : 0.65,
@@ -213,7 +214,7 @@ const CategorySlider: React.FC<CategorySliderProps> = ({ category, label, icon, 
       <div
         ref={trackRef}
         onScroll={checkScroll}
-        className="flex gap-6 overflow-x-auto pb-4 scrollbar-none"
+        className="flex gap-6 overflow-x-auto scrollbar-none"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {articles.map((article) => (
@@ -237,7 +238,7 @@ const ArticleCardFeatured: React.FC<ArticleCardFeaturedProps> = ({ article, onCl
     <div
       data-cursor-hover
       className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 border border-white/10 hover:border-gold/40 hover:shadow-md"
-      style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)', borderLeft: '3px solid rgba(212,175,55,0.5)' }}
+      style={{ background: '#0D1B2A', boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)', borderLeft: '3px solid rgba(212,175,55,0.5)' }}
       onClick={onClick}
     >
       <div className="h-52 overflow-hidden relative">
@@ -296,7 +297,7 @@ const ArticleCardComing: React.FC<ArticleCardComingProps> = ({ article }) => {
   return (
     <div
       className="rounded-2xl overflow-hidden flex gap-4 items-center p-4 border border-white/10"
-      style={{ borderLeft: '3px solid rgba(212,175,55,0.3)', opacity: 0.75 }}
+      style={{ background: '#0D1B2A', borderLeft: '3px solid rgba(212,175,55,0.3)', opacity: 0.75 }}
     >
       <div className="w-20 h-16 rounded-xl overflow-hidden flex-shrink-0">
         <img src={article.image} alt={article.title} width="80" height="64" className="w-full h-full object-cover grayscale" loading="lazy" />
