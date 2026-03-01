@@ -2,10 +2,13 @@ import type React from 'react';
 
 /**
  * Styles de texture réutilisables — fond grain SVG fractal.
- * Utilisés dans ServiceDetailPage, BlogArticlePage, Contact, etc.
+ * Convention de nommage : SCREAMING_SNAKE_CASE car ce sont des constantes exportées.
+ *
+ * Utilisés dans AgencyPage, ServiceDetailPage, BlogArticleDetailPage, etc.
  */
 
-export const darkTextureStyle: React.CSSProperties = {
+/** Texture grain sombre — fond charcoal/navy pour encarts CTA et côtés gauches */
+export const DARK_TEXTURE_STYLE: React.CSSProperties = {
   backgroundColor: '#0F172A',
   backgroundImage: [
     `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg1)' opacity='0.55'/%3E%3C/svg%3E")`,
@@ -15,7 +18,8 @@ export const darkTextureStyle: React.CSSProperties = {
   backgroundBlendMode: 'overlay, screen',
 };
 
-export const lightTextureStyle: React.CSSProperties = {
+/** Texture grain clair — fond crème/papier pour cartes, panneaux et formulaires */
+export const LIGHT_TEXTURE_STYLE: React.CSSProperties = {
   backgroundColor: '#FAF6EE',
   backgroundImage: [
     `url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='pg3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pg3)' opacity='0.38'/%3E%3C/svg%3E")`,
@@ -27,5 +31,16 @@ export const lightTextureStyle: React.CSSProperties = {
   backgroundBlendMode: 'multiply, normal, normal, normal',
 };
 
-/** Identique à darkTextureStyle — alias sémantique pour contextes bleu-nuit */
-export const blueTextureStyle: React.CSSProperties = darkTextureStyle;
+/** Alias sémantique de DARK_TEXTURE_STYLE pour contextes bleu-nuit */
+export const BLUE_TEXTURE_STYLE: React.CSSProperties = DARK_TEXTURE_STYLE;
+
+// ---------------------------------------------------------------------------
+// Aliases dépréciés — conservés pour ne pas casser les imports existants
+// Préférer les noms SCREAMING_SNAKE_CASE ci-dessus dans tout nouveau code.
+// ---------------------------------------------------------------------------
+/** @deprecated Utiliser DARK_TEXTURE_STYLE */
+export const darkTextureStyle = DARK_TEXTURE_STYLE;
+/** @deprecated Utiliser LIGHT_TEXTURE_STYLE */
+export const lightTextureStyle = LIGHT_TEXTURE_STYLE;
+/** @deprecated Utiliser BLUE_TEXTURE_STYLE */
+export const blueTextureStyle = BLUE_TEXTURE_STYLE;

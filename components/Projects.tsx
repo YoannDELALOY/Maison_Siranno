@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
 import { ProjectData } from '../data/projects';
@@ -53,30 +53,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2">
           {project.tags.slice(0, 3).map((tag) => (
             <span key={tag} className="px-2 py-1 bg-white/5 rounded-full text-xs text-gray-300 border border-white/5">
               {tag}
             </span>
           ))}
         </div>
-
-        {project.url ? (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 btn-metallic-gold text-charcoal rounded-xl text-sm font-medium transition-all hover:-translate-y-0.5"
-          >
-            {t('home_projects.card_view_site')} <ExternalLink size={14} />
-          </a>
-        ) : (
-          <div className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-white/5 text-gray-500 border border-white/5 cursor-not-allowed">
-            <ExternalLink size={14} />
-            {t('home_projects.card_private_site')}
-          </div>
-        )}
       </div>
     </div>
   );
@@ -89,6 +72,13 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
   const { t } = useTranslation();
   const { projects: projectsData } = useLocalizedData();
+
+  /** Les 10 projets les plus récents, triés une seule fois par render de données */
+  const sortedProjects = useMemo(
+    () => [...projectsData].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 10),
+    [projectsData]
+  );
+
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -174,16 +164,13 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            {[...projectsData]
-              .sort((a, b) => b.date.localeCompare(a.date))
-              .slice(0, 10)
-              .map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onClick={(p) => onOpenProject?.(p)}
-                />
-              ))}
+            {sortedProjects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onClick={(p) => onOpenProject?.(p)}
+              />
+            ))}
           </div>
         </div>
 

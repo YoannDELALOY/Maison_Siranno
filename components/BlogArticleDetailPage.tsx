@@ -3,6 +3,7 @@ import { useSeo } from '../hooks/useSeo';
 import { useTranslation } from '../hooks/useTranslation';
 import { ArrowLeft, Clock, Calendar, Tag, Mail, Phone, BookOpen } from 'lucide-react';
 import { BlogArticle, BlogCategory } from '../data/blog';
+import { DARK_TEXTURE_STYLE, LIGHT_TEXTURE_STYLE } from '../constants/textures';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
 import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
 import iconContenu from '../Media/Logos/Logo_expertise/Icone_Création_de_Contenu_&_Marketing_IA.png';
@@ -25,26 +26,6 @@ const categoryIconMap: Record<BlogCategory, string> = {
   'Pilotage Continu': iconPilotage,
 };
 
-const darkTextureStyle: React.CSSProperties = {
-  backgroundColor: '#0F172A',
-  backgroundImage: [
-    `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='blt1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23blt1)' opacity='0.55'/%3E%3C/svg%3E")`,
-    `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='blt2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23blt2)' opacity='0.28'/%3E%3C/svg%3E")`,
-  ].join(', '),
-  backgroundSize: '600px 600px, 200px 200px',
-  backgroundBlendMode: 'overlay, screen',
-};
-
-const lightTextureStyle: React.CSSProperties = {
-  backgroundColor: '#FAF6EE',
-  backgroundImage: [
-    `url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='blt3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.32' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23blt3)' opacity='0.38'/%3E%3C/svg%3E")`,
-    `radial-gradient(ellipse at 12% 18%, rgba(185,145,65,0.1) 0%, transparent 48%)`,
-    `radial-gradient(ellipse at 80% 72%, rgba(160,120,45,0.08) 0%, transparent 42%)`,
-  ].join(', '),
-  backgroundSize: '700px 700px, 100% 100%, 100% 100%',
-  backgroundBlendMode: 'multiply, normal, normal',
-};
 
 /* ── Convertit **gras** et *italique* en éléments React ── */
 const renderText = (text: string): React.ReactNode => {
@@ -180,7 +161,7 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
 
           {/* Tags — style gold métallique */}
           <div className="flex flex-wrap gap-2 mt-4">
-            {article.tags.map((tag, i) => (
+            {(article.tags || []).map((tag, i) => (
               <span
                 key={tag}
                 className="btn-metallic-gold flex items-center gap-1 text-xs font-semibold rounded-full px-2.5 py-1 cursor-default"
@@ -230,7 +211,7 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
                 <p key={pi} className="text-steel leading-relaxed mb-4">{renderText(p)}</p>
               ))}
               {section.bullets && section.bullets.length > 0 && (
-                <div className="mt-4 rounded-2xl p-6" style={lightTextureStyle}>
+                <div className="mt-4 rounded-2xl p-6" style={LIGHT_TEXTURE_STYLE}>
                   <ul className="space-y-3">
                     {section.bullets.map((b, bi) => (
                       <li key={bi} className="flex items-start gap-3">
@@ -246,7 +227,7 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
 
           {/* Points clés */}
           {article.body.keyTakeaways && article.body.keyTakeaways.length > 0 && (
-            <aside className="mb-12 rounded-2xl overflow-hidden" style={darkTextureStyle}>
+            <aside className="mb-12 rounded-2xl overflow-hidden" style={DARK_TEXTURE_STYLE}>
               <div className="relative z-10 p-8">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="p-2 rounded-lg border" style={{ background: 'rgba(212,175,55,0.12)', borderColor: 'rgba(212,175,55,0.3)' }}>
@@ -294,11 +275,11 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
             <div className="text-center mb-8">
               <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">{t('blog_article_detail.cta_eyebrow')}</span>
               <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-metallic-silver">{t('blog_article_detail.cta_title')}</h2>
-              <p className="text-gray-400 max-w-xl mx-auto">
+              <p className="text-gray-400 max-w-xl mx-auto mb-8">
                 {t('blog_article_detail.cta_subtitle')}
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <button onClick={onGoToContact} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 btn-metallic-gold rounded-full font-semibold shadow-xl text-sm">
                 <Mail size={16} />
                 {t('expertise_page.cta.btn_message')}
@@ -307,6 +288,14 @@ export const BlogArticleDetailPage: React.FC<BlogArticleDetailPageProps> = ({ ar
                 <Phone size={16} />
                 {t('expertise_page.cta.btn_call')}
               </a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
+              {t('blog_article_detail.cta.guarantees', { returnObjects: true }).map((g: string) => (
+                <span key={g} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0"></span>
+                  {g}
+                </span>
+              ))}
             </div>
           </div>
         </div>

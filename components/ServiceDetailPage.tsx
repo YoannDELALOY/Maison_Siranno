@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useSeo } from '../hooks/useSeo';
 import { useTranslation } from '../hooks/useTranslation';
-import { darkTextureStyle, lightTextureStyle } from '../constants/textures';
+import { DARK_TEXTURE_STYLE, LIGHT_TEXTURE_STYLE } from '../constants/textures';
 import { CONTACT_CONFIG } from '../constants/config';
+import { BlobBackground } from './BlobBackground';
 import { ArrowLeft, ArrowRight, CheckCircle2, Lightbulb, Quote, Phone, Mail, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, X, ClipboardList } from 'lucide-react';
 import { ServiceData } from './Services';
 import { useLocalizedData } from '../hooks/useLocalizedData';
@@ -20,8 +21,8 @@ const CARD_WOBBLES = [
   { x: -3, y: -2 }, { x: 2, y: 3 }, { x: -1, y: -4 }, { x: 3, y: -1 },
 ];
 
-/* ─── Texture livre bleu — alias de darkTextureStyle ─── */
-const bookBlueStyle = darkTextureStyle;
+/* ─── Texture livre bleu — alias de DARK_TEXTURE_STYLE ─── */
+const bookBlueStyle = DARK_TEXTURE_STYLE;
 
 /* ─── Modal détail étape ─── */
 interface StepModalProps {
@@ -101,7 +102,7 @@ const StepModal: React.FC<StepModalProps> = ({ step, index, onClose }) => {
                 <p key={i} className={`text-gray-300 leading-relaxed text-[15px]${i < step.detailedDescription!.length - 1 ? ' mb-4' : ''}`}>
                   {para.split(/\*\*(.*?)\*\*/g).map((part, j) =>
                     j % 2 === 1
-                      ? <strong key={j} className="text-metallic-gold font-bold" style={{ textShadow: 'none' }}>{part}</strong>
+                      ? <strong key={j} className="text-metallic-gold font-normal" style={{ textShadow: 'none' }}>{part}</strong>
                       : part
                   )}
                 </p>
@@ -125,7 +126,7 @@ const StepModal: React.FC<StepModalProps> = ({ step, index, onClose }) => {
                     style={{ background: 'rgba(100,160,255,0.15)', border: '1px solid rgba(100,160,255,0.25)' }}>
                     <CheckCircle2 size={13} className="text-blue-300" />
                   </div>
-                  <p className="font-semibold text-blue-200 text-xs tracking-widest uppercase">{t('service_detail.our_work_label')}</p>
+                  <p className="font-semibold text-metallic-gold text-xs tracking-widest uppercase">{t('service_detail.our_work_label')}</p>
                 </div>
                 <ul className="space-y-3">
                   {step.agencyWork.map((item, i) => (
@@ -146,7 +147,7 @@ const StepModal: React.FC<StepModalProps> = ({ step, index, onClose }) => {
                     style={{ background: 'rgba(212,175,55,0.12)', border: '1px solid rgba(212,175,55,0.25)' }}>
                     <ClipboardList size={13} className="text-gold" />
                   </div>
-                  <p className="font-semibold text-gold text-xs tracking-widest uppercase">{t('service_detail.client_role_label')}</p>
+                  <p className="font-semibold text-metallic-gold text-xs tracking-widest uppercase">{t('service_detail.client_role_label')}</p>
                 </div>
                 <ul className="space-y-3">
                   {step.clientRequirements.map((req, i) => (
@@ -217,7 +218,7 @@ const ProcessStepCard: React.FC<ProcessStepCardProps> = ({ step, index, activate
       data-cursor-hover
       className="rounded-2xl overflow-hidden relative shadow-lg cursor-pointer group"
       style={{
-        ...lightTextureStyle,
+        ...LIGHT_TEXTURE_STYLE,
         transform,
         transition: hovered ? 'transform 0.08s ease-out' : 'transform 0.5s cubic-bezier(0.34,1.56,0.64,1)',
         willChange: 'transform',
@@ -388,7 +389,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
         {/* Étoiles PNG */}
         <div className="flex gap-1 mb-4">
           {Array.from({ length: 5 }).map((_, i) => (
-            <img key={i} src="../Media/etoiletrnsparante.png" alt="★" className="w-4 h-4 object-contain" />
+            <img key={i} src="../Media/etoiletrnsparante.png" alt="★" width="16" height="16" className="w-4 h-4 object-contain" />
           ))}
         </div>
 
@@ -493,7 +494,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
     `https://maisonsiranno.fr/expertise/${service.id || ''}`
   );
   return (
-    <div className="min-h-screen pt-24 pb-24">
+    <div className="min-h-screen pt-24 pb-24 relative">
+      <BlobBackground />
 
       {/* Bouton retour */}
       <div className="max-w-7xl mx-auto px-6 mb-8">
@@ -538,7 +540,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
                   boxShadow: '0 0 32px rgba(212,175,55,0.2), inset 0 1px 0 rgba(255,255,255,0.1)',
                 }}
               >
-                <img src={service.detailIcon} alt={service.title} className="w-12 h-12 object-contain" style={{ filter: 'drop-shadow(0 0 8px rgba(212,175,55,0.5))' }} />
+                <img src={service.detailIcon} alt={service.title} width="48" height="48" className="w-12 h-12 object-contain" style={{ filter: 'drop-shadow(0 0 8px rgba(212,175,55,0.5))' }} />
               </div>
             </div>
           )}
@@ -634,7 +636,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
           </div>
 
           {/* Cas d'usage */}
-          <div className="rounded-2xl overflow-hidden relative shadow-xl" style={lightTextureStyle}>
+          <div className="rounded-2xl overflow-hidden relative shadow-xl" style={LIGHT_TEXTURE_STYLE}>
             <div className="absolute top-0 left-0 bottom-0 w-14 pointer-events-none z-10"
               style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 50%, transparent 100%)' }}
             />
@@ -731,7 +733,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-3 block">{t('service_detail.faq_eyebrow')}</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy">{t('service_detail.faq_title')}</h2>
           </div>
-          <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden px-6 md:px-10 py-2 relative" style={lightTextureStyle}>
+          <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden px-6 md:px-10 py-2 relative" style={LIGHT_TEXTURE_STYLE}>
             <div className="absolute top-0 left-0 bottom-0 w-10 pointer-events-none"
               style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.08) 0%, transparent 100%)' }}
             />

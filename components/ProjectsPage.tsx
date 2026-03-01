@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSeo } from '../hooks/useSeo';
 import { useTranslation } from '../hooks/useTranslation';
+import { BlobBackground } from './BlobBackground';
 import { ArrowRight, Quote, BookOpen, ExternalLink, Mail, Phone } from 'lucide-react';
 import starImg from '../Media/etoiletrnsparante.png';
 import iconWebApps        from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
@@ -22,53 +23,39 @@ interface ProjectsPageProps {
 // Configuration des 6 sections expertise
 interface ExpertiseSection {
   id: ExpertiseCategory;
-  title: string;
-  subtitle: string;
-  icon: React.ReactNode;
+  icon: string;
   accentColor: string;
 }
 
 const expertiseSections: ExpertiseSection[] = [
   {
     id: 'web-apps-saas',
-    title: 'Développement Web Apps & SaaS',
-    subtitle: 'Sites vitrine, applications métiers, marketplaces, portfolios',
-    icon: <img src={iconWebApps} alt="Développement Web" className="w-8 h-8 object-contain" />,
+    icon: iconWebApps,
     accentColor: 'from-blue-500/20 to-blue-600/10',
   },
   {
     id: 'automatisation-n8n',
-    title: 'Automatisation & Orchestration n8n',
-    subtitle: 'Workflows, RDV automatiques, intégrations, réduction du travail manuel',
-    icon: <img src={iconAutomatisation} alt="Automatisation" className="w-8 h-8 object-contain" />,
+    icon: iconAutomatisation,
     accentColor: 'from-purple-500/20 to-purple-600/10',
   },
   {
     id: 'contenu-marketing-ia',
-    title: 'Création de Contenu & Marketing IA',
-    subtitle: 'Portfolios créatifs, newsletters, billetterie, présence digitale',
-    icon: <img src={iconContenu} alt="Contenu & Marketing" className="w-8 h-8 object-contain" />,
+    icon: iconContenu,
     accentColor: 'from-rose-500/20 to-rose-600/10',
   },
   {
     id: 'ia-agents-rag',
-    title: 'Intelligence Artificielle & Agents RAG',
-    subtitle: 'Chatbots IA, transcription automatique, assistants intelligents',
-    icon: <img src={iconIA} alt="Intelligence Artificielle" className="w-8 h-8 object-contain" />,
+    icon: iconIA,
     accentColor: 'from-emerald-500/20 to-emerald-600/10',
   },
   {
     id: 'conseil-formation',
-    title: 'Conseil & Formation',
-    subtitle: 'Stratégie SEO, audit digital, accompagnement transformation, formation équipes',
-    icon: <img src={iconConseil} alt="Conseil & Formation" className="w-8 h-8 object-contain" />,
+    icon: iconConseil,
     accentColor: 'from-amber-500/20 to-amber-600/10',
   },
   {
     id: 'pilotage-continu',
-    title: 'Pilotage Continu',
-    subtitle: 'Suivi mensuel KPIs, optimisation permanente, retainer digital',
-    icon: <img src={iconPilotage} alt="Pilotage Continu" className="w-8 h-8 object-contain" />,
+    icon: iconPilotage,
     accentColor: 'from-teal-500/20 to-teal-600/10',
   },
 ];
@@ -148,6 +135,7 @@ interface ExpertiseCTACardProps {
 
 const ExpertiseCTACard: React.FC<ExpertiseCTACardProps> = ({ section, onNavigate }) => {
   const { t } = useTranslation();
+  const sectionTitle = t(`expertise_projects.meta.${section.id}.title`);
   return (
     <div
       data-cursor-hover
@@ -160,13 +148,13 @@ const ExpertiseCTACard: React.FC<ExpertiseCTACardProps> = ({ section, onNavigate
       onClick={() => onNavigate?.(section.id)}
     >
       <div className="p-4 rounded-2xl bg-transparent border border-gold/20 text-gold mb-5 transition-transform duration-300 group-hover:scale-110">
-        {section.icon}
+        <img src={section.icon} alt={sectionTitle} width="32" height="32" className="w-8 h-8 object-contain" />
       </div>
       <h3 className="font-serif text-lg font-bold text-metallic-gold mb-3 leading-tight">
         {t('projects_page.cta_card_title')}
       </h3>
       <p className="text-steel text-sm mb-6 leading-relaxed max-w-[200px]">
-        {section.title}
+        {sectionTitle}
       </p>
       <div className="inline-flex items-center gap-2 px-5 py-2.5 btn-metallic-gold text-charcoal rounded-full text-sm font-semibold shadow-lg transition-all group-hover:shadow-xl">
         {t('projects_page.cta_card_btn')} <ArrowRight size={15} />
@@ -194,7 +182,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-24">
+    <div className="min-h-screen pt-32 pb-24 relative">
+      <BlobBackground />
       <div className="max-w-7xl mx-auto px-6">
 
         {/* En-tête */}
@@ -219,18 +208,21 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
             .slice(0, 5);
           if (sectionProjects.length === 0) return null;
 
+          const sectionTitle = t(`expertise_projects.meta.${section.id}.title`);
+          const sectionSubtitle = t(`expertise_projects.meta.${section.id}.subtitle`);
+
           return (
             <div key={section.id} className="mb-24">
               {/* En-tête section */}
               <div className="flex items-center gap-4 mb-10">
                 <div className="p-5 rounded-xl bg-transparent border border-gold/20 text-gold">
-                  {section.icon}
+                  <img src={section.icon} alt={sectionTitle} width="32" height="32" className="w-8 h-8 object-contain" />
                 </div>
                 <div>
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-metallic-navy">
-                    {section.title}
+                    {sectionTitle}
                   </h2>
-                  <p className="text-steel text-sm">{section.subtitle}</p>
+                  <p className="text-steel text-sm">{sectionSubtitle}</p>
                 </div>
                 <div className="flex-1 h-px bg-gradient-to-r from-gold/30 to-transparent ml-4"></div>
               </div>
@@ -279,7 +271,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
 
                 <div className="flex gap-0.5 mb-6">
                   {[...Array(5)].map((_, idx) => (
-                    <img key={idx} src={starImg} alt="★" className="w-5 h-5 object-contain drop-shadow-sm" />
+                    <img key={idx} src={starImg} alt="★" width="20" height="20" className="w-5 h-5 object-contain drop-shadow-sm" />
                   ))}
                 </div>
 
@@ -289,7 +281,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
 
                 <div className="flex items-center gap-4 mt-auto border-t border-gray-100 pt-6">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0">
-                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                    <img src={t.image} alt={t.name} width="48" height="48" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <div className="font-serif font-bold text-charcoal">{t.name}</div>
@@ -329,7 +321,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
-              {['Réponse sous 24h', 'Sans engagement', 'Consultation offerte', 'Devis sous 48h'].map(g => (
+              {(t('projects_page.cta.guarantees', { returnObjects: true }) as string[]).map(g => (
                 <span key={g} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0"></span>
                   {g}

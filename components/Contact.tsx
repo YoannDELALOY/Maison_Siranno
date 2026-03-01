@@ -2,38 +2,22 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Linkedin, Github, Instagram, Facebook, ExternalLink } from 'lucide-react';
 import { SectionId } from '../types';
 import { CONTACT_CONFIG } from '../constants/config';
+import { SOCIAL_LINKS } from '../data/socialLinks';
+import { useTranslation } from '../hooks/useTranslation';
 
 const { email: CONTACT_EMAIL, phone: PHONE_NUMBER, phoneHref: PHONE_HREF, formspreeUrl: FORMSPREE_URL } = CONTACT_CONFIG;
 
-const socialLinks = [
-  {
-    icon: <Linkedin size={18} />,
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/yoann-delaloy/'
-  },
-  {
-    icon: <Github size={18} />,
-    label: 'GitHub',
-    href: 'https://github.com/YoannDELALOY'
-  },
-  {
-    icon: <Instagram size={18} />,
-    label: 'Instagram',
-    href: 'https://www.instagram.com/yoanndelaloy/'
-  },
-  {
-    icon: <Facebook size={18} />,
-    label: 'Facebook',
-    href: 'https://www.facebook.com/profile.php?id=100067966427089&locale=fr_FR'
-  },
-  {
-    icon: <ExternalLink size={18} />,
-    label: 'Malt',
-    href: 'https://www.malt.fr/profile/yoanndelaloy'
-  }
-];
+/** Map des noms d'icônes vers les composants Lucide correspondants */
+const ICON_MAP = {
+  Linkedin: <Linkedin size={18} />,
+  Github: <Github size={18} />,
+  Instagram: <Instagram size={18} />,
+  Facebook: <Facebook size={18} />,
+  ExternalLink: <ExternalLink size={18} />,
+} as const;
 
 export const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
@@ -106,11 +90,10 @@ export const Contact: React.FC = () => {
 
             <div className="relative z-10">
               <h2 className="font-serif text-4xl font-bold mb-6 text-white">
-                Parlons de votre <span className="text-metallic-gold">Futur</span>.
+                {t('contact.title')} <span className="text-metallic-gold">{t('contact.title_accent')}</span>.
               </h2>
               <p className="text-gray-300 text-lg mb-10 leading-relaxed">
-                Vous avez un projet ? Une problématique d'automatisation ?
-                Prenons 30 minutes pour auditer vos besoins. Pas de jargon, juste des solutions concrètes.
+                {t('contact.subtitle')}
               </p>
 
               <div className="space-y-6">
@@ -120,11 +103,11 @@ export const Contact: React.FC = () => {
                     <MapPin size={22} className="icon-metallic-gold" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-white mb-1">Nous rencontrer</h4>
+                    <h4 className="font-medium text-white mb-1">{t('contact.address_label')}</h4>
                     <p className="text-gray-400">
-                      1 rue Auguste Grivot<br />
-                      Châteauneuf-sur-Loire, 45110<br />
-                      Loiret, France
+                      {CONTACT_CONFIG.address.street}<br />
+                      {CONTACT_CONFIG.address.city}, {CONTACT_CONFIG.address.postal}<br />
+                      {CONTACT_CONFIG.address.region}
                     </p>
                   </div>
                 </div>
@@ -135,7 +118,7 @@ export const Contact: React.FC = () => {
                     <Mail size={22} className="icon-metallic-gold" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-white mb-1">Email</h4>
+                    <h4 className="font-medium text-white mb-1">{t('contact.email_label')}</h4>
                     <a
                       href={`mailto:${CONTACT_EMAIL}?subject=Demande%20de%20consultation%20%E2%80%94%20Maison%20Siranno`}
                       className="text-gray-400 hover:text-gold transition-colors"
@@ -151,7 +134,7 @@ export const Contact: React.FC = () => {
                     <Phone size={22} className="icon-metallic-gold" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-white mb-1">Téléphone</h4>
+                    <h4 className="font-medium text-white mb-1">{t('contact.phone_label')}</h4>
                     <a
                       href={PHONE_HREF}
                       className="text-gray-400 hover:text-gold transition-colors text-lg font-medium"
@@ -164,18 +147,18 @@ export const Contact: React.FC = () => {
 
               {/* Réseaux sociaux */}
               <div className="mt-10 pt-8 border-t border-white/10">
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">Me retrouver sur</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">{t('contact.social_label')}</p>
                 <div className="flex flex-wrap gap-3">
-                  {socialLinks.map((s) => (
+                  {SOCIAL_LINKS.map((s) => (
                     <a
-                      key={s.label}
+                      key={s.id}
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       title={s.label}
-                      className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-gold/10 border border-white/10 rounded-lg text-gray-300 text-xs font-medium transition-all duration-200"
+                      className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-gold/10 border border-white/10 hover:border-gold/50 rounded-lg text-gray-300 hover:text-metallic-gold-inline text-xs font-medium transition-all duration-200"
                     >
-                      {s.icon}
+                      {ICON_MAP[s.iconName]}
                       <span>{s.label}</span>
                     </a>
                   ))}
@@ -214,20 +197,20 @@ export const Contact: React.FC = () => {
             <div className="absolute bottom-0 right-0 w-44 h-36 pointer-events-none z-10"
               style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.08) 35%, transparent 60%)', borderRadius: '0 0 1.5rem 0' }}
             ></div>
-            <h3 className="font-serif text-2xl font-bold text-metallic-navy mb-8">Envoyer un message</h3>
+            <h3 className="font-serif text-2xl font-bold text-metallic-navy mb-8">{t('contact.form_title')}</h3>
 
             {status === 'success' ? (
               <div className="text-center py-12">
                 <div className="w-16 h-16 rounded-full bg-safe-green/10 flex items-center justify-center mx-auto mb-4">
                   <Send size={28} className="text-safe-green" />
                 </div>
-                <h4 className="font-serif text-xl font-bold text-charcoal mb-2">Message envoyé !</h4>
-                <p className="text-steel">Je vous répondrai dans les plus brefs délais.</p>
+                <h4 className="font-serif text-xl font-bold text-charcoal mb-2">{t('contact.success_title')}</h4>
+                <p className="text-steel">{t('contact.success_body')}</p>
                 <button
                   onClick={() => setStatus('idle')}
                   className="mt-6 text-sm text-gold hover:underline"
                 >
-                  Envoyer un autre message
+                  {t('contact.success_again')}
                 </button>
               </div>
             ) : (
@@ -235,7 +218,7 @@ export const Contact: React.FC = () => {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-2">
-                      Nom complet <span className="text-gold">*</span>
+                      {t('contact.field_name')} <span className="text-gold">*</span>
                     </label>
                     <input
                       type="text"
@@ -244,12 +227,12 @@ export const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all"
-                      placeholder="Votre nom"
+                      placeholder={t('contact.field_name_placeholder')}
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-charcoal mb-2">
-                      Email <span className="text-gold">*</span>
+                      {t('contact.field_email')} <span className="text-gold">*</span>
                     </label>
                     <input
                       type="email"
@@ -258,15 +241,15 @@ export const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all"
-                      placeholder="votre@email.com"
+                      placeholder={t('contact.field_email_placeholder')}
                     />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-charcoal mb-2">
-                    Téléphone{' '}
-                    <span className="text-steel text-xs font-normal">(optionnel)</span>
+                    {t('contact.field_phone')}{' '}
+                    <span className="text-steel text-xs font-normal">{t('contact.field_phone_optional')}</span>
                   </label>
                   <input
                     type="tel"
@@ -274,13 +257,13 @@ export const Contact: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all"
-                    placeholder="06 XX XX XX XX"
+                    placeholder={t('contact.field_phone_placeholder')}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-2">
-                    Votre projet <span className="text-gold">*</span>
+                    {t('contact.field_message')} <span className="text-gold">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -289,13 +272,13 @@ export const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all resize-none"
-                    placeholder="Décrivez votre projet ou votre besoin..."
+                    placeholder={t('contact.field_message_placeholder')}
                   />
                 </div>
 
                 {status === 'error' && (
                   <p className="text-risk-red text-sm">
-                    Une erreur est survenue. Veuillez m'écrire directement à{' '}
+                    {t('contact.error_body')}{' '}
                     <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
                       {CONTACT_EMAIL}
                     </a>
@@ -313,17 +296,17 @@ export const Contact: React.FC = () => {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
                       </svg>
-                      Envoi en cours...
+                      {t('contact.submitting')}
                     </>
                   ) : (
                     <>
-                      Envoyer le message <Send size={18} />
+                      {t('contact.submit')} <Send size={18} />
                     </>
                   )}
                 </button>
 
                 <p className="text-xs text-steel text-center">
-                  Ou appelez directement :{' '}
+                  {t('contact.call_instead')}{' '}
                   <a href={PHONE_HREF} className="phone-link-hover-gold font-semibold">
                     {PHONE_NUMBER}
                   </a>

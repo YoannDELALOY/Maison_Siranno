@@ -12,15 +12,39 @@ import { homeTestimonials as homeFr, projectsTestimonials as projFr, allTestimon
 import { homeTestimonials as homeEn, projectsTestimonials as projEn, allTestimonials as allEn } from '../data/testimonials.en';
 import { homeTestimonials as homeEs, projectsTestimonials as projEs, allTestimonials as allEs } from '../data/testimonials.es';
 
+/**
+ * Table de correspondance langue → jeu de données pour chaque resource.
+ * Toute nouvelle langue doit être ajoutée ici ET dans LanguageContext.
+ */
+const LOCALE_MAP = {
+  projects:             { fr: projectsFr, en: projectsEn, es: projectsEs },
+  services:             { fr: servicesFr, en: servicesEn, es: servicesEs },
+  blog:                 { fr: blogFr,     en: blogEn,     es: blogEs     },
+  homeTestimonials:     { fr: homeFr,     en: homeEn,     es: homeEs     },
+  projectsTestimonials: { fr: projFr,     en: projEn,     es: projEs     },
+  allTestimonials:      { fr: allFr,      en: allEn,      es: allEs      },
+} as const;
+
+/**
+ * Hook fournissant l'ensemble des données statiques localisées selon la langue active.
+ *
+ * Retourne :
+ * - `projects`             — réalisations de la page Projets
+ * - `services`             — expertises de la page Expertise
+ * - `blog`                 — articles de blog
+ * - `homeTestimonials`     — témoignages affichés sur la page d'accueil
+ * - `projectsTestimonials` — témoignages affichés sur la page Réalisations
+ * - `allTestimonials`      — ensemble complet des témoignages
+ */
 export const useLocalizedData = () => {
   const { lang } = useLanguage();
 
-  const projects = lang === 'en' ? projectsEn : lang === 'es' ? projectsEs : projectsFr;
-  const services = lang === 'en' ? servicesEn : lang === 'es' ? servicesEs : servicesFr;
-  const blog = lang === 'en' ? blogEn : lang === 'es' ? blogEs : blogFr;
-  const homeTestimonials = lang === 'en' ? homeEn : lang === 'es' ? homeEs : homeFr;
-  const projectsTestimonials = lang === 'en' ? projEn : lang === 'es' ? projEs : projFr;
-  const allTestimonials = lang === 'en' ? allEn : lang === 'es' ? allEs : allFr;
-
-  return { projects, services, blog, homeTestimonials, projectsTestimonials, allTestimonials };
+  return {
+    projects:             LOCALE_MAP.projects[lang],
+    services:             LOCALE_MAP.services[lang],
+    blog:                 LOCALE_MAP.blog[lang],
+    homeTestimonials:     LOCALE_MAP.homeTestimonials[lang],
+    projectsTestimonials: LOCALE_MAP.projectsTestimonials[lang],
+    allTestimonials:      LOCALE_MAP.allTestimonials[lang],
+  };
 };

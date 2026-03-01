@@ -12,6 +12,7 @@ import { ProjectData, ExpertiseCategory } from '../data/projects';
 import { Testimonial } from '../data/testimonials';
 import { useLocalizedData } from '../hooks/useLocalizedData';
 import { useTranslation } from '../hooks/useTranslation';
+import { CONTACT_CONFIG } from '../constants/config';
 
 interface ExpertiseProjectsPageProps {
   expertiseId: ExpertiseCategory;
@@ -21,47 +22,33 @@ interface ExpertiseProjectsPageProps {
 }
 
 interface ExpertiseMeta {
-  title: string;
-  subtitle: string;
-  icon: React.ReactNode;
+  icon: string;
   accentColor: string;
 }
 
 const expertiseMeta: Record<ExpertiseCategory, ExpertiseMeta> = {
   'web-apps-saas': {
-    title: 'Développement Web Apps & SaaS',
-    subtitle: 'Sites vitrine, applications métiers, marketplaces, portfolios',
-    icon: <img src={iconWebApps} alt="Développement Web Apps & SaaS" className="w-7 h-7 object-contain" />,
+    icon: iconWebApps,
     accentColor: 'from-blue-500/20 to-blue-600/10',
   },
   'automatisation-n8n': {
-    title: 'Automatisation & Orchestration n8n',
-    subtitle: 'Workflows, RDV automatiques, intégrations, réduction du travail manuel',
-    icon: <img src={iconAutomatisation} alt="Automatisation & Orchestration n8n" className="w-7 h-7 object-contain" />,
+    icon: iconAutomatisation,
     accentColor: 'from-purple-500/20 to-purple-600/10',
   },
   'contenu-marketing-ia': {
-    title: 'Création de Contenu & Marketing IA',
-    subtitle: 'Portfolios créatifs, newsletters, billetterie, présence digitale',
-    icon: <img src={iconContenu} alt="Création de Contenu & Marketing IA" className="w-7 h-7 object-contain" />,
+    icon: iconContenu,
     accentColor: 'from-rose-500/20 to-rose-600/10',
   },
   'ia-agents-rag': {
-    title: 'Intelligence Artificielle & Agents RAG',
-    subtitle: 'Chatbots IA, transcription automatique, assistants intelligents',
-    icon: <img src={iconIA} alt="Intelligence Artificielle & Agents RAG" className="w-7 h-7 object-contain" />,
+    icon: iconIA,
     accentColor: 'from-emerald-500/20 to-emerald-600/10',
   },
   'conseil-formation': {
-    title: 'Conseil & Formation',
-    subtitle: 'Stratégie SEO, audit digital, accompagnement transformation, formation équipes',
-    icon: <img src={iconConseil} alt="Conseil & Formation" className="w-7 h-7 object-contain" />,
+    icon: iconConseil,
     accentColor: 'from-amber-500/20 to-amber-600/10',
   },
   'pilotage-continu': {
-    title: 'Pilotage Continu',
-    subtitle: 'Suivi mensuel KPIs, optimisation permanente, retainer digital',
-    icon: <img src={iconPilotage} alt="Pilotage Continu" className="w-7 h-7 object-contain" />,
+    icon: iconPilotage,
     accentColor: 'from-teal-500/20 to-teal-600/10',
   },
 };
@@ -108,8 +95,8 @@ const TestimonialBridge: React.FC<{ t: Testimonial; prevIsEven: boolean }> = ({ 
 
         {/* Identité */}
         <div className={`hidden sm:flex items-center gap-3 shrink-0 ${prevIsEven ? 'flex-row-reverse' : ''}`}>
-          <div className="w-8 h-8 rounded-full overflow-hidden border border-gold/30 shrink-0">
-            <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+          <div className="w-8 -h-8 rounded-full overflow-hidden border border-gold/30 shrink-0">
+            <img src={t.image} alt={t.name} width="32" height="32" className="w-full h-full object-cover" />
           </div>
           <div className={prevIsEven ? 'text-right' : ''}>
             <div className={`font-serif font-bold text-xs ${prevIsEven ? 'text-charcoal' : 'text-white'}`}>{t.name}</div>
@@ -117,7 +104,7 @@ const TestimonialBridge: React.FC<{ t: Testimonial; prevIsEven: boolean }> = ({ 
           </div>
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <img key={i} src={starImg} alt="★" className="w-3 h-3 object-contain" />
+              <img key={i} src={starImg} alt="★" width="12" height="12" className="w-3 h-3 object-contain" />
             ))}
           </div>
         </div>
@@ -126,14 +113,14 @@ const TestimonialBridge: React.FC<{ t: Testimonial; prevIsEven: boolean }> = ({ 
       {/* Mobile : identité sous la citation */}
       <div className={`sm:hidden flex items-center gap-2 mt-3 ${prevIsEven ? 'pr-10 flex-row-reverse' : 'pl-10'}`}>
         <div className="w-7 h-7 rounded-full overflow-hidden border border-gold/30 shrink-0">
-          <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+          <img src={t.image} alt={t.name} width="28" height="28" className="w-full h-full object-cover" />
         </div>
         <span className={`font-serif font-bold text-xs ${prevIsEven ? 'text-charcoal' : 'text-white'}`}>{t.name}</span>
         <span className={`text-xs ${prevIsEven ? 'text-charcoal/30' : 'text-white/20'}`}>·</span>
         <span className="text-xs text-metallic-gold-inline font-medium">{t.role}</span>
         <div className="flex gap-0.5 ml-auto">
           {[...Array(5)].map((_, i) => (
-            <img key={i} src={starImg} alt="★" className="w-3 h-3 object-contain" />
+            <img key={i} src={starImg} alt="★" width="12" height="12" className="w-3 h-3 object-contain" />
           ))}
         </div>
       </div>
@@ -252,9 +239,12 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
 }) => {
   const { t } = useTranslation();
   const meta = expertiseMeta[expertiseId];
+  const expertiseTitle = t(`expertise_projects.meta.${expertiseId}.title`);
+  const expertiseSubtitle = t(`expertise_projects.meta.${expertiseId}.subtitle`);
+
   useSeo(
-    `Réalisations ${meta?.title ?? expertiseId} — Maison Siranno`,
-    `Découvrez nos projets en ${meta?.title ?? expertiseId} : études de cas détaillées, technologies utilisées et résultats obtenus. Maison Siranno, agence IA & Web.`,
+    `Réalisations ${expertiseTitle ?? expertiseId} — Maison Siranno`,
+    `Découvrez nos projets en ${expertiseTitle ?? expertiseId} : études de cas détaillées, technologies utilisées et résultats obtenus. Maison Siranno, agence IA & Web.`,
     `https://maisonsiranno.fr/realisations/${expertiseId}`
   );
 
@@ -285,16 +275,16 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
 
         <div className="flex items-start gap-6">
           <div className="p-4 rounded-2xl bg-transparent border border-gold/20 text-gold shrink-0">
-            {meta.icon}
+            <img src={meta.icon} alt={expertiseTitle} width="28" height="28" className="w-7 h-7 object-contain" />
           </div>
           <div className="flex-1">
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-2 block">
               {t('navbar.links.realisations')}
             </span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold leading-tight mb-3 text-metallic-navy">
-              {meta.title}
+              {expertiseTitle}
             </h1>
-            <p className="text-steel text-lg">{meta.subtitle}</p>
+            <p className="text-steel text-lg">{expertiseSubtitle}</p>
           </div>
         </div>
 
@@ -302,7 +292,7 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
         <div className="flex items-center gap-3 mt-12">
           <div className="h-px flex-1 bg-gradient-to-r from-gold/30 to-transparent" />
           <span className="text-steel text-sm font-medium">
-            {projects.length} réalisation{projects.length > 1 ? 's' : ''}
+            {projects.length} {projects.length > 1 ? t('expertise_projects.count_plural') : t('expertise_projects.count_singular')}
           </span>
           <div className="h-px flex-1 bg-gradient-to-l from-gold/30 to-transparent" />
         </div>
@@ -325,38 +315,43 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
         </div>
       ) : (
         <div className="text-center py-24 text-steel max-w-7xl mx-auto px-6">
-          <p className="text-lg">Aucun projet dans cette catégorie pour le moment.</p>
+          <p className="text-lg">{t('expertise_projects.no_projects')}</p>
         </div>
       )}
 
       {/* CTA contact */}
       <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="cta-leather glass-panel rounded-3xl border border-gold/20 overflow-hidden relative text-center">
+        <div className="cta-leather text-center bg-charcoal text-white rounded-3xl overflow-hidden relative">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
+            <div className="absolute top-0 left-1/3 w-80 h-80 bg-gold/6 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-blue-400/5 rounded-full blur-3xl"></div>
+          </div>
           <div className="relative z-10 px-8 md:px-16 py-14">
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">{t('projects_page.cta.eyebrow')}</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-navy mb-4">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-metallic-silver mb-4">
               {t('projects_page.cta.title')}
             </h2>
-            <p className="text-steel text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
               {t('projects_page.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-7">
               <button
                 onClick={onGoToContact}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-dark rounded-full font-semibold shadow-xl text-white text-base"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 btn-metallic-gold rounded-full font-semibold shadow-xl text-base"
               >
                 <Mail size={18} />
                 {t('projects_page.cta.btn_message')}
               </button>
-              <a href="tel:+33XXXXXXXXX" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-charcoal/25 text-charcoal/60 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
+              <a href={`tel:${CONTACT_CONFIG.phoneHref}`} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 border-white/25 text-white/75 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
                 <Phone size={18} />
                 {t('projects_page.cta.btn_call')}
               </a>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-steel/60">
-              {t('projects_page.cta.guarantees', { returnObjects: true }).map((g: string) => (
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
+              {(t('projects_page.cta.guarantees', { returnObjects: true }) as string[]).map((g: string) => (
                 <span key={g} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0"></span>
                   {g}
                 </span>
               ))}

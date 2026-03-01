@@ -5,6 +5,7 @@ import { SectionId } from '../types';
 import { Testimonial } from '../data/testimonials';
 import { useLocalizedData } from '../hooks/useLocalizedData';
 import { useSwipe } from '../hooks/useSwipe';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface TestimonialsProps {
   onOpenProject?: (projectId: string) => void;
@@ -13,6 +14,7 @@ interface TestimonialsProps {
 export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => {
   const { homeTestimonials } = useLocalizedData();
   const testimonials = homeTestimonials;
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
@@ -33,20 +35,19 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => 
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-2 block">Témoignages</span>
+          <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-2 block">{t('testimonials.eyebrow')}</span>
           <h2 className="font-serif text-4xl font-bold text-metallic-navy mb-4">
-            Ils nous font{' '}
-            <span className="text-metallic-gold underline decoration-gold/30 underline-offset-4">confiance</span>
+            {t('testimonials.title')}
           </h2>
-          <p className="text-steel">Des partenaires locaux qui ont franchi le cap du digital.</p>
+          <p className="text-steel">{t('testimonials.subtitle')}</p>
         </div>
 
         {/* Desktop : grille 3 colonnes */}
         <div className="hidden md:grid md:grid-cols-3 gap-8">
-          {testimonials.map((t, i) => (
+          {testimonials.map((testimonial, i) => (
             <TestimonialCard
               key={i}
-              t={t}
+              t={testimonial}
               onOpenProject={onOpenProject}
             />
           ))}
@@ -133,7 +134,7 @@ const TestimonialCard: React.FC<{ t: Testimonial; onOpenProject?: (id: string) =
 
     <div className="flex gap-0.5 mb-6">
       {[...Array(5)].map((_, idx) => (
-        <img key={idx} src={starImg} alt="★" className="w-5 h-5 object-contain drop-shadow-sm" />
+        <img key={idx} src={starImg} alt="★" width="20" height="20" className="w-5 h-5 object-contain drop-shadow-sm" />
       ))}
     </div>
 
@@ -143,7 +144,7 @@ const TestimonialCard: React.FC<{ t: Testimonial; onOpenProject?: (id: string) =
 
     <div className="flex items-center gap-4 mt-auto border-t border-gray-100 pt-6">
       <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0">
-        <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+        <img src={t.image} alt={t.name} width="48" height="48" loading="lazy" className="w-full h-full object-cover" />
       </div>
       <div>
         <div className="font-serif font-bold text-charcoal">{t.name}</div>

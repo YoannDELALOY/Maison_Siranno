@@ -148,17 +148,17 @@ export const Services: React.FC<ServicesProps> = ({ onOpenService }) => {
             {t('services.eyebrow')}
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-metallic-navy mb-6 animate-slide-up">
-            L'IA et le web au service de{' '}
+            {t('services.title_line1')}{' '}
             <br className="hidden md:block" />
             <span className="italic relative inline-block text-metallic-gold">
-              votre croissance
+              {t('services.title_line2')}
               <svg className="absolute w-full h-3 -bottom-1 left-0 text-gold/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="3" fill="none" />
               </svg>
             </span>
           </h2>
           <p className="text-steel text-lg animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Nous fusionnons développement web premium, automatisation intelligente et IA de pointe pour transformer durablement votre entreprise.
+            {t('services.subtitle')}
           </p>
         </div>
 

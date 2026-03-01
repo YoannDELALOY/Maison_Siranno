@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, CheckCircle2, AlertCircle, ArrowRight, Tag, User, Calendar, ExternalLink, BookOpen } from 'lucide-react';
-import { ProjectData } from './Projects';
+import { ProjectData } from '../data/projects';
 import { SectionId } from '../types';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -171,7 +171,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                   rel="noopener noreferrer"
                   className="w-full btn-metallic-dark text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg"
                 >
-                  Voir le site <ExternalLink size={16} />
+                  {t('project_article.view_site')} <ExternalLink size={16} />
                 </a>
               )}
               <button

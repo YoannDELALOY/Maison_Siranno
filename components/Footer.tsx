@@ -4,34 +4,22 @@ import { Linkedin, Github, Instagram, Facebook, ExternalLink, Mail, Phone, MapPi
 import { SectionId } from '../types';
 import { buildServicesData, ServiceData } from './Services';
 import { useLocalizedData } from '../hooks/useLocalizedData';
+import { CONTACT_CONFIG } from '../constants/config';
+import { SOCIAL_LINKS } from '../data/socialLinks';
 
 interface FooterProps {
   onShowLegal?: (page: 'mentions' | 'privacy') => void;
   onNavigateService?: (service: ServiceData) => void;
 }
 
-const socialLinks = [
-  {
-    icon: <Linkedin size={18} />,
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/yoann-delaloy/'
-  },
-  {
-    icon: <Github size={18} />,
-    label: 'GitHub',
-    href: 'https://github.com/YoannDELALOY'
-  },
-  {
-    icon: <Instagram size={18} />,
-    label: 'Instagram',
-    href: 'https://www.instagram.com/yoanndelaloy/'
-  },
-  {
-    icon: <Facebook size={18} />,
-    label: 'Facebook',
-    href: 'https://www.facebook.com/profile.php?id=100067966427089&locale=fr_FR'
-  }
-];
+/** Map des noms d'icônes vers les composants Lucide correspondants */
+const ICON_MAP = {
+  Linkedin: <Linkedin size={18} />,
+  Github: <Github size={18} />,
+  Instagram: <Instagram size={18} />,
+  Facebook: <Facebook size={18} />,
+  ExternalLink: <ExternalLink size={18} />,
+} as const;
 
 export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }) => {
   const { t } = useTranslation();
@@ -58,30 +46,19 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
 
           {/* Réseaux sociaux */}
           <div className="flex gap-3 mt-6">
-            {socialLinks.map((s) => (
+            {SOCIAL_LINKS.map((s) => (
               <a
-                key={s.label}
+                key={s.id}
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={s.label}
-                className="p-2 bg-white/5 rounded-full hover:bg-gold/10 transition-all border border-white/10"
+                className="p-2 bg-white/5 rounded-full hover:bg-gold/10 hover:border-gold/50 hover:text-metallic-gold-inline transition-all border border-white/10"
                 aria-label={s.label}
               >
-                {s.icon}
+                {ICON_MAP[s.iconName]}
               </a>
             ))}
-            {/* Malt */}
-            <a
-              href="https://www.malt.fr/profile/yoanndelaloy"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Malt"
-              className="p-2 bg-white/5 rounded-full hover:bg-gold/10 transition-all border border-white/10"
-              aria-label="Malt"
-            >
-              <ExternalLink size={18} />
-            </a>
           </div>
         </div>
 
@@ -108,24 +85,28 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
           <ul className="space-y-4">
             <li className="flex items-start gap-3 text-gray-400 text-sm">
               <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
-              <span>1 rue Auguste Grivot<br />Châteauneuf-sur-Loire, 45110<br />Loiret, France</span>
+              <span>
+                {CONTACT_CONFIG.address.street}<br />
+                {CONTACT_CONFIG.address.city}, {CONTACT_CONFIG.address.postal}<br />
+                {CONTACT_CONFIG.address.region}
+              </span>
             </li>
             <li>
               <a
-                href="mailto:contact@yoanndelaloy.com"
+                href={`mailto:${CONTACT_CONFIG.email}`}
                 className="flex items-center gap-3 text-gray-400 hover-metallic-gold transition-all text-sm"
               >
                 <Mail size={16} className="text-gold shrink-0" />
-                contact@yoanndelaloy.com
+                {CONTACT_CONFIG.email}
               </a>
             </li>
             <li>
               <a
-                href="tel:+33647344364"
+                href={CONTACT_CONFIG.phoneHref}
                 className="flex items-center gap-3 text-gray-400 hover-metallic-gold transition-all text-sm font-medium"
               >
                 <Phone size={16} className="text-gold shrink-0" />
-                06 47 34 43 64
+                {CONTACT_CONFIG.phone}
               </a>
             </li>
           </ul>

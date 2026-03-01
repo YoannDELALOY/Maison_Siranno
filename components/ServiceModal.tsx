@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { X, CheckCircle2, ArrowRight } from 'lucide-react';
 import { ServiceData } from './Services';
 import { SectionId } from '../types';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface ServiceModalProps {
   service: ServiceData | null;
@@ -9,6 +10,7 @@ interface ServiceModalProps {
 }
 
 export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) => {
+  const { t } = useTranslation();
   useEffect(() => {
     if (service) {
       document.body.style.overflow = 'hidden';
@@ -50,7 +52,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) 
               {service.icon}
             </div>
             <div>
-              <span className="text-xs font-medium text-gold uppercase tracking-widest">Expertise</span>
+              <span className="text-xs font-medium text-gold uppercase tracking-widest">{t('service_modal.eyebrow')}</span>
               <h2 className="font-serif text-2xl font-bold text-metallic-navy">{service.title}</h2>
             </div>
           </div>
@@ -68,7 +70,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) 
 
           {/* Bénéfices */}
           <div>
-            <h3 className="font-serif text-lg font-bold text-charcoal mb-4">Ce que vous obtenez</h3>
+            <h3 className="font-serif text-lg font-bold text-charcoal mb-4">{t('service_modal.benefits_title')}</h3>
             <ul className="space-y-3">
               {service.benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -81,7 +83,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) 
 
           {/* Cas d'usage */}
           <div>
-            <h3 className="font-serif text-lg font-bold text-charcoal mb-4">Qui est concerné ?</h3>
+            <h3 className="font-serif text-lg font-bold text-charcoal mb-4">{t('service_modal.use_cases_title')}</h3>
             <div className="flex flex-wrap gap-2">
               {service.useCases.map((uc, i) => (
                 <span
@@ -101,7 +103,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) 
               onClick={onClose}
               className="w-full btn-metallic-dark text-white font-semibold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg"
             >
-              Discuter de ce service <ArrowRight size={18} />
+              {t('service_modal.cta')} <ArrowRight size={18} />
             </a>
           </div>
         </div>

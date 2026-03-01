@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { MapPin, CheckCircle2, Users, Lightbulb } from 'lucide-react';
 import { SectionId } from '../types';
-import { PerformanceChart } from './PerformanceChart';
 import { useTranslation } from '../hooks/useTranslation';
+
+// Recharts (~1.2 MB) chargé uniquement quand la section est affichée
+const PerformanceChart = React.lazy(() => import('./PerformanceChart').then(m => ({ default: m.PerformanceChart })));
 
 export const About: React.FC = () => {
   const { t } = useTranslation();
@@ -21,10 +23,7 @@ export const About: React.FC = () => {
           <h2 className="font-serif text-4xl lg:text-5xl font-bold leading-tight text-metallic-navy">
             {t('about.title').split(':').shift()}:{' '}
             <br className="hidden lg:block" />
-            <span className="relative inline-block">
-              <span className="relative z-10 text-metallic-gold">{t('about.title').split(':').pop()?.trim()}</span>
-              <span className="absolute bottom-2 left-0 w-full h-3 bg-gold/20 -z-0 rounded"></span>
-            </span>.
+            <span className="text-metallic-gold">{t('about.title').split(':').pop()?.trim()}</span>.
           </h2>
 
           <div className="text-steel text-lg leading-relaxed">
@@ -52,7 +51,7 @@ export const About: React.FC = () => {
           <div className="pt-8 flex flex-col items-center md:items-start gap-4 border-t border-gray-100 mt-8">
             <div className="flex flex-col items-center md:flex-row md:items-center gap-4">
               <div className="w-16 h-16 rounded-full bg-charcoal overflow-hidden border-2 border-gold shadow-lg shrink-0">
-                <img src="https://picsum.photos/200/200?grayscale" alt="Yoann Delaloy" className="w-full h-full object-cover" />
+                <img src="https://picsum.photos/200/200?grayscale" alt="Yoann Delaloy" width="64" height="64" loading="lazy" className="w-full h-full object-cover" />
               </div>
               <div className="text-center md:text-left">
                 <div className="font-serif text-xl font-bold text-charcoal">Yoann DELALOY</div>
@@ -88,7 +87,9 @@ export const About: React.FC = () => {
 
             {/* Graphique dans son propre contexte, pas de z-index conflictuel */}
             <div data-cursor-ignore style={{ position: 'relative', zIndex: 1, overflow: 'visible' }}>
-              <PerformanceChart />
+              <Suspense fallback={<div className="w-full h-[300px] flex items-center justify-center text-steel text-sm">Chargement…</div>}>
+                <PerformanceChart />
+              </Suspense>
             </div>
 
             <div className="mt-6 flex justify-between items-center text-sm border-t border-gray-100 pt-4">

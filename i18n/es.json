@@ -492,6 +492,12 @@
       }
     }
   },
+  "service_modal": {
+    "eyebrow": "Expertise",
+    "benefits_title": "Lo que obtiene",
+    "use_cases_title": "¿A quién va dirigido?",
+    "cta": "Hablar de este servicio"
+  },
   "cookie_banner": {
     "title": "Sus datos, nuestro compromiso",
     "body": "Utilizamos Formspree para tratar sus datos de contacto (nombre, email, teléfono, mensaje). Prevemos integrar herramientas de análisis en el futuro.",

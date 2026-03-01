@@ -106,7 +106,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                       {t('expertise_page.service_label').replace('{n}', String(index + 1))}
                     </span>
 
-                    <h2 className={`font-serif text-4xl font-bold leading-tight ${isEven ? 'text-metallic-navy' : 'text-white'}`}>
+                    <h2 className="font-serif text-4xl font-bold leading-tight text-metallic-silver">
                       {service.title}
                     </h2>
 
@@ -148,7 +148,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
           </div>
           <div className="relative z-10 px-8 md:px-16 py-14">
             <span className="text-metallic-gold-inline font-medium tracking-widest uppercase text-sm mb-4 block">{t('expertise_page.cta.eyebrow')}</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-metallic-silver">
               {t('expertise_page.cta.title')}
             </h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">

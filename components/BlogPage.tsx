@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { BlobBackground } from './BlobBackground';
 import { ArrowRight, Clock, BookOpen, Calendar, ChevronLeft, ChevronRight, Mail, Phone, Tag } from 'lucide-react';
 import { BlogCategory, BlogArticle } from '../data/blog';
 import { useSeo } from '../hooks/useSeo';
@@ -48,45 +49,60 @@ const getExpertiseSliders = (lang: string): { category: string; label: string; i
   }
 };
 
+// ─── Interfaces des composants internes ──────────────────────────────────────
+
+interface ArticleCardDarkProps {
+  article: BlogArticle;
+  onClick?: () => void;
+}
+
+interface ArticleCardFeaturedProps {
+  article: BlogArticle;
+  onClick?: () => void;
+}
+
+interface ArticleCardComingProps {
+  article: BlogArticle;
+}
+
+interface CategorySliderProps {
+  category: BlogCategory;
+  label: string;
+  icon: string;
+  articles: BlogArticle[];
+  onNavigateBlogArticle?: (id: string) => void;
+}
+
 // ─── Carte dark (style réalisation) ─────────────────────────────────────────
 
-const ArticleCardDark: React.FC<{ article: BlogArticle; onClick?: () => void }> = ({ article, onClick }) => {
+const ArticleCardDark: React.FC<ArticleCardDarkProps> = ({ article, onClick }) => {
+  const { t } = useTranslation();
 
   return (
     <div
       data-cursor-hover={article.available ? '' : undefined}
-      className="group relative rounded-2xl overflow-hidden flex-shrink-0 w-72 md:w-80 transition-all duration-300 hover:-translate-y-2"
+      className="group relative rounded-2xl overflow-hidden flex-shrink-0 w-72 md:w-80 transition-all duration-300 hover:-translate-y-2 border border-gold/15 hover:border-gold/35 hover:shadow-md"
       style={{
-        backgroundColor: '#0F172A',
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")`,
-        backgroundSize: '600px 600px',
-        backgroundBlendMode: 'overlay',
-        borderLeft: '3px solid #D4AF37',
-        boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 24px 0 48px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)',
+        backgroundColor: 'transparent',
+        borderLeft: '3px solid rgba(212,175,55,0.5)',
         opacity: article.available ? 1 : 0.65,
         cursor: article.available ? 'pointer' : 'default',
       }}
       onClick={article.available ? onClick : undefined}
     >
-      {/* Reflet gauche */}
-      <div
-        className="absolute top-0 left-0 bottom-0 w-8 pointer-events-none z-10"
-        style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 40%, transparent 100%)' }}
-      />
-
       {/* Badge "Bientôt" */}
       {!article.available && (
         <div className="absolute top-3 right-3 z-20">
           <span className="px-2 py-1 bg-gold/10 text-gold text-xs rounded-full border border-gold/20 font-medium flex items-center gap-1">
             <Clock size={9} />
-            Bientôt
+            {t('blog_page.badge_soon')}
           </span>
         </div>
       )}
 
       {/* Image */}
       <div className="h-44 overflow-hidden relative">
-        <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors z-10" />
+        <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10" />
         <img
           src={article.image}
           alt={article.title}
@@ -97,7 +113,6 @@ const ArticleCardDark: React.FC<{ article: BlogArticle; onClick?: () => void }> 
 
       {/* Contenu */}
       <div className="p-5 relative">
-        {/* Icône BookOpen au hover */}
         {article.available && (
           <div className="absolute top-0 right-5 -translate-y-1/2 btn-metallic-gold text-charcoal p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:-translate-y-1/2 transition-all duration-300 shadow-lg z-20">
             <BookOpen size={14} />
@@ -108,29 +123,29 @@ const ArticleCardDark: React.FC<{ article: BlogArticle; onClick?: () => void }> 
           {article.category}
         </span>
 
-        <h3 className="font-serif text-base font-bold mb-2 text-metallic-silver group-hover:text-white transition-colors leading-snug line-clamp-2">
+        <h3 className="font-serif text-base font-bold mb-2 text-metallic-navy group-hover:text-charcoal transition-colors leading-snug line-clamp-2">
           {article.title}
         </h3>
 
-        <p className="text-gray-400 text-sm leading-relaxed mb-3 line-clamp-2">
+        <p className="text-steel text-sm leading-relaxed mb-3 line-clamp-2">
           {article.excerpt}
         </p>
 
         <div className="flex flex-wrap gap-1.5 mb-3">
-          {article.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-white/5 text-gray-400 text-xs rounded-full border border-white/5">
+          {(article.tags || []).slice(0, 3).map((tag) => (
+            <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-gold/5 text-steel text-xs rounded-full border border-gold/10">
               <Tag size={8} />
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center justify-between text-xs text-gray-500 border-t border-white/5 pt-3">
+        <div className="flex items-center justify-between text-xs text-steel/60 border-t border-gold/10 pt-3">
           <span className="flex items-center gap-1.5">
             <Calendar size={10} />
             {article.date}
           </span>
-          <span className={`flex items-center gap-1.5 font-medium ${article.available ? 'text-gold/70 group-hover:text-gold transition-colors' : 'text-gray-600'}`}>
+          <span className={`flex items-center gap-1.5 font-medium ${article.available ? 'text-gold/70 group-hover:text-gold transition-colors' : 'text-steel/40'}`}>
             <BookOpen size={10} />
             {t('blog_page.read_time', { time: article.readTime })}
           </span>
@@ -142,13 +157,7 @@ const ArticleCardDark: React.FC<{ article: BlogArticle; onClick?: () => void }> 
 
 // ─── Slider horizontal d'une catégorie ──────────────────────────────────────
 
-const CategorySlider: React.FC<{
-  category: BlogCategory;
-  label: string;
-  icon: string;
-  articles: BlogArticle[];
-  onNavigateBlogArticle?: (id: string) => void;
-}> = ({ category, label, icon, articles: allArticles, onNavigateBlogArticle }) => {
+const CategorySlider: React.FC<CategorySliderProps> = ({ category, label, icon, articles: allArticles, onNavigateBlogArticle }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [canLeft, setCanLeft] = useState(false);
   const [canRight, setCanRight] = useState(true);
@@ -177,7 +186,7 @@ const CategorySlider: React.FC<{
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-transparent p-1.5">
-            <img src={icon} alt={label} className="w-full h-full object-contain" />
+            <img src={icon} alt={label} width="36" height="36" className="w-full h-full object-contain" />
           </div>
           <h2 className="font-serif text-xl font-bold text-metallic-navy">{label}</h2>
           <span className="text-sm text-steel/60">({articles.length} articles)</span>
@@ -221,29 +230,18 @@ const CategorySlider: React.FC<{
 
 // ─── Carte "À lire maintenant" (grande, pleine largeur en grille) ────────────
 
-const ArticleCardFeatured: React.FC<{ article: BlogArticle; onClick?: () => void }> = ({ article, onClick }) => {
+const ArticleCardFeatured: React.FC<ArticleCardFeaturedProps> = ({ article, onClick }) => {
+  const { t } = useTranslation();
 
   return (
     <div
       data-cursor-hover
-      className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2"
-      style={{
-        backgroundColor: '#0F172A',
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")`,
-        backgroundSize: '600px 600px',
-        backgroundBlendMode: 'overlay',
-        borderLeft: '3px solid #D4AF37',
-        boxShadow: '0 20px 60px rgba(0,0,0,0.5), inset 24px 0 48px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)',
-      }}
+      className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 border border-gold/15 hover:border-gold/35 hover:shadow-md"
+      style={{ backgroundColor: 'transparent', borderLeft: '3px solid rgba(212,175,55,0.5)' }}
       onClick={onClick}
     >
-      <div
-        className="absolute top-0 left-0 bottom-0 w-8 pointer-events-none z-10"
-        style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 40%, transparent 100%)' }}
-      />
-
       <div className="h-52 overflow-hidden relative">
-        <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors z-10" />
+        <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors z-10" />
         <img
           src={article.image}
           alt={article.title}
@@ -261,24 +259,24 @@ const ArticleCardFeatured: React.FC<{ article: BlogArticle; onClick?: () => void
           {article.category}
         </span>
 
-        <h3 className="font-serif text-lg font-bold mb-2 text-metallic-silver group-hover:text-white transition-colors leading-snug">
+        <h3 className="font-serif text-lg font-bold mb-2 text-metallic-navy group-hover:text-charcoal transition-colors leading-snug">
           {article.title}
         </h3>
 
-        <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
+        <p className="text-steel text-sm leading-relaxed mb-4 line-clamp-3">
           {article.excerpt}
         </p>
 
         <div className="flex flex-wrap gap-2 mb-4">
-          {article.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-white/5 text-gray-400 text-xs rounded-full border border-white/5">
+          {(article.tags || []).slice(0, 3).map((tag) => (
+            <span key={tag} className="flex items-center gap-1 px-2 py-0.5 bg-gold/5 text-steel text-xs rounded-full border border-gold/10">
               <Tag size={9} />
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center justify-between text-xs text-gray-500 border-t border-white/5 pt-4">
+        <div className="flex items-center justify-between text-xs text-steel/60 border-t border-gold/10 pt-4">
           <span className="flex items-center gap-1.5"><Calendar size={11} />{article.date}</span>
           <span className="flex items-center gap-1.5 font-medium text-gold/70 group-hover:text-gold transition-colors">
             <BookOpen size={11} />
@@ -292,23 +290,16 @@ const ArticleCardFeatured: React.FC<{ article: BlogArticle; onClick?: () => void
 
 // ─── Carte "À venir" (compact, semi-opaque) ──────────────────────────────────
 
-const ArticleCardComing: React.FC<{ article: BlogArticle }> = ({ article }) => {
+const ArticleCardComing: React.FC<ArticleCardComingProps> = ({ article }) => {
+  const { t } = useTranslation();
 
   return (
     <div
-      className="rounded-2xl overflow-hidden flex gap-4 items-center p-4"
-      style={{
-        backgroundColor: '#0F172A',
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E")`,
-        backgroundSize: '600px 600px',
-        backgroundBlendMode: 'overlay',
-        borderLeft: '3px solid rgba(212,175,55,0.3)',
-        boxShadow: '0 4px 24px rgba(0,0,0,0.3)',
-        opacity: 0.75,
-      }}
+      className="rounded-2xl overflow-hidden flex gap-4 items-center p-4 border border-gold/15"
+      style={{ backgroundColor: 'transparent', borderLeft: '3px solid rgba(212,175,55,0.3)', opacity: 0.75 }}
     >
       <div className="w-20 h-16 rounded-xl overflow-hidden flex-shrink-0">
-        <img src={article.image} alt={article.title} className="w-full h-full object-cover grayscale" loading="lazy" />
+        <img src={article.image} alt={article.title} width="80" height="64" className="w-full h-full object-cover grayscale" loading="lazy" />
       </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
@@ -317,11 +308,11 @@ const ArticleCardComing: React.FC<{ article: BlogArticle }> = ({ article }) => {
           </span>
           <span className="px-1.5 py-0.5 bg-gold/10 text-gold text-xs rounded-full border border-gold/20 font-medium flex items-center gap-1">
             <Clock size={8} />
-            Bientôt
+            {t('blog_page.badge_soon')}
           </span>
         </div>
-        <h4 className="font-serif text-sm font-bold text-gray-300 leading-snug line-clamp-2">{article.title}</h4>
-        <p className="text-xs text-gray-500 mt-0.5">{t('blog_page.read_time', { time: article.readTime })}</p>
+        <h4 className="font-serif text-sm font-bold text-charcoal/70 leading-snug line-clamp-2">{article.title}</h4>
+        <p className="text-xs text-steel/60 mt-0.5">{t('blog_page.read_time', { time: article.readTime })}</p>
       </div>
     </div>
   );
@@ -346,20 +337,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
   const nextComing = comingSoonArticles.slice(0, 3);
 
   return (
-    <div
-      className="min-h-screen pt-32 pb-24 relative"
-      style={{
-        backgroundColor: '#FAF6EE',
-        backgroundImage: [
-          `url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='pg'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.30' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pg)' opacity='0.22'/%3E%3C/svg%3E")`,
-          `radial-gradient(ellipse at 10% 20%, rgba(212,175,55,0.08) 0%, transparent 50%)`,
-          `radial-gradient(ellipse at 85% 70%, rgba(212,175,55,0.06) 0%, transparent 45%)`,
-          `radial-gradient(ellipse at 50% 50%, rgba(245,235,200,0.18) 0%, transparent 70%)`,
-        ].join(', '),
-        backgroundSize: '700px 700px, 100% 100%, 100% 100%, 100% 100%',
-        backgroundBlendMode: 'multiply, normal, normal, normal',
-      }}
-    >
+    <div className="min-h-screen pt-32 pb-24 relative">
+      <BlobBackground />
       <div className="max-w-7xl mx-auto px-6">
 
         {/* En-tête */}
@@ -470,7 +449,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateBlogArticle, onGoT
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-steel/60">
-              {t('blog_page.cta.guarantees', { returnObjects: true }).map((g: string) => (
+              {(Array.isArray(t('blog_page.cta.guarantees', { returnObjects: true })) ? t('blog_page.cta.guarantees', { returnObjects: true }) : []).map((g: string) => (
                 <span key={g} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold/50 shrink-0" />
                   {g}

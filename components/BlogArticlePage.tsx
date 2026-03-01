@@ -1,9 +1,8 @@
 import React from 'react';
 import { useSeo } from '../hooks/useSeo';
 import { useTranslation } from '../hooks/useTranslation';
-import { ArrowLeft, CheckCircle2, ExternalLink, BookOpen, Github, Globe, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users, Mail, Phone } from 'lucide-react';
-import { ProjectData } from './Projects';
-import { ExpertiseCategory } from '../data/projects';
+import { ArrowLeft, CheckCircle2, BookOpen, Github, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users, Mail, Phone } from 'lucide-react';
+import { ProjectData, ExpertiseCategory } from '../data/projects';
 import { useLocalizedData } from '../hooks/useLocalizedData';
 import starImg from '../Media/etoiletrnsparante.png';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
@@ -27,8 +26,6 @@ interface BlogArticlePageProps {
   onBack: () => void;
   onGoToContact: () => void;
 }
-
-const perlinNoise = `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")`;
 
 /* ── Texture grain bleu marine pour sections sombres ── */
 const BlueSection: React.FC<{ children: React.ReactNode; className?: string; style?: React.CSSProperties }> = ({ children, className = '', style = {} }) => (
@@ -722,7 +719,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
                 {/* Étoiles image */}
                 <div className="flex gap-0.5 mt-1">
                   {Array.from({ length: 5 }).map((_, idx) => (
-                    <img key={idx} src={starImg} alt="★" className="w-3 h-3 object-contain" />
+                    <img key={idx} src={starImg} alt="★" width="12" height="12" className="w-3 h-3 object-contain" />
                   ))}
                 </div>
               </div>
@@ -898,7 +895,7 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
 
               {/* Garanties */}
               <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-charcoal/50">
-                {(t('projects_page.cta.guarantees', { returnObjects: true }) as string[]).map((g: string) => (
+                {(Array.isArray(t('projects_page.cta.guarantees', { returnObjects: true })) ? t('projects_page.cta.guarantees', { returnObjects: true }) : []).map((g: string) => (
                   <span key={g} className="flex items-center gap-1.5">
                     <span className="w-1 h-1 rounded-full bg-gold/60 shrink-0"></span>
                     {g}

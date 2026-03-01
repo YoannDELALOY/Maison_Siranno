@@ -3,6 +3,8 @@ import { useSeo } from '../hooks/useSeo';
 import { useTranslation } from '../hooks/useTranslation';
 import { MapPin, CheckCircle2, Users, Heart, Gem, Target, TrendingUp, ArrowRight, BarChart2, Mail, Phone } from 'lucide-react';
 import { CONTACT_CONFIG } from '../constants/config';
+import { LIGHT_TEXTURE_STYLE } from '../constants/textures';
+import { BlobBackground } from './BlobBackground';
 
 interface AgencyPageProps {
   onGoToContact?: () => void;
@@ -24,8 +26,8 @@ const AnimatedStat: React.FC<{ value: string; label: string; delay?: number }> =
   return (
     <div
       ref={ref}
-      className={`text-center p-6 glass-card rounded-2xl transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      className={`text-center p-6 rounded-2xl border border-gold/15 shadow-sm transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      style={{ ...LIGHT_TEXTURE_STYLE, transitionDelay: `${delay}ms` }}
     >
       <div className="text-4xl font-serif font-bold text-metallic-gold mb-2">{value}</div>
       <div className="text-sm text-steel uppercase tracking-wider">{label}</div>
@@ -66,7 +68,8 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
   const timeline = timelineTexts.map((item, i) => ({ ...item, ...timelineStyles[i] }));
 
   return (
-    <div className="min-h-screen pt-32 pb-24">
+    <div className="min-h-screen pt-32 pb-24 relative">
+      <BlobBackground />
       <div className="max-w-7xl mx-auto px-6">
 
         {/* En-tête */}
@@ -109,7 +112,7 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
                   <div className="absolute left-4 md:left-1/2 top-6 w-4 h-4 rounded-full bg-gold border-2 border-white shadow-lg -translate-x-1/2 md:-translate-x-1/2 z-10"></div>
 
                   <div className={`ml-12 md:ml-0 md:w-5/12 ${i % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                    <div className={`glass-card p-6 rounded-2xl border-l-4 ${item.color}`}>
+                    <div className={`p-6 rounded-2xl border-l-4 shadow-sm ${item.color}`} style={LIGHT_TEXTURE_STYLE}>
                       <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 ${item.bgColor} text-charcoal`}>
                         {item.period}
                       </div>
@@ -136,7 +139,7 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {valueKeys.map((key, i) => (
-              <div key={key} className="glass-card p-6 rounded-2xl text-center group hover:border-gold/30 transition-colors">
+              <div key={key} className="p-6 rounded-2xl border border-gold/15 text-center group hover:border-gold/30 transition-colors shadow-sm" style={LIGHT_TEXTURE_STYLE}>
                 <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-4 text-gold group-hover:scale-110 transition-transform">
                   {valueIcons[i]}
                 </div>
@@ -195,10 +198,10 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
         </div>
 
         {/* Fondateur */}
-        <div className="glass-panel rounded-3xl p-10 mb-20">
+        <div className="rounded-3xl border border-gold/15 p-10 mb-20 shadow-sm" style={LIGHT_TEXTURE_STYLE}>
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="w-28 h-28 rounded-full bg-charcoal overflow-hidden border-4 border-gold shadow-2xl shrink-0">
-              <img src="https://picsum.photos/200/200?grayscale" alt="Yoann DELALOY" className="w-full h-full object-cover" />
+              <img src="https://picsum.photos/200/200?grayscale" alt="Yoann DELALOY" width="112" height="112" loading="lazy" className="w-full h-full object-cover" />
             </div>
             <div className="text-center md:text-left">
               <div className="font-serif text-2xl font-bold text-charcoal mb-1">Yoann DELALOY</div>
@@ -230,7 +233,7 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {(Array.isArray(partners) ? partners : []).map((partner, i) => (
-              <div key={i} className="glass-card p-5 rounded-2xl group hover:border-gold/30 transition-colors">
+              <div key={i} className="p-5 rounded-2xl border border-gold/15 group hover:border-gold/30 transition-colors shadow-sm" style={LIGHT_TEXTURE_STYLE}>
                 <div className="text-3xl mb-3">{partnerEmojis[i]}</div>
                 <h4 className="font-serif text-base font-bold text-charcoal mb-2">{partner.label}</h4>
                 <p className="text-steel text-sm leading-relaxed">{partner.description}</p>

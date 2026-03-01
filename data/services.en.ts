@@ -717,7 +717,7 @@ export const servicesData: ServiceDataRaw[] = [
       "Documentation and post-training support"
     ],
     useCases: ["Digital transformation audit", "AI training for SMEs", "CDO as a Service", "Executive team workshops"],
-    technologies: ["IA", "Google Workspace", "Cloud", "Automatisation", "Graphisme", "Marque"],
+    technologies: ["AI", "Google Workspace", "Cloud", "Automation", "Graphics", "Branding"],
     processSteps: [
       {
         title: "Initial diagnosis",
