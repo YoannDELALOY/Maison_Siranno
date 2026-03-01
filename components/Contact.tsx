@@ -156,7 +156,7 @@ export const Contact: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       title={s.label}
-                      className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-gold/10 border border-white/10 hover:border-gold/50 rounded-lg text-gray-300 hover:text-metallic-gold-inline text-xs font-medium transition-all duration-200"
+                      className="flex items-center gap-2 px-3 py-2 btn-metallic-dark rounded-lg text-xs font-medium"
                     >
                       {ICON_MAP[s.iconName]}
                       <span>{s.label}</span>
