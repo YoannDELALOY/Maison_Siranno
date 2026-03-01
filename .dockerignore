@@ -1,8 +1,34 @@
-node_modules
-dist
-.git
+# ─── Ne pas copier dans le container Docker ───────────────────────────────────
+
+# Dépendances (réinstallées dans le Dockerfile)
+node_modules/
+
+# Build précédent (rebuild dans le Dockerfile)
+dist/
+
+# Git
+.git/
 .gitignore
-*.md
+
+# CI/CD
+.github/
+
+# IDE & config locale
+.vscode/
+.idea/
+.claude/
+
+# Variables d'environnement
 .env
 .env.*
-.claude
+
+# Documentation interne
+*.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

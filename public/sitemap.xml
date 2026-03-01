@@ -6,133 +6,126 @@
 
   <!-- Page d'accueil -->
   <url>
-    <loc>https://maisonsiranno.fr/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://yoanndelaloy.com/</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Page Expertise -->
   <url>
-    <loc>https://maisonsiranno.fr/#expertise</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://yoanndelaloy.com/#expertise</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Page Réalisations -->
   <url>
-    <loc>https://maisonsiranno.fr/#realisations</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://yoanndelaloy.com/#realisations</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Page L'Agence -->
   <url>
-    <loc>https://maisonsiranno.fr/#agence</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://yoanndelaloy.com/#agence</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Page Blog -->
   <url>
-    <loc>https://maisonsiranno.fr/#blog</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://yoanndelaloy.com/#blog</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Page Contact -->
   <url>
-    <loc>https://maisonsiranno.fr/#contact</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://yoanndelaloy.com/#contact</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Articles de blog disponibles -->
   <url>
-    <loc>https://maisonsiranno.fr/#blog/ia-artisans</loc>
+    <loc>https://yoanndelaloy.com/#blog/ia-artisans</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/rag-entreprise</loc>
+    <loc>https://yoanndelaloy.com/#blog/rag-entreprise</loc>
     <lastmod>2025-02-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/chatbot-artisan</loc>
+    <loc>https://yoanndelaloy.com/#blog/chatbot-leads-pme</loc>
     <lastmod>2025-03-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/automatisation-pme</loc>
+    <loc>https://yoanndelaloy.com/#blog/automatisation-pme</loc>
     <lastmod>2024-11-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/n8n-vs-make</loc>
+    <loc>https://yoanndelaloy.com/#blog/n8n-vs-make</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/seo-local-2025</loc>
+    <loc>https://yoanndelaloy.com/#blog/seo-local-2025</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/site-vitrine-2025</loc>
+    <loc>https://yoanndelaloy.com/#blog/site-vitrine-erreurs</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/vibe-coding</loc>
-    <lastmod>2025-02-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://maisonsiranno.fr/#blog/newsletter-automatisee</loc>
+    <loc>https://yoanndelaloy.com/#blog/newsletter-automatisee</loc>
     <lastmod>2025-01-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/contenu-ia-reseaux</loc>
+    <loc>https://yoanndelaloy.com/#blog/contenu-ia-linkedin</loc>
     <lastmod>2025-02-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/audit-digital-pme</loc>
-    <lastmod>2024-12-10</lastmod>
+    <loc>https://yoanndelaloy.com/#blog/dev-ia-claude-code</loc>
+    <lastmod>2025-02-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://maisonsiranno.fr/#blog/roi-transformation-digitale</loc>
-    <lastmod>2024-11-15</lastmod>
+    <loc>https://yoanndelaloy.com/#blog/mvp-saas-6-semaines</loc>
+    <lastmod>2025-01-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

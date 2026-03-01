@@ -1,0 +1,44 @@
+services:
+  maison-siranno:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: maison-siranno
+    restart: unless-stopped
+    networks:
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+
+      # ── Routeur HTTPS ────────────────────────────────────────────────────────
+      - "traefik.http.routers.maison-siranno.rule=Host(`yoanndelaloy.com`) || Host(`www.yoanndelaloy.com`)"
+      - "traefik.http.routers.maison-siranno.entrypoints=websecure"
+      - "traefik.http.routers.maison-siranno.tls=true"
+      - "traefik.http.routers.maison-siranno.tls.certresolver=letsencrypt"
+
+      # ── Redirect HTTP → HTTPS (entrypoint http doit exister dans Traefik) ───
+      - "traefik.http.routers.maison-siranno-http.rule=Host(`yoanndelaloy.com`) || Host(`www.yoanndelaloy.com`)"
+      - "traefik.http.routers.maison-siranno-http.entrypoints=web"
+      - "traefik.http.routers.maison-siranno-http.middlewares=redirect-https"
+
+      # ── Redirect www → sans www ──────────────────────────────────────────────
+      - "traefik.http.middlewares.maison-siranno-www.redirectregex.regex=^https://www\\.yoanndelaloy\\.com/(.*)"
+      - "traefik.http.middlewares.maison-siranno-www.redirectregex.replacement=https://yoanndelaloy.com/$${1}"
+      - "traefik.http.middlewares.maison-siranno-www.redirectregex.permanent=true"
+      - "traefik.http.routers.maison-siranno.middlewares=maison-siranno-www"
+
+      # ── Middleware HTTP→HTTPS global (déjà défini dans Traefik ? supprimer) ──
+      - "traefik.http.middlewares.redirect-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.redirect-https.redirectscheme.permanent=true"
+
+      # ── Port interne du container ────────────────────────────────────────────
+      - "traefik.http.services.maison-siranno.loadbalancer.server.port=80"
+
+# ── Réseau partagé avec Traefik ───────────────────────────────────────────────
+# Ce réseau doit exister sur le VPS avant de démarrer :
+#   docker network create traefik_network
+# Puis connecter Traefik à ce réseau :
+#   docker network connect traefik_network <nom_container_traefik>
+networks:
+  traefik_network:
+    external: true

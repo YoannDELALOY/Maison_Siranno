@@ -1,6 +1,7 @@
 # Maison Siranno — Agence IA & Web
 
 Site web de l'agence Maison Siranno, fondée par Yoann DELALOY à Châteauneuf-sur-Loire (Loiret, 45).
+Disponible sur **[yoanndelaloy.com](https://yoanndelaloy.com)**
 
 ## Stack Technique
 
@@ -12,13 +13,17 @@ Site web de l'agence Maison Siranno, fondée par Yoann DELALOY à Châteauneuf-s
 | Lucide React | Icônes |
 | Recharts | Graphiques (chargement différé via React.lazy) |
 | Formspree | Formulaire de contact |
+| Docker + Nginx | Conteneurisation & serveur de fichiers statiques |
+| Traefik | Reverse proxy + SSL Let's Encrypt |
+
+---
 
 ## Installation Locale
 
 ```bash
 # Cloner le dépôt
-git clone https://github.com/YoannDELALOY/maison-siranno.git
-cd maison-siranno
+git clone https://github.com/YoannDELALOY/Maison_Siranno.git
+cd Maison_Siranno
 
 # Installer les dépendances
 npm install
@@ -32,18 +37,17 @@ Le site sera accessible sur http://localhost:5174
 ## Build Production
 
 ```bash
-npm run build
+npm run build      # génère dist/
+npm run preview    # vérification locale du build
 ```
 
-Le dossier `dist/` est généré. Vérifier avec :
-```bash
-npm run preview
-```
+---
 
 ## Structure des Fichiers
 
 ```
 maison-siranno/
+├── .github/workflows/deploy.yml  # CI/CD GitHub Actions → VPS
 ├── components/                    # Composants React
 │   ├── Hero.tsx                   # Section Hero (accueil)
 │   ├── Services.tsx               # Section Expertises (accueil, carousel)
@@ -81,22 +85,14 @@ maison-siranno/
 │   ├── en.json                    # Traductions anglais
 │   └── es.json                    # Traductions espagnol
 ├── data/                          # Données statiques (source de vérité)
-│   ├── projects.ts                # Réalisations — français
-│   ├── projects.en.ts             # Réalisations — anglais
-│   ├── projects.es.ts             # Réalisations — espagnol
-│   ├── services.ts                # Expertises — français
-│   ├── services.en.ts             # Expertises — anglais
-│   ├── services.es.ts             # Expertises — espagnol
-│   ├── testimonials.ts            # Témoignages — français
-│   ├── testimonials.en.ts         # Témoignages — anglais
-│   ├── testimonials.es.ts         # Témoignages — espagnol
-│   ├── blog.ts                    # Articles de blog — français
-│   ├── blog.en.ts                 # Articles de blog — anglais
-│   ├── blog.es.ts                 # Articles de blog — espagnol
-│   └── socialLinks.ts             # Liens réseaux sociaux (source unique)
+│   ├── projects.ts / .en.ts / .es.ts
+│   ├── services.ts / .en.ts / .es.ts
+│   ├── testimonials.ts / .en.ts / .es.ts
+│   ├── blog.ts / .en.ts / .es.ts
+│   └── socialLinks.ts
 ├── constants/
-│   ├── config.ts                  # CONTACT_CONFIG (email, tel, adresse, Formspree)
-│   └── textures.ts                # Styles de texture réutilisables (grain SVG)
+│   ├── config.ts                  # CONTACT_CONFIG (email, tel, Formspree)
+│   └── textures.ts                # Styles de texture réutilisables
 ├── public/
 │   ├── logos/                     # Logos Maison Siranno
 │   ├── robots.txt                 # Configuration robots SEO
@@ -105,23 +101,22 @@ maison-siranno/
 ├── App.tsx                        # Composant racine + routeur SPA manuel
 ├── index.tsx                      # Point d'entrée React
 ├── index.html                     # HTML + meta SEO + Tailwind CDN + polices
-├── types.ts                       # Types TypeScript partagés (SectionId…)
+├── types.ts                       # Types TypeScript partagés
 ├── vite.config.ts                 # Configuration Vite
-├── Dockerfile                     # Build Docker multi-stage
-├── docker-compose.yml             # Déploiement VPS + Traefik
-└── nginx.conf                     # Configuration nginx SPA
+├── Dockerfile                     # Build Docker multi-stage (node → nginx)
+├── docker-compose.yml             # Déploiement VPS + labels Traefik
+└── nginx.conf                     # Config Nginx SPA + cache + sécurité
 ```
+
+---
 
 ## Internationalisation (i18n)
 
 Le site supporte 3 langues : **français** (défaut), **anglais** et **espagnol**.
 
-### Architecture
-
 - **Textes UI** → `i18n/{fr,en,es}.json` + hook `useTranslation`
-- **Données** (projets, services, blog, témoignages) → fichiers `data/*.{en,es}.ts` + hook `useLocalizedData`
+- **Données** (projets, services, blog, témoignages) → `data/*.{en,es}.ts` + hook `useLocalizedData`
 - **Persistance** → `localStorage` (clé `ms_lang`)
-- **Détection automatique** → langue du navigateur au premier chargement
 
 ### Ajouter une traduction
 
@@ -129,95 +124,121 @@ Le site supporte 3 langues : **français** (défaut), **anglais** et **espagnol*
 2. Utiliser `const { t } = useTranslation()` dans le composant
 3. Appeler `t('section.ma_cle')` dans le JSX
 
-### Ajouter une langue
-
-1. Ajouter le code dans `contexts/LanguageContext.tsx` → type `Language`
-2. Créer `i18n/{code}.json` (copier fr.json et traduire)
-3. Créer les fichiers `data/*.{code}.ts`
-4. Mettre à jour `hooks/useLocalizedData.ts` → `LOCALE_MAP`
-5. Mettre à jour `hooks/useTranslation.ts` → `translations`
+---
 
 ## Guide Ajout de Contenu
 
 ### Ajouter une réalisation
 
-Dans `data/projects.ts` (et `projects.en.ts`, `projects.es.ts`), ajouter un objet :
+Dans `data/projects.ts` (et `projects.en.ts`, `projects.es.ts`) :
 
 ```typescript
 {
-  id: 'mon-projet',           // Identifiant unique (slug)
+  id: 'mon-projet',
   title: "Nom du Projet",
   category: "Type de projet",
-  expertise: 'web-apps-saas', // ExpertiseCategory (voir type)
+  expertise: 'web-apps-saas',
   image: "https://...",
   description: "Description courte",
   tags: ["Tag1", "Tag2"],
   client: "Nom client",
   year: "2025",
-  date: "2025-06",            // Format YYYY-MM (pour tri)
+  date: "2025-06",
   fullDescription: "Description complète...",
   challenges: ["Défi 1"],
   results: ["Résultat 1"]
 }
 ```
 
-### Ajouter un article de blog
-
-Dans `data/blog.ts` (et `blog.en.ts`, `blog.es.ts`), ajouter un objet :
-
-```typescript
-{
-  id: 'mon-article',
-  slug: 'mon-article',        // Pour l'URL canonique SEO
-  title: "Titre de l'article",
-  excerpt: "Résumé visible en aperçu",
-  category: 'Intelligence Artificielle & RAG', // BlogCategory
-  date: "Mars 2025",
-  readTime: "7 min",
-  image: "https://...",
-  tags: ["Tag1", "Tag2"],
-  available: true,            // false = carte "Bientôt disponible"
-  body: {                     // Optionnel — null si available: false
-    intro: "Introduction...",
-    sections: [{ title: "...", paragraphs: ["..."], bullets: ["..."] }],
-    keyTakeaways: ["Point clé 1"],
-    conclusion: "Conclusion..."
-  }
-}
-```
-
 ### Constantes centralisées
 
-Ne pas dupliquer les données de contact ou les liens sociaux — utiliser les sources uniques :
-
 ```typescript
-import { CONTACT_CONFIG } from '../constants/config';   // email, tel, adresse
-import { SOCIAL_LINKS } from '../data/socialLinks';      // liens réseaux sociaux
-import { DARK_TEXTURE_STYLE, LIGHT_TEXTURE_STYLE } from '../constants/textures'; // styles grain
+import { CONTACT_CONFIG } from '../constants/config';    // email, tel, adresse
+import { SOCIAL_LINKS } from '../data/socialLinks';       // liens réseaux sociaux
+import { DARK_TEXTURE_STYLE } from '../constants/textures'; // styles grain
 ```
 
-## Déploiement Docker (VPS Hostinger)
+---
 
-### Prérequis
+## Déploiement sur VPS (Docker + Traefik)
 
-- Docker + Docker Compose installés sur le VPS
-- Traefik configuré avec réseau `traefik-network`
-- Port 80 et 443 redirigés vers Traefik
-- Certificats Let's Encrypt configurés dans Traefik
+### Architecture
 
-### Build et déploiement
+```
+Internet → Traefik (80/443) → container maison-siranno (nginx:80)
+                ↓
+         Let's Encrypt SSL (auto-renew)
+```
+
+### 1. Préparer le VPS (une seule fois)
 
 ```bash
-# Sur le serveur VPS
-git clone https://github.com/YoannDELALOY/maison-siranno.git
-cd maison-siranno
+# Créer le réseau Traefik partagé
+docker network create traefik_network
 
-docker build -t maison-siranno:latest .
-docker-compose up -d
+# Connecter Traefik à ce réseau (remplacer <traefik> par le nom de ton container)
+docker network connect traefik_network <traefik>
 
-# Voir les logs
-docker-compose logs -f maison-siranno
+# Cloner le projet
+mkdir -p /opt/maison-siranno
+cd /opt/maison-siranno
+git clone https://github.com/YoannDELALOY/Maison_Siranno.git .
 ```
+
+### 2. Démarrer le site
+
+```bash
+cd /opt/maison-siranno
+docker compose up -d --build
+
+# Vérifier
+docker compose logs -f maison-siranno
+```
+
+### 3. Configurer le DNS
+
+Dans ton gestionnaire DNS (ns1.dns-parking.com), créer :
+
+| Type | Nom | Valeur |
+|------|-----|--------|
+| A | `@` | `<IP_VPS>` |
+| A | `www` | `<IP_VPS>` |
+
+### 4. Configurer GitHub Actions (déploiement automatique)
+
+Dans **GitHub → Settings → Secrets and variables → Actions**, ajouter :
+
+| Secret | Valeur |
+|--------|--------|
+| `VPS_HOST` | Adresse IP de ton VPS |
+| `VPS_USER` | `root` |
+| `VPS_SSH_KEY` | Clé privée SSH (voir ci-dessous) |
+| `VPS_PORT` | `22` (optionnel, par défaut) |
+
+#### Générer la clé SSH pour GitHub Actions
+
+```bash
+# Sur ta machine locale (ou sur le VPS)
+ssh-keygen -t ed25519 -C "github-actions-maison-siranno" -f ~/.ssh/github_maison_siranno
+
+# Afficher la clé publique → à ajouter sur le VPS
+cat ~/.ssh/github_maison_siranno.pub
+
+# Afficher la clé privée → à ajouter dans GitHub Secrets (VPS_SSH_KEY)
+cat ~/.ssh/github_maison_siranno
+```
+
+#### Ajouter la clé publique sur le VPS
+
+```bash
+# Sur le VPS
+mkdir -p ~/.ssh
+echo "COLLER_LA_CLE_PUBLIQUE_ICI" >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+```
+
+Une fois configuré, chaque `git push` sur `main` déploie automatiquement le site.
 
 ### Test local avec Docker
 
@@ -227,32 +248,27 @@ docker run -p 8080:80 maison-siranno
 # → http://localhost:8080
 ```
 
-### Mise à jour du site
-
-```bash
-git pull origin main
-docker-compose build --no-cache
-docker-compose up -d --force-recreate
-```
+---
 
 ## Configuration Formspree
 
-Dans `constants/config.ts`, remplacer l'identifiant du formulaire :
+Dans `constants/config.ts` :
 
 ```typescript
-formspreeId: 'YOUR_FORMSPREE_ID', // → Votre ID Formspree réel
+formspreeId: 'YOUR_FORMSPREE_ID',
 ```
 
 ## SEO
 
-- `public/robots.txt` — Configuration crawlers + IA-friendly
-- `public/sitemap.xml` — Sitemap XML complet
+- `public/robots.txt` — Crawlers + IA-friendly
+- `public/sitemap.xml` — Sitemap XML (domaine `yoanndelaloy.com`)
 - `index.html` — Meta SEO, Open Graph, JSON-LD LocalBusiness
-- Hook `useSeo` — Met à jour `<title>` et `<meta description>` dynamiquement par page
-- Polices chargées en `preload` non-bloquant (performance Lighthouse)
+- Hook `useSeo` — Met à jour `<title>` et `<meta description>` par page
+- Polices chargées en `preload` non-bloquant
 
 ---
 
 **Maison Siranno** — Agence IA & Web · Châteauneuf-sur-Loire, Loiret (45)
+**Site** : [yoanndelaloy.com](https://yoanndelaloy.com)
 **Contact** : contact@yoanndelaloy.com · 06 47 34 43 64
 **Fondateur** : Yoann DELALOY

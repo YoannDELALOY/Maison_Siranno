@@ -14,4 +14,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://maisonsiranno.fr/sitemap.xml
+Sitemap: https://yoanndelaloy.com/sitemap.xml
