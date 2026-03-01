@@ -130,6 +130,7 @@ Le dossier `dist/` contient le site statique prêt à déployer (Vercel, Netlify
 | A-3 | Ajouter traductions EN/ES pour projets et témoignages | ✅ |
 | A-4 | Compléter la phase de traduction groupe L et refactorer les composants | ✅ |
 | A-5 | Traduire les textes restants codés en dur — groupe M (EN & ES) | ✅ |
+| A-6 | Mettre à jour les traductions EN/ES pour les nouvelles tâches UI ajoutées (Phase C) | 🔲 |
 
 ---
 
@@ -137,22 +138,22 @@ Le dossier `dist/` contient le site statique prêt à déployer (Vercel, Netlify
 
 | # | Tâche | Description | Statut |
 |---|-------|-------------|--------|
-| B-1 | **Section Réalisations (accueil) — bouton site web dans le center peek** | Sur la page d'accueil, dans la section "réalisations", déplacer le bouton "Site web" (lien externe) hors de la carte et l'intégrer à l'intérieur du center peek, avec les autres boutons d'action. | 🔲 |
-| B-2 | **Section ADN (accueil) — retirer la barre sous le titre** | Sur la page d'accueil, dans la section "ADN de l'agence", supprimer la barre décorative qui apparaît sous le titre. | 🔲 |
-| B-3 | **Section Contact (accueil) — boutons réseaux sociaux gold au hover** | Sur la page d'accueil, dans la section contact, partie gauche (fond bleu), les boutons de réseaux sociaux doivent passer en style gold métallique au survol de la souris. | 🔲 |
-| B-4 | **Footer — boutons réseaux sociaux gold au hover** | Dans le footer, les boutons de réseaux sociaux doivent passer en style gold métallique au survol de la souris. | 🔲 |
-| B-5 | **Page Expertise — titre du CTA en argent métallique** | Sur la page expertise, dans la section CTA (appel à l'action), le titre doit être de couleur argent métallique (classe `.text-metallic-silver`). | 🔲 |
-| B-6 | **Page Expertise — titres de section en argent métallique** | Sur la page expertise, le titre de chaque section d'expertise (ex : "Pilotage Continu") doit être en argent métallique (`.text-metallic-silver`). | 🔲 |
-| B-7 | **Pages détail expertise — center peek Méthode : `<strong>` sans épaisseur, texture gold** | Dans les pages de chaque expertise, dans la section Méthode, au sein du center peek (modal qui s'ouvre au clic sur une carte étape), les balises `<strong>` ne doivent plus être en gras. Elles doivent afficher la texture gold métallique sans épaisseur. | 🔲 |
-| B-8 | **Pages détail expertise — center peek Méthode : titres "Ce que nous ferons" / "Votre rôle" en gold métallique** | Dans les pages de chaque expertise, dans la section Méthode, les titres de colonnes "Ce que nous ferons" et "Votre rôle" (dans le center peek) doivent passer en texture gold métallique. | 🔲 |
-| B-9 | **Pages détail expertise — fond texturé avec points créme diffus** | Sur toutes les pages de détail d'expertise, le fond de la page doit adopter le même style que les sections hero et expertise de la page d'accueil : fond texturé sombre avec points de couleur créme diffus. | 🔲 |
-| B-10 | **Page Réalisations — fond texturé avec points créme diffus** | Sur la page "Réalisations", le fond de la page doit adopter le même style que les sections hero et expertise de la page d'accueil : fond texturé avec points de couleur créme diffus. | 🔲 |
-| B-11 | **Pages réalisation dédiée expertise — CTA fond bleu texturé** | Sur les pages de réalisation dédiées à une expertise, dans la section CTA, le fond doit utiliser la même texture bleue que le CTA de la page expertise. | 🔲 |
-| B-12 | **Page L'Agence — fond texturé avec points créme diffus** | Le fond de la page "L'Agence" doit être identique au fond de la section hero et méthode de la page d'accueil, avec les points créme diffus. | 🔲 |
-| B-13 | **Page L'Agence — cartes avec fond texturé (formulaire style)** | Sur la page "L'Agence", dans toutes les sections (héros, parcours, philosophie, différence, réseaux), les cartes doivent afficher le fond texturé identique à celui du formulaire de la page d'accueil. | 🔲 |
-| B-14 | **Page Blog — fond des sliders d'articles identique au fond de page** | Sur la page blog, le fond des sliders/cartes d'articles doit être identique au fond de la page (transparence totale ou même texture), de sorte que la différence ne soit pas visible. | 🔲 |
-| B-15 | **Navbar — drapeau à la place du code langue** | Dans la barre de navigation, sur le sélecteur de langue, afficher le drapeau de la langue active à la place du code texte (FR, EN, ES). | 🔲 |
-| B-16 | **Page Blog — fond texturé avec points créme diffus** | Le fond de la page blog doit être identique au fond de la section hero et expertise de la page d'accueil, avec les points de couleur créme diffus. | 🔲 |
+| B-1 | **Section Réalisations (accueil) — bouton site web dans le center peek** | Sur la page d'accueil, dans la section "réalisations", déplacer le bouton "Site web" (lien externe) hors de la carte et l'intégrer à l'intérieur du center peek, avec les autres boutons d'action. | ✅ |
+| B-2 | **Section ADN (accueil) — retirer la barre sous le titre** | Sur la page d'accueil, dans la section "ADN de l'agence", supprimer la barre décorative qui apparaît sous le titre. | ✅ |
+| B-3 | **Section Contact (accueil) — boutons réseaux sociaux gold au hover** | Sur la page d'accueil, dans la section contact, partie gauche (fond bleu), les boutons de réseaux sociaux doivent passer en style gold métallique au survol de la souris. | ✅ |
+| B-4 | **Footer — boutons réseaux sociaux gold au hover** | Dans le footer, les boutons de réseaux sociaux doivent passer en style gold métallique au survol de la souris. | ✅ |
+| B-5 | **Page Expertise — titre du CTA en argent métallique** | Sur la page expertise, dans la section CTA (appel à l'action), le titre doit être de couleur argent métallique (classe `.text-metallic-silver`). | ✅ |
+| B-6 | **Page Expertise — titres de section en bleu métallique** | Sur la page expertise, le titre de chaque section d'expertise sur fond texture claire (ex : "Pilotage Continu") doit être en bleu métallique (`.text-metallic-navy`). | ✅ |
+| B-7 | **Pages détail expertise — center peek Méthode : `<strong>` sans épaisseur, texture gold** | Dans les pages de chaque expertise, dans la section Méthode, au sein du center peek (modal qui s'ouvre au clic sur une carte étape), les balises `<strong>` ne doivent plus être en gras. Elles doivent afficher la texture gold métallique sans épaisseur. | ✅ |
+| B-8 | **Pages détail expertise — center peek Méthode : titres "Ce que nous ferons" / "Votre rôle" en gold métallique** | Dans les pages de chaque expertise, dans la section Méthode, les titres de colonnes "Ce que nous ferons" et "Votre rôle" (dans le center peek) doivent passer en texture gold métallique. | ✅ |
+| B-9 | **Pages détail expertise — fond texturé avec points créme diffus** | Sur toutes les pages de détail d'expertise, le fond de la page doit adopter le même style que les sections hero et expertise de la page d'accueil : fond texturé sombre avec points de couleur créme diffus. | ✅ |
+| B-10 | **Page Réalisations — fond texturé avec points créme diffus** | Sur la page "Réalisations", le fond de la page doit adopter le même style que les sections hero et expertise de la page d'accueil : fond texturé avec points de couleur créme diffus. | ✅ |
+| B-11 | **Pages réalisation dédiée expertise — CTA fond bleu texturé** | Sur les pages de réalisation dédiées à une expertise, dans la section CTA, le fond doit utiliser la même texture bleue que le CTA de la page expertise. | ✅ |
+| B-12 | **Page L'Agence — fond texturé avec points créme diffus** | Le fond de la page "L'Agence" doit être identique au fond de la section hero et méthode de la page d'accueil, avec les points créme diffus. | ✅ |
+| B-13 | **Page L'Agence — cartes avec fond texturé (formulaire style)** | Sur la page "L'Agence", dans toutes les sections (héros, parcours, philosophie, différence, réseaux), les cartes doivent afficher le fond texturé identique à celui du formulaire de la page d'accueil. | ✅ |
+| B-14 | **Page Blog — fond des sliders d'articles identique au fond de page** | Sur la page blog, le fond des sliders/cartes d'articles doit être identique au fond de la page (transparence totale ou même texture), de sorte que la différence ne soit pas visible. | ✅ |
+| B-15 | **Navbar — drapeau à la place du code langue** | Dans la barre de navigation, sur le sélecteur de langue, afficher le drapeau de la langue active à la place du code texte (FR, EN, ES). | ✅ |
+| B-16 | **Page Blog — fond texturé avec points créme diffus** | Le fond de la page blog doit être identique au fond de la section hero et expertise de la page d'accueil, avec les points de couleur créme diffus. | ✅ |
 | B-17 | **Changement de langue — rechargement de la page** | Lorsque l'utilisateur change de langue, déclencher un rechargement (ou remontage) de la page afin que toutes les traductions soient prises en compte sans résidu d'ancienne langue. | ✅ |
 | B-18 | **Audit Lighthouse — atteindre ≥ 80 partout** | Analyser le rapport Lighthouse, appliquer les corrections (fonts non-bloquantes, lazy-load Recharts, preconnect tiers, width/height images, loading=lazy). | ✅ |
 | B-19 | **Refactoring global du projet** | Centralisation des données de contact (`CONTACT_CONFIG`), liens sociaux (`SOCIAL_LINKS`), composant `BlobBackground` réutilisable, `useCallback` deps corrigées dans `App.tsx`. | ✅ |
@@ -163,4 +164,20 @@ Le dossier `dist/` contient le site statique prêt à déployer (Vercel, Netlify
 | B-24 | **Documentation in-code — commentaires complets** | JSDoc sur tous les hooks, contextes, constantes (`config.ts`, `textures.ts`, `socialLinks.ts`), callbacks et états de `App.tsx`. | ✅ |
 | B-25 | **README.md complet** | README mis à jour : stack, i18n, structure complète, guide ajout de contenu, constantes centralisées, déploiement Docker. | ✅ |
 | B-26 | **Mise à jour du PRD** | PRD mis à jour pour refléter l'état réel après B-18 → B-26. | ✅ |
-| B-27 | **Commit final** | Créer un commit propre avec message conventionnel couvrant toutes les modifications apportées. | 🔲 |
+| B-27 | **Commit final** | Créer un commit propre avec message conventionnel couvrant toutes les modifications apportées. | ✅ |
+
+---
+
+### Phase C — Améliorations UI (sprint suivant)
+
+| # | Tâche | Description | Statut |
+|---|-------|-------------|--------|
+| C-1 | **Section Réalisations (accueil) — bouton lien vers le site web dans le center peek** | Dans la section "réalisations" de la page d'accueil, ajouter un bouton "Voir le site" dans le center peek (à côté des boutons "En savoir plus" et "Démarrer mon projet") qui ouvre le lien externe du projet dans un nouvel onglet. S'appuyer sur le champ `url` ou `siteUrl` du projet dans `data/projects.ts`. | 🔲 |
+| C-2 | **Section Réalisations (accueil) — indicateur "Cliquez pour en savoir plus" sur les cartes** | Sur les cartes de réalisation de la page d'accueil, ajouter un indicateur visuel subtil (ex : texte discret, icône ou effet hover) qui signale à l'utilisateur qu'il peut cliquer sur la carte pour ouvrir le center peek, similaire aux indicateurs de liens GitHub déjà présents. | 🔲 |
+| C-3 | **Section Contact (accueil) — boutons réseaux sociaux gold au hover** | Sur la page d'accueil, dans la section contact (partie gauche, fond bleu), les boutons de réseaux sociaux doivent adopter le style gold métallique (`.btn-metallic-gold`) au survol de la souris, en cohérence avec les autres boutons du site. | 🔲 |
+| C-4 | **Footer — boutons réseaux sociaux gold au hover** | Dans le footer, les icônes/boutons de réseaux sociaux doivent adopter le style gold métallique au survol de la souris, en cohérence avec les autres boutons du site. | 🔲 |
+| C-5 | **Page Expertise — titres de section sur fond clair en bleu métallique** | Sur la page expertise, le titre de chaque expertise affiché sur une section à fond texture claire (ex : "Pilotage Continu") doit utiliser la classe `.text-metallic-navy` (bleu métallique) au lieu de la couleur actuelle. | 🔲 |
+| C-6 | **Pages détail expertise — `<strong>` dans center peek Méthode : texture gold sans gras** | Dans les pages de chaque expertise, section Méthode, dans le center peek (modal d'étape), les balises `<strong>` ne doivent plus être en gras (retirer `font-weight: bold`). Elles doivent afficher la texture gold métallique via la classe `.text-metallic-gold-inline`. | 🔲 |
+| C-7 | **Fond à points créme diffus — z-index inférieur au footer** | Sur les pages "L'Agence", "Réalisations" et toutes les pages de détail d'expertise, les points créme diffus du fond doivent être positionnés derrière tous les éléments (z-index le plus bas), y compris derrière le footer. Ils ne doivent pas apparaître par-dessus le footer lors du scroll en bas de page. | 🔲 |
+| C-8 | **Page Blog — cartes d'articles en bleu foncé comme les cartes de réalisations** | Sur la page blog, les cartes d'articles doivent reprendre la couleur de fond bleu foncé (`#0D1B2A`) utilisée par les cartes de la page réalisations, en remplacement du fond actuel. | 🔲 |
+| C-9 | **Navbar — drapeau de langue à la place du code texte** | Dans la barre de navigation, sur le sélecteur de langue, remplacer le premier code texte (FR / EN / ES) par l'emoji drapeau correspondant à la langue active (🇫🇷 / 🇬🇧 / 🇪🇸). Le chevron de dropdown reste présent. | 🔲 |
