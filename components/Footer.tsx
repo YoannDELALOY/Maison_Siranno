@@ -53,7 +53,7 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
                 target="_blank"
                 rel="noopener noreferrer"
                 title={s.label}
-                className="p-2 bg-white/5 rounded-full hover:bg-gold/10 hover:border-gold/50 hover:text-metallic-gold-inline transition-all border border-white/10"
+                className="p-2 btn-metallic-dark rounded-full"
                 aria-label={s.label}
               >
                 {ICON_MAP[s.iconName]}
