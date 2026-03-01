@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSeo } from '../hooks/useSeo';
 import { useTranslation } from '../hooks/useTranslation';
-import { ArrowLeft, CheckCircle2, BookOpen, Github, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users, Mail, Phone } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, BookOpen, Github, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users, Mail, Phone, ExternalLink } from 'lucide-react';
 import { ProjectData, ExpertiseCategory } from '../data/projects';
 import { useLocalizedData } from '../hooks/useLocalizedData';
 import starImg from '../Media/etoiletrnsparante.png';
