@@ -60,6 +60,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
             </span>
           ))}
         </div>
+
+        <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+          <span className="text-xs text-gold/40 group-hover:text-gold/80 transition-colors duration-300">
+            {t('home_projects.card_click_hint')}
+          </span>
+          <ChevronRight size={14} className="text-gold/40 group-hover:text-gold/80 group-hover:translate-x-0.5 transition-all duration-300" />
+        </div>
       </div>
     </div>
   );

@@ -154,6 +154,7 @@
     "title_line2": "Acción",
     "card_view_site": "Ver sitio",
     "card_private_site": "Sitio privado",
+    "card_click_hint": "Ver detalles",
     "swipe_hint": "Deslice para ver todos los proyectos"
   },
   "blog_page": {

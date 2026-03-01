@@ -154,6 +154,7 @@
     "title_line2": "Action",
     "card_view_site": "View site",
     "card_private_site": "Private site",
+    "card_click_hint": "View details",
     "swipe_hint": "Swipe to see all projects"
   },
   "blog_page": {
