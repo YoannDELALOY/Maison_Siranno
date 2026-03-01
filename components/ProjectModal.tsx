@@ -164,7 +164,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               {t('project_article.cta_title')}
             </p>
             <div className="flex flex-col gap-3">
-              {project.url && (
+              {project.url ? (
                 <a
                   href={project.url}
                   target="_blank"
@@ -173,6 +173,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                 >
                   {t('project_article.view_site')} <ExternalLink size={16} />
                 </a>
+              ) : (
+                <div className="w-full py-3 rounded-xl flex items-center justify-center gap-2 text-sm font-medium text-gray-500 border border-white/10 cursor-not-allowed select-none">
+                  <ExternalLink size={14} />
+                  {t('home_projects.card_private_site')}
+                </div>
               )}
               <button
                 onClick={() => {
