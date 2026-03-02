@@ -10,6 +10,14 @@ RUN npm ci --frozen-lockfile
 # Copier le reste du projet
 COPY . .
 
+# Variables EmailJS (injectées au build via docker-compose build args)
+ARG VITE_EMAILJS_SERVICE_ID
+ARG VITE_EMAILJS_TEMPLATE_ID
+ARG VITE_EMAILJS_PUBLIC_KEY
+ENV VITE_EMAILJS_SERVICE_ID=${VITE_EMAILJS_SERVICE_ID}
+ENV VITE_EMAILJS_TEMPLATE_ID=${VITE_EMAILJS_TEMPLATE_ID}
+ENV VITE_EMAILJS_PUBLIC_KEY=${VITE_EMAILJS_PUBLIC_KEY}
+
 # Build de production
 RUN npm run build
 

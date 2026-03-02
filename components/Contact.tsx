@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, Send, Linkedin, Github, Instagram, Facebook, ExternalLink } from 'lucide-react';
 import { SectionId } from '../types';
 import { CONTACT_CONFIG } from '../constants/config';
 import { SOCIAL_LINKS } from '../data/socialLinks';
 import { useTranslation } from '../hooks/useTranslation';
 
-const { email: CONTACT_EMAIL, phone: PHONE_NUMBER, phoneHref: PHONE_HREF, formspreeUrl: FORMSPREE_URL } = CONTACT_CONFIG;
+const { email: CONTACT_EMAIL, phone: PHONE_NUMBER, phoneHref: PHONE_HREF } = CONTACT_CONFIG;
 
 /** Map des noms d'icônes vers les composants Lucide correspondants */
 const ICON_MAP = {
@@ -29,25 +30,22 @@ export const Contact: React.FC = () => {
     e.preventDefault();
     setStatus('sending');
     try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+        {
+          user_name: formData.name,
+          user_email: formData.email,
+          user_phone: formData.phone,
           message: formData.message,
-          _replyto: formData.email,
-          _subject: `Nouveau message de ${formData.name} — Maison Siranno`
-        })
-      });
-      if (res.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch {
+          reply_to: formData.email,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+      );
+      setStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
       setStatus('error');
     }
   };

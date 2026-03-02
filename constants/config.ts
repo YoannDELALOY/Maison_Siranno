@@ -16,9 +16,4 @@ export const CONTACT_CONFIG = {
     region: 'Loiret, France',
   },
 
-  /** Remplacer YOUR_FORMSPREE_ID par l'identifiant du formulaire Formspree */
-  formspreeId: 'YOUR_FORMSPREE_ID',
-  get formspreeUrl() {
-    return `https://formspree.io/f/${this.formspreeId}`;
-  },
 } as const;
