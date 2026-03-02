@@ -14,8 +14,8 @@ export const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
         {/* Left: Philosophy & Agency DNA */}
-        <div className="space-y-8 text-left">
-          <div className="inline-flex items-center gap-2 text-metallic-gold-inline font-medium uppercase tracking-widest text-sm">
+        <div className="space-y-8 text-center md:text-left">
+          <div className="inline-flex items-center gap-2 text-metallic-gold-inline font-medium uppercase tracking-widest text-sm mx-auto md:mx-0">
             <Users size={16} />
             <span>{t('about.eyebrow')}</span>
           </div>

@@ -59,6 +59,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => 
             className="overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
+            style={{ touchAction: 'pan-y' }}
           >
             <div
               className="flex transition-transform duration-400 ease-in-out"

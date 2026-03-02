@@ -372,8 +372,8 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
           </>
         )}
 
-        {/* Bouton retour — fixe comme la navbar */}
-        <div className="fixed top-5 left-5 z-50">
+        {/* Bouton retour — fixe comme la navbar (desktop uniquement) */}
+        <div className="hidden md:block fixed top-5 left-5 z-50">
           <button
             onClick={onBack}
             className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105"

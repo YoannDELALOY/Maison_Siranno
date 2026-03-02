@@ -95,7 +95,7 @@ export const ExpertisePage: React.FC<ExpertisePageProps> = ({ onOpenService, onN
                       <img
                         src={service.detailIcon}
                         alt={service.title}
-                        className="w-full h-auto object-contain drop-shadow-2xl lg:hidden"
+                        className="w-1/2 max-w-[160px] h-auto object-contain drop-shadow-2xl lg:hidden mx-auto"
                       />
                     )}
                   </div>

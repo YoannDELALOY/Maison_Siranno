@@ -145,7 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage = 'home'
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.page)}
-                className={`text-left px-4 py-3 rounded-xl text-base font-serif font-medium transition-all ${
+                className={`text-center px-4 py-3 rounded-xl text-base font-serif font-medium transition-all w-full ${
                   isActivePage(link.page)
                     ? 'text-gold bg-gold/5'
                     : 'text-charcoal hover:text-gold hover:bg-gold/5'

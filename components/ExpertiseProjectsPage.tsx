@@ -267,7 +267,7 @@ export const ExpertiseProjectsPage: React.FC<ExpertiseProjectsPageProps> = ({
       <div className="pt-32 pb-16 max-w-7xl mx-auto px-6">
         <button
           onClick={onBack}
-          className="inline-flex items-center gap-2 text-steel hover:text-gold transition-colors mb-10 group"
+          className="hidden md:inline-flex items-center gap-2 text-steel hover:text-gold transition-colors mb-10 group"
         >
           <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
           {t('project_article.back_link')}

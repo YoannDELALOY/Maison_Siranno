@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
 
         {/* Colonne 1 — Logo & tagline */}
-        <div className="col-span-2 lg:col-span-1">
+        <div className="col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start">
           <div className="inline-block bg-white/10 rounded-xl p-2 mb-4">
             <img
               src="/logos/Design sans titre (84).png"
@@ -40,12 +40,12 @@ export const Footer: React.FC<FooterProps> = ({ onShowLegal, onNavigateService }
               className="h-12 object-contain"
             />
           </div>
-          <p className="text-gray-400 text-sm leading-relaxed mt-2" style={{ whiteSpace: 'pre-line' }}>
+          <p className="text-gray-400 text-sm leading-relaxed mt-2 text-center lg:text-left" style={{ whiteSpace: 'pre-line' }}>
             {t('footer.tagline')}
           </p>
 
           {/* Réseaux sociaux */}
-          <div className="flex gap-3 mt-6">
+          <div className="flex gap-3 mt-6 justify-center lg:justify-start">
             {SOCIAL_LINKS.map((s) => (
               <a
                 key={s.id}
