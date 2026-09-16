@@ -59,6 +59,13 @@ const expertiseSections: ExpertiseSection[] = [
     icon: iconPilotage,
     accentColor: 'from-teal-500/20 to-teal-600/10',
   },
+  {
+    // Visuel de marque a produire : cette expertise n'a pas encore ses deux
+    // PNG. L'icone reste vide, le composant la masque alors.
+    id: 'finance-investissement',
+    icon: '',
+    accentColor: 'from-yellow-500/20 to-yellow-600/10',
+  },
 ];
 
 export interface ProjectCardPageProps {

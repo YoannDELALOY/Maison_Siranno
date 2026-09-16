@@ -293,4 +293,46 @@ export const projectsData: ProjectData[] = [
       "Una monitorización en tiempo real vigila el estado de todos los agentes y activa alertas automáticas ante cualquier anomalía, garantizando la fiabilidad del sistema día a día."
     ]
   },
+
+  // ─── EL CUADERNO DE BITÁCORA DEL INVERSOR ────────────────────────────────
+  // Añadido el 16/09/2026. Producto real, en línea, en venta.
+  // Nunca incluir aquí una cifra de rentabilidad de mercado: este proyecto
+  // ilustra un método de trabajo, no un resultado.
+  {
+    id: 'carnet-de-bord-investisseur',
+    title: "El cuaderno de bitácora del inversor",
+    category: "Producto SaaS — Finanzas",
+    expertise: 'finance-investissement',
+    expertises: ['finance-investissement', 'web-apps-saas'],
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800",
+    description: "El diario de trading que rechaza una posición sin su tesis, su nivel de invalidación y su tamaño — y que oculta el resultado mientras la decisión no haya sido juzgada.",
+    tags: ["React", "TypeScript", "Supabase", "Finanzas", "SaaS"],
+    client: "Maison Siranno",
+    year: "2026",
+    date: "2026-09",
+    url: "https://carnet.yoanndelaloy.com",
+    fullDescription: "Primer producto del posicionamiento Finanzas × Tech de Maison Siranno. La mayoría de los particulares que operan no saben por qué ganan o por qué pierden: nada se escribe antes de entrar, nada se anota después de salir. El cuaderno impone el proceso en lugar de confiar en la buena voluntad — el análisis es obligatorio antes de entrar, el tamaño se calcula, y al cierre el resultado permanece oculto mientras el usuario no haya juzgado su propia decisión. El producto se vende con un recorrido escrito de cinco módulos, leídos dentro de la aplicación, y una hora de puesta en marcha.",
+    challenges: [
+      "Convertir una restricción en producto: un cuaderno que rechaza un registro incompleto debe seguir siendo usable a diario",
+      "Separar la decisión del resultado a nivel de interfaz, sin que el usuario pueda alterar el orden de las preguntas",
+      "Premiar la disciplina sin premiar jamás la rentabilidad — un escollo que la mayoría de las aplicaciones de trading no evitan",
+      "Alojar datos financieros personales con una separación verificable entre cuentas"
+    ],
+    results: [
+      "Análisis obligatorio antes de entrar: tesis, precio de entrada, nivel de invalidación, objetivo, estado de ánimo",
+      "Tamaño de posición calculado por la base de datos, nunca introducido a mano",
+      "Resultado oculto al cierre mientras la decisión no haya sido juzgada",
+      "Revisión estadística: esperanza en R, efecto del desplazamiento del stop, efecto del estado de ánimo al entrar, matriz decisión × resultado",
+      "Recorrido de cinco módulos servido desde la base, accesible incluso tras el fin del acceso",
+      "Exportación completa y eliminación definitiva de la cuenta en un clic",
+      "Separación de datos aplicada por la propia base, cuenta por cuenta"
+    ],
+    process: [
+      "El punto de partida no fue la interfaz sino la pregunta que el cuaderno debe responder: cuánto cuestan, en euros, las desviaciones entre el proceso escrito y lo que realmente se hizo. Todos los campos obligatorios se derivan de esa pregunta, y no se añadió ningún otro.",
+      "La mecánica central se fijó antes que cualquier pantalla: al cierre, el usuario juzga su decisión antes de ver su resultado. En el otro orden, la respuesta está sesgada siempre — es el punto que nunca hay que simplificar, y así está escrito en las reglas del repositorio.",
+      "La gamificación se refiere únicamente a la disciplina: análisis escrito antes de entrar, stop respetado, lección registrada. Nunca al resultado, nunca a una racha ganadora, y sin ninguna clasificación entre usuarios — celebrar un golpe de suerte enseña a repetirlo.",
+      "Los cálculos sensibles — tamaño de posición, ratio beneficio-riesgo, resultado en R — los realiza la base de datos y no el navegador, y cada cuenta está aislada por reglas aplicadas a nivel del motor y no por el código de la aplicación.",
+      "La exportación y la eliminación de cuenta se entregaron al mismo tiempo que el resto, no después: en una herramienta que aloja diarios de trading, poder marcharse con los propios datos es una condición de la confianza, no una opción."
+    ]
+  },
 ];

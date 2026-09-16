@@ -52,6 +52,11 @@ const expertiseMeta: Record<ExpertiseCategory, ExpertiseMeta> = {
     icon: iconPilotage,
     accentColor: 'from-teal-500/20 to-teal-600/10',
   },
+  // Visuel de marque a produire pour cette expertise : l'icone reste vide.
+  'finance-investissement': {
+    icon: '',
+    accentColor: 'from-yellow-500/20 to-yellow-600/10',
+  },
 };
 
 // ─── Témoignage bridge (prolongement de la section projet) ──────────────────

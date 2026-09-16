@@ -1090,5 +1090,115 @@ export const servicesData: ServiceDataRaw[] = [
         a: "Non. Si vous partez de zéro, nous mettons en place tout le tracking et les tableaux de bord dès le premier mois. Si vous avez déjà des outils, nous nous y connectons et les enrichissons.",
       },
     ],
+  },
+
+  // ─── 7. FINANCE & INVESTISSEMENT ─────────────────────────────────────────
+  // Ajouté le 16/09/2026 avec le repositionnement Finance × Tech.
+  // Deux règles non négociables sur ce service, elles viennent du doc 41 :
+  // aucune recommandation d'achat ou de vente, aucune promesse de gain.
+  // Ce qui est vendu est une méthode de travail et un outil, pas un résultat.
+  {
+    id: 'finance-investissement',
+    icon: null,
+    title: "Finance & Investissement",
+    description: "Treize ans de marchés, et un outil qui impose la méthode. Nous formons les particuliers à travailler leurs positions proprement — analyse écrite, dimensionnement, revue — et nous livrons l'application qui les y oblige.",
+    delay: "0.6s",
+    fullDescription: "C'est l'expertise qui distingue Maison Siranno des autres agences : Yoann est sur les marchés depuis 2012, avec un niveau expert en analyse technique, analyse fondamentale, money management et psychologie de marché. La plupart des gens qui tradent ont le même problème — ils prennent une position, ils gagnent ou ils perdent, et ils ne savent pas pourquoi. Faute de traces, ils répètent les mêmes erreurs pendant des années. Nous ne vendons ni signaux ni martingale : nous enseignons un process et nous construisons l'outil qui empêche de le contourner.",
+    benefits: [
+      "Une méthode complète : analyse écrite avant entrée, dimensionnement, sortie, revue",
+      "Le carnet de bord de l'investisseur : une application qui refuse une position sans son point d'invalidation",
+      "À la clôture, le résultat reste caché tant que la décision n'a pas été jugée",
+      "Des statistiques qui isolent le coût réel des écarts de discipline",
+      "Export complet et suppression du compte en un clic, à tout moment"
+    ],
+    useCases: [
+      "Particuliers qui tradent seuls avec un point d'invalidation",
+      "Investisseurs qui veulent un process plutôt que des intuitions",
+      "Outils de suivi financier sur-mesure",
+      "Pédagogie financière en entreprise"
+    ],
+    technologies: ["React", "TypeScript", "Supabase", "Analyse technique", "Money management", "Journaling de trading"],
+    processSteps: [
+      {
+        title: "Cadrage de la méthode",
+        description: "Définir ce qu'on mesure, et pourquoi.",
+        detailedDescription: [
+          "Un carnet de trading ne sert pas à archiver, il sert à produire le seul chiffre que personne ne possède sur lui-même : **le coût de ses propres écarts**. Encore faut-il décider quoi enregistrer. Nous partons de la façon dont vous travaillez réellement — instruments, unités de temps, risque par position — pour arrêter la liste des champs qui comptent.",
+          "À l'issue de cette étape, vous savez exactement ce qui sera noté avant chaque entrée et après chaque sortie, et pourquoi chaque champ est là. Rien n'est demandé sans raison : un carnet trop lourd se remplit trois semaines puis s'abandonne."
+        ],
+        agencyWork: [
+          "Nous cadrons les champs obligatoires avant entrée : thèse, prix d'entrée, invalidation, objectif, état d'esprit",
+          "Nous définissons la règle de dimensionnement à partir de votre capital et de votre risque par position",
+          "Nous arrêtons la liste des axes d'analyse qui seront exploitables en revue"
+        ]
+      },
+      {
+        title: "Le parcours écrit",
+        description: "Cinq modules, lus dans l'outil et non dans un PDF oublié.",
+        detailedDescription: [
+          "Le parcours couvre cinq sujets : pourquoi une position sans analyse écrite n'est pas un investissement, comment construire sa fiche d'analyse, comment dimensionner plutôt que deviner, comment gérer la sortie, et comment lire ses propres statistiques pour corriger.",
+          "Il se lit **dans l'application**, à côté de l'outil, avec le suivi de lecture. C'est délibéré : une méthode livrée en document séparé s'applique trois semaines et se laisse tomber."
+        ],
+        agencyWork: [
+          "Nous livrons les cinq modules directement dans votre espace",
+          "Nous relions chaque module à l'écran de l'application qu'il concerne",
+          "Nous gardons le parcours accessible même après la fin de votre accès"
+        ]
+      },
+      {
+        title: "Mise en route",
+        description: "Une heure ensemble pour configurer le carnet.",
+        detailedDescription: [
+          "Nous configurons votre carnet avec vous : capital, risque par position, instruments suivis. Vous posez vos questions sur la méthode, et vous saisissez votre première analyse pendant la séance.",
+          "**Ce que cette séance n'est pas :** un avis sur vos positions en cours. Nous ne commentons aucune position, aucun instrument, aucun moment d'entrée. C'est une séance de configuration et de méthode."
+        ],
+        agencyWork: [
+          "Nous paramétrons votre compte avec vous, en direct",
+          "Nous vérifions ensemble que la première analyse tient debout",
+          "Nous répondons à vos questions de méthode, jamais de placement"
+        ]
+      },
+      {
+        title: "La revue",
+        description: "Lire ses propres chiffres, et corriger.",
+        detailedDescription: [
+          "Après une vingtaine de positions clôturées, le carnet commence à dire des choses qu'aucun relevé de courtier ne montre : l'écart d'espérance entre les positions où le stop n'a pas bougé et celles où il a été éloigné, l'effet de l'état d'esprit à l'entrée, et surtout la case **mauvaise décision, résultat positif** — celle qui récompense exactement le comportement qui coûte le plus cher.",
+          "C'est cette case qui justifie l'existence du carnet : sur un relevé de compte, elle est verte, indistinguable d'une bonne décision gagnante."
+        ],
+        agencyWork: [
+          "Nous calculons l'espérance en R, le taux de réussite et la matrice décision × résultat",
+          "Nous isolons l'effet du déplacement de stop et de l'état à l'entrée",
+          "Nous gardons vos données exportables et supprimables à tout moment"
+        ]
+      }
+    ],
+    stats: [
+      // Les deux seuls chiffres honnêtes ici sont ceux de l'offre elle-même.
+      // Aucun chiffre de performance ne figurera jamais sur ce service.
+      { value: "390 €", label: "Parcours, carnet et séance de mise en route compris" },
+      { value: "24 mois", label: "D'accès inclus, puis 5 € par mois" },
+    ],
+    faq: [
+      {
+        q: "Est-ce que vous donnez des conseils en investissement ?",
+        a: "Non, jamais. Nous ne dirons jamais quoi acheter, quoi vendre, ni quand. Ce que nous vendons est une formation à la méthode de travail et un outil de suivi — pas du conseil en investissement au sens réglementé, et pas de la gestion pour compte de tiers. Vous restez seul décideur de vos positions.",
+      },
+      {
+        q: "Y a-t-il une promesse de gain ?",
+        a: "Aucune. Investir et trader comportent un risque de perte en capital, pouvant aller jusqu'à la totalité des sommes engagées, et davantage avec des produits à effet de levier. Les performances passées ne préjugent pas des performances futures, et aucune méthode ne garantit un résultat. Ce que nous promettons, c'est que vous saurez pourquoi vous perdez quand vous perdez.",
+      },
+      {
+        q: "Je fais du long terme, pas du trading. C'est pour moi ?",
+        a: "Pas aujourd'hui, et il vaut mieux le dire avant. Le carnet est construit autour du point d'invalidation : vos positions doivent avoir un niveau où vous décidez de sortir. Si vous achetez pour dix ans sans stop, l'outil ne calculera rien d'utile.",
+      },
+      {
+        q: "Tout ça existe gratuitement sur YouTube, non ?",
+        a: "Oui, complètement, et c'est comme ça que Yoann s'est formé depuis 2012. Ce que vous payez n'est pas l'information : c'est le tri, l'ordre, et surtout l'outil — parce que YouTube ne vous donnera jamais un carnet qui refuse votre position tant que vous n'avez pas écrit votre invalidation.",
+      },
+      {
+        q: "Et si l'application ferme dans six mois ?",
+        a: "Yoann en est le premier utilisateur et s'en sert sur ses propres positions : le jour où elle ferme, il perd son outil en premier. Dans tous les cas, vous exportez l'intégralité de votre carnet en un clic, quand vous voulez, dans un format ouvert que n'importe quel tableur lit.",
+      },
+    ],
   }
 ];

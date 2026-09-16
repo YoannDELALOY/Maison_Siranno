@@ -1043,5 +1043,113 @@ export const servicesData: ServiceDataRaw[] = [
         a: "No. If you are starting from scratch, we put in place all the tracking and dashboards in the first month. If you already have tools, we connect to them and enrich them.",
       },
     ],
+  },
+
+  // ─── 7. FINANCE & INVESTING ──────────────────────────────────────────────
+  // Added 16/09/2026. Two non-negotiable rules on this service, from doc 41:
+  // no buy or sell recommendation, and no promise of returns.
+  {
+    id: 'finance-investissement',
+    icon: null,
+    title: "Finance & Investing",
+    description: "Thirteen years in the markets, and a tool that enforces the method. We teach private traders to work their positions properly — written analysis, position sizing, review — and we ship the application that holds them to it.",
+    delay: "0.6s",
+    fullDescription: "This is the expertise that sets Maison Siranno apart from other agencies: Yoann has been in the markets since 2012, at expert level in technical analysis, fundamental analysis, money management and market psychology. Most people who trade share the same problem — they take a position, they win or they lose, and they do not know why. With no record, they repeat the same mistakes for years. We sell neither signals nor a system: we teach a process and we build the tool that makes it impossible to skip.",
+    benefits: [
+      "A complete method: written analysis before entry, sizing, exit, review",
+      "The investor's logbook: an application that refuses a position without its invalidation level",
+      "At close, the result stays hidden until the decision has been judged",
+      "Statistics that isolate the real cost of discipline gaps",
+      "Full export and account deletion in one click, at any time"
+    ],
+    useCases: [
+      "Private traders working with an invalidation level",
+      "Investors who want a process rather than intuition",
+      "Bespoke financial tracking tools",
+      "Financial education in a company setting"
+    ],
+    technologies: ["React", "TypeScript", "Supabase", "Technical analysis", "Money management", "Trade journaling"],
+    processSteps: [
+      {
+        title: "Framing the method",
+        description: "Deciding what gets measured, and why.",
+        detailedDescription: [
+          "A trading journal is not an archive. It exists to produce the one number nobody has about themselves: **the cost of their own discipline gaps**. That still requires deciding what to record. We start from how you actually work — instruments, timeframes, risk per position — and settle the list of fields that matter.",
+          "By the end of this step you know exactly what will be recorded before each entry and after each exit, and why each field is there. Nothing is asked without a reason: an overloaded journal gets filled for three weeks and then abandoned."
+        ],
+        agencyWork: [
+          "We define the mandatory pre-entry fields: thesis, entry price, invalidation, target, state of mind",
+          "We set the sizing rule from your capital and your risk per position",
+          "We settle which analysis axes will actually be usable at review time"
+        ]
+      },
+      {
+        title: "The written course",
+        description: "Five modules, read inside the tool rather than in a forgotten PDF.",
+        detailedDescription: [
+          "The course covers five subjects: why a position without written analysis is not an investment, how to build your analysis sheet, how to size rather than guess, how to handle the exit, and how to read your own statistics in order to correct.",
+          "It is read **inside the application**, alongside the tool, with reading progress tracked. That is deliberate: a method delivered as a separate document gets applied for three weeks and dropped."
+        ],
+        agencyWork: [
+          "We deliver the five modules directly inside your account",
+          "We tie each module to the screen of the application it concerns",
+          "We keep the course readable even after your access period ends"
+        ]
+      },
+      {
+        title: "Setup session",
+        description: "One hour together to configure the journal.",
+        detailedDescription: [
+          "We configure your journal with you: capital, risk per position, instruments tracked. You ask your questions about the method, and you enter your first analysis during the session.",
+          "**What this session is not:** an opinion on your open positions. We comment on no position, no instrument and no entry timing. It is a configuration and method session."
+        ],
+        agencyWork: [
+          "We set up your account with you, live",
+          "We check together that the first analysis stands up",
+          "We answer questions about method, never about placement"
+        ]
+      },
+      {
+        title: "The review",
+        description: "Reading your own numbers, and correcting.",
+        detailedDescription: [
+          "After roughly twenty closed positions, the journal starts saying things no broker statement shows: the expectancy gap between positions where the stop never moved and those where it was widened, the effect of your state of mind at entry, and above all the **bad decision, positive result** cell — the one that rewards exactly the behaviour that costs the most.",
+          "That cell alone justifies the journal: on a broker statement it is green, indistinguishable from a good decision that won."
+        ],
+        agencyWork: [
+          "We compute expectancy in R, hit rate and the decision × result matrix",
+          "We isolate the effect of stop movement and of state of mind at entry",
+          "We keep your data exportable and deletable at any time"
+        ]
+      }
+    ],
+    stats: [
+      // The only honest figures here are those of the offer itself.
+      // No performance figure will ever appear on this service.
+      { value: "€390", label: "Course, journal and setup session included" },
+      { value: "24 months", label: "Of access included, then €5 per month" },
+    ],
+    faq: [
+      {
+        q: "Do you give investment advice?",
+        a: "Never. We will not tell you what to buy, what to sell, or when. What we sell is training in a working method and a tracking tool — not regulated investment advice, and not discretionary management. You remain the sole decision-maker on your positions.",
+      },
+      {
+        q: "Is there any promise of returns?",
+        a: "None. Investing and trading carry a risk of capital loss, up to the entire amount committed, and more with leveraged products. Past performance does not predict future performance, and no method guarantees a result. What we do promise is that you will know why you lose when you lose.",
+      },
+      {
+        q: "I invest long term rather than trade. Is this for me?",
+        a: "Not today, and it is better said upfront. The journal is built around the invalidation level: your positions need a price at which you decide to exit. If you buy for ten years with no stop, the tool will compute nothing useful for you.",
+      },
+      {
+        q: "All of this is free on YouTube, isn't it?",
+        a: "Completely, and that is how Yoann trained himself from 2012 onwards. What you pay for is not the information: it is the sorting, the order, and above all the tool — because YouTube will never hand you a journal that refuses your position until you have written down your invalidation.",
+      },
+      {
+        q: "What if the application shuts down in six months?",
+        a: "Yoann is its first user and runs his own positions through it: the day it closes, he loses his own tool first. In any case you export your entire journal in one click, whenever you want, in an open format any spreadsheet can read.",
+      },
+    ],
   }
 ];

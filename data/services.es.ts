@@ -1043,5 +1043,113 @@ export const servicesData: ServiceDataRaw[] = [
         a: "No. Si parte de cero, ponemos en marcha todo el tracking y los paneles de control desde el primer mes. Si ya tiene herramientas, nos conectamos a ellas y las enriquecemos.",
       },
     ],
+  },
+
+  // ─── 7. FINANZAS E INVERSIÓN ─────────────────────────────────────────────
+  // Añadido el 16/09/2026. Dos reglas innegociables en este servicio, del
+  // doc 41: ninguna recomendación de compra o venta, ninguna promesa de ganancia.
+  {
+    id: 'finance-investissement',
+    icon: null,
+    title: "Finanzas e Inversión",
+    description: "Trece años de mercados y una herramienta que impone el método. Formamos a particulares para trabajar sus posiciones con rigor — análisis escrito, dimensionamiento, revisión — y entregamos la aplicación que les obliga a hacerlo.",
+    delay: "0.6s",
+    fullDescription: "Es la experiencia que distingue a Maison Siranno de otras agencias: Yoann está en los mercados desde 2012, con nivel experto en análisis técnico, análisis fundamental, money management y psicología de mercado. La mayoría de quienes operan tienen el mismo problema — toman una posición, ganan o pierden, y no saben por qué. Sin registro, repiten los mismos errores durante años. No vendemos señales ni sistemas infalibles: enseñamos un proceso y construimos la herramienta que impide saltárselo.",
+    benefits: [
+      "Un método completo: análisis escrito antes de entrar, dimensionamiento, salida, revisión",
+      "El cuaderno de bitácora del inversor: una aplicación que rechaza una posición sin su nivel de invalidación",
+      "Al cierre, el resultado permanece oculto hasta que la decisión ha sido juzgada",
+      "Estadísticas que aíslan el coste real de las desviaciones de disciplina",
+      "Exportación completa y eliminación de la cuenta en un clic, en cualquier momento"
+    ],
+    useCases: [
+      "Particulares que operan con un nivel de invalidación",
+      "Inversores que quieren un proceso en lugar de intuiciones",
+      "Herramientas de seguimiento financiero a medida",
+      "Pedagogía financiera en empresa"
+    ],
+    technologies: ["React", "TypeScript", "Supabase", "Análisis técnico", "Money management", "Diario de trading"],
+    processSteps: [
+      {
+        title: "Encuadre del método",
+        description: "Decidir qué se mide, y por qué.",
+        detailedDescription: [
+          "Un diario de trading no sirve para archivar, sirve para producir la única cifra que nadie posee sobre sí mismo: **el coste de sus propias desviaciones**. Aun así hay que decidir qué registrar. Partimos de cómo trabaja usted realmente — instrumentos, marcos temporales, riesgo por posición — para fijar la lista de campos que importan.",
+          "Al terminar esta etapa sabe exactamente qué se anotará antes de cada entrada y después de cada salida, y por qué está cada campo. Nada se pide sin motivo: un diario demasiado pesado se rellena tres semanas y se abandona."
+        ],
+        agencyWork: [
+          "Fijamos los campos obligatorios antes de entrar: tesis, precio de entrada, invalidación, objetivo, estado de ánimo",
+          "Definimos la regla de dimensionamiento a partir de su capital y su riesgo por posición",
+          "Establecemos los ejes de análisis que serán realmente explotables en la revisión"
+        ]
+      },
+      {
+        title: "El recorrido escrito",
+        description: "Cinco módulos, leídos dentro de la herramienta y no en un PDF olvidado.",
+        detailedDescription: [
+          "El recorrido cubre cinco temas: por qué una posición sin análisis escrito no es una inversión, cómo construir su ficha de análisis, cómo dimensionar en lugar de adivinar, cómo gestionar la salida y cómo leer sus propias estadísticas para corregir.",
+          "Se lee **dentro de la aplicación**, junto a la herramienta, con seguimiento de lectura. Es deliberado: un método entregado en un documento aparte se aplica tres semanas y se abandona."
+        ],
+        agencyWork: [
+          "Entregamos los cinco módulos directamente en su espacio",
+          "Vinculamos cada módulo con la pantalla de la aplicación que le corresponde",
+          "Mantenemos el recorrido accesible incluso después del fin de su acceso"
+        ]
+      },
+      {
+        title: "Puesta en marcha",
+        description: "Una hora juntos para configurar el cuaderno.",
+        detailedDescription: [
+          "Configuramos su cuaderno con usted: capital, riesgo por posición, instrumentos seguidos. Plantea sus preguntas sobre el método y registra su primer análisis durante la sesión.",
+          "**Lo que esta sesión no es:** una opinión sobre sus posiciones abiertas. No comentamos ninguna posición, ningún instrumento, ningún momento de entrada. Es una sesión de configuración y de método."
+        ],
+        agencyWork: [
+          "Configuramos su cuenta con usted, en directo",
+          "Verificamos juntos que el primer análisis se sostiene",
+          "Respondemos a sus preguntas de método, nunca de colocación"
+        ]
+      },
+      {
+        title: "La revisión",
+        description: "Leer sus propias cifras, y corregir.",
+        detailedDescription: [
+          "Tras una veintena de posiciones cerradas, el cuaderno empieza a decir cosas que ningún extracto de bróker muestra: la diferencia de esperanza entre las posiciones donde el stop no se movió y aquellas donde se alejó, el efecto del estado de ánimo al entrar y, sobre todo, la casilla **mala decisión, resultado positivo** — la que premia exactamente el comportamiento que más cuesta.",
+          "Esa casilla justifica por sí sola la existencia del cuaderno: en un extracto de cuenta aparece en verde, indistinguible de una buena decisión ganadora."
+        ],
+        agencyWork: [
+          "Calculamos la esperanza en R, la tasa de acierto y la matriz decisión × resultado",
+          "Aislamos el efecto del desplazamiento del stop y del estado de ánimo al entrar",
+          "Mantenemos sus datos exportables y eliminables en cualquier momento"
+        ]
+      }
+    ],
+    stats: [
+      // Las únicas cifras honestas aquí son las de la propia oferta.
+      // Ninguna cifra de rentabilidad figurará jamás en este servicio.
+      { value: "390 €", label: "Recorrido, cuaderno y sesión de puesta en marcha incluidos" },
+      { value: "24 meses", label: "De acceso incluidos, después 5 € al mes" },
+    ],
+    faq: [
+      {
+        q: "¿Dan ustedes asesoramiento en inversión?",
+        a: "Nunca. No le diremos qué comprar, qué vender ni cuándo. Lo que vendemos es formación en un método de trabajo y una herramienta de seguimiento — no asesoramiento en inversión en el sentido regulado, ni gestión por cuenta de terceros. Usted sigue siendo el único decisor de sus posiciones.",
+      },
+      {
+        q: "¿Hay alguna promesa de ganancia?",
+        a: "Ninguna. Invertir y operar conllevan un riesgo de pérdida de capital, que puede alcanzar la totalidad de las sumas comprometidas, y más con productos apalancados. Las rentabilidades pasadas no garantizan rentabilidades futuras, y ningún método garantiza un resultado. Lo que sí prometemos es que sabrá por qué pierde cuando pierde.",
+      },
+      {
+        q: "Invierto a largo plazo, no hago trading. ¿Es para mí?",
+        a: "Hoy no, y es mejor decirlo antes. El cuaderno está construido en torno al nivel de invalidación: sus posiciones necesitan un precio en el que usted decide salir. Si compra para diez años sin stop, la herramienta no calculará nada útil.",
+      },
+      {
+        q: "Todo esto está gratis en YouTube, ¿no?",
+        a: "Completamente, y así se formó Yoann desde 2012. Lo que usted paga no es la información: es la selección, el orden y sobre todo la herramienta — porque YouTube nunca le dará un cuaderno que rechace su posición mientras no haya escrito su invalidación.",
+      },
+      {
+        q: "¿Y si la aplicación cierra en seis meses?",
+        a: "Yoann es su primer usuario y la utiliza para sus propias posiciones: el día que cierre, es él quien pierde su herramienta primero. En cualquier caso, usted exporta todo su cuaderno en un clic, cuando quiera, en un formato abierto que cualquier hoja de cálculo puede leer.",
+      },
+    ],
   }
 ];

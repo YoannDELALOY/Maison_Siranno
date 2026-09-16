@@ -23,15 +23,15 @@
     "cta_primary": "Parler de votre projet",
     "card_status": "En ligne",
     "card_stack_label": "Stack & Outils",
-    "card_growth_value": "+27%",
-    "card_growth_label": "Croissance Digitale",
+    "card_growth_value": "2012",
+    "card_growth_label": "Sur les marchés depuis",
     "card_quote": "L'IA comme levier de précision absolue."
   },
   "services": {
-    "eyebrow": "6 Expertises",
-    "title_line1": "L'IA et le web au service de",
+    "eyebrow": "7 Expertises",
+    "title_line1": "La tech et la finance au service de",
     "title_line2": "votre croissance",
-    "subtitle": "Nous fusionnons développement web premium, automatisation intelligente et IA de pointe pour transformer durablement votre entreprise.",
+    "subtitle": "Développement web premium, automatisation intelligente, IA de pointe — et une expertise des marchés financiers que peu d'agences peuvent offrir.",
     "card_cta": "En savoir plus",
     "aria": {
       "prev": "Précédent",
@@ -490,6 +490,10 @@
       "pilotage-continu": {
         "title": "Pilotage Continu",
         "subtitle": "Suivi mensuel KPIs, optimisation permanente, retainer digital"
+      },
+      "finance-investissement": {
+        "title": "Finance & Investissement",
+        "subtitle": "Méthode de travail, carnet de bord de trading, pédagogie financière"
       }
     }
   },

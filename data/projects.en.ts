@@ -293,4 +293,46 @@ export const projectsData: ProjectData[] = [
       "Real-time monitoring watches the health of all agents and triggers automatic alerts in case of anomaly, ensuring the system's reliability day after day."
     ]
   },
+
+  // ─── THE INVESTOR'S LOGBOOK ──────────────────────────────────────────────
+  // Added 16/09/2026. Real product, live, sold.
+  // Never put a market performance figure here: this project illustrates a
+  // working method, not a result.
+  {
+    id: 'carnet-de-bord-investisseur',
+    title: "The investor's logbook",
+    category: "SaaS Product — Finance",
+    expertise: 'finance-investissement',
+    expertises: ['finance-investissement', 'web-apps-saas'],
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800",
+    description: "The trading journal that refuses a position without its thesis, its invalidation level and its size — and hides the result until the decision has been judged.",
+    tags: ["React", "TypeScript", "Supabase", "Finance", "SaaS"],
+    client: "Maison Siranno",
+    year: "2026",
+    date: "2026-09",
+    url: "https://carnet.yoanndelaloy.com",
+    fullDescription: "The first product of Maison Siranno's Finance × Tech positioning. Most private traders do not know why they win or why they lose: nothing is written before entry, nothing is recorded after exit. The logbook enforces the process instead of relying on willpower — analysis is mandatory before entering, size is computed, and at close the result stays hidden until the user has judged their own decision. The product ships with a five-module written course, read inside the application, and a one-hour setup session.",
+    challenges: [
+      "Turning a constraint into a product: a journal that refuses an incomplete entry still has to be usable every day",
+      "Separating decision from result at the interface level, with no way to reorder the questions",
+      "Rewarding discipline without ever rewarding performance — a trap most trading apps fall into",
+      "Hosting personal financial data with verifiable isolation between accounts"
+    ],
+    results: [
+      "Mandatory analysis before entry: thesis, entry price, invalidation level, target, state of mind",
+      "Position size computed by the database, never typed by hand",
+      "Result hidden at close until the decision has been judged",
+      "Statistical review: expectancy in R, effect of stop movement, effect of state of mind at entry, decision × result matrix",
+      "Five-module course served from the database, readable even after access ends",
+      "Full export and permanent account deletion in one click",
+      "Data isolation enforced by the database itself, account by account"
+    ],
+    process: [
+      "The starting point was not the interface but the question the journal has to answer: how much, in euros, the gaps between the written process and what was actually done really cost. Every mandatory field follows from that question, and no other field was added.",
+      "The core mechanic was settled before any screen: at close, the user judges their decision before seeing their result. In the other order the answer is biased every single time — this is the point that must never be simplified, and it is written as such in the repository rules.",
+      "Gamification covers discipline only: analysis written before entry, stop respected, lesson recorded. Never the result, never a winning streak, and with no ranking between users — celebrating a lucky trade teaches you to repeat it.",
+      "The sensitive calculations — position size, reward-to-risk ratio, result in R — are performed by the database rather than the browser, and each account is isolated by rules enforced at engine level rather than by application code.",
+      "Export and account deletion shipped alongside everything else, not afterwards: on a tool that hosts trading journals, being able to leave with your data is a condition of trust, not an option."
+    ]
+  },
 ];

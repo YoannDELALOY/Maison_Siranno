@@ -1,6 +1,6 @@
 // Données de toutes les réalisations de Maison Siranno
 
-export type ExpertiseCategory = 'web-apps-saas' | 'automatisation-n8n' | 'contenu-marketing-ia' | 'ia-agents-rag' | 'conseil-formation' | 'pilotage-continu';
+export type ExpertiseCategory = 'web-apps-saas' | 'automatisation-n8n' | 'contenu-marketing-ia' | 'ia-agents-rag' | 'conseil-formation' | 'pilotage-continu' | 'finance-investissement';
 
 export interface ProjectData {
   id: string;
@@ -311,6 +311,48 @@ export const projectsData: ProjectData[] = [
       "L'interface Telegram/WhatsApp a été développée comme une couche d'abstraction : l'utilisateur envoie un message naturel, le routeur IA identifie l'agent compétent et orchestre la réponse sans que l'utilisateur ait à connaître l'architecture sous-jacente.",
       "Des dizaines de dashboards ont été conçus avec un design system unifié — malgré la diversité des domaines — pour garantir une cohérence visuelle et une courbe d'apprentissage minimale.",
       "Un monitoring en temps réel surveille la santé de l'ensemble des agents et déclenche des alertes automatiques en cas d'anomalie, garantissant la fiabilité du système au quotidien."
+    ]
+  },
+
+  // ─── LE CARNET DE BORD DE L'INVESTISSEUR ─────────────────────────────────
+  // Ajouté le 16/09/2026. Produit réel, en ligne, vendu.
+  // Ne jamais faire figurer ici de chiffre de performance de marché : ce
+  // projet est l'illustration d'une méthode de travail, pas d'un résultat.
+  {
+    id: 'carnet-de-bord-investisseur',
+    title: "Le carnet de bord de l'investisseur",
+    category: "Produit SaaS — Finance",
+    expertise: 'finance-investissement',
+    expertises: ['finance-investissement', 'web-apps-saas'],
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800",
+    description: "Le carnet de trading qui refuse une position sans sa thèse, son invalidation et sa taille — et qui cache le résultat tant que la décision n'a pas été jugée.",
+    tags: ["React", "TypeScript", "Supabase", "Finance", "SaaS"],
+    client: "Maison Siranno",
+    year: "2026",
+    date: "2026-09",
+    url: "https://carnet.yoanndelaloy.com",
+    fullDescription: "Premier produit du positionnement Finance × Tech de Maison Siranno. La plupart des particuliers qui tradent ne savent pas pourquoi ils gagnent ou pourquoi ils perdent : rien n'est écrit avant l'entrée, rien n'est noté après la sortie. Le carnet de bord impose le process au lieu de compter sur la bonne volonté — l'analyse est obligatoire avant d'entrer, la taille se calcule, et à la clôture le résultat reste caché tant que l'utilisateur n'a pas jugé sa propre décision. Le produit est vendu avec un parcours écrit de cinq modules, lus dans l'application, et une heure de mise en route.",
+    challenges: [
+      "Faire d'une contrainte un produit : un carnet qui refuse une saisie incomplète doit rester utilisable tous les jours",
+      "Séparer la décision du résultat au niveau de l'interface, sans que l'utilisateur puisse contourner l'ordre des questions",
+      "Récompenser la discipline sans jamais récompenser la performance — un écueil que la plupart des applications de trading n'évitent pas",
+      "Héberger des données financières personnelles avec un cloisonnement vérifiable entre comptes"
+    ],
+    results: [
+      "Analyse obligatoire avant entrée : thèse, prix d'entrée, point d'invalidation, objectif, état d'esprit",
+      "Taille de position calculée par la base de données, jamais saisie à la main",
+      "Résultat masqué à la clôture tant que la décision n'a pas été jugée",
+      "Revue statistique : espérance en R, effet du déplacement de stop, effet de l'état à l'entrée, matrice décision × résultat",
+      "Parcours de cinq modules servi depuis la base, accessible même après la fin de l'accès",
+      "Export complet et suppression définitive du compte en un clic",
+      "Cloisonnement des données appliqué par la base elle-même, compte par compte"
+    ],
+    process: [
+      "Le point de départ n'a pas été l'interface mais la question à laquelle le carnet doit répondre : combien coûtent, en euros, les écarts entre le process écrit et ce qui a réellement été fait. Tous les champs obligatoires découlent de cette question, et aucun autre n'a été ajouté.",
+      "La mécanique centrale a été posée avant tout écran : à la clôture, l'utilisateur juge sa décision avant de voir son résultat. Dans l'autre ordre, la réponse est biaisée à tous les coups — c'est le point qu'il ne faut jamais simplifier, et il est écrit comme tel dans les règles du dépôt.",
+      "La gamification porte uniquement sur la discipline : analyse posée avant l'entrée, stop respecté, leçon écrite. Jamais sur le résultat, jamais sur une série de trades gagnants, et sans aucun classement entre utilisateurs — célébrer un coup de chance apprend à le refaire.",
+      "Les calculs sensibles — taille de position, ratio rendement-risque, résultat en R — sont faits par la base de données et non par le navigateur, et chaque compte est isolé par des règles appliquées au niveau du moteur plutôt que par le code applicatif.",
+      "L'export et la suppression de compte ont été livrés en même temps que le reste, pas après : sur un outil qui héberge des journaux de trading, pouvoir partir avec ses données est une condition de la confiance, pas une option."
     ]
   },
 ];

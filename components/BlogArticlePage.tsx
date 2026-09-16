@@ -20,6 +20,8 @@ const expertiseIconMap: Record<ExpertiseCategory, string> = {
   'ia-agents-rag': iconIA,
   'conseil-formation': iconConseil,
   'pilotage-continu': iconPilotage,
+  // Visuel de marque a produire pour cette expertise : l'icone reste vide.
+  'finance-investissement': '',
 };
 
 interface BlogArticlePageProps {

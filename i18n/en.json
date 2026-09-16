@@ -23,15 +23,15 @@
     "cta_primary": "Discuss your project",
     "card_status": "Live",
     "card_stack_label": "Stack & Tools",
-    "card_growth_value": "+27%",
-    "card_growth_label": "Digital Growth",
+    "card_growth_value": "2012",
+    "card_growth_label": "In the markets since",
     "card_quote": "AI as a lever for absolute precision."
   },
   "services": {
-    "eyebrow": "6 Areas of Expertise",
-    "title_line1": "AI and web powering",
+    "eyebrow": "7 Areas of Expertise",
+    "title_line1": "Tech and finance powering",
     "title_line2": "your growth",
-    "subtitle": "We combine premium web development, intelligent automation and cutting-edge AI to durably transform your business.",
+    "subtitle": "Premium web development, intelligent automation, cutting-edge AI — and financial markets expertise few agencies can offer.",
     "card_cta": "Learn more",
     "aria": {
       "prev": "Previous",
@@ -490,6 +490,10 @@
       "pilotage-continu": {
         "title": "Continuous Management",
         "subtitle": "Monthly KPI monitoring, permanent optimization, digital retainer"
+      },
+      "finance-investissement": {
+        "title": "Finance & Investing",
+        "subtitle": "Working method, trading logbook, financial education"
       }
     }
   },

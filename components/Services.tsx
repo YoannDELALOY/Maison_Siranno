@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
-import { Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Globe, Cpu, Megaphone, Brain, GraduationCap, BarChart3, CandlestickChart, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
 import { useLocalizedData } from '../hooks/useLocalizedData';
 import { useSwipe } from '../hooks/useSwipe';
@@ -46,6 +46,10 @@ const serviceIcons: Record<string, React.ReactNode> = {
   'ia-agents-rag':        <Brain size={24} />,
   'conseil-formation':    <GraduationCap size={24} />,
   'pilotage-continu':     <BarChart3 size={24} />,
+  // Finance : pas encore de visuel de marque. Les deux PNG de cette expertise
+  // (grande image et icone) restent a produire ; les tables ci-dessous ont un
+  // repli sur chaine vide et les composants masquent alors l'image.
+  'finance-investissement': <CandlestickChart size={24} />,
 };
 
 const serviceExpertiseImages: Record<string, string> = {
