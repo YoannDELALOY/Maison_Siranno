@@ -7,6 +7,7 @@ import { BlobBackground } from './BlobBackground';
 import { ArrowLeft, ArrowRight, CheckCircle2, Lightbulb, Quote, Phone, Mail, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, X, ClipboardList } from 'lucide-react';
 import { ServiceData } from './Services';
 import { useLocalizedData } from '../hooks/useLocalizedData';
+import { AvatarTemoignage } from './AvatarTemoignage';
 
 interface ServiceDetailPageProps {
   service: ServiceData;
@@ -401,12 +402,16 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ serviceId, onView
 
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div className="flex items-center gap-3">
-            <img
-              src={testimonial.image}
-              alt={testimonial.name}
-              className="w-10 h-10 rounded-full object-cover border-2 shrink-0"
+            <div
+              className="w-10 h-10 rounded-full overflow-hidden border-2 shrink-0"
               style={{ borderColor: 'rgba(212,175,55,0.4)' }}
-            />
+            >
+              <AvatarTemoignage
+                name={testimonial.name}
+                image={testimonial.image}
+                className="w-full h-full text-xs"
+              />
+            </div>
             <div>
               <p className="font-semibold text-white text-sm">{testimonial.name}</p>
               <p className="text-gray-400 text-xs">{testimonial.role} · {testimonial.company}</p>
@@ -580,15 +585,27 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, o
 
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Stats clés */}
-        <div className="grid grid-cols-3 gap-4 md:gap-8 mb-16">
-          {service.stats.map((stat, i) => (
-            <div key={i} className="text-center py-6 px-4 rounded-2xl border" style={{ borderColor: 'rgba(212,175,55,0.2)', background: 'rgba(212,175,55,0.04)' }}>
-              <div className="text-metallic-gold font-serif font-bold text-3xl md:text-4xl lg:text-5xl mb-2">{stat.value}</div>
-              <p className="text-steel text-xs md:text-sm leading-snug">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+        {/* Stats clés — la grille suit le nombre de chiffres réellement
+            vérifiables. Depuis le 16/09/2026, un service n'affiche que ce qui
+            peut être prouvé, et certains n'en affichent plus qu'un ou deux. */}
+        {service.stats.length > 0 && (
+          <div
+            className={`grid gap-4 md:gap-8 mb-16 ${
+              service.stats.length >= 3
+                ? 'grid-cols-3'
+                : service.stats.length === 2
+                  ? 'grid-cols-2 max-w-2xl mx-auto'
+                  : 'grid-cols-1 max-w-sm mx-auto'
+            }`}
+          >
+            {service.stats.map((stat, i) => (
+              <div key={i} className="text-center py-6 px-4 rounded-2xl border" style={{ borderColor: 'rgba(212,175,55,0.2)', background: 'rgba(212,175,55,0.04)' }}>
+                <div className="text-metallic-gold font-serif font-bold text-3xl md:text-4xl lg:text-5xl mb-2">{stat.value}</div>
+                <p className="text-steel text-xs md:text-sm leading-snug">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Texte d'accroche */}
         <div className="mb-12 max-w-3xl">

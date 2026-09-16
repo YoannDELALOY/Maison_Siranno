@@ -12,6 +12,7 @@ import { ProjectData, ExpertiseCategory } from '../data/projects';
 import { Testimonial } from '../data/testimonials';
 import { useLocalizedData } from '../hooks/useLocalizedData';
 import { useTranslation } from '../hooks/useTranslation';
+import { AvatarTemoignage } from './AvatarTemoignage';
 import { CONTACT_CONFIG } from '../constants/config';
 
 interface ExpertiseProjectsPageProps {
@@ -95,8 +96,8 @@ const TestimonialBridge: React.FC<{ t: Testimonial; prevIsEven: boolean }> = ({ 
 
         {/* Identité */}
         <div className={`hidden sm:flex items-center gap-3 shrink-0 ${prevIsEven ? 'flex-row-reverse' : ''}`}>
-          <div className="w-8 -h-8 rounded-full overflow-hidden border border-gold/30 shrink-0">
-            <img src={t.image} alt={t.name} width="32" height="32" className="w-full h-full object-cover" />
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-gold/30 shrink-0">
+            <AvatarTemoignage name={t.name} image={t.image} className="w-full h-full text-[0.6rem]" />
           </div>
           <div className={prevIsEven ? 'text-right' : ''}>
             <div className={`font-serif font-bold text-xs ${prevIsEven ? 'text-charcoal' : 'text-white'}`}>{t.name}</div>
@@ -113,7 +114,7 @@ const TestimonialBridge: React.FC<{ t: Testimonial; prevIsEven: boolean }> = ({ 
       {/* Mobile : identité sous la citation */}
       <div className={`sm:hidden flex items-center gap-2 mt-3 ${prevIsEven ? 'pr-10 flex-row-reverse' : 'pl-10'}`}>
         <div className="w-7 h-7 rounded-full overflow-hidden border border-gold/30 shrink-0">
-          <img src={t.image} alt={t.name} width="28" height="28" className="w-full h-full object-cover" />
+          <AvatarTemoignage name={t.name} image={t.image} className="w-full h-full text-[0.55rem]" />
         </div>
         <span className={`font-serif font-bold text-xs ${prevIsEven ? 'text-charcoal' : 'text-white'}`}>{t.name}</span>
         <span className={`text-xs ${prevIsEven ? 'text-charcoal/30' : 'text-white/20'}`}>·</span>

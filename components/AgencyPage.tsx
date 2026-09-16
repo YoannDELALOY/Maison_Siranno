@@ -86,10 +86,12 @@ export const AgencyPage: React.FC<AgencyPageProps> = ({ onGoToContact }) => {
         </div>
 
         {/* Stats animées */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-24">
-          <AnimatedStat value="+27%" label={t('agency_page.stats.visibility')} delay={0} />
-          <AnimatedStat value="98%" label={t('agency_page.stats.satisfaction')} delay={150} />
-          <AnimatedStat value="100%" label={t('agency_page.stats.custom')} delay={300} />
+        {/* Retirés le 16/09/2026 : « +27% de visibilité » et « 98% de
+            satisfaction » étaient deux mesures que rien n'étaye. « 100% sur
+            mesure » reste : c'est une façon de travailler, pas un résultat
+            chiffré. */}
+        <div className="flex justify-center mb-24">
+          <AnimatedStat value="100%" label={t('agency_page.stats.custom')} delay={0} />
         </div>
 
         {/* Mon Parcours — Timeline */}

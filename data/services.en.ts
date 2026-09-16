@@ -154,9 +154,8 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "3×", label: "Faster than a traditional agency" },
-      { value: "4–6 wks.", label: "Average MVP delivery time" },
-      { value: "98%", label: "Clients satisfied at delivery" },
+      // Removed 16/09/2026 — see data/services.ts: unmeasured claims.
+      { value: "4–6 wks.", label: "Target MVP delivery time" },
     ],
     faq: [
       {
@@ -329,8 +328,7 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "20h", label: "Saved on average every week" },
-      { value: "0", label: "Human errors on automated processes" },
+      // Removed 16/09/2026 — see data/services.ts: unmeasured claims.
       { value: "+400", label: "Possible SaaS connections (Notion, Airtable, CRM, Slack…)" },
     ],
     faq: [
@@ -504,9 +502,7 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "10×", label: "More content produced at the same cost" },
-      { value: "×5", label: "More formats produced from a single source piece" },
-      { value: "0h", label: "Of manual writing for your team" },
+      // Removed 16/09/2026 — see data/services.ts: unmeasured claims.
     ],
     faq: [
       {
@@ -679,9 +675,8 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
+      // Removed 16/09/2026 — see data/services.ts: unmeasured claims.
       { value: "24/7", label: "Availability without interruption" },
-      { value: "92%", label: "RAG answer precision rate" },
-      { value: "−65%", label: "Of support tickets handled by humans" },
     ],
     faq: [
       {
@@ -854,9 +849,7 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "85%", label: "Real adoption rate at 3 months" },
-      { value: "4.9/5", label: "Average training satisfaction score" },
-      { value: "+2 days", label: "Recovered per month per team member" },
+      // Removed 16/09/2026 — see data/services.ts: unmeasured claims.
     ],
     faq: [
       {
@@ -1029,8 +1022,7 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "100%", label: "Real-time visibility on your KPIs" },
-      { value: "+28%", label: "Average ROI after 6 months of management" },
+      // Removed 16/09/2026 — see data/services.ts: unmeasured claims.
       { value: "1 meeting", label: "Per month is enough to manage everything" },
     ],
     faq: [

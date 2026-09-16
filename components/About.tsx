@@ -92,12 +92,10 @@ export const About: React.FC = () => {
               </Suspense>
             </div>
 
-            <div className="mt-6 flex justify-between items-center text-sm border-t border-gray-100 pt-4">
-              <div className="text-steel">{t('about.chart_satisfaction_label')}</div>
-              <div className="font-bold text-safe-green flex items-center gap-1">
-                {t('about.chart_satisfaction_value')}
-              </div>
-            </div>
+            {/* Retiré le 16/09/2026 : ce pied de graphique affichait
+                « Satisfaction client — 98% satisfaits », un taux qu'aucune
+                enquête n'a jamais mesuré. Ne le remettre qu'avec des
+                évaluations réelles derrière. */}
           </div>
 
           {/* Background Blobs — derrière tout */}

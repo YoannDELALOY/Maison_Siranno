@@ -12,6 +12,7 @@ import iconConseil        from '../Media/Logos/Logo_expertise/Icone_Conseil_&_Fo
 import iconPilotage       from '../Media/Logos/Logo_expertise/Icone_Pilotage_Continu.png';
 import { ProjectData, ExpertiseCategory } from '../data/projects';
 import { useLocalizedData } from '../hooks/useLocalizedData';
+import { AvatarTemoignage } from './AvatarTemoignage';
 
 interface ProjectsPageProps {
   onOpenProject?: (project: ProjectData) => void;
@@ -251,7 +252,11 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
             <p className="text-steel">{t('projects_page.testimonials_subtitle')}</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div
+            className={`grid gap-8 ${
+              projectsTestimonials.length >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2 max-w-4xl mx-auto'
+            }`}
+          >
             {projectsTestimonials.map((t, i) => (
               <div
                 key={i}
@@ -281,7 +286,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenProject, onNav
 
                 <div className="flex items-center gap-4 mt-auto border-t border-gray-100 pt-6">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0">
-                    <img src={t.image} alt={t.name} width="48" height="48" className="w-full h-full object-cover" />
+                    <AvatarTemoignage name={t.name} image={t.image} className="w-full h-full text-sm" />
                   </div>
                   <div>
                     <div className="font-serif font-bold text-charcoal">{t.name}</div>

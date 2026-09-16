@@ -4,6 +4,7 @@ import { useTranslation } from '../hooks/useTranslation';
 import { ArrowLeft, CheckCircle2, BookOpen, Github, ArrowUpRight, Quote, User, Calendar, Zap, Shield, Target, Lock, Lightbulb, TrendingUp, Clock, Users, Mail, Phone, ExternalLink } from 'lucide-react';
 import { ProjectData, ExpertiseCategory } from '../data/projects';
 import { useLocalizedData } from '../hooks/useLocalizedData';
+import { AvatarTemoignage } from './AvatarTemoignage';
 import starImg from '../Media/etoiletrnsparante.png';
 import iconWebApps from '../Media/Logos/Logo_expertise/Icone_Développement_Web_Apps_&_SaaS.png';
 import iconAutomatisation from '../Media/Logos/Logo_expertise/Icone_Automatisation_&_Orchestration_n8n.png';
@@ -706,11 +707,13 @@ export const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ project, onBac
 
             {/* Identité */}
             <div className="flex items-center justify-center gap-4">
-              <img
-                src={linkedTestimonial.image}
-                alt={linkedTestimonial.name}
-                className="w-11 h-11 rounded-full object-cover border border-gold/30"
-              />
+              <div className="w-11 h-11 rounded-full overflow-hidden border border-gold/30 shrink-0">
+                <AvatarTemoignage
+                  name={linkedTestimonial.name}
+                  image={linkedTestimonial.image}
+                  className="w-full h-full text-xs"
+                />
+              </div>
               <div className="text-left">
                 <p className="font-bold text-charcoal text-sm">{linkedTestimonial.name}</p>
                 <p className="text-metallic-gold-inline text-xs">

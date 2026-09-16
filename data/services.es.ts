@@ -154,9 +154,8 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "3×", label: "Más rápido que una agencia tradicional" },
-      { value: "4–6 sem.", label: "Plazo medio de entrega de un MVP" },
-      { value: "98%", label: "Clientes satisfechos en la entrega" },
+      // Retirados el 16/09/2026 — ver data/services.ts: cifras sin medición.
+      { value: "4–6 sem.", label: "Plazo objetivo de entrega de un MVP" },
     ],
     faq: [
       {
@@ -329,8 +328,7 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "20h", label: "Ahorradas de media cada semana" },
-      { value: "0", label: "Error humano en los procesos automatizados" },
+      // Retirados el 16/09/2026 — ver data/services.ts: cifras sin medición.
       { value: "+400", label: "Conexiones SaaS posibles (Notion, Airtable, CRM, Slack…)" },
     ],
     faq: [
@@ -504,9 +502,7 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "10×", label: "Más contenido producido al mismo coste" },
-      { value: "×5", label: "Más formatos producidos a partir de un único contenido fuente" },
-      { value: "0h", label: "De redacción manual para su equipo" },
+      // Retirados el 16/09/2026 — ver data/services.ts: cifras sin medición.
     ],
     faq: [
       {
@@ -679,9 +675,8 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
+      // Retirados el 16/09/2026 — ver data/services.ts: cifras sin medición.
       { value: "24/7", label: "Disponibilidad sin interrupción" },
-      { value: "92%", label: "Tasa de precisión de las respuestas RAG" },
-      { value: "−65%", label: "De tickets de soporte gestionados por humanos" },
     ],
     faq: [
       {
@@ -854,9 +849,7 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "85%", label: "Tasa de adopción real a los 3 meses" },
-      { value: "4.9/5", label: "Satisfacción media de las formaciones" },
-      { value: "+2 días", label: "Recuperados al mes por colaborador" },
+      // Retirados el 16/09/2026 — ver data/services.ts: cifras sin medición.
     ],
     faq: [
       {
@@ -1029,8 +1022,7 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "100%", label: "Visibilidad en tiempo real sobre sus KPIs" },
-      { value: "+28%", label: "ROI medio a los 6 meses de pilotaje" },
+      // Retirados el 16/09/2026 — ver data/services.ts: cifras sin medición.
       { value: "1 reunión", label: "Al mes basta para pilotar todo" },
     ],
     faq: [

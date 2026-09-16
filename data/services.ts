@@ -188,9 +188,10 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "3×", label: "Plus vite qu'une agence traditionnelle" },
-      { value: "4–6 sem.", label: "Délai moyen de livraison MVP" },
-      { value: "98%", label: "Clients satisfaits à la livraison" },
+      // Retirés le 16/09/2026 : « 3× plus vite qu'une agence traditionnelle »
+      // et « 98% clients satisfaits » affirmaient des mesures qui n'ont jamais
+      // été faites. Ne remettre un chiffre ici que s'il peut être prouvé.
+      { value: "4–6 sem.", label: "Délai visé pour la livraison d'un MVP" },
     ],
     faq: [
       {
@@ -363,8 +364,9 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "20h", label: "Économisées en moyenne chaque semaine" },
-      { value: "0", label: "Erreur humaine sur les processus automatisés" },
+      // « 20h économisées en moyenne » et « 0 erreur humaine » retirés le
+      // 16/09/2026 : aucune mesure derrière. Le nombre d'intégrations, lui,
+      // est une propriété vérifiable de n8n.
       { value: "+400", label: "Connexions SaaS possibles (Notion, Airtable, CRM, Slack…)" },
     ],
     faq: [
@@ -538,9 +540,10 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "10×", label: "Plus de contenu produit au même coût" },
-      { value: "×5", label: "Plus de formats produits à partir d'un seul contenu source" },
-      { value: "0h", label: "De rédaction manuelle pour votre équipe" },
+      // Les trois chiffres de ce service (« 10× plus de contenu », « ×5 formats »,
+      // « 0h de rédaction ») ont été retirés le 16/09/2026 : ce sont des
+      // multiplicateurs que rien ne mesure. Le bloc reste vide tant qu'aucun
+      // chiffre prouvable n'existe — mieux vaut rien qu'un chiffre inventé.
     ],
     faq: [
       {
@@ -713,9 +716,9 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
+      // « 92% de précision » et « −65% de tickets » retirés le 16/09/2026 :
+      // deux mesures présentées comme constatées, sans aucune mesure derrière.
       { value: "24/7", label: "Disponibilité sans interruption" },
-      { value: "92%", label: "Taux de précision des réponses RAG" },
-      { value: "−65%", label: "De tickets support traités par des humains" },
     ],
     faq: [
       {
@@ -888,9 +891,10 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "85%", label: "Taux d'adoption réel à 3 mois" },
-      { value: "4.9/5", label: "Satisfaction moyenne des formations" },
-      { value: "+2 j.", label: "Récupérés par mois et par collaborateur" },
+      // Les trois chiffres de ce service ont été retirés le 16/09/2026.
+      // « 4.9/5 de satisfaction moyenne » était le plus exposé : une note
+      // moyenne affichée sans aucune évaluation réelle derrière est de la même
+      // nature qu'un faux avis.
     ],
     faq: [
       {
@@ -1063,8 +1067,9 @@ export const servicesData: ServiceDataRaw[] = [
       },
     ],
     stats: [
-      { value: "100%", label: "Visibilité temps réel sur vos KPIs" },
-      { value: "+28%", label: "ROI moyen à 6 mois de pilotage" },
+      // « +28% de ROI moyen à 6 mois » retiré le 16/09/2026 : un chiffre de
+      // résultat client qui n'a jamais été mesuré. « 100% de visibilité » aussi,
+      // parce qu'il se lit comme une mesure alors que c'est une formule.
       { value: "1 réunion", label: "Par mois suffit pour tout piloter" },
     ],
     faq: [

@@ -6,6 +6,7 @@ import { Testimonial } from '../data/testimonials';
 import { useLocalizedData } from '../hooks/useLocalizedData';
 import { useSwipe } from '../hooks/useSwipe';
 import { useTranslation } from '../hooks/useTranslation';
+import { AvatarTemoignage } from './AvatarTemoignage';
 
 interface TestimonialsProps {
   onOpenProject?: (projectId: string) => void;
@@ -42,8 +43,13 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenProject }) => 
           <p className="text-steel">{t('testimonials.subtitle')}</p>
         </div>
 
-        {/* Desktop : grille 3 colonnes */}
-        <div className="hidden md:grid md:grid-cols-3 gap-8">
+        {/* Desktop : la grille suit le nombre de témoignages réels, pour ne pas
+            laisser une colonne vide depuis le retrait des faux avis. */}
+        <div
+          className={`hidden md:grid gap-8 ${
+            testimonials.length >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2 max-w-4xl mx-auto'
+          }`}
+        >
           {testimonials.map((testimonial, i) => (
             <TestimonialCard
               key={i}
@@ -145,7 +151,7 @@ const TestimonialCard: React.FC<{ t: Testimonial; onOpenProject?: (id: string) =
 
     <div className="flex items-center gap-4 mt-auto border-t border-gray-100 pt-6">
       <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0">
-        <img src={t.image} alt={t.name} width="48" height="48" loading="lazy" className="w-full h-full object-cover" />
+        <AvatarTemoignage name={t.name} image={t.image} className="w-full h-full text-sm" />
       </div>
       <div>
         <div className="font-serif font-bold text-charcoal">{t.name}</div>
